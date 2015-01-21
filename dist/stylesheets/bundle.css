@@ -3598,9 +3598,9 @@ td, th {
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease;
     cursor: pointer; }
-    /* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
-    .b-cart-trigger_full:hover {
-      background-color: #353535; }
+  /* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
+  .b-cart-trigger:hover {
+    background-color: #353535; }
   /* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
   .fancybox-lock .b-cart-trigger {
     display: none; }
