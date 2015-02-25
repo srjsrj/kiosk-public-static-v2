@@ -3133,7 +3133,7 @@ var ApiRoutes;
 
 ApiRoutes = {
   productsFilteredCount: function(filter) {
-    return gon.vendor_api_root_url + '/v1/products/filtered/count?' + filter;
+    return gon.public_api_url + '/v1/products/filtered/count?' + filter;
   }
 };
 
@@ -3342,11 +3342,11 @@ $(function() {
     totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price');
     return $checkoutTotal.html(accounting.formatMoney(totalPrice));
   };
-  toggleDeliveryOnlyElementsVisibility = function(showFields) {
+  toggleDeliveryOnlyElementsVisibility = function(showFieldsQuery) {
     var $el;
     $('[hideable]').slideUp();
-    if (showFields) {
-      $el = $(showFields);
+    if (showFieldsQuery) {
+      $el = $(showFieldsQuery);
       return $el.stop().slideDown();
     }
   };

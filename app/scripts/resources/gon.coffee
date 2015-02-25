@@ -1,4 +1,4 @@
 window.gon =
 
-  # localStorage.setItem('vendor_api_root_url', 'http://api.3001.vkontraste.ru')
-  vendor_api_root_url: localStorage.getItem('vendor_api_root_url') || 'http://api.3001.vkontraste.ru'
+  # localStorage.setItem('public_api_url', 'http://wanna-be.ru.3001.vkontraste.ru/api')
+  public_api_url: localStorage.getItem('public_api_url') || 'http://wanna-be.ru.3001.vkontraste.ru/api'
