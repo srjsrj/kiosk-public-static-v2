@@ -646,7 +646,7 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -708,7 +708,7 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, listRect, offsetLeft, position;
@@ -772,7 +772,7 @@ CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Rad
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "]";
+    return this.props.filterName + "[" + this.props.paramName + "]";
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -2102,7 +2102,7 @@ DesignSettings = React.createClass({displayName: 'DesignSettings',
         break;
       case 'fontSize':
         this.setStyles('.b-page', {
-          'font-size': "" + value + "px"
+          'font-size': value + "px"
         });
         break;
       case 'productsInRow':
@@ -2991,8 +2991,8 @@ module.exports = TooltipController;
 
 },{"../components/common/tooltip/filteredCount":16}],44:[function(require,module,exports){
 var BaseDispatcher,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 BaseDispatcher = (function(_super) {
   __extends(BaseDispatcher, _super);
@@ -3034,8 +3034,8 @@ window.BasketDispatcher = new BaseDispatcher();
 
 },{"./_base":44}],46:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 CHANGE_EVENT = 'change';
 
@@ -3380,16 +3380,7 @@ $(function() {
     return selectDeliveryType($(this));
   });
   findSelectedDeliveryType = function() {
-    var selected;
-    selected = null;
-    $('[delivery-type]').each(function() {
-      var $el;
-      $el = $(this);
-      if ($el.attr('checked')) {
-        return selected = $el;
-      }
-    });
-    return selected;
+    return $('[delivery-type]').filter(':checked')[0] || null;
   };
   return window.InitializeCheckout = function() {
     return selectDeliveryType(findSelectedDeliveryType());
@@ -4122,27 +4113,6 @@ Rule.prototype.toString = function (options) {
     str += '\n' + indent(options.indentationLevel, '}')
 
     return str
-}
-
-/**
- * Returns JSON representation of the rule.
- * Nested rules, at-rules and array values are not supported.
- *
- * @return {Object}
- * @api public
- */
-Rule.prototype.toJSON = function () {
-    var style = {}
-
-    for (var prop in this.style) {
-        var value = this.style[prop]
-        var type = typeof value
-        if (type == 'string' || type == 'number') {
-            style[prop] = value
-        }
-    }
-
-    return style
 }
 
 /**
