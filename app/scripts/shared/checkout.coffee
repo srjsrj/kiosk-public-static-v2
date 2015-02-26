@@ -44,12 +44,7 @@ $ ->
     selectDeliveryType $ @
 
   findSelectedDeliveryType= ->
-    selected = null
-    $('[delivery-type]').each ->
-      $el = $ @
-      selected = $el if $el.attr 'checked'
-
-    return selected
+    $('[delivery-type]').filter(':checked')[0] || null
 
   window.InitializeCheckout = ->
     selectDeliveryType findSelectedDeliveryType()
