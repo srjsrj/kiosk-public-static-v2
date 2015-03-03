@@ -2732,8 +2732,8 @@ window.InstagramFeed_Mixin = {
             return _this.setState({
               currentState: _this.STATE_LOADED,
               photos: photos.data,
-              profileUrl: 'http://instagram.com/' + photos.data[0].user.full_name,
-              hashtag: '#' + photos.data[0].user.full_name
+              profileUrl: 'http://instagram.com/' + photos.data[0].user.username,
+              hashtag: '#' + photos.data[0].user.username
             });
           }
         };
