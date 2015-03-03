@@ -490,7 +490,8 @@ CatalogFilter = React.createClass({displayName: 'CatalogFilter',
   propTypes: {
     options: PropTypes.array.isRequired,
     selectedOptions: PropTypes.array,
-    filterName: PropTypes.string
+    filterName: PropTypes.string,
+    categoryId: PropTypes.number
   },
   getDefaultProps: function() {
     return {
@@ -511,6 +512,7 @@ CatalogFilter = React.createClass({displayName: 'CatalogFilter',
       CatalogFilterList({
           options:  this.props.options, 
           selectedOptions:  this.props.selectedOptions, 
+          categoryId:  this.props.categoryId, 
           filterName:  this.props.filterName}), 
       CatalogFilter_ShowResultsButton(null)
     );
@@ -542,7 +544,13 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
   propTypes: {
     options: PropTypes.array.isRequired,
     selectedOptions: PropTypes.array.isRequired,
-    filterName: PropTypes.string.isRequired
+    filterName: PropTypes.string.isRequired,
+    categoryId: PropTypes.number
+  },
+  getDefaultProps: function() {
+    return {
+      categoryId: null
+    };
   },
   render: function() {
     return React.DOM.ul({className: "b-full-filter__list-wrap"}, 
@@ -563,6 +571,7 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
                paramName: paramName, 
                filterName:  that.props.filterName, 
                items: items, 
+               categoryId:  that.props.categoryId, 
                key: i });
         case 'radio':
           title = item.title, value = item.value, paramName = item.paramName, items = item.items;
@@ -572,6 +581,7 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
                paramName: paramName, 
                filterName:  that.props.filterName, 
                items: items, 
+               categoryId:  that.props.categoryId, 
                key: i });
         case 'range':
           title = item.title, paramName = item.paramName, units = item.units, valueFrom = item.valueFrom, valueTo = item.valueTo, from = item.from, to = item.to;
@@ -584,6 +594,7 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
                valueTo: valueTo, 
                from: from, 
                to: to, 
+               categoryId:  that.props.categoryId, 
                key: i });
         case 'color':
           title = item.title, paramName = item.paramName, items = item.items;
@@ -592,6 +603,7 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
               paramName: paramName, 
               filterName:  that.props.filterName, 
               items: items, 
+              categoryId:  that.props.categoryId, 
               key: i });
         default:
           return typeof console.warn === "function" ? console.warn('Unknown item type of CatalogFilterList component', item) : void 0;
@@ -616,7 +628,8 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
     title: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
     filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
   },
   render: function() {
     return React.DOM.li({className: "b-full-filter__item"}, 
@@ -652,7 +665,7 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
     var elRect, filter, offsetLeft, position;
     elRect = e.target.getBoundingClientRect();
     offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize();
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
     position = {
       left: elRect.right + offsetLeft,
       top: elRect.top + document.body.scrollTop - elRect.height / 2
@@ -677,7 +690,8 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
     title: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
     filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
   },
   render: function() {
     return React.DOM.li({className: "b-full-filter__item"}, 
@@ -715,7 +729,7 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
     elRect = e.target.getBoundingClientRect();
     listRect = this.refs.list.getDOMNode().getBoundingClientRect();
     offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize();
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
     position = {
       left: listRect.right + offsetLeft,
       top: elRect.top + document.body.scrollTop - elRect.height / 2
@@ -741,7 +755,8 @@ CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Rad
     value: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
     filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
   },
   render: function() {
     return React.DOM.li({className: "b-full-filter__item"}, 
@@ -778,7 +793,7 @@ CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Rad
     var elRect, filter, offsetLeft, position;
     elRect = e.target.getBoundingClientRect();
     offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize();
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
     position = {
       left: elRect.right + offsetLeft,
       top: elRect.top + document.body.scrollTop - elRect.height / 2
@@ -807,7 +822,8 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
     valueFrom: PropTypes.number,
     valueTo: PropTypes.number,
     from: PropTypes.number.isRequired,
-    to: PropTypes.number.isRequired
+    to: PropTypes.number.isRequired,
+    categoryId: PropTypes.number.isRequired
   },
   getInitialState: function() {
     return {
@@ -872,7 +888,7 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
     var elRect, filter, offsetLeft, position;
     elRect = this.refs.rangeValue.getDOMNode().getBoundingClientRect();
     offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize();
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
     position = {
       left: elRect.right + offsetLeft,
       top: elRect.top + document.body.scrollTop - elRect.height / 2

@@ -9,6 +9,7 @@ CatalogFilterList_Color = React.createClass
     paramName:  PropTypes.string.isRequired
     filterName: PropTypes.string.isRequired
     items:      PropTypes.array.isRequired
+    categoryId: PropTypes.number.isRequired
 
   render: ->
     `<li className="b-full-filter__item">
@@ -45,7 +46,7 @@ CatalogFilterList_Color = React.createClass
     listRect   = @refs.list.getDOMNode().getBoundingClientRect()
     offsetLeft = 15
 
-    filter   = $(@getDOMNode()).closest('form').serialize()
+    filter   = $(@getDOMNode()).closest('form').serialize() + "&category_id=#{@props.categoryId}"
     position =
       left: listRect.right + offsetLeft
       top:  elRect.top + document.body.scrollTop - elRect.height / 2
