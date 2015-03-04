@@ -12,6 +12,7 @@ CatalogFilter = React.createClass
     options:         PropTypes.array.isRequired
     selectedOptions: PropTypes.array
     filterName:      PropTypes.string
+    categoryId:      PropTypes.number
 
   getDefaultProps: ->
     filterName: 'f'
@@ -30,6 +31,7 @@ CatalogFilter = React.createClass
       <CatalogFilterList
           options={ this.props.options }
           selectedOptions={ this.props.selectedOptions }
+          categoryId={ this.props.categoryId }
           filterName={ this.props.filterName } />
       <CatalogFilter_ShowResultsButton />
     </div>`

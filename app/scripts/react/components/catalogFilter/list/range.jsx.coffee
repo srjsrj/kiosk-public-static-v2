@@ -13,6 +13,7 @@ CatalogFilterList_Range = React.createClass
     valueTo:    PropTypes.number
     from:       PropTypes.number.isRequired
     to:         PropTypes.number.isRequired
+    categoryId: PropTypes.number.isRequired
 
   getInitialState: ->
     from: @props.valueFrom || @props.from
@@ -23,7 +24,7 @@ CatalogFilterList_Range = React.createClass
 
     $(slider).noUiSlider
       start: [@state.from, @state.to]
-      range: 
+      range:
         min: @props.from
         max: @props.to
       connect: true
@@ -73,7 +74,7 @@ CatalogFilterList_Range = React.createClass
     elRect     = @refs.rangeValue.getDOMNode().getBoundingClientRect()
     offsetLeft = 15
 
-    filter   = $(@getDOMNode()).closest('form').serialize()
+    filter   = $(@getDOMNode()).closest('form').serialize() + "&category_id=#{@props.categoryId}"
     position =
       left: elRect.right + offsetLeft
       top:  elRect.top + document.body.scrollTop - elRect.height / 2

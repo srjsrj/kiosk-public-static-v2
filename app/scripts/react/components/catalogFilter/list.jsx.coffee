@@ -13,6 +13,10 @@ CatalogFilterList = React.createClass
     options:         PropTypes.array.isRequired
     selectedOptions: PropTypes.array.isRequired
     filterName:      PropTypes.string.isRequired
+    categoryId:      PropTypes.number
+
+  getDefaultProps: ->
+    categoryId: null
 
   render: ->
     `<ul className="b-full-filter__list-wrap">
@@ -32,6 +36,7 @@ CatalogFilterList = React.createClass
                paramName={ paramName }
                filterName={ that.props.filterName }
                items={ items }
+               categoryId={ that.props.categoryId }
                key={ i } />`
         when 'radio'
           { title, value, paramName, items } = item
@@ -42,6 +47,7 @@ CatalogFilterList = React.createClass
                paramName={ paramName }
                filterName={ that.props.filterName }
                items={ items }
+               categoryId={ that.props.categoryId }
                key={ i } />`
         when 'range'
           { title, paramName, units, valueFrom, valueTo, from, to } = item
@@ -55,6 +61,7 @@ CatalogFilterList = React.createClass
                valueTo={ valueTo }
                from={ from }
                to={ to }
+               categoryId={ that.props.categoryId }
                key={ i } />`
         when 'color'
           { title, paramName, items } = item
@@ -64,6 +71,7 @@ CatalogFilterList = React.createClass
               paramName={ paramName }
               filterName={ that.props.filterName }
               items={ items }
+              categoryId={ that.props.categoryId }
               key={ i } />`
         else console.warn? 'Unknown item type of CatalogFilterList component', item
 
