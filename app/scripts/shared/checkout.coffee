@@ -32,7 +32,7 @@ $ ->
         #$c.val saved_city
 
   selectDeliveryType = ($e) ->
-    if $e
+    if $e?
       #setOnlyCity $e.data('delivery-only-city')
       setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
 
@@ -45,8 +45,13 @@ $ ->
 
   findSelectedDeliveryType= ->
     $el = $('[delivery-type]').filter(':checked')
-    $el.length==0 ? null : $el
+    if $el.length==0
+      return null
+    else
+      return $el
 
   window.InitializeCheckout = ->
+    console.log 'Initialize Checkout'
+    debugger
     selectDeliveryType findSelectedDeliveryType()
 

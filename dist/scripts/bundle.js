@@ -3363,7 +3363,7 @@ $(function() {
     }
   };
   selectDeliveryType = function($e) {
-    if ($e) {
+    if ($e != null) {
       setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
       return toggleDeliveryOnlyElementsVisibility($e.data('show-fields-query'));
     } else {
@@ -3374,13 +3374,17 @@ $(function() {
     return selectDeliveryType($(this));
   });
   findSelectedDeliveryType = function() {
-    var $el, ref;
+    var $el;
     $el = $('[delivery-type]').filter(':checked');
-    return (ref = $el.length === 0) != null ? ref : {
-      "null": $el
-    };
+    if ($el.length === 0) {
+      return null;
+    } else {
+      return $el;
+    }
   };
   return window.InitializeCheckout = function() {
+    console.log('Initialize Checkout');
+    debugger;
     return selectDeliveryType(findSelectedDeliveryType());
   };
 });
