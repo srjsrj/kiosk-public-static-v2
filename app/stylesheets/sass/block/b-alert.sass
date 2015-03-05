@@ -1,3 +1,9 @@
+$success: #eee
+$successColor: #121212
+$info: #8fa6ce
+$infoColor: #fff
+$warning: #ffdc71
+$warningColor: #121212
 $danger: #da2a41
 $dangerColor: #fff
 
@@ -10,6 +16,20 @@ $dangerColor: #fff
   border-radius: 3px
   padding: 11px
   margin: 0 0 20px
+  .close
+    color: inherit
+  &_success
+    background-color: $success
+    border-color: $success
+    color: $successColor
+  &_info
+    background-color: $info
+    border-color: $info
+    color: $infoColor
+  &_warning
+    background-color: $warning
+    border-color: $warning
+    color: $warningColor
   &_danger
     background-color: $danger
     border-color: $danger
@@ -17,6 +37,17 @@ $dangerColor: #fff
 
 .alert
   @extend .b-alert
+  .close
+    color: inherit !important
+
+.alert-success
+  @extend .b-alert_success
+
+.alert-info
+  @extend .b-alert_info
+
+.alert-warning
+  @extend .b-alert_warning
 
 .alert-danger
   @extend .b-alert_danger
@@ -24,3 +55,6 @@ $dangerColor: #fff
 .help-block
   @extend .b-alert
   @extend .b-alert_danger
+
+.coupon-info
+  margin-top: 10px

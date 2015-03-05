@@ -77,4425 +77,7 @@ ReactUjs.initialize();
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":17,"./react/components/design/colorlist":18,"./react/components/design/designer":19,"./react/components/design/fontlist":20,"./react/components/design/layoutlist":21,"./react/components/design/toggle":22,"./react/components/design/valueslider":23,"./react/components/designSettings/designSettings":30,"./react/components/instagram/instagram":38,"./react/components/instagram/instagram_feed_mixin":39,"./react/components/instagram/instagram_v2":40,"./react/components/product/add_to_basket_button":41,"./react/controllers/events":42,"./react/controllers/tooltip":43,"./react/dispatchers/basket":45,"./react/stores/basket":47,"./routes/api":48,"./routes/routes":49,"./shared/app":50,"./shared/application_slider":51,"./shared/cart":52,"./shared/checkout":53,"./shared/jump":54,"./shared/lightbox":55,"./shared/load_more":56,"./shared/mobile_navigation":57,"./shared/product_images_slider":58,"./shared/theme_switcher":59}],2:[function(require,module,exports){
-window._ = require('lodash');
-
-window.$ = window.jQuery = require('jquery');
-
-window.React = require('react');
-
-window.ReactUjs = require('reactUjs');
-
-window.Dispatcher = require('flux').Dispatcher;
-
-window.EventEmitter = require('eventEmitter');
-
-window.accounting = require('accounting');
-
-require('jquery.role');
-
-require('jquery.mmenu');
-
-require('react-mixin-manager')(window.React);
-
-require('bootstrapSass');
-
-require('owlCarousel');
-
-require('fancybox');
-
-require('fancybox.wannabe');
-
-require('nouislider');
-
-window.accounting.settings = {
-  currency: {
-    symbol: 'руб.',
-    format: '%v %s',
-    decimal: ',',
-    thousand: ' ',
-    precision: 0
-  },
-  number: {
-    precision: 0,
-    thousand: '',
-    decimal: ','
-  }
-};
-
-
-
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":60,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
-window.BasketActions = {
-  addGood: function(good) {
-    return this._addItemToServer(good);
-  },
-  _addItemToServer: function(good, count) {
-    if (count == null) {
-      count = 1;
-    }
-    return $.ajax({
-      dataType: 'json',
-      method: 'post',
-      data: {
-        good_id: good.good_id,
-        count: count
-      },
-      url: Routes.vendor_cart_items_path(),
-      error: function(xhr, status, err) {
-        return typeof console.error === "function" ? console.error(err) : void 0;
-      },
-      success: function(response) {
-        return BasketDispatcher.handleServerAction({
-          actionType: 'productAddedToBasket',
-          cartItem: cartItem
-        });
-      }
-    });
-  },
-  receiveBasket: function(cartItems) {
-    return BasketDispatcher.handleViewAction({
-      actionType: 'receiveBasket',
-      cartItems: cartItems
-    });
-  }
-};
-
-
-
-},{}],4:[function(require,module,exports){
-var Api, TIMEOUT, _pendingRequests, abortPendingRequests, deleteRequest, getRequest, postRequest, putRequest, request, vendorKey;
-
-TIMEOUT = 10000;
-
-_pendingRequests = {};
-
-abortPendingRequests = function(key) {
-  if (_pendingRequests[key]) {
-    _pendingRequests[key].abort();
-    return _pendingRequests[key] = null;
-  }
-};
-
-vendorKey = function() {
-  return 'c3d753f03d73251bb4aa707e077ec8e7';
-};
-
-request = function(_method, url, data) {
-  var headers, method;
-  if (data == null) {
-    data = {};
-  }
-  headers = {
-    'X-Requested-With': 'XMLHttpRequest',
-    'X-Vendor-Key': vendorKey()
-  };
-  method = (function() {
-    switch (_method) {
-      case 'GET':
-        return 'GET';
-      case 'POST':
-      case 'PUT':
-      case 'DELETE':
-        return 'POST';
-      default:
-        return 'GET';
-    }
-  })();
-  _.extend(data, {
-    _method: _method
-  });
-  return $.ajax({
-    url: url,
-    method: method,
-    data: data,
-    headers: headers,
-    timeout: TIMEOUT,
-    xhrFields: {
-      withCredentials: true,
-      crossDomain: true
-    }
-  });
-};
-
-getRequest = function(url, data) {
-  return request('GET', url, data);
-};
-
-postRequest = function(url, data) {
-  return request('POST', url, data);
-};
-
-putRequest = function(url, data) {
-  return request('PUT', url, data);
-};
-
-deleteRequest = function(url, data) {
-  return request('DELETE', url, data);
-};
-
-Api = {
-  products: {
-    filteredCount: function(filter) {
-      var key, url;
-      url = ApiRoutes.productsFilteredCount(filter);
-      key = 'productsFilteredCount';
-      abortPendingRequests(key);
-      return _pendingRequests[key] = getRequest(url);
-    }
-  }
-};
-
-module.exports = Api;
-
-
-
-},{}],5:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.BasketButton = React.createClass({displayName: 'BasketButton',
-  propTypes: {
-    itemsCount: React.PropTypes.number,
-    cartUrl: React.PropTypes.string.isRequired
-  },
-  getDefaultProps: function() {
-    return {
-      cartUrl: "/cart.html"
-    };
-  },
-  getInitialState: function() {
-    return {
-      itemsCount: this.props.itemsCount || BasketStore.getBasketCount()
-    };
-  },
-  componentDidMount: function() {
-    return BasketStore.addChangeListener(this._onChange);
-  },
-  componentDidUnmount: function() {
-    return BasketStore.removeChangeListener(this._onChange);
-  },
-  _onChange: function() {
-    return this.setState({
-      itemsCount: BasketStore.getBasketCount()
-    });
-  },
-  render: function() {
-    if (this.state.itemsCount > 0) {
-      return BasketButton_Full({cartUrl: this.props.cartUrl, itemsCount: this.state.itemsCount});
-    } else {
-      return BasketButton_Empty({cartUrl: this.props.cartUrl});
-    }
-  }
-});
-
-window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
-  propTypes: {
-    itemsCount: React.PropTypes.object.isRequired,
-    cartUrl: React.PropTypes.object
-  },
-  render: function() {
-    return React.DOM.a({className: "b-cart-trigger b-cart-trigger_full", href: this.props.cartUrl}, React.DOM.span({className: "b-cart-trigger__count"}, this.props.itemsCount));
-  }
-});
-
-window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty',
-  propTypes: {
-    cartUrl: React.PropTypes.object
-  },
-  render: function() {
-    return React.DOM.a({className: "b-cart-trigger", href: this.props.cartUrl});
-  }
-});
-
-
-
-},{}],6:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.BasketPopup = React.createClass({displayName: 'BasketPopup',
-  propTypes: {
-    cartUrl: React.PropTypes.string.isRequired,
-    cartClearUrl: React.PropTypes.string.isRequired,
-    cartItems: React.PropTypes.array.isRequired
-  },
-  getDefaultProps: function() {
-    return {
-      cartUrl: "/cart.html",
-      cartClearUrl: "/cart.html?clear",
-      items: null
-    };
-  },
-  getInitialState: function() {
-    return {
-      isVisible: false,
-      items: null
-    };
-  },
-  componentDidMount: function() {
-    $(document).on("click", this.handleBodyClick);
-    $(document).on("cart:clicked", this.handleCartClicked);
-    $(document).on("keyup", this.handleBodyKey);
-    return BasketStore.addChangeListener(this._onChange);
-  },
-  componentWillUnmount: function() {
-    $(document).off("click", this.handleBodyClick);
-    $(document).off("cart:clicked", this.handleCartClicked);
-    return $(document).off("keyup", this.handleBodyKey);
-  },
-  render: function() {
-    var classNameValue;
-    classNameValue = "b-float-cart";
-    if (this.state.isVisible === false) {
-      classNameValue += " b-float-cart_invisible";
-    }
-    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
-          BasketPopupList({items: this.props.items}), 
-          BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
-        ));
-  },
-  _onChange: function() {
-    this.setState({
-      items: BasketStore.getBasketItems()
-    });
-    return this.handleCartClicked();
-  },
-  handleCartClicked: function(e) {
-    return this.setState({
-      isVisible: true
-    });
-  },
-  handleClick: function(e) {
-    return $(document).trigger("cart:clicked");
-  },
-  handleBodyClick: function() {
-    if (this.state.isVisible) {
-      return this.setState({
-        isVisible: false
-      });
-    }
-  },
-  handleBodyKey: function(e) {
-    if (e.keyCode === 27) {
-      return this.setState({
-        isVisible: false
-      });
-    }
-  }
-});
-
-window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
-  propTypes: {
-    items: React.PropTypes.array
-  },
-  render: function() {
-    var itemsList;
-    if (!this.props.items) {
-      return null;
-    }
-    itemsList = this.props.items.map(function(item) {
-      return BasketPopupItem({key: item.id, item: item});
-    });
-    return React.DOM.div({className: "b-float-cart__item-wrap"}, 
-        itemsList
-      );
-  }
-});
-
-window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
-  propTypes: {
-    product_url: React.PropTypes.string,
-    good_id: React.PropTypes.number,
-    price: React.PropTypes.number,
-    count: React.PropTypes.number,
-    image_url: React.PropTypes.string,
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    article: React.PropTypes.string,
-    count: React.PropTypes.number
-  },
-  render: function() {
-    return React.DOM.div({className: "b-float-cart__item"}, 
-              React.DOM.div({className: "b-float-cart__item__inner"}, 
-                React.DOM.div({className: "b-float-cart__item__img"}, 
-                  React.DOM.a({href: this.props.product_url}, 
-                    React.DOM.img({src: this.props.image_url, alt: this.props.title})
-                  )
-                ), 
-                React.DOM.div({className: "b-float-cart__item__info"}, 
-                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_url}, this.props.title), 
-                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.description), 
-                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.article)
-                ), 
-                React.DOM.div({className: "b-float-cart__item__q"}, this.props.count), 
-                React.DOM.div({className: "b-float-cart__item__price"}, 
-                  React.DOM.div({className: "b-float-cart__item__price-val"}, 
-                    accounting.formatMoney((this.props.price.cents/100).toFixed(2) * this.props.count)
-                  )
-                )
-              )
-            );
-  }
-});
-
-window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl',
-  propTypes: {
-    cartUrl: React.PropTypes.string.isRequired,
-    cartClearUrl: React.PropTypes.string.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-float-cart__control"}, 
-          React.DOM.a({className: "b-float-cart__url b-btn", href: this.props.cartUrl}, "Перейти в корзину"), 
-          React.DOM.a({className: "b-float-cart__clear", href: this.props.cartClearUrl}, "Очистить корзину")
-        );
-  }
-});
-
-
-
-},{}],7:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilter_ShowResultsButton, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilter_ShowResultsButton = React.createClass({displayName: 'CatalogFilter_ShowResultsButton',
-  render: function() {
-    return React.DOM.button({className: "b-btn b-full-filter__submit", 
-            onClick:  this.props.onClick}, 
-      "Показать"
-    );
-  }
-});
-
-module.exports = CatalogFilter_ShowResultsButton;
-
-
-
-},{}],8:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilter, CatalogFilterList, CatalogFilterMixin, CatalogFilter_ShowResultsButton, PropTypes;
-
-CatalogFilterMixin = require('./mixins/catalogFilter');
-
-CatalogFilterList = require('./list');
-
-CatalogFilter_ShowResultsButton = require('./buttons/showResults');
-
-PropTypes = React.PropTypes;
-
-CatalogFilter = React.createClass({displayName: 'CatalogFilter',
-  mixins: [CatalogFilterMixin],
-  propTypes: {
-    options: PropTypes.array.isRequired,
-    selectedOptions: PropTypes.array,
-    filterName: PropTypes.string,
-    categoryId: PropTypes.number
-  },
-  getDefaultProps: function() {
-    return {
-      filterName: 'f'
-    };
-  },
-  render: function() {
-    return React.DOM.div({className: "b-full-filter"}, 
-      React.DOM.input({className: "b-full-filter__toggle", id: "filter-toggle", type: "checkbox"}), 
-      React.DOM.label({className: "b-full-filter__trigger", htmlFor: "filter-toggle"}, 
-        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_open"}, 
-          "Показать фильтр"
-        ), 
-        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_close"}, 
-          "Скрыть фильтр"
-        )
-      ), 
-      CatalogFilterList({
-          options:  this.props.options, 
-          selectedOptions:  this.props.selectedOptions, 
-          categoryId:  this.props.categoryId, 
-          filterName:  this.props.filterName}), 
-      CatalogFilter_ShowResultsButton(null)
-    );
-  }
-});
-
-module.exports = CatalogFilter;
-
-
-
-},{"./buttons/showResults":7,"./list":9,"./mixins/catalogFilter":15}],9:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Radio, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, PropTypes;
-
-CatalogFilterList_SelectedOptions = require('./list/selectedOptions');
-
-CatalogFilterList_Checkbox = require('./list/checkbox');
-
-CatalogFilterList_Radio = require('./list/radio');
-
-CatalogFilterList_Range = require('./list/range');
-
-CatalogFilterList_Color = require('./list/color');
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
-  propTypes: {
-    options: PropTypes.array.isRequired,
-    selectedOptions: PropTypes.array.isRequired,
-    filterName: PropTypes.string.isRequired,
-    categoryId: PropTypes.number
-  },
-  getDefaultProps: function() {
-    return {
-      categoryId: null
-    };
-  },
-  render: function() {
-    return React.DOM.ul({className: "b-full-filter__list-wrap"}, 
-      CatalogFilterList_SelectedOptions({selectedOptions:  this.props.selectedOptions}), 
-       this.renderListItems() 
-    );
-  },
-  renderListItems: function() {
-    var listItems, that;
-    that = this;
-    return listItems = this.props.options.map(function(item, i) {
-      var from, items, paramName, title, to, units, value, valueFrom, valueTo;
-      switch (item.type) {
-        case 'checkbox':
-          title = item.title, paramName = item.paramName, items = item.items;
-          return CatalogFilterList_Checkbox({
-               title: title, 
-               paramName: paramName, 
-               filterName:  that.props.filterName, 
-               items: items, 
-               categoryId:  that.props.categoryId, 
-               key: i });
-        case 'radio':
-          title = item.title, value = item.value, paramName = item.paramName, items = item.items;
-          return CatalogFilterList_Radio({
-               title: title, 
-               value: value, 
-               paramName: paramName, 
-               filterName:  that.props.filterName, 
-               items: items, 
-               categoryId:  that.props.categoryId, 
-               key: i });
-        case 'range':
-          title = item.title, paramName = item.paramName, units = item.units, valueFrom = item.valueFrom, valueTo = item.valueTo, from = item.from, to = item.to;
-          return CatalogFilterList_Range({
-               title: title, 
-               paramName: paramName, 
-               filterName:  that.props.filterName, 
-               units: units, 
-               valueFrom: valueFrom, 
-               valueTo: valueTo, 
-               from: from, 
-               to: to, 
-               categoryId:  that.props.categoryId, 
-               key: i });
-        case 'color':
-          title = item.title, paramName = item.paramName, items = item.items;
-          return CatalogFilterList_Color({
-              title: title, 
-              paramName: paramName, 
-              filterName:  that.props.filterName, 
-              items: items, 
-              categoryId:  that.props.categoryId, 
-              key: i });
-        default:
-          return typeof console.warn === "function" ? console.warn('Unknown item type of CatalogFilterList component', item) : void 0;
-      }
-    });
-  }
-});
-
-module.exports = CatalogFilterList;
-
-
-
-},{"./list/checkbox":10,"./list/color":11,"./list/radio":12,"./list/range":13,"./list/selectedOptions":14}],10:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList_Checkbox, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_Checkbox',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    categoryId: PropTypes.number.isRequired
-  },
-  render: function() {
-    return React.DOM.li({className: "b-full-filter__item"}, 
-      React.DOM.div({className: "b-full-filter__item__title"}, 
-         this.props.title
-      ), 
-       this.renderListItems() 
-    );
-  },
-  renderListItems: function() {
-    var listItems, that;
-    that = this;
-    listItems = this.props.items.map(function(item, i) {
-      return React.DOM.label({className: "b-cbox", key: i }, 
-        React.DOM.input({type: "checkbox", 
-               name:  that.getFieldName(item), 
-               defaultChecked:  item.checked, 
-               className: "b-cbox__native", 
-               onChange:  that.handleChange}), 
-        React.DOM.div({className: "b-cbox__val"}, 
-           item.name
-        )
-      );
-    });
-    return React.DOM.div({className: "b-full-filter__widget"}, 
-              listItems
-            );
-  },
-  getFieldName: function(item) {
-    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
-  },
-  handleChange: function(e) {
-    var elRect, filter, offsetLeft, position;
-    elRect = e.target.getBoundingClientRect();
-    offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
-    position = {
-      left: elRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
-  }
-});
-
-module.exports = CatalogFilterList_Checkbox;
-
-
-
-},{}],11:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList_Color, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Color',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    categoryId: PropTypes.number.isRequired
-  },
-  render: function() {
-    return React.DOM.li({className: "b-full-filter__item"}, 
-      React.DOM.div({className: "b-full-filter__item__title"}, 
-         this.props.title
-      ), 
-       this.renderListItems() 
-    );
-  },
-  renderListItems: function() {
-    var listItems, that;
-    that = this;
-    listItems = this.props.items.map(function(item, i) {
-      return React.DOM.label({className: "b-cbox b-cbox_color", key: i }, 
-        React.DOM.input({type: "checkbox", 
-               name:  that.getFieldName(item), 
-               defaultChecked:  item.checked, 
-               title:  item.name, 
-               className: "b-cbox__native", 
-               onChange:  that.handleChange}), 
-        React.DOM.div({style: { "background-color": item.hexCode}, 
-             className: "b-cbox__val"})
-      );
-    });
-    return React.DOM.div({ref: "list", 
-                 className: "b-full-filter__widget"}, 
-              listItems
-            );
-  },
-  getFieldName: function(item) {
-    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
-  },
-  handleChange: function(e) {
-    var elRect, filter, listRect, offsetLeft, position;
-    elRect = e.target.getBoundingClientRect();
-    listRect = this.refs.list.getDOMNode().getBoundingClientRect();
-    offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
-    position = {
-      left: listRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
-  }
-});
-
-module.exports = CatalogFilterList_Color;
-
-
-
-},{}],12:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList_Radio, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Radio',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    categoryId: PropTypes.number.isRequired
-  },
-  render: function() {
-    return React.DOM.li({className: "b-full-filter__item"}, 
-      React.DOM.div({className: "b-full-filter__item__title"}, 
-         this.props.title
-      ), 
-       this.renderListItems() 
-    );
-  },
-  renderListItems: function() {
-    var listItems, that;
-    that = this;
-    listItems = this.props.items.map(function(item, i) {
-      return React.DOM.label({className: "b-radio", key: i }, 
-        React.DOM.input({type: "radio", 
-               name:  that.getFieldName(item), 
-               defaultChecked:  item.paramValue == that.props.value, 
-               value:  item.paramValue, 
-               className: "b-radio__native", 
-               onChange:  that.handleChange}), 
-        React.DOM.div({className: "b-radio__val"}, 
-           item.name
-        )
-      );
-    });
-    return React.DOM.div({className: "b-full-filter__widget"}, 
-              listItems
-            );
-  },
-  getFieldName: function(item) {
-    return this.props.filterName + "[" + this.props.paramName + "]";
-  },
-  handleChange: function(e) {
-    var elRect, filter, offsetLeft, position;
-    elRect = e.target.getBoundingClientRect();
-    offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
-    position = {
-      left: elRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
-  }
-});
-
-module.exports = CatalogFilterList_Radio;
-
-
-
-},{}],13:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList_Range, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Range',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
-    units: PropTypes.string,
-    valueFrom: PropTypes.number,
-    valueTo: PropTypes.number,
-    from: PropTypes.number.isRequired,
-    to: PropTypes.number.isRequired,
-    categoryId: PropTypes.number.isRequired
-  },
-  getInitialState: function() {
-    return {
-      from: this.props.valueFrom || this.props.from,
-      to: this.props.valueTo || this.props.to
-    };
-  },
-  componentDidMount: function() {
-    var slider;
-    slider = this.refs.slider.getDOMNode();
-    $(slider).noUiSlider({
-      start: [this.state.from, this.state.to],
-      range: {
-        min: this.props.from,
-        max: this.props.to
-      },
-      connect: true
-    });
-    $(slider).on('slide', this.handleSlide);
-    return $(slider).on('change', this.handleChange);
-  },
-  componentWillUnmount: function() {
-    var slider;
-    slider = this.refs.slider.getDOMNode();
-    $(slider).off('slide', this.handleSlide);
-    $(slider).off('change', this.handleChange);
-    return $(slider).destroy();
-  },
-  render: function() {
-    return React.DOM.li({className: "b-full-filter__item b-full-filter__item_price"}, 
-      React.DOM.div({className: "b-full-filter__item__title"}, 
-         this.props.title
-      ), 
-      React.DOM.div({className: "b-full-filter__widget", 
-           onClick:  this.handleClick}, 
-        React.DOM.div({className: "b-full-filter__slider"}, 
-          React.DOM.div({ref: "rangeValue", 
-               className: "b-full-filter__slider__value"}, 
-             this.state.from, 
-            React.DOM.span({className: "slider-divider"}, " – "), 
-             this.state.to, " ", React.DOM.span({dangerouslySetInnerHTML: { __html: this.props.units}})
-          ), 
-          React.DOM.div({ref: "slider", 
-               className: "b-full-filter__slider__embed"})
-        )
-      ), 
-      React.DOM.input({type: "hidden", 
-             name:  this.props.filterName + '[' + this.props.paramName + '][from]', 
-             value:  this.state.from}), 
-      React.DOM.input({type: "hidden", 
-             name:  this.props.filterName + '[' + this.props.paramName + '][to]', 
-             value:  this.state.to})
-    );
-  },
-  handleSlide: function(e, range) {
-    return this.setState({
-      from: parseInt(range[0]),
-      to: parseInt(range[1])
-    });
-  },
-  handleChange: function() {
-    var elRect, filter, offsetLeft, position;
-    elRect = this.refs.rangeValue.getDOMNode().getBoundingClientRect();
-    offsetLeft = 15;
-    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
-    position = {
-      left: elRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
-  }
-});
-
-module.exports = CatalogFilterList_Range;
-
-
-
-},{}],14:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var CatalogFilterList_SelectedOptions, PropTypes;
-
-PropTypes = React.PropTypes;
-
-CatalogFilterList_SelectedOptions = React.createClass({displayName: 'CatalogFilterList_SelectedOptions',
-  propTypes: {
-    selectedOptions: PropTypes.array.isRequired
-  },
-  render: function() {
-    if (this.hasOptions()) {
-      return React.DOM.li({className: "b-full-filter__item"}, 
-        React.DOM.div({className: "b-full-filter__item__title"}, "Текущий выбор"), 
-         this.renderListItems() 
-      );
-    } else {
-      return null;
-    }
-  },
-  renderListItems: function() {
-    var listItems, selectedOptions;
-    selectedOptions = this;
-    listItems = this.props.selectedOptions.map(function(item, i) {
-      return React.DOM.span({className: "b-full-filter__value", 
-             onClick:  selectedOptions.removeOption.bind(null, item.url), 
-             key: i }, 
-         item.name
-      );
-    });
-    return React.DOM.div({className: "b-full-filter__widget"}, 
-              listItems 
-            );
-  },
-  hasOptions: function() {
-    return this.props.selectedOptions.length;
-  },
-  removeOption: function(url) {
-    return window.location = url;
-  }
-});
-
-module.exports = CatalogFilterList_SelectedOptions;
-
-
-
-},{}],15:[function(require,module,exports){
-var CatalogFilterMixin;
-
-CatalogFilterMixin = {
-  getDefaultProps: function() {
-    return {
-      selectedOptions: [
-        {
-          name: 'Цена от 20 000 до 5000 Р',
-          url: '?filter_without_price'
-        }, {
-          name: 'Категория: гибридные',
-          url: '?filter_without_category'
-        }, {
-          name: 'Материал: карбон',
-          url: '?filter_without_material'
-        }
-      ],
-      options: [
-        {
-          title: 'Показывать',
-          type: 'radio',
-          paramName: 'availability',
-          value: 'all',
-          items: [
-            {
-              name: 'Все',
-              paramValue: 'all'
-            }, {
-              name: 'В наличии',
-              paramValue: 'in-stock'
-            }, {
-              name: 'Под заказ',
-              paramValue: 'on-request'
-            }, {
-              name: 'Распродажа',
-              paramValue: 'sale'
-            }
-          ]
-        }, {
-          title: 'Ценовой диапазон',
-          type: 'range',
-          paramName: 'price',
-          units: '&#x20BD;',
-          valueFrom: 20322,
-          valueTo: 35023,
-          from: 10000,
-          to: 50000
-        }, {
-          title: 'Показывать',
-          type: 'checkbox',
-          paramName: 'type',
-          items: [
-            {
-              name: 'Все',
-              paramValue: 'all',
-              checked: true
-            }, {
-              name: 'Гибридные',
-              paramValue: 'hybrid',
-              checked: false
-            }, {
-              name: 'Складные',
-              paramValue: 'foldable',
-              checked: true
-            }, {
-              name: 'Электро',
-              paramValue: 'electro',
-              checked: false
-            }
-          ]
-        }, {
-          title: 'Цвет',
-          type: 'color',
-          paramName: 'color',
-          items: [
-            {
-              name: 'Красный',
-              paramValue: 'red',
-              hexCode: '#fe2a2a',
-              checked: false
-            }, {
-              name: 'Оранжевый',
-              paramValue: 'orange',
-              hexCode: '#feac2a',
-              checked: true
-            }, {
-              name: 'Голубой',
-              paramValue: 'cyan',
-              hexCode: '#2fe1ec',
-              checked: false
-            }, {
-              name: 'Серый',
-              paramValue: 'grey',
-              hexCode: '#aeaeae',
-              checked: true
-            }
-          ]
-        }, {
-          title: 'Материал рамы',
-          type: 'checkbox',
-          paramName: 'frame-material',
-          items: [
-            {
-              name: 'Сталь',
-              paramValue: 'steal',
-              checked: false
-            }, {
-              name: 'Карбон',
-              paramValue: 'carbon',
-              checked: true
-            }, {
-              name: 'Алюминий',
-              paramValue: 'aluminum',
-              checked: false
-            }
-          ]
-        }, {
-          title: 'Модельный ряд',
-          type: 'checkbox',
-          paramName: 'series',
-          items: [
-            {
-              name: '2014',
-              paramValue: '2014',
-              checked: false
-            }, {
-              name: '2013',
-              paramValue: '2013',
-              checked: false
-            }, {
-              name: '2012',
-              paramValue: '2012',
-              checked: true
-            }
-          ]
-        }
-      ]
-    };
-  }
-};
-
-module.exports = CatalogFilterMixin;
-
-
-
-},{}],16:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var Api, ERROR_STATE, FilteredCountTooltip, LOADED_STATE, LOADING_STATE, PropTypes, TIMEOUT;
-
-Api = require('../../../api/api');
-
-PropTypes = React.PropTypes;
-
-TIMEOUT = 3000;
-
-LOADING_STATE = 'loading';
-
-LOADED_STATE = 'loaded';
-
-ERROR_STATE = 'error';
-
-FilteredCountTooltip = React.createClass({displayName: 'FilteredCountTooltip',
-  propTypes: {
-    title: PropTypes.string,
-    filter: PropTypes.string.isRequired,
-    timeout: PropTypes.number,
-    position: PropTypes.shape({
-      left: PropTypes.number.isRequired,
-      top: PropTypes.number.isRequired
-    }).isRequired
-  },
-  getDefaultProps: function() {
-    return {
-      title: 'Показать',
-      timeout: TIMEOUT,
-      position: {
-        left: 0,
-        top: 0
-      }
-    };
-  },
-  getInitialState: function() {
-    return {
-      currentState: LOADING_STATE,
-      count: null
-    };
-  },
-  componentDidMount: function() {
-    this.timeout = setTimeout(this.props.onClose, this.props.timeout);
-    return Api.products.filteredCount(this.props.filter).then((function(_this) {
-      return function(count) {
-        return _this.setState({
-          currentState: LOADED_STATE,
-          count: count
-        });
-      };
-    })(this)).fail(this.activateErrorState);
-  },
-  componentWillUnmount: function() {
-    if (this.timeout != null) {
-      return clearTimeout(this.timeout);
-    }
-  },
-  render: function() {
-    return React.DOM.div({style:  this.getStyles(), 
-          className: "b-tooltip"}, 
-       this.renderContent() 
-    );
-  },
-  renderContent: function() {
-    switch (this.state.currentState) {
-      case LOADING_STATE:
-        return 'Загрузка..';
-      case ERROR_STATE:
-        return 'Ошибка загрузки:(';
-      case LOADED_STATE:
-        return React.DOM.span(null, 
-          "Выбрано вариантов: ",  this.state.count, " ", React.DOM.a({href:  '?' + this.props.filter},  this.props.title)
-        );
-    }
-  },
-  activateErrorState: function() {
-    return this.setState({
-      currentState: ERROR_STATE
-    });
-  },
-  getStyles: function() {
-    var left, ref, top;
-    ref = this.props.position, left = ref.left, top = ref.top;
-    return {
-      left: left,
-      top: top
-    };
-  }
-});
-
-module.exports = FilteredCountTooltip;
-
-
-
-},{"../../../api/api":4}],17:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.BackgroundList = React.createClass({displayName: 'BackgroundList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    bgSet: React.PropTypes.object.isRequired,
-    value: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      bgSet: {
-        'bg-pikachu': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
-        'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
-      }
-    };
-  },
-  handleChange: function(background) {
-    var base;
-    return typeof (base = this.props).onChange === "function" ? base.onChange(background) : void 0;
-  },
-  render: function() {
-    var bgSetList;
-    bgSetList = _.map(this.props.bgSet, (function(_this) {
-      return function(background, key) {
-        var checked;
-        checked = false;
-        checked = _this.props.value && _this.props.value === key;
-        return BackgroundListElement({name: _this.props.name, checked: checked, background: background, key: key, onChange: _this.handleChange.bind(background, key)});
-      };
-    })(this));
-    return React.DOM.div(null, bgSetList);
-  }
-});
-
-window.BackgroundListElement = React.createClass({displayName: 'BackgroundListElement',
-  propTypes: {
-    background: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    checked: React.PropTypes.bool.isRequired
-  },
-  render: function() {
-    return React.DOM.label({className: "b-design-option__color b-design-option__color_img"}, 
-        React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.background, onChange: this.props.onChange}), 
-        React.DOM.span({className: "b-design-option__color__ind"}, React.DOM.img({src: this.props.background, alt: ""}))
-      );
-  }
-});
-
-
-
-},{}],18:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.ColorList = React.createClass({displayName: 'ColorList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    colorSet: React.PropTypes.object.isRequired,
-    value: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      colorSet: {
-        'bg-dark': '#000',
-        'bg-white': '#fff',
-        'layer-dark': '#000',
-        'layer-light': '#fff'
-      }
-    };
-  },
-  handleChange: function(color) {
-    var base;
-    return typeof (base = this.props).onChange === "function" ? base.onChange(color) : void 0;
-  },
-  render: function() {
-    var colorSetList;
-    colorSetList = _.map(this.props.colorSet, (function(_this) {
-      return function(color, key) {
-        var checked;
-        checked = false;
-        checked = _this.props.value && _this.props.value === key;
-        return ColorSelect({name: _this.props.name, checked: checked, color: color, colorName: key, key: key, onChange: _this.handleChange.bind(color, key)});
-      };
-    })(this));
-    return React.DOM.div(null, colorSetList);
-  }
-});
-
-window.ColorSelect = React.createClass({displayName: 'ColorSelect',
-  propTypes: {
-    color: React.PropTypes.string.isRequired,
-    colorName: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    checked: React.PropTypes.bool.isRequired
-  },
-  render: function() {
-    var divStyle;
-    divStyle = {
-      'background-color': this.props.color
-    };
-    return React.DOM.label({className: "b-design-option__color"}, 
-      React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.colorName, onChange: this.props.onChange}), 
-      React.DOM.span({className: "b-design-option__color__ind", style: divStyle})
-      );
-  }
-});
-
-
-
-},{}],19:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.Designer = React.createClass({displayName: 'Designer',
-  propTypes: {
-    options: React.PropTypes.array.isRequired
-  },
-  getDefaultProps: function() {
-    return {
-      options: [
-        {
-          "type": "ColorList",
-          "name": "цвет страницы",
-          "props": {
-            "name": "background_color",
-            "colorSet": {
-              'dark': '#000',
-              'white': '#fff',
-              'gray': '#eee'
-            },
-            "value": "white"
-          }
-        }, {
-          "type": "BgList",
-          "name": "фон страницы",
-          "props": {
-            "name": "background_image",
-            "bgSet": {
-              'pokeball': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg',
-              'bg2': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg'
-            },
-            "value": "pokeball"
-          }
-        }, {
-          "type": "FontList",
-          "name": "шрифт",
-          "props": {
-            "name": "font_family",
-            "value": "gotham"
-          }
-        }, {
-          "type": "ValueSlider",
-          "name": "размер шрифта",
-          "props": {
-            "name": "font_size",
-            "step": 1,
-            "range": {
-              "min": 13,
-              "max": 15
-            },
-            "value": 14
-          }
-        }, {
-          "type": "Toggle",
-          "name": "главная страница",
-          "props": {
-            "name": "banner",
-            "label": "большой баннер",
-            "value": true
-          }
-        }, {
-          "type": "LayoutList",
-          "name": "лейаут страницы",
-          "props": {
-            "name": "layout",
-            "layoutSet": {
-              'one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
-              'two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
-            },
-            "value": "one"
-          }
-        }
-      ]
-    };
-  },
-  handleChange: function(option, newValue) {
-    var newState;
-    newState = {};
-    newState[option.props.name] = newValue;
-    return this.setState(newState);
-  },
-  _createDesignComponent: function(options) {
-    switch (options.type) {
-      case 'ColorList':
-        return DesignerElementLayout({name: options.name, type: "color", set: options.props.colorSet, value: options.props.value}, 
-          ColorList({name: options.props.name, colorSet: options.props.colorSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-      case 'BgList':
-        return DesignerElementLayout({name: options.name, type: "image", set: options.props.bgSet, value: options.props.value}, 
-          BackgroundList({name: options.props.name, bgSet: options.props.bgSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-      case 'LayoutList':
-        return DesignerElementLayout({name: options.name, type: "simplified"}, 
-          LayoutList({name: options.props.name, layoutSet: options.props.layoutSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-      case 'FontList':
-        return DesignerElementLayout({name: options.name, type: "simplified"}, 
-          FontList({name: options.props.name, fontSet: options.props.fontSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-      case 'ValueSlider':
-        return DesignerElementLayout({name: options.name, type: "simplified"}, 
-          ValueSlider({name: options.props.name, step: options.props.step, range: options.props.range, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-      case 'Toggle':
-        return DesignerElementLayout({name: options.name, type: "simplified"}, 
-          Toggle({name: options.props.name, value: options.props.value, onChange: this.handleChange.bind(this, options)})
-        );
-    }
-  },
-  render: function() {
-    var designItems;
-    designItems = _.map(this.props.options, (function(_this) {
-      return function(option) {
-        return _this._createDesignComponent(option);
-      };
-    })(this));
-    return React.DOM.div({className: "b-design-option"}, 
-        React.DOM.div({className: "b-design-option__title"}, "Управление дизайном"), 
-        React.DOM.span({className: "b-design-option__close"}, "Закрыть"), 
-        React.DOM.div({className: "b-design-option__body"}, designItems), 
-        React.DOM.button({type: "button", className: "b-design-option__save"}, "Сохранить")
-      );
-  }
-});
-
-window.DesignerElementLayout = React.createClass({displayName: 'DesignerElementLayout',
-  render: function() {
-    if ((this.props.type != null) && this.props.type === 'simplified') {
-      return React.DOM.div({className: "b-design-option__item"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, this.props.children)
-        );
-    } else {
-      return React.DOM.div({className: "b-design-option__item"}, 
-          React.DOM.div({className: "b-design-option__item__current-params"}, 
-            React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-            DesignerElementValueLayout({value: this.props.value, type: this.props.type, set: this.props.set})
-          ), 
-          React.DOM.div({className: "b-design-option__item__available-params"}, this.props.children)
-          );
-    }
-  }
-});
-
-window.DesignerElementValueLayout = React.createClass({displayName: 'DesignerElementValueLayout',
-  propTypes: {
-    type: React.PropTypes.string.isRequired,
-    set: React.PropTypes.array,
-    value: React.PropTypes.string
-  },
-  render: function() {
-    var divStyle, value;
-    value = this.props.set[this.props.value];
-    if (this.props.type === 'color') {
-      divStyle = {
-        'background-color': value
-      };
-      return React.DOM.div({className: "b-design-option__item__val"}, 
-          React.DOM.div({className: "b-design-option__color__ind", style: divStyle})
-        );
-    }
-    if (this.props.type === 'image') {
-      return React.DOM.div({className: "b-design-option__item__val"}, 
-          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
-            React.DOM.div({className: "b-design-option__color__ind"}, 
-              React.DOM.img({src: value, alt: ""})
-            )
-          )
-        );
-    }
-    return null;
-  }
-});
-
-
-
-},{}],20:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.FontList = React.createClass({displayName: 'FontList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    fontSet: React.PropTypes.object.isRequired,
-    value: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      fontSet: {
-        'default': 'default',
-        'verdana': 'verdana',
-        'gotham': 'gotham',
-        'apercu': 'apercu'
-      }
-    };
-  },
-  handleChange: function(font) {
-    var base;
-    return typeof (base = this.props).onChange === "function" ? base.onChange(font) : void 0;
-  },
-  render: function() {
-    var fontSetList;
-    fontSetList = _.map(this.props.fontSet, (function(_this) {
-      return function(font, key) {
-        var checked;
-        checked = false;
-        checked = _this.props.value && _this.props.value === key;
-        return FontSelect({font: font, key: font, name: _this.props.name, checked: checked, onChange: _this.handleChange.bind(key, font)});
-      };
-    })(this));
-    return React.DOM.div(null, fontSetList);
-  }
-});
-
-window.FontSelect = React.createClass({displayName: 'FontSelect',
-  propTypes: {
-    font: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    checked: React.PropTypes.bool.isRequired
-  },
-  render: function() {
-    var className;
-    className = "b-design-option__type b-design-option__type_" + this.props.font;
-    return React.DOM.label({className: className}, 
-      React.DOM.input({type: "radio", onChange: this.props.onChange, defaultChecked: this.props.checked, name: this.props.name, value: this.props.font}), 
-      React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
-      );
-  }
-});
-
-
-
-},{}],21:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.LayoutList = React.createClass({displayName: 'LayoutList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    layoutSet: React.PropTypes.object.isRequired,
-    value: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      layoutSet: {
-        'layout-one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
-        'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
-      }
-    };
-  },
-  handleChange: function(layout) {
-    var base;
-    return typeof (base = this.props).onChange === "function" ? base.onChange(layout) : void 0;
-  },
-  render: function() {
-    var layoutSetList;
-    layoutSetList = _.map(this.props.layoutSet, (function(_this) {
-      return function(layout, key) {
-        var checked;
-        checked = false;
-        checked = _this.props.value && _this.props.value === key;
-        return LayoutSelect({name: _this.props.name, layoutName: key, layout: layout, key: key, checked: checked, onChange: _this.handleChange.bind(layout, key)});
-      };
-    })(this));
-    return React.DOM.div(null, layoutSetList);
-  }
-});
-
-window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
-  propTypes: {
-    layout: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    checked: React.PropTypes.bool.isRequired
-  },
-  render: function() {
-    return React.DOM.label({className: "b-design-option__layout"}, 
-        React.DOM.input({onChange: this.props.onChange, type: "radio", defaultChecked: this.props.checked, value: this.props.layout, name: this.props.name}), 
-        React.DOM.span({className: "b-design-option__layout__ind"}, this.props.layoutName)
-      );
-  }
-});
-
-
-
-},{}],22:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.Toggle = React.createClass({displayName: 'Toggle',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    value: React.PropTypes.bool
-  },
-  getDefaultProps: function() {
-    return {
-      value: false
-    };
-  },
-  handleChange: function(e) {
-    var base, toggleState;
-    toggleState = $(e.target).prop('checked');
-    return typeof (base = this.props).onChange === "function" ? base.onChange(toggleState) : void 0;
-  },
-  render: function() {
-    return React.DOM.label({className: "b-design-option__cbox"}, 
-      React.DOM.input({type: "checkbox", defaultChecked: this.props.value, onChange: this.handleChange}), 
-      this.props.name
-    );
-  }
-});
-
-
-
-},{}],23:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.ValueSlider = React.createClass({displayName: 'ValueSlider',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    range: React.PropTypes.object.isRequired,
-    step: React.PropTypes.number.isRequired,
-    start: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      range: {
-        min: 0,
-        max: 1
-      },
-      value: 0,
-      step: .1
-    };
-  },
-  componentDidMount: function() {
-    var domNode;
-    domNode = $(this.getDOMNode());
-    domNode.noUiSlider({
-      start: this.props.value,
-      step: this.props.step,
-      range: this.props.range
-    });
-    return domNode.on({
-      slide: (function(_this) {
-        return function() {
-          var base, currentValue;
-          currentValue = domNode.val();
-          _this.setState({
-            value: currentValue
-          });
-          return typeof (base = _this.props).onChange === "function" ? base.onChange(currentValue) : void 0;
-        };
-      })(this)
-    });
-  },
-  render: function() {
-    return React.DOM.div(null);
-  }
-});
-
-
-
-},{}],24:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var BUTTON_TEXT, DesignSettings_SaveButton, PropTypes;
-
-PropTypes = React.PropTypes;
-
-BUTTON_TEXT = 'Сохранить';
-
-DesignSettings_SaveButton = React.createClass({displayName: 'DesignSettings_SaveButton',
-  propTypes: {
-    onClick: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.button({className: "b-design-option__save", 
-             onClick:  this.props.onClick}, 
-      BUTTON_TEXT 
-    );
-  }
-});
-
-module.exports = DesignSettings_SaveButton;
-
-
-
-},{}],25:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_Checkbox, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_Checkbox = React.createClass({displayName: 'DesignSettings_Checkbox',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.array.isRequired,
-    items: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-       this.renderParamList() 
-    );
-  },
-  renderParamList: function() {
-    var listItems, that;
-    that = this;
-    listItems = _.map(this.props.items, function(value, key) {
-      return React.DOM.label({className: "b-design-option__cbox", 
-              key: key }, 
-        React.DOM.input({type: "checkbox", 
-               name: value, 
-               defaultChecked:  that.isItemChecked(key), 
-               onChange:  that.handleChange.bind(null, key) }), 
-        value 
-      );
-    });
-    return React.DOM.div({className: "b-design-option__item__val"}, 
-              listItems 
-            );
-  },
-  isItemChecked: function(key) {
-    var result;
-    result = this.props.value.filter(function(item) {
-      return item === key;
-    });
-    return !!result.length;
-  },
-  handleChange: function(key, e) {
-    var index, newValue;
-    newValue = this.props.value.slice(0);
-    index = newValue.indexOf(key);
-    if (e.target.checked) {
-      if (index === -1) {
-        newValue.push(key);
-      }
-    } else {
-      if (index !== -1) {
-        newValue.splice(index, 1);
-      }
-    }
-    return this.props.onChange(newValue);
-  }
-});
-
-module.exports = DesignSettings_Checkbox;
-
-
-
-},{}],26:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_Color, DesignSettings_ColorCustomItem, DesignSettings_ColorItem, PropTypes;
-
-DesignSettings_ColorItem = require('./color/item');
-
-DesignSettings_ColorCustomItem = require('./color/customItem');
-
-PropTypes = React.PropTypes;
-
-DesignSettings_Color = React.createClass({displayName: 'DesignSettings_Color',
-  propTypes: {
-    value: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    var selectedItemStyles;
-    selectedItemStyles = {
-      backgroundColor: this.props.value
-    };
-    return React.DOM.div({className: "b-design-option__item"}, 
-              React.DOM.div({className: "b-design-option__item__current-params"}, 
-                React.DOM.span({className: "b-design-option__item__name"}, 
-                   this.props.title
-                ), 
-                React.DOM.div({className: "b-design-option__item__val"}, 
-                  React.DOM.div({className: "b-design-option__color__ind", 
-                       style: selectedItemStyles })
-                )
-              ), 
-               this.renderParamList() 
-            );
-  },
-  renderParamList: function() {
-    var listItems, that;
-    that = this;
-    listItems = _.map(this.props.items, function(hexCode) {
-      return DesignSettings_ColorItem({
-          hexCode: hexCode, 
-          checked:  hexCode == that.props.value, 
-          onChange:  that.handleChange, 
-          key: hexCode });
-    });
-    return React.DOM.div({className: "b-design-option__item__available-params"}, 
-              listItems 
-            );
-  },
-  handleChange: function(hexCode) {
-    return this.props.onChange(hexCode);
-  }
-});
-
-module.exports = DesignSettings_Color;
-
-
-
-},{"./color/customItem":27,"./color/item":28}],27:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_ColorCustomItem, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_ColorCustomItem = React.createClass({displayName: 'DesignSettings_ColorCustomItem',
-  propTypes: {
-    hexCode: PropTypes.string.isRequired,
-    checked: PropTypes.bool.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    var itemStyles;
-    itemStyles = {
-      backgroundColor: this.props.hexCode
-    };
-    return React.DOM.label({className: "b-design-option__color"}, 
-              React.DOM.input({type: "radio", 
-                     checked:  this.props.checked, 
-                     onChange:  this.handleChange}), 
-             React.DOM.span({className: "b-design-option__color__ind", 
-                   style: itemStyles })
-           );
-  },
-  handleChange: function() {
-    return this.props.onChange(this.props.hexCode);
-  }
-});
-
-module.exports = DesignSettings_ColorCustomItem;
-
-
-
-},{}],28:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_ColorItem, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_ColorItem = React.createClass({displayName: 'DesignSettings_ColorItem',
-  propTypes: {
-    hexCode: PropTypes.string.isRequired,
-    checked: PropTypes.bool.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    var itemStyles;
-    itemStyles = {
-      backgroundColor: this.props.hexCode
-    };
-    return React.DOM.label({className: "b-design-option__color"}, 
-              React.DOM.input({type: "radio", 
-                     checked:  this.props.checked, 
-                     onChange:  this.handleChange}), 
-             React.DOM.span({className: "b-design-option__color__ind", 
-                   style: itemStyles })
-           );
-  },
-  handleChange: function() {
-    return this.props.onChange(this.props.hexCode);
-  }
-});
-
-module.exports = DesignSettings_ColorItem;
-
-
-
-},{}],29:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_Range, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_Range = React.createClass({displayName: 'DesignSettings_Range',
-  propTypes: {
-    value: PropTypes.number.isRequired,
-    from: PropTypes.number,
-    to: PropTypes.number,
-    step: PropTypes.number,
-    onChange: PropTypes.func.isRequired
-  },
-  getDefaultProps: function() {
-    return {
-      from: 0,
-      to: 1,
-      step: .1
-    };
-  },
-  componentDidMount: function() {
-    var slider;
-    slider = this.getDOMNode();
-    $(slider).noUiSlider({
-      start: this.props.value,
-      step: this.props.step,
-      range: {
-        min: this.props.from,
-        max: this.props.to
-      }
-    });
-    return $(slider).on('change', this.handleChange);
-  },
-  componentWillUnmount: function() {
-    var slider;
-    slider = this.getDOMNode();
-    $(slider).off('change', this.handleChange);
-    return $(slider).destroy();
-  },
-  render: function() {
-    return React.DOM.div(null);
-  },
-  handleChange: function(e, value) {
-    return this.props.onChange(parseFloat(value));
-  }
-});
-
-module.exports = DesignSettings_Range;
-
-
-
-},{}],30:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DESIGN_SETTINGS_TITLE, DesignSettings, DesignSettingsMixin, DesignSettings_Checkbox, DesignSettings_Color, DesignSettings_FeedOpacity, DesignSettings_Font, DesignSettings_FontSize, DesignSettings_PageBackground, DesignSettings_ProductLayout, DesignSettings_ProductsInRow, DesignSettings_SaveButton, PropTypes, changeAlpha, changeBackgroundColor, hexToRgb, jss, setDesignClass;
-
-jss = require('jss');
-
-DesignSettingsMixin = require('./mixins/designSettings');
-
-DesignSettings_Color = require('./common/color');
-
-DesignSettings_Checkbox = require('./common/checkbox');
-
-DesignSettings_SaveButton = require('./buttons/save');
-
-DesignSettings_PageBackground = require('./pageBackground');
-
-DesignSettings_FeedOpacity = require('./feedOpacity');
-
-DesignSettings_Font = require('./font');
-
-DesignSettings_FontSize = require('./fontSize');
-
-DesignSettings_ProductLayout = require('./productLayout');
-
-DesignSettings_ProductsInRow = require('./productsInRow');
-
-PropTypes = React.PropTypes;
-
-DESIGN_SETTINGS_TITLE = 'Управление дизайном';
-
-DesignSettings = React.createClass({displayName: 'DesignSettings',
-  mixins: [DesignSettingsMixin],
-  propTypes: {
-    pageColor: PropTypes.object.isRequired,
-    pageBackground: PropTypes.object.isRequired,
-    feedColor: PropTypes.object.isRequired,
-    feedOpacity: PropTypes.object.isRequired,
-    font: PropTypes.object.isRequired,
-    fontColor: PropTypes.object.isRequired,
-    fontSize: PropTypes.object.isRequired,
-    activeElementsColor: PropTypes.object.isRequired,
-    productLayout: PropTypes.object.isRequired,
-    catalog: PropTypes.object.isRequired,
-    productsInRow: PropTypes.object.isRequired,
-    mainPage: PropTypes.object.isRequired
-  },
-  getInitialState: function() {
-    var initialSettings;
-    initialSettings = _.reduce(this.props, (function(_this) {
-      return function(result, n, key) {
-        result[key] = _this.props[key].value;
-        return result;
-      };
-    })(this), {});
-    return {
-      settings: initialSettings
-    };
-  },
-  componentDidMount: function() {
-    this.sheet = jss.createStyleSheet({}, {
-      named: false,
-      link: true
-    }).attach();
-    window.sheet = this.sheet;
-    return this.sheet.element.setAttribute('design-settings-sheet', '');
-  },
-  componentWillUnmount: function() {
-    this.sheet.detach();
-    return this.sheet = null;
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option"}, 
-      React.DOM.div({className: "b-design-option__title"}, 
-        DESIGN_SETTINGS_TITLE 
-      ), 
-      React.DOM.div({className: "b-design-option__close"}), 
-      React.DOM.div({className: "b-design-option__body"}, 
-        DesignSettings_Color({
-            value:  this.state.settings.pageColor, 
-            title:  this.props.pageColor.title, 
-            items:  this.props.pageColor.items, 
-            onChange:  this.updateSettings.bind(null, this.props.pageColor.optionName) }), 
-        DesignSettings_PageBackground({
-            value:  this.state.settings.pageBackground, 
-            title:  this.props.pageBackground.title, 
-            items:  this.props.pageBackground.items, 
-            onChange:  this.updateSettings.bind(null, this.props.pageBackground.optionName) }), 
-        DesignSettings_Color({
-            value:  this.state.settings.feedColor, 
-            title:  this.props.feedColor.title, 
-            items:  this.props.feedColor.items, 
-            onChange:  this.updateSettings.bind(null, this.props.feedColor.optionName) }), 
-        DesignSettings_FeedOpacity({
-            value:  this.state.settings.feedOpacity, 
-            title:  this.props.feedOpacity.title, 
-            onChange:  this.updateSettings.bind(null, this.props.feedOpacity.optionName) }), 
-        DesignSettings_Color({
-            value:  this.state.settings.fontColor, 
-            title:  this.props.fontColor.title, 
-            items:  this.props.fontColor.items, 
-            onChange:  this.updateSettings.bind(null, this.props.fontColor.optionName) }), 
-        DesignSettings_Color({
-            value:  this.state.settings.activeElementsColor, 
-            title:  this.props.activeElementsColor.title, 
-            items:  this.props.activeElementsColor.items, 
-            onChange:  this.updateSettings.bind(null, this.props.activeElementsColor.optionName) }), 
-        DesignSettings_Font({
-            value:  this.state.settings.font, 
-            title:  this.props.font.title, 
-            items:  this.props.font.items, 
-            onChange:  this.updateSettings.bind(null, this.props.font.optionName) }), 
-        DesignSettings_FontSize({
-            value:  this.state.settings.fontSize, 
-            title:  this.props.fontSize.title, 
-            from:  this.props.fontSize.from, 
-            to:  this.props.fontSize.to, 
-            onChange:  this.updateSettings.bind(null, this.props.fontSize.optionName) }), 
-        DesignSettings_ProductLayout({
-            value:  this.state.settings.productLayout, 
-            title:  this.props.productLayout.title, 
-            items:  this.props.productLayout.items, 
-            onChange:  this.updateSettings.bind(null, this.props.productLayout.optionName) }), 
-        DesignSettings_Checkbox({
-            value:  this.state.settings.catalog, 
-            title:  this.props.catalog.title, 
-            items:  this.props.catalog.items, 
-            onChange:  this.updateSettings.bind(null, this.props.catalog.optionName) }), 
-        DesignSettings_ProductsInRow({
-            value:  this.state.settings.productsInRow, 
-            title:  this.props.productsInRow.title, 
-            from:  this.props.productsInRow.from, 
-            to:  this.props.productsInRow.to, 
-            onChange:  this.updateSettings.bind(null, this.props.productsInRow.optionName) }), 
-        DesignSettings_Checkbox({
-            value:  this.state.settings.mainPage, 
-            title:  this.props.mainPage.title, 
-            items:  this.props.mainPage.items, 
-            onChange:  this.updateSettings.bind(null, this.props.mainPage.optionName) })
-      ), 
-      DesignSettings_SaveButton({onClick:  this.saveSettings})
-    );
-  },
-  updateSettings: function(optionName, value) {
-    var activeElSelectors, newSettings, pageEl;
-    newSettings = this.state.settings;
-    newSettings[optionName] = value;
-    pageEl = document.querySelector('.b-page');
-    activeElSelectors = ['.b-btn', '.b-paginator__item', '.pagination .next a', '.pagination .prev a', '.pagination .first a', '.pagination .last a', '.pagination .page a'];
-    switch (optionName) {
-      case 'pageColor':
-        this.setStyles('.b-page', {
-          'background-color': value
-        });
-        break;
-      case 'pageBackground':
-        this.setStyles('.b-page', {
-          'background-image': "url('" + value + "')"
-        });
-        break;
-      case 'feedColor':
-        this.setStyles('.b-page__content__inner', {
-          'background-color__color': value
-        });
-        break;
-      case 'feedOpacity':
-        this.setStyles('.b-page__content__inner', {
-          'background-color__opacity': value
-        });
-        break;
-      case 'fontColor':
-        this.setStyles('.b-page', {
-          'color': value
-        });
-        break;
-      case 'activeElementsColor':
-        this.setStyles(activeElSelectors.join(', '), {
-          'color': value
-        });
-        break;
-      case 'font':
-        if (pageEl != null) {
-          setDesignClass(pageEl, 'b-page_ff-', value);
-        }
-        break;
-      case 'fontSize':
-        this.setStyles('.b-page', {
-          'font-size': value + "px"
-        });
-        break;
-      case 'productsInRow':
-        if (pageEl != null) {
-          pageEl.setAttribute('data-in-row', value);
-        }
-        break;
-      case 'productLayout':
-        if (pageEl != null) {
-          setDesignClass(pageEl, 'b-page_layout-', value);
-        }
-        $(window).trigger('resize');
-        break;
-      default:
-        if (typeof console.warn === "function") {
-          console.warn('Unknown type of design option', optionName);
-        }
-    }
-    return this.setState({
-      settings: newSettings
-    });
-  },
-  saveSettings: function() {
-    return console.log('saveSettings', this.state.settings);
-  },
-  setStyles: function(selector, styles) {
-    var newStyles, rule;
-    if (styles == null) {
-      styles = {};
-    }
-    rule = this.sheet.getRule(selector);
-    newStyles = {};
-    _.map(styles, function(value, key) {
-      var match, rgba, updatedRgba;
-      match = /(.*)__(\w+)/g.exec(key);
-      if (match != null) {
-        rgba = (rule != null ? rule.prop('background-color') : void 0) || 'rgba(0,0,0,1)';
-        switch (match[2]) {
-          case 'color':
-            updatedRgba = changeBackgroundColor(rgba, value);
-            return newStyles['background-color'] = updatedRgba;
-          case 'opacity':
-            updatedRgba = changeAlpha(rgba, value);
-            return newStyles['background-color'] = updatedRgba;
-        }
-      } else {
-        return newStyles[key] = value;
-      }
-    });
-    if (rule != null) {
-      return _.map(newStyles, function(value, key) {
-        return rule.prop(key, value);
-      });
-    } else {
-      return this.sheet.addRule(selector, newStyles);
-    }
-  }
-});
-
-module.exports = DesignSettings;
-
-hexToRgb = function(hex) {
-  var result, shorthandRegex;
-  shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-  result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (result) {
-    return [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
-  } else {
-    return null;
-  }
-};
-
-changeBackgroundColor = function(rgba, hex) {
-  var a, match, rgb;
-  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,)?(\s*\d+[\.\d+]*)*\)/g.exec(rgba);
-  rgb = hexToRgb(hex);
-  a = parseFloat(match[4]) || 1;
-  return 'rgba(' + [rgb[0], rgb[1], rgb[2], a].join(',') + ')';
-};
-
-changeAlpha = function(rgba, a) {
-  var match;
-  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(rgba);
-  a = a > 1 ? a / 100 : a;
-  return 'rgba(' + [match[1], match[2], match[3], a].join(',') + ')';
-};
-
-setDesignClass = function(el, name, value) {
-  var classes;
-  classes = el.className.split(' ').filter(function(c) {
-    return c.lastIndexOf(name, 0) !== 0;
-  });
-  classes.push(name + value);
-  return document.body.className = _.trim(classes.join(' '));
-};
-
-
-
-},{"./buttons/save":24,"./common/checkbox":25,"./common/color":26,"./feedOpacity":31,"./font":32,"./fontSize":33,"./mixins/designSettings":34,"./pageBackground":35,"./productLayout":36,"./productsInRow":37,"jss":63}],31:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_FeedOpacity, DesignSettings_Range, PropTypes;
-
-DesignSettings_Range = require('./common/range');
-
-PropTypes = React.PropTypes;
-
-DesignSettings_FeedOpacity = React.createClass({displayName: 'DesignSettings_FeedOpacity',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-      React.DOM.div({className: "b-design-option__item__val"}, 
-        DesignSettings_Range({
-            value:  this.props.value, 
-            onChange:  this.handleChange})
-      )
-    );
-  },
-  handleChange: function(opacity) {
-    return this.props.onChange(opacity);
-  }
-});
-
-module.exports = DesignSettings_FeedOpacity;
-
-
-
-},{"./common/range":29}],32:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_Font, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_Font = React.createClass({displayName: 'DesignSettings_Font',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-       this.renderParamList() 
-    );
-  },
-  renderParamList: function() {
-    var listItems, that;
-    that = this;
-    listItems = _.map(this.props.items, function(fontName) {
-      var itemClasses;
-      itemClasses = 'b-design-option__type b-design-option__type_' + fontName;
-      return React.DOM.label({className: itemClasses, 
-              key: fontName }, 
-         React.DOM.input({type: "radio", 
-                checked:  fontName == that.props.value, 
-                onChange:  that.handleChange.bind(null, fontName) }), 
-         React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
-      );
-    });
-    return React.DOM.div({className: "b-design-option__item__val"}, 
-              listItems 
-            );
-  },
-  handleChange: function(fontName) {
-    return this.props.onChange(fontName);
-  }
-});
-
-module.exports = DesignSettings_Font;
-
-
-
-},{}],33:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_FontSize, DesignSettings_Range, PropTypes;
-
-DesignSettings_Range = require('./common/range');
-
-PropTypes = React.PropTypes;
-
-DesignSettings_FontSize = React.createClass({displayName: 'DesignSettings_FontSize',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-    from: PropTypes.number.isRequired,
-    to: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-      React.DOM.div({className: "b-design-option__item__val"}, 
-        DesignSettings_Range({
-            value:  this.props.value, 
-            from:  this.props.from, 
-            to:  this.props.to, 
-            step: 1, 
-            onChange:  this.handleChange})
-      )
-    );
-  },
-  handleChange: function(fontSize) {
-    return this.props.onChange(fontSize);
-  }
-});
-
-module.exports = DesignSettings_FontSize;
-
-
-
-},{"./common/range":29}],34:[function(require,module,exports){
-var DesignSettingsMixin;
-
-DesignSettingsMixin = {
-  getDefaultProps: function() {
-    return {
-      pageColor: {
-        title: 'цвет страницы',
-        optionName: 'pageColor',
-        value: '#ff0000',
-        items: ['#bf443f', '#569a9f', '#4f617d', '#f4d3c4', '#d4c3c9']
-      },
-      pageBackground: {
-        title: 'фон страницы',
-        optionName: 'pageBackground',
-        value: 'http://img.faceyourmanga.com/mangatars/0/0/39/large_511.png',
-        items: ['https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg', 'http://img.faceyourmanga.com/mangatars/0/0/39/large_511.png']
-      },
-      feedColor: {
-        title: 'цвет ленты',
-        optionName: 'feedColor',
-        value: '#ffd46c',
-        items: ['#894c00', '#fff2a6', '#720000', '#513100', '#ffd46c']
-      },
-      feedOpacity: {
-        title: 'прозрачность ленты',
-        optionName: 'feedOpacity',
-        value: 1
-      },
-      font: {
-        title: 'шрифт',
-        optionName: 'font',
-        value: 'helvetica',
-        items: ['helvetica', 'ptserif', 'ptsans', 'verdana', 'courier']
-      },
-      fontColor: {
-        title: 'цвет текста',
-        optionName: 'fontColor',
-        value: '#c3a96c',
-        items: ['#264c35', '#c3a96c', '#fa3c58', '#772d3c', '#1a0f17']
-      },
-      fontSize: {
-        title: 'размер шрифта',
-        optionName: 'fontSize',
-        value: 14,
-        from: 13,
-        to: 15
-      },
-      activeElementsColor: {
-        title: 'цвет активных элементов',
-        optionName: 'activeElementsColor',
-        value: '#264c35',
-        items: ['#264c35', '#c3a96c', '#fa3c58', '#772d3c', '#1a0f17']
-      },
-      productLayout: {
-        title: 'лейаут товара',
-        optionName: 'productLayout',
-        value: 'bigpic',
-        items: {
-          bigpic: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
-          layoutTwo: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
-        }
-      },
-      catalog: {
-        title: 'каталог',
-        optionName: 'catalog',
-        value: ['filter', 'menu'],
-        items: {
-          menu: 'Меню',
-          filter: 'Фильтр',
-          search: 'Поиск'
-        }
-      },
-      productsInRow: {
-        title: 'товаров в ряд',
-        optionName: 'productsInRow',
-        value: 3,
-        from: 2,
-        to: 4
-      },
-      mainPage: {
-        title: 'главная страница',
-        optionName: 'mainPage',
-        value: ['bigBanner'],
-        items: {
-          bigBanner: 'Большой баннер',
-          callback: 'Форма обратного звонка'
-        }
-      }
-    };
-  }
-};
-
-module.exports = DesignSettingsMixin;
-
-
-
-},{}],35:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_PageBackground, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_PageBackground = React.createClass({displayName: 'DesignSettings_PageBackground',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, 
-           this.props.title
-        ), 
-        React.DOM.div({className: "b-design-option__item__val"}, 
-          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
-            React.DOM.div({className: "b-design-option__color__ind"}, 
-              React.DOM.img({src:  this.props.value})
-            )
-          )
-        )
-      ), 
-       this.renderParamList() 
-    );
-  },
-  renderParamList: function() {
-    var listItems, that;
-    that = this;
-    listItems = _.map(this.props.items, function(backgroundUrl) {
-      return React.DOM.label({className: "b-design-option__color b-design-option__color_img", 
-              key: backgroundUrl }, 
-         React.DOM.input({type: "radio", 
-                checked:  backgroundUrl == that.props.value, 
-                onChange:  that.handleChange.bind(null, backgroundUrl) }), 
-        React.DOM.span({className: "b-design-option__color__ind"}, 
-          React.DOM.img({src: backgroundUrl })
-        )
-      );
-    });
-    return React.DOM.div({className: "b-design-option__item__available-params"}, 
-              listItems 
-            );
-  },
-  handleChange: function(backgroundUrl) {
-    return this.props.onChange(backgroundUrl);
-  }
-});
-
-module.exports = DesignSettings_PageBackground;
-
-
-
-},{}],36:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_ProductLayout, PropTypes;
-
-PropTypes = React.PropTypes;
-
-DesignSettings_ProductLayout = React.createClass({displayName: 'DesignSettings_ProductLayout',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    items: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-       this.renderParamList() 
-    );
-  },
-  renderParamList: function() {
-    var listItems, that;
-    that = this;
-    listItems = _.map(this.props.items, function(url, name) {
-      return React.DOM.label({className: "b-design-option__layout", 
-              key: name }, 
-        React.DOM.input({type: "radio", 
-               checked:  name == that.props.value, 
-               onChange:  that.handleChange.bind(null, name) }), 
-        React.DOM.span({className: "b-design-option__layout__ind"}, 
-          name 
-        )
-      );
-    });
-    return React.DOM.div({className: "b-design-option__item__val"}, 
-              listItems 
-            );
-  },
-  handleChange: function(layout) {
-    return this.props.onChange(layout);
-  }
-});
-
-module.exports = DesignSettings_ProductLayout;
-
-
-
-},{}],37:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var DesignSettings_ProductsInRow, DesignSettings_Range, PropTypes;
-
-DesignSettings_Range = require('./common/range');
-
-PropTypes = React.PropTypes;
-
-DesignSettings_ProductsInRow = React.createClass({displayName: 'DesignSettings_ProductsInRow',
-  propTypes: {
-    title: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-    from: PropTypes.number.isRequired,
-    to: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
-  },
-  render: function() {
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, 
-         this.props.title
-      ), 
-      React.DOM.div({className: "b-design-option__item__val"}, 
-        DesignSettings_Range({
-            value:  this.props.value, 
-            from:  this.props.from, 
-            to:  this.props.to, 
-            step: 1, 
-            onChange:  this.handleChange})
-      )
-    );
-  },
-  handleChange: function(productsInRow) {
-    return this.props.onChange(productsInRow);
-  }
-});
-
-module.exports = DesignSettings_ProductsInRow;
-
-
-
-},{"./common/range":29}],38:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.InstagramFeed_Controllable = React.createClass({displayName: 'InstagramFeed_Controllable',
-  propTypes: {
-    isVisible: React.PropTypes.bool.isRequired,
-    clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired,
-    limit: React.PropTypes.number
-  },
-  getInitialState: function() {
-    return {
-      isVisible: this.props.isVisible
-    };
-  },
-  componentDidMount: function() {
-    return $(document).on("instagram:clicked", this.toggleVisibleState);
-  },
-  componentWillUnmount: function() {
-    return $(document).off("instagram:clicked", this.toggleVisibleState);
-  },
-  render: function() {
-    if (this.state.isVisible) {
-      return InstagramFeed({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
-    } else {
-      return React.DOM.span(null);
-    }
-  },
-  toggleVisibleState: function() {
-    if (InstagramFeed_Mixin.STATE_LOADED) {
-      return this.setState({
-        isVisible: !this.state.isVisible
-      });
-    }
-  }
-});
-
-window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
-  mixins: [InstagramFeed_Mixin],
-  propTypes: {
-    clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired,
-    limit: React.PropTypes.number
-  },
-  getInitialState: function() {
-    return {
-      currentState: this.STATE_LOADING,
-      isVisible: false,
-      photos: null,
-      username: '',
-      hashtag: ''
-    };
-  },
-  componentDidMount: function() {
-    return this._loadPhotos();
-  },
-  render: function() {
-    switch (this.state.currentState) {
-      case this.STATE_LOADED:
-        return InstagramFeed_Carousel({photos:  this.state.photos});
-      case this.STATE_LOADING:
-        return InstagramFeed_Spinner(null);
-      case this.STATE_ERROR:
-        return InstagramFeed_Error(null);
-      default:
-        return console.warn('Неизвестное состояние #{@state.currentState}');
-    }
-  }
-});
-
-window.InstagramFeed_Error = React.createClass({displayName: 'InstagramFeed_Error',
-  render: function() {
-    return React.DOM.div({className: "b-instafeed b-insafeed_error"}, 
-      "Ошибка при загрузке фотографий"
-    );
-  }
-});
-
-window.InstagramFeed_Spinner = React.createClass({displayName: 'InstagramFeed_Spinner',
-  render: function() {
-    return React.DOM.div({className: "b-instafeed b-instafeed_loading"}, 
-      React.DOM.span({className: "b-instafeed__loader"})
-    );
-  }
-});
-
-window.InstagramFeed_Photo = React.createClass({displayName: 'InstagramFeed_Photo',
-  propTypes: {
-    photo: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    return React.DOM.a({className: "b-instafeed__photo", href: this.props.photo.standard_resolution.url}, 
-      React.DOM.img({className: "lazyOwl", 'data-src': this.props.photo.low_resolution.url})
-    );
-  }
-});
-
-window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_Carousel',
-  propTypes: {
-    photos: React.PropTypes.array.isRequired
-  },
-  componentDidMount: function() {
-    return this._initCarousel();
-  },
-  componentWillUnmount: function() {
-    return this._destroyCarousel();
-  },
-  render: function() {
-    var photos;
-    photos = _.map(this.props.photos, function(photo) {
-      return InstagramFeed_Photo({
-        photo: photo.images, 
-        key: photo.id});
-    });
-    return React.DOM.div({className: "b-instafeed"}, photos);
-  },
-  _initCarousel: function() {
-    return $(this.getDOMNode()).owlCarousel({
-      items: 6,
-      itemsDesktop: 6,
-      pagination: false,
-      autoPlay: 5000,
-      navigation: true,
-      lazyLoad: true
-    });
-  },
-  _destroyCarousel: function() {
-    return $(this.getDOMNode()).data('owlCarousel').destroy();
-  }
-});
-
-
-
-},{}],39:[function(require,module,exports){
-window.InstagramFeed_Mixin = {
-  STATE_LOADING: 'loading',
-  STATE_LOADED: 'loaded',
-  STATE_ERROR: 'error',
-  INSTAGRAM_API_URL: 'https://api.instagram.com/v1/',
-  _getRequestUrl: function() {
-    var url;
-    url = this.INSTAGRAM_API_URL + 'users/' + this.props.userId + '/media/recent/?client_id=' + this.props.clientId;
-    if (this.props.limit != null) {
-      url += '&count=' + this.props.limit;
-    }
-    return url;
-  },
-  _loadPhotos: function() {
-    return $.ajax({
-      dataType: "jsonp",
-      url: this._getRequestUrl(),
-      success: (function(_this) {
-        return function(photos) {
-          if (_this.isMounted() && (photos != null)) {
-            return _this.setState({
-              currentState: _this.STATE_LOADED,
-              photos: photos.data,
-              profileUrl: 'http://instagram.com/' + photos.data[0].user.username,
-              hashtag: '#' + photos.data[0].user.username
-            });
-          }
-        };
-      })(this),
-      error: (function(_this) {
-        return function(data) {
-          return _this._activateErrorState();
-        };
-      })(this)
-    });
-  },
-  _activateErrorState: function() {
-    if (this.isMounted()) {
-      return this.setState({
-        currentState: this.STATE_ERROR
-      });
-    }
-  }
-};
-
-
-
-},{}],40:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.InstagramFeed_Controllable_v2 = React.createClass({displayName: 'InstagramFeed_Controllable_v2',
-  propTypes: {
-    isVisible: React.PropTypes.bool.isRequired,
-    clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired,
-    limit: React.PropTypes.number
-  },
-  getDefaultProps: function() {
-    return {
-      limit: 10
-    };
-  },
-  getInitialState: function() {
-    return {
-      isVisible: this.props.isVisible
-    };
-  },
-  componentDidMount: function() {
-    return $(document).on("instagram:clicked", this.toggleVisibleState);
-  },
-  componentWillUnmount: function() {
-    return $(document).off("instagram:clicked", this.toggleVisibleState);
-  },
-  render: function() {
-    if (this.state.isVisible) {
-      return InstagramFeed_v2({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
-    } else {
-      return React.DOM.span(null);
-    }
-  },
-  toggleVisibleState: function() {
-    if (InstagramFeed_Mixin.STATE_LOADED) {
-      return this.setState({
-        isVisible: !this.state.isVisible
-      });
-    }
-  }
-});
-
-window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
-  mixins: [InstagramFeed_Mixin],
-  propTypes: {
-    clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired,
-    limit: React.PropTypes.number
-  },
-  getInitialState: function() {
-    return {
-      currentState: this.STATE_LOADING,
-      isVisible: false,
-      photos: null,
-      profileUrl: '',
-      hashtag: ''
-    };
-  },
-  componentDidMount: function() {
-    return this._loadPhotos();
-  },
-  render: function() {
-    var result;
-    result = (function() {
-      switch (this.state.currentState) {
-        case this.STATE_LOADED:
-          return InstagramFeed_v2_Feed({photos:  this.state.photos, profileUrl:  this.state.profileUrl});
-        case this.STATE_LOADING:
-          return InstagramFeed_v2_Spinner(null);
-        case this.STATE_ERROR:
-          return InstagramFeed_v2_Error(null);
-        default:
-          return console.warn('Неизвестное состояние #{@state.currentState}');
-      }
-    }).call(this);
-    return React.DOM.div(null, 
-      React.DOM.h2({className: "b-item-list__title b-instafeed-v2__title"}, React.DOM.a({href:  this.state.profileUrl, rel: "nofollow", target: "_blank"},  this.state.hashtag)), 
-      result 
-    );
-  }
-});
-
-window.InstagramFeed_v2_Error = React.createClass({displayName: 'InstagramFeed_v2_Error',
-  render: function() {
-    return React.DOM.div({className: "b-instafeed-v2 b-insafeed_error"}, 
-      "Ошибка при загрузке фотографий"
-    );
-  }
-});
-
-window.InstagramFeed_v2_Spinner = React.createClass({displayName: 'InstagramFeed_v2_Spinner',
-  render: function() {
-    return React.DOM.div({className: "b-instafeed-v2 b-instafeed-v2_loading"}, 
-      React.DOM.span({className: "b-instafeed-v2__loader"})
-    );
-  }
-});
-
-window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2_Feed',
-  propTypes: {
-    photos: React.PropTypes.array.isRequired,
-    profileUrl: React.PropTypes.string.isRequired
-  },
-  render: function() {
-    var photos, that;
-    that = this;
-    photos = _.map(this.props.photos, function(photo) {
-      return InstagramFeed_v2_Photo({
-        photo: photo.images, 
-        profileUrl: that.props.profileUrl, 
-        key: photo.id});
-    });
-    return React.DOM.div({className: "b-instafeed-v2"}, photos);
-  }
-});
-
-window.InstagramFeed_v2_Photo = React.createClass({displayName: 'InstagramFeed_v2_Photo',
-  propTypes: {
-    photo: React.PropTypes.object.isRequired,
-    profileUrl: React.PropTypes.string.isRequired
-  },
-  render: function() {
-    return React.DOM.a({className: "b-instafeed-v2__photo", rel: "nofollow", target: "_blank", href:  this.props.profileUrl}, 
-      React.DOM.img({src: this.props.photo.low_resolution.url})
-    );
-  }
-});
-
-
-
-},{}],41:[function(require,module,exports){
-
-/** @jsx React.DOM */
-window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
-  propTypes: {
-    elementQuery: React.PropTypes.string,
-    dataAttr: React.PropTypes.string
-  },
-  getDefaultProps: function() {
-    return {
-      elementQuery: '[good-select] option:selected',
-      dataAttr: 'good'
-    };
-  },
-  addToBasket: function() {
-    var good;
-    good = $(this.props.elementQuery).data(this.props.dataAttr);
-    if (good != null) {
-      return BasketActions.addGood(good);
-    } else {
-      return alert("Ошибка при добавлении товара в корзину. Нет атрибута good в выбранном пункте");
-    }
-  },
-  render: function() {
-    return React.DOM.button({className: "b-btn", onClick: this.addToBasket}, "В корзину");
-  }
-});
-
-
-
-},{}],42:[function(require,module,exports){
-var KioskEvents;
-
-KioskEvents = new EventEmitter();
-
-KioskEvents.keys = {
-  commandTooltipShow: function() {
-    return 'command:tooltip:show';
-  }
-};
-
-module.exports = KioskEvents;
-
-
-
-},{}],43:[function(require,module,exports){
-
-/** @jsx React.DOM */
-var FilteredCountTooltip, TooltipController,
-  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-FilteredCountTooltip = require('../components/common/tooltip/filteredCount');
-
-TooltipController = (function() {
-  TooltipController.prototype._pendingTooltip = null;
-
-  function TooltipController() {
-    this._getContainer = bind(this._getContainer, this);
-    this.close = bind(this.close, this);
-    this.show = bind(this.show, this);
-    KioskEvents.on(KioskEvents.keys.commandTooltipShow(), this.show);
-  }
-
-  TooltipController.prototype.show = function(position, filter, timeout) {
-    var container, tooltip;
-    if (timeout == null) {
-      timeout = 3000;
-    }
-    container = this._getContainer();
-    this.close();
-    tooltip = React.renderComponent(FilteredCountTooltip({
-          filter: filter, 
-          position: position, 
-          onClose:  this.close}), container);
-    return this._pendingTooltip = tooltip;
-  };
-
-  TooltipController.prototype.close = function() {
-    var container;
-    container = this._getContainer();
-    React.unmountComponentAtNode(container);
-    return this._pendingTooltip = null;
-  };
-
-  TooltipController.prototype._getContainer = function() {
-    var container;
-    container = document.querySelector('[tooltip-container]');
-    if (container == null) {
-      container = document.createElement('div');
-      container.setAttribute('tooltip-container', '');
-      document.body.appendChild(container);
-    }
-    return container;
-  };
-
-  return TooltipController;
-
-})();
-
-module.exports = TooltipController;
-
-
-
-},{"../components/common/tooltip/filteredCount":16}],44:[function(require,module,exports){
-var BaseDispatcher,
-  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  hasProp = {}.hasOwnProperty;
-
-BaseDispatcher = (function(superClass) {
-  extend(BaseDispatcher, superClass);
-
-  function BaseDispatcher() {
-    return BaseDispatcher.__super__.constructor.apply(this, arguments);
-  }
-
-  BaseDispatcher.prototype.handleViewAction = function(action) {
-    return this.dispatch({
-      source: 'VIEW_ACTION',
-      action: action
-    });
-  };
-
-  BaseDispatcher.prototype.handleServerAction = function(action) {
-    return this.dispatch({
-      source: 'SERVER_ACTION',
-      action: action
-    });
-  };
-
-  return BaseDispatcher;
-
-})(Dispatcher);
-
-module.exports = BaseDispatcher;
-
-
-
-},{}],45:[function(require,module,exports){
-var BaseDispatcher;
-
-BaseDispatcher = require('./_base');
-
-window.BasketDispatcher = new BaseDispatcher();
-
-
-
-},{"./_base":44}],46:[function(require,module,exports){
-var BaseStore, CHANGE_EVENT,
-  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-  hasProp = {}.hasOwnProperty;
-
-CHANGE_EVENT = 'change';
-
-BaseStore = (function(superClass) {
-  extend(BaseStore, superClass);
-
-  function BaseStore() {
-    return BaseStore.__super__.constructor.apply(this, arguments);
-  }
-
-  BaseStore.prototype.emitChange = function() {
-    return this.emit(CHANGE_EVENT);
-  };
-
-  BaseStore.prototype.addChangeListener = function(cb) {
-    return this.on(CHANGE_EVENT, cb);
-  };
-
-  BaseStore.prototype.removeChangeListener = function(cb) {
-    return this.off(CHANGE_EVENT, cb);
-  };
-
-  return BaseStore;
-
-})(EventEmitter);
-
-module.exports = BaseStore;
-
-
-
-},{}],47:[function(require,module,exports){
-var BaseStore, _cartItems;
-
-BaseStore = require('./_base');
-
-_cartItems = [];
-
-window.BasketDispatcher.register(function(payload) {
-  var action;
-  action = payload.action;
-  switch (action.actionType) {
-    case 'productAddedToBasket':
-      BasketStore._addItem(action.productItem);
-      BasketStore.emitChange();
-      break;
-    case 'receiveBasket':
-      BasketStore._receiveBasket(action.cartItems);
-      BasketStore.emitChange();
-      break;
-  }
-});
-
-window.BasketStore = _.extend(new BaseStore(), {
-  getBasketItems: function() {
-    return _cartItems;
-  },
-  getBasketCount: function() {
-    var total;
-    total = 0;
-    _.forEach(_cartItems, function(item) {
-      return total += item.count;
-    });
-    return total;
-  },
-  _findItem: function(productItem) {
-    var thisItem;
-    thisItem = _.findIndex(_cartItems, function(item) {
-      return item.product_item_id === productItem.product_item_id;
-    });
-    return _cartItems[thisItem];
-  },
-  _addItem: function(productItem) {
-    var cartItem;
-    cartItem = BasketStore._findItem(productItem);
-    if (cartItem != null) {
-      return cartItem.count += 1;
-    } else {
-      productItem.count = 1;
-      return _cartItems.push(productItem);
-    }
-  },
-  _receiveBasket: function(cartItems) {
-    if (cartItems != null) {
-      return _.forEach(cartItems.items, function(cartItem) {
-        return _cartItems.push(cartItem.product_item);
-      });
-    }
-  }
-});
-
-
-
-},{"./_base":46}],48:[function(require,module,exports){
-var ApiRoutes;
-
-ApiRoutes = {
-  productsFilteredCount: function(filter) {
-    return gon.public_api_url + '/v1/products/filtered/count?' + filter;
-  }
-};
-
-module.exports = ApiRoutes;
-
-
-
-},{}],49:[function(require,module,exports){
-window.Routes = {
-  vendor_cart_items_path: function() {
-    return '/cart/cart_items/';
-  }
-};
-
-
-
-},{}],50:[function(require,module,exports){
-$(function() {
-  var bPage, lenta, page, thisPage;
-  if ('ontouchstart' in document) {
-    $("html").addClass("feature_touch");
-  } else {
-    $("html").addClass("feature_no-touch");
-  }
-  $('[tooltip]').tooltip();
-  if ($("[range_slider]").length) {
-    $("[range_slider]").noUiSlider({
-      start: [20, 80],
-      connect: true,
-      range: {
-        'min': 0,
-        'max': 100
-      }
-    });
-  }
-  bPage = $('.b-page');
-  $('[ks-design]').on('click', function() {
-    var className;
-    className = $(this).data('classname');
-    bPage.addClass(className);
-    return false;
-  });
-  if ($("[ks-opacity_slider]").length) {
-    $("[ks-opacity_slider]").noUiSlider({
-      start: 0,
-      step: .1,
-      range: {
-        'min': 0,
-        'max': 1
-      }
-    });
-    lenta = $('.b-page__content__inner');
-    $("[ks-opacity_slider]").on({
-      slide: function() {
-        var opacity;
-        opacity = $("[ks-opacity_slider]").val();
-        return lenta.css('background-color', 'rgba(236, 208, 120,' + opacity + ')');
-      }
-    });
-  }
-  if ($("[ks-fontsize_slider]").length) {
-    $("[ks-fontsize_slider]").noUiSlider({
-      start: 14,
-      step: 2,
-      range: {
-        'min': 12,
-        'max': 16
-      }
-    });
-    page = $('html');
-    $("[ks-fontsize_slider]").on({
-      slide: function() {
-        var fontSize;
-        fontSize = $("[ks-fontsize_slider]").val();
-        fontSize = fontSize.substring(0, fontSize.length - 2);
-        return page.css('font-size', fontSize + 'px');
-      }
-    });
-  }
-  thisPage = $('.b-page');
-  if ($("[ks-row_slider]").length) {
-    $("[ks-row_slider]").noUiSlider({
-      start: 3,
-      step: 1,
-      range: {
-        'min': 2,
-        'max': 4
-      }
-    });
-    $("[ks-row_slider]").on({
-      slide: function() {
-        var inRow;
-        inRow = $("[ks-row_slider]").val();
-        inRow = inRow.substring(0, inRow.length - 3);
-        return thisPage.attr('data-in-row', inRow);
-      }
-    });
-  }
-  $('[ks-show-slider]').on('click', function() {
-    return thisPage.toggleClass('b-page_hide-slider');
-  });
-  $('[ks-show-filter]').on('click', function() {
-    return thisPage.toggleClass('b-page_hide-catalog');
-  });
-  return $('[ks-layout-change]').on('click', function() {
-    return thisPage.addClass('b-page_layout-l1');
-  });
-});
-
-
-
-},{}],51:[function(require,module,exports){
-$(function() {
-  var defaultCarouselOptions, slider, sliderThumbs, sliderThumbsContainer;
-  defaultCarouselOptions = {
-    pagination: false,
-    autoPlay: 5000,
-    navigation: true
-  };
-  slider = $('[application-slider]');
-  slider.each(function() {
-    var options;
-    options = _.clone(defaultCarouselOptions);
-    if ($(this).hasClass('b-slider_promo')) {
-      options['singleItem'] = true;
-      options['autoHeight'] = true;
-      options['lazyLoad'] = true;
-      options['afterInit'] = function() {
-        return this.$elem.addClass('loaded');
-      };
-    }
-    if ($(this).hasClass('application-slider_photos')) {
-      options['singleItem'] = false;
-      options['items'] = 3;
-      options['itemsDesktop'] = 3;
-    }
-    if ($(this).hasClass('application-slider_instagram')) {
-      options['singleItem'] = false;
-      options['items'] = 6;
-      options['itemsDesktop'] = 6;
-      options['lazyLoad'] = true;
-    }
-    return $(this).owlCarousel(options);
-  });
-  sliderThumbsContainer = $('[slider-thumbs]');
-  sliderThumbs = sliderThumbsContainer.find('.b-slider-thumbs__item');
-  return sliderThumbsContainer.on('click', '.b-slider-thumbs__item', function(e) {
-    var number;
-    e.preventDefault();
-    sliderThumbs.removeClass('active');
-    $(this).addClass('active');
-    number = $(this).index();
-    return slider.trigger('owl.goTo', number);
-  });
-});
-
-
-
-},{}],52:[function(require,module,exports){
-$(function() {
-  var $cartTotal, setCartItemCount, updateCartTotal;
-  $cartTotal = $('[cart-total]');
-  setCartItemCount = function($el, count) {
-    var $price_el, $selector, price, total;
-    price = +$el.data('item-price');
-    total = price * count;
-    $el.data('item-total-price', total);
-    $price_el = $el.find('[cart-item-total-price]');
-    $price_el.html(accounting.formatMoney(total));
-    $selector = $el.find('[cart-item-selector]');
-    $selector.val(count);
-    return updateCartTotal();
-  };
-  updateCartTotal = function() {
-    var totalPrice;
-    totalPrice = 0;
-    $('[cart-item]').each(function(idx, block) {
-      return totalPrice += +$(block).data('item-total-price');
-    });
-    return $cartTotal.html(accounting.formatMoney(totalPrice));
-  };
-  return $('[cart-item-selector]').on('change', function() {
-    var $e, $el;
-    $e = $(this);
-    $el = $e.closest('[cart-item]');
-    return setCartItemCount($el, parseInt($e.val()));
-  });
-});
-
-
-
-},{}],53:[function(require,module,exports){
-$(function() {
-  var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
-  $checkoutTotal = $('[checkout-total]');
-  setCheckoutDeliveryPrice = function(price) {
-    $checkoutTotal.data('delivery-price', price);
-    return updateCheckoutTotal();
-  };
-  updateCheckoutTotal = function() {
-    var totalPrice;
-    totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price');
-    return $checkoutTotal.html(accounting.formatMoney(totalPrice));
-  };
-  toggleDeliveryOnlyElementsVisibility = function(showFieldsQuery) {
-    var $el;
-    $('[hideable]').slideUp();
-    if (showFieldsQuery) {
-      $el = $(showFieldsQuery);
-      return $el.stop().slideDown();
-    }
-  };
-  selectDeliveryType = function($e) {
-    if ($e != null) {
-      setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
-      return toggleDeliveryOnlyElementsVisibility($e.data('show-fields-query'));
-    } else {
-      return typeof console.error === "function" ? console.error('Ни один способ доставки по умолчанию не выбран') : void 0;
-    }
-  };
-  $('[delivery-type]').on('change', function() {
-    return selectDeliveryType($(this));
-  });
-  findSelectedDeliveryType = function() {
-    var $el;
-    $el = $('[delivery-type]').filter(':checked');
-    if ($el.length === 0) {
-      return null;
-    } else {
-      return $el;
-    }
-  };
-  return window.InitializeCheckout = function() {
-    console.log('Initialize Checkout');
-    return selectDeliveryType(findSelectedDeliveryType());
-  };
-});
-
-
-
-},{}],54:[function(require,module,exports){
-$(function() {
-  $('[ks-jump]').on('click', function(e) {
-    var href;
-    href = $(this).attr('ks-jump');
-    if (href !== '') {
-      if (event.shiftKey || event.ctrlKey || event.metaKey) {
-        return window.open(target, '_blank');
-      } else {
-        return window.location = href;
-      }
-    }
-  });
-  return $('[ks-jump] .dropdown, [ks-jump] input').on('click', function(e) {
-    return e.stopPropagation();
-  });
-});
-
-
-
-},{}],55:[function(require,module,exports){
-$(function() {
-  return $('[lightbox]').fancybox({
-    padding: 0,
-    margin: 0,
-    helpers: {
-      thumbs: {
-        width: 8,
-        height: 8
-      }
-    },
-    tpl: {
-      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
-      next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
-      prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
-    }
-  });
-});
-
-
-
-},{}],56:[function(require,module,exports){
-$(function() {
-  var LOADING_TITLE, isRequest;
-  isRequest = false;
-  LOADING_TITLE = 'Загружаю';
-  return $('[ks-load-more]').on('click', function(e) {
-    var $root, $target, current_page, next_page, saved_title, total_pages, url;
-    if (isRequest) {
-      return;
-    }
-    $target = $(e.target);
-    saved_title = $target.text();
-    $target.text($target.data('loading-title') || LOADING_TITLE);
-    $root = $target.parents('[ks-products-container]');
-    current_page = $root.data("current-page") || 1;
-    total_pages = $root.data("total-pages");
-    url = $root.data('url') || '';
-    next_page = current_page + 1;
-    if (next_page > total_pages) {
-      return;
-    }
-    return $.ajax({
-      url: url,
-      data: {
-        page: next_page
-      },
-      beforeSend: function(xhr) {
-        return isRequest = true;
-      }
-    }).done(function(resp) {
-      $('[ks-product-item]').last().after(resp);
-      $target.text(saved_title);
-      $root.data('current-page', next_page);
-      if (next_page >= total_pages) {
-        return $target.hide();
-      }
-    }).always(function(resp) {
-      return isRequest = false;
-    });
-  });
-});
-
-
-
-},{}],57:[function(require,module,exports){
-$(function() {
-  var menuCopy, navOpen, searchBlock;
-  menuCopy = $('[ks-mob-nav]');
-  searchBlock = $('[ks-search]');
-  menuCopy.mmenu({
-    classes: false,
-    counters: false
-  });
-  if (searchBlock.length) {
-    searchBlock.clone().prependTo(menuCopy.find('#mm-0')).wrap('<li/>');
-  }
-  navOpen = $('[ks-open-nav]');
-  menuCopy.on('opened.mm', function() {
-    return navOpen.addClass('mmenu-open_active');
-  });
-  return menuCopy.on('closed.mm', function() {
-    return navOpen.removeClass('mmenu-open_active');
-  });
-});
-
-
-
-},{}],58:[function(require,module,exports){
-$(function() {
-  var center, productSlider, productThumbs, syncPosition;
-  productSlider = $('#product-slider');
-  productThumbs = $('#product-thumbs');
-  syncPosition = function(el) {
-    var current;
-    current = this.currentItem;
-    productThumbs.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
-    if (productThumbs.data("owlCarousel") !== undefined) {
-      center(current);
-    }
-  };
-  center = function(number) {
-    var found, i, num, sync2visible;
-    sync2visible = productThumbs.data("owlCarousel").owl.visibleItems;
-    num = number;
-    found = false;
-    for (i in sync2visible) {
-      if (num === sync2visible[i]) {
-        found = true;
-      }
-    }
-    if (found === false) {
-      if (num > sync2visible[sync2visible.length - 1]) {
-        return productThumbs.trigger("owl.goTo", num - sync2visible.length + 2);
-      } else {
-        if (num - 1 === -1) {
-          num = 0;
-        }
-        return productThumbs.trigger("owl.goTo", num);
-      }
-    } else if (num === sync2visible[sync2visible.length - 1]) {
-      return productThumbs.trigger("owl.goTo", sync2visible[1]);
-    } else {
-      if (num === sync2visible[0]) {
-        return productThumbs.trigger("owl.goTo", num - 1);
-      }
-    }
-  };
-  productSlider.owlCarousel({
-    singleItem: true,
-    afterAction: syncPosition
-  });
-  productThumbs.owlCarousel({
-    items: 4,
-    pagination: false,
-    afterInit: function(el) {
-      el.find(".owl-item").eq(0).addClass("synced");
-    }
-  });
-  return productThumbs.on("click", ".owl-item", function(e) {
-    var number;
-    e.preventDefault();
-    number = $(this).data("owlItem");
-    productSlider.trigger("owl.goTo", number);
-  });
-});
-
-
-
-},{}],59:[function(require,module,exports){
-$(function() {
-  var logo;
-  logo = $('.b-logo__img');
-  return $('[ks-theme-switcher]').on('click', function() {
-    var classlistVal, logoUrl;
-    classlistVal = $(this).data("classlist");
-    logoUrl = $(this).data("logourl");
-    $('body').attr('class', classlistVal);
-    return logo.attr('src', logoUrl);
-  });
-});
-
-
-
-},{}],60:[function(require,module,exports){
-/**
- * Copyright (c) 2014, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-module.exports.Dispatcher = require('./lib/Dispatcher')
-
-},{"./lib/Dispatcher":61}],61:[function(require,module,exports){
-/*
- * Copyright (c) 2014, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule Dispatcher
- * @typechecks
- */
-
-"use strict";
-
-var invariant = require('./invariant');
-
-var _lastID = 1;
-var _prefix = 'ID_';
-
-/**
- * Dispatcher is used to broadcast payloads to registered callbacks. This is
- * different from generic pub-sub systems in two ways:
- *
- *   1) Callbacks are not subscribed to particular events. Every payload is
- *      dispatched to every registered callback.
- *   2) Callbacks can be deferred in whole or part until other callbacks have
- *      been executed.
- *
- * For example, consider this hypothetical flight destination form, which
- * selects a default city when a country is selected:
- *
- *   var flightDispatcher = new Dispatcher();
- *
- *   // Keeps track of which country is selected
- *   var CountryStore = {country: null};
- *
- *   // Keeps track of which city is selected
- *   var CityStore = {city: null};
- *
- *   // Keeps track of the base flight price of the selected city
- *   var FlightPriceStore = {price: null}
- *
- * When a user changes the selected city, we dispatch the payload:
- *
- *   flightDispatcher.dispatch({
- *     actionType: 'city-update',
- *     selectedCity: 'paris'
- *   });
- *
- * This payload is digested by `CityStore`:
- *
- *   flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'city-update') {
- *       CityStore.city = payload.selectedCity;
- *     }
- *   });
- *
- * When the user selects a country, we dispatch the payload:
- *
- *   flightDispatcher.dispatch({
- *     actionType: 'country-update',
- *     selectedCountry: 'australia'
- *   });
- *
- * This payload is digested by both stores:
- *
- *    CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'country-update') {
- *       CountryStore.country = payload.selectedCountry;
- *     }
- *   });
- *
- * When the callback to update `CountryStore` is registered, we save a reference
- * to the returned token. Using this token with `waitFor()`, we can guarantee
- * that `CountryStore` is updated before the callback that updates `CityStore`
- * needs to query its data.
- *
- *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'country-update') {
- *       // `CountryStore.country` may not be updated.
- *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
- *       // `CountryStore.country` is now guaranteed to be updated.
- *
- *       // Select the default city for the new country
- *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
- *     }
- *   });
- *
- * The usage of `waitFor()` can be chained, for example:
- *
- *   FlightPriceStore.dispatchToken =
- *     flightDispatcher.register(function(payload) {
- *       switch (payload.actionType) {
- *         case 'country-update':
- *           flightDispatcher.waitFor([CityStore.dispatchToken]);
- *           FlightPriceStore.price =
- *             getFlightPriceStore(CountryStore.country, CityStore.city);
- *           break;
- *
- *         case 'city-update':
- *           FlightPriceStore.price =
- *             FlightPriceStore(CountryStore.country, CityStore.city);
- *           break;
- *     }
- *   });
- *
- * The `country-update` payload will be guaranteed to invoke the stores'
- * registered callbacks in order: `CountryStore`, `CityStore`, then
- * `FlightPriceStore`.
- */
-
-  function Dispatcher() {
-    this.$Dispatcher_callbacks = {};
-    this.$Dispatcher_isPending = {};
-    this.$Dispatcher_isHandled = {};
-    this.$Dispatcher_isDispatching = false;
-    this.$Dispatcher_pendingPayload = null;
-  }
-
-  /**
-   * Registers a callback to be invoked with every dispatched payload. Returns
-   * a token that can be used with `waitFor()`.
-   *
-   * @param {function} callback
-   * @return {string}
-   */
-  Dispatcher.prototype.register=function(callback) {
-    var id = _prefix + _lastID++;
-    this.$Dispatcher_callbacks[id] = callback;
-    return id;
-  };
-
-  /**
-   * Removes a callback based on its token.
-   *
-   * @param {string} id
-   */
-  Dispatcher.prototype.unregister=function(id) {
-    invariant(
-      this.$Dispatcher_callbacks[id],
-      'Dispatcher.unregister(...): `%s` does not map to a registered callback.',
-      id
-    );
-    delete this.$Dispatcher_callbacks[id];
-  };
-
-  /**
-   * Waits for the callbacks specified to be invoked before continuing execution
-   * of the current callback. This method should only be used by a callback in
-   * response to a dispatched payload.
-   *
-   * @param {array<string>} ids
-   */
-  Dispatcher.prototype.waitFor=function(ids) {
-    invariant(
-      this.$Dispatcher_isDispatching,
-      'Dispatcher.waitFor(...): Must be invoked while dispatching.'
-    );
-    for (var ii = 0; ii < ids.length; ii++) {
-      var id = ids[ii];
-      if (this.$Dispatcher_isPending[id]) {
-        invariant(
-          this.$Dispatcher_isHandled[id],
-          'Dispatcher.waitFor(...): Circular dependency detected while ' +
-          'waiting for `%s`.',
-          id
-        );
-        continue;
-      }
-      invariant(
-        this.$Dispatcher_callbacks[id],
-        'Dispatcher.waitFor(...): `%s` does not map to a registered callback.',
-        id
-      );
-      this.$Dispatcher_invokeCallback(id);
-    }
-  };
-
-  /**
-   * Dispatches a payload to all registered callbacks.
-   *
-   * @param {object} payload
-   */
-  Dispatcher.prototype.dispatch=function(payload) {
-    invariant(
-      !this.$Dispatcher_isDispatching,
-      'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.'
-    );
-    this.$Dispatcher_startDispatching(payload);
-    try {
-      for (var id in this.$Dispatcher_callbacks) {
-        if (this.$Dispatcher_isPending[id]) {
-          continue;
-        }
-        this.$Dispatcher_invokeCallback(id);
-      }
-    } finally {
-      this.$Dispatcher_stopDispatching();
-    }
-  };
-
-  /**
-   * Is this Dispatcher currently dispatching.
-   *
-   * @return {boolean}
-   */
-  Dispatcher.prototype.isDispatching=function() {
-    return this.$Dispatcher_isDispatching;
-  };
-
-  /**
-   * Call the callback stored with the given id. Also do some internal
-   * bookkeeping.
-   *
-   * @param {string} id
-   * @internal
-   */
-  Dispatcher.prototype.$Dispatcher_invokeCallback=function(id) {
-    this.$Dispatcher_isPending[id] = true;
-    this.$Dispatcher_callbacks[id](this.$Dispatcher_pendingPayload);
-    this.$Dispatcher_isHandled[id] = true;
-  };
-
-  /**
-   * Set up bookkeeping needed when dispatching.
-   *
-   * @param {object} payload
-   * @internal
-   */
-  Dispatcher.prototype.$Dispatcher_startDispatching=function(payload) {
-    for (var id in this.$Dispatcher_callbacks) {
-      this.$Dispatcher_isPending[id] = false;
-      this.$Dispatcher_isHandled[id] = false;
-    }
-    this.$Dispatcher_pendingPayload = payload;
-    this.$Dispatcher_isDispatching = true;
-  };
-
-  /**
-   * Clear bookkeeping used for dispatching.
-   *
-   * @internal
-   */
-  Dispatcher.prototype.$Dispatcher_stopDispatching=function() {
-    this.$Dispatcher_pendingPayload = null;
-    this.$Dispatcher_isDispatching = false;
-  };
-
-
-module.exports = Dispatcher;
-
-},{"./invariant":62}],62:[function(require,module,exports){
-/**
- * Copyright (c) 2014, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule invariant
- */
-
-"use strict";
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (false) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        'Invariant Violation: ' +
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-};
-
-module.exports = invariant;
-
-},{}],63:[function(require,module,exports){
-/**
- * StyleSheets written in javascript.
- *
- * @copyright Oleg Slobodskoi 2014
- * @website https://github.com/jsstyles/jss
- * @license MIT
- */
-
-module.exports = require('./lib/index')
-
-},{"./lib/index":66}],64:[function(require,module,exports){
-'use strict'
-
-var plugins = require('./plugins')
-
-var uid = 0
-
-var toString = Object.prototype.toString
-
-/**
- * Rule is selector + style hash.
- *
- * @param {String} [selector]
- * @param {Object} [style] declarations block
- * @param {Object} [options]
- * @api public
- */
-function Rule(selector, style, options) {
-    if (typeof selector == 'object') {
-        options = style
-        style = selector
-        selector = null
-    }
-
-    this.id = Rule.uid++
-    this.options = options || {}
-    if (this.options.named == null) this.options.named = true
-
-    if (selector) {
-        this.selector = selector
-        this.isAtRule = selector[0] == '@'
-    } else {
-        this.isAtRule = false
-        this.className = Rule.NAMESPACE_PREFIX + '-' + this.id
-        this.selector = '.' + this.className
-    }
-
-    this.style = style
-    // Will be set by StyleSheet#link if link option is true.
-    this.CSSRule = null
-    // When at-rule has sub rules.
-    this.rules = null
-    if (this.isAtRule && this.style) this.extractAtRules()
-}
-
-module.exports = Rule
-
-/**
- * Class name prefix when generated.
- *
- * @type {String}
- * @api private
- */
-Rule.NAMESPACE_PREFIX = 'jss'
-
-/**
- * Indentation string for formatting toString output.
- *
- * @type {String}
- * @api private
- */
-Rule.INDENTATION = '  '
-
-/**
- * Unique id, right now just a counter, because there is no need for better uid.
- *
- * @type {Number}
- * @api private
- */
-Rule.uid = 0
-
-/**
- * Get or set a style property.
- *
- * @param {String} name
- * @param {String|Number} [value]
- * @return {Rule|String|Number}
- * @api public
- */
-Rule.prototype.prop = function (name, value) {
-    // Its a setter.
-    if (value) {
-        if (!this.style) this.style = {}
-        this.style[name] = value
-        // If linked option in StyleSheet is not passed, CSSRule is not defined.
-        if (this.CSSRule) this.CSSRule.style[name] = value
-        return this
-    }
-
-    // Its a getter.
-    if (this.style) value = this.style[name]
-
-    // Read the value from the DOM if its not cached.
-    if (value == null && this.CSSRule) {
-        value = this.CSSRule.style[name]
-        // Cache the value after we have got it from the DOM once.
-        this.style[name] = value
-    }
-
-    return value
-}
-
-/**
- * Add child rule. Required for plugins like "nested".
- * StyleSheet will render them as a separate rule.
- *
- * @param {String} selector
- * @param {Object} style
- * @param {Object} [options] rule options
- * @return {Rule}
- * @api private
- */
-Rule.prototype.addChild = function (selector, style, options) {
-    if (!this.children) this.children = {}
-    this.children[selector] = {
-        style: style,
-        options: options
-    }
-
-    return this
-}
-
-/**
- * Add child rule. Required for plugins like "nested".
- * StyleSheet will render them as a separate rule.
- *
- * @param {String} selector
- * @param {Object} style
- * @return {Rule}
- * @api public
- */
-Rule.prototype.extractAtRules = function () {
-    if (!this.rules) this.rules = {}
-
-    for (var name in this.style) {
-        var style = this.style[name]
-        // Not a nested rule.
-        if (typeof style == 'string') break
-        var selector = this.options.named ? undefined : name
-        var rule = this.rules[name] = new Rule(selector, style, this.options)
-        plugins.run(rule)
-        delete this.style[name]
-    }
-
-    return this
-}
-
-/**
- * Apply rule to an element inline.
- *
- * @param {Element} element
- * @return {Rule}
- * @api public
- */
-Rule.prototype.applyTo = function (element) {
-    for (var prop in this.style) {
-        var value = this.style[prop]
-        if (toString.call(value) == '[object Array]') {
-            for (var i = 0; i < value.length; i++) {
-                element.style[prop] = value[i]
-            }
-        } else {
-            element.style[prop] = value
-        }
-    }
-
-    return this
-}
-
-/**
- * Converts the rule to css string.
- *
- * @return {String}
- * @api public
- */
-Rule.prototype.toString = function (options) {
-    var style = this.style
-
-    // At rules like @charset
-    if (this.isAtRule && !this.style && !this.rules) return this.selector + ';'
-
-    if (!options) options = {}
-    if (options.indentationLevel == null) options.indentationLevel = 0
-
-    var str = indent(options.indentationLevel, this.selector + ' {')
-
-    for (var prop in style) {
-        var value = style[prop]
-        // We want to generate multiple style with identical property names.
-        if (toString.call(value) == '[object Array]') {
-            for (var i = 0; i < value.length; i++) {
-                str += '\n' + indent(options.indentationLevel + 1, prop + ': ' + value[i] + ';')
-            }
-        } else {
-            str += '\n' + indent(options.indentationLevel + 1, prop + ': ' + value + ';')
-        }
-    }
-
-    // We are have an at-rule with nested statements.
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
-    for (var name in this.rules) {
-        var ruleStr = this.rules[name].toString({
-            indentationLevel: options.indentationLevel + 1
-        })
-        str += '\n' + indent(options.indentationLevel, ruleStr)
-    }
-
-    str += '\n' + indent(options.indentationLevel, '}')
-
-    return str
-}
-
-/**
- * Returns JSON representation of the rule.
- * Nested rules, at-rules and array values are not supported.
- *
- * @return {Object}
- * @api public
- */
-Rule.prototype.toJSON = function () {
-    var style = {}
-
-    for (var prop in this.style) {
-        var value = this.style[prop]
-        var type = typeof value
-        if (type == 'string' || type == 'number') {
-            style[prop] = value
-        }
-    }
-
-    return style
-}
-
-/**
- * Indent a string.
- *
- * @param {Number} level
- * @param {String} str
- * @return {String}
- */
-function indent(level, str) {
-    var indentStr = ''
-    for (var i = 0; i < level; i++) indentStr += Rule.INDENTATION
-    return indentStr + str
-}
-
-},{"./plugins":67}],65:[function(require,module,exports){
-'use strict'
-
-var Rule = require('./Rule')
-var plugins = require('./plugins')
-
-/**
- * StyleSheet abstraction, contains rules, injects stylesheet into dom.
- *
- * Options:
- *
- *  - `media` style element attribute
- *  - `title` style element attribute
- *  - `type` style element attribute
- *  - `named` true by default - keys are names, selectors will be generated,
- *    if false - keys are global selectors.
- *  - `link` link jss Rule instances with DOM CSSRule instances so that styles,
- *  can be modified dynamically, false by default because it has some performance cost.
- *
- * @param {Object} [rules] object with selectors and declarations
- * @param {Object} [options]
- * @api public
- */
-function StyleSheet(rules, options) {
-    this.options = options || {}
-    if (this.options.named == null) this.options.named = true
-    this.element = null
-    this.attached = false
-    this.media = this.options.media
-    this.type = this.options.type
-    this.title = this.options.title
-    this.rules = {}
-    // Only when options.named: true.
-    this.classes = {}
-    this.deployed = false
-    this.linked = false
-
-    // Don't create element if we are not in a browser environment.
-    if (typeof document != 'undefined') {
-        this.element = this.createElement()
-    }
-
-    for (var key in rules) {
-        this.createRules(key, rules[key])
-    }
-}
-
-StyleSheet.ATTRIBUTES = ['title', 'type', 'media']
-
-module.exports = StyleSheet
-
-/**
- * Insert stylesheet element to render tree.
- *
- * @api public
- * @return {StyleSheet}
- */
-StyleSheet.prototype.attach = function () {
-    if (this.attached) return this
-
-    if (!this.deployed) {
-        this.deploy()
-        this.deployed = true
-    }
-
-    document.head.appendChild(this.element)
-
-    // Before element is attached to the dom rules are not created.
-    if (!this.linked && this.options.link) {
-        this.link()
-        this.linked = true
-    }
-
-    this.attached = true
-
-    return this
-}
-
-/**
- * Remove stylesheet element from render tree.
- *
- * @return {StyleSheet}
- * @api public
- */
-StyleSheet.prototype.detach = function () {
-    if (!this.attached) return this
-
-    this.element.parentNode.removeChild(this.element)
-    this.attached = false
-
-    return this
-}
-
-/**
- * Deploy styles to the element.
- *
- * @return {StyleSheet}
- * @api private
- */
-StyleSheet.prototype.deploy = function () {
-    this.element.innerHTML = '\n' + this.toString() + '\n'
-
-    return this
-}
-
-/**
- * Find CSSRule objects in the DOM and link them in the corresponding Rule instance.
- *
- * @return {StyleSheet}
- * @api private
- */
-StyleSheet.prototype.link = function () {
-    var CSSRuleList = this.element.sheet.cssRules
-    var rules = this.rules
-
-    for (var i = 0; i < CSSRuleList.length; i++) {
-        var CSSRule = CSSRuleList[i]
-        var rule = rules[CSSRule.selectorText]
-        if (rule) rule.CSSRule = CSSRule
-    }
-
-    return this
-}
-
-/**
- * Add a rule to the current stylesheet. Will insert a rule also after the stylesheet
- * has been rendered first time.
- *
- * @param {Object} [key] can be selector or name if `options.named` is true
- * @param {Object} style property/value hash
- * @return {Rule}
- * @api public
- */
-StyleSheet.prototype.addRule = function (key, style) {
-    var rules = this.createRules(key, style)
-
-    // Don't insert rule directly if there is no stringified version yet.
-    // It will be inserted all together when .attach is called.
-    if (this.deployed) {
-        var sheet = this.element.sheet
-        for (var i = 0; i < rules.length; i++) {
-            var nextIndex = sheet.cssRules.length
-            var rule = rules[i]
-            sheet.insertRule(rule.toString(), nextIndex)
-            if (this.options.link) rule.CSSRule = sheet.cssRules[nextIndex]
-        }
-    } else {
-        this.deploy()
-    }
-
-    return rules
-}
-
-/**
- * Create rules, will render also after stylesheet was rendered the first time.
- *
- * @param {Object} rules key:style hash.
- * @return {StyleSheet} this
- * @api public
- */
-StyleSheet.prototype.addRules = function (rules) {
-    for (var key in rules) {
-        this.addRule(key, rules[key])
-    }
-
-    return this
-}
-
-/**
- * Get a rule.
- *
- * @param {String} key can be selector or name if `named` is true.
- * @return {Rule}
- * @api public
- */
-StyleSheet.prototype.getRule = function (key) {
-    return this.rules[key]
-}
-
-/**
- * Convert rules to a css string.
- *
- * @return {String}
- * @api public
- */
-StyleSheet.prototype.toString = function () {
-    var str = ''
-    var rules = this.rules
-    var stringified = {}
-    for (var key in rules) {
-        var rule = rules[key]
-        // We have the same rule referenced twice if using named urles.
-        // By name and by selector.
-        if (stringified[rule.id]) continue
-        if (str) str += '\n'
-        str += rules[key].toString()
-        stringified[rule.id] = true
-    }
-
-    return str
-}
-
-/**
- * Create a rule, will not render after stylesheet was rendered the first time.
- *
- * @param {Object} [selector] if you don't pass selector - it will be generated
- * @param {Object} [style] declarations block
- * @param {Object} [options] rule options
- * @return {Array} rule can contain child rules
- * @api private
- */
-StyleSheet.prototype.createRules = function (key, style, options) {
-    var rules = []
-    var selector, name
-
-    if (!options) options = {}
-    var named = this.options.named
-    // Scope options overwrite instance options.
-    if (options.named != null) named = options.named
-
-    if (named) name = key
-    else selector = key
-
-    var rule = new Rule(selector, style, {
-        sheet: this,
-        named: named,
-        name: name
-    })
-    rules.push(rule)
-
-    this.rules[rule.selector] = rule
-    if (name) {
-        this.rules[name] = rule
-        this.classes[name] = rule.className
-    }
-
-    plugins.run(rule)
-
-    for (key in rule.children) {
-        rules.push(this.createRules(
-            key,
-            rule.children[key].style,
-            rule.children[key].options
-        ))
-    }
-
-    return rules
-}
-
-/**
- * Create style sheet element.
- *
- * @api private
- * @return {Element}
- */
-StyleSheet.prototype.createElement = function () {
-    var element = document.createElement('style')
-
-    StyleSheet.ATTRIBUTES.forEach(function (name) {
-        if (this[name]) element.setAttribute(name, this[name])
-    }, this)
-
-    return element
-}
-
-},{"./Rule":64,"./plugins":67}],66:[function(require,module,exports){
-'use strict'
-
-var StyleSheet = require('./StyleSheet')
-var Rule = require('./Rule')
-
-exports.StyleSheet = StyleSheet
-
-exports.Rule = Rule
-
-exports.plugins = require('./plugins')
-
-/**
- * Create a stylesheet.
- *
- * @param {Object} rules is selector:style hash.
- * @param {Object} [named] rules have names if true, class names will be generated.
- * @param {Object} [attributes] stylesheet element attributes.
- * @return {StyleSheet}
- * @api public
- */
-exports.createStyleSheet = function (rules, named, attributes) {
-    return new StyleSheet(rules, named, attributes)
-}
-
-/**
- * Create a rule.
- *
- * @param {String} [selector]
- * @param {Object} style is property:value hash.
- * @return {Rule}
- * @api public
- */
-exports.createRule = function (selector, style) {
-    var rule = new Rule(selector, style)
-    exports.plugins.run(rule)
-    return rule
-}
-
-/**
- * Register plugin. Passed function will be invoked with a rule instance.
- *
- * @param {Function} fn
- * @api public
- */
-exports.use = exports.plugins.use
-
-},{"./Rule":64,"./StyleSheet":65,"./plugins":67}],67:[function(require,module,exports){
-'use strict'
-
-/**
- * Registered plugins.
- *
- * @type {Array}
- * @api public
- */
-exports.registry = []
-
-/**
- * Register plugin. Passed function will be invoked with a rule instance.
- *
- * @param {Function} fn
- * @api public
- */
-exports.use = function (fn) {
-    exports.registry.push(fn)
-}
-
-/**
- * Execute all registered plugins.
- *
- * @param {Rule} rule
- * @api private
- */
-exports.run = function (rule) {
-    for (var i = 0; i < exports.registry.length; i++) {
-        exports.registry[i](rule)
-    }
-}
-
-},{}],"accounting":[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":31,"./react/components/design/colorlist":32,"./react/components/design/designer":33,"./react/components/design/fontlist":34,"./react/components/design/layoutlist":35,"./react/components/design/toggle":36,"./react/components/design/valueslider":37,"./react/components/designSettings/designSettings":23,"./react/components/instagram/instagram":38,"./react/components/instagram/instagram_feed_mixin":39,"./react/components/instagram/instagram_v2":40,"./react/components/product/add_to_basket_button":41,"./react/controllers/events":42,"./react/controllers/tooltip":43,"./react/dispatchers/basket":45,"./react/stores/basket":47,"./routes/api":48,"./routes/routes":49,"./shared/app":50,"./shared/application_slider":51,"./shared/cart":52,"./shared/checkout":53,"./shared/jump":54,"./shared/lightbox":55,"./shared/load_more":56,"./shared/mobile_navigation":57,"./shared/product_images_slider":58,"./shared/theme_switcher":59}],"accounting":[function(require,module,exports){
 /*!
  * accounting.js v0.3.2
  * Copyright 2011, Joss Crowcroft
@@ -7016,6 +2598,4424 @@ exports.run = function (rule) {
 
 }(jQuery);
 
+
+},{}],2:[function(require,module,exports){
+window._ = require('lodash');
+
+window.$ = window.jQuery = require('jquery');
+
+window.React = require('react');
+
+window.ReactUjs = require('reactUjs');
+
+window.Dispatcher = require('flux').Dispatcher;
+
+window.EventEmitter = require('eventEmitter');
+
+window.accounting = require('accounting');
+
+require('jquery.role');
+
+require('jquery.mmenu');
+
+require('react-mixin-manager')(window.React);
+
+require('bootstrapSass');
+
+require('owlCarousel');
+
+require('fancybox');
+
+require('fancybox.wannabe');
+
+require('nouislider');
+
+window.accounting.settings = {
+  currency: {
+    symbol: 'руб.',
+    format: '%v %s',
+    decimal: ',',
+    thousand: ' ',
+    precision: 0
+  },
+  number: {
+    precision: 0,
+    thousand: '',
+    decimal: ','
+  }
+};
+
+
+
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":60,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+window.BasketActions = {
+  addGood: function(good) {
+    return this._addItemToServer(good);
+  },
+  _addItemToServer: function(good, count) {
+    if (count == null) {
+      count = 1;
+    }
+    return $.ajax({
+      dataType: 'json',
+      method: 'post',
+      data: {
+        good_id: good.good_id,
+        count: count
+      },
+      url: Routes.vendor_cart_items_path(),
+      error: function(xhr, status, err) {
+        return typeof console.error === "function" ? console.error(err) : void 0;
+      },
+      success: function(response) {
+        return BasketDispatcher.handleServerAction({
+          actionType: 'productAddedToBasket',
+          cartItem: cartItem
+        });
+      }
+    });
+  },
+  receiveBasket: function(cartItems) {
+    return BasketDispatcher.handleViewAction({
+      actionType: 'receiveBasket',
+      cartItems: cartItems
+    });
+  }
+};
+
+
+
+},{}],4:[function(require,module,exports){
+var Api, TIMEOUT, _pendingRequests, abortPendingRequests, deleteRequest, getRequest, postRequest, putRequest, request, vendorKey;
+
+TIMEOUT = 10000;
+
+_pendingRequests = {};
+
+abortPendingRequests = function(key) {
+  if (_pendingRequests[key]) {
+    _pendingRequests[key].abort();
+    return _pendingRequests[key] = null;
+  }
+};
+
+vendorKey = function() {
+  return 'c3d753f03d73251bb4aa707e077ec8e7';
+};
+
+request = function(_method, url, data) {
+  var headers, method;
+  if (data == null) {
+    data = {};
+  }
+  headers = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-Vendor-Key': vendorKey()
+  };
+  method = (function() {
+    switch (_method) {
+      case 'GET':
+        return 'GET';
+      case 'POST':
+      case 'PUT':
+      case 'DELETE':
+        return 'POST';
+      default:
+        return 'GET';
+    }
+  })();
+  _.extend(data, {
+    _method: _method
+  });
+  return $.ajax({
+    url: url,
+    method: method,
+    data: data,
+    headers: headers,
+    timeout: TIMEOUT,
+    xhrFields: {
+      withCredentials: true,
+      crossDomain: true
+    }
+  });
+};
+
+getRequest = function(url, data) {
+  return request('GET', url, data);
+};
+
+postRequest = function(url, data) {
+  return request('POST', url, data);
+};
+
+putRequest = function(url, data) {
+  return request('PUT', url, data);
+};
+
+deleteRequest = function(url, data) {
+  return request('DELETE', url, data);
+};
+
+Api = {
+  products: {
+    filteredCount: function(filter) {
+      var key, url;
+      url = ApiRoutes.productsFilteredCount(filter);
+      key = 'productsFilteredCount';
+      abortPendingRequests(key);
+      return _pendingRequests[key] = getRequest(url);
+    }
+  }
+};
+
+module.exports = Api;
+
+
+
+},{}],5:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.BasketButton = React.createClass({displayName: 'BasketButton',
+  propTypes: {
+    itemsCount: React.PropTypes.number,
+    cartUrl: React.PropTypes.string.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      cartUrl: "/cart.html"
+    };
+  },
+  getInitialState: function() {
+    return {
+      itemsCount: this.props.itemsCount || BasketStore.getBasketCount()
+    };
+  },
+  componentDidMount: function() {
+    return BasketStore.addChangeListener(this._onChange);
+  },
+  componentDidUnmount: function() {
+    return BasketStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    return this.setState({
+      itemsCount: BasketStore.getBasketCount()
+    });
+  },
+  render: function() {
+    if (this.state.itemsCount > 0) {
+      return BasketButton_Full({cartUrl: this.props.cartUrl, itemsCount: this.state.itemsCount});
+    } else {
+      return BasketButton_Empty({cartUrl: this.props.cartUrl});
+    }
+  }
+});
+
+window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
+  propTypes: {
+    itemsCount: React.PropTypes.object.isRequired,
+    cartUrl: React.PropTypes.object
+  },
+  render: function() {
+    return React.DOM.a({className: "b-cart-trigger b-cart-trigger_full", href: this.props.cartUrl}, React.DOM.span({className: "b-cart-trigger__count"}, this.props.itemsCount));
+  }
+});
+
+window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty',
+  propTypes: {
+    cartUrl: React.PropTypes.object
+  },
+  render: function() {
+    return React.DOM.a({className: "b-cart-trigger", href: this.props.cartUrl});
+  }
+});
+
+
+
+},{}],6:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.BasketPopup = React.createClass({displayName: 'BasketPopup',
+  propTypes: {
+    cartUrl: React.PropTypes.string.isRequired,
+    cartClearUrl: React.PropTypes.string.isRequired,
+    cartItems: React.PropTypes.array.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      cartUrl: "/cart.html",
+      cartClearUrl: "/cart.html?clear",
+      items: null
+    };
+  },
+  getInitialState: function() {
+    return {
+      isVisible: false,
+      items: null
+    };
+  },
+  componentDidMount: function() {
+    $(document).on("click", this.handleBodyClick);
+    $(document).on("cart:clicked", this.handleCartClicked);
+    $(document).on("keyup", this.handleBodyKey);
+    return BasketStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    $(document).off("click", this.handleBodyClick);
+    $(document).off("cart:clicked", this.handleCartClicked);
+    return $(document).off("keyup", this.handleBodyKey);
+  },
+  render: function() {
+    var classNameValue;
+    classNameValue = "b-float-cart";
+    if (this.state.isVisible === false) {
+      classNameValue += " b-float-cart_invisible";
+    }
+    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
+          BasketPopupList({items: this.props.items}), 
+          BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
+        ));
+  },
+  _onChange: function() {
+    this.setState({
+      items: BasketStore.getBasketItems()
+    });
+    return this.handleCartClicked();
+  },
+  handleCartClicked: function(e) {
+    return this.setState({
+      isVisible: true
+    });
+  },
+  handleClick: function(e) {
+    return $(document).trigger("cart:clicked");
+  },
+  handleBodyClick: function() {
+    if (this.state.isVisible) {
+      return this.setState({
+        isVisible: false
+      });
+    }
+  },
+  handleBodyKey: function(e) {
+    if (e.keyCode === 27) {
+      return this.setState({
+        isVisible: false
+      });
+    }
+  }
+});
+
+window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
+  propTypes: {
+    items: React.PropTypes.array
+  },
+  render: function() {
+    var itemsList;
+    if (!this.props.items) {
+      return null;
+    }
+    itemsList = this.props.items.map(function(item) {
+      return BasketPopupItem({key: item.id, item: item});
+    });
+    return React.DOM.div({className: "b-float-cart__item-wrap"}, 
+        itemsList
+      );
+  }
+});
+
+window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
+  propTypes: {
+    product_url: React.PropTypes.string,
+    good_id: React.PropTypes.number,
+    price: React.PropTypes.number,
+    count: React.PropTypes.number,
+    image_url: React.PropTypes.string,
+    title: React.PropTypes.string,
+    description: React.PropTypes.string,
+    article: React.PropTypes.string,
+    count: React.PropTypes.number
+  },
+  render: function() {
+    return React.DOM.div({className: "b-float-cart__item"}, 
+              React.DOM.div({className: "b-float-cart__item__inner"}, 
+                React.DOM.div({className: "b-float-cart__item__img"}, 
+                  React.DOM.a({href: this.props.product_url}, 
+                    React.DOM.img({src: this.props.image_url, alt: this.props.title})
+                  )
+                ), 
+                React.DOM.div({className: "b-float-cart__item__info"}, 
+                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_url}, this.props.title), 
+                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.description), 
+                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.article)
+                ), 
+                React.DOM.div({className: "b-float-cart__item__q"}, this.props.count), 
+                React.DOM.div({className: "b-float-cart__item__price"}, 
+                  React.DOM.div({className: "b-float-cart__item__price-val"}, 
+                    accounting.formatMoney((this.props.price.cents/100).toFixed(2) * this.props.count)
+                  )
+                )
+              )
+            );
+  }
+});
+
+window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl',
+  propTypes: {
+    cartUrl: React.PropTypes.string.isRequired,
+    cartClearUrl: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-float-cart__control"}, 
+          React.DOM.a({className: "b-float-cart__url b-btn", href: this.props.cartUrl}, "Перейти в корзину"), 
+          React.DOM.a({className: "b-float-cart__clear", href: this.props.cartClearUrl}, "Очистить корзину")
+        );
+  }
+});
+
+
+
+},{}],7:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilter_ShowResultsButton, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilter_ShowResultsButton = React.createClass({displayName: 'CatalogFilter_ShowResultsButton',
+  render: function() {
+    return React.DOM.button({className: "b-btn b-full-filter__submit", 
+            onClick:  this.props.onClick}, 
+      "Показать"
+    );
+  }
+});
+
+module.exports = CatalogFilter_ShowResultsButton;
+
+
+
+},{}],8:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilter, CatalogFilterList, CatalogFilterMixin, CatalogFilter_ShowResultsButton, PropTypes;
+
+CatalogFilterMixin = require('./mixins/catalogFilter');
+
+CatalogFilterList = require('./list');
+
+CatalogFilter_ShowResultsButton = require('./buttons/showResults');
+
+PropTypes = React.PropTypes;
+
+CatalogFilter = React.createClass({displayName: 'CatalogFilter',
+  mixins: [CatalogFilterMixin],
+  propTypes: {
+    options: PropTypes.array.isRequired,
+    selectedOptions: PropTypes.array,
+    filterName: PropTypes.string,
+    categoryId: PropTypes.number
+  },
+  getDefaultProps: function() {
+    return {
+      filterName: 'f'
+    };
+  },
+  render: function() {
+    return React.DOM.div({className: "b-full-filter"}, 
+      React.DOM.input({className: "b-full-filter__toggle", id: "filter-toggle", type: "checkbox"}), 
+      React.DOM.label({className: "b-full-filter__trigger", htmlFor: "filter-toggle"}, 
+        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_open"}, 
+          "Показать фильтр"
+        ), 
+        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_close"}, 
+          "Скрыть фильтр"
+        )
+      ), 
+      CatalogFilterList({
+          options:  this.props.options, 
+          selectedOptions:  this.props.selectedOptions, 
+          categoryId:  this.props.categoryId, 
+          filterName:  this.props.filterName}), 
+      CatalogFilter_ShowResultsButton(null)
+    );
+  }
+});
+
+module.exports = CatalogFilter;
+
+
+
+},{"./buttons/showResults":7,"./list":9,"./mixins/catalogFilter":15}],9:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Radio, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, PropTypes;
+
+CatalogFilterList_SelectedOptions = require('./list/selectedOptions');
+
+CatalogFilterList_Checkbox = require('./list/checkbox');
+
+CatalogFilterList_Radio = require('./list/radio');
+
+CatalogFilterList_Range = require('./list/range');
+
+CatalogFilterList_Color = require('./list/color');
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
+  propTypes: {
+    options: PropTypes.array.isRequired,
+    selectedOptions: PropTypes.array.isRequired,
+    filterName: PropTypes.string.isRequired,
+    categoryId: PropTypes.number
+  },
+  getDefaultProps: function() {
+    return {
+      categoryId: null
+    };
+  },
+  render: function() {
+    return React.DOM.ul({className: "b-full-filter__list-wrap"}, 
+      CatalogFilterList_SelectedOptions({selectedOptions:  this.props.selectedOptions}), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems, that;
+    that = this;
+    return listItems = this.props.options.map(function(item, i) {
+      var from, items, paramName, title, to, units, value, valueFrom, valueTo;
+      switch (item.type) {
+        case 'checkbox':
+          title = item.title, paramName = item.paramName, items = item.items;
+          return CatalogFilterList_Checkbox({
+               title: title, 
+               paramName: paramName, 
+               filterName:  that.props.filterName, 
+               items: items, 
+               categoryId:  that.props.categoryId, 
+               key: i });
+        case 'radio':
+          title = item.title, value = item.value, paramName = item.paramName, items = item.items;
+          return CatalogFilterList_Radio({
+               title: title, 
+               value: value, 
+               paramName: paramName, 
+               filterName:  that.props.filterName, 
+               items: items, 
+               categoryId:  that.props.categoryId, 
+               key: i });
+        case 'range':
+          title = item.title, paramName = item.paramName, units = item.units, valueFrom = item.valueFrom, valueTo = item.valueTo, from = item.from, to = item.to;
+          return CatalogFilterList_Range({
+               title: title, 
+               paramName: paramName, 
+               filterName:  that.props.filterName, 
+               units: units, 
+               valueFrom: valueFrom, 
+               valueTo: valueTo, 
+               from: from, 
+               to: to, 
+               categoryId:  that.props.categoryId, 
+               key: i });
+        case 'color':
+          title = item.title, paramName = item.paramName, items = item.items;
+          return CatalogFilterList_Color({
+              title: title, 
+              paramName: paramName, 
+              filterName:  that.props.filterName, 
+              items: items, 
+              categoryId:  that.props.categoryId, 
+              key: i });
+        default:
+          return typeof console.warn === "function" ? console.warn('Unknown item type of CatalogFilterList component', item) : void 0;
+      }
+    });
+  }
+});
+
+module.exports = CatalogFilterList;
+
+
+
+},{"./list/checkbox":10,"./list/color":11,"./list/radio":12,"./list/range":13,"./list/selectedOptions":14}],10:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Checkbox, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_Checkbox',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
+    filterName: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems, that;
+    that = this;
+    listItems = this.props.items.map(function(item, i) {
+      return React.DOM.label({className: "b-cbox", key: i }, 
+        React.DOM.input({type: "checkbox", 
+               name:  that.getFieldName(item), 
+               defaultChecked:  item.checked, 
+               className: "b-cbox__native", 
+               onChange:  that.handleChange}), 
+        React.DOM.div({className: "b-cbox__val"}, 
+           item.name
+        )
+      );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems
+            );
+  },
+  getFieldName: function(item) {
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+  },
+  handleChange: function(e) {
+    var elRect, filter, offsetLeft, position;
+    elRect = e.target.getBoundingClientRect();
+    offsetLeft = 15;
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
+    position = {
+      left: elRect.right + offsetLeft,
+      top: elRect.top + document.body.scrollTop - elRect.height / 2
+    };
+    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+  }
+});
+
+module.exports = CatalogFilterList_Checkbox;
+
+
+
+},{}],11:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Color, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Color',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
+    filterName: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems, that;
+    that = this;
+    listItems = this.props.items.map(function(item, i) {
+      return React.DOM.label({className: "b-cbox b-cbox_color", key: i }, 
+        React.DOM.input({type: "checkbox", 
+               name:  that.getFieldName(item), 
+               defaultChecked:  item.checked, 
+               title:  item.name, 
+               className: "b-cbox__native", 
+               onChange:  that.handleChange}), 
+        React.DOM.div({style: { "background-color": item.hexCode}, 
+             className: "b-cbox__val"})
+      );
+    });
+    return React.DOM.div({ref: "list", 
+                 className: "b-full-filter__widget"}, 
+              listItems
+            );
+  },
+  getFieldName: function(item) {
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+  },
+  handleChange: function(e) {
+    var elRect, filter, listRect, offsetLeft, position;
+    elRect = e.target.getBoundingClientRect();
+    listRect = this.refs.list.getDOMNode().getBoundingClientRect();
+    offsetLeft = 15;
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
+    position = {
+      left: listRect.right + offsetLeft,
+      top: elRect.top + document.body.scrollTop - elRect.height / 2
+    };
+    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+  }
+});
+
+module.exports = CatalogFilterList_Color;
+
+
+
+},{}],12:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Radio, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Radio',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
+    filterName: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    categoryId: PropTypes.number.isRequired
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems, that;
+    that = this;
+    listItems = this.props.items.map(function(item, i) {
+      return React.DOM.label({className: "b-radio", key: i }, 
+        React.DOM.input({type: "radio", 
+               name:  that.getFieldName(item), 
+               defaultChecked:  item.paramValue == that.props.value, 
+               value:  item.paramValue, 
+               className: "b-radio__native", 
+               onChange:  that.handleChange}), 
+        React.DOM.div({className: "b-radio__val"}, 
+           item.name
+        )
+      );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems
+            );
+  },
+  getFieldName: function(item) {
+    return this.props.filterName + "[" + this.props.paramName + "]";
+  },
+  handleChange: function(e) {
+    var elRect, filter, offsetLeft, position;
+    elRect = e.target.getBoundingClientRect();
+    offsetLeft = 15;
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
+    position = {
+      left: elRect.right + offsetLeft,
+      top: elRect.top + document.body.scrollTop - elRect.height / 2
+    };
+    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+  }
+});
+
+module.exports = CatalogFilterList_Radio;
+
+
+
+},{}],13:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Range, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Range',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
+    filterName: PropTypes.string.isRequired,
+    units: PropTypes.string,
+    valueFrom: PropTypes.number,
+    valueTo: PropTypes.number,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    categoryId: PropTypes.number.isRequired
+  },
+  getInitialState: function() {
+    return {
+      from: this.props.valueFrom || this.props.from,
+      to: this.props.valueTo || this.props.to
+    };
+  },
+  componentDidMount: function() {
+    var slider;
+    slider = this.refs.slider.getDOMNode();
+    $(slider).noUiSlider({
+      start: [this.state.from, this.state.to],
+      range: {
+        min: this.props.from,
+        max: this.props.to
+      },
+      connect: true
+    });
+    $(slider).on('slide', this.handleSlide);
+    return $(slider).on('change', this.handleChange);
+  },
+  componentWillUnmount: function() {
+    var slider;
+    slider = this.refs.slider.getDOMNode();
+    $(slider).off('slide', this.handleSlide);
+    $(slider).off('change', this.handleChange);
+    return $(slider).destroy();
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item b-full-filter__item_price"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-full-filter__widget", 
+           onClick:  this.handleClick}, 
+        React.DOM.div({className: "b-full-filter__slider"}, 
+          React.DOM.div({ref: "rangeValue", 
+               className: "b-full-filter__slider__value"}, 
+             this.state.from, 
+            React.DOM.span({className: "slider-divider"}, " – "), 
+             this.state.to, " ", React.DOM.span({dangerouslySetInnerHTML: { __html: this.props.units}})
+          ), 
+          React.DOM.div({ref: "slider", 
+               className: "b-full-filter__slider__embed"})
+        )
+      ), 
+      React.DOM.input({type: "hidden", 
+             name:  this.props.filterName + '[' + this.props.paramName + '][from]', 
+             value:  this.state.from}), 
+      React.DOM.input({type: "hidden", 
+             name:  this.props.filterName + '[' + this.props.paramName + '][to]', 
+             value:  this.state.to})
+    );
+  },
+  handleSlide: function(e, range) {
+    return this.setState({
+      from: parseInt(range[0]),
+      to: parseInt(range[1])
+    });
+  },
+  handleChange: function() {
+    var elRect, filter, offsetLeft, position;
+    elRect = this.refs.rangeValue.getDOMNode().getBoundingClientRect();
+    offsetLeft = 15;
+    filter = $(this.getDOMNode()).closest('form').serialize() + ("&category_id=" + this.props.categoryId);
+    position = {
+      left: elRect.right + offsetLeft,
+      top: elRect.top + document.body.scrollTop - elRect.height / 2
+    };
+    return KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+  }
+});
+
+module.exports = CatalogFilterList_Range;
+
+
+
+},{}],14:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_SelectedOptions, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_SelectedOptions = React.createClass({displayName: 'CatalogFilterList_SelectedOptions',
+  propTypes: {
+    selectedOptions: PropTypes.array.isRequired
+  },
+  render: function() {
+    if (this.hasOptions()) {
+      return React.DOM.li({className: "b-full-filter__item"}, 
+        React.DOM.div({className: "b-full-filter__item__title"}, "Текущий выбор"), 
+         this.renderListItems() 
+      );
+    } else {
+      return null;
+    }
+  },
+  renderListItems: function() {
+    var listItems, selectedOptions;
+    selectedOptions = this;
+    listItems = this.props.selectedOptions.map(function(item, i) {
+      return React.DOM.span({className: "b-full-filter__value", 
+             onClick:  selectedOptions.removeOption.bind(null, item.url), 
+             key: i }, 
+         item.name
+      );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems 
+            );
+  },
+  hasOptions: function() {
+    return this.props.selectedOptions.length;
+  },
+  removeOption: function(url) {
+    return window.location = url;
+  }
+});
+
+module.exports = CatalogFilterList_SelectedOptions;
+
+
+
+},{}],15:[function(require,module,exports){
+var CatalogFilterMixin;
+
+CatalogFilterMixin = {
+  getDefaultProps: function() {
+    return {
+      selectedOptions: [
+        {
+          name: 'Цена от 20 000 до 5000 Р',
+          url: '?filter_without_price'
+        }, {
+          name: 'Категория: гибридные',
+          url: '?filter_without_category'
+        }, {
+          name: 'Материал: карбон',
+          url: '?filter_without_material'
+        }
+      ],
+      options: [
+        {
+          title: 'Показывать',
+          type: 'radio',
+          paramName: 'availability',
+          value: 'all',
+          items: [
+            {
+              name: 'Все',
+              paramValue: 'all'
+            }, {
+              name: 'В наличии',
+              paramValue: 'in-stock'
+            }, {
+              name: 'Под заказ',
+              paramValue: 'on-request'
+            }, {
+              name: 'Распродажа',
+              paramValue: 'sale'
+            }
+          ]
+        }, {
+          title: 'Ценовой диапазон',
+          type: 'range',
+          paramName: 'price',
+          units: '&#x20BD;',
+          valueFrom: 20322,
+          valueTo: 35023,
+          from: 10000,
+          to: 50000
+        }, {
+          title: 'Показывать',
+          type: 'checkbox',
+          paramName: 'type',
+          items: [
+            {
+              name: 'Все',
+              paramValue: 'all',
+              checked: true
+            }, {
+              name: 'Гибридные',
+              paramValue: 'hybrid',
+              checked: false
+            }, {
+              name: 'Складные',
+              paramValue: 'foldable',
+              checked: true
+            }, {
+              name: 'Электро',
+              paramValue: 'electro',
+              checked: false
+            }
+          ]
+        }, {
+          title: 'Цвет',
+          type: 'color',
+          paramName: 'color',
+          items: [
+            {
+              name: 'Красный',
+              paramValue: 'red',
+              hexCode: '#fe2a2a',
+              checked: false
+            }, {
+              name: 'Оранжевый',
+              paramValue: 'orange',
+              hexCode: '#feac2a',
+              checked: true
+            }, {
+              name: 'Голубой',
+              paramValue: 'cyan',
+              hexCode: '#2fe1ec',
+              checked: false
+            }, {
+              name: 'Серый',
+              paramValue: 'grey',
+              hexCode: '#aeaeae',
+              checked: true
+            }
+          ]
+        }, {
+          title: 'Материал рамы',
+          type: 'checkbox',
+          paramName: 'frame-material',
+          items: [
+            {
+              name: 'Сталь',
+              paramValue: 'steal',
+              checked: false
+            }, {
+              name: 'Карбон',
+              paramValue: 'carbon',
+              checked: true
+            }, {
+              name: 'Алюминий',
+              paramValue: 'aluminum',
+              checked: false
+            }
+          ]
+        }, {
+          title: 'Модельный ряд',
+          type: 'checkbox',
+          paramName: 'series',
+          items: [
+            {
+              name: '2014',
+              paramValue: '2014',
+              checked: false
+            }, {
+              name: '2013',
+              paramValue: '2013',
+              checked: false
+            }, {
+              name: '2012',
+              paramValue: '2012',
+              checked: true
+            }
+          ]
+        }
+      ]
+    };
+  }
+};
+
+module.exports = CatalogFilterMixin;
+
+
+
+},{}],16:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var Api, ERROR_STATE, FilteredCountTooltip, LOADED_STATE, LOADING_STATE, PropTypes, TIMEOUT;
+
+Api = require('../../../api/api');
+
+PropTypes = React.PropTypes;
+
+TIMEOUT = 3000;
+
+LOADING_STATE = 'loading';
+
+LOADED_STATE = 'loaded';
+
+ERROR_STATE = 'error';
+
+FilteredCountTooltip = React.createClass({displayName: 'FilteredCountTooltip',
+  propTypes: {
+    title: PropTypes.string,
+    filter: PropTypes.string.isRequired,
+    timeout: PropTypes.number,
+    position: PropTypes.shape({
+      left: PropTypes.number.isRequired,
+      top: PropTypes.number.isRequired
+    }).isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      title: 'Показать',
+      timeout: TIMEOUT,
+      position: {
+        left: 0,
+        top: 0
+      }
+    };
+  },
+  getInitialState: function() {
+    return {
+      currentState: LOADING_STATE,
+      count: null
+    };
+  },
+  componentDidMount: function() {
+    this.timeout = setTimeout(this.props.onClose, this.props.timeout);
+    return Api.products.filteredCount(this.props.filter).then((function(_this) {
+      return function(count) {
+        return _this.setState({
+          currentState: LOADED_STATE,
+          count: count
+        });
+      };
+    })(this)).fail(this.activateErrorState);
+  },
+  componentWillUnmount: function() {
+    if (this.timeout != null) {
+      return clearTimeout(this.timeout);
+    }
+  },
+  render: function() {
+    return React.DOM.div({style:  this.getStyles(), 
+          className: "b-tooltip"}, 
+       this.renderContent() 
+    );
+  },
+  renderContent: function() {
+    switch (this.state.currentState) {
+      case LOADING_STATE:
+        return 'Загрузка..';
+      case ERROR_STATE:
+        return 'Ошибка загрузки:(';
+      case LOADED_STATE:
+        return React.DOM.span(null, 
+          "Выбрано вариантов: ",  this.state.count, " ", React.DOM.a({href:  '?' + this.props.filter},  this.props.title)
+        );
+    }
+  },
+  activateErrorState: function() {
+    return this.setState({
+      currentState: ERROR_STATE
+    });
+  },
+  getStyles: function() {
+    var left, ref, top;
+    ref = this.props.position, left = ref.left, top = ref.top;
+    return {
+      left: left,
+      top: top
+    };
+  }
+});
+
+module.exports = FilteredCountTooltip;
+
+
+
+},{"../../../api/api":4}],17:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var BUTTON_TEXT, DesignSettings_SaveButton, PropTypes;
+
+PropTypes = React.PropTypes;
+
+BUTTON_TEXT = 'Сохранить';
+
+DesignSettings_SaveButton = React.createClass({displayName: 'DesignSettings_SaveButton',
+  propTypes: {
+    onClick: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.button({className: "b-design-option__save", 
+             onClick:  this.props.onClick}, 
+      BUTTON_TEXT 
+    );
+  }
+});
+
+module.exports = DesignSettings_SaveButton;
+
+
+
+},{}],18:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Checkbox, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Checkbox = React.createClass({displayName: 'DesignSettings_Checkbox',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.array.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(value, key) {
+      return React.DOM.label({className: "b-design-option__cbox", 
+              key: key }, 
+        React.DOM.input({type: "checkbox", 
+               name: value, 
+               defaultChecked:  that.isItemChecked(key), 
+               onChange:  that.handleChange.bind(null, key) }), 
+        value 
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  isItemChecked: function(key) {
+    var result;
+    result = this.props.value.filter(function(item) {
+      return item === key;
+    });
+    return !!result.length;
+  },
+  handleChange: function(key, e) {
+    var index, newValue;
+    newValue = this.props.value.slice(0);
+    index = newValue.indexOf(key);
+    if (e.target.checked) {
+      if (index === -1) {
+        newValue.push(key);
+      }
+    } else {
+      if (index !== -1) {
+        newValue.splice(index, 1);
+      }
+    }
+    return this.props.onChange(newValue);
+  }
+});
+
+module.exports = DesignSettings_Checkbox;
+
+
+
+},{}],19:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Color, DesignSettings_ColorCustomItem, DesignSettings_ColorItem, PropTypes;
+
+DesignSettings_ColorItem = require('./color/item');
+
+DesignSettings_ColorCustomItem = require('./color/customItem');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Color = React.createClass({displayName: 'DesignSettings_Color',
+  propTypes: {
+    value: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    var selectedItemStyles;
+    selectedItemStyles = {
+      backgroundColor: this.props.value
+    };
+    return React.DOM.div({className: "b-design-option__item"}, 
+              React.DOM.div({className: "b-design-option__item__current-params"}, 
+                React.DOM.span({className: "b-design-option__item__name"}, 
+                   this.props.title
+                ), 
+                React.DOM.div({className: "b-design-option__item__val"}, 
+                  React.DOM.div({className: "b-design-option__color__ind", 
+                       style: selectedItemStyles })
+                )
+              ), 
+               this.renderParamList() 
+            );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(hexCode) {
+      return DesignSettings_ColorItem({
+          hexCode: hexCode, 
+          checked:  hexCode == that.props.value, 
+          onChange:  that.handleChange, 
+          key: hexCode });
+    });
+    return React.DOM.div({className: "b-design-option__item__available-params"}, 
+              listItems 
+            );
+  },
+  handleChange: function(hexCode) {
+    return this.props.onChange(hexCode);
+  }
+});
+
+module.exports = DesignSettings_Color;
+
+
+
+},{"./color/customItem":20,"./color/item":21}],20:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ColorCustomItem, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ColorCustomItem = React.createClass({displayName: 'DesignSettings_ColorCustomItem',
+  propTypes: {
+    hexCode: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    var itemStyles;
+    itemStyles = {
+      backgroundColor: this.props.hexCode
+    };
+    return React.DOM.label({className: "b-design-option__color"}, 
+              React.DOM.input({type: "radio", 
+                     checked:  this.props.checked, 
+                     onChange:  this.handleChange}), 
+             React.DOM.span({className: "b-design-option__color__ind", 
+                   style: itemStyles })
+           );
+  },
+  handleChange: function() {
+    return this.props.onChange(this.props.hexCode);
+  }
+});
+
+module.exports = DesignSettings_ColorCustomItem;
+
+
+
+},{}],21:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ColorItem, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ColorItem = React.createClass({displayName: 'DesignSettings_ColorItem',
+  propTypes: {
+    hexCode: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    var itemStyles;
+    itemStyles = {
+      backgroundColor: this.props.hexCode
+    };
+    return React.DOM.label({className: "b-design-option__color"}, 
+              React.DOM.input({type: "radio", 
+                     checked:  this.props.checked, 
+                     onChange:  this.handleChange}), 
+             React.DOM.span({className: "b-design-option__color__ind", 
+                   style: itemStyles })
+           );
+  },
+  handleChange: function() {
+    return this.props.onChange(this.props.hexCode);
+  }
+});
+
+module.exports = DesignSettings_ColorItem;
+
+
+
+},{}],22:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Range, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Range = React.createClass({displayName: 'DesignSettings_Range',
+  propTypes: {
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number,
+    to: PropTypes.number,
+    step: PropTypes.number,
+    onChange: PropTypes.func.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      from: 0,
+      to: 1,
+      step: .1
+    };
+  },
+  componentDidMount: function() {
+    var slider;
+    slider = this.getDOMNode();
+    $(slider).noUiSlider({
+      start: this.props.value,
+      step: this.props.step,
+      range: {
+        min: this.props.from,
+        max: this.props.to
+      }
+    });
+    return $(slider).on('change', this.handleChange);
+  },
+  componentWillUnmount: function() {
+    var slider;
+    slider = this.getDOMNode();
+    $(slider).off('change', this.handleChange);
+    return $(slider).destroy();
+  },
+  render: function() {
+    return React.DOM.div(null);
+  },
+  handleChange: function(e, value) {
+    return this.props.onChange(parseFloat(value));
+  }
+});
+
+module.exports = DesignSettings_Range;
+
+
+
+},{}],23:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DESIGN_SETTINGS_TITLE, DesignSettings, DesignSettingsMixin, DesignSettings_Checkbox, DesignSettings_Color, DesignSettings_FeedOpacity, DesignSettings_Font, DesignSettings_FontSize, DesignSettings_PageBackground, DesignSettings_ProductLayout, DesignSettings_ProductsInRow, DesignSettings_SaveButton, PropTypes, changeAlpha, changeBackgroundColor, hexToRgb, jss, setDesignClass;
+
+jss = require('jss');
+
+DesignSettingsMixin = require('./mixins/designSettings');
+
+DesignSettings_Color = require('./common/color');
+
+DesignSettings_Checkbox = require('./common/checkbox');
+
+DesignSettings_SaveButton = require('./buttons/save');
+
+DesignSettings_PageBackground = require('./pageBackground');
+
+DesignSettings_FeedOpacity = require('./feedOpacity');
+
+DesignSettings_Font = require('./font');
+
+DesignSettings_FontSize = require('./fontSize');
+
+DesignSettings_ProductLayout = require('./productLayout');
+
+DesignSettings_ProductsInRow = require('./productsInRow');
+
+PropTypes = React.PropTypes;
+
+DESIGN_SETTINGS_TITLE = 'Управление дизайном';
+
+DesignSettings = React.createClass({displayName: 'DesignSettings',
+  mixins: [DesignSettingsMixin],
+  propTypes: {
+    pageColor: PropTypes.object.isRequired,
+    pageBackground: PropTypes.object.isRequired,
+    feedColor: PropTypes.object.isRequired,
+    feedOpacity: PropTypes.object.isRequired,
+    font: PropTypes.object.isRequired,
+    fontColor: PropTypes.object.isRequired,
+    fontSize: PropTypes.object.isRequired,
+    activeElementsColor: PropTypes.object.isRequired,
+    productLayout: PropTypes.object.isRequired,
+    catalog: PropTypes.object.isRequired,
+    productsInRow: PropTypes.object.isRequired,
+    mainPage: PropTypes.object.isRequired
+  },
+  getInitialState: function() {
+    var initialSettings;
+    initialSettings = _.reduce(this.props, (function(_this) {
+      return function(result, n, key) {
+        result[key] = _this.props[key].value;
+        return result;
+      };
+    })(this), {});
+    return {
+      settings: initialSettings
+    };
+  },
+  componentDidMount: function() {
+    this.sheet = jss.createStyleSheet({}, {
+      named: false,
+      link: true
+    }).attach();
+    window.sheet = this.sheet;
+    return this.sheet.element.setAttribute('design-settings-sheet', '');
+  },
+  componentWillUnmount: function() {
+    this.sheet.detach();
+    return this.sheet = null;
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option"}, 
+      React.DOM.div({className: "b-design-option__title"}, 
+        DESIGN_SETTINGS_TITLE 
+      ), 
+      React.DOM.div({className: "b-design-option__close"}), 
+      React.DOM.div({className: "b-design-option__body"}, 
+        DesignSettings_Color({
+            value:  this.state.settings.pageColor, 
+            title:  this.props.pageColor.title, 
+            items:  this.props.pageColor.items, 
+            onChange:  this.updateSettings.bind(null, this.props.pageColor.optionName) }), 
+        DesignSettings_PageBackground({
+            value:  this.state.settings.pageBackground, 
+            title:  this.props.pageBackground.title, 
+            items:  this.props.pageBackground.items, 
+            onChange:  this.updateSettings.bind(null, this.props.pageBackground.optionName) }), 
+        DesignSettings_Color({
+            value:  this.state.settings.feedColor, 
+            title:  this.props.feedColor.title, 
+            items:  this.props.feedColor.items, 
+            onChange:  this.updateSettings.bind(null, this.props.feedColor.optionName) }), 
+        DesignSettings_FeedOpacity({
+            value:  this.state.settings.feedOpacity, 
+            title:  this.props.feedOpacity.title, 
+            onChange:  this.updateSettings.bind(null, this.props.feedOpacity.optionName) }), 
+        DesignSettings_Color({
+            value:  this.state.settings.fontColor, 
+            title:  this.props.fontColor.title, 
+            items:  this.props.fontColor.items, 
+            onChange:  this.updateSettings.bind(null, this.props.fontColor.optionName) }), 
+        DesignSettings_Color({
+            value:  this.state.settings.activeElementsColor, 
+            title:  this.props.activeElementsColor.title, 
+            items:  this.props.activeElementsColor.items, 
+            onChange:  this.updateSettings.bind(null, this.props.activeElementsColor.optionName) }), 
+        DesignSettings_Font({
+            value:  this.state.settings.font, 
+            title:  this.props.font.title, 
+            items:  this.props.font.items, 
+            onChange:  this.updateSettings.bind(null, this.props.font.optionName) }), 
+        DesignSettings_FontSize({
+            value:  this.state.settings.fontSize, 
+            title:  this.props.fontSize.title, 
+            from:  this.props.fontSize.from, 
+            to:  this.props.fontSize.to, 
+            onChange:  this.updateSettings.bind(null, this.props.fontSize.optionName) }), 
+        DesignSettings_ProductLayout({
+            value:  this.state.settings.productLayout, 
+            title:  this.props.productLayout.title, 
+            items:  this.props.productLayout.items, 
+            onChange:  this.updateSettings.bind(null, this.props.productLayout.optionName) }), 
+        DesignSettings_Checkbox({
+            value:  this.state.settings.catalog, 
+            title:  this.props.catalog.title, 
+            items:  this.props.catalog.items, 
+            onChange:  this.updateSettings.bind(null, this.props.catalog.optionName) }), 
+        DesignSettings_ProductsInRow({
+            value:  this.state.settings.productsInRow, 
+            title:  this.props.productsInRow.title, 
+            from:  this.props.productsInRow.from, 
+            to:  this.props.productsInRow.to, 
+            onChange:  this.updateSettings.bind(null, this.props.productsInRow.optionName) }), 
+        DesignSettings_Checkbox({
+            value:  this.state.settings.mainPage, 
+            title:  this.props.mainPage.title, 
+            items:  this.props.mainPage.items, 
+            onChange:  this.updateSettings.bind(null, this.props.mainPage.optionName) })
+      ), 
+      DesignSettings_SaveButton({onClick:  this.saveSettings})
+    );
+  },
+  updateSettings: function(optionName, value) {
+    var activeElSelectors, newSettings, pageEl;
+    newSettings = this.state.settings;
+    newSettings[optionName] = value;
+    pageEl = document.querySelector('.b-page');
+    activeElSelectors = ['.b-btn', '.b-paginator__item', '.pagination .next a', '.pagination .prev a', '.pagination .first a', '.pagination .last a', '.pagination .page a'];
+    switch (optionName) {
+      case 'pageColor':
+        this.setStyles('.b-page', {
+          'background-color': value
+        });
+        break;
+      case 'pageBackground':
+        this.setStyles('.b-page', {
+          'background-image': "url('" + value + "')"
+        });
+        break;
+      case 'feedColor':
+        this.setStyles('.b-page__content__inner', {
+          'background-color__color': value
+        });
+        break;
+      case 'feedOpacity':
+        this.setStyles('.b-page__content__inner', {
+          'background-color__opacity': value
+        });
+        break;
+      case 'fontColor':
+        this.setStyles('.b-page', {
+          'color': value
+        });
+        break;
+      case 'activeElementsColor':
+        this.setStyles(activeElSelectors.join(', '), {
+          'color': value
+        });
+        break;
+      case 'font':
+        if (pageEl != null) {
+          setDesignClass(pageEl, 'b-page_ff-', value);
+        }
+        break;
+      case 'fontSize':
+        this.setStyles('.b-page', {
+          'font-size': value + "px"
+        });
+        break;
+      case 'productsInRow':
+        if (pageEl != null) {
+          pageEl.setAttribute('data-in-row', value);
+        }
+        break;
+      case 'productLayout':
+        if (pageEl != null) {
+          setDesignClass(pageEl, 'b-page_layout-', value);
+        }
+        $(window).trigger('resize');
+        break;
+      default:
+        if (typeof console.warn === "function") {
+          console.warn('Unknown type of design option', optionName);
+        }
+    }
+    return this.setState({
+      settings: newSettings
+    });
+  },
+  saveSettings: function() {
+    return console.log('saveSettings', this.state.settings);
+  },
+  setStyles: function(selector, styles) {
+    var newStyles, rule;
+    if (styles == null) {
+      styles = {};
+    }
+    rule = this.sheet.getRule(selector);
+    newStyles = {};
+    _.map(styles, function(value, key) {
+      var match, rgba, updatedRgba;
+      match = /(.*)__(\w+)/g.exec(key);
+      if (match != null) {
+        rgba = (rule != null ? rule.prop('background-color') : void 0) || 'rgba(0,0,0,1)';
+        switch (match[2]) {
+          case 'color':
+            updatedRgba = changeBackgroundColor(rgba, value);
+            return newStyles['background-color'] = updatedRgba;
+          case 'opacity':
+            updatedRgba = changeAlpha(rgba, value);
+            return newStyles['background-color'] = updatedRgba;
+        }
+      } else {
+        return newStyles[key] = value;
+      }
+    });
+    if (rule != null) {
+      return _.map(newStyles, function(value, key) {
+        return rule.prop(key, value);
+      });
+    } else {
+      return this.sheet.addRule(selector, newStyles);
+    }
+  }
+});
+
+module.exports = DesignSettings;
+
+hexToRgb = function(hex) {
+  var result, shorthandRegex;
+  shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+  result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (result) {
+    return [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)];
+  } else {
+    return null;
+  }
+};
+
+changeBackgroundColor = function(rgba, hex) {
+  var a, match, rgb;
+  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,)?(\s*\d+[\.\d+]*)*\)/g.exec(rgba);
+  rgb = hexToRgb(hex);
+  a = parseFloat(match[4]) || 1;
+  return 'rgba(' + [rgb[0], rgb[1], rgb[2], a].join(',') + ')';
+};
+
+changeAlpha = function(rgba, a) {
+  var match;
+  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(rgba);
+  a = a > 1 ? a / 100 : a;
+  return 'rgba(' + [match[1], match[2], match[3], a].join(',') + ')';
+};
+
+setDesignClass = function(el, name, value) {
+  var classes;
+  classes = el.className.split(' ').filter(function(c) {
+    return c.lastIndexOf(name, 0) !== 0;
+  });
+  classes.push(name + value);
+  return document.body.className = _.trim(classes.join(' '));
+};
+
+
+
+},{"./buttons/save":17,"./common/checkbox":18,"./common/color":19,"./feedOpacity":24,"./font":25,"./fontSize":26,"./mixins/designSettings":27,"./pageBackground":28,"./productLayout":29,"./productsInRow":30,"jss":63}],24:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_FeedOpacity, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_FeedOpacity = React.createClass({displayName: 'DesignSettings_FeedOpacity',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(opacity) {
+    return this.props.onChange(opacity);
+  }
+});
+
+module.exports = DesignSettings_FeedOpacity;
+
+
+
+},{"./common/range":22}],25:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Font, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Font = React.createClass({displayName: 'DesignSettings_Font',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(fontName) {
+      var itemClasses;
+      itemClasses = 'b-design-option__type b-design-option__type_' + fontName;
+      return React.DOM.label({className: itemClasses, 
+              key: fontName }, 
+         React.DOM.input({type: "radio", 
+                checked:  fontName == that.props.value, 
+                onChange:  that.handleChange.bind(null, fontName) }), 
+         React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  handleChange: function(fontName) {
+    return this.props.onChange(fontName);
+  }
+});
+
+module.exports = DesignSettings_Font;
+
+
+
+},{}],26:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_FontSize, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_FontSize = React.createClass({displayName: 'DesignSettings_FontSize',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            from:  this.props.from, 
+            to:  this.props.to, 
+            step: 1, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(fontSize) {
+    return this.props.onChange(fontSize);
+  }
+});
+
+module.exports = DesignSettings_FontSize;
+
+
+
+},{"./common/range":22}],27:[function(require,module,exports){
+var DesignSettingsMixin;
+
+DesignSettingsMixin = {
+  getDefaultProps: function() {
+    return {
+      pageColor: {
+        title: 'цвет страницы',
+        optionName: 'pageColor',
+        value: '#ff0000',
+        items: ['#bf443f', '#569a9f', '#4f617d', '#f4d3c4', '#d4c3c9']
+      },
+      pageBackground: {
+        title: 'фон страницы',
+        optionName: 'pageBackground',
+        value: 'http://img.faceyourmanga.com/mangatars/0/0/39/large_511.png',
+        items: ['https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg', 'http://img.faceyourmanga.com/mangatars/0/0/39/large_511.png']
+      },
+      feedColor: {
+        title: 'цвет ленты',
+        optionName: 'feedColor',
+        value: '#ffd46c',
+        items: ['#894c00', '#fff2a6', '#720000', '#513100', '#ffd46c']
+      },
+      feedOpacity: {
+        title: 'прозрачность ленты',
+        optionName: 'feedOpacity',
+        value: 1
+      },
+      font: {
+        title: 'шрифт',
+        optionName: 'font',
+        value: 'helvetica',
+        items: ['helvetica', 'ptserif', 'ptsans', 'verdana', 'courier']
+      },
+      fontColor: {
+        title: 'цвет текста',
+        optionName: 'fontColor',
+        value: '#c3a96c',
+        items: ['#264c35', '#c3a96c', '#fa3c58', '#772d3c', '#1a0f17']
+      },
+      fontSize: {
+        title: 'размер шрифта',
+        optionName: 'fontSize',
+        value: 14,
+        from: 13,
+        to: 15
+      },
+      activeElementsColor: {
+        title: 'цвет активных элементов',
+        optionName: 'activeElementsColor',
+        value: '#264c35',
+        items: ['#264c35', '#c3a96c', '#fa3c58', '#772d3c', '#1a0f17']
+      },
+      productLayout: {
+        title: 'лейаут товара',
+        optionName: 'productLayout',
+        value: 'bigpic',
+        items: {
+          bigpic: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+          layoutTwo: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+        }
+      },
+      catalog: {
+        title: 'каталог',
+        optionName: 'catalog',
+        value: ['filter', 'menu'],
+        items: {
+          menu: 'Меню',
+          filter: 'Фильтр',
+          search: 'Поиск'
+        }
+      },
+      productsInRow: {
+        title: 'товаров в ряд',
+        optionName: 'productsInRow',
+        value: 3,
+        from: 2,
+        to: 4
+      },
+      mainPage: {
+        title: 'главная страница',
+        optionName: 'mainPage',
+        value: ['bigBanner'],
+        items: {
+          bigBanner: 'Большой баннер',
+          callback: 'Форма обратного звонка'
+        }
+      }
+    };
+  }
+};
+
+module.exports = DesignSettingsMixin;
+
+
+
+},{}],28:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_PageBackground, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_PageBackground = React.createClass({displayName: 'DesignSettings_PageBackground',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.div({className: "b-design-option__item__current-params"}, 
+        React.DOM.span({className: "b-design-option__item__name"}, 
+           this.props.title
+        ), 
+        React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
+            React.DOM.div({className: "b-design-option__color__ind"}, 
+              React.DOM.img({src:  this.props.value})
+            )
+          )
+        )
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(backgroundUrl) {
+      return React.DOM.label({className: "b-design-option__color b-design-option__color_img", 
+              key: backgroundUrl }, 
+         React.DOM.input({type: "radio", 
+                checked:  backgroundUrl == that.props.value, 
+                onChange:  that.handleChange.bind(null, backgroundUrl) }), 
+        React.DOM.span({className: "b-design-option__color__ind"}, 
+          React.DOM.img({src: backgroundUrl })
+        )
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__available-params"}, 
+              listItems 
+            );
+  },
+  handleChange: function(backgroundUrl) {
+    return this.props.onChange(backgroundUrl);
+  }
+});
+
+module.exports = DesignSettings_PageBackground;
+
+
+
+},{}],29:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ProductLayout, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ProductLayout = React.createClass({displayName: 'DesignSettings_ProductLayout',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(url, name) {
+      return React.DOM.label({className: "b-design-option__layout", 
+              key: name }, 
+        React.DOM.input({type: "radio", 
+               checked:  name == that.props.value, 
+               onChange:  that.handleChange.bind(null, name) }), 
+        React.DOM.span({className: "b-design-option__layout__ind"}, 
+          name 
+        )
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  handleChange: function(layout) {
+    return this.props.onChange(layout);
+  }
+});
+
+module.exports = DesignSettings_ProductLayout;
+
+
+
+},{}],30:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ProductsInRow, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ProductsInRow = React.createClass({displayName: 'DesignSettings_ProductsInRow',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            from:  this.props.from, 
+            to:  this.props.to, 
+            step: 1, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(productsInRow) {
+    return this.props.onChange(productsInRow);
+  }
+});
+
+module.exports = DesignSettings_ProductsInRow;
+
+
+
+},{"./common/range":22}],31:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.BackgroundList = React.createClass({displayName: 'BackgroundList',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    bgSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      bgSet: {
+        'bg-pikachu': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+        'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+      }
+    };
+  },
+  handleChange: function(background) {
+    var base;
+    return typeof (base = this.props).onChange === "function" ? base.onChange(background) : void 0;
+  },
+  render: function() {
+    var bgSetList;
+    bgSetList = _.map(this.props.bgSet, (function(_this) {
+      return function(background, key) {
+        var checked;
+        checked = false;
+        checked = _this.props.value && _this.props.value === key;
+        return BackgroundListElement({name: _this.props.name, checked: checked, background: background, key: key, onChange: _this.handleChange.bind(background, key)});
+      };
+    })(this));
+    return React.DOM.div(null, bgSetList);
+  }
+});
+
+window.BackgroundListElement = React.createClass({displayName: 'BackgroundListElement',
+  propTypes: {
+    background: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
+  },
+  render: function() {
+    return React.DOM.label({className: "b-design-option__color b-design-option__color_img"}, 
+        React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.background, onChange: this.props.onChange}), 
+        React.DOM.span({className: "b-design-option__color__ind"}, React.DOM.img({src: this.props.background, alt: ""}))
+      );
+  }
+});
+
+
+
+},{}],32:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.ColorList = React.createClass({displayName: 'ColorList',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    colorSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      colorSet: {
+        'bg-dark': '#000',
+        'bg-white': '#fff',
+        'layer-dark': '#000',
+        'layer-light': '#fff'
+      }
+    };
+  },
+  handleChange: function(color) {
+    var base;
+    return typeof (base = this.props).onChange === "function" ? base.onChange(color) : void 0;
+  },
+  render: function() {
+    var colorSetList;
+    colorSetList = _.map(this.props.colorSet, (function(_this) {
+      return function(color, key) {
+        var checked;
+        checked = false;
+        checked = _this.props.value && _this.props.value === key;
+        return ColorSelect({name: _this.props.name, checked: checked, color: color, colorName: key, key: key, onChange: _this.handleChange.bind(color, key)});
+      };
+    })(this));
+    return React.DOM.div(null, colorSetList);
+  }
+});
+
+window.ColorSelect = React.createClass({displayName: 'ColorSelect',
+  propTypes: {
+    color: React.PropTypes.string.isRequired,
+    colorName: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
+  },
+  render: function() {
+    var divStyle;
+    divStyle = {
+      'background-color': this.props.color
+    };
+    return React.DOM.label({className: "b-design-option__color"}, 
+      React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.colorName, onChange: this.props.onChange}), 
+      React.DOM.span({className: "b-design-option__color__ind", style: divStyle})
+      );
+  }
+});
+
+
+
+},{}],33:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.Designer = React.createClass({displayName: 'Designer',
+  propTypes: {
+    options: React.PropTypes.array.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      options: [
+        {
+          "type": "ColorList",
+          "name": "цвет страницы",
+          "props": {
+            "name": "background_color",
+            "colorSet": {
+              'dark': '#000',
+              'white': '#fff',
+              'gray': '#eee'
+            },
+            "value": "white"
+          }
+        }, {
+          "type": "BgList",
+          "name": "фон страницы",
+          "props": {
+            "name": "background_image",
+            "bgSet": {
+              'pokeball': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg',
+              'bg2': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg'
+            },
+            "value": "pokeball"
+          }
+        }, {
+          "type": "FontList",
+          "name": "шрифт",
+          "props": {
+            "name": "font_family",
+            "value": "gotham"
+          }
+        }, {
+          "type": "ValueSlider",
+          "name": "размер шрифта",
+          "props": {
+            "name": "font_size",
+            "step": 1,
+            "range": {
+              "min": 13,
+              "max": 15
+            },
+            "value": 14
+          }
+        }, {
+          "type": "Toggle",
+          "name": "главная страница",
+          "props": {
+            "name": "banner",
+            "label": "большой баннер",
+            "value": true
+          }
+        }, {
+          "type": "LayoutList",
+          "name": "лейаут страницы",
+          "props": {
+            "name": "layout",
+            "layoutSet": {
+              'one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+              'two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+            },
+            "value": "one"
+          }
+        }
+      ]
+    };
+  },
+  handleChange: function(option, newValue) {
+    var newState;
+    newState = {};
+    newState[option.props.name] = newValue;
+    return this.setState(newState);
+  },
+  _createDesignComponent: function(options) {
+    switch (options.type) {
+      case 'ColorList':
+        return DesignerElementLayout({name: options.name, type: "color", set: options.props.colorSet, value: options.props.value}, 
+          ColorList({name: options.props.name, colorSet: options.props.colorSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+      case 'BgList':
+        return DesignerElementLayout({name: options.name, type: "image", set: options.props.bgSet, value: options.props.value}, 
+          BackgroundList({name: options.props.name, bgSet: options.props.bgSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+      case 'LayoutList':
+        return DesignerElementLayout({name: options.name, type: "simplified"}, 
+          LayoutList({name: options.props.name, layoutSet: options.props.layoutSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+      case 'FontList':
+        return DesignerElementLayout({name: options.name, type: "simplified"}, 
+          FontList({name: options.props.name, fontSet: options.props.fontSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+      case 'ValueSlider':
+        return DesignerElementLayout({name: options.name, type: "simplified"}, 
+          ValueSlider({name: options.props.name, step: options.props.step, range: options.props.range, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+      case 'Toggle':
+        return DesignerElementLayout({name: options.name, type: "simplified"}, 
+          Toggle({name: options.props.name, value: options.props.value, onChange: this.handleChange.bind(this, options)})
+        );
+    }
+  },
+  render: function() {
+    var designItems;
+    designItems = _.map(this.props.options, (function(_this) {
+      return function(option) {
+        return _this._createDesignComponent(option);
+      };
+    })(this));
+    return React.DOM.div({className: "b-design-option"}, 
+        React.DOM.div({className: "b-design-option__title"}, "Управление дизайном"), 
+        React.DOM.span({className: "b-design-option__close"}, "Закрыть"), 
+        React.DOM.div({className: "b-design-option__body"}, designItems), 
+        React.DOM.button({type: "button", className: "b-design-option__save"}, "Сохранить")
+      );
+  }
+});
+
+window.DesignerElementLayout = React.createClass({displayName: 'DesignerElementLayout',
+  render: function() {
+    if ((this.props.type != null) && this.props.type === 'simplified') {
+      return React.DOM.div({className: "b-design-option__item"}, 
+        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+        React.DOM.div({className: "b-design-option__item__val"}, this.props.children)
+        );
+    } else {
+      return React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.div({className: "b-design-option__item__current-params"}, 
+            React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+            DesignerElementValueLayout({value: this.props.value, type: this.props.type, set: this.props.set})
+          ), 
+          React.DOM.div({className: "b-design-option__item__available-params"}, this.props.children)
+          );
+    }
+  }
+});
+
+window.DesignerElementValueLayout = React.createClass({displayName: 'DesignerElementValueLayout',
+  propTypes: {
+    type: React.PropTypes.string.isRequired,
+    set: React.PropTypes.array,
+    value: React.PropTypes.string
+  },
+  render: function() {
+    var divStyle, value;
+    value = this.props.set[this.props.value];
+    if (this.props.type === 'color') {
+      divStyle = {
+        'background-color': value
+      };
+      return React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color__ind", style: divStyle})
+        );
+    }
+    if (this.props.type === 'image') {
+      return React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
+            React.DOM.div({className: "b-design-option__color__ind"}, 
+              React.DOM.img({src: value, alt: ""})
+            )
+          )
+        );
+    }
+    return null;
+  }
+});
+
+
+
+},{}],34:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.FontList = React.createClass({displayName: 'FontList',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    fontSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      fontSet: {
+        'default': 'default',
+        'verdana': 'verdana',
+        'gotham': 'gotham',
+        'apercu': 'apercu'
+      }
+    };
+  },
+  handleChange: function(font) {
+    var base;
+    return typeof (base = this.props).onChange === "function" ? base.onChange(font) : void 0;
+  },
+  render: function() {
+    var fontSetList;
+    fontSetList = _.map(this.props.fontSet, (function(_this) {
+      return function(font, key) {
+        var checked;
+        checked = false;
+        checked = _this.props.value && _this.props.value === key;
+        return FontSelect({font: font, key: font, name: _this.props.name, checked: checked, onChange: _this.handleChange.bind(key, font)});
+      };
+    })(this));
+    return React.DOM.div(null, fontSetList);
+  }
+});
+
+window.FontSelect = React.createClass({displayName: 'FontSelect',
+  propTypes: {
+    font: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
+  },
+  render: function() {
+    var className;
+    className = "b-design-option__type b-design-option__type_" + this.props.font;
+    return React.DOM.label({className: className}, 
+      React.DOM.input({type: "radio", onChange: this.props.onChange, defaultChecked: this.props.checked, name: this.props.name, value: this.props.font}), 
+      React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
+      );
+  }
+});
+
+
+
+},{}],35:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.LayoutList = React.createClass({displayName: 'LayoutList',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    layoutSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      layoutSet: {
+        'layout-one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+        'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+      }
+    };
+  },
+  handleChange: function(layout) {
+    var base;
+    return typeof (base = this.props).onChange === "function" ? base.onChange(layout) : void 0;
+  },
+  render: function() {
+    var layoutSetList;
+    layoutSetList = _.map(this.props.layoutSet, (function(_this) {
+      return function(layout, key) {
+        var checked;
+        checked = false;
+        checked = _this.props.value && _this.props.value === key;
+        return LayoutSelect({name: _this.props.name, layoutName: key, layout: layout, key: key, checked: checked, onChange: _this.handleChange.bind(layout, key)});
+      };
+    })(this));
+    return React.DOM.div(null, layoutSetList);
+  }
+});
+
+window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
+  propTypes: {
+    layout: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
+  },
+  render: function() {
+    return React.DOM.label({className: "b-design-option__layout"}, 
+        React.DOM.input({onChange: this.props.onChange, type: "radio", defaultChecked: this.props.checked, value: this.props.layout, name: this.props.name}), 
+        React.DOM.span({className: "b-design-option__layout__ind"}, this.props.layoutName)
+      );
+  }
+});
+
+
+
+},{}],36:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.Toggle = React.createClass({displayName: 'Toggle',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    value: React.PropTypes.bool
+  },
+  getDefaultProps: function() {
+    return {
+      value: false
+    };
+  },
+  handleChange: function(e) {
+    var base, toggleState;
+    toggleState = $(e.target).prop('checked');
+    return typeof (base = this.props).onChange === "function" ? base.onChange(toggleState) : void 0;
+  },
+  render: function() {
+    return React.DOM.label({className: "b-design-option__cbox"}, 
+      React.DOM.input({type: "checkbox", defaultChecked: this.props.value, onChange: this.handleChange}), 
+      this.props.name
+    );
+  }
+});
+
+
+
+},{}],37:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.ValueSlider = React.createClass({displayName: 'ValueSlider',
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    range: React.PropTypes.object.isRequired,
+    step: React.PropTypes.number.isRequired,
+    start: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      range: {
+        min: 0,
+        max: 1
+      },
+      value: 0,
+      step: .1
+    };
+  },
+  componentDidMount: function() {
+    var domNode;
+    domNode = $(this.getDOMNode());
+    domNode.noUiSlider({
+      start: this.props.value,
+      step: this.props.step,
+      range: this.props.range
+    });
+    return domNode.on({
+      slide: (function(_this) {
+        return function() {
+          var base, currentValue;
+          currentValue = domNode.val();
+          _this.setState({
+            value: currentValue
+          });
+          return typeof (base = _this.props).onChange === "function" ? base.onChange(currentValue) : void 0;
+        };
+      })(this)
+    });
+  },
+  render: function() {
+    return React.DOM.div(null);
+  }
+});
+
+
+
+},{}],38:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.InstagramFeed_Controllable = React.createClass({displayName: 'InstagramFeed_Controllable',
+  propTypes: {
+    isVisible: React.PropTypes.bool.isRequired,
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getInitialState: function() {
+    return {
+      isVisible: this.props.isVisible
+    };
+  },
+  componentDidMount: function() {
+    return $(document).on("instagram:clicked", this.toggleVisibleState);
+  },
+  componentWillUnmount: function() {
+    return $(document).off("instagram:clicked", this.toggleVisibleState);
+  },
+  render: function() {
+    if (this.state.isVisible) {
+      return InstagramFeed({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
+    } else {
+      return React.DOM.span(null);
+    }
+  },
+  toggleVisibleState: function() {
+    if (InstagramFeed_Mixin.STATE_LOADED) {
+      return this.setState({
+        isVisible: !this.state.isVisible
+      });
+    }
+  }
+});
+
+window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
+  mixins: [InstagramFeed_Mixin],
+  propTypes: {
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getInitialState: function() {
+    return {
+      currentState: this.STATE_LOADING,
+      isVisible: false,
+      photos: null,
+      username: '',
+      hashtag: ''
+    };
+  },
+  componentDidMount: function() {
+    return this._loadPhotos();
+  },
+  render: function() {
+    switch (this.state.currentState) {
+      case this.STATE_LOADED:
+        return InstagramFeed_Carousel({photos:  this.state.photos});
+      case this.STATE_LOADING:
+        return InstagramFeed_Spinner(null);
+      case this.STATE_ERROR:
+        return InstagramFeed_Error(null);
+      default:
+        return console.warn('Неизвестное состояние #{@state.currentState}');
+    }
+  }
+});
+
+window.InstagramFeed_Error = React.createClass({displayName: 'InstagramFeed_Error',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed b-insafeed_error"}, 
+      "Ошибка при загрузке фотографий"
+    );
+  }
+});
+
+window.InstagramFeed_Spinner = React.createClass({displayName: 'InstagramFeed_Spinner',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed b-instafeed_loading"}, 
+      React.DOM.span({className: "b-instafeed__loader"})
+    );
+  }
+});
+
+window.InstagramFeed_Photo = React.createClass({displayName: 'InstagramFeed_Photo',
+  propTypes: {
+    photo: React.PropTypes.object.isRequired
+  },
+  render: function() {
+    return React.DOM.a({className: "b-instafeed__photo", href: this.props.photo.standard_resolution.url}, 
+      React.DOM.img({className: "lazyOwl", 'data-src': this.props.photo.low_resolution.url})
+    );
+  }
+});
+
+window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_Carousel',
+  propTypes: {
+    photos: React.PropTypes.array.isRequired
+  },
+  componentDidMount: function() {
+    return this._initCarousel();
+  },
+  componentWillUnmount: function() {
+    return this._destroyCarousel();
+  },
+  render: function() {
+    var photos;
+    photos = _.map(this.props.photos, function(photo) {
+      return InstagramFeed_Photo({
+        photo: photo.images, 
+        key: photo.id});
+    });
+    return React.DOM.div({className: "b-instafeed"}, photos);
+  },
+  _initCarousel: function() {
+    return $(this.getDOMNode()).owlCarousel({
+      items: 6,
+      itemsDesktop: 6,
+      pagination: false,
+      autoPlay: 5000,
+      navigation: true,
+      lazyLoad: true
+    });
+  },
+  _destroyCarousel: function() {
+    return $(this.getDOMNode()).data('owlCarousel').destroy();
+  }
+});
+
+
+
+},{}],39:[function(require,module,exports){
+window.InstagramFeed_Mixin = {
+  STATE_LOADING: 'loading',
+  STATE_LOADED: 'loaded',
+  STATE_ERROR: 'error',
+  INSTAGRAM_API_URL: 'https://api.instagram.com/v1/',
+  _getRequestUrl: function() {
+    var url;
+    url = this.INSTAGRAM_API_URL + 'users/' + this.props.userId + '/media/recent/?client_id=' + this.props.clientId;
+    if (this.props.limit != null) {
+      url += '&count=' + this.props.limit;
+    }
+    return url;
+  },
+  _loadPhotos: function() {
+    return $.ajax({
+      dataType: "jsonp",
+      url: this._getRequestUrl(),
+      success: (function(_this) {
+        return function(photos) {
+          if (_this.isMounted() && (photos != null)) {
+            return _this.setState({
+              currentState: _this.STATE_LOADED,
+              photos: photos.data,
+              profileUrl: 'http://instagram.com/' + photos.data[0].user.username,
+              hashtag: '#' + photos.data[0].user.username
+            });
+          }
+        };
+      })(this),
+      error: (function(_this) {
+        return function(data) {
+          return _this._activateErrorState();
+        };
+      })(this)
+    });
+  },
+  _activateErrorState: function() {
+    if (this.isMounted()) {
+      return this.setState({
+        currentState: this.STATE_ERROR
+      });
+    }
+  }
+};
+
+
+
+},{}],40:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.InstagramFeed_Controllable_v2 = React.createClass({displayName: 'InstagramFeed_Controllable_v2',
+  propTypes: {
+    isVisible: React.PropTypes.bool.isRequired,
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getDefaultProps: function() {
+    return {
+      limit: 10
+    };
+  },
+  getInitialState: function() {
+    return {
+      isVisible: this.props.isVisible
+    };
+  },
+  componentDidMount: function() {
+    return $(document).on("instagram:clicked", this.toggleVisibleState);
+  },
+  componentWillUnmount: function() {
+    return $(document).off("instagram:clicked", this.toggleVisibleState);
+  },
+  render: function() {
+    if (this.state.isVisible) {
+      return InstagramFeed_v2({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
+    } else {
+      return React.DOM.span(null);
+    }
+  },
+  toggleVisibleState: function() {
+    if (InstagramFeed_Mixin.STATE_LOADED) {
+      return this.setState({
+        isVisible: !this.state.isVisible
+      });
+    }
+  }
+});
+
+window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
+  mixins: [InstagramFeed_Mixin],
+  propTypes: {
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getInitialState: function() {
+    return {
+      currentState: this.STATE_LOADING,
+      isVisible: false,
+      photos: null,
+      profileUrl: '',
+      hashtag: ''
+    };
+  },
+  componentDidMount: function() {
+    return this._loadPhotos();
+  },
+  render: function() {
+    var result;
+    result = (function() {
+      switch (this.state.currentState) {
+        case this.STATE_LOADED:
+          return InstagramFeed_v2_Feed({photos:  this.state.photos, profileUrl:  this.state.profileUrl});
+        case this.STATE_LOADING:
+          return InstagramFeed_v2_Spinner(null);
+        case this.STATE_ERROR:
+          return InstagramFeed_v2_Error(null);
+        default:
+          return console.warn('Неизвестное состояние #{@state.currentState}');
+      }
+    }).call(this);
+    return React.DOM.div(null, 
+      React.DOM.h2({className: "b-item-list__title b-instafeed-v2__title"}, React.DOM.a({href:  this.state.profileUrl, rel: "nofollow", target: "_blank"},  this.state.hashtag)), 
+      result 
+    );
+  }
+});
+
+window.InstagramFeed_v2_Error = React.createClass({displayName: 'InstagramFeed_v2_Error',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed-v2 b-insafeed_error"}, 
+      "Ошибка при загрузке фотографий"
+    );
+  }
+});
+
+window.InstagramFeed_v2_Spinner = React.createClass({displayName: 'InstagramFeed_v2_Spinner',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed-v2 b-instafeed-v2_loading"}, 
+      React.DOM.span({className: "b-instafeed-v2__loader"})
+    );
+  }
+});
+
+window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2_Feed',
+  propTypes: {
+    photos: React.PropTypes.array.isRequired,
+    profileUrl: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    var photos, that;
+    that = this;
+    photos = _.map(this.props.photos, function(photo) {
+      return InstagramFeed_v2_Photo({
+        photo: photo.images, 
+        profileUrl: that.props.profileUrl, 
+        key: photo.id});
+    });
+    return React.DOM.div({className: "b-instafeed-v2"}, photos);
+  }
+});
+
+window.InstagramFeed_v2_Photo = React.createClass({displayName: 'InstagramFeed_v2_Photo',
+  propTypes: {
+    photo: React.PropTypes.object.isRequired,
+    profileUrl: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return React.DOM.a({className: "b-instafeed-v2__photo", rel: "nofollow", target: "_blank", href:  this.props.profileUrl}, 
+      React.DOM.img({src: this.props.photo.low_resolution.url})
+    );
+  }
+});
+
+
+
+},{}],41:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
+  propTypes: {
+    elementQuery: React.PropTypes.string,
+    dataAttr: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      elementQuery: '[good-select] option:selected',
+      dataAttr: 'good'
+    };
+  },
+  addToBasket: function() {
+    var good;
+    good = $(this.props.elementQuery).data(this.props.dataAttr);
+    if (good != null) {
+      return BasketActions.addGood(good);
+    } else {
+      return alert("Ошибка при добавлении товара в корзину. Нет атрибута good в выбранном пункте");
+    }
+  },
+  render: function() {
+    return React.DOM.button({className: "b-btn", onClick: this.addToBasket}, "В корзину");
+  }
+});
+
+
+
+},{}],42:[function(require,module,exports){
+var KioskEvents;
+
+KioskEvents = new EventEmitter();
+
+KioskEvents.keys = {
+  commandTooltipShow: function() {
+    return 'command:tooltip:show';
+  }
+};
+
+module.exports = KioskEvents;
+
+
+
+},{}],43:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var FilteredCountTooltip, TooltipController,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+FilteredCountTooltip = require('../components/common/tooltip/filteredCount');
+
+TooltipController = (function() {
+  TooltipController.prototype._pendingTooltip = null;
+
+  function TooltipController() {
+    this._getContainer = bind(this._getContainer, this);
+    this.close = bind(this.close, this);
+    this.show = bind(this.show, this);
+    KioskEvents.on(KioskEvents.keys.commandTooltipShow(), this.show);
+  }
+
+  TooltipController.prototype.show = function(position, filter, timeout) {
+    var container, tooltip;
+    if (timeout == null) {
+      timeout = 3000;
+    }
+    container = this._getContainer();
+    this.close();
+    tooltip = React.renderComponent(FilteredCountTooltip({
+          filter: filter, 
+          position: position, 
+          onClose:  this.close}), container);
+    return this._pendingTooltip = tooltip;
+  };
+
+  TooltipController.prototype.close = function() {
+    var container;
+    container = this._getContainer();
+    React.unmountComponentAtNode(container);
+    return this._pendingTooltip = null;
+  };
+
+  TooltipController.prototype._getContainer = function() {
+    var container;
+    container = document.querySelector('[tooltip-container]');
+    if (container == null) {
+      container = document.createElement('div');
+      container.setAttribute('tooltip-container', '');
+      document.body.appendChild(container);
+    }
+    return container;
+  };
+
+  return TooltipController;
+
+})();
+
+module.exports = TooltipController;
+
+
+
+},{"../components/common/tooltip/filteredCount":16}],44:[function(require,module,exports){
+var BaseDispatcher,
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
+
+BaseDispatcher = (function(superClass) {
+  extend(BaseDispatcher, superClass);
+
+  function BaseDispatcher() {
+    return BaseDispatcher.__super__.constructor.apply(this, arguments);
+  }
+
+  BaseDispatcher.prototype.handleViewAction = function(action) {
+    return this.dispatch({
+      source: 'VIEW_ACTION',
+      action: action
+    });
+  };
+
+  BaseDispatcher.prototype.handleServerAction = function(action) {
+    return this.dispatch({
+      source: 'SERVER_ACTION',
+      action: action
+    });
+  };
+
+  return BaseDispatcher;
+
+})(Dispatcher);
+
+module.exports = BaseDispatcher;
+
+
+
+},{}],45:[function(require,module,exports){
+var BaseDispatcher;
+
+BaseDispatcher = require('./_base');
+
+window.BasketDispatcher = new BaseDispatcher();
+
+
+
+},{"./_base":44}],46:[function(require,module,exports){
+var BaseStore, CHANGE_EVENT,
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
+
+CHANGE_EVENT = 'change';
+
+BaseStore = (function(superClass) {
+  extend(BaseStore, superClass);
+
+  function BaseStore() {
+    return BaseStore.__super__.constructor.apply(this, arguments);
+  }
+
+  BaseStore.prototype.emitChange = function() {
+    return this.emit(CHANGE_EVENT);
+  };
+
+  BaseStore.prototype.addChangeListener = function(cb) {
+    return this.on(CHANGE_EVENT, cb);
+  };
+
+  BaseStore.prototype.removeChangeListener = function(cb) {
+    return this.off(CHANGE_EVENT, cb);
+  };
+
+  return BaseStore;
+
+})(EventEmitter);
+
+module.exports = BaseStore;
+
+
+
+},{}],47:[function(require,module,exports){
+var BaseStore, _cartItems;
+
+BaseStore = require('./_base');
+
+_cartItems = [];
+
+window.BasketDispatcher.register(function(payload) {
+  var action;
+  action = payload.action;
+  switch (action.actionType) {
+    case 'productAddedToBasket':
+      BasketStore._addItem(action.productItem);
+      BasketStore.emitChange();
+      break;
+    case 'receiveBasket':
+      BasketStore._receiveBasket(action.cartItems);
+      BasketStore.emitChange();
+      break;
+  }
+});
+
+window.BasketStore = _.extend(new BaseStore(), {
+  getBasketItems: function() {
+    return _cartItems;
+  },
+  getBasketCount: function() {
+    var total;
+    total = 0;
+    _.forEach(_cartItems, function(item) {
+      return total += item.count;
+    });
+    return total;
+  },
+  _findItem: function(productItem) {
+    var thisItem;
+    thisItem = _.findIndex(_cartItems, function(item) {
+      return item.product_item_id === productItem.product_item_id;
+    });
+    return _cartItems[thisItem];
+  },
+  _addItem: function(productItem) {
+    var cartItem;
+    cartItem = BasketStore._findItem(productItem);
+    if (cartItem != null) {
+      return cartItem.count += 1;
+    } else {
+      productItem.count = 1;
+      return _cartItems.push(productItem);
+    }
+  },
+  _receiveBasket: function(cartItems) {
+    if (cartItems != null) {
+      return _.forEach(cartItems.items, function(cartItem) {
+        return _cartItems.push(cartItem.product_item);
+      });
+    }
+  }
+});
+
+
+
+},{"./_base":46}],48:[function(require,module,exports){
+var ApiRoutes;
+
+ApiRoutes = {
+  productsFilteredCount: function(filter) {
+    return gon.public_api_url + '/v1/products/filtered/count?' + filter;
+  }
+};
+
+module.exports = ApiRoutes;
+
+
+
+},{}],49:[function(require,module,exports){
+window.Routes = {
+  vendor_cart_items_path: function() {
+    return '/cart/cart_items/';
+  }
+};
+
+
+
+},{}],50:[function(require,module,exports){
+$(function() {
+  var bPage, lenta, page, thisPage;
+  if ('ontouchstart' in document) {
+    $("html").addClass("feature_touch");
+  } else {
+    $("html").addClass("feature_no-touch");
+  }
+  $('[tooltip]').tooltip();
+  if ($("[range_slider]").length) {
+    $("[range_slider]").noUiSlider({
+      start: [20, 80],
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100
+      }
+    });
+  }
+  bPage = $('.b-page');
+  $('[ks-design]').on('click', function() {
+    var className;
+    className = $(this).data('classname');
+    bPage.addClass(className);
+    return false;
+  });
+  if ($("[ks-opacity_slider]").length) {
+    $("[ks-opacity_slider]").noUiSlider({
+      start: 0,
+      step: .1,
+      range: {
+        'min': 0,
+        'max': 1
+      }
+    });
+    lenta = $('.b-page__content__inner');
+    $("[ks-opacity_slider]").on({
+      slide: function() {
+        var opacity;
+        opacity = $("[ks-opacity_slider]").val();
+        return lenta.css('background-color', 'rgba(236, 208, 120,' + opacity + ')');
+      }
+    });
+  }
+  if ($("[ks-fontsize_slider]").length) {
+    $("[ks-fontsize_slider]").noUiSlider({
+      start: 14,
+      step: 2,
+      range: {
+        'min': 12,
+        'max': 16
+      }
+    });
+    page = $('html');
+    $("[ks-fontsize_slider]").on({
+      slide: function() {
+        var fontSize;
+        fontSize = $("[ks-fontsize_slider]").val();
+        fontSize = fontSize.substring(0, fontSize.length - 2);
+        return page.css('font-size', fontSize + 'px');
+      }
+    });
+  }
+  thisPage = $('.b-page');
+  if ($("[ks-row_slider]").length) {
+    $("[ks-row_slider]").noUiSlider({
+      start: 3,
+      step: 1,
+      range: {
+        'min': 2,
+        'max': 4
+      }
+    });
+    $("[ks-row_slider]").on({
+      slide: function() {
+        var inRow;
+        inRow = $("[ks-row_slider]").val();
+        inRow = inRow.substring(0, inRow.length - 3);
+        return thisPage.attr('data-in-row', inRow);
+      }
+    });
+  }
+  $('[ks-show-slider]').on('click', function() {
+    return thisPage.toggleClass('b-page_hide-slider');
+  });
+  $('[ks-show-filter]').on('click', function() {
+    return thisPage.toggleClass('b-page_hide-catalog');
+  });
+  return $('[ks-layout-change]').on('click', function() {
+    return thisPage.addClass('b-page_layout-l1');
+  });
+});
+
+
+
+},{}],51:[function(require,module,exports){
+$(function() {
+  var defaultCarouselOptions, slider, sliderThumbs, sliderThumbsContainer;
+  defaultCarouselOptions = {
+    pagination: false,
+    autoPlay: 5000,
+    navigation: true
+  };
+  slider = $('[application-slider]');
+  slider.each(function() {
+    var options;
+    options = _.clone(defaultCarouselOptions);
+    if ($(this).hasClass('b-slider_promo')) {
+      options['singleItem'] = true;
+      options['autoHeight'] = true;
+      options['lazyLoad'] = true;
+      options['afterInit'] = function() {
+        return this.$elem.addClass('loaded');
+      };
+    }
+    if ($(this).hasClass('application-slider_photos')) {
+      options['singleItem'] = false;
+      options['items'] = 3;
+      options['itemsDesktop'] = 3;
+    }
+    if ($(this).hasClass('application-slider_instagram')) {
+      options['singleItem'] = false;
+      options['items'] = 6;
+      options['itemsDesktop'] = 6;
+      options['lazyLoad'] = true;
+    }
+    return $(this).owlCarousel(options);
+  });
+  sliderThumbsContainer = $('[slider-thumbs]');
+  sliderThumbs = sliderThumbsContainer.find('.b-slider-thumbs__item');
+  return sliderThumbsContainer.on('click', '.b-slider-thumbs__item', function(e) {
+    var number;
+    e.preventDefault();
+    sliderThumbs.removeClass('active');
+    $(this).addClass('active');
+    number = $(this).index();
+    return slider.trigger('owl.goTo', number);
+  });
+});
+
+
+
+},{}],52:[function(require,module,exports){
+$(function() {
+  var $cartTotal, setCartItemCount, updateCartTotal;
+  $cartTotal = $('[cart-total]');
+  setCartItemCount = function($el, count) {
+    var $price_el, $selector, price, total;
+    price = +$el.data('item-price');
+    total = price * count;
+    $el.data('item-total-price', total);
+    $price_el = $el.find('[cart-item-total-price]');
+    $price_el.html(accounting.formatMoney(total));
+    $selector = $el.find('[cart-item-selector]');
+    $selector.val(count);
+    return updateCartTotal();
+  };
+  updateCartTotal = function() {
+    var totalPrice;
+    totalPrice = 0;
+    $('[cart-item]').each(function(idx, block) {
+      return totalPrice += +$(block).data('item-total-price');
+    });
+    return $cartTotal.html(accounting.formatMoney(totalPrice));
+  };
+  return $('[cart-item-selector]').on('change', function() {
+    var $e, $el;
+    $e = $(this);
+    $el = $e.closest('[cart-item]');
+    return setCartItemCount($el, parseInt($e.val()));
+  });
+});
+
+
+
+},{}],53:[function(require,module,exports){
+$(function() {
+  var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
+  $checkoutTotal = $('[checkout-total]');
+  setCheckoutDeliveryPrice = function(price) {
+    $checkoutTotal.data('delivery-price', price);
+    return updateCheckoutTotal();
+  };
+  updateCheckoutTotal = function() {
+    var totalPrice;
+    totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price');
+    return $checkoutTotal.html(accounting.formatMoney(totalPrice));
+  };
+  toggleDeliveryOnlyElementsVisibility = function(showFieldsQuery) {
+    var $el;
+    $('[hideable]').slideUp();
+    if (showFieldsQuery) {
+      $el = $(showFieldsQuery);
+      return $el.stop().slideDown();
+    }
+  };
+  selectDeliveryType = function($e) {
+    if ($e != null) {
+      setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
+      return toggleDeliveryOnlyElementsVisibility($e.data('show-fields-query'));
+    } else {
+      return typeof console.error === "function" ? console.error('Ни один способ доставки по умолчанию не выбран') : void 0;
+    }
+  };
+  $('[delivery-type]').on('change', function() {
+    return selectDeliveryType($(this));
+  });
+  findSelectedDeliveryType = function() {
+    var $el;
+    $el = $('[delivery-type]').filter(':checked');
+    if ($el.length === 0) {
+      return null;
+    } else {
+      return $el;
+    }
+  };
+  return window.InitializeCheckout = function() {
+    console.log('Initialize Checkout');
+    return selectDeliveryType(findSelectedDeliveryType());
+  };
+});
+
+
+
+},{}],54:[function(require,module,exports){
+$(function() {
+  $('[ks-jump]').on('click', function(e) {
+    var href;
+    href = $(this).attr('ks-jump');
+    if (href !== '') {
+      if (event.shiftKey || event.ctrlKey || event.metaKey) {
+        return window.open(target, '_blank');
+      } else {
+        return window.location = href;
+      }
+    }
+  });
+  return $('[ks-jump] .dropdown, [ks-jump] input').on('click', function(e) {
+    return e.stopPropagation();
+  });
+});
+
+
+
+},{}],55:[function(require,module,exports){
+$(function() {
+  return $('[lightbox]').fancybox({
+    padding: 0,
+    margin: 0,
+    helpers: {
+      thumbs: {
+        width: 8,
+        height: 8
+      }
+    },
+    tpl: {
+      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
+      next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
+      prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
+    }
+  });
+});
+
+
+
+},{}],56:[function(require,module,exports){
+$(function() {
+  var LOADING_TITLE, isRequest;
+  isRequest = false;
+  LOADING_TITLE = 'Загружаю';
+  return $('[ks-load-more]').on('click', function(e) {
+    var $root, $target, current_page, next_page, saved_title, total_pages, url;
+    if (isRequest) {
+      return;
+    }
+    $target = $(e.target);
+    saved_title = $target.text();
+    $target.text($target.data('loading-title') || LOADING_TITLE);
+    $root = $target.parents('[ks-products-container]');
+    current_page = $root.data("current-page") || 1;
+    total_pages = $root.data("total-pages");
+    url = $root.data('url') || '';
+    next_page = current_page + 1;
+    if (next_page > total_pages) {
+      return;
+    }
+    return $.ajax({
+      url: url,
+      data: {
+        page: next_page
+      },
+      beforeSend: function(xhr) {
+        return isRequest = true;
+      }
+    }).done(function(resp) {
+      $('[ks-product-item]').last().after(resp);
+      $target.text(saved_title);
+      $root.data('current-page', next_page);
+      if (next_page >= total_pages) {
+        return $target.hide();
+      }
+    }).always(function(resp) {
+      return isRequest = false;
+    });
+  });
+});
+
+
+
+},{}],57:[function(require,module,exports){
+$(function() {
+  var menuCopy, navOpen, searchBlock;
+  menuCopy = $('[ks-mob-nav]');
+  searchBlock = $('[ks-search]');
+  menuCopy.mmenu({
+    classes: false,
+    counters: false
+  });
+  if (searchBlock.length) {
+    searchBlock.clone().prependTo(menuCopy.find('#mm-0')).wrap('<li/>');
+  }
+  navOpen = $('[ks-open-nav]');
+  menuCopy.on('opened.mm', function() {
+    return navOpen.addClass('mmenu-open_active');
+  });
+  return menuCopy.on('closed.mm', function() {
+    return navOpen.removeClass('mmenu-open_active');
+  });
+});
+
+
+
+},{}],58:[function(require,module,exports){
+$(function() {
+  var center, productSlider, productThumbs, syncPosition;
+  productSlider = $('#product-slider');
+  productThumbs = $('#product-thumbs');
+  syncPosition = function(el) {
+    var current;
+    current = this.currentItem;
+    productThumbs.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
+    if (productThumbs.data("owlCarousel") !== undefined) {
+      center(current);
+    }
+  };
+  center = function(number) {
+    var found, i, num, sync2visible;
+    sync2visible = productThumbs.data("owlCarousel").owl.visibleItems;
+    num = number;
+    found = false;
+    for (i in sync2visible) {
+      if (num === sync2visible[i]) {
+        found = true;
+      }
+    }
+    if (found === false) {
+      if (num > sync2visible[sync2visible.length - 1]) {
+        return productThumbs.trigger("owl.goTo", num - sync2visible.length + 2);
+      } else {
+        if (num - 1 === -1) {
+          num = 0;
+        }
+        return productThumbs.trigger("owl.goTo", num);
+      }
+    } else if (num === sync2visible[sync2visible.length - 1]) {
+      return productThumbs.trigger("owl.goTo", sync2visible[1]);
+    } else {
+      if (num === sync2visible[0]) {
+        return productThumbs.trigger("owl.goTo", num - 1);
+      }
+    }
+  };
+  productSlider.owlCarousel({
+    singleItem: true,
+    afterAction: syncPosition
+  });
+  productThumbs.owlCarousel({
+    items: 4,
+    pagination: false,
+    afterInit: function(el) {
+      el.find(".owl-item").eq(0).addClass("synced");
+    }
+  });
+  return productThumbs.on("click", ".owl-item", function(e) {
+    var number;
+    e.preventDefault();
+    number = $(this).data("owlItem");
+    productSlider.trigger("owl.goTo", number);
+  });
+});
+
+
+
+},{}],59:[function(require,module,exports){
+$(function() {
+  var logo;
+  logo = $('.b-logo__img');
+  return $('[ks-theme-switcher]').on('click', function() {
+    var classlistVal, logoUrl;
+    classlistVal = $(this).data("classlist");
+    logoUrl = $(this).data("logourl");
+    $('body').attr('class', classlistVal);
+    return logo.attr('src', logoUrl);
+  });
+});
+
+
+
+},{}],60:[function(require,module,exports){
+/**
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+module.exports.Dispatcher = require('./lib/Dispatcher')
+
+},{"./lib/Dispatcher":61}],61:[function(require,module,exports){
+/*
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Dispatcher
+ * @typechecks
+ */
+
+"use strict";
+
+var invariant = require('./invariant');
+
+var _lastID = 1;
+var _prefix = 'ID_';
+
+/**
+ * Dispatcher is used to broadcast payloads to registered callbacks. This is
+ * different from generic pub-sub systems in two ways:
+ *
+ *   1) Callbacks are not subscribed to particular events. Every payload is
+ *      dispatched to every registered callback.
+ *   2) Callbacks can be deferred in whole or part until other callbacks have
+ *      been executed.
+ *
+ * For example, consider this hypothetical flight destination form, which
+ * selects a default city when a country is selected:
+ *
+ *   var flightDispatcher = new Dispatcher();
+ *
+ *   // Keeps track of which country is selected
+ *   var CountryStore = {country: null};
+ *
+ *   // Keeps track of which city is selected
+ *   var CityStore = {city: null};
+ *
+ *   // Keeps track of the base flight price of the selected city
+ *   var FlightPriceStore = {price: null}
+ *
+ * When a user changes the selected city, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'city-update',
+ *     selectedCity: 'paris'
+ *   });
+ *
+ * This payload is digested by `CityStore`:
+ *
+ *   flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'city-update') {
+ *       CityStore.city = payload.selectedCity;
+ *     }
+ *   });
+ *
+ * When the user selects a country, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'country-update',
+ *     selectedCountry: 'australia'
+ *   });
+ *
+ * This payload is digested by both stores:
+ *
+ *    CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       CountryStore.country = payload.selectedCountry;
+ *     }
+ *   });
+ *
+ * When the callback to update `CountryStore` is registered, we save a reference
+ * to the returned token. Using this token with `waitFor()`, we can guarantee
+ * that `CountryStore` is updated before the callback that updates `CityStore`
+ * needs to query its data.
+ *
+ *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       // `CountryStore.country` may not be updated.
+ *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
+ *       // `CountryStore.country` is now guaranteed to be updated.
+ *
+ *       // Select the default city for the new country
+ *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
+ *     }
+ *   });
+ *
+ * The usage of `waitFor()` can be chained, for example:
+ *
+ *   FlightPriceStore.dispatchToken =
+ *     flightDispatcher.register(function(payload) {
+ *       switch (payload.actionType) {
+ *         case 'country-update':
+ *           flightDispatcher.waitFor([CityStore.dispatchToken]);
+ *           FlightPriceStore.price =
+ *             getFlightPriceStore(CountryStore.country, CityStore.city);
+ *           break;
+ *
+ *         case 'city-update':
+ *           FlightPriceStore.price =
+ *             FlightPriceStore(CountryStore.country, CityStore.city);
+ *           break;
+ *     }
+ *   });
+ *
+ * The `country-update` payload will be guaranteed to invoke the stores'
+ * registered callbacks in order: `CountryStore`, `CityStore`, then
+ * `FlightPriceStore`.
+ */
+
+  function Dispatcher() {
+    this.$Dispatcher_callbacks = {};
+    this.$Dispatcher_isPending = {};
+    this.$Dispatcher_isHandled = {};
+    this.$Dispatcher_isDispatching = false;
+    this.$Dispatcher_pendingPayload = null;
+  }
+
+  /**
+   * Registers a callback to be invoked with every dispatched payload. Returns
+   * a token that can be used with `waitFor()`.
+   *
+   * @param {function} callback
+   * @return {string}
+   */
+  Dispatcher.prototype.register=function(callback) {
+    var id = _prefix + _lastID++;
+    this.$Dispatcher_callbacks[id] = callback;
+    return id;
+  };
+
+  /**
+   * Removes a callback based on its token.
+   *
+   * @param {string} id
+   */
+  Dispatcher.prototype.unregister=function(id) {
+    invariant(
+      this.$Dispatcher_callbacks[id],
+      'Dispatcher.unregister(...): `%s` does not map to a registered callback.',
+      id
+    );
+    delete this.$Dispatcher_callbacks[id];
+  };
+
+  /**
+   * Waits for the callbacks specified to be invoked before continuing execution
+   * of the current callback. This method should only be used by a callback in
+   * response to a dispatched payload.
+   *
+   * @param {array<string>} ids
+   */
+  Dispatcher.prototype.waitFor=function(ids) {
+    invariant(
+      this.$Dispatcher_isDispatching,
+      'Dispatcher.waitFor(...): Must be invoked while dispatching.'
+    );
+    for (var ii = 0; ii < ids.length; ii++) {
+      var id = ids[ii];
+      if (this.$Dispatcher_isPending[id]) {
+        invariant(
+          this.$Dispatcher_isHandled[id],
+          'Dispatcher.waitFor(...): Circular dependency detected while ' +
+          'waiting for `%s`.',
+          id
+        );
+        continue;
+      }
+      invariant(
+        this.$Dispatcher_callbacks[id],
+        'Dispatcher.waitFor(...): `%s` does not map to a registered callback.',
+        id
+      );
+      this.$Dispatcher_invokeCallback(id);
+    }
+  };
+
+  /**
+   * Dispatches a payload to all registered callbacks.
+   *
+   * @param {object} payload
+   */
+  Dispatcher.prototype.dispatch=function(payload) {
+    invariant(
+      !this.$Dispatcher_isDispatching,
+      'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.'
+    );
+    this.$Dispatcher_startDispatching(payload);
+    try {
+      for (var id in this.$Dispatcher_callbacks) {
+        if (this.$Dispatcher_isPending[id]) {
+          continue;
+        }
+        this.$Dispatcher_invokeCallback(id);
+      }
+    } finally {
+      this.$Dispatcher_stopDispatching();
+    }
+  };
+
+  /**
+   * Is this Dispatcher currently dispatching.
+   *
+   * @return {boolean}
+   */
+  Dispatcher.prototype.isDispatching=function() {
+    return this.$Dispatcher_isDispatching;
+  };
+
+  /**
+   * Call the callback stored with the given id. Also do some internal
+   * bookkeeping.
+   *
+   * @param {string} id
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_invokeCallback=function(id) {
+    this.$Dispatcher_isPending[id] = true;
+    this.$Dispatcher_callbacks[id](this.$Dispatcher_pendingPayload);
+    this.$Dispatcher_isHandled[id] = true;
+  };
+
+  /**
+   * Set up bookkeeping needed when dispatching.
+   *
+   * @param {object} payload
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_startDispatching=function(payload) {
+    for (var id in this.$Dispatcher_callbacks) {
+      this.$Dispatcher_isPending[id] = false;
+      this.$Dispatcher_isHandled[id] = false;
+    }
+    this.$Dispatcher_pendingPayload = payload;
+    this.$Dispatcher_isDispatching = true;
+  };
+
+  /**
+   * Clear bookkeeping used for dispatching.
+   *
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_stopDispatching=function() {
+    this.$Dispatcher_pendingPayload = null;
+    this.$Dispatcher_isDispatching = false;
+  };
+
+
+module.exports = Dispatcher;
+
+},{"./invariant":62}],62:[function(require,module,exports){
+/**
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule invariant
+ */
+
+"use strict";
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (false) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        'Invariant Violation: ' +
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+},{}],63:[function(require,module,exports){
+/**
+ * StyleSheets written in javascript.
+ *
+ * @copyright Oleg Slobodskoi 2014
+ * @website https://github.com/jsstyles/jss
+ * @license MIT
+ */
+
+module.exports = require('./lib/index')
+
+},{"./lib/index":66}],64:[function(require,module,exports){
+'use strict'
+
+var plugins = require('./plugins')
+
+var uid = 0
+
+var toString = Object.prototype.toString
+
+/**
+ * Rule is selector + style hash.
+ *
+ * @param {String} [selector]
+ * @param {Object} [style] declarations block
+ * @param {Object} [options]
+ * @api public
+ */
+function Rule(selector, style, options) {
+    if (typeof selector == 'object') {
+        options = style
+        style = selector
+        selector = null
+    }
+
+    this.id = Rule.uid++
+    this.options = options || {}
+    if (this.options.named == null) this.options.named = true
+
+    if (selector) {
+        this.selector = selector
+        this.isAtRule = selector[0] == '@'
+    } else {
+        this.isAtRule = false
+        this.className = Rule.NAMESPACE_PREFIX + '-' + this.id
+        this.selector = '.' + this.className
+    }
+
+    this.style = style
+    // Will be set by StyleSheet#link if link option is true.
+    this.CSSRule = null
+    // When at-rule has sub rules.
+    this.rules = null
+    if (this.isAtRule && this.style) this.extractAtRules()
+}
+
+module.exports = Rule
+
+/**
+ * Class name prefix when generated.
+ *
+ * @type {String}
+ * @api private
+ */
+Rule.NAMESPACE_PREFIX = 'jss'
+
+/**
+ * Indentation string for formatting toString output.
+ *
+ * @type {String}
+ * @api private
+ */
+Rule.INDENTATION = '  '
+
+/**
+ * Unique id, right now just a counter, because there is no need for better uid.
+ *
+ * @type {Number}
+ * @api private
+ */
+Rule.uid = 0
+
+/**
+ * Get or set a style property.
+ *
+ * @param {String} name
+ * @param {String|Number} [value]
+ * @return {Rule|String|Number}
+ * @api public
+ */
+Rule.prototype.prop = function (name, value) {
+    // Its a setter.
+    if (value) {
+        if (!this.style) this.style = {}
+        this.style[name] = value
+        // If linked option in StyleSheet is not passed, CSSRule is not defined.
+        if (this.CSSRule) this.CSSRule.style[name] = value
+        return this
+    }
+
+    // Its a getter.
+    if (this.style) value = this.style[name]
+
+    // Read the value from the DOM if its not cached.
+    if (value == null && this.CSSRule) {
+        value = this.CSSRule.style[name]
+        // Cache the value after we have got it from the DOM once.
+        this.style[name] = value
+    }
+
+    return value
+}
+
+/**
+ * Add child rule. Required for plugins like "nested".
+ * StyleSheet will render them as a separate rule.
+ *
+ * @param {String} selector
+ * @param {Object} style
+ * @param {Object} [options] rule options
+ * @return {Rule}
+ * @api private
+ */
+Rule.prototype.addChild = function (selector, style, options) {
+    if (!this.children) this.children = {}
+    this.children[selector] = {
+        style: style,
+        options: options
+    }
+
+    return this
+}
+
+/**
+ * Add child rule. Required for plugins like "nested".
+ * StyleSheet will render them as a separate rule.
+ *
+ * @param {String} selector
+ * @param {Object} style
+ * @return {Rule}
+ * @api public
+ */
+Rule.prototype.extractAtRules = function () {
+    if (!this.rules) this.rules = {}
+
+    for (var name in this.style) {
+        var style = this.style[name]
+        // Not a nested rule.
+        if (typeof style == 'string') break
+        var selector = this.options.named ? undefined : name
+        var rule = this.rules[name] = new Rule(selector, style, this.options)
+        plugins.run(rule)
+        delete this.style[name]
+    }
+
+    return this
+}
+
+/**
+ * Apply rule to an element inline.
+ *
+ * @param {Element} element
+ * @return {Rule}
+ * @api public
+ */
+Rule.prototype.applyTo = function (element) {
+    for (var prop in this.style) {
+        var value = this.style[prop]
+        if (toString.call(value) == '[object Array]') {
+            for (var i = 0; i < value.length; i++) {
+                element.style[prop] = value[i]
+            }
+        } else {
+            element.style[prop] = value
+        }
+    }
+
+    return this
+}
+
+/**
+ * Converts the rule to css string.
+ *
+ * @return {String}
+ * @api public
+ */
+Rule.prototype.toString = function (options) {
+    var style = this.style
+
+    // At rules like @charset
+    if (this.isAtRule && !this.style && !this.rules) return this.selector + ';'
+
+    if (!options) options = {}
+    if (options.indentationLevel == null) options.indentationLevel = 0
+
+    var str = indent(options.indentationLevel, this.selector + ' {')
+
+    for (var prop in style) {
+        var value = style[prop]
+        // We want to generate multiple style with identical property names.
+        if (toString.call(value) == '[object Array]') {
+            for (var i = 0; i < value.length; i++) {
+                str += '\n' + indent(options.indentationLevel + 1, prop + ': ' + value[i] + ';')
+            }
+        } else {
+            str += '\n' + indent(options.indentationLevel + 1, prop + ': ' + value + ';')
+        }
+    }
+
+    // We are have an at-rule with nested statements.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
+    for (var name in this.rules) {
+        var ruleStr = this.rules[name].toString({
+            indentationLevel: options.indentationLevel + 1
+        })
+        str += '\n' + indent(options.indentationLevel, ruleStr)
+    }
+
+    str += '\n' + indent(options.indentationLevel, '}')
+
+    return str
+}
+
+/**
+ * Returns JSON representation of the rule.
+ * Nested rules, at-rules and array values are not supported.
+ *
+ * @return {Object}
+ * @api public
+ */
+Rule.prototype.toJSON = function () {
+    var style = {}
+
+    for (var prop in this.style) {
+        var value = this.style[prop]
+        var type = typeof value
+        if (type == 'string' || type == 'number') {
+            style[prop] = value
+        }
+    }
+
+    return style
+}
+
+/**
+ * Indent a string.
+ *
+ * @param {Number} level
+ * @param {String} str
+ * @return {String}
+ */
+function indent(level, str) {
+    var indentStr = ''
+    for (var i = 0; i < level; i++) indentStr += Rule.INDENTATION
+    return indentStr + str
+}
+
+},{"./plugins":67}],65:[function(require,module,exports){
+'use strict'
+
+var Rule = require('./Rule')
+var plugins = require('./plugins')
+
+/**
+ * StyleSheet abstraction, contains rules, injects stylesheet into dom.
+ *
+ * Options:
+ *
+ *  - `media` style element attribute
+ *  - `title` style element attribute
+ *  - `type` style element attribute
+ *  - `named` true by default - keys are names, selectors will be generated,
+ *    if false - keys are global selectors.
+ *  - `link` link jss Rule instances with DOM CSSRule instances so that styles,
+ *  can be modified dynamically, false by default because it has some performance cost.
+ *
+ * @param {Object} [rules] object with selectors and declarations
+ * @param {Object} [options]
+ * @api public
+ */
+function StyleSheet(rules, options) {
+    this.options = options || {}
+    if (this.options.named == null) this.options.named = true
+    this.element = null
+    this.attached = false
+    this.media = this.options.media
+    this.type = this.options.type
+    this.title = this.options.title
+    this.rules = {}
+    // Only when options.named: true.
+    this.classes = {}
+    this.deployed = false
+    this.linked = false
+
+    // Don't create element if we are not in a browser environment.
+    if (typeof document != 'undefined') {
+        this.element = this.createElement()
+    }
+
+    for (var key in rules) {
+        this.createRules(key, rules[key])
+    }
+}
+
+StyleSheet.ATTRIBUTES = ['title', 'type', 'media']
+
+module.exports = StyleSheet
+
+/**
+ * Insert stylesheet element to render tree.
+ *
+ * @api public
+ * @return {StyleSheet}
+ */
+StyleSheet.prototype.attach = function () {
+    if (this.attached) return this
+
+    if (!this.deployed) {
+        this.deploy()
+        this.deployed = true
+    }
+
+    document.head.appendChild(this.element)
+
+    // Before element is attached to the dom rules are not created.
+    if (!this.linked && this.options.link) {
+        this.link()
+        this.linked = true
+    }
+
+    this.attached = true
+
+    return this
+}
+
+/**
+ * Remove stylesheet element from render tree.
+ *
+ * @return {StyleSheet}
+ * @api public
+ */
+StyleSheet.prototype.detach = function () {
+    if (!this.attached) return this
+
+    this.element.parentNode.removeChild(this.element)
+    this.attached = false
+
+    return this
+}
+
+/**
+ * Deploy styles to the element.
+ *
+ * @return {StyleSheet}
+ * @api private
+ */
+StyleSheet.prototype.deploy = function () {
+    this.element.innerHTML = '\n' + this.toString() + '\n'
+
+    return this
+}
+
+/**
+ * Find CSSRule objects in the DOM and link them in the corresponding Rule instance.
+ *
+ * @return {StyleSheet}
+ * @api private
+ */
+StyleSheet.prototype.link = function () {
+    var CSSRuleList = this.element.sheet.cssRules
+    var rules = this.rules
+
+    for (var i = 0; i < CSSRuleList.length; i++) {
+        var CSSRule = CSSRuleList[i]
+        var rule = rules[CSSRule.selectorText]
+        if (rule) rule.CSSRule = CSSRule
+    }
+
+    return this
+}
+
+/**
+ * Add a rule to the current stylesheet. Will insert a rule also after the stylesheet
+ * has been rendered first time.
+ *
+ * @param {Object} [key] can be selector or name if `options.named` is true
+ * @param {Object} style property/value hash
+ * @return {Rule}
+ * @api public
+ */
+StyleSheet.prototype.addRule = function (key, style) {
+    var rules = this.createRules(key, style)
+
+    // Don't insert rule directly if there is no stringified version yet.
+    // It will be inserted all together when .attach is called.
+    if (this.deployed) {
+        var sheet = this.element.sheet
+        for (var i = 0; i < rules.length; i++) {
+            var nextIndex = sheet.cssRules.length
+            var rule = rules[i]
+            sheet.insertRule(rule.toString(), nextIndex)
+            if (this.options.link) rule.CSSRule = sheet.cssRules[nextIndex]
+        }
+    } else {
+        this.deploy()
+    }
+
+    return rules
+}
+
+/**
+ * Create rules, will render also after stylesheet was rendered the first time.
+ *
+ * @param {Object} rules key:style hash.
+ * @return {StyleSheet} this
+ * @api public
+ */
+StyleSheet.prototype.addRules = function (rules) {
+    for (var key in rules) {
+        this.addRule(key, rules[key])
+    }
+
+    return this
+}
+
+/**
+ * Get a rule.
+ *
+ * @param {String} key can be selector or name if `named` is true.
+ * @return {Rule}
+ * @api public
+ */
+StyleSheet.prototype.getRule = function (key) {
+    return this.rules[key]
+}
+
+/**
+ * Convert rules to a css string.
+ *
+ * @return {String}
+ * @api public
+ */
+StyleSheet.prototype.toString = function () {
+    var str = ''
+    var rules = this.rules
+    var stringified = {}
+    for (var key in rules) {
+        var rule = rules[key]
+        // We have the same rule referenced twice if using named urles.
+        // By name and by selector.
+        if (stringified[rule.id]) continue
+        if (str) str += '\n'
+        str += rules[key].toString()
+        stringified[rule.id] = true
+    }
+
+    return str
+}
+
+/**
+ * Create a rule, will not render after stylesheet was rendered the first time.
+ *
+ * @param {Object} [selector] if you don't pass selector - it will be generated
+ * @param {Object} [style] declarations block
+ * @param {Object} [options] rule options
+ * @return {Array} rule can contain child rules
+ * @api private
+ */
+StyleSheet.prototype.createRules = function (key, style, options) {
+    var rules = []
+    var selector, name
+
+    if (!options) options = {}
+    var named = this.options.named
+    // Scope options overwrite instance options.
+    if (options.named != null) named = options.named
+
+    if (named) name = key
+    else selector = key
+
+    var rule = new Rule(selector, style, {
+        sheet: this,
+        named: named,
+        name: name
+    })
+    rules.push(rule)
+
+    this.rules[rule.selector] = rule
+    if (name) {
+        this.rules[name] = rule
+        this.classes[name] = rule.className
+    }
+
+    plugins.run(rule)
+
+    for (key in rule.children) {
+        rules.push(this.createRules(
+            key,
+            rule.children[key].style,
+            rule.children[key].options
+        ))
+    }
+
+    return rules
+}
+
+/**
+ * Create style sheet element.
+ *
+ * @api private
+ * @return {Element}
+ */
+StyleSheet.prototype.createElement = function () {
+    var element = document.createElement('style')
+
+    StyleSheet.ATTRIBUTES.forEach(function (name) {
+        if (this[name]) element.setAttribute(name, this[name])
+    }, this)
+
+    return element
+}
+
+},{"./Rule":64,"./plugins":67}],66:[function(require,module,exports){
+'use strict'
+
+var StyleSheet = require('./StyleSheet')
+var Rule = require('./Rule')
+
+exports.StyleSheet = StyleSheet
+
+exports.Rule = Rule
+
+exports.plugins = require('./plugins')
+
+/**
+ * Create a stylesheet.
+ *
+ * @param {Object} rules is selector:style hash.
+ * @param {Object} [named] rules have names if true, class names will be generated.
+ * @param {Object} [attributes] stylesheet element attributes.
+ * @return {StyleSheet}
+ * @api public
+ */
+exports.createStyleSheet = function (rules, named, attributes) {
+    return new StyleSheet(rules, named, attributes)
+}
+
+/**
+ * Create a rule.
+ *
+ * @param {String} [selector]
+ * @param {Object} style is property:value hash.
+ * @return {Rule}
+ * @api public
+ */
+exports.createRule = function (selector, style) {
+    var rule = new Rule(selector, style)
+    exports.plugins.run(rule)
+    return rule
+}
+
+/**
+ * Register plugin. Passed function will be invoked with a rule instance.
+ *
+ * @param {Function} fn
+ * @api public
+ */
+exports.use = exports.plugins.use
+
+},{"./Rule":64,"./StyleSheet":65,"./plugins":67}],67:[function(require,module,exports){
+'use strict'
+
+/**
+ * Registered plugins.
+ *
+ * @type {Array}
+ * @api public
+ */
+exports.registry = []
+
+/**
+ * Register plugin. Passed function will be invoked with a rule instance.
+ *
+ * @param {Function} fn
+ * @api public
+ */
+exports.use = function (fn) {
+    exports.registry.push(fn)
+}
+
+/**
+ * Execute all registered plugins.
+ *
+ * @param {Rule} rule
+ * @api private
+ */
+exports.run = function (rule) {
+    for (var i = 0; i < exports.registry.length; i++) {
+        exports.registry[i](rule)
+    }
+}
 
 },{}],"eventEmitter":[function(require,module,exports){
 /*!
@@ -19042,10 +19042,10 @@ return jQuery;
 (function (global){
 /**
  * @license
- * lodash 3.3.1 (Custom Build) <https://lodash.com/>
+ * lodash 3.1.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern -o ./lodash.js`
  * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.2 <http://underscorejs.org/LICENSE>
+ * Based on Underscore.js 1.7.0 <http://underscorejs.org/LICENSE>
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
@@ -19055,7 +19055,7 @@ return jQuery;
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '3.3.1';
+  var VERSION = '3.1.0';
 
   /** Used to compose bitmasks for wrapper metadata. */
   var BIND_FLAG = 1,
@@ -19366,20 +19366,6 @@ return jQuery;
       }
     }
     return -1;
-  }
-
-  /**
-   * The base implementation of `_.isFunction` without support for environments
-   * with incorrect `typeof` results.
-   *
-   * @private
-   * @param {*} value The value to check.
-   * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
-   */
-  function baseIsFunction(value) {
-    // Avoid a Chakra JIT bug in compatibility modes of IE 11.
-    // See https://github.com/jashkenas/underscore/issues/1621 for more details.
-    return typeof value == 'function' || false;
   }
 
   /**
@@ -19784,6 +19770,7 @@ return jQuery;
         setTimeout = context.setTimeout,
         splice = arrayProto.splice,
         Uint8Array = isNative(Uint8Array = context.Uint8Array) && Uint8Array,
+        unshift = arrayProto.unshift,
         WeakMap = isNative(WeakMap = context.WeakMap) && WeakMap;
 
     /** Used to clone array buffers. */
@@ -19835,7 +19822,7 @@ return jQuery;
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lodash` object which wraps `value` to enable implicit chaining.
+     * Creates a `lodash` object which wraps `value` to enable intuitive chaining.
      * Methods that operate on and return arrays, collections, and functions can
      * be chained together. Methods that return a boolean or single value will
      * automatically end the chain returning the unwrapped value. Explicit chaining
@@ -19854,31 +19841,29 @@ return jQuery;
      * `concat`, `join`, `pop`, `push`, `reverse`, `shift`, `slice`, `sort`, `splice`,
      * and `unshift`
      *
-     * The wrapper methods that support shortcut fusion are:
-     * `compact`, `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `filter`,
-     * `first`, `initial`, `last`, `map`, `pluck`, `reject`, `rest`, `reverse`,
-     * `slice`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `toArray`,
-     * and `where`
+     * The wrapper functions that support shortcut fusion are:
+     * `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `filter`, `first`,
+     * `initial`, `last`, `map`, `pluck`, `reject`, `rest`, `reverse`, `slice`,
+     * `take`, `takeRight`, `takeRightWhile`, `takeWhile`, and `where`
      *
-     * The chainable wrapper methods are:
+     * The chainable wrapper functions are:
      * `after`, `ary`, `assign`, `at`, `before`, `bind`, `bindAll`, `bindKey`,
-     * `callback`, `chain`, `chunk`, `commit`, `compact`, `concat`, `constant`,
-     * `countBy`, `create`, `curry`, `debounce`, `defaults`, `defer`, `delay`,
-     * `difference`, `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `fill`,
-     * `filter`, `flatten`, `flattenDeep`, `flow`, `flowRight`, `forEach`,
-     * `forEachRight`, `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `functions`,
-     * `groupBy`, `indexBy`, `initial`, `intersection`, `invert`, `invoke`, `keys`,
-     * `keysIn`, `map`, `mapValues`, `matches`, `matchesProperty`, `memoize`, `merge`,
-     * `mixin`, `negate`, `noop`, `omit`, `once`, `pairs`, `partial`, `partialRight`,
-     * `partition`, `pick`, `plant`, `pluck`, `property`, `propertyOf`, `pull`,
-     * `pullAt`, `push`, `range`, `rearg`, `reject`, `remove`, `rest`, `reverse`,
-     * `shuffle`, `slice`, `sort`, `sortBy`, `sortByAll`, `splice`, `spread`,
-     * `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `tap`, `throttle`,
-     * `thru`, `times`, `toArray`, `toPlainObject`, `transform`, `union`, `uniq`,
-     * `unshift`, `unzip`, `values`, `valuesIn`, `where`, `without`, `wrap`, `xor`,
-     * `zip`, and `zipObject`
+     * `callback`, `chain`, `chunk`, `compact`, `concat`, `constant`, `countBy`,
+     * `create`, `curry`, `debounce`, `defaults`, `defer`, `delay`, `difference`,
+     * `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `filter`, `flatten`,
+     * `flattenDeep`, `flow`, `flowRight`, `forEach`, `forEachRight`, `forIn`,
+     * `forInRight`, `forOwn`, `forOwnRight`, `functions`, `groupBy`, `indexBy`,
+     * `initial`, `intersection`, `invert`, `invoke`, `keys`, `keysIn`, `map`,
+     * `mapValues`, `matches`, `memoize`, `merge`, `mixin`, `negate`, `noop`,
+     * `omit`, `once`, `pairs`, `partial`, `partialRight`, `partition`, `pick`,
+     * `pluck`, `property`, `propertyOf`, `pull`, `pullAt`, `push`, `range`,
+     * `rearg`, `reject`, `remove`, `rest`, `reverse`, `shuffle`, `slice`, `sort`,
+     * `sortBy`, `sortByAll`, `splice`, `take`, `takeRight`, `takeRightWhile`,
+     * `takeWhile`, `tap`, `throttle`, `thru`, `times`, `toArray`, `toPlainObject`,
+     * `transform`, `union`, `uniq`, `unshift`, `unzip`, `values`, `valuesIn`,
+     * `where`, `without`, `wrap`, `xor`, `zip`, and `zipObject`
      *
-     * The wrapper methods that are **not** chainable by default are:
+     * The wrapper functions that are **not** chainable by default are:
      * `attempt`, `camelCase`, `capitalize`, `clone`, `cloneDeep`, `deburr`,
      * `endsWith`, `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`,
      * `findLast`, `findLastIndex`, `findLastKey`, `findWhere`, `first`, `has`,
@@ -19893,28 +19878,24 @@ return jQuery;
      * `startCase`, `startsWith`, `template`, `trim`, `trimLeft`, `trimRight`,
      * `trunc`, `unescape`, `uniqueId`, `value`, and `words`
      *
-     * The wrapper method `sample` will return a wrapped value when `n` is provided,
+     * The wrapper function `sample` will return a wrapped value when `n` is provided,
      * otherwise an unwrapped value is returned.
      *
      * @name _
      * @constructor
      * @category Chain
      * @param {*} value The value to wrap in a `lodash` instance.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {Object} Returns a `lodash` instance.
      * @example
      *
      * var wrapped = _([1, 2, 3]);
      *
      * // returns an unwrapped value
-     * wrapped.reduce(function(sum, n) {
-     *   return sum + n;
-     * });
+     * wrapped.reduce(function(sum, n) { return sum + n; });
      * // => 6
      *
      * // returns a wrapped value
-     * var squares = wrapped.map(function(n) {
-     *   return n * n;
-     * });
+     * var squares = wrapped.map(function(n) { return n * n; });
      *
      * _.isArray(squares);
      * // => false
@@ -19923,24 +19904,15 @@ return jQuery;
      * // => true
      */
     function lodash(value) {
-      if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
+      if (isObjectLike(value) && !isArray(value)) {
         if (value instanceof LodashWrapper) {
           return value;
         }
-        if (hasOwnProperty.call(value, '__chain__') && hasOwnProperty.call(value, '__wrapped__')) {
-          return wrapperClone(value);
+        if (hasOwnProperty.call(value, '__wrapped__')) {
+          return new LodashWrapper(value.__wrapped__, value.__chain__, arrayCopy(value.__actions__));
         }
       }
       return new LodashWrapper(value);
-    }
-
-    /**
-     * The function whose prototype all chaining wrappers inherit from.
-     *
-     * @private
-     */
-    function baseLodash() {
-      // No operation performed.
     }
 
     /**
@@ -19952,9 +19924,9 @@ return jQuery;
      * @param {Array} [actions=[]] Actions to peform to resolve the unwrapped value.
      */
     function LodashWrapper(value, chainAll, actions) {
-      this.__wrapped__ = value;
       this.__actions__ = actions || [];
       this.__chain__ = !!chainAll;
+      this.__wrapped__ = value;
     }
 
     /**
@@ -20087,14 +20059,14 @@ return jQuery;
      * @param {*} value The value to wrap.
      */
     function LazyWrapper(value) {
-      this.__wrapped__ = value;
-      this.__actions__ = null;
-      this.__dir__ = 1;
-      this.__dropCount__ = 0;
-      this.__filtered__ = false;
-      this.__iteratees__ = null;
-      this.__takeCount__ = POSITIVE_INFINITY;
-      this.__views__ = null;
+      this.actions = null;
+      this.dir = 1;
+      this.dropCount = 0;
+      this.filtered = false;
+      this.iteratees = null;
+      this.takeCount = POSITIVE_INFINITY;
+      this.views = null;
+      this.wrapped = value;
     }
 
     /**
@@ -20106,18 +20078,18 @@ return jQuery;
      * @returns {Object} Returns the cloned `LazyWrapper` object.
      */
     function lazyClone() {
-      var actions = this.__actions__,
-          iteratees = this.__iteratees__,
-          views = this.__views__,
-          result = new LazyWrapper(this.__wrapped__);
+      var actions = this.actions,
+          iteratees = this.iteratees,
+          views = this.views,
+          result = new LazyWrapper(this.wrapped);
 
-      result.__actions__ = actions ? arrayCopy(actions) : null;
-      result.__dir__ = this.__dir__;
-      result.__dropCount__ = this.__dropCount__;
-      result.__filtered__ = this.__filtered__;
-      result.__iteratees__ = iteratees ? arrayCopy(iteratees) : null;
-      result.__takeCount__ = this.__takeCount__;
-      result.__views__ = views ? arrayCopy(views) : null;
+      result.actions = actions ? arrayCopy(actions) : null;
+      result.dir = this.dir;
+      result.dropCount = this.dropCount;
+      result.filtered = this.filtered;
+      result.iteratees = iteratees ? arrayCopy(iteratees) : null;
+      result.takeCount = this.takeCount;
+      result.views = views ? arrayCopy(views) : null;
       return result;
     }
 
@@ -20130,13 +20102,13 @@ return jQuery;
      * @returns {Object} Returns the new reversed `LazyWrapper` object.
      */
     function lazyReverse() {
-      if (this.__filtered__) {
+      if (this.filtered) {
         var result = new LazyWrapper(this);
-        result.__dir__ = -1;
-        result.__filtered__ = true;
+        result.dir = -1;
+        result.filtered = true;
       } else {
         result = this.clone();
-        result.__dir__ *= -1;
+        result.dir *= -1;
       }
       return result;
     }
@@ -20150,20 +20122,20 @@ return jQuery;
      * @returns {*} Returns the unwrapped value.
      */
     function lazyValue() {
-      var array = this.__wrapped__.value();
+      var array = this.wrapped.value();
       if (!isArray(array)) {
-        return baseWrapperValue(array, this.__actions__);
+        return baseWrapperValue(array, this.actions);
       }
-      var dir = this.__dir__,
+      var dir = this.dir,
           isRight = dir < 0,
-          view = getView(0, array.length, this.__views__),
+          view = getView(0, array.length, this.views),
           start = view.start,
           end = view.end,
           length = end - start,
-          dropCount = this.__dropCount__,
-          takeCount = nativeMin(length, this.__takeCount__),
+          dropCount = this.dropCount,
+          takeCount = nativeMin(length, this.takeCount - dropCount),
           index = isRight ? end : start - 1,
-          iteratees = this.__iteratees__,
+          iteratees = this.iteratees,
           iterLength = iteratees ? iteratees.length : 0,
           resIndex = 0,
           result = [];
@@ -20608,7 +20580,7 @@ return jQuery;
         return baseCopy(source, object, props);
       }
       var index = -1,
-          length = props.length;
+          length = props.length
 
       while (++index < length) {
         var key = props[index],
@@ -20715,12 +20687,10 @@ return jQuery;
       if (func == null) {
         return identity;
       }
-      if (type == 'object') {
-        return baseMatches(func);
-      }
-      return typeof thisArg == 'undefined'
-        ? baseProperty(func + '')
-        : baseMatchesProperty(func + '', thisArg);
+      // Handle "_.property" and "_.matches" style callback shorthands.
+      return type == 'object'
+        ? baseMatches(func)
+        : baseProperty(func + '');
     }
 
     /**
@@ -20821,7 +20791,7 @@ return jQuery;
      * @returns {number} Returns the timer id.
      */
     function baseDelay(func, wait, args, fromIndex) {
-      if (typeof func != 'function') {
+      if (!isFunction(func)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       return setTimeout(function() { func.apply(undefined, baseSlice(args, fromIndex)); }, wait);
@@ -20846,7 +20816,7 @@ return jQuery;
       var index = -1,
           indexOf = getIndexOf(),
           isCommon = indexOf == baseIndexOf,
-          cache = (isCommon && values.length >= 200) ? createCache(values) : null,
+          cache = isCommon && values.length >= 200 && createCache(values),
           valuesLength = values.length;
 
       if (cache) {
@@ -20939,36 +20909,6 @@ return jQuery;
         return result;
       });
       return result;
-    }
-
-    /**
-     * The base implementation of `_.fill` without an iteratee call guard.
-     *
-     * @private
-     * @param {Array} array The array to fill.
-     * @param {*} value The value to fill `array` with.
-     * @param {number} [start=0] The start position.
-     * @param {number} [end=array.length] The end position.
-     * @returns {Array} Returns `array`.
-     */
-    function baseFill(array, value, start, end) {
-      var length = array.length;
-
-      start = start == null ? 0 : (+start || 0);
-      if (start < 0) {
-        start = -start > length ? 0 : (length + start);
-      }
-      end = (typeof end == 'undefined' || end > length) ? length : (+end || 0);
-      if (end < 0) {
-        end += length;
-      }
-      length = start > end ? 0 : end >>> 0;
-      start >>>= 0;
-
-      while (start < length) {
-        array[start++] = value;
-      }
-      return array;
     }
 
     /**
@@ -21303,7 +21243,7 @@ return jQuery;
      * shorthands or `this` binding.
      *
      * @private
-     * @param {Object} object The object to inspect.
+     * @param {Object} source The object to inspect.
      * @param {Array} props The source property names to match.
      * @param {Array} values The source values to match.
      * @param {Array} strictCompareFlags Strict comparison flags for source values.
@@ -21365,7 +21305,8 @@ return jQuery;
     }
 
     /**
-     * The base implementation of `_.matches` which does not clone `source`.
+     * The base implementation of `_.matches` which supports specifying whether
+     * `source` should be cloned.
      *
      * @private
      * @param {Object} source The object of property values to match.
@@ -21381,7 +21322,7 @@ return jQuery;
 
         if (isStrictComparable(value)) {
           return function(object) {
-            return object != null && object[key] === value && hasOwnProperty.call(object, key);
+            return object != null && value === object[key] && hasOwnProperty.call(object, key);
           };
         }
       }
@@ -21399,26 +21340,6 @@ return jQuery;
     }
 
     /**
-     * The base implementation of `_.matchesProperty` which does not coerce `key`
-     * to a string.
-     *
-     * @private
-     * @param {string} key The key of the property to get.
-     * @param {*} value The value to compare.
-     * @returns {Function} Returns the new function.
-     */
-    function baseMatchesProperty(key, value) {
-      if (isStrictComparable(value)) {
-        return function(object) {
-          return object != null && object[key] === value;
-        };
-      }
-      return function(object) {
-        return object != null && baseIsEqual(value, object[key], null, true);
-      };
-    }
-
-    /**
      * The base implementation of `_.merge` without support for argument juggling,
      * multiple sources, and `this` binding `customizer` functions.
      *
@@ -21431,10 +21352,8 @@ return jQuery;
      * @returns {Object} Returns the destination object.
      */
     function baseMerge(object, source, customizer, stackA, stackB) {
-      if (!isObject(object)) {
-        return object;
-      }
       var isSrcArr = isLength(source.length) && (isArray(source) || isTypedArray(source));
+
       (isSrcArr ? arrayEach : baseForOwn)(source, function(srcValue, key, source) {
         if (isObjectLike(srcValue)) {
           stackA || (stackA = []);
@@ -21582,7 +21501,7 @@ return jQuery;
       eachFunc(collection, function(value, index, collection) {
         accumulator = initFromCollection
           ? (initFromCollection = false, value)
-          : iteratee(accumulator, value, index, collection);
+          : iteratee(accumulator, value, index, collection)
       });
       return accumulator;
     }
@@ -21666,7 +21585,7 @@ return jQuery;
           length = array.length,
           isCommon = indexOf == baseIndexOf,
           isLarge = isCommon && length >= 200,
-          seen = isLarge ? createCache() : null,
+          seen = isLarge && createCache(),
           result = [];
 
       if (seen) {
@@ -21958,7 +21877,8 @@ return jQuery;
     /**
      * Creates a function that aggregates a collection, creating an accumulator
      * object composed from the results of running each element in the collection
-     * through an iteratee.
+     * through an iteratee. The `setter` sets the keys and values of the accumulator
+     * object. If `initializer` is provided initializes the accumulator object.
      *
      * @private
      * @param {Function} setter The function to set keys and values of the accumulator object.
@@ -22295,7 +22215,7 @@ return jQuery;
      */
     function createWrapper(func, bitmask, thisArg, partials, holders, argPos, ary, arity) {
       var isBindKey = bitmask & BIND_KEY_FLAG;
-      if (!isBindKey && typeof func != 'function') {
+      if (!isBindKey && !isFunction(func)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       var length = partials ? partials.length : 0;
@@ -22325,9 +22245,9 @@ return jQuery;
       if (bitmask == BIND_FLAG) {
         var result = createBindWrapper(newData[0], newData[2]);
       } else if ((bitmask == PARTIAL_FLAG || bitmask == (BIND_FLAG | PARTIAL_FLAG)) && !newData[4].length) {
-        result = createPartialWrapper.apply(undefined, newData);
+        result = createPartialWrapper.apply(null, newData);
       } else {
-        result = createHybridWrapper.apply(undefined, newData);
+        result = createHybridWrapper.apply(null, newData);
       }
       var setter = data ? baseSetData : setData;
       return setter(result, newData);
@@ -22718,11 +22638,7 @@ return jQuery;
       } else {
         prereq = type == 'string' && index in object;
       }
-      if (prereq) {
-        var other = object[index];
-        return value === value ? value === other : other !== other;
-      }
-      return false;
+      return prereq && object[index] === value;
     }
 
     /**
@@ -23019,19 +22935,6 @@ return jQuery;
       return isObject(value) ? value : Object(value);
     }
 
-    /**
-     * Creates a clone of `wrapper`.
-     *
-     * @private
-     * @param {Object} wrapper The wrapper to clone.
-     * @returns {Object} Returns the cloned wrapper.
-     */
-    function wrapperClone(wrapper) {
-      return wrapper instanceof LazyWrapper
-        ? wrapper.clone()
-        : new LodashWrapper(wrapper.__wrapped__, wrapper.__chain__, arrayCopy(wrapper.__actions__));
-    }
-
     /*------------------------------------------------------------------------*/
 
     /**
@@ -23043,7 +22946,7 @@ return jQuery;
      * @memberOf _
      * @category Array
      * @param {Array} array The array to process.
-     * @param {number} [size=1] The length of each chunk.
+     * @param {numer} [size=1] The length of each chunk.
      * @param- {Object} [guard] Enables use as a callback for functions like `_.map`.
      * @returns {Array} Returns the new array containing chunks.
      * @example
@@ -23117,7 +23020,7 @@ return jQuery;
      * @returns {Array} Returns the new array of filtered values.
      * @example
      *
-     * _.difference([1, 2, 3], [4, 2]);
+     * _.difference([1, 2, 3], [5, 2, 10]);
      * // => [1, 3]
      */
     function difference() {
@@ -23138,6 +23041,7 @@ return jQuery;
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to drop.
@@ -23173,6 +23077,7 @@ return jQuery;
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to drop.
@@ -23209,49 +23114,40 @@ return jQuery;
      * Elements are dropped until `predicate` returns falsey. The predicate is
      * bound to `thisArg` and invoked with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that match the properties of the given
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per element.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * _.dropRightWhile([1, 2, 3], function(n) {
-     *   return n > 1;
-     * });
+     * _.dropRightWhile([1, 2, 3], function(n) { return n > 1; });
      * // => [1]
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'user': 'barney',  'status': 'busy', 'active': false },
+     *   { 'user': 'fred',    'status': 'busy', 'active': true },
+     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.dropRightWhile(users, { 'user': pebbles, 'active': false }), 'user');
-     * // => ['barney', 'fred']
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.dropRightWhile(users, 'active', false), 'user');
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.dropRightWhile(users, 'active'), 'user');
      * // => ['barney']
      *
-     * // using the `_.property` callback shorthand
-     * _.pluck(_.dropRightWhile(users, 'active'), 'user');
-     * // => ['barney', 'fred', 'pebbles']
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.dropRightWhile(users, { 'status': 'away' }), 'user');
+     * // => ['barney', 'fred']
      */
     function dropRightWhile(array, predicate, thisArg) {
       var length = array ? array.length : 0;
@@ -23268,49 +23164,40 @@ return jQuery;
      * Elements are dropped until `predicate` returns falsey. The predicate is
      * bound to `thisArg` and invoked with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per element.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * _.dropWhile([1, 2, 3], function(n) {
-     *   return n < 3;
-     * });
+     * _.dropWhile([1, 2, 3], function(n) { return n < 3; });
      * // => [3]
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'user': 'barney',  'status': 'busy', 'active': true },
+     *   { 'user': 'fred',    'status': 'busy', 'active': false },
+     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.dropWhile(users, { 'user': 'barney', 'active': false }), 'user');
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.dropWhile(users, 'active'), 'user');
      * // => ['fred', 'pebbles']
      *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.dropWhile(users, 'active', false), 'user');
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.dropWhile(users, { 'status': 'busy' }), 'user');
      * // => ['pebbles']
-     *
-     * // using the `_.property` callback shorthand
-     * _.pluck(_.dropWhile(users, 'active'), 'user');
-     * // => ['barney', 'fred', 'pebbles']
      */
     function dropWhile(array, predicate, thisArg) {
       var length = array ? array.length : 0;
@@ -23324,44 +23211,13 @@ return jQuery;
     }
 
     /**
-     * Fills elements of `array` with `value` from `start` up to, but not
-     * including, `end`.
-     *
-     * **Note:** This method mutates `array`.
-     *
-     * @static
-     * @memberOf _
-     * @category Array
-     * @param {Array} array The array to fill.
-     * @param {*} value The value to fill `array` with.
-     * @param {number} [start=0] The start position.
-     * @param {number} [end=array.length] The end position.
-     * @returns {Array} Returns `array`.
-     */
-    function fill(array, value, start, end) {
-      var length = array ? array.length : 0;
-      if (!length) {
-        return [];
-      }
-      if (start && typeof start != 'number' && isIterateeCall(array, value, start)) {
-        start = 0;
-        end = length;
-      }
-      return baseFill(array, value, start, end);
-    }
-
-    /**
      * This method is like `_.find` except that it returns the index of the first
      * element `predicate` returns truthy for, instead of the element itself.
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -23370,33 +23226,28 @@ return jQuery;
      * @category Array
      * @param {Array} array The array to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': true },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
-     * _.findIndex(users, function(chr) {
-     *   return chr.user == 'barney';
-     * });
+     * _.findIndex(users, function(chr) { return chr.age < 40; });
      * // => 0
      *
-     * // using the `_.matches` callback shorthand
-     * _.findIndex(users, { 'user': 'fred', 'active': false });
-     * // => 1
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.findIndex(users, 'active', false);
-     * // => 0
-     *
-     * // using the `_.property` callback shorthand
-     * _.findIndex(users, 'active');
+     * // using the "_.matches" callback shorthand
+     * _.findIndex(users, { 'age': 1 });
      * // => 2
+     *
+     * // using the "_.property" callback shorthand
+     * _.findIndex(users, 'active');
+     * // => 1
      */
     function findIndex(array, predicate, thisArg) {
       var index = -1,
@@ -23415,14 +23266,10 @@ return jQuery;
      * This method is like `_.findIndex` except that it iterates over elements
      * of `collection` from right to left.
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -23431,31 +23278,26 @@ return jQuery;
      * @category Array
      * @param {Array} array The array to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'user': 'barney',  'age': 36, 'active': true },
+     *   { 'user': 'fred',    'age': 40, 'active': false },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
-     * _.findLastIndex(users, function(chr) {
-     *   return chr.user == 'pebbles';
-     * });
+     * _.findLastIndex(users, function(chr) { return chr.age < 40; });
      * // => 2
      *
-     * // using the `_.matches` callback shorthand
-     * _.findLastIndex(users, { 'user': 'barney', 'active': true });
-     * // => 0
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.findLastIndex(users, 'active', false);
+     * // using the "_.matches" callback shorthand
+     * _.findLastIndex(users, { 'age': 40 });
      * // => 1
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.findLastIndex(users, 'active');
      * // => 0
      */
@@ -23504,11 +23346,11 @@ return jQuery;
      * @returns {Array} Returns the new flattened array.
      * @example
      *
-     * _.flatten([1, [2, 3, [4]]]);
-     * // => [1, 2, 3, [4]];
+     * _.flatten([1, [2], [3, [[4]]]]);
+     * // => [1, 2, 3, [[4]]];
      *
      * // using `isDeep`
-     * _.flatten([1, [2, 3, [4]]], true);
+     * _.flatten([1, [2], [3, [[4]]]], true);
      * // => [1, 2, 3, 4];
      */
     function flatten(array, isDeep, guard) {
@@ -23529,7 +23371,7 @@ return jQuery;
      * @returns {Array} Returns the new flattened array.
      * @example
      *
-     * _.flattenDeep([1, [2, 3, [4]]]);
+     * _.flattenDeep([1, [2], [3, [[4]]]]);
      * // => [1, 2, 3, 4];
      */
     function flattenDeep(array) {
@@ -23558,15 +23400,15 @@ return jQuery;
      * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
-     * _.indexOf([1, 2, 1, 2], 2);
+     * _.indexOf([1, 2, 3, 1, 2, 3], 2);
      * // => 1
      *
      * // using `fromIndex`
-     * _.indexOf([1, 2, 1, 2], 2, 2);
-     * // => 3
+     * _.indexOf([1, 2, 3, 1, 2, 3], 2, 3);
+     * // => 4
      *
      * // performing a binary search
-     * _.indexOf([1, 1, 2, 2], 2, true);
+     * _.indexOf([4, 4, 5, 5, 6, 6], 5, true);
      * // => 2
      */
     function indexOf(array, value, fromIndex) {
@@ -23617,8 +23459,9 @@ return jQuery;
      * @param {...Array} [arrays] The arrays to inspect.
      * @returns {Array} Returns the new array of shared values.
      * @example
-     * _.intersection([1, 2], [4, 2], [2, 1]);
-     * // => [2]
+     *
+     * _.intersection([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+     * // => [1, 2]
      */
     function intersection() {
       var args = [],
@@ -23632,7 +23475,7 @@ return jQuery;
         var value = arguments[argsIndex];
         if (isArray(value) || isArguments(value)) {
           args.push(value);
-          caches.push((isCommon && value.length >= 120) ? createCache(argsIndex && value) : null);
+          caches.push(isCommon && value.length >= 120 && createCache(argsIndex && value));
         }
       }
       argsLength = args.length;
@@ -23694,15 +23537,15 @@ return jQuery;
      * @returns {number} Returns the index of the matched value, else `-1`.
      * @example
      *
-     * _.lastIndexOf([1, 2, 1, 2], 2);
-     * // => 3
+     * _.lastIndexOf([1, 2, 3, 1, 2, 3], 2);
+     * // => 4
      *
      * // using `fromIndex`
-     * _.lastIndexOf([1, 2, 1, 2], 2, 2);
+     * _.lastIndexOf([1, 2, 3, 1, 2, 3], 2, 3);
      * // => 1
      *
      * // performing a binary search
-     * _.lastIndexOf([1, 1, 2, 2], 2, true);
+     * _.lastIndexOf([4, 4, 5, 5, 6, 6], 5, true);
      * // => 3
      */
     function lastIndexOf(array, value, fromIndex) {
@@ -23748,7 +23591,6 @@ return jQuery;
      * @example
      *
      * var array = [1, 2, 3, 1, 2, 3];
-     *
      * _.pull(array, 2, 3);
      * console.log(array);
      * // => [1, 1]
@@ -23790,7 +23632,7 @@ return jQuery;
      * @example
      *
      * var array = [5, 10, 15, 20];
-     * var evens = _.pullAt(array, 1, 3);
+     * var evens = _.pullAt(array, [1, 3]);
      *
      * console.log(array);
      * // => [5, 15]
@@ -23807,14 +23649,10 @@ return jQuery;
      * and returns an array of the removed elements. The predicate is bound to
      * `thisArg` and invoked with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -23825,15 +23663,14 @@ return jQuery;
      * @category Array
      * @param {Array} array The array to modify.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the new array of removed elements.
      * @example
      *
      * var array = [1, 2, 3, 4];
-     * var evens = _.remove(array, function(n) {
-     *   return n % 2 == 0;
-     * });
+     * var evens = _.remove(array, function(n) { return n % 2 == 0; });
      *
      * console.log(array);
      * // => [1, 3]
@@ -23909,14 +23746,10 @@ return jQuery;
      * to compute their sort ranking. The iteratee is bound to `thisArg` and
      * invoked with one argument; (value).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -23926,7 +23759,8 @@ return jQuery;
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
@@ -23935,7 +23769,7 @@ return jQuery;
      * _.sortedIndex([30, 50], 40);
      * // => 1
      *
-     * _.sortedIndex([4, 4, 5, 5], 5);
+     * _.sortedIndex([4, 4, 5, 5, 6, 6], 5);
      * // => 2
      *
      * var dict = { 'data': { 'thirty': 30, 'forty': 40, 'fifty': 50 } };
@@ -23946,7 +23780,7 @@ return jQuery;
      * }, dict);
      * // => 1
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.sortedIndex([{ 'x': 30 }, { 'x': 50 }], { 'x': 40 }, 'x');
      * // => 1
      */
@@ -23968,13 +23802,14 @@ return jQuery;
      * @param {Array} array The sorted array to inspect.
      * @param {*} value The value to evaluate.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {number} Returns the index at which `value` should be inserted
      *  into `array`.
      * @example
      *
-     * _.sortedLastIndex([4, 4, 5, 5], 5);
+     * _.sortedLastIndex([4, 4, 5, 5, 6, 6], 5);
      * // => 4
      */
     function sortedLastIndex(array, value, iteratee, thisArg) {
@@ -23989,6 +23824,7 @@ return jQuery;
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to take.
@@ -24024,6 +23860,7 @@ return jQuery;
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {number} [n=1] The number of elements to take.
@@ -24060,49 +23897,40 @@ return jQuery;
      * taken until `predicate` returns falsey. The predicate is bound to `thisArg`
      * and invoked with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per element.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * _.takeRightWhile([1, 2, 3], function(n) {
-     *   return n > 1;
-     * });
+     * _.takeRightWhile([1, 2, 3], function(n) { return n > 1; });
      * // => [2, 3]
      *
      * var users = [
-     *   { 'user': 'barney',  'active': true },
-     *   { 'user': 'fred',    'active': false },
-     *   { 'user': 'pebbles', 'active': false }
+     *   { 'user': 'barney',  'status': 'busy', 'active': false },
+     *   { 'user': 'fred',    'status': 'busy', 'active': true },
+     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.takeRightWhile(users, { 'user': 'pebbles', 'active': false }), 'user');
-     * // => ['pebbles']
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.takeRightWhile(users, 'active', false), 'user');
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.takeRightWhile(users, 'active'), 'user');
      * // => ['fred', 'pebbles']
      *
-     * // using the `_.property` callback shorthand
-     * _.pluck(_.takeRightWhile(users, 'active'), 'user');
-     * // => []
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.takeRightWhile(users, { 'status': 'away' }), 'user');
+     * // => ['pebbles']
      */
     function takeRightWhile(array, predicate, thisArg) {
       var length = array ? array.length : 0;
@@ -24119,49 +23947,40 @@ return jQuery;
      * are taken until `predicate` returns falsey. The predicate is bound to
      * `thisArg` and invoked with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Array
      * @param {Array} array The array to query.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per element.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * _.takeWhile([1, 2, 3], function(n) {
-     *   return n < 3;
-     * });
+     * _.takeWhile([1, 2, 3], function(n) { return n < 3; });
      * // => [1, 2]
      *
      * var users = [
-     *   { 'user': 'barney',  'active': false },
-     *   { 'user': 'fred',    'active': false},
-     *   { 'user': 'pebbles', 'active': true }
+     *   { 'user': 'barney',  'status': 'busy', 'active': true },
+     *   { 'user': 'fred',    'status': 'busy', 'active': false },
+     *   { 'user': 'pebbles', 'status': 'away', 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.takeWhile(users, { 'user': 'barney', 'active': false }), 'user');
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.takeWhile(users, 'active'), 'user');
      * // => ['barney']
      *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.takeWhile(users, 'active', false), 'user');
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.takeWhile(users, { 'status': 'busy' }), 'user');
      * // => ['barney', 'fred']
-     *
-     * // using the `_.property` callback shorthand
-     * _.pluck(_.takeWhile(users, 'active'), 'user');
-     * // => []
      */
     function takeWhile(array, predicate, thisArg) {
       var length = array ? array.length : 0;
@@ -24190,8 +24009,8 @@ return jQuery;
      * @returns {Array} Returns the new array of combined values.
      * @example
      *
-     * _.union([1, 2], [4, 2], [2, 1]);
-     * // => [1, 2, 4]
+     * _.union([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+     * // => [1, 2, 3, 5, 4]
      */
     function union() {
       return baseUniq(baseFlatten(arguments, false, true));
@@ -24205,14 +24024,10 @@ return jQuery;
      * uniqueness is computed. The `iteratee` is bound to `thisArg` and invoked
      * with three arguments; (value, index, array).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -24228,6 +24043,8 @@ return jQuery;
      * @param {Array} array The array to inspect.
      * @param {boolean} [isSorted] Specify the array is sorted.
      * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {Array} Returns the new duplicate-value-free array.
      * @example
@@ -24240,12 +24057,10 @@ return jQuery;
      * // => [1, 2]
      *
      * // using an iteratee function
-     * _.uniq([1, 2.5, 1.5, 2], function(n) {
-     *   return this.floor(n);
-     * }, Math);
+     * _.uniq([1, 2.5, 1.5, 2], function(n) { return this.floor(n); }, Math);
      * // => [1, 2.5]
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.uniq([{ 'x': 1 }, { 'x': 2 }, { 'x': 1 }], 'x');
      * // => [{ 'x': 1 }, { 'x': 2 }]
      */
@@ -24254,7 +24069,8 @@ return jQuery;
       if (!length) {
         return [];
       }
-      if (isSorted != null && typeof isSorted != 'boolean') {
+      // Juggle arguments.
+      if (typeof isSorted != 'boolean' && isSorted != null) {
         thisArg = iteratee;
         iteratee = isIterateeCall(array, isSorted, thisArg) ? null : isSorted;
         isSorted = false;
@@ -24314,8 +24130,8 @@ return jQuery;
      * @returns {Array} Returns the new array of filtered values.
      * @example
      *
-     * _.without([1, 2, 1, 3], 1, 2);
-     * // => [3]
+     * _.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+     * // => [2, 3, 4]
      */
     function without(array) {
       return baseDifference(array, baseSlice(arguments, 1));
@@ -24333,8 +24149,11 @@ return jQuery;
      * @returns {Array} Returns the new array of values.
      * @example
      *
-     * _.xor([1, 2], [4, 2]);
-     * // => [1, 4]
+     * _.xor([1, 2, 3], [5, 2, 1, 4]);
+     * // => [3, 5, 4]
+     *
+     * _.xor([1, 2, 5], [2, 3, 5], [3, 4, 5]);
+     * // => [1, 4, 5]
      */
     function xor() {
       var index = -1,
@@ -24422,7 +24241,7 @@ return jQuery;
      * @memberOf _
      * @category Chain
      * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {Object} Returns the new `lodash` object.
      * @example
      *
      * var users = [
@@ -24433,9 +24252,7 @@ return jQuery;
      *
      * var youngest = _.chain(users)
      *   .sortBy('age')
-     *   .map(function(chr) {
-     *     return chr.user + ' is ' + chr.age;
-     *   })
+     *   .map(function(chr) { return chr.user + ' is ' + chr.age; })
      *   .first()
      *   .value();
      * // => 'pebbles is 1'
@@ -24462,9 +24279,7 @@ return jQuery;
      * @example
      *
      * _([1, 2, 3])
-     *  .tap(function(array) {
-     *    array.pop();
-     *  })
+     *  .tap(function(array) { array.pop(); })
      *  .reverse()
      *  .value();
      * // => [2, 1]
@@ -24488,9 +24303,7 @@ return jQuery;
      *
      * _([1, 2, 3])
      *  .last()
-     *  .thru(function(value) {
-     *    return [value];
-     *  })
+     *  .thru(function(value) { return [value]; })
      *  .value();
      * // => [3]
      */
@@ -24504,7 +24317,7 @@ return jQuery;
      * @name chain
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
+     * @returns {*} Returns the `lodash` object.
      * @example
      *
      * var users = [
@@ -24528,76 +24341,6 @@ return jQuery;
     }
 
     /**
-     * Executes the chained sequence and returns the wrapped result.
-     *
-     * @name commit
-     * @memberOf _
-     * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
-     * @example
-     *
-     * var array = [1, 2];
-     * var wrapper = _(array).push(3);
-     *
-     * console.log(array);
-     * // => [1, 2]
-     *
-     * wrapper = wrapper.commit();
-     * console.log(array);
-     * // => [1, 2, 3]
-     *
-     * wrapper.last();
-     * // => 3
-     *
-     * console.log(array);
-     * // => [1, 2, 3]
-     */
-    function wrapperCommit() {
-      return new LodashWrapper(this.value(), this.__chain__);
-    }
-
-    /**
-     * Creates a clone of the chained sequence planting `value` as the wrapped value.
-     *
-     * @name plant
-     * @memberOf _
-     * @category Chain
-     * @returns {Object} Returns the new `lodash` wrapper instance.
-     * @example
-     *
-     * var array = [1, 2];
-     * var wrapper = _(array).map(function(value) {
-     *   return Math.pow(value, 2);
-     * });
-     *
-     * var other = [3, 4];
-     * var otherWrapper = wrapper.plant(other);
-     *
-     * otherWrapper.value();
-     * // => [9, 16]
-     *
-     * wrapper.value();
-     * // => [1, 4]
-     */
-    function wrapperPlant(value) {
-      var result,
-          parent = this;
-
-      while (parent instanceof baseLodash) {
-        var clone = wrapperClone(parent);
-        if (result) {
-          previous.__wrapped__ = clone;
-        } else {
-          result = clone;
-        }
-        var previous = clone;
-        parent = parent.__wrapped__;
-      }
-      previous.__wrapped__ = value;
-      return result;
-    }
-
-    /**
      * Reverses the wrapped array so the first element becomes the last, the
      * second element becomes the second to last, and so on.
      *
@@ -24606,7 +24349,7 @@ return jQuery;
      * @name reverse
      * @memberOf _
      * @category Chain
-     * @returns {Object} Returns the new reversed `lodash` wrapper instance.
+     * @returns {Object} Returns the new reversed `lodash` object.
      * @example
      *
      * var array = [1, 2, 3];
@@ -24623,7 +24366,7 @@ return jQuery;
         if (this.__actions__.length) {
           value = new LazyWrapper(this);
         }
-        return new LodashWrapper(value.reverse(), this.__chain__);
+        return new LodashWrapper(value.reverse());
       }
       return this.thru(function(value) {
         return value.reverse();
@@ -24651,7 +24394,7 @@ return jQuery;
      *
      * @name value
      * @memberOf _
-     * @alias run, toJSON, valueOf
+     * @alias toJSON, valueOf
      * @category Chain
      * @returns {*} Returns the resolved unwrapped value.
      * @example
@@ -24679,8 +24422,8 @@ return jQuery;
      * @returns {Array} Returns the new array of picked elements.
      * @example
      *
-     * _.at(['a', 'b', 'c'], [0, 2]);
-     * // => ['a', 'c']
+     * _.at(['a', 'b', 'c', 'd', 'e'], [0, 2, 4]);
+     * // => ['a', 'c', 'e']
      *
      * _.at(['fred', 'barney', 'pebbles'], 0, 2);
      * // => ['fred', 'pebbles']
@@ -24692,389 +24435,6 @@ return jQuery;
       }
       return baseAt(collection, baseFlatten(arguments, false, false, 1));
     }
-
-    /**
-     * Creates an object composed of keys generated from the results of running
-     * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is the number of times the key was returned by `iteratee`.
-     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
-     * (value, index|key, collection).
-     *
-     * If a property name is provided for `predicate` the created `_.property`
-     * style callback returns the property value of the given element.
-     *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that have the properties of the given
-     * object, else `false`.
-     *
-     * @static
-     * @memberOf _
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Object} Returns the composed aggregate object.
-     * @example
-     *
-     * _.countBy([4.3, 6.1, 6.4], function(n) {
-     *   return Math.floor(n);
-     * });
-     * // => { '4': 1, '6': 2 }
-     *
-     * _.countBy([4.3, 6.1, 6.4], function(n) {
-     *   return this.floor(n);
-     * }, Math);
-     * // => { '4': 1, '6': 2 }
-     *
-     * _.countBy(['one', 'two', 'three'], 'length');
-     * // => { '3': 2, '5': 1 }
-     */
-    var countBy = createAggregator(function(result, value, key) {
-      hasOwnProperty.call(result, key) ? ++result[key] : (result[key] = 1);
-    });
-
-    /**
-     * Checks if `predicate` returns truthy for **all** elements of `collection`.
-     * The predicate is bound to `thisArg` and invoked with three arguments;
-     * (value, index|key, collection).
-     *
-     * If a property name is provided for `predicate` the created `_.property`
-     * style callback returns the property value of the given element.
-     *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that have the properties of the given
-     * object, else `false`.
-     *
-     * @static
-     * @memberOf _
-     * @alias all
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `predicate`.
-     * @returns {boolean} Returns `true` if all elements pass the predicate check,
-     *  else `false`.
-     * @example
-     *
-     * _.every([true, 1, null, 'yes'], Boolean);
-     * // => false
-     *
-     * var users = [
-     *   { 'user': 'barney', 'active': false },
-     *   { 'user': 'fred',   'active': false }
-     * ];
-     *
-     * // using the `_.matches` callback shorthand
-     * _.every(users, { 'user': 'barney', 'active': false });
-     * // => false
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.every(users, 'active', false);
-     * // => true
-     *
-     * // using the `_.property` callback shorthand
-     * _.every(users, 'active');
-     * // => false
-     */
-    function every(collection, predicate, thisArg) {
-      var func = isArray(collection) ? arrayEvery : baseEvery;
-      if (typeof predicate != 'function' || typeof thisArg != 'undefined') {
-        predicate = getCallback(predicate, thisArg, 3);
-      }
-      return func(collection, predicate);
-    }
-
-    /**
-     * Iterates over elements of `collection`, returning an array of all elements
-     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
-     * invoked with three arguments; (value, index|key, collection).
-     *
-     * If a property name is provided for `predicate` the created `_.property`
-     * style callback returns the property value of the given element.
-     *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that have the properties of the given
-     * object, else `false`.
-     *
-     * @static
-     * @memberOf _
-     * @alias select
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `predicate`.
-     * @returns {Array} Returns the new filtered array.
-     * @example
-     *
-     * _.filter([4, 5, 6], function(n) {
-     *   return n % 2 == 0;
-     * });
-     * // => [4, 6]
-     *
-     * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': true },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
-     * ];
-     *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.filter(users, { 'age': 36, 'active': true }), 'user');
-     * // => ['barney']
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.filter(users, 'active', false), 'user');
-     * // => ['fred']
-     *
-     * // using the `_.property` callback shorthand
-     * _.pluck(_.filter(users, 'active'), 'user');
-     * // => ['barney']
-     */
-    function filter(collection, predicate, thisArg) {
-      var func = isArray(collection) ? arrayFilter : baseFilter;
-      predicate = getCallback(predicate, thisArg, 3);
-      return func(collection, predicate);
-    }
-
-    /**
-     * Iterates over elements of `collection`, returning the first element
-     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
-     * invoked with three arguments; (value, index|key, collection).
-     *
-     * If a property name is provided for `predicate` the created `_.property`
-     * style callback returns the property value of the given element.
-     *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that have the properties of the given
-     * object, else `false`.
-     *
-     * @static
-     * @memberOf _
-     * @alias detect
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `predicate`.
-     * @returns {*} Returns the matched element, else `undefined`.
-     * @example
-     *
-     * var users = [
-     *   { 'user': 'barney',  'age': 36, 'active': true },
-     *   { 'user': 'fred',    'age': 40, 'active': false },
-     *   { 'user': 'pebbles', 'age': 1,  'active': true }
-     * ];
-     *
-     * _.result(_.find(users, function(chr) {
-     *   return chr.age < 40;
-     * }), 'user');
-     * // => 'barney'
-     *
-     * // using the `_.matches` callback shorthand
-     * _.result(_.find(users, { 'age': 1, 'active': true }), 'user');
-     * // => 'pebbles'
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.result(_.find(users, 'active', false), 'user');
-     * // => 'fred'
-     *
-     * // using the `_.property` callback shorthand
-     * _.result(_.find(users, 'active'), 'user');
-     * // => 'barney'
-     */
-    function find(collection, predicate, thisArg) {
-      if (isArray(collection)) {
-        var index = findIndex(collection, predicate, thisArg);
-        return index > -1 ? collection[index] : undefined;
-      }
-      predicate = getCallback(predicate, thisArg, 3);
-      return baseFind(collection, predicate, baseEach);
-    }
-
-    /**
-     * This method is like `_.find` except that it iterates over elements of
-     * `collection` from right to left.
-     *
-     * @static
-     * @memberOf _
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to search.
-     * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `predicate`.
-     * @returns {*} Returns the matched element, else `undefined`.
-     * @example
-     *
-     * _.findLast([1, 2, 3, 4], function(n) {
-     *   return n % 2 == 1;
-     * });
-     * // => 3
-     */
-    function findLast(collection, predicate, thisArg) {
-      predicate = getCallback(predicate, thisArg, 3);
-      return baseFind(collection, predicate, baseEachRight);
-    }
-
-    /**
-     * Performs a deep comparison between each element in `collection` and the
-     * source object, returning the first element that has equivalent property
-     * values.
-     *
-     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
-     * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable properties. For comparing a single
-     * own or inherited property value see `_.matchesProperty`.
-     *
-     * @static
-     * @memberOf _
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to search.
-     * @param {Object} source The object of property values to match.
-     * @returns {*} Returns the matched element, else `undefined`.
-     * @example
-     *
-     * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': true },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
-     * ];
-     *
-     * _.result(_.findWhere(users, { 'age': 36, 'active': true }), 'user');
-     * // => 'barney'
-     *
-     * _.result(_.findWhere(users, { 'age': 40, 'active': false }), 'user');
-     * // => 'fred'
-     */
-    function findWhere(collection, source) {
-      return find(collection, baseMatches(source));
-    }
-
-    /**
-     * Iterates over elements of `collection` invoking `iteratee` for each element.
-     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
-     * (value, index|key, collection). Iterator functions may exit iteration early
-     * by explicitly returning `false`.
-     *
-     * **Note:** As with other "Collections" methods, objects with a `length` property
-     * are iterated like arrays. To avoid this behavior `_.forIn` or `_.forOwn`
-     * may be used for object iteration.
-     *
-     * @static
-     * @memberOf _
-     * @alias each
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Array|Object|string} Returns `collection`.
-     * @example
-     *
-     * _([1, 2]).forEach(function(n) {
-     *   console.log(n);
-     * }).value();
-     * // => logs each value from left to right and returns the array
-     *
-     * _.forEach({ 'a': 1, 'b': 2 }, function(n, key) {
-     *   console.log(n, key);
-     * });
-     * // => logs each value-key pair and returns the object (iteration order is not guaranteed)
-     */
-    function forEach(collection, iteratee, thisArg) {
-      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
-        ? arrayEach(collection, iteratee)
-        : baseEach(collection, bindCallback(iteratee, thisArg, 3));
-    }
-
-    /**
-     * This method is like `_.forEach` except that it iterates over elements of
-     * `collection` from right to left.
-     *
-     * @static
-     * @memberOf _
-     * @alias eachRight
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Array|Object|string} Returns `collection`.
-     * @example
-     *
-     * _([1, 2]).forEachRight(function(n) {
-     *   console.log(n);
-     * }).join(',');
-     * // => logs each value from right to left and returns the array
-     */
-    function forEachRight(collection, iteratee, thisArg) {
-      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
-        ? arrayEachRight(collection, iteratee)
-        : baseEachRight(collection, bindCallback(iteratee, thisArg, 3));
-    }
-
-    /**
-     * Creates an object composed of keys generated from the results of running
-     * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is an array of the elements responsible for generating the key.
-     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
-     * (value, index|key, collection).
-     *
-     * If a property name is provided for `predicate` the created `_.property`
-     * style callback returns the property value of the given element.
-     *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
-     * callback returns `true` for elements that have the properties of the given
-     * object, else `false`.
-     *
-     * @static
-     * @memberOf _
-     * @category Collection
-     * @param {Array|Object|string} collection The collection to iterate over.
-     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
-     * @param {*} [thisArg] The `this` binding of `iteratee`.
-     * @returns {Object} Returns the composed aggregate object.
-     * @example
-     *
-     * _.groupBy([4.2, 6.1, 6.4], function(n) {
-     *   return Math.floor(n);
-     * });
-     * // => { '4': [4.2], '6': [6.1, 6.4] }
-     *
-     * _.groupBy([4.2, 6.1, 6.4], function(n) {
-     *   return this.floor(n);
-     * }, Math);
-     * // => { '4': [4.2], '6': [6.1, 6.4] }
-     *
-     * // using the `_.property` callback shorthand
-     * _.groupBy(['one', 'two', 'three'], 'length');
-     * // => { '3': ['one', 'two'], '5': ['three'] }
-     */
-    var groupBy = createAggregator(function(result, value, key) {
-      if (hasOwnProperty.call(result, key)) {
-        result[key].push(value);
-      } else {
-        result[key] = [value];
-      }
-    });
 
     /**
      * Checks if `value` is in `collection` using `SameValueZero` for equality
@@ -25130,18 +24490,14 @@ return jQuery;
     /**
      * Creates an object composed of keys generated from the results of running
      * each element of `collection` through `iteratee`. The corresponding value
-     * of each key is the last element responsible for generating the key. The
-     * iteratee function is bound to `thisArg` and invoked with three arguments;
+     * of each key is the number of times the key was returned by `iteratee`.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
      * (value, index|key, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25150,7 +24506,340 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the composed aggregate object.
+     * @example
+     *
+     * _.countBy([4.3, 6.1, 6.4], function(n) { return Math.floor(n); });
+     * // => { '4': 1, '6': 2 }
+     *
+     * _.countBy([4.3, 6.1, 6.4], function(n) { return this.floor(n); }, Math);
+     * // => { '4': 1, '6': 2 }
+     *
+     * _.countBy(['one', 'two', 'three'], 'length');
+     * // => { '3': 2, '5': 1 }
+     */
+    var countBy = createAggregator(function(result, value, key) {
+      hasOwnProperty.call(result, key) ? ++result[key] : (result[key] = 1);
+    });
+
+    /**
+     * Checks if `predicate` returns truthy for **all** elements of `collection`.
+     * The predicate is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias all
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+     *  else `false`.
+     * @example
+     *
+     * _.every([true, 1, null, 'yes']);
+     * // => false
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36 },
+     *   { 'user': 'fred',   'age': 40 }
+     * ];
+     *
+     * // using the "_.property" callback shorthand
+     * _.every(users, 'age');
+     * // => true
+     *
+     * // using the "_.matches" callback shorthand
+     * _.every(users, { 'age': 36 });
+     * // => false
+     */
+    function every(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arrayEvery : baseEvery;
+      if (typeof predicate != 'function' || typeof thisArg != 'undefined') {
+        predicate = getCallback(predicate, thisArg, 3);
+      }
+      return func(collection, predicate);
+    }
+
+    /**
+     * Iterates over elements of `collection`, returning an array of all elements
+     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
+     * invoked with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias select
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {Array} Returns the new filtered array.
+     * @example
+     *
+     * var evens = _.filter([1, 2, 3, 4], function(n) { return n % 2 == 0; });
+     * // => [2, 4]
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'active': false },
+     *   { 'user': 'fred',   'age': 40, 'active': true }
+     * ];
+     *
+     * // using the "_.property" callback shorthand
+     * _.pluck(_.filter(users, 'active'), 'user');
+     * // => ['fred']
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.filter(users, { 'age': 36 }), 'user');
+     * // => ['barney']
+     */
+    function filter(collection, predicate, thisArg) {
+      var func = isArray(collection) ? arrayFilter : baseFilter;
+      predicate = getCallback(predicate, thisArg, 3);
+      return func(collection, predicate);
+    }
+
+    /**
+     * Iterates over elements of `collection`, returning the first element
+     * `predicate` returns truthy for. The predicate is bound to `thisArg` and
+     * invoked with three arguments; (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @alias detect
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney',  'age': 36, 'active': false },
+     *   { 'user': 'fred',    'age': 40, 'active': true },
+     *   { 'user': 'pebbles', 'age': 1,  'active': false }
+     * ];
+     *
+     * _.result(_.find(users, function(chr) { return chr.age < 40; }), 'user');
+     * // => 'barney'
+     *
+     * // using the "_.matches" callback shorthand
+     * _.result(_.find(users, { 'age': 1 }), 'user');
+     * // => 'pebbles'
+     *
+     * // using the "_.property" callback shorthand
+     * _.result(_.find(users, 'active'), 'user');
+     * // => 'fred'
+     */
+    function find(collection, predicate, thisArg) {
+      if (isArray(collection)) {
+        var index = findIndex(collection, predicate, thisArg);
+        return index > -1 ? collection[index] : undefined;
+      }
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(collection, predicate, baseEach);
+    }
+
+    /**
+     * This method is like `_.find` except that it iterates over elements of
+     * `collection` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Function|Object|string} [predicate=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `predicate`.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * _.findLast([1, 2, 3, 4], function(n) { return n % 2 == 1; });
+     * // => 3
+     */
+    function findLast(collection, predicate, thisArg) {
+      predicate = getCallback(predicate, thisArg, 3);
+      return baseFind(collection, predicate, baseEachRight);
+    }
+
+    /**
+     * Performs a deep comparison between each element in `collection` and the
+     * source object, returning the first element that has equivalent property
+     * values.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to search.
+     * @param {Object} source The object of property values to match.
+     * @returns {*} Returns the matched element, else `undefined`.
+     * @example
+     *
+     * var users = [
+     *   { 'user': 'barney', 'age': 36, 'status': 'busy' },
+     *   { 'user': 'fred',   'age': 40, 'status': 'busy' }
+     * ];
+     *
+     * _.result(_.findWhere(users, { 'status': 'busy' }), 'user');
+     * // => 'barney'
+     *
+     * _.result(_.findWhere(users, { 'age': 40 }), 'user');
+     * // => 'fred'
+     */
+    function findWhere(collection, source) {
+      return find(collection, baseMatches(source));
+    }
+
+    /**
+     * Iterates over elements of `collection` invoking `iteratee` for each element.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection). Iterator functions may exit iteration early
+     * by explicitly returning `false`.
+     *
+     * **Note:** As with other "Collections" methods, objects with a `length` property
+     * are iterated like arrays. To avoid this behavior `_.forIn` or `_.forOwn`
+     * may be used for object iteration.
+     *
+     * @static
+     * @memberOf _
+     * @alias each
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array|Object|string} Returns `collection`.
+     * @example
+     *
+     * _([1, 2, 3]).forEach(function(n) { console.log(n); }).value();
+     * // => logs each value from left to right and returns the array
+     *
+     * _.forEach({ 'one': 1, 'two': 2, 'three': 3 }, function(n, key) { console.log(n, key); });
+     * // => logs each value-key pair and returns the object (iteration order is not guaranteed)
+     */
+    function forEach(collection, iteratee, thisArg) {
+      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
+        ? arrayEach(collection, iteratee)
+        : baseEach(collection, bindCallback(iteratee, thisArg, 3));
+    }
+
+    /**
+     * This method is like `_.forEach` except that it iterates over elements of
+     * `collection` from right to left.
+     *
+     * @static
+     * @memberOf _
+     * @alias eachRight
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Array|Object|string} Returns `collection`.
+     * @example
+     *
+     * _([1, 2, 3]).forEachRight(function(n) { console.log(n); }).join(',');
+     * // => logs each value from right to left and returns the array
+     */
+    function forEachRight(collection, iteratee, thisArg) {
+      return (typeof iteratee == 'function' && typeof thisArg == 'undefined' && isArray(collection))
+        ? arrayEachRight(collection, iteratee)
+        : baseEachRight(collection, bindCallback(iteratee, thisArg, 3));
+    }
+
+    /**
+     * Creates an object composed of keys generated from the results of running
+     * each element of `collection` through `iteratee`. The corresponding value
+     * of each key is an array of the elements responsible for generating the key.
+     * The `iteratee` is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
+     * @param {*} [thisArg] The `this` binding of `iteratee`.
+     * @returns {Object} Returns the composed aggregate object.
+     * @example
+     *
+     * _.groupBy([4.2, 6.1, 6.4], function(n) { return Math.floor(n); });
+     * // => { '4': [4.2], '6': [6.1, 6.4] }
+     *
+     * _.groupBy([4.2, 6.1, 6.4], function(n) { return this.floor(n); }, Math);
+     * // => { '4': [4.2], '6': [6.1, 6.4] }
+     *
+     * // using the "_.property" callback shorthand
+     * _.groupBy(['one', 'two', 'three'], 'length');
+     * // => { '3': ['one', 'two'], '5': ['three'] }
+     */
+    var groupBy = createAggregator(function(result, value, key) {
+      if (hasOwnProperty.call(result, key)) {
+        result[key].push(value);
+      } else {
+        result[key] = [value];
+      }
+    });
+
+    /**
+     * Creates an object composed of keys generated from the results of running
+     * each element of `collection` through `iteratee`. The corresponding value
+     * of each key is the last element responsible for generating the key. The
+     * iteratee function is bound to `thisArg` and invoked with three arguments;
+     * (value, index|key, collection).
+     *
+     * If a property name is provided for `predicate` the created "_.property"
+     * style callback returns the property value of the given element.
+     *
+     * If an object is provided for `predicate` the created "_.matches" style
+     * callback returns `true` for elements that have the properties of the given
+     * object, else `false`.
+     *
+     * @static
+     * @memberOf _
+     * @category Collection
+     * @param {Array|Object|string} collection The collection to iterate over.
+     * @param {Function|Object|string} [iteratee=_.identity] The function invoked
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {Object} Returns the composed aggregate object.
      * @example
@@ -25163,14 +24852,10 @@ return jQuery;
      * _.indexBy(keyData, 'dir');
      * // => { 'left': { 'dir': 'left', 'code': 97 }, 'right': { 'dir': 'right', 'code': 100 } }
      *
-     * _.indexBy(keyData, function(object) {
-     *   return String.fromCharCode(object.code);
-     * });
+     * _.indexBy(keyData, function(object) { return String.fromCharCode(object.code); });
      * // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
      *
-     * _.indexBy(keyData, function(object) {
-     *   return this.fromCharCode(object.code);
-     * }, String);
+     * _.indexBy(keyData, function(object) { return this.fromCharCode(object.code); }, String);
      * // => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
      */
     var indexBy = createAggregator(function(result, value, key) {
@@ -25208,25 +24893,12 @@ return jQuery;
      * `iteratee`. The `iteratee` is bound to `thisArg` and invoked with three
      * arguments; (value, index|key, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
-     *
-     * Many lodash methods are guarded to work as interatees for methods like
-     * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
-     *
-     * The guarded methods are:
-     * `ary`, `callback`, `chunk`, `clone`, `create`, `curry`, `curryRight`, `drop`,
-     * `dropRight`, `fill`, `flatten`, `invert`, `max`, `min`, `parseInt`, `slice`,
-     * `sortBy`, `take`, `takeRight`, `template`, `trim`, `trimLeft`, `trimRight`,
-     * `trunc`, `random`, `range`, `sample`, `uniq`, and `words`
      *
      * @static
      * @memberOf _
@@ -25234,28 +24906,24 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
-     *  create a `_.property` or `_.matches` style callback respectively.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {Array} Returns the new mapped array.
      * @example
      *
-     * function timesThree(n) {
-     *   return n * 3;
-     * }
+     * _.map([1, 2, 3], function(n) { return n * 3; });
+     * // => [3, 6, 9]
      *
-     * _.map([1, 2], timesThree);
-     * // => [3, 6]
-     *
-     * _.map({ 'a': 1, 'b': 2 }, timesThree);
-     * // => [3, 6] (iteration order is not guaranteed)
+     * _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(n) { return n * 3; });
+     * // => [3, 6, 9] (iteration order is not guaranteed)
      *
      * var users = [
      *   { 'user': 'barney' },
      *   { 'user': 'fred' }
      * ];
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.map(users, 'user');
      * // => ['barney', 'fred']
      */
@@ -25272,14 +24940,10 @@ return jQuery;
      * is ranked. The `iteratee` is bound to `thisArg` and invoked with three
      * arguments; (value, index, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25288,6 +24952,8 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {*} Returns the maximum value.
      * @example
@@ -25303,12 +24969,10 @@ return jQuery;
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * _.max(users, function(chr) {
-     *   return chr.age;
-     * });
+     * _.max(users, function(chr) { return chr.age; });
      * // => { 'user': 'fred', 'age': 40 };
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.max(users, 'age');
      * // => { 'user': 'fred', 'age': 40 };
      */
@@ -25321,14 +24985,10 @@ return jQuery;
      * is ranked. The `iteratee` is bound to `thisArg` and invoked with three
      * arguments; (value, index, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25337,6 +24997,8 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [iteratee] The function invoked per iteration.
+     *  If a property name or object is provided it is used to create a "_.property"
+     *  or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {*} Returns the minimum value.
      * @example
@@ -25352,12 +25014,10 @@ return jQuery;
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
-     * _.min(users, function(chr) {
-     *   return chr.age;
-     * });
+     * _.min(users, function(chr) { return chr.age; });
      * // => { 'user': 'barney', 'age': 36 };
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.min(users, 'age');
      * // => { 'user': 'barney', 'age': 36 };
      */
@@ -25369,14 +25029,10 @@ return jQuery;
      * contains elements `predicate` returns falsey for. The predicate is bound
      * to `thisArg` and invoked with three arguments; (value, index|key, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25385,19 +25041,16 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the array of grouped elements.
      * @example
      *
-     * _.partition([1, 2, 3], function(n) {
-     *   return n % 2;
-     * });
+     * _.partition([1, 2, 3], function(n) { return n % 2; });
      * // => [[1, 3], [2]]
      *
-     * _.partition([1.2, 2.3, 3.4], function(n) {
-     *   return this.floor(n) % 2;
-     * }, Math);
+     * _.partition([1.2, 2.3, 3.4], function(n) { return this.floor(n) % 2; }, Math);
      * // => [[1, 3], [2]]
      *
      * var users = [
@@ -25406,20 +25059,12 @@ return jQuery;
      *   { 'user': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
-     * var mapper = function(array) {
-     *   return _.pluck(array, 'user');
-     * };
-     *
-     * // using the `_.matches` callback shorthand
-     * _.map(_.partition(users, { 'age': 1, 'active': false }), mapper);
+     * // using the "_.matches" callback shorthand
+     * _.map(_.partition(users, { 'age': 1 }), function(array) { return _.pluck(array, 'user'); });
      * // => [['pebbles'], ['barney', 'fred']]
      *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.map(_.partition(users, 'active', false), mapper);
-     * // => [['barney', 'pebbles'], ['fred']]
-     *
-     * // using the `_.property` callback shorthand
-     * _.map(_.partition(users, 'active'), mapper);
+     * // using the "_.property" callback shorthand
+     * _.map(_.partition(users, 'active'), function(array) { return _.pluck(array, 'user'); });
      * // => [['fred'], ['barney', 'pebbles']]
      */
     var partition = createAggregator(function(result, value, key) {
@@ -25450,7 +25095,7 @@ return jQuery;
      * // => [36, 40] (iteration order is not guaranteed)
      */
     function pluck(collection, key) {
-      return map(collection, baseProperty(key));
+      return map(collection, baseProperty(key + ''));
     }
 
     /**
@@ -25460,12 +25105,6 @@ return jQuery;
      * is not provided the first element of `collection` is used as the initial
      * value. The `iteratee` is bound to `thisArg`and invoked with four arguments;
      * (accumulator, value, index|key, collection).
-     *
-     * Many lodash methods are guarded to work as interatees for methods like
-     * `_.reduce`, `_.reduceRight`, and `_.transform`.
-     *
-     * The guarded methods are:
-     * `assign`, `defaults`, `merge`, and `sortAllBy`
      *
      * @static
      * @memberOf _
@@ -25478,16 +25117,14 @@ return jQuery;
      * @returns {*} Returns the accumulated value.
      * @example
      *
-     * _.reduce([1, 2], function(sum, n) {
-     *   return sum + n;
-     * });
-     * // => 3
+     * var sum = _.reduce([1, 2, 3], function(sum, n) { return sum + n; });
+     * // => 6
      *
-     * _.reduce({ 'a': 1, 'b': 2 }, function(result, n, key) {
+     * var mapped = _.reduce({ 'a': 1, 'b': 2, 'c': 3 }, function(result, n, key) {
      *   result[key] = n * 3;
      *   return result;
      * }, {});
-     * // => { 'a': 3, 'b': 6 } (iteration order is not guaranteed)
+     * // => { 'a': 3, 'b': 6, 'c': 9 } (iteration order is not guaranteed)
      */
     function reduce(collection, iteratee, accumulator, thisArg) {
       var func = isArray(collection) ? arrayReduce : baseReduce;
@@ -25510,10 +25147,7 @@ return jQuery;
      * @example
      *
      * var array = [[0, 1], [2, 3], [4, 5]];
-     *
-     * _.reduceRight(array, function(flattened, other) {
-     *   return flattened.concat(other);
-     * }, []);
+     * _.reduceRight(array, function(flattened, other) { return flattened.concat(other); }, []);
      * // => [4, 5, 2, 3, 0, 1]
      */
     function reduceRight(collection, iteratee, accumulator, thisArg) {
@@ -25525,14 +25159,10 @@ return jQuery;
      * The opposite of `_.filter`; this method returns the elements of `collection`
      * that `predicate` does **not** return truthy for.
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25541,14 +25171,13 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {Array} Returns the new filtered array.
      * @example
      *
-     * _.reject([1, 2, 3, 4], function(n) {
-     *   return n % 2 == 0;
-     * });
+     * var odds = _.reject([1, 2, 3, 4], function(n) { return n % 2 == 0; });
      * // => [1, 3]
      *
      * var users = [
@@ -25556,17 +25185,13 @@ return jQuery;
      *   { 'user': 'fred',   'age': 40, 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.pluck(_.reject(users, { 'age': 40, 'active': true }), 'user');
-     * // => ['barney']
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.pluck(_.reject(users, 'active', false), 'user');
-     * // => ['fred']
-     *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.pluck(_.reject(users, 'active'), 'user');
      * // => ['barney']
+     *
+     * // using the "_.matches" callback shorthand
+     * _.pluck(_.reject(users, { 'age': 36 }), 'user');
+     * // => ['fred']
      */
     function reject(collection, predicate, thisArg) {
       var func = isArray(collection) ? arrayFilter : baseFilter;
@@ -25648,11 +25273,11 @@ return jQuery;
      * @returns {number} Returns the size of `collection`.
      * @example
      *
-     * _.size([1, 2, 3]);
-     * // => 3
-     *
-     * _.size({ 'a': 1, 'b': 2 });
+     * _.size([1, 2]);
      * // => 2
+     *
+     * _.size({ 'one': 1, 'two': 2, 'three': 3 });
+     * // => 3
      *
      * _.size('pebbles');
      * // => 7
@@ -25668,14 +25293,10 @@ return jQuery;
      * over the entire collection. The predicate is bound to `thisArg` and invoked
      * with three arguments; (value, index|key, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25685,7 +25306,8 @@ return jQuery;
      * @category Collection
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {boolean} Returns `true` if any element passes the predicate check,
      *  else `false`.
@@ -25695,21 +25317,17 @@ return jQuery;
      * // => true
      *
      * var users = [
-     *   { 'user': 'barney', 'active': true },
-     *   { 'user': 'fred',   'active': false }
+     *   { 'user': 'barney', 'age': 36, 'active': false },
+     *   { 'user': 'fred',   'age': 40, 'active': true }
      * ];
      *
-     * // using the `_.matches` callback shorthand
-     * _.some(users, { 'user': 'barney', 'active': false });
-     * // => false
-     *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.some(users, 'active', false);
-     * // => true
-     *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.some(users, 'active');
      * // => true
+     *
+     * // using the "_.matches" callback shorthand
+     * _.some(users, { 'age': 1 });
+     * // => false
      */
     function some(collection, predicate, thisArg) {
       var func = isArray(collection) ? arraySome : baseSome;
@@ -25726,14 +25344,10 @@ return jQuery;
      * The `iteratee` is bound to `thisArg` and invoked with three arguments;
      * (value, index|key, collection).
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -25743,19 +25357,15 @@ return jQuery;
      * @param {Array|Object|string} collection The collection to iterate over.
      * @param {Array|Function|Object|string} [iteratee=_.identity] The function
      *  invoked per iteration. If a property name or an object is provided it is
-     *  used to create a `_.property` or `_.matches` style callback respectively.
+     *  used to create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {Array} Returns the new sorted array.
      * @example
      *
-     * _.sortBy([1, 2, 3], function(n) {
-     *   return Math.sin(n);
-     * });
+     * _.sortBy([1, 2, 3], function(n) { return Math.sin(n); });
      * // => [3, 1, 2]
      *
-     * _.sortBy([1, 2, 3], function(n) {
-     *   return this.sin(n);
-     * }, Math);
+     * _.sortBy([1, 2, 3], function(n) { return this.sin(n); }, Math);
      * // => [3, 1, 2]
      *
      * var users = [
@@ -25764,7 +25374,7 @@ return jQuery;
      *   { 'user': 'barney' }
      * ];
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.pluck(_.sortBy(users, 'user'), 'user');
      * // => ['barney', 'fred', 'pebbles']
      */
@@ -25816,7 +25426,7 @@ return jQuery;
           props = baseFlatten(args, false, false, 1),
           result = isLength(length) ? Array(length) : [];
 
-      baseEach(collection, function(value) {
+      baseEach(collection, function(value, key, collection) {
         var length = props.length,
             criteria = Array(length);
 
@@ -25833,11 +25443,6 @@ return jQuery;
      * source object, returning an array of all elements that have equivalent
      * property values.
      *
-     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
-     * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable properties. For comparing a single
-     * own or inherited property value see `_.matchesProperty`.
-     *
      * @static
      * @memberOf _
      * @category Collection
@@ -25847,15 +25452,18 @@ return jQuery;
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': false, 'pets': ['hoppy'] },
-     *   { 'user': 'fred',   'age': 40, 'active': true, 'pets': ['baby puss', 'dino'] }
+     *   { 'user': 'barney', 'age': 36, 'status': 'busy', 'pets': ['hoppy'] },
+     *   { 'user': 'fred',   'age': 40, 'status': 'busy', 'pets': ['baby puss', 'dino'] }
      * ];
      *
-     * _.pluck(_.where(users, { 'age': 36, 'active': false }), 'user');
+     * _.pluck(_.where(users, { 'age': 36 }), 'user');
      * // => ['barney']
      *
      * _.pluck(_.where(users, { 'pets': ['dino'] }), 'user');
      * // => ['fred']
+     *
+     * _.pluck(_.where(users, { 'status': 'busy' }), 'user');
+     * // => ['barney', 'fred']
      */
     function where(collection, source) {
       return filter(collection, baseMatches(source));
@@ -25872,9 +25480,7 @@ return jQuery;
      * @category Date
      * @example
      *
-     * _.defer(function(stamp) {
-     *   console.log(_.now() - stamp);
-     * }, _.now());
+     * _.defer(function(stamp) { console.log(_.now() - stamp); }, _.now());
      * // => logs the number of milliseconds it took for the deferred function to be invoked
      */
     var now = nativeNow || function() {
@@ -25907,8 +25513,8 @@ return jQuery;
      * // => logs 'done saving!' after the two async saves have completed
      */
     function after(n, func) {
-      if (typeof func != 'function') {
-        if (typeof n == 'function') {
+      if (!isFunction(func)) {
+        if (isFunction(n)) {
           var temp = n;
           n = func;
           func = temp;
@@ -25966,8 +25572,8 @@ return jQuery;
      */
     function before(n, func) {
       var result;
-      if (typeof func != 'function') {
-        if (typeof n == 'function') {
+      if (!isFunction(func)) {
+        if (isFunction(n)) {
           var temp = n;
           n = func;
           func = temp;
@@ -26050,9 +25656,7 @@ return jQuery;
      *
      * var view = {
      *   'label': 'docs',
-     *   'onClick': function() {
-     *     console.log('clicked ' + this.label);
-     *   }
+     *   'onClick': function() { console.log('clicked ' + this.label); }
      * };
      *
      * _.bindAll(view);
@@ -26236,7 +25840,7 @@ return jQuery;
      * @memberOf _
      * @category Function
      * @param {Function} func The function to debounce.
-     * @param {number} [wait=0] The number of milliseconds to delay.
+     * @param {number} wait The number of milliseconds to delay.
      * @param {Object} [options] The options object.
      * @param {boolean} [options.leading=false] Specify invoking on the leading
      *  edge of the timeout.
@@ -26291,10 +25895,10 @@ return jQuery;
           maxWait = false,
           trailing = true;
 
-      if (typeof func != 'function') {
+      if (!isFunction(func)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
-      wait = wait < 0 ? 0 : (+wait || 0);
+      wait = wait < 0 ? 0 : wait;
       if (options === true) {
         var leading = true;
         trailing = false;
@@ -26405,9 +26009,7 @@ return jQuery;
      * @returns {number} Returns the timer id.
      * @example
      *
-     * _.defer(function(text) {
-     *   console.log(text);
-     * }, 'deferred');
+     * _.defer(function(text) { console.log(text); }, 'deferred');
      * // logs 'deferred' after one or more milliseconds
      */
     function defer(func) {
@@ -26427,9 +26029,7 @@ return jQuery;
      * @returns {number} Returns the timer id.
      * @example
      *
-     * _.delay(function(text) {
-     *   console.log(text);
-     * }, 1000, 'later');
+     * _.delay(function(text) { console.log(text); }, 1000, 'later');
      * // => logs 'later' after one second
      */
     function delay(func, wait) {
@@ -26465,9 +26065,9 @@ return jQuery;
           length = funcs.length;
 
       if (!length) {
-        return function() { return arguments[0]; };
+        return function() {};
       }
-      if (!arrayEvery(funcs, baseIsFunction)) {
+      if (!arrayEvery(funcs, isFunction)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       return function() {
@@ -26510,9 +26110,9 @@ return jQuery;
           fromIndex = funcs.length - 1;
 
       if (fromIndex < 0) {
-        return function() { return arguments[0]; };
+        return function() {};
       }
-      if (!arrayEvery(funcs, baseIsFunction)) {
+      if (!arrayEvery(funcs, isFunction)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       return function() {
@@ -26580,7 +26180,7 @@ return jQuery;
      * // => { 'user': 'barney' }
      */
     function memoize(func, resolver) {
-      if (typeof func != 'function' || (resolver && typeof resolver != 'function')) {
+      if (!isFunction(func) || (resolver && !isFunction(resolver))) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       var memoized = function() {
@@ -26618,7 +26218,7 @@ return jQuery;
      * // => [1, 3, 5]
      */
     function negate(predicate) {
-      if (typeof predicate != 'function') {
+      if (!isFunction(predicate)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       return function() {
@@ -26633,6 +26233,7 @@ return jQuery;
      *
      * @static
      * @memberOf _
+     * @type Function
      * @category Function
      * @param {Function} func The function to restrict.
      * @returns {Function} Returns the new restricted function.
@@ -26747,53 +26348,12 @@ return jQuery;
      * // => ['a', 'b', 'c']
      *
      * var map = _.rearg(_.map, [1, 0]);
-     * map(function(n) {
-     *   return n * 3;
-     * }, [1, 2, 3]);
+     * map(function(n) { return n * 3; }, [1, 2, 3]);
      * // => [3, 6, 9]
      */
     function rearg(func) {
       var indexes = baseFlatten(arguments, false, false, 1);
       return createWrapper(func, REARG_FLAG, null, null, null, indexes);
-    }
-
-    /**
-     * Creates a function that invokes `func` with the `this` binding of the
-     * created function and the array of arguments provided to the created
-     * function much like [Function#apply](http://es5.github.io/#x15.3.4.3).
-     *
-     * @static
-     * @memberOf _
-     * @category Function
-     * @param {Function} func The function to spread arguments over.
-     * @returns {*} Returns the new function.
-     * @example
-     *
-     * var spread = _.spread(function(who, what) {
-     *   return who + ' says ' + what;
-     * });
-     *
-     * spread(['Fred', 'hello']);
-     * // => 'Fred says hello'
-     *
-     * // with a Promise
-     * var numbers = Promise.all([
-     *   Promise.resolve(40),
-     *   Promise.resolve(36)
-     * ]);
-     *
-     * numbers.then(_.spread(function(x, y) {
-     *   return x + y;
-     * }));
-     * // => a Promise of 76
-     */
-    function spread(func) {
-      if (typeof func != 'function') {
-        throw new TypeError(FUNC_ERROR_TEXT);
-      }
-      return function(array) {
-        return func.apply(this, array);
-      };
     }
 
     /**
@@ -26815,7 +26375,7 @@ return jQuery;
      * @memberOf _
      * @category Function
      * @param {Function} func The function to throttle.
-     * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+     * @param {number} wait The number of milliseconds to throttle invocations to.
      * @param {Object} [options] The options object.
      * @param {boolean} [options.leading=true] Specify invoking on the leading
      *  edge of the timeout.
@@ -26828,9 +26388,8 @@ return jQuery;
      * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
      *
      * // invoke `renewToken` when the click event is fired, but not more than once every 5 minutes
-     * jQuery('.interactive').on('click', _.throttle(renewToken, 300000, {
-     *   'trailing': false
-     * }));
+     * var throttled =  _.throttle(renewToken, 300000, { 'trailing': false })
+     * jQuery('.interactive').on('click', throttled);
      *
      * // cancel a trailing throttled call
      * jQuery(window).on('popstate', throttled.cancel);
@@ -26839,7 +26398,7 @@ return jQuery;
       var leading = true,
           trailing = true;
 
-      if (typeof func != 'function') {
+      if (!isFunction(func)) {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       if (options === false) {
@@ -26920,26 +26479,22 @@ return jQuery;
      * // => false
      *
      * // using a customizer callback
-     * var el = _.clone(document.body, function(value) {
-     *   if (_.isElement(value)) {
-     *     return value.cloneNode(false);
-     *   }
+     * var body = _.clone(document.body, function(value) {
+     *   return _.isElement(value) ? value.cloneNode(false) : undefined;
      * });
      *
-     * el === document.body
+     * body === document.body
      * // => false
-     * el.nodeName
+     * body.nodeName
      * // => BODY
-     * el.childNodes.length;
+     * body.childNodes.length;
      * // => 0
      */
     function clone(value, isDeep, customizer, thisArg) {
-      if (isDeep && typeof isDeep != 'boolean' && isIterateeCall(value, isDeep, customizer)) {
-        isDeep = false;
-      }
-      else if (typeof isDeep == 'function') {
+      // Juggle arguments.
+      if (typeof isDeep != 'boolean' && isDeep != null) {
         thisArg = customizer;
-        customizer = isDeep;
+        customizer = isIterateeCall(value, isDeep, thisArg) ? null : isDeep;
         isDeep = false;
       }
       customizer = typeof customizer == 'function' && bindCallback(customizer, thisArg, 1);
@@ -26979,16 +26534,14 @@ return jQuery;
      *
      * // using a customizer callback
      * var el = _.cloneDeep(document.body, function(value) {
-     *   if (_.isElement(value)) {
-     *     return value.cloneNode(true);
-     *   }
+     *   return _.isElement(value) ? value.cloneNode(true) : undefined;
      * });
      *
-     * el === document.body
+     * body === document.body
      * // => false
-     * el.nodeName
+     * body.nodeName
      * // => BODY
-     * el.childNodes.length;
+     * body.childNodes.length;
      * // => 20
      */
     function cloneDeep(value, customizer, thisArg) {
@@ -27006,7 +26559,7 @@ return jQuery;
      * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
      * @example
      *
-     * _.isArguments(function() { return arguments; }());
+     * (function() { return _.isArguments(arguments); })();
      * // => true
      *
      * _.isArguments([1, 2, 3]);
@@ -27030,7 +26583,7 @@ return jQuery;
      * _.isArray([1, 2, 3]);
      * // => true
      *
-     * _.isArray(function() { return arguments; }());
+     * (function() { return _.isArray(arguments); })();
      * // => false
      */
     var isArray = nativeIsArray || function(value) {
@@ -27151,8 +26704,7 @@ return jQuery;
      * arguments; (value, other [, index|key]).
      *
      * **Note:** This method supports comparing arrays, booleans, `Date` objects,
-     * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable properties. Functions and DOM nodes
+     * numbers, `Object` objects, regexes, and strings. Functions and DOM nodes
      * are **not** supported. Provide a customizer function to extend support
      * for comparing other values.
      *
@@ -27180,9 +26732,7 @@ return jQuery;
      * var other = ['hi', 'goodbye'];
      *
      * _.isEqual(array, other, function(value, other) {
-     *   if (_.every([value, other], RegExp.prototype.test, /^h(?:i|ello)$/)) {
-     *     return true;
-     *   }
+     *   return _.every([value, other], RegExp.prototype.test, /^h(?:i|ello)$/) || undefined;
      * });
      * // => true
      */
@@ -27265,12 +26815,20 @@ return jQuery;
      * _.isFunction(/abc/);
      * // => false
      */
-    var isFunction = !(baseIsFunction(/x/) || (Uint8Array && !baseIsFunction(Uint8Array))) ? baseIsFunction : function(value) {
-      // The use of `Object#toString` avoids issues with the `typeof` operator
-      // in older versions of Chrome and Safari which return 'function' for regexes
-      // and Safari 8 equivalents which return 'object' for typed array constructors.
-      return objToString.call(value) == funcTag;
-    };
+    function isFunction(value) {
+      // Avoid a Chakra JIT bug in compatibility modes of IE 11.
+      // See https://github.com/jashkenas/underscore/issues/1621 for more details.
+      return typeof value == 'function' || false;
+    }
+    // Fallback for environments that return incorrect `typeof` operator results.
+    if (isFunction(/x/) || (Uint8Array && !isFunction(Uint8Array))) {
+      isFunction = function(value) {
+        // The use of `Object#toString` avoids issues with the `typeof` operator
+        // in older versions of Chrome and Safari which return 'function' for regexes
+        // and Safari 8 equivalents which return 'object' for typed array constructors.
+        return objToString.call(value) == funcTag;
+      };
+    }
 
     /**
      * Checks if `value` is the language type of `Object`.
@@ -27316,7 +26874,7 @@ return jQuery;
      * @static
      * @memberOf _
      * @category Lang
-     * @param {Object} object The object to inspect.
+     * @param {Object} source The object to inspect.
      * @param {Object} source The object of property values to match.
      * @param {Function} [customizer] The function to customize comparing values.
      * @param {*} [thisArg] The `this` binding of `customizer`.
@@ -27599,9 +27157,7 @@ return jQuery;
      * @returns {Array} Returns the converted array.
      * @example
      *
-     * (function() {
-     *   return _.toArray(arguments).slice(1);
-     * }(1, 2, 3));
+     * (function() { return _.toArray(arguments).slice(1); })(1, 2, 3);
      * // => [2, 3]
      */
     function toArray(value) {
@@ -27698,9 +27254,7 @@ return jQuery;
      *   Shape.call(this);
      * }
      *
-     * Circle.prototype = _.create(Shape.prototype, {
-     *   'constructor': Circle
-     * });
+     * Circle.prototype = _.create(Shape.prototype, { 'constructor': Circle });
      *
      * var circle = new Circle;
      * circle instanceof Circle;
@@ -27746,14 +27300,10 @@ return jQuery;
      * This method is like `_.findIndex` except that it returns the key of the
      * first element `predicate` returns truthy for, instead of the element itself.
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -27762,7 +27312,8 @@ return jQuery;
      * @category Object
      * @param {Object} object The object to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
      * @example
@@ -27773,20 +27324,14 @@ return jQuery;
      *   'pebbles': { 'age': 1,  'active': true }
      * };
      *
-     * _.findKey(users, function(chr) {
-     *   return chr.age < 40;
-     * });
+     * _.findKey(users, function(chr) { return chr.age < 40; });
      * // => 'barney' (iteration order is not guaranteed)
      *
-     * // using the `_.matches` callback shorthand
-     * _.findKey(users, { 'age': 1, 'active': true });
+     * // using the "_.matches" callback shorthand
+     * _.findKey(users, { 'age': 1 });
      * // => 'pebbles'
      *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.findKey(users, 'active', false);
-     * // => 'fred'
-     *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.findKey(users, 'active');
      * // => 'barney'
      */
@@ -27799,14 +27344,10 @@ return jQuery;
      * This method is like `_.findKey` except that it iterates over elements of
      * a collection in the opposite order.
      *
-     * If a property name is provided for `predicate` the created `_.property`
+     * If a property name is provided for `predicate` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `predicate` the created `_.matches` style
+     * If an object is provided for `predicate` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -27815,7 +27356,8 @@ return jQuery;
      * @category Object
      * @param {Object} object The object to search.
      * @param {Function|Object|string} [predicate=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `predicate`.
      * @returns {string|undefined} Returns the key of the matched element, else `undefined`.
      * @example
@@ -27826,20 +27368,14 @@ return jQuery;
      *   'pebbles': { 'age': 1,  'active': true }
      * };
      *
-     * _.findLastKey(users, function(chr) {
-     *   return chr.age < 40;
-     * });
+     * _.findLastKey(users, function(chr) { return chr.age < 40; });
      * // => returns `pebbles` assuming `_.findKey` returns `barney`
      *
-     * // using the `_.matches` callback shorthand
-     * _.findLastKey(users, { 'age': 36, 'active': true });
+     * // using the "_.matches" callback shorthand
+     * _.findLastKey(users, { 'age': 36 });
      * // => 'barney'
      *
-     * // using the `_.matchesProperty` callback shorthand
-     * _.findLastKey(users, 'active', false);
-     * // => 'fred'
-     *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.findLastKey(users, 'active');
      * // => 'pebbles'
      */
@@ -27927,17 +27463,10 @@ return jQuery;
      * @returns {Object} Returns `object`.
      * @example
      *
-     * function Foo() {
-     *   this.a = 1;
-     *   this.b = 2;
-     * }
-     *
-     * Foo.prototype.c = 3;
-     *
-     * _.forOwn(new Foo, function(value, key) {
+     * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(n, key) {
      *   console.log(key);
      * });
-     * // => logs 'a' and 'b' (iteration order is not guaranteed)
+     * // => logs '0', '1', and 'length' (iteration order is not guaranteed)
      */
     function forOwn(object, iteratee, thisArg) {
       if (typeof iteratee != 'function' || typeof thisArg != 'undefined') {
@@ -27959,17 +27488,10 @@ return jQuery;
      * @returns {Object} Returns `object`.
      * @example
      *
-     * function Foo() {
-     *   this.a = 1;
-     *   this.b = 2;
-     * }
-     *
-     * Foo.prototype.c = 3;
-     *
-     * _.forOwnRight(new Foo, function(value, key) {
+     * _.forOwnRight({ '0': 'zero', '1': 'one', 'length': 2 }, function(n, key) {
      *   console.log(key);
      * });
-     * // => logs 'b' and 'a' assuming `_.forOwn` logs 'a' and 'b'
+     * // => logs 'length', '1', and '0' assuming `_.forOwn` logs '0', '1', and 'length'
      */
     function forOwnRight(object, iteratee, thisArg) {
       iteratee = bindCallback(iteratee, thisArg, 3);
@@ -27989,7 +27511,7 @@ return jQuery;
      * @example
      *
      * _.functions(_);
-     * // => ['after', 'ary', 'assign', ...]
+     * // => ['all', 'any', 'bind', ...]
      */
     function functions(object) {
       return baseFunctions(object, keysIn(object));
@@ -28007,9 +27529,7 @@ return jQuery;
      * @returns {boolean} Returns `true` if `key` is a direct property, else `false`.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2, 'c': 3 };
-     *
-     * _.has(object, 'b');
+     * _.has({ 'a': 1, 'b': 2, 'c': 3 }, 'b');
      * // => true
      */
     function has(object, key) {
@@ -28030,14 +27550,16 @@ return jQuery;
      * @returns {Object} Returns the new inverted object.
      * @example
      *
-     * var object = { 'a': 1, 'b': 2, 'c': 1 };
+     * _.invert({ 'first': 'fred', 'second': 'barney' });
+     * // => { 'fred': 'first', 'barney': 'second' }
      *
-     * _.invert(object);
-     * // => { '1': 'c', '2': 'b' }
+     * // without `multiValue`
+     * _.invert({ 'first': 'fred', 'second': 'barney', 'third': 'fred' });
+     * // => { 'fred': 'third', 'barney': 'second' }
      *
      * // with `multiValue`
-     * _.invert(object, true);
-     * // => { '1': ['a', 'c'], '2': ['b'] }
+     * _.invert({ 'first': 'fred', 'second': 'barney', 'third': 'fred' }, true);
+     * // => { 'fred': ['first', 'third'], 'barney': ['second'] }
      */
     function invert(object, multiValue, guard) {
       if (guard && isIterateeCall(object, multiValue, guard)) {
@@ -28140,7 +27662,7 @@ return jQuery;
 
       var Ctor = object.constructor,
           index = -1,
-          isProto = typeof Ctor == 'function' && Ctor.prototype === object,
+          isProto = typeof Ctor == 'function' && Ctor.prototype == object,
           result = Array(length),
           skipIndexes = length > 0;
 
@@ -28162,14 +27684,10 @@ return jQuery;
      * iteratee function is bound to `thisArg` and invoked with three arguments;
      * (value, key, object).
      *
-     * If a property name is provided for `iteratee` the created `_.property`
+     * If a property name is provided for `iteratee` the created "_.property"
      * style callback returns the property value of the given element.
      *
-     * If a value is also provided for `thisArg` the created `_.matchesProperty`
-     * style callback returns `true` for elements that have a matching property
-     * value, else `false`.
-     *
-     * If an object is provided for `iteratee` the created `_.matches` style
+     * If an object is provided for `iteratee` the created "_.matches" style
      * callback returns `true` for elements that have the properties of the given
      * object, else `false`.
      *
@@ -28178,22 +27696,21 @@ return jQuery;
      * @category Object
      * @param {Object} object The object to iterate over.
      * @param {Function|Object|string} [iteratee=_.identity] The function invoked
-     *  per iteration.
+     *  per iteration. If a property name or object is provided it is used to
+     *  create a "_.property" or "_.matches" style callback respectively.
      * @param {*} [thisArg] The `this` binding of `iteratee`.
      * @returns {Object} Returns the new mapped object.
      * @example
      *
-     * _.mapValues({ 'a': 1, 'b': 2 }, function(n) {
-     *   return n * 3;
-     * });
-     * // => { 'a': 3, 'b': 6 }
+     * _.mapValues({ 'a': 1, 'b': 2, 'c': 3} , function(n) { return n * 3; });
+     * // => { 'a': 3, 'b': 6, 'c': 9 }
      *
      * var users = {
      *   'fred':    { 'user': 'fred',    'age': 40 },
      *   'pebbles': { 'user': 'pebbles', 'age': 1 }
      * };
      *
-     * // using the `_.property` callback shorthand
+     * // using the "_.property" callback shorthand
      * _.mapValues(users, 'age');
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      */
@@ -28249,9 +27766,7 @@ return jQuery;
      * };
      *
      * _.merge(object, other, function(a, b) {
-     *   if (_.isArray(a)) {
-     *     return a.concat(b);
-     *   }
+     *   return _.isArray(a) ? a.concat(b) : undefined;
      * });
      * // => { 'fruits': ['apple', 'banana'], 'vegetables': ['beet', 'carrot'] }
      */
@@ -28417,16 +27932,18 @@ return jQuery;
      * @returns {*} Returns the accumulated value.
      * @example
      *
-     * _.transform([2, 3, 4], function(result, n) {
-     *   result.push(n *= n);
-     *   return n % 2 == 0;
+     * var squares = _.transform([1, 2, 3, 4, 5, 6], function(result, n) {
+     *   n *= n;
+     *   if (n % 2) {
+     *     return result.push(n) < 3;
+     *   }
      * });
-     * // => [4, 9]
+     * // => [1, 9, 25]
      *
-     * _.transform({ 'a': 1, 'b': 2 }, function(result, n, key) {
+     * var mapped = _.transform({ 'a': 1, 'b': 2, 'c': 3 }, function(result, n, key) {
      *   result[key] = n * 3;
      * });
-     * // => { 'a': 3, 'b': 6 }
+     * // => { 'a': 3, 'b': 6, 'c': 9 }
      */
     function transform(object, iteratee, accumulator, thisArg) {
       var isArr = isArray(object) || isTypedArray(object);
@@ -28438,7 +27955,7 @@ return jQuery;
           if (isArr) {
             accumulator = isArray(object) ? new Ctor : [];
           } else {
-            accumulator = baseCreate(isFunction(Ctor) && Ctor.prototype);
+            accumulator = baseCreate(typeof Ctor == 'function' && Ctor.prototype);
           }
         } else {
           accumulator = {};
@@ -28507,48 +28024,6 @@ return jQuery;
     }
 
     /*------------------------------------------------------------------------*/
-
-    /**
-     * Checks if `n` is between `start` and up to but not including, `end`. If
-     * `end` is not specified it defaults to `start` with `start` becoming `0`.
-     *
-     * @static
-     * @memberOf _
-     * @category Number
-     * @param {number} n The number to check.
-     * @param {number} [start=0] The start of the range.
-     * @param {number} end The end of the range.
-     * @returns {boolean} Returns `true` if `n` is in the range, else `false`.
-     * @example
-     *
-     * _.inRange(3, 2, 4);
-     * // => true
-     *
-     * _.inRange(4, 8);
-     * // => true
-     *
-     * _.inRange(4, 2);
-     * // => false
-     *
-     * _.inRange(2, 2);
-     * // => false
-     *
-     * _.inRange(1.2, 2);
-     * // => true
-     *
-     * _.inRange(5.2, 4);
-     * // => false
-     */
-    function inRange(value, start, end) {
-      start = +start || 0;
-      if (typeof end === 'undefined') {
-        end = start;
-        start = 0;
-      } else {
-        end = +end || 0;
-      }
-      return value >= start && value < end;
-    }
 
     /**
      * Produces a random number between `min` and `max` (inclusive). If only one
@@ -28769,7 +28244,7 @@ return jQuery;
     }
 
     /**
-     * Converts `string` to kebab case.
+     * Converts `string` to kebab case (a.k.a. spinal case).
      * See [Wikipedia](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles) for
      * more details.
      *
@@ -29132,10 +28607,10 @@ return jQuery;
      * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
      * compiled.source;
      * // => function(data) {
-     * //   var __t, __p = '';
-     * //   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
-     * //   return __p;
-     * // }
+     *   var __t, __p = '';
+     *   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
+     *   return __p;
+     * }
      *
      * // using the `source` property to inline compiled templates for meaningful
      * // line numbers in error messages and a stack trace
@@ -29310,7 +28785,7 @@ return jQuery;
         return string;
       }
       if (guard ? isIterateeCall(value, chars, guard) : chars == null) {
-        return string.slice(trimmedLeftIndex(string));
+        return string.slice(trimmedLeftIndex(string))
       }
       return string.slice(charsLeftIndex(string, (chars + '')));
     }
@@ -29340,7 +28815,7 @@ return jQuery;
         return string;
       }
       if (guard ? isIterateeCall(value, chars, guard) : chars == null) {
-        return string.slice(0, trimmedRightIndex(string) + 1);
+        return string.slice(0, trimmedRightIndex(string) + 1)
       }
       return string.slice(0, charsRightIndex(string, (chars + '')) + 1);
     }
@@ -29368,21 +28843,13 @@ return jQuery;
      * _.trunc('hi-diddly-ho there, neighborino', 24);
      * // => 'hi-diddly-ho there, n...'
      *
-     * _.trunc('hi-diddly-ho there, neighborino', {
-     *   'length': 24,
-     *   'separator': ' '
-     * });
+     * _.trunc('hi-diddly-ho there, neighborino', { 'length': 24, 'separator': ' ' });
      * // => 'hi-diddly-ho there,...'
      *
-     * _.trunc('hi-diddly-ho there, neighborino', {
-     *   'length': 24,
-     *   'separator': /,? +/
-     * });
+     * _.trunc('hi-diddly-ho there, neighborino', { 'length': 24, 'separator': /,? +/ });
      * //=> 'hi-diddly-ho there...'
      *
-     * _.trunc('hi-diddly-ho there, neighborino', {
-     *   'omission': ' [...]'
-     * });
+     * _.trunc('hi-diddly-ho there, neighborino', { 'omission': ' [...]' });
      * // => 'hi-diddly-ho there, neig [...]'
      */
     function trunc(string, options, guard) {
@@ -29491,8 +28958,8 @@ return jQuery;
     /*------------------------------------------------------------------------*/
 
     /**
-     * Attempts to invoke `func`, returning either the result or the caught error
-     * object. Any additional arguments are provided to `func` when it is invoked.
+     * Attempts to invoke `func`, returning either the result or the caught
+     * error object.
      *
      * @static
      * @memberOf _
@@ -29502,35 +28969,27 @@ return jQuery;
      * @example
      *
      * // avoid throwing errors for invalid selectors
-     * var elements = _.attempt(function(selector) {
+     * var elements = _.attempt(function() {
      *   return document.querySelectorAll(selector);
-     * }, '>_>');
+     * });
      *
      * if (_.isError(elements)) {
      *   elements = [];
      * }
      */
-    function attempt() {
-      var length = arguments.length,
-          func = arguments[0];
-
+    function attempt(func) {
       try {
-        var args = Array(length ? length - 1 : 0);
-        while (--length > 0) {
-          args[length - 1] = arguments[length];
-        }
-        return func.apply(undefined, args);
+        return func();
       } catch(e) {
-        return isError(e) ? e : new Error(e);
+        return isError(e) ? e : Error(e);
       }
     }
 
     /**
-     * Creates a function that invokes `func` with the `this` binding of `thisArg`
-     * and arguments of the created function. If `func` is a property name the
-     * created callback returns the property value for a given element. If `func`
-     * is an object the created callback returns `true` for elements that contain
-     * the equivalent object properties, otherwise it returns `false`.
+     * Creates a function bound to an optional `thisArg`. If `func` is a property
+     * name the created callback returns the property value for a given element.
+     * If `func` is an object the created callback returns `true` for elements
+     * that contain the equivalent object properties, otherwise it returns `false`.
      *
      * @static
      * @memberOf _
@@ -29554,9 +29013,7 @@ return jQuery;
      *     return callback(func, thisArg);
      *   }
      *   return function(object) {
-     *     return match[2] == 'gt'
-     *       ? object[match[1]] > match[3]
-     *       : object[match[1]] < match[3];
+     *     return match[2] == 'gt' ? object[match[1]] > match[3] : object[match[1]] < match[3];
      *   };
      * });
      *
@@ -29584,7 +29041,6 @@ return jQuery;
      *
      * var object = { 'user': 'fred' };
      * var getter = _.constant(object);
-     *
      * getter() === object;
      * // => true
      */
@@ -29605,7 +29061,6 @@ return jQuery;
      * @example
      *
      * var object = { 'user': 'fred' };
-     *
      * _.identity(object) === object;
      * // => true
      */
@@ -29618,11 +29073,6 @@ return jQuery;
      * and `source`, returning `true` if the given object has equivalent property
      * values, else `false`.
      *
-     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
-     * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable properties. For comparing a single
-     * own or inherited property value see `_.matchesProperty`.
-     *
      * @static
      * @memberOf _
      * @category Utility
@@ -29631,44 +29081,20 @@ return jQuery;
      * @example
      *
      * var users = [
-     *   { 'user': 'barney', 'age': 36, 'active': true },
-     *   { 'user': 'fred',   'age': 40, 'active': false }
+     *   { 'user': 'fred',   'age': 40 },
+     *   { 'user': 'barney', 'age': 36 }
      * ];
      *
-     * _.filter(users, _.matches({ 'age': 40, 'active': false }));
-     * // => [{ 'user': 'fred', 'age': 40, 'active': false }]
+     * var matchesAge = _.matches({ 'age': 36 });
+     *
+     * _.filter(users, matchesAge);
+     * // => [{ 'user': 'barney', 'age': 36 }]
+     *
+     * _.find(users, matchesAge);
+     * // => { 'user': 'barney', 'age': 36 }
      */
     function matches(source) {
       return baseMatches(baseClone(source, true));
-    }
-
-    /**
-     * Creates a function which compares the property value of `key` on a given
-     * object to `value`.
-     *
-     * **Note:** This method supports comparing arrays, booleans, `Date` objects,
-     * numbers, `Object` objects, regexes, and strings. Objects are compared by
-     * their own, not inherited, enumerable properties.
-     *
-     * @static
-     * @memberOf _
-     * @category Utility
-     * @param {string} key The key of the property to get.
-     * @param {*} value The value to compare.
-     * @returns {Function} Returns the new function.
-     * @example
-     *
-     * var users = [
-     *   { 'user': 'barney' },
-     *   { 'user': 'fred' },
-     *   { 'user': 'pebbles' }
-     * ];
-     *
-     * _.find(users, _.matchesProperty('user', 'fred'));
-     * // => { 'user': 'fred', 'age': 40 }
-     */
-    function matchesProperty(key, value) {
-      return baseMatchesProperty(key + '', baseClone(value, true));
     }
 
     /**
@@ -29692,9 +29118,6 @@ return jQuery;
      *     return /[aeiou]/i.test(v);
      *   });
      * }
-     *
-     * // use `_.runInContext` to avoid potential conflicts (esp. in Node.js)
-     * var _ = require('lodash').runInContext();
      *
      * _.mixin({ 'vowels': vowels });
      * _.vowels('fred');
@@ -29776,8 +29199,7 @@ return jQuery;
     }
 
     /**
-     * A no-operation function which returns `undefined` regardless of the
-     * arguments it receives.
+     * A no-operation function.
      *
      * @static
      * @memberOf _
@@ -29785,7 +29207,6 @@ return jQuery;
      * @example
      *
      * var object = { 'user': 'fred' };
-     *
      * _.noop(object) === undefined;
      * // => true
      */
@@ -29831,11 +29252,11 @@ return jQuery;
      * @returns {Function} Returns the new function.
      * @example
      *
+     * var object = { 'user': 'fred', 'age': 40, 'active': true };
+     * _.map(['active', 'user'], _.propertyOf(object));
+     * // => [true, 'fred']
+     *
      * var object = { 'a': 3, 'b': 1, 'c': 2 };
-     *
-     * _.map(['a', 'c'], _.propertyOf(object));
-     * // => [3, 2]
-     *
      * _.sortBy(['a', 'b', 'c'], _.propertyOf(object));
      * // => ['b', 'c', 'a']
      */
@@ -29847,9 +29268,8 @@ return jQuery;
 
     /**
      * Creates an array of numbers (positive and/or negative) progressing from
-     * `start` up to, but not including, `end`. If `end` is not specified it
-     * defaults to `start` with `start` becoming `0`. If `start` is less than
-     * `end` a zero-length range is created unless a negative `step` is specified.
+     * `start` up to, but not including, `end`. If `start` is less than `end` a
+     * zero-length range is created unless a negative `step` is specified.
      *
      * @static
      * @memberOf _
@@ -29921,14 +29341,10 @@ return jQuery;
      * var diceRolls = _.times(3, _.partial(_.random, 1, 6, false));
      * // => [3, 6, 4]
      *
-     * _.times(3, function(n) {
-     *   mage.castSpell(n);
-     * });
+     * _.times(3, function(n) { mage.castSpell(n); });
      * // => invokes `mage.castSpell(n)` three times with `n` of `0`, `1`, and `2` respectively
      *
-     * _.times(3, function(n) {
-     *   this.cast(n);
-     * }, mage);
+     * _.times(3, function(n) { this.cast(n); }, mage);
      * // => also invokes `mage.castSpell(n)` three times
      */
     function times(n, iteratee, thisArg) {
@@ -29976,14 +29392,8 @@ return jQuery;
 
     /*------------------------------------------------------------------------*/
 
-    // Ensure wrappers are instances of `baseLodash`.
-    lodash.prototype = baseLodash.prototype;
-
-    LodashWrapper.prototype = baseCreate(baseLodash.prototype);
-    LodashWrapper.prototype.constructor = LodashWrapper;
-
-    LazyWrapper.prototype = baseCreate(baseLodash.prototype);
-    LazyWrapper.prototype.constructor = LazyWrapper;
+    // Ensure `new LodashWrapper` is an instance of `lodash`.
+    LodashWrapper.prototype = lodash.prototype;
 
     // Add functions to the `Map` cache.
     MapCache.prototype['delete'] = mapDelete;
@@ -30024,7 +29434,6 @@ return jQuery;
     lodash.dropRight = dropRight;
     lodash.dropRightWhile = dropRightWhile;
     lodash.dropWhile = dropWhile;
-    lodash.fill = fill;
     lodash.filter = filter;
     lodash.flatten = flatten;
     lodash.flattenDeep = flattenDeep;
@@ -30048,7 +29457,6 @@ return jQuery;
     lodash.map = map;
     lodash.mapValues = mapValues;
     lodash.matches = matches;
-    lodash.matchesProperty = matchesProperty;
     lodash.memoize = memoize;
     lodash.merge = merge;
     lodash.mixin = mixin;
@@ -30074,7 +29482,6 @@ return jQuery;
     lodash.slice = slice;
     lodash.sortBy = sortBy;
     lodash.sortByAll = sortByAll;
-    lodash.spread = spread;
     lodash.take = take;
     lodash.takeRight = takeRight;
     lodash.takeRightWhile = takeRightWhile;
@@ -30140,7 +29547,6 @@ return jQuery;
     lodash.identity = identity;
     lodash.includes = includes;
     lodash.indexOf = indexOf;
-    lodash.inRange = inRange;
     lodash.isArguments = isArguments;
     lodash.isArray = isArray;
     lodash.isBoolean = isBoolean;
@@ -30249,13 +29655,14 @@ return jQuery;
 
     // Add `LazyWrapper` methods that accept an `iteratee` value.
     arrayEach(['filter', 'map', 'takeWhile'], function(methodName, index) {
-      var isFilter = index == LAZY_FILTER_FLAG || index == LAZY_WHILE_FLAG;
+      var isFilter = index == LAZY_FILTER_FLAG;
 
       LazyWrapper.prototype[methodName] = function(iteratee, thisArg) {
         var result = this.clone(),
-            iteratees = result.__iteratees__ || (result.__iteratees__ = []);
+            filtered = result.filtered,
+            iteratees = result.iteratees || (result.iteratees = []);
 
-        result.__filtered__ = result.__filtered__ || isFilter;
+        result.filtered = filtered || isFilter || (index == LAZY_WHILE_FLAG && result.dir < 0);
         iteratees.push({ 'iteratee': getCallback(iteratee, thisArg, 3), 'type': index });
         return result;
       };
@@ -30263,19 +29670,19 @@ return jQuery;
 
     // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
     arrayEach(['drop', 'take'], function(methodName, index) {
-      var countName = '__' + methodName + 'Count__',
+      var countName = methodName + 'Count',
           whileName = methodName + 'While';
 
       LazyWrapper.prototype[methodName] = function(n) {
-        n = n == null ? 1 : nativeMax(floor(n) || 0, 0);
+        n = n == null ? 1 : nativeMax(+n || 0, 0);
 
         var result = this.clone();
-        if (result.__filtered__) {
+        if (result.filtered) {
           var value = result[countName];
           result[countName] = index ? nativeMin(value, n) : (value + n);
         } else {
-          var views = result.__views__ || (result.__views__ = []);
-          views.push({ 'size': n, 'type': methodName + (result.__dir__ < 0 ? 'Right' : '') });
+          var views = result.views || (result.views = []);
+          views.push({ 'size': n, 'type': methodName + (result.dir < 0 ? 'Right' : '') });
         }
         return result;
       };
@@ -30291,7 +29698,7 @@ return jQuery;
 
     // Add `LazyWrapper` methods for `_.first` and `_.last`.
     arrayEach(['first', 'last'], function(methodName, index) {
-      var takeName = 'take' + (index ? 'Right' : '');
+      var takeName = 'take' + (index ? 'Right': '');
 
       LazyWrapper.prototype[methodName] = function() {
         return this[takeName](1).value()[0];
@@ -30313,31 +29720,27 @@ return jQuery;
           createCallback = index ? baseMatches : baseProperty;
 
       LazyWrapper.prototype[methodName] = function(value) {
-        return this[operationName](createCallback(value));
+        return this[operationName](createCallback(index ? value : (value + '')));
       };
     });
 
-    LazyWrapper.prototype.compact = function() {
-      return this.filter(identity);
-    };
-
-    LazyWrapper.prototype.dropWhile = function(predicate, thisArg) {
+    LazyWrapper.prototype.dropWhile = function(iteratee, thisArg) {
       var done,
           lastIndex,
-          isRight = this.__dir__ < 0;
+          isRight = this.dir < 0;
 
-      predicate = getCallback(predicate, thisArg, 3);
+      iteratee = getCallback(iteratee, thisArg, 3);
       return this.filter(function(value, index, array) {
         done = done && (isRight ? index < lastIndex : index > lastIndex);
         lastIndex = index;
-        return done || (done = !predicate(value, index, array));
+        return done || (done = !iteratee(value, index, array));
       });
     };
 
-    LazyWrapper.prototype.reject = function(predicate, thisArg) {
-      predicate = getCallback(predicate, thisArg, 3);
+    LazyWrapper.prototype.reject = function(iteratee, thisArg) {
+      iteratee = getCallback(iteratee, thisArg, 3);
       return this.filter(function(value, index, array) {
-        return !predicate(value, index, array);
+        return !iteratee(value, index, array);
       });
     };
 
@@ -30350,10 +29753,6 @@ return jQuery;
         result = end < 0 ? result.dropRight(-end) : result.take(end - start);
       }
       return result;
-    };
-
-    LazyWrapper.prototype.toArray = function() {
-      return this.drop(0);
     };
 
     // Add `LazyWrapper` methods to `lodash.prototype`.
@@ -30383,8 +29782,8 @@ return jQuery;
           var wrapper = onlyLazy ? value : new LazyWrapper(this),
               result = func.apply(wrapper, args);
 
-          if (!retUnwrapped && (isHybrid || result.__actions__)) {
-            var actions = result.__actions__ || (result.__actions__ = []);
+          if (!retUnwrapped && (isHybrid || result.actions)) {
+            var actions = result.actions || (result.actions = []);
             actions.push({ 'func': thru, 'args': [interceptor], 'thisArg': lodash });
           }
           return new LodashWrapper(result, chainAll);
@@ -30415,15 +29814,13 @@ return jQuery;
     LazyWrapper.prototype.reverse = lazyReverse;
     LazyWrapper.prototype.value = lazyValue;
 
-    // Add chaining functions to the `lodash` wrapper.
+    // Add chaining functions to the lodash wrapper.
     lodash.prototype.chain = wrapperChain;
-    lodash.prototype.commit = wrapperCommit;
-    lodash.prototype.plant = wrapperPlant;
     lodash.prototype.reverse = wrapperReverse;
     lodash.prototype.toString = wrapperToString;
-    lodash.prototype.run = lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
+    lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
 
-    // Add function aliases to the `lodash` wrapper.
+    // Add function aliases to the lodash wrapper.
     lodash.prototype.collect = lodash.prototype.map;
     lodash.prototype.head = lodash.prototype.first;
     lodash.prototype.select = lodash.prototype.filter;
