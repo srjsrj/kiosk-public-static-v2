@@ -3367,14 +3367,18 @@ $(function() {
       setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
       return toggleDeliveryOnlyElementsVisibility($e.data('show-fields-query'));
     } else {
-      return console.log('Ни один способ доставки по умолчанию не выбран');
+      return typeof console.error === "function" ? console.error('Ни один способ доставки по умолчанию не выбран') : void 0;
     }
   };
   $('[delivery-type]').on('change', function() {
     return selectDeliveryType($(this));
   });
   findSelectedDeliveryType = function() {
-    return $('[delivery-type]').filter(':checked')[0] || null;
+    var $el, ref;
+    $el = $('[delivery-type]').filter(':checked');
+    return (ref = $el.length === 0) != null ? ref : {
+      "null": $el
+    };
   };
   return window.InitializeCheckout = function() {
     return selectDeliveryType(findSelectedDeliveryType());

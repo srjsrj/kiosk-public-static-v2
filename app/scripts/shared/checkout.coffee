@@ -38,13 +38,14 @@ $ ->
 
       toggleDeliveryOnlyElementsVisibility $e.data('show-fields-query')
     else
-      console.log 'Ни один способ доставки по умолчанию не выбран'
+      console.error? 'Ни один способ доставки по умолчанию не выбран'
 
   $('[delivery-type]').on 'change', ->
     selectDeliveryType $ @
 
   findSelectedDeliveryType= ->
-    $('[delivery-type]').filter(':checked')[0] || null
+    $el = $('[delivery-type]').filter(':checked')
+    $el.length==0 ? null : $el
 
   window.InitializeCheckout = ->
     selectDeliveryType findSelectedDeliveryType()
