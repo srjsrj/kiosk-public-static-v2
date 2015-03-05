@@ -1,20 +1,17 @@
 $ ->
   $cartTotal = $ '[cart-total]'
 
-  setCartItemCount = (root_item_el, count) ->
-    price = + root_item_el.data 'item-price'
+  setCartItemCount = ($el, count) ->
+    price = + $el.data 'item-price'
     total = price*count
 
-    root_item_el.data 'item-total-price', total
+    $el.data 'item-total-price', total
 
-    root_item_el.find('[cart-item-block]').each (idx, block) ->
-      $block = $ block
+    $price_el = $el.find '[cart-item-total-price]'
+    $price_el.html accounting.formatMoney total
 
-      $price_el = $block.find '[cart-item-total-price]'
-      $price_el.html accounting.formatMoney total
-
-      $selector = $block.find '[cart-item-selector]'
-      $selector.val count
+    $selector = $el.find '[cart-item-selector]'
+    $selector.val count
 
     updateCartTotal()
 
@@ -28,7 +25,7 @@ $ ->
 
   $('[cart-item-selector]').on 'change', ->
     $e = $ @
-    root_item_el = $e.closest '[cart-item]'
+    $el = $e.closest '[cart-item]'
 
-    setCartItemCount root_item_el, parseInt($e.val())
+    setCartItemCount $el, parseInt($e.val())
 
