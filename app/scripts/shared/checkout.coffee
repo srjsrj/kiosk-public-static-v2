@@ -52,6 +52,5 @@ $ ->
 
   window.InitializeCheckout = ->
     console.log 'Initialize Checkout'
-    debugger
     selectDeliveryType findSelectedDeliveryType()
 

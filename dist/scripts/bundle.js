@@ -3384,7 +3384,6 @@ $(function() {
   };
   return window.InitializeCheckout = function() {
     console.log('Initialize Checkout');
-    debugger;
     return selectDeliveryType(findSelectedDeliveryType());
   };
 });
