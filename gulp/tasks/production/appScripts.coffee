@@ -14,7 +14,6 @@ gulp.task 'appScripts', ->
   }).require './bower_components/bootstrap-sass-official/assets/javascripts/bootstrap', { expose: 'bootstrapSass' }
     .require './bower_components/jquery.role/lib/jquery.role',                          { expose: 'jquery.role' }
     .require './bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',             { expose: 'jquery.mmenu' }
-    .require './bower_components/react-mixin-manager/react-mixin-manager',              { expose: 'react-mixin-manager' }
     .require './bower_components/eventEmitter/EventEmitter',                            { expose: 'eventEmitter' }
     .require './bower_components/OwlCarousel/owl-carousel/owl.carousel',                { expose: 'owlCarousel' }
     .require './bower_components/fancybox/source/jquery.fancybox',                      { expose: 'fancybox' }

@@ -11,7 +11,6 @@ require 'jquery.role'
 require 'jquery.mmenu'
 
 # Others
-require('react-mixin-manager')(window.React)
 require 'bootstrapSass'
 require 'owlCarousel'
 require 'fancybox'

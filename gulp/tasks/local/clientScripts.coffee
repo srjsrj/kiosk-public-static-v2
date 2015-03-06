@@ -17,7 +17,6 @@ gulp.task 'clientScripts', ->
     .external 'jquery.mmenu'
     .external 'bootstrapSass'
     .external 'react'
-    .external 'react-mixin-manager'
     .external 'reactUjs'
     .external 'eventEmitter'
     .external 'owlCarousel'

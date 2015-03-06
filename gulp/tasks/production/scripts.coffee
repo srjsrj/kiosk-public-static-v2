@@ -16,7 +16,6 @@ gulp.task 'scripts', ->
     .require './bower_components/jquery.role/lib/jquery.role',                          expose: 'jquery.role'
     .require './bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',             expose: 'jquery.mmenu'
     .require '../node_modules/react',                                                   expose: 'react'
-    .require './bower_components/react-mixin-manager/react-mixin-manager',              expose: 'react-mixin-manager'
     .require './scripts/resources/react_ujs',                                           expose: 'reactUjs'
     .require './bower_components/eventEmitter/EventEmitter',                            expose: 'eventEmitter'
     .require './bower_components/OwlCarousel/owl-carousel/owl.carousel',                expose: 'owlCarousel'

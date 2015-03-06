@@ -15,7 +15,6 @@ gulp.task 'vendorScripts', ->
     .require './jquery.role/lib/jquery.role',                          expose: 'jquery.role'
     .require './jQuery.mmenu/src/js/jquery.mmenu.min.all',             expose: 'jquery.mmenu'
     .require '../../node_modules/react',                               expose: 'react'
-    .require './react-mixin-manager/react-mixin-manager',              expose: 'react-mixin-manager'
     .require '../scripts/resources/react_ujs',                         expose: 'reactUjs'
     .require './eventEmitter/EventEmitter',                            expose: 'eventEmitter'
     .require './OwlCarousel/owl-carousel/owl.carousel',                expose: 'owlCarousel'

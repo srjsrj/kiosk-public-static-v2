@@ -6,11 +6,46 @@ require('./bundle');
 
 
 },{"./appLibs":2,"./bundle":3}],2:[function(require,module,exports){
+window._ = require('lodash');
+
+window.Dispatcher = require('flux').Dispatcher;
+
+window.EventEmitter = require('eventEmitter');
+
+window.accounting = require('accounting');
+
+require('jquery.role');
+
+require('jquery.mmenu');
+
+require('bootstrapSass');
+
+require('owlCarousel');
+
+require('fancybox');
+
+require('fancybox.wannabe');
+
+require('nouislider');
+
+window.accounting.settings = {
+  currency: {
+    symbol: 'руб.',
+    format: '%v %s',
+    decimal: ',',
+    thousand: ' ',
+    precision: 0
+  },
+  number: {
+    precision: 0,
+    thousand: '',
+    decimal: ','
+  }
+};
 
 
 
-
-},{}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":61,"jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel"}],3:[function(require,module,exports){
 (function (global){
 var TooltipController;
 
@@ -2315,7 +2350,7 @@ setDesignClass = function(el, name, value) {
 
 
 
-},{"./buttons/save":25,"./common/checkbox":26,"./common/color":27,"./feedOpacity":32,"./font":33,"./fontSize":34,"./mixins/designSettings":35,"./pageBackground":36,"./productLayout":37,"./productsInRow":38,"jss":61}],32:[function(require,module,exports){
+},{"./buttons/save":25,"./common/checkbox":26,"./common/color":27,"./feedOpacity":32,"./font":33,"./fontSize":34,"./mixins/designSettings":35,"./pageBackground":36,"./productLayout":37,"./productsInRow":38,"jss":64}],32:[function(require,module,exports){
 var DesignSettings_FeedOpacity, DesignSettings_Range, PropTypes;
 
 DesignSettings_Range = require('./common/range');
@@ -3695,6 +3730,325 @@ $(function() {
 
 },{}],61:[function(require,module,exports){
 /**
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+module.exports.Dispatcher = require('./lib/Dispatcher')
+
+},{"./lib/Dispatcher":62}],62:[function(require,module,exports){
+/*
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Dispatcher
+ * @typechecks
+ */
+
+"use strict";
+
+var invariant = require('./invariant');
+
+var _lastID = 1;
+var _prefix = 'ID_';
+
+/**
+ * Dispatcher is used to broadcast payloads to registered callbacks. This is
+ * different from generic pub-sub systems in two ways:
+ *
+ *   1) Callbacks are not subscribed to particular events. Every payload is
+ *      dispatched to every registered callback.
+ *   2) Callbacks can be deferred in whole or part until other callbacks have
+ *      been executed.
+ *
+ * For example, consider this hypothetical flight destination form, which
+ * selects a default city when a country is selected:
+ *
+ *   var flightDispatcher = new Dispatcher();
+ *
+ *   // Keeps track of which country is selected
+ *   var CountryStore = {country: null};
+ *
+ *   // Keeps track of which city is selected
+ *   var CityStore = {city: null};
+ *
+ *   // Keeps track of the base flight price of the selected city
+ *   var FlightPriceStore = {price: null}
+ *
+ * When a user changes the selected city, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'city-update',
+ *     selectedCity: 'paris'
+ *   });
+ *
+ * This payload is digested by `CityStore`:
+ *
+ *   flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'city-update') {
+ *       CityStore.city = payload.selectedCity;
+ *     }
+ *   });
+ *
+ * When the user selects a country, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'country-update',
+ *     selectedCountry: 'australia'
+ *   });
+ *
+ * This payload is digested by both stores:
+ *
+ *    CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       CountryStore.country = payload.selectedCountry;
+ *     }
+ *   });
+ *
+ * When the callback to update `CountryStore` is registered, we save a reference
+ * to the returned token. Using this token with `waitFor()`, we can guarantee
+ * that `CountryStore` is updated before the callback that updates `CityStore`
+ * needs to query its data.
+ *
+ *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       // `CountryStore.country` may not be updated.
+ *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
+ *       // `CountryStore.country` is now guaranteed to be updated.
+ *
+ *       // Select the default city for the new country
+ *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
+ *     }
+ *   });
+ *
+ * The usage of `waitFor()` can be chained, for example:
+ *
+ *   FlightPriceStore.dispatchToken =
+ *     flightDispatcher.register(function(payload) {
+ *       switch (payload.actionType) {
+ *         case 'country-update':
+ *           flightDispatcher.waitFor([CityStore.dispatchToken]);
+ *           FlightPriceStore.price =
+ *             getFlightPriceStore(CountryStore.country, CityStore.city);
+ *           break;
+ *
+ *         case 'city-update':
+ *           FlightPriceStore.price =
+ *             FlightPriceStore(CountryStore.country, CityStore.city);
+ *           break;
+ *     }
+ *   });
+ *
+ * The `country-update` payload will be guaranteed to invoke the stores'
+ * registered callbacks in order: `CountryStore`, `CityStore`, then
+ * `FlightPriceStore`.
+ */
+
+  function Dispatcher() {
+    this.$Dispatcher_callbacks = {};
+    this.$Dispatcher_isPending = {};
+    this.$Dispatcher_isHandled = {};
+    this.$Dispatcher_isDispatching = false;
+    this.$Dispatcher_pendingPayload = null;
+  }
+
+  /**
+   * Registers a callback to be invoked with every dispatched payload. Returns
+   * a token that can be used with `waitFor()`.
+   *
+   * @param {function} callback
+   * @return {string}
+   */
+  Dispatcher.prototype.register=function(callback) {
+    var id = _prefix + _lastID++;
+    this.$Dispatcher_callbacks[id] = callback;
+    return id;
+  };
+
+  /**
+   * Removes a callback based on its token.
+   *
+   * @param {string} id
+   */
+  Dispatcher.prototype.unregister=function(id) {
+    invariant(
+      this.$Dispatcher_callbacks[id],
+      'Dispatcher.unregister(...): `%s` does not map to a registered callback.',
+      id
+    );
+    delete this.$Dispatcher_callbacks[id];
+  };
+
+  /**
+   * Waits for the callbacks specified to be invoked before continuing execution
+   * of the current callback. This method should only be used by a callback in
+   * response to a dispatched payload.
+   *
+   * @param {array<string>} ids
+   */
+  Dispatcher.prototype.waitFor=function(ids) {
+    invariant(
+      this.$Dispatcher_isDispatching,
+      'Dispatcher.waitFor(...): Must be invoked while dispatching.'
+    );
+    for (var ii = 0; ii < ids.length; ii++) {
+      var id = ids[ii];
+      if (this.$Dispatcher_isPending[id]) {
+        invariant(
+          this.$Dispatcher_isHandled[id],
+          'Dispatcher.waitFor(...): Circular dependency detected while ' +
+          'waiting for `%s`.',
+          id
+        );
+        continue;
+      }
+      invariant(
+        this.$Dispatcher_callbacks[id],
+        'Dispatcher.waitFor(...): `%s` does not map to a registered callback.',
+        id
+      );
+      this.$Dispatcher_invokeCallback(id);
+    }
+  };
+
+  /**
+   * Dispatches a payload to all registered callbacks.
+   *
+   * @param {object} payload
+   */
+  Dispatcher.prototype.dispatch=function(payload) {
+    invariant(
+      !this.$Dispatcher_isDispatching,
+      'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.'
+    );
+    this.$Dispatcher_startDispatching(payload);
+    try {
+      for (var id in this.$Dispatcher_callbacks) {
+        if (this.$Dispatcher_isPending[id]) {
+          continue;
+        }
+        this.$Dispatcher_invokeCallback(id);
+      }
+    } finally {
+      this.$Dispatcher_stopDispatching();
+    }
+  };
+
+  /**
+   * Is this Dispatcher currently dispatching.
+   *
+   * @return {boolean}
+   */
+  Dispatcher.prototype.isDispatching=function() {
+    return this.$Dispatcher_isDispatching;
+  };
+
+  /**
+   * Call the callback stored with the given id. Also do some internal
+   * bookkeeping.
+   *
+   * @param {string} id
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_invokeCallback=function(id) {
+    this.$Dispatcher_isPending[id] = true;
+    this.$Dispatcher_callbacks[id](this.$Dispatcher_pendingPayload);
+    this.$Dispatcher_isHandled[id] = true;
+  };
+
+  /**
+   * Set up bookkeeping needed when dispatching.
+   *
+   * @param {object} payload
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_startDispatching=function(payload) {
+    for (var id in this.$Dispatcher_callbacks) {
+      this.$Dispatcher_isPending[id] = false;
+      this.$Dispatcher_isHandled[id] = false;
+    }
+    this.$Dispatcher_pendingPayload = payload;
+    this.$Dispatcher_isDispatching = true;
+  };
+
+  /**
+   * Clear bookkeeping used for dispatching.
+   *
+   * @internal
+   */
+  Dispatcher.prototype.$Dispatcher_stopDispatching=function() {
+    this.$Dispatcher_pendingPayload = null;
+    this.$Dispatcher_isDispatching = false;
+  };
+
+
+module.exports = Dispatcher;
+
+},{"./invariant":63}],63:[function(require,module,exports){
+/**
+ * Copyright (c) 2014, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule invariant
+ */
+
+"use strict";
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (false) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        'Invariant Violation: ' +
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+},{}],64:[function(require,module,exports){
+/**
  * StyleSheets written in javascript.
  *
  * @copyright Oleg Slobodskoi 2014
@@ -3704,7 +4058,7 @@ $(function() {
 
 module.exports = require('./lib/index')
 
-},{"./lib/index":64}],62:[function(require,module,exports){
+},{"./lib/index":67}],65:[function(require,module,exports){
 'use strict'
 
 var plugins = require('./plugins')
@@ -3950,7 +4304,7 @@ function indent(level, str) {
     return indentStr + str
 }
 
-},{"./plugins":65}],63:[function(require,module,exports){
+},{"./plugins":68}],66:[function(require,module,exports){
 'use strict'
 
 var Rule = require('./Rule')
@@ -4215,7 +4569,7 @@ StyleSheet.prototype.createElement = function () {
     return element
 }
 
-},{"./Rule":62,"./plugins":65}],64:[function(require,module,exports){
+},{"./Rule":65,"./plugins":68}],67:[function(require,module,exports){
 'use strict'
 
 var StyleSheet = require('./StyleSheet')
@@ -4262,7 +4616,7 @@ exports.createRule = function (selector, style) {
  */
 exports.use = exports.plugins.use
 
-},{"./Rule":62,"./StyleSheet":63,"./plugins":65}],65:[function(require,module,exports){
+},{"./Rule":65,"./StyleSheet":66,"./plugins":68}],68:[function(require,module,exports){
 'use strict'
 
 /**
@@ -24891,276 +25245,4 @@ if (typeof Object.create !== "function") {
         afterLazyLoad: false
     };
 }(jQuery, window, document));
-},{}],"react-mixin-manager":[function(require,module,exports){
-/*!
- * react-mixin-manager v0.7.0
- * https://github.com/jhudson8/react-mixin-manager
- * 
- * 
- * Copyright (c) 2014 Joe Hudson<joehud_AT_gmail.com>
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
- (function(main) {
-  if (typeof define === 'function' && define.amd) {
-    define(['react'], main);
-  } else if (typeof exports !== 'undefined' && typeof require !== 'undefined') {
-    module.exports = function(React) {
-      main(React);
-    };
-  } else {
-    main(React);
-  }
-})(function(React) {
-
-  /**
-   * return the normalized mixin list
-   * @param values {Array} list of mixin entries
-   * @param index {Object} hash which contains a truthy value for all named mixins that have been added
-   * @param initiatedOnce {Object} hash which collects mixins and their parameters that should be initiated once
-   * @param rtn {Array} the normalized return array
-   */
-  function get(values, index, initiatedOnce, rtn) {
-
-    /**
-     * add the named mixin and all un-added dependencies to the return array
-     * @param the mixin name
-     */
-    function addTo(name) {
-      var indexName = name,
-          match = name.match(/^([^\(]*)\s*\(([^\)]*)\)\s*/),
-          params = match && match[2];
-      name = match && match[1] || name;
-
-      if (!index[indexName]) {
-        if (params) {
-          // there can be no function calls here because of the regex match
-          params = eval('[' + params + ']');
-        }
-        var mixin = React.mixins._mixins[name],
-            checkAgain = false,
-            skip = false;
-
-        if (mixin) {
-          if (typeof mixin === 'function') {
-            if (React.mixins._initiatedOnce[name]){
-              initiatedOnce[name] = (initiatedOnce[name] || []);
-              initiatedOnce[name].push(params);
-              skip = true;
-            } else {
-              mixin = mixin.apply(this, params || []);
-              checkAgain = true;
-            }
-          } else if (params) {
-            throw new Error('the mixin "' + name + '" does not support parameters');
-          }
-          get(React.mixins._dependsOn[name], index, initiatedOnce, rtn);
-          get(React.mixins._dependsInjected[name], index, initiatedOnce, rtn);
-
-          index[indexName] = true;
-          if (checkAgain) {
-            get([mixin], index, initiatedOnce, rtn);
-          } else if (!skip) {
-            rtn.push(mixin);
-          }
-
-        } else {
-          throw new Error('invalid mixin "' + name + '"');
-        }
-      }
-    }
-
-    function handleMixin(mixin) {
-      if (mixin) {
-        if (Array.isArray(mixin)) {
-          // flatten it out
-          get(mixin, index, initiatedOnce, rtn);
-        } else if (typeof mixin === 'string') {
-          // add the named mixin and all of it's dependencies
-          addTo(mixin);
-        } else {
-          // just add the mixin normally
-          rtn.push(mixin);
-        }
-      }
-    }
-
-    if (Array.isArray(values)) {
-      for (var i=0; i<values.length; i++) {
-        handleMixin(values[i]);
-      }
-    } else {
-      handleMixin(values);
-    }
-  }
-
-  /**
-   * add the mixins that should be once initiated to the normalized mixin list
-   * @param mixins {Object} hash of mixins keys and list of its parameters
-   * @param rtn {Array} the normalized return array
-   */
-  function getInitiatedOnce(mixins, rtn) {
-
-    /**
-      * added once initiated mixins to return array
-      */
-    function addInitiatedOnce(mixin, params){
-      mixin = mixin.apply(this, params || []);
-        rtn.push(mixin);
-      }
-
-      for (var m in mixins){
-        if (mixins.hasOwnProperty(m)){
-          addInitiatedOnce(React.mixins._mixins[m], mixins[m]);
-        }
-      }
-  }
-
-  // allow for registered mixins to be extract just by using the standard React.createClass
-  var _createClass = React.createClass;
-  React.createClass = function(spec) {
-    if (spec.mixins) {
-      spec.mixins = React.mixins.get(spec.mixins);
-    }
-    return _createClass.apply(React, arguments);
-  };
-
-  function addMixin(name, mixin, depends, override, initiatedOnce) {
-    var mixins = React.mixins;
-    if (!override && mixins._mixins[name]) {
-      return;
-    }
-    mixins._dependsOn[name] = depends.length && depends;
-    mixins._mixins[name] = mixin;
-
-    if (initiatedOnce){
-      mixins._initiatedOnce[name] = true;
-    }
-  }
-
-  function GROUP() {
-    // empty function which is used only as a placeholder to list dependencies
-  }
-
-  function mixinParams(args, override) {
-    var name,
-        options = args[0],
-        initiatedOnce = false;
-
-    if (typeof(options) === 'object'){
-      name = options.name;
-      initiatedOnce = options.initiatedOnce;
-    } else {
-      name = options;
-    }
-
-    if (!name || !name.length){
-        throw new Error('the mixin name hasn\'t been specified');
-    }
-
-    if (Array.isArray(args[1])) {
-      return [name, args[1][0], Array.prototype.slice.call(args[1], 1), override, initiatedOnce];
-    } else {
-      return [name, args[1], Array.prototype.slice.call(args, 2), override, initiatedOnce]
-    }
-  }
-
-  React.mixins = {
-    /**
-     * return the normalized mixins.  there can be N arguments with each argument being
-     * - an array: will be flattened out to the parent list of mixins
-     * - a string: will match against any registered mixins and append the correct mixin
-     * - an object: will be treated as a standard mixin and returned in the list of mixins
-     * any string arguments that are provided will cause any dependent mixins to be included
-     * in the return list as well
-     */
-    get: function() {
-      var rtn = [],
-          index = {},
-          initiatedOnce = {};
-
-      get(Array.prototype.slice.call(arguments), index, initiatedOnce, rtn);
-      getInitiatedOnce(initiatedOnce, rtn);
-      return rtn;
-    },
-
-    /**
-     * Inject dependencies that were not originally defined when a mixin was registered
-     * @param name {string} the main mixin name
-     * @param (any additional) {string} dependencies that should be registered against the mixin
-     */
-    inject: function(name) {
-      var l = this._dependsInjected[name];
-      if (!l) {
-        l = this._dependsInjected[name] = [];
-      }
-      l.push(Array.prototype.slice.call(arguments, 1));
-    },
-
-    alias: function(name) {
-      addMixin(name, GROUP, Array.prototype.slice.call(arguments, 1), false);
-    },
-
-    add: function(options, mixin) {
-      addMixin.apply(this, mixinParams(arguments, false));
-    },
-
-    replace: function(options, mixin) {
-      addMixin.apply(this, mixinParams(arguments, true));
-    },
-
-    exists: function(name) {
-      return this._mixins[name] || false;
-    },
-
-    _dependsOn: {},
-    _dependsInjected: {},
-    _mixins: {},
-    _initiatedOnce: {}
-  };
-
-  /**
-   * mixin that exposes a "deferUpdate" method which will call forceUpdate after a setTimeout(0) to defer the update.
-   * This allows the forceUpdate method to be called multiple times while only executing a render 1 time.  This will
-   * also ensure the component is mounted before calling forceUpdate.
-   *
-   * It is added to mixin manager directly because it serves a purpose that benefits when multiple plugins use it
-   */
-  React.mixins.add('deferUpdate', {
-    getInitialState: function() {
-      // ensure that the state exists because we don't want to call setState (which will cause a render)
-      return {};
-    },
-    deferUpdate: function() {
-      var state = this.state;
-      if (!state._deferUpdate) {
-        state._deferUpdate = true;
-        var self = this;
-        setTimeout(function() {
-          delete state._deferUpdate;
-          if (self.isMounted()) {
-            self.forceUpdate();
-          }
-        }, 0);
-      }
-    }
-  });
-});
-
 },{}]},{},[1]);
