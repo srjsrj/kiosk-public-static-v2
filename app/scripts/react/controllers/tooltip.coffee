@@ -1,5 +1,3 @@
-###* @jsx React.DOM ###
-
 FilteredCountTooltip = require '../components/common/tooltip/filteredCount'
 
 class TooltipController
@@ -14,11 +12,11 @@ class TooltipController
 
     @close()
 
-    tooltip = React.renderComponent (
-      `<FilteredCountTooltip
+    tooltip = React.render (
+      <FilteredCountTooltip
           filter={ filter }
           position={ position }
-          onClose={ this.close } />`
+          onClose={ this.close } />
     ), container
 
     @_pendingTooltip = tooltip
