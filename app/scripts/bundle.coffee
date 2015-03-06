@@ -1,4 +1,3 @@
-require './libs'
 require './shared/app'
 require './shared/cart'
 require './shared/load_more'
@@ -38,5 +37,3 @@ window.Api = require './react/api/api'
 window.KioskEvents = require './react/controllers/events'
 TooltipController  = require './react/controllers/tooltip'
 new TooltipController()
-
-ReactUjs.initialize()

@@ -11,7 +11,8 @@ gulp.task 'clientScripts', ->
     cache: {}, packageCache: {}
     entries: config.entries
     extensions: config.extensions
-  }).external 'jquery'
+  }).external 'lodash'
+    .external 'jquery'
     .external 'jquery.role'
     .external 'jquery.mmenu'
     .external 'bootstrapSass'
