@@ -11,6 +11,9 @@ window.BasketButton = React.createClass
     itemsCount: @props.itemsCount || BasketStore.getBasketCount()
 
   componentDidMount: ->
+    #+`react_ujs` will also scan DOM elements and call `React.unmountComponentAtNode` on page unload. If you want to disable this behavior (if you are not using Turbolinks), remove `data-react-class` attribute in `componentDidMount`:
+
+    @getDOMNode().parentElement.removeAttribute('data-react-class')
     BasketStore.addChangeListener @_onChange
 
   componentDidUnmount: ->

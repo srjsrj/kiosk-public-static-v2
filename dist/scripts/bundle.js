@@ -215,6 +215,7 @@ window.BasketButton = React.createClass({
     };
   },
   componentDidMount: function() {
+    this.getDOMNode().parentElement.removeAttribute('data-react-class');
     return BasketStore.addChangeListener(this._onChange);
   },
   componentDidUnmount: function() {
