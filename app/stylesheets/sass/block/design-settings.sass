@@ -1,0 +1,152 @@
+$designSettingsZindex: 500
+$designSettingsWidth: 300px
+$designSettingsBg: #32373b
+$designSettingsFontSize: $font-stack-default-size
+$designSettingsFontFamily: $font-stack-default-family
+
+$designSettingsHeaderHeight: 40px
+$designSettingsHeaderBg: #444a50
+$designSettingsHeaderColor: #dfe1e3
+
+$designSettingsFooterHeight: $designSettingsHeaderHeight
+
+$designSettingsSaveButtonHeight: $designSettingsFooterHeight
+$designSettingsSaveButtonBg: #54ba59
+$designSettingsSaveButtonColor: #fff
+
+.design-settings
+  width: $designSettingsWidth
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  background-color: $designSettingsBg
+  font-size: $designSettingsFontSize
+  font-family: $designSettingsFontFamily
+  z-index: $designSettingsZindex
+  .switcher__input
+    &:checked + .switcher__box
+      .switcher__knob
+        left: 15px
+  .switcher__box
+    width: 35px
+    height: 20px
+  .switcher__knob
+    width: 20px
+    height: 20px
+
+// Header
+.design-settings__header
+  height: $designSettingsHeaderHeight
+  padding: 0 12px
+  background-color: $designSettingsHeaderBg
+  font-weight: 700
+  font-size: 11px
+  line-height: $designSettingsHeaderHeight
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  color: $designSettingsHeaderColor
+  text-align: center
+
+// Body
+.design-settings__body
+  height: 100%
+  margin-top: -$designSettingsHeaderHeight
+  padding-top: $designSettingsHeaderHeight
+  padding-bottom: 40px
+  box-sizing: border-box
+
+.design-settings__scroll
+  height: 100%
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+
+.design-settings__group
+  padding: 12px
+
+.design-settings__group-header
+  padding: 10px 0
+  font-weight: 700
+  font-size: 11px
+  line-height: 15px
+  letter-spacing: 0.14em
+  text-transform: uppercase
+  color: #8e9398
+
+.design-settings__group-content
+  background-color: #fff
+  border-radius: 3px
+
+.design-settings__option
+  position: relative
+  & + &
+    border-top: 1px solid #e9e9e9
+  .noUi-value
+    position: absolute
+    top: 12px
+    right: 12px
+    color: #888
+
+.design-settings__option--row
+  width: 100%
+  display: table
+  .design-settings__option-title,
+  .design-settings__option-content
+    display: table-cell
+    vertical-align: middle
+  .design-settings__option-title + .design-settings__option-content
+    padding-top: 12px
+  .design-settings__option-content
+    text-align: right
+
+.design-settings__option-title
+  padding: 12px
+
+.design-settings__option-content
+  padding: 12px
+  .design-settings__option-title + &
+    padding-top: 0
+
+.design-settings__attach
+  margin: -12px
+  text-align: center
+  .select-file
+    padding: 12px
+    display: block
+    text-decoration: none
+  &.__uploaded
+    .design-settings__attach-box
+
+.design-settings__attach-box
+  padding: 12px 0
+  position: relative
+  border-bottom: 1px solid #e9e9e9
+  overflow: hidden
+  border-radius: 3px 3px 0 0
+
+// Footer
+.design-settings__footer
+  height: $designSettingsFooterHeight
+  margin-top: -$designSettingsFooterHeight
+  position: relative
+
+.design-settings__save-button
+  height: $designSettingsSaveButtonHeight
+  width: 100%
+  margin: 0
+  padding: 0
+  display: inline-block
+  border: none
+  background: $designSettingsSaveButtonBg
+  font-size: 12px
+  line-height: $designSettingsSaveButtonHeight + 2
+  font-family: $designSettingsFontFamily
+  letter-spacing: 0.14em
+  text-transform: uppercase
+  color: $designSettingsSaveButtonColor
+  cursor: pointer
+  &.__disabled
+    // background-color: lighten($designSettingsSaveButtonBg, 12%)
+    // color: lighten($designSettingsSaveButtonBg, 34%)
+    background: #4e5358
+    cursor: default

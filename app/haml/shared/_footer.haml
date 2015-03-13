@@ -5,7 +5,7 @@
         - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
         - for l in footer_links
           %a.b-footer__link{href: '#'}= "#{l}"
-      
+
       .b-footer__nav.b-footer__nav_soc
         %a.b-footer__link{href: '#'} Facebook
         %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
@@ -16,7 +16,7 @@
 #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
 
 %div{data-react-class: 'BasketButton', data-react-props: '{"cartUrl": "cart.html", "itemsCount": 1}'}
-  
+
 %div{data-react-class: 'BasketPopup', data-react-props: '{"cartUrl": "cart.html", "cartClearUrl": "cart.html", "items": []}'}
 
 .b-theme-switch
@@ -55,3 +55,157 @@
   %span.mmenu-open__tick.mmenu-open__tick_t
 
 %div{data-react-class: 'DesignSettings'}
+
+.design-settings
+  .design-settings__header Управление дизайном
+  .design-settings__body
+    .design-settings__scroll
+      .design-settings__group
+        .design-settings__group-header Стили
+        .design-settings__group-content
+          .design-settings__option
+            .design-settings__option-title Цвет страницы
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #bf443f;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
+                %span.radiobtn__ind{style: 'background-color: #569a9f;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
+                %span.radiobtn__ind{style: 'background-color: #4f617d;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
+                %span.radiobtn__ind{style: 'background-color: #f4d3c4;'}
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
+                %span.radiobtn__ind{style: 'background-color: #d4c3c9;'}
+          .design-settings__option
+            .design-settings__option-title Фон страницы
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #000;'}
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg'}
+                %span.radiobtn__ind{style: 'background-color: #53575a;'}
+          .design-settings__option
+            .design-settings__option-title Прозрачность ленты
+            .design-settings__option-content
+              .noUi-value 0%
+              .noUi-target.noUi-ltr.noUi-horizontal.noUi-background
+                .noUi-base
+                  .noUi-origin.noUi-stacking{style: 'left: 100%;'}
+                    .noUi-handle.noUi-handle-lower
+          .design-settings__option
+            .design-settings__option-title Цвет текста
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #894c00;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %span.radiobtn__ind{style: 'background-color: #fff2a6;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %span.radiobtn__ind{style: 'background-color: #720000;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %span.radiobtn__ind{style: 'background-color: #513100;'}
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %span.radiobtn__ind{style: 'background-color: #ffd46c;'}
+          .design-settings__option
+            .design-settings__option-title Цвет активных элементов
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #264c35;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
+                %span.radiobtn__ind{style: 'background-color: #c3a96c;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
+                %span.radiobtn__ind{style: 'background-color: #fa3c58;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
+                %span.radiobtn__ind{style: 'background-color: #772d3c;'}
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
+                %span.radiobtn__ind{style: 'background-color: #1a0f17;'}
+          .design-settings__option
+            .design-settings__option-title Шрифт
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--font.radiobtn--font-helvetica>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontfamily', checked: 'true'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--font-ptserif>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontfamily'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--font-ptsans>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontfamily'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--font-verdana>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontfamily'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--font-courier
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontfamily'}
+                  %span.radiobtn__ind Aa
+          .design-settings__option
+            .design-settings__option-title Размер шрифта
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--font.radiobtn--fontsize-sm>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontsize'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--fontsize-md>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontsize', checked: 'true'}
+                  %span.radiobtn__ind Aa
+              %label.radiobtn.radiobtn--font.radiobtn--fontsize-lg
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontsize'}
+                  %span.radiobtn__ind Aa
+      .design-settings__group
+        .design-settings__group-header Каталог
+        .design-settings__group-content
+          .design-settings__option
+            .design-settings__option-title Товаров в ряд
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-columns', checked: 'true'}
+                  %span.radiobtn__ind 1
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-columns'}
+                  %span.radiobtn__ind 2
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-columns'}
+                  %span.radiobtn__ind 3
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-columns'}
+                  %span.radiobtn__ind 4
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-columns'}
+                  %span.radiobtn__ind 6
+      .design-settings__group
+        .design-settings__group-header Странца товара
+        .design-settings__group-content
+          .design-settings__option.design-settings__option--row
+            .design-settings__option-title Фото сверху?
+            .design-settings__option-content
+              %label.switcher
+                %input.switcher__input{type: 'checkbox', checked: 'true'}
+                %span.switcher__box
+                  %span.switcher__knob
+      .design-settings__group
+        .design-settings__group-header Логотип
+        .design-settings__group-content
+          .design-settings__option
+            .design-settings__option-content
+              .design-settings__attach
+                .design-settings__attach-box
+                  %img.design-settings__attach-img{src: 'images/wannabe/logo.png', alt: ''}
+                / %label.select-file{for: 'designoption-logo'} Выбрать файл...
+                %label.select-file{for: 'designoption-logo'} Выбрать другой файл...
+                  %input#designoption-logo.select-file__input{type: 'file'}
+  .design-settings__footer
+    %button.design-settings__save-button.__disabled Изменений нет
+    / %button.design-settings__save-button Сохранить
