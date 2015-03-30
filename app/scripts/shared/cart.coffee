@@ -15,17 +15,25 @@ $ ->
 
     updateCartTotal()
 
+  packagePrice = ->
+    $package = $('[data-package]:checked')
+
+    if $package
+      $package.data('price')
+    else
+      0
+
   updateCartTotal = ->
-    totalPrice = 0
+    totalPrice = packagePrice()
     $('[cart-item]').each (idx, block) ->
       totalPrice += + $(block).data('item-total-price')
 
     $cartTotal.html accounting.formatMoney totalPrice
 
+  $('[data-package]').on 'change', updateCartTotal
 
   $('[cart-item-selector]').on 'change', ->
     $e = $ @
     $el = $e.closest '[cart-item]'
 
     setCartItemCount $el, parseInt($e.val())
-

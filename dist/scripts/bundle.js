@@ -3418,7 +3418,7 @@ $(function() {
 
 },{}],51:[function(require,module,exports){
 $(function() {
-  var $cartTotal, setCartItemCount, updateCartTotal;
+  var $cartTotal, packagePrice, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
   setCartItemCount = function($el, count) {
     var $price_el, $selector, price, total;
@@ -3431,14 +3431,24 @@ $(function() {
     $selector.val(count);
     return updateCartTotal();
   };
+  packagePrice = function() {
+    var $package;
+    $package = $('[data-package]:checked');
+    if ($package) {
+      return $package.data('price');
+    } else {
+      return 0;
+    }
+  };
   updateCartTotal = function() {
     var totalPrice;
-    totalPrice = 0;
+    totalPrice = packagePrice();
     $('[cart-item]').each(function(idx, block) {
       return totalPrice += +$(block).data('item-total-price');
     });
     return $cartTotal.html(accounting.formatMoney(totalPrice));
   };
+  $('[data-package]').on('change', updateCartTotal);
   return $('[cart-item-selector]').on('change', function() {
     var $e, $el;
     $e = $(this);
