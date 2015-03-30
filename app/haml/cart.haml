@@ -52,6 +52,8 @@
                       %a.b-cart__item__remove{href:'#'}
                         %img{src: 'images/cross_white.svg', alt: ''}
 
+              +include 'app/haml/shared/_cart_packaging.haml'
+
               .b-cart__total-sum
                 Итого:
                 %span{cart-total: true} 24 000 руб.

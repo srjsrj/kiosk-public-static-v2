@@ -1,0 +1,37 @@
+%li.b-cart__item
+  .b-cart__item__col-img
+    %img.b-cart__item__img{:alt => "Product none", :src => "http://thumball.brandydev.ru/unsafe/184x184/http://3001.vkontraste.ru/assets/fallback/product-none.png"}/
+  .b-cart__item__col-content
+    %h2.b-cart__item__title Добавить упаковку
+    .form-group.radio_buttons.optional.cart_package_good_global_id
+      %span.radio
+        %label{:for => "cart_package_good_global_id_"}
+          %input#cart_package_good_global_id_.radio_buttons.optional{:checked => "checked", "data-package" => "true", "data-price" => "0", :name => "cart[package_good_global_id]", :type => "radio", :value => ""}>/
+          Без упаковки
+    .form-group.radio_buttons.optional.cart_package_good_global_id
+      %span.radio
+        %label{:for => "cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzm5nte"}
+          %input#cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzm5nte.radio_buttons.optional{"data-package" => "true", "data-price" => "25", :name => "cart[package_good_global_id]", :type => "radio", :value => "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM5NTE"}>/
+          Мешочек маленький WB —
+          %b 25 руб.
+    .form-group.radio_buttons.optional.cart_package_good_global_id
+      %span.radio
+        %label{:for => "cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzqzmtu"}
+          %input#cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzqzmtu.radio_buttons.optional{"data-package" => "true", "data-price" => "500", :name => "cart[package_good_global_id]", :type => "radio", :value => "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQzMTU"}>/
+          Рамка 10 —
+          %b 500 руб.
+    .form-group.radio_buttons.optional.cart_package_good_global_id
+      %span.radio
+        %label{:for => "cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzqzmty"}
+          %input#cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzqzmty.radio_buttons.optional{"data-package" => "true", "data-price" => "15", :name => "cart[package_good_global_id]", :type => "radio", :value => "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQzMTY"}>/
+          Рамка 15 —
+          %b 900 руб.
+    .form-group.radio_buttons.optional.cart_package_good_global_id
+      %span.radio
+        %label{:for => "cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzm5nti"}
+          %input#cart_package_good_global_id_z2lkoi8vbwvyy2hhbnrses9qcm9kdwn0lzm5nti.radio_buttons.optional{"data-package" => "true", "data-price" => "45", :name => "cart[package_good_global_id]", :type => "radio", :value => "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM5NTI"}>/
+          Мешочек большой WB —
+          %b 45 руб.
+  .b-cart__item__col-price
+    .b-cart__item__price{"data-total-package-price" => "true"}
+      -

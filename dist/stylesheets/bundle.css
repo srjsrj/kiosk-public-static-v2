@@ -7309,3 +7309,11 @@ html {
 /* line 29, /home/danil/code/kiosk-public-static-v2/app/stylesheets/sass/block/design-test */
 .b-page_ff-courier {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; }
+
+/* line 7, /home/danil/code/kiosk-public-static-v2/app/stylesheets/bundle.scss */
+.nowrap {
+  white-space: pre; }
+
+/* line 11, /home/danil/code/kiosk-public-static-v2/app/stylesheets/bundle.scss */
+.b-cart__item {
+  font-size: inherit; }

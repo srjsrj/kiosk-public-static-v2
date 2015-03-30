@@ -16,10 +16,10 @@ $ ->
     updateCartTotal()
 
   packagePrice = ->
-    $package = $('[data-package]:checked')
+    $p = $('[data-package]:checked')
 
-    if $package
-      $package.data('price')
+    if $p
+      $p.data('price')
     else
       0
 
@@ -30,7 +30,19 @@ $ ->
 
     $cartTotal.html accounting.formatMoney totalPrice
 
-  $('[data-package]').on 'change', updateCartTotal
+  updatePackageTotal = ->
+    price = packagePrice()
+
+    price = if price>0
+      accounting.formatMoney price
+    else
+      ''
+
+    $('[data-total-package-price]').html price
+
+  $('[data-package]').on 'change', ->
+    updatePackageTotal()
+    updateCartTotal()
 
   $('[cart-item-selector]').on 'change', ->
     $e = $ @
