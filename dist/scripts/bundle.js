@@ -242,8 +242,8 @@ window.BasketButton = React.createClass({
 
 window.BasketButton_Full = React.createClass({
   propTypes: {
-    itemsCount: React.PropTypes.object.isRequired,
-    cartUrl: React.PropTypes.object
+    itemsCount: React.PropTypes.number.isRequired,
+    cartUrl: React.PropTypes.string.isRequired
   },
   render: function() {
     return React.createElement("a", {
@@ -257,7 +257,7 @@ window.BasketButton_Full = React.createClass({
 
 window.BasketButton_Empty = React.createClass({
   propTypes: {
-    cartUrl: React.PropTypes.object
+    cartUrl: React.PropTypes.string.isRequired
   },
   render: function() {
     return React.createElement("a", {
