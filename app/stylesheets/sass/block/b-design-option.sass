@@ -2,7 +2,8 @@
   position: absolute
   z-index: 20
   top: 20px
-  left: 20px
+  left: 50% !important
+  margin-left: -180px
   // display: none
   width: 360px
   font-family: $font-stack-gotham-family
@@ -26,7 +27,7 @@
     font-weight: 700
     color: #616161
     border-radius: 5px 5px 0 0
-  
+
   &__body
     background-color: rgba(51,51,51,.93)
     color: #fff
@@ -47,7 +48,7 @@
         & + .b-design-option__color__ind
           &:before
             border-color: tomato
-    
+
     &:hover
       &:before
         transform: scale(1.1)
