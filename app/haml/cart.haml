@@ -7,7 +7,7 @@
 
       .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
-      
+
       .b-page__content__inner.b-page__content__inner_content
         %section.b-cart
           .b-cart__content
@@ -44,15 +44,15 @@
                             %option 9
                             %option 10
 
-                    .b-cart__item__col-price  
+                    .b-cart__item__col-price
                       .b-cart__item__price
                         24 000 руб.
 
-                    .b-cart__item__col-remove  
+                    .b-cart__item__col-remove
                       %a.b-cart__item__remove{href:'#'}
                         %img{src: 'images/cross_white.svg', alt: ''}
 
-              +include 'app/haml/shared/_cart_packaging.haml'
+                +include 'app/haml/shared/_cart_packaging.haml'
 
               .b-cart__total-sum
                 Итого:
