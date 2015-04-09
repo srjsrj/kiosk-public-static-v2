@@ -15,9 +15,10 @@ $ ->
 
     updateCartTotal()
 
-  packagePrice = ->
-    $p = $('[data-package]:checked')
+  selectedPackageElement = -> $('[data-package]:checked')
 
+  packagePrice = ->
+    $p = selectedPackageElement()
     if $p
       $p.data('price')
     else
@@ -40,9 +41,27 @@ $ ->
 
     $('[data-total-package-price]').html price
 
+  updatePackageSubmitButton = ->
+    $button = $('[data-package-submit]')
+
+    unless $button.length>0
+      console.log 'No package submit button'
+      return
+
+    originalHref = $button.data 'href'
+
+    unless originalHref?
+      originalHref = $button.attr 'href'
+      $button.data 'href', originalHref
+
+    params = $.param package_good_global_id: selectedPackageElement().val()
+    href = originalHref+'?'+params
+    $button.attr 'href', href
+
   $('[data-package]').on 'change', ->
     updatePackageTotal()
     updateCartTotal()
+    updatePackageSubmitButton()
 
   $('[cart-item-selector]').on 'change', ->
     $e = $ @
