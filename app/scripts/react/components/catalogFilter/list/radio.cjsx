@@ -6,7 +6,7 @@ CatalogFilterList_Radio = React.createClass
     title:      PropTypes.string.isRequired
     value:      PropTypes.string.isRequired
     paramName:  PropTypes.string.isRequired
-    filterName: PropTypes.string.isRequired
+    filterName: PropTypes.string
     items:      PropTypes.array.isRequired
     categoryId: PropTypes.number.isRequired
 
@@ -38,7 +38,10 @@ CatalogFilterList_Radio = React.createClass
             </div>
 
   getFieldName: (item) ->
-    "#{ @props.filterName }[#{ @props.paramName }]"
+    if @props.filterName?
+      "#{ @props.filterName }[#{ @props.paramName }]"
+    else
+      @props.paramName
 
   handleChange: (e) ->
     elRect     = e.target.getBoundingClientRect()
