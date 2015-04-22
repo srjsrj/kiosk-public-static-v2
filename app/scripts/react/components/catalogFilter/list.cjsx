@@ -10,7 +10,7 @@ CatalogFilterList = React.createClass
   propTypes:
     options:         PropTypes.array.isRequired
     selectedOptions: PropTypes.array.isRequired
-    filterName:      PropTypes.string.isRequired
+    filterName:      PropTypes.string
     categoryId:      PropTypes.number
 
   getDefaultProps: ->

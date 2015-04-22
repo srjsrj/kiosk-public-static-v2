@@ -471,7 +471,7 @@ CatalogFilter = React.createClass({
   },
   getDefaultProps: function() {
     return {
-      filterName: 'f'
+      filterName: null
     };
   },
   render: function() {
@@ -520,7 +520,7 @@ CatalogFilterList = React.createClass({
   propTypes: {
     options: PropTypes.array.isRequired,
     selectedOptions: PropTypes.array.isRequired,
-    filterName: PropTypes.string.isRequired,
+    filterName: PropTypes.string,
     categoryId: PropTypes.number
   },
   getDefaultProps: function() {
@@ -606,7 +606,7 @@ CatalogFilterList_Checkbox = React.createClass({
   propTypes: {
     title: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
+    filterName: PropTypes.string,
     items: PropTypes.array.isRequired,
     categoryId: PropTypes.number.isRequired
   },
@@ -639,7 +639,11 @@ CatalogFilterList_Checkbox = React.createClass({
     }, listItems);
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    if (this.props.filterName != null) {
+      return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    } else {
+      return "" + this.props.paramName + "[" + item.paramValue + "]";
+    }
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -667,7 +671,7 @@ CatalogFilterList_Color = React.createClass({
   propTypes: {
     title: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
+    filterName: PropTypes.string,
     items: PropTypes.array.isRequired,
     categoryId: PropTypes.number.isRequired
   },
@@ -705,7 +709,11 @@ CatalogFilterList_Color = React.createClass({
     }, listItems);
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    if (this.props.filterName != null) {
+      return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    } else {
+      return item.paramValue;
+    }
   },
   handleChange: function(e) {
     var elRect, filter, listRect, offsetLeft, position;
@@ -735,7 +743,7 @@ CatalogFilterList_Radio = React.createClass({
     title: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
+    filterName: PropTypes.string,
     items: PropTypes.array.isRequired,
     categoryId: PropTypes.number.isRequired
   },
@@ -769,7 +777,11 @@ CatalogFilterList_Radio = React.createClass({
     }, listItems);
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "]";
+    if (this.props.filterName != null) {
+      return "" + this.props.filterName + "[" + this.props.paramName + "]";
+    } else {
+      return this.props.paramName;
+    }
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -797,7 +809,7 @@ CatalogFilterList_Range = React.createClass({
   propTypes: {
     title: PropTypes.string.isRequired,
     paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string.isRequired,
+    filterName: PropTypes.string,
     units: PropTypes.string,
     valueFrom: PropTypes.number,
     valueTo: PropTypes.number,
@@ -833,6 +845,12 @@ CatalogFilterList_Range = React.createClass({
     return $(slider).destroy();
   },
   render: function() {
+    var paramName;
+    if (this.props.filterName != null) {
+      paramName = this.props.filterName + '[' + this.props.paramName + ']';
+    } else {
+      paramName = this.props.paramName;
+    }
     return React.createElement("li", {
       "className": "b-full-filter__item b-full-filter__item_price"
     }, React.createElement("div", {
@@ -856,11 +874,11 @@ CatalogFilterList_Range = React.createClass({
       "className": "b-full-filter__slider__embed"
     }))), React.createElement("input", {
       "type": "hidden",
-      "name": this.props.filterName + '[' + this.props.paramName + '][from]',
+      "name": paramName + '[from]',
       "value": this.state.from
     }), React.createElement("input", {
       "type": "hidden",
-      "name": this.props.filterName + '[' + this.props.paramName + '][to]',
+      "name": paramName + '[to]',
       "value": this.state.to
     }));
   },

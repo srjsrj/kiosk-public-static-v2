@@ -5,7 +5,7 @@ CatalogFilterList_Color = React.createClass
   propTypes:
     title:      PropTypes.string.isRequired
     paramName:  PropTypes.string.isRequired
-    filterName: PropTypes.string.isRequired
+    filterName: PropTypes.string
     items:      PropTypes.array.isRequired
     categoryId: PropTypes.number.isRequired
 
@@ -37,7 +37,10 @@ CatalogFilterList_Color = React.createClass
             </div>
 
   getFieldName: (item) ->
-    "#{ @props.filterName }[#{ @props.paramName }][#{ item.paramValue }]"
+    if @props.filterName?
+      "#{ @props.filterName }[#{ @props.paramName }][#{ item.paramValue }]"
+    else
+      item.paramValue
 
   handleChange: (e) ->
     elRect     = e.target.getBoundingClientRect()

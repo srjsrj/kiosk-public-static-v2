@@ -13,7 +13,7 @@ CatalogFilter = React.createClass
     categoryId:      PropTypes.number
 
   getDefaultProps: ->
-    filterName: 'f'
+    filterName: null
 
   render: ->
     <div className="b-full-filter">

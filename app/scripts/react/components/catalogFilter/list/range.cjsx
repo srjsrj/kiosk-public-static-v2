@@ -5,7 +5,7 @@ CatalogFilterList_Range = React.createClass
   propTypes:
     title:      PropTypes.string.isRequired
     paramName:  PropTypes.string.isRequired
-    filterName: PropTypes.string.isRequired
+    filterName: PropTypes.string
     units:      PropTypes.string
     valueFrom:  PropTypes.number
     valueTo:    PropTypes.number
@@ -38,6 +38,11 @@ CatalogFilterList_Range = React.createClass
     $(slider).destroy()
 
   render: ->
+    if this.props.filterName?
+      paramName = this.props.filterName + '[' + this.props.paramName + ']'
+    else
+      paramName = this.props.paramName
+
     <li className="b-full-filter__item b-full-filter__item_price">
       <div className="b-full-filter__item__title">
         { this.props.title }
@@ -56,10 +61,10 @@ CatalogFilterList_Range = React.createClass
         </div>
       </div>
       <input type="hidden"
-             name={ this.props.filterName + '[' + this.props.paramName + '][from]'}
+             name={ paramName + '[from]'}
              value={ this.state.from } />
       <input type="hidden"
-             name={ this.props.filterName + '[' + this.props.paramName + '][to]'}
+             name={ paramName + '[to]'}
              value={ this.state.to } />
     </li>
 
