@@ -6,32 +6,66 @@
     vertical-align: top
     margin: 0 3px 5px
     padding: 0 10px
-    height: 26px
-    line-height: 26px
-    background-color: $basicBorderColor
+    height: 32px
+    line-height: 32px
+    // background-color: $basicBorderColor
     &_current
       background-color: #000
 
 .pagination
-    margin: 0
-    padding: 30px 0 0
-    @extend .b-paginator
-    .next,
-    .prev,
-    .first,
-    .last
-        display: inline
-        a
-            @extend .b-paginator__item
-            font-weight: bold
-    .page
-        display: inline
-        a
-            @extend .b-paginator__item
-        &.active
-            a
-                @extend .b-paginator__item_current
-        &.disabled
-            a
-                background-color: $basicBorderColor
-                cursor: not-allowed
+  margin: 0
+  padding: 30px 0 0
+  @extend .b-paginator
+  .next,
+  .prev,
+  .first,
+  .last
+    display: inline
+    a
+      @extend .b-paginator__item
+      width: 32px
+      background-color: transparent
+      background-position: 50% 50%
+      background-repeat: no-repeat
+      background-size: 36% auto
+      font-size: 18px
+      border-radius: 50%
+      text-indent: -9999em
+      opacity: .55
+      &:hover
+        background-color: #eee
+        opacity: 1
+  .first
+    a
+      background-image: url(#{$images-path}/laquo-light-black.svg)
+  .last
+    a
+      background-image: url(#{$images-path}/raquo-light-black.svg)
+  .prev
+    a
+      background-image: url(#{$images-path}/lsaquo-light-black.svg)
+  .next
+    a
+      background-image: url(#{$images-path}/rsaquo-light-black.svg)
+  .page
+    display: inline
+    a
+      @extend .b-paginator__item
+      min-width: 32px
+      background: none
+      color: #999
+      border-radius: 2em
+      &:hover
+        background: none
+        color: #222
+    &.active
+      a
+        @extend .b-paginator__item_current
+        border: 1px solid #eee
+        background: none
+        color: #222
+    &.disabled
+      a
+        background: none
+        color: #ccc
+        cursor: not-allowed
