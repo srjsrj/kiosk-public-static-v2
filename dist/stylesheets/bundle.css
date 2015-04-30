@@ -5612,18 +5612,26 @@ html.mm-opened.mm-black .mm-page {
   /* line 242, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
   .b-cart__form__delivery-name, .b-cart__form__delivery-price {
     display: inline-block;
-    vertical-align: top;
-    width: 40%; }
+    vertical-align: top; }
     @media only screen and (max-width: 480px) {
       .b-cart__form__delivery-name, .b-cart__form__delivery-price {
         width: auto; } }
-  /* line 249, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+  /* line 247, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+  .b-cart__form__delivery-name {
+    width: 65%;
+    position: relative;
+    top: -3px;
+    font-size: 17px; }
+  /* line 252, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+  .b-cart__form__delivery-price {
+    width: 30%; }
+  /* line 255, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
   .b-cart__form .b-cart__action {
     margin: 0; }
-  /* line 252, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+  /* line 258, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
   .b-cart__form .cart__form__delivery-address {
     margin: 10px 0; }
-  /* line 255, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+  /* line 261, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
   .b-cart__form__inner {
     margin-bottom: 55px; }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -5639,7 +5647,7 @@ html.mm-opened.mm-black .mm-page {
   @media only screen and (max-width: 480px) {
     .b-cart__form {
       margin-left: 0; }
-      /* line 266, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
+      /* line 272, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-cart */
       .b-cart__form .cart__form__delivery-address {
         font-size: 0.875rem; } }
 
