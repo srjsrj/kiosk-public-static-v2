@@ -18,9 +18,11 @@
       left: 15px
       background-color: rgba(0, 0, 0, 0.9)
       border: none
-      display: none
+      visibility: hidden
+      opacity: 0
       padding: 21px 24px 19px
       white-space: nowrap
+      transition: visibility 0s ease .3s, opacity 0s ease .3s
       .b-nav
         &__link
           display: block
@@ -94,18 +96,19 @@
     &_has-sub
       position: relative
       &:before
-        display: none
         content: ''
         width: 0
         height: 0
         border-style: solid
         border-width: 0 6px 6px 6px
         border-color: transparent transparent #000 transparent
-        opacity: 0.9
         position: absolute
         bottom: 0
         left: 50%
+        visibility: hidden
+        opacity: 0
         margin-left: -6px
+        transition: visibility 0s ease .3s, opacity 0s ease .3s
       &_reverse
         .b-nav__list_sub
           left: auto
@@ -117,9 +120,13 @@
         .b-nav
           &__list
             &_sub
-              display: block
+              visibility: visible
+              opacity: 1
+              transition-delay: 0s
         &:before
-          display: block
+          visibility: visible
+          opacity: .9
+          transition-delay: 0s
 
   &__link
     padding: 18px 20px 15px

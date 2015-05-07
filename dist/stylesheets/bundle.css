@@ -6737,10 +6737,12 @@ html {
       left: 15px;
       background-color: rgba(0, 0, 0, 0.9);
       border: none;
-      display: none;
+      visibility: hidden;
+      opacity: 0;
       padding: 21px 24px 19px;
-      white-space: nowrap; }
-      /* line 25, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      white-space: nowrap;
+      transition: visibility 0s ease 0.3s, opacity 0s ease 0.3s; }
+      /* line 27, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__link {
         display: block;
         padding: 8px 20px 4px 0;
@@ -6752,27 +6754,27 @@ html {
         position: relative;
         color: #fff;
         border: none; }
-        /* line 36, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 38, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:after {
           content: attr(data-count);
           color: #5d5d5d;
           position: absolute;
           right: 5px;
           top: 8px; }
-        /* line 42, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 44, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:hover {
           color: #e2e2e2; }
-      /* line 44, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 46, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__item {
         display: block;
         border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        /* line 47, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 49, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__item:first-child {
           border-top: 0; }
-      /* line 49, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 51, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__list {
         border: none; }
-    /* line 51, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 53, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__list__col {
       width: 240px;
       display: inline-block;
@@ -6780,21 +6782,21 @@ html {
       white-space: normal;
       text-align: left;
       margin-left: 24px; }
-      /* line 58, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 60, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list__col:first-child {
         margin-left: 0; }
-  /* line 61, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+  /* line 63, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
   .b-nav__item {
     display: inline-block;
     vertical-align: top;
     text-align: left;
     font-size: 1.143rem; }
-    /* line 66, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 68, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__item_has-banner {
       position: absolute;
       right: 130px;
       top: -13px; }
-      /* line 70, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 72, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-banner .b-nav__link {
         width: 74px;
         padding: 10px 14px 18px;
@@ -6802,15 +6804,15 @@ html {
         line-height: 15px;
         text-align: center;
         position: relative; }
-        /* line 78, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 80, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link:hover img {
           margin-top: 10px; }
-        /* line 80, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 82, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link img {
           display: block;
           margin: 0 auto 13px;
           transition: margin-top 0.2s ease; }
-        /* line 84, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 86, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link:after {
           content: "";
           width: 0;
@@ -6820,38 +6822,43 @@ html {
           left: 0;
           border-top: 11px solid #2bcd7f;
           border-left: 102px solid transparent; }
-    /* line 94, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 96, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__item_has-sub {
       position: relative; }
-      /* line 96, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 98, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:before {
-        display: none;
         content: '';
         width: 0;
         height: 0;
         border-style: solid;
         border-width: 0 6px 6px 6px;
         border-color: transparent transparent #000 transparent;
-        opacity: 0.9;
         position: absolute;
         bottom: 0;
         left: 50%;
-        margin-left: -6px; }
-      /* line 110, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        visibility: hidden;
+        opacity: 0;
+        margin-left: -6px;
+        transition: visibility 0s ease 0.3s, opacity 0s ease 0.3s; }
+      /* line 113, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub_reverse .b-nav__list_sub {
         left: auto;
         right: 15px; }
-        /* line 113, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 116, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-sub_reverse .b-nav__list_sub:before {
           left: auto;
           right: 30px; }
-      /* line 119, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 122, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover .b-nav__list_sub {
-        display: block; }
-      /* line 121, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s; }
+      /* line 126, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover:before {
-        display: block; }
-  /* line 124, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        visibility: visible;
+        opacity: 0.9;
+        transition-delay: 0s; }
+  /* line 131, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
   .b-nav__link {
     padding: 18px 20px 15px;
     display: inline-block;
