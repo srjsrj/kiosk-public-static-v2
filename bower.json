@@ -12,10 +12,8 @@
     "bootstrap-sass-official": "~3.2.0",
     "compass-mixins": "~1.0.1",
     "font-awesome": "~4.1.0",
-    "jquery": "~2.1.1",
     "jquery.role": "git://github.com/kossnocorp/role#~1.3.1",
-    "jQuery.mmenu": "~4.5.7",
-    "lodash": "~3.3.1"
+    "jQuery.mmenu": "~4.5.7"
   },
   "devDependencies": {}
 }

@@ -14,6 +14,7 @@
 
   &__item
     margin: 22px 0 0
+    position: relative
     &:first-child
       margin-top: 0
     &_price
@@ -22,6 +23,33 @@
     &__title
       font-size: 1.143rem
       margin: 0 0 12px
+
+    &--short
+      .b-full-filter__widget
+        border-bottom: 1px solid #e4e4e4
+
+      .b-cbox--full
+        display: none
+
+    &--full
+      .b-cbox--full
+        display: list-item;
+
+  .b-full-filter__item__expand
+    position: absolute
+    bottom: -14px
+    left: 50%
+    display: inline-block
+    width: 130px
+    height: 14px
+    margin-left: -65px
+    border: 1px solid #e4e4e4
+    border-top: none
+    background-color: #fff
+    line-height: 11px
+    font-size: 12px
+    text-align: center
+    cursor: pointer
 
   &__slider
     padding: 5px 0 0
@@ -119,8 +147,6 @@
           display: none
       .b-full-filter__list-wrap
         display: block
-
-  
 
   // @media (max-width: 750px)
   //   &__list-wrap
