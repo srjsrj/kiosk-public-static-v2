@@ -11,6 +11,28 @@ module.exports =
     server:
       baseDir: [build, src]
     files: [build + '/**']
+  scripts: {
+    static: {
+      client: {
+        entries: src + '/scripts/main.coffee',
+        dest: build + '/scripts',
+        outputName: 'client.js',
+        extensions: ['.jsx', '.cjsx', '.coffee']
+      },
+      vendor: {
+        baseDir: src + '/bower_components',
+        dest: build + '/scripts',
+        outputName: 'vendor.js',
+        extensions: ['.coffee']
+      }
+    },
+    production: {
+      entries: src + '/scripts/appBundle.coffee',
+      dest: dist + '/scripts/',
+      outputName: 'appBundle.js',
+      extensions: ['.jsx', '.cjsx', '.coffee']
+    }
+  },
   local:
     scripts:
       vendor:
@@ -22,7 +44,7 @@ module.exports =
         entries: src + '/scripts/main.coffee'
         dest: build + '/scripts'
         outputName: 'client.js'
-        extensions: ['.cjsx', '.coffee']
+        extensions: ['.jsx', '.cjsx', '.coffee']
     haml:
       src: 'app/haml/**/*.haml'
       dest: build
@@ -41,13 +63,13 @@ module.exports =
       appBundle:
         baseDir: src
         entries: './scripts/appBundle.coffee'
-        extensions: ['.cjsx', '.coffee']
+        extensions: ['.jsx', '.cjsx', '.coffee']
         dest: dist + '/scripts/'
         outputName: 'appBundle.js'
       bundle:
         baseDir: src
         entries: './scripts/bundle.coffee'
-        extensions: ['.cjsx', '.coffee']
+        extensions: ['.jsx', '.cjsx', '.coffee']
         dest: dist + '/scripts/'
         outputName: 'bundle.js'
       minify:
