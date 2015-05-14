@@ -16,6 +16,7 @@ FilteredCountTooltip = React.createClass
       left: PropTypes.number.isRequired
       top:  PropTypes.number.isRequired
     ).isRequired
+    onClose: PropTypes.func.isRequired
 
   getDefaultProps: ->
     title: 'Показать'
@@ -36,8 +37,11 @@ FilteredCountTooltip = React.createClass
           count:        count
       .fail @activateErrorState
 
+    document.addEventListener('scroll', this.onDocumentScroll, false);
+
   componentWillUnmount: ->
     clearTimeout @timeout if @timeout?
+    document.removeEventListener('scroll', this.onDocumentScroll, false);
 
   render: ->
     <div style={ this.getStyles() }
@@ -61,5 +65,8 @@ FilteredCountTooltip = React.createClass
     { left, top } = @props.position
 
     { left, top }
+
+  onDocumentScroll: ->
+    this.props.onClose()
 
 module.exports = FilteredCountTooltip

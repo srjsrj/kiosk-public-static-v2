@@ -6,6 +6,7 @@ class TooltipController
 
   constructor: ->
     KioskEvents.on KioskEvents.keys.commandTooltipShow(), @show
+    KioskEvents.on KioskEvents.keys.commandTooltipHide(), @close
 
   show: (position, filter, timeout = 3000) =>
     container = @_getContainer()
