@@ -6766,9 +6766,8 @@ html {
       visibility: hidden;
       opacity: 0;
       padding: 21px 24px 19px;
-      white-space: nowrap;
-      transition: visibility 0s ease 0.3s, opacity 0s ease 0.3s; }
-      /* line 27, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      white-space: nowrap; }
+      /* line 26, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__link {
         display: block;
         padding: 8px 20px 4px 0;
@@ -6780,27 +6779,27 @@ html {
         position: relative;
         color: #fff;
         border: none; }
-        /* line 38, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 37, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:after {
           content: attr(data-count);
           color: #5d5d5d;
           position: absolute;
           right: 5px;
           top: 8px; }
-        /* line 44, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 43, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:hover {
           color: #e2e2e2; }
-      /* line 46, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 45, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__item {
         display: block;
         border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        /* line 49, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 48, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__item:first-child {
           border-top: 0; }
-      /* line 51, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 50, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__list {
         border: none; }
-    /* line 53, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 52, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__list__col {
       width: 240px;
       display: inline-block;
@@ -6808,21 +6807,21 @@ html {
       white-space: normal;
       text-align: left;
       margin-left: 24px; }
-      /* line 60, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 59, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__list__col:first-child {
         margin-left: 0; }
-  /* line 63, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+  /* line 62, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
   .b-nav__item {
     display: inline-block;
     vertical-align: top;
     text-align: left;
     font-size: 1.143rem; }
-    /* line 68, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 67, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__item_has-banner {
       position: absolute;
       right: 130px;
       top: -13px; }
-      /* line 72, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 71, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-banner .b-nav__link {
         width: 74px;
         padding: 10px 14px 18px;
@@ -6830,15 +6829,15 @@ html {
         line-height: 15px;
         text-align: center;
         position: relative; }
-        /* line 80, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 79, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link:hover img {
           margin-top: 10px; }
-        /* line 82, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 81, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link img {
           display: block;
           margin: 0 auto 13px;
           transition: margin-top 0.2s ease; }
-        /* line 86, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 85, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-banner .b-nav__link:after {
           content: "";
           width: 0;
@@ -6848,10 +6847,10 @@ html {
           left: 0;
           border-top: 11px solid #2bcd7f;
           border-left: 102px solid transparent; }
-    /* line 96, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+    /* line 95, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
     .b-nav__item_has-sub {
       position: relative; }
-      /* line 98, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 97, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:before {
         content: '';
         width: 0;
@@ -6864,27 +6863,24 @@ html {
         left: 50%;
         visibility: hidden;
         opacity: 0;
-        margin-left: -6px;
-        transition: visibility 0s ease 0.3s, opacity 0s ease 0.3s; }
-      /* line 113, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        margin-left: -6px; }
+      /* line 111, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub_reverse .b-nav__list_sub {
         left: auto;
         right: 15px; }
-        /* line 116, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        /* line 114, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-sub_reverse .b-nav__list_sub:before {
           left: auto;
           right: 30px; }
-      /* line 122, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+      /* line 120, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover .b-nav__list_sub {
         visibility: visible;
-        opacity: 1;
-        transition-delay: 0s; }
-      /* line 126, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        opacity: 1; }
+      /* line 123, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover:before {
         visibility: visible;
-        opacity: 0.9;
-        transition-delay: 0s; }
-  /* line 131, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
+        opacity: 0.9; }
+  /* line 127, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-nav */
   .b-nav__link {
     padding: 18px 20px 15px;
     display: inline-block;
