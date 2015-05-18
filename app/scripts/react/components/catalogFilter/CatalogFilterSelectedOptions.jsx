@@ -31,7 +31,7 @@ let CatalogFilterSelectedOptions = React.createClass({
 
     return (
       <div className="b-full-filter__widget">
-        {listItems}
+        {options}
       </div>
     );
   },
