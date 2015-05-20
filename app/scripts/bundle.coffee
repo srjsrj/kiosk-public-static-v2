@@ -25,7 +25,7 @@ require './react/components/design/fontlist'
 require './react/components/design/toggle'
 require './react/components/design/valueslider'
 require './react/components/design/layoutlist'
-global.CatalogFilter = require './react/components/CatalogFilter/CatalogFilter'
+global.CatalogFilter = require './react/components/catalogFilter/CatalogFilter'
 global.DesignSettings = require './react/components/designSettings/designSettings'
 
 require './react/dispatchers/basket'

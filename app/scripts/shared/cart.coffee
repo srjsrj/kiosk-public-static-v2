@@ -19,8 +19,8 @@ $ ->
 
   packagePrice = ->
     $p = selectedPackageElement()
-    if $p
-      $p.data('price')
+    if $p.length
+      $p.data('price') || 0
     else
       0
 
