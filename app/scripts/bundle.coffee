@@ -36,7 +36,6 @@ require './react/actions/view/basket'
 require './react/stores/basket'
 window.Api = require './react/api/api'
 
-
 window.KioskEvents = require './react/controllers/events'
 TooltipController  = require './react/controllers/tooltip'
 new TooltipController()

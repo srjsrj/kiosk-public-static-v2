@@ -1,5 +1,6 @@
 import CatalogFilterOptions from './CatalogFilterOptions';
 import CatalogFilterShowResultsButton from './CatalogFilterShowResultsButton';
+import CatalogFilterTooltip from './CatalogFilterTooltip';
 
 let CatalogFilter = React.createClass({
   propTypes: {
