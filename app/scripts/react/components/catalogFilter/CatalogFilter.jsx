@@ -5,7 +5,7 @@ let CatalogFilter = React.createClass({
   propTypes: {
     options: React.PropTypes.array.isRequired,
     selectedOptions: React.PropTypes.array,
-    categoryId: React.PropTypes.number,
+    params: React.PropTypes.object,
     filterName: React.PropTypes.string
   },
 
@@ -23,15 +23,18 @@ let CatalogFilter = React.createClass({
         </label>
         <CatalogFilterOptions {...this.props} />
         <CatalogFilterShowResultsButton />
-        {this.renderHiddenCategoryID()}
+        {this.renderHiddenParams()}
       </div>
     );
   },
 
-  renderHiddenCategoryID() {
-    if (this.props.categoryId != null) {
-      return <input type="hidden" name="category_id" value={this.props.categoryId} />;
+  renderHiddenParams() {
+    if (this.props.params != null) {
+      return Object.keys(this.props.params).map((key) => {
+        return <input type="hidden" name={key} value={this.props.params[key]} key={key} />
+      });
     }
+    return null;
   }
 });
 
