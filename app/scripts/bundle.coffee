@@ -1,3 +1,6 @@
+# /*==========  Locales  ==========*/
+require('./locales/numeral/ru');
+
 require './shared/app'
 require './shared/cart'
 require './shared/load_more'
