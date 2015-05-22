@@ -8,6 +8,7 @@ let CatalogFilterRange = React.createClass({
     valueFrom: React.PropTypes.number,
     valueTo: React.PropTypes.number,
     units: React.PropTypes.string,
+    step: React.PropTypes.number,
     stepRules: React.PropTypes.array,
     paramName: React.PropTypes.string.isRequired,
     filterName: React.PropTypes.string
@@ -15,6 +16,7 @@ let CatalogFilterRange = React.createClass({
 
   getDefaultProps() {
     return {
+      step: 1,
       stepRules: []
       // stepRules: [
       //   {from: 5000, step: 500},
@@ -34,8 +36,13 @@ let CatalogFilterRange = React.createClass({
     let slider = this.refs.slider.getDOMNode();
 
     $(slider).noUiSlider({
+      step: this.props.step,
       start: [this.state.from, this.state.to],
-      range: this.getRange(),
+      range: {
+        min: this.props.from,
+        max: this.props.to
+      },
+      // range: this.getRange(),
       connect: true
     });
 

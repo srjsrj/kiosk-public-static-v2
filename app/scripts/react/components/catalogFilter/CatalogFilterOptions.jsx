@@ -47,7 +47,7 @@ let CatalogFilterOptions = React.createClass({
                 key={i} />
           );
         case 'range':
-          let { title, paramName, units, valueFrom, valueTo, from, to, stepRules } = item;
+          let { title, paramName, units, valueFrom, valueTo, from, to, step } = item;
 
           return (
             <CatalogFilterRange
@@ -58,7 +58,7 @@ let CatalogFilterOptions = React.createClass({
                 valueTo={valueTo}
                 units={units}
                 paramName={paramName}
-                stepRules={stepRules}
+                step={step}
                 filterName={this.props.filterName}
                 key={i} />
           );
