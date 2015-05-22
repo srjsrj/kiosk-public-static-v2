@@ -1,4 +1,4 @@
-FilteredCountTooltip = require '../components/common/tooltip/filteredCount'
+CatalogFilterTooltip = require '../components/CatalogFilter/CatalogFilterTooltip'
 
 class TooltipController
 
@@ -14,7 +14,7 @@ class TooltipController
     @close()
 
     tooltip = React.render (
-      <FilteredCountTooltip
+      <CatalogFilterTooltip
           filter={ filter }
           position={ position }
           onClose={ this.close } />

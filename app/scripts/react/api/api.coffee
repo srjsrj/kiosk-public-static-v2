@@ -38,8 +38,8 @@ deleteRequest = (url, data) -> request 'DELETE', url, data
 
 Api =
 
-  products:
-    filteredCount: (filter) ->
+  catalogFilter:
+    getFilteredCount: (filter) ->
       url  = ApiRoutes.productsFilteredCount filter
       key  = 'productsFilteredCount'
 
