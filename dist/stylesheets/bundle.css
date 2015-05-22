@@ -6344,6 +6344,9 @@ html.mm-opened.mm-black .mm-page {
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid; }
+    /* line 28, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-tooltip */
+    .b-tooltip a:hover {
+      color: #cccccc; }
 
 /* line 1, /Users/sergeylaptev/Documents/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
 .select-file {
