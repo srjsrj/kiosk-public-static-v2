@@ -20,7 +20,7 @@
   .prev,
   .first,
   .last
-    display: inline
+    display: inline-block
     a
       @extend .b-paginator__item
       width: 32px
@@ -48,8 +48,9 @@
     a
       background-image: url(#{$images-path}/rsaquo-light-black.svg)
   .page
-    display: inline
-    a
+    display: inline-block
+    a,
+    &.current
       @extend .b-paginator__item
       min-width: 32px
       background: none
@@ -58,12 +59,11 @@
       &:hover
         background: none
         color: #222
-    &.active
-      a
-        @extend .b-paginator__item_current
-        border: 1px solid #eee
-        background: none
-        color: #222
+    &.current
+      @extend .b-paginator__item_current
+      border: 1px solid #eee
+      background: none
+      color: #222
     &.disabled
       a
         background: none
