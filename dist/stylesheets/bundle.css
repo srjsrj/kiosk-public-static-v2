@@ -6932,6 +6932,10 @@ html {
       font-size: 1em;
       margin-right: 10px; } }
 
+/* line 35, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-footer */
+#made_in_kiiiosk {
+  font-size: 1.143rem; }
+
 /* line 1, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/theme/dark */
 .b-page_theme-dark {
   background-color: #444349;
