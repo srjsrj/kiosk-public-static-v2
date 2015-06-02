@@ -19,10 +19,12 @@ $ ->
 
   setCity = (city) ->
     $c = $ '[city-field]'
-    if city?
+    if city.length
       $c.attr(disabled: true)
+      $c.val city
     else
       $c.removeAttr('disabled')
+      $c.val ''
 
   selectDeliveryType = ($e) ->
     if $e?
