@@ -23,8 +23,8 @@ $ ->
       $c.attr(disabled: true)
       $c.val city
     else
+      $c.val '' if $c.is(':disabled')
       $c.removeAttr('disabled')
-      $c.val ''
 
   selectDeliveryType = ($e) ->
     if $e?
