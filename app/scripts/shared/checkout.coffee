@@ -19,7 +19,7 @@ $ ->
 
   setCity = (city) ->
     $c = $ '[city-field]'
-    if city.length
+    if city? && city.length
       $c.attr(disabled: true)
       $c.val city
     else
