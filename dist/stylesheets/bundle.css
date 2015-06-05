@@ -5006,41 +5006,39 @@ html.mm-opened.mm-black .mm-page {
     margin-bottom: 55px; }
   /* line 50, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__video {
+    padding-top: 42px;
     text-align: center; }
-    /* line 54, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
-    .b-item-full__video .b-item-full__title {
-      padding-top: 1em; }
-    /* line 57, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 55, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__video iframe {
       vertical-align: top; }
-  /* line 60, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 58, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__title {
     font-size: 2rem;
     font-weight: normal;
     margin: 0 0 1em; }
-  /* line 65, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 63, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__articul {
     font-weight: normal;
     color: #828282;
     font-size: 0.429em; }
-  /* line 70, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 68, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__price {
     font-size: 2rem;
     margin: 0 0 10px; }
-    /* line 73, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 71, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price .b-item__price {
       font-size: 1em; }
-    /* line 75, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 73, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__currency {
       font-size: 0.324em;
       display: inline-block;
       vertical-align: top;
       padding: 9px 0; }
-    /* line 81, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 79, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old, .b-item-full__price__sale {
       display: inline-block;
       vertical-align: top; }
-    /* line 84, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 82, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__sale {
       font-size: 0.412em;
       background-color: #f05a61;
@@ -5048,28 +5046,28 @@ html.mm-opened.mm-black .mm-page {
       text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px; }
-    /* line 91, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 89, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old {
       font-size: 0.471em;
       text-decoration: line-through;
       color: #353535; }
-  /* line 96, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 94, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 99, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 97, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__sold_out_text {
     margin: 1em 0;
     padding-left: 24px;
     letter-spacing: normal;
     word-spacing: normal; }
-  /* line 106, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 104, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143rem; }
-  /* line 109, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+  /* line 107, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 115, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 113, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -5086,7 +5084,7 @@ html.mm-opened.mm-black .mm-page {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 133, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
+    /* line 131, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page.current, .pagination .b-item-full__form__submit .page.current, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }
