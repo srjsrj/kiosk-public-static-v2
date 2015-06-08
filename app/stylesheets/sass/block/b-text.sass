@@ -18,6 +18,11 @@
     margin: 0 0 50px
     @include grid-media-query("palm")
       font-size: 1.4rem
+
+  & + .b-search-box
+    margin:
+      top: -60px
+      bottom: 40px
   
   h1,
   h2,
@@ -71,6 +76,10 @@
 
   .b-btn
     margin: 20px auto
+
+  .b-search
+    @extend %grid__item;
+    @extend %one-whole;
 
 .map-embed
   overflow: hidden

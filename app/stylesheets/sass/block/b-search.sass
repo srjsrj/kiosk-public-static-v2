@@ -1,5 +1,14 @@
 $searchFieldBorder: rgba(114, 114, 114, .3)
 
+.b-search-box
+  @extend %grid
+  @extend %grid--center
+    
+.b-search-box__content
+  @extend %grid__item
+  @extend %six-tenths
+  @extend %palm--eight-tenths
+
 .b-search
   position: relative
   &__field
