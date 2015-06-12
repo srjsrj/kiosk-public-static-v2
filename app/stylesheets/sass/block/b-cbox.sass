@@ -18,6 +18,7 @@
           color: #4e4e4e
           &:before
             background-color: #121212
+            background-image: url(#{$images-path}/check_white.svg)
     &[disabled]
       cursor: not-allowed
       & ~ .b-cbox
@@ -36,7 +37,9 @@
       left: 0
       width: 14px
       height: 13px
-      background: #e0e0e0 url(#{$images-path}/cbox_tick.png) 50% 50% no-repeat
+      background-color: #e0e0e0
+      background-position: 50% 50%
+      background-repeat: no-repeat
       background-size: 10px 8px
       border-radius: 3px
       transition: background-color .2s ease
