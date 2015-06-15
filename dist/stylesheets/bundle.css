@@ -486,7 +486,7 @@ td, th {
  * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
 /* line 212, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
-.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
+.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-search-box, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .column-list__content, .b-header__content, .b-footer__content {
   list-style: none;
   /* [1] */
   margin: 0;
@@ -499,7 +499,7 @@ td, th {
 
 /* Opera hack */
 /* line 224, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
-.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
+.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-search-box, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .column-list__content, .b-header__content, .b-footer__content {
   word-spacing: -0.31em; }
 
 /**
@@ -510,7 +510,7 @@ td, th {
      * 5. Required to combine fluid widths and fixed gutters.
      */
 /* line 237, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
-.b-item-list__item, .b-item-list__paginator, .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right, .b-item-full__video, .b-item-full__form__option, .b-item-full__form__submit, .b-float-cart__item__img, .b-float-cart__item__info, .b-float-cart__item__q, .b-float-cart__item__price, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__item__col-img, .b-cart__item__col-content, .b-cart__item__col-quantity, .b-cart__item__col-price, .b-cart__item__col-remove, .b-text__image__wrap, .b-feature-list > li, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav {
+.b-item-list__item, .b-item-list__paginator, .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right, .b-item-full__video, .b-item-full__form__option, .b-item-full__form__submit, .b-search-box__content, .b-float-cart__item__img, .b-float-cart__item__info, .b-float-cart__item__q, .b-float-cart__item__price, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__item__col-img, .b-cart__item__col-content, .b-cart__item__col-quantity, .b-cart__item__col-price, .b-cart__item__col-remove, .b-text__image__wrap, .b-feature-list > li, .b-modification__content, .b-modification__action, .column-list__list, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav {
   display: inline-block;
   /* [1] */
   padding-left: 24px;
@@ -541,6 +541,13 @@ td, th {
  * Centered grids align grid items centrally without needing to use push or pull
  * classes. Extends `.grid`.
  */
+/* line 298, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
+.b-search-box {
+  text-align: center; }
+  /* line 301, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
+  .b-search-box > .b-item-list__item, .b-search-box > .b-item-list__paginator, .b-search-box > .b-item-full__gallery, .b-search-box > .b-item-full__description, .b-search-box > .b-item-full__description-inner__col-left, .b-search-box > .b-item-full__description-inner__col-right, .b-search-box > .b-item-full__video, .b-search-box > .b-item-full__form__option, .b-search-box > .b-item-full__form__submit, .b-search-box > .b-search-box__content, .b-search-box > .b-float-cart__item__img, .b-search-box > .b-float-cart__item__info, .b-search-box > .b-float-cart__item__q, .b-search-box > .b-float-cart__item__price, .b-search-box > .b-cart__action__col-clear, .b-search-box > .b-cart__action__col-code, .b-search-box > .b-cart__action__col-back, .b-search-box > .b-cart__action__col-submit, .b-search-box > .b-cart__item__col-img, .b-search-box > .b-cart__item__col-content, .b-search-box > .b-cart__item__col-quantity, .b-search-box > .b-cart__item__col-price, .b-search-box > .b-cart__item__col-remove, .b-search-box > .b-text__image__wrap, .b-search-box > .b-feature-list > li, .b-feature-list > .b-search-box > li, .b-search-box > .b-modification__content, .b-search-box > .b-modification__action, .b-search-box > .column-list__list, .b-search-box > .b-header__search, .b-search-box > .b-header__desc, .b-search-box > .b-header__logo, .b-search-box > .b-header__nav, .b-search-box > .b-footer__nav {
+    text-align: left; }
+
 /**
  * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
  * `.grid`.
@@ -578,7 +585,7 @@ td, th {
      * Thirds
      */
 /* line 377, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
-.b-item-list__item, .b-cart__item__col-content, .b-header__search, .b-header__desc, .b-header__logo, .b-page[data-in-row="3"] .b-item-list__item {
+.b-item-list__item, .b-cart__item__col-content, .b-header__search, .b-header__desc, .b-header__logo, .column-list__list, .b-page[data-in-row="3"] .b-item-list__item {
   width: 33.333%; }
 
 /* line 378, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
@@ -598,6 +605,10 @@ td, th {
 /* line 392, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
 .b-instafeed-v2__photo {
   width: 20%; }
+
+/* line 394, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
+.b-search-box__content {
+  width: 60%; }
 
 /**
      * Sixths
@@ -663,7 +674,7 @@ td, th {
      * Twelfths
      */
   /* line 365, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
-  .b-item-full__form__option, .b-item-full__form__submit, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-text__image__wrap, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
+  .b-item-full__form__option, .b-item-full__form__submit, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-text__image__wrap, .b-modification__content, .b-modification__action, .column-list__list, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
   /* line 371, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-instafeed-v2__photo, .b-feature-list > li, .b-page[data-in-row="2"] .b-item-list__item, .b-page[data-in-row="3"] .b-item-list__item, .b-page[data-in-row="4"] .b-item-list__item {
@@ -677,6 +688,9 @@ td, th {
   /* line 386, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-content, .b-cart__item_spec .b-cart__item__col-content {
     width: 75%; }
+  /* line 395, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
+  .b-search-box__content {
+    width: 80%; }
   /* line 441, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-price {
     width: 41.666%; } }
@@ -4763,7 +4777,7 @@ html.mm-opened.mm-black .mm-page {
   cursor: not-allowed; }
 
 /* line 1, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-layout */
-.b-layout, .b-item-list, .b-item-full, .b-cart__content, .b-article, .b-header__container, .b-nav, .b-footer__container {
+.b-layout, .b-item-list, .b-item-full, .b-cart__content, .b-article, .b-page__content__inner_content > .column-list, .b-header__container, .b-nav, .b-footer__container {
   max-width: 980px;
   margin: 0 auto;
   padding-left: 35px;
@@ -5201,10 +5215,10 @@ html.mm-opened.mm-black .mm-page {
   .fancybox-lock .b-admin {
     display: none; }
 
-/* line 3, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
+/* line 13, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
 .b-search {
   position: relative; }
-  /* line 5, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
+  /* line 15, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
   .b-search__field {
     border: 1px solid rgba(114, 114, 114, 0.3);
     width: 100%;
@@ -5214,11 +5228,11 @@ html.mm-opened.mm-black .mm-page {
     box-sizing: border-box;
     box-shadow: none;
     color: #121212; }
-    /* line 14, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
+    /* line 24, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
     .b-search__field:focus {
       outline: none;
-      box-shadow: 0 0 0 1px rgba(114, 114, 114, 0.3); }
-  /* line 18, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
+      box-shadow: 0 0 0 3px rgba(114, 114, 114, 0.1); }
+  /* line 28, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-search */
   .b-search__submit {
     width: 39px;
     height: 40px;
@@ -5679,7 +5693,7 @@ html.mm-opened.mm-black .mm-page {
   @media only screen and (max-width: 480px) {
     .b-text {
       font-size: 1rem; } }
-  /* line 8, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 9, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text h1 {
     font-size: 3rem;
     margin: 0 0 38px;
@@ -5687,7 +5701,7 @@ html.mm-opened.mm-black .mm-page {
     @media only screen and (max-width: 480px) {
       .b-text h1 {
         font-size: 2em; } }
-  /* line 15, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 16, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text h2 {
     font-size: 1.625rem;
     font-weight: normal;
@@ -5695,25 +5709,29 @@ html.mm-opened.mm-black .mm-page {
     @media only screen and (max-width: 480px) {
       .b-text h2 {
         font-size: 1.4rem; } }
-  /* line 27, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 23, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  .b-text + .b-search-box {
+    margin-top: -60px;
+    margin-bottom: 40px; }
+  /* line 33, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text h1, .b-text h2, .b-text h3, .b-text h4, .b-text h5, .b-text h6 {
     text-align: center; }
-  /* line 30, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 36, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text p {
     margin: 20px 0; }
-  /* line 33, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 39, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text ul {
     padding-left: 1em; }
-    /* line 35, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+    /* line 41, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
     .b-text ul li {
       margin: 1em 0; }
-  /* line 38, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 44, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text table {
     width: 100%; }
-    /* line 41, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+    /* line 47, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
     .b-text table th, .b-text table td {
       padding: 15px; }
-    /* line 44, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+    /* line 50, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
     .b-text table th {
       border-bottom: 1px solid rgba(114, 114, 114, 0.3);
       text-align: left;
@@ -5722,7 +5740,7 @@ html.mm-opened.mm-black .mm-page {
       .b-text table {
         overflow-x: auto;
         display: block; } }
-  /* line 52, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 58, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text__image {
     margin: 0 -140px;
     overflow: hidden; }
@@ -5732,7 +5750,7 @@ html.mm-opened.mm-black .mm-page {
     @media only screen and (max-width: 480px) {
       .b-text__image {
         margin: 0; } }
-    /* line 65, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+    /* line 71, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
     .b-text__image img {
       width: 100%;
       max-width: 100%; }
@@ -5740,11 +5758,11 @@ html.mm-opened.mm-black .mm-page {
       .b-text__image {
         margin-left: 0;
         margin-right: 0; } }
-  /* line 72, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  /* line 78, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text .b-btn, .b-text .b-paginator__item, .b-text .pagination .next a, .pagination .next .b-text a, .b-text .pagination .prev a, .pagination .prev .b-text a, .b-text .pagination .first a, .pagination .first .b-text a, .b-text .pagination .last a, .pagination .last .b-text a, .b-text .pagination .page a, .pagination .page .b-text a, .b-text .pagination .page.current, .pagination .b-text .page.current, .b-text .b-design-option__save {
     margin: 20px auto; }
 
-/* line 75, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+/* line 81, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
 .map-embed {
   overflow: hidden;
   height: 400px;
@@ -6659,6 +6677,26 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     height: 100%;
     z-index: 1000; }
 
+/* line 1, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/column-list */
+.column-list__title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center; }
+
+/* line 7, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/column-list */
+.column-list__content {
+  font-size: 1.143rem; }
+
+/* line 11, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/column-list */
+.column-list__list {
+  margin: 1em 0;
+  list-style-type: none; }
+
+/* line 18, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/column-list */
+.column-list__item {
+  padding: 0.5em 0; }
+
 /* line 1, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-page */
 a {
   text-decoration: none;
@@ -6721,7 +6759,7 @@ html {
     /* line 46, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_slider-max-width {
       max-width: 100%; }
-    /* line 48, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-page */
+    /* line 50, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_footer {
       padding-top: 70px; }
 
