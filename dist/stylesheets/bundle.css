@@ -4978,8 +4978,12 @@ html.mm-opened.mm-black .mm-page {
     .b-item__price_old {
       text-decoration: line-through;
       color: #AEAEAE; }
+    /* line 34, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item */
+    .b-item__price_unknown {
+      font-weight: normal;
+      color: #aeaeae; }
   @media only screen and (max-width: 480px) {
-    /* line 37, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item */
+    /* line 40, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-item */
     .b-item__name, .b-item__price {
       font-size: 0.9rem; } }
 
