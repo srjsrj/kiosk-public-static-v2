@@ -5763,10 +5763,14 @@ html.mm-opened.mm-black .mm-page {
         margin-left: 0;
         margin-right: 0; } }
   /* line 78, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+  .b-text img {
+    max-width: 100%;
+    height: auto; }
+  /* line 82, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
   .b-text .b-btn, .b-text .b-paginator__item, .b-text .pagination .next a, .pagination .next .b-text a, .b-text .pagination .prev a, .pagination .prev .b-text a, .b-text .pagination .first a, .pagination .first .b-text a, .b-text .pagination .last a, .pagination .last .b-text a, .b-text .pagination .page a, .pagination .page .b-text a, .b-text .pagination .page.current, .pagination .b-text .page.current, .b-text .b-design-option__save {
     margin: 20px auto; }
 
-/* line 81, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
+/* line 85, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/b-text */
 .map-embed {
   overflow: hidden;
   height: 400px;
