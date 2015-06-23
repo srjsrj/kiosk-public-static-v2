@@ -83,13 +83,20 @@
                 %span.radiobtn__ind{style: 'background-color: #d4c3c9;'}
           .design-settings__option
             .design-settings__option-title Фон страницы
+            -# .design-settings__option-content
+            -#   %label.radiobtn.radiobtn--circle>
+            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg', checked: 'true'}
+            -#     %span.radiobtn__ind{style: 'background-color: #000;'}
+            -#   %label.radiobtn.radiobtn--circle
+            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg'}
+            -#     %span.radiobtn__ind{style: 'background-color: #53575a;'}
             .design-settings__option-content
-              %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg', checked: 'true'}
-                %span.radiobtn__ind{style: 'background-color: #000;'}
-              %label.radiobtn.radiobtn--circle
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg'}
-                %span.radiobtn__ind{style: 'background-color: #53575a;'}
+              .design-settings__attach.design-settings__attach--image
+                .design-settings__attach-box
+                  %i.design-settings__attach-delete
+                  %img.design-settings__attach-img{src: 'http://eandys.ru/image.php?di=PZUV', alt: ''}
+                %label.select-file.select-file--icon.select-file--icon-pencil{for: 'designoption-pagebg', title: 'Выбрать файл'}
+                  %input#designoption-pagebg.select-file__input{type: 'file'}
           .design-settings__option
             .design-settings__option-title Прозрачность ленты
             .design-settings__option-content
@@ -202,10 +209,16 @@
             .design-settings__option-content
               .design-settings__attach
                 .design-settings__attach-box
+                  %i.design-settings__attach-delete
                   %img.design-settings__attach-img{src: 'images/wannabe/logo.png', alt: ''}
+                / До загрузки
                 / %label.select-file{for: 'designoption-logo'} Выбрать файл...
+                /   %input#designoption-logo.select-file__input{type: 'file'}
+                / end До загрузки
+                / Когда загрузили
                 %label.select-file{for: 'designoption-logo'} Выбрать другой файл...
                   %input#designoption-logo.select-file__input{type: 'file'}
+                / end Когда загрузили
   .design-settings__footer
     %button.design-settings__save-button.__disabled Изменений нет
     / %button.design-settings__save-button Сохранить

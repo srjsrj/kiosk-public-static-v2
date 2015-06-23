@@ -6398,13 +6398,34 @@ html.mm-opened.mm-black .mm-page {
   text-align: center;
   cursor: pointer; }
 
-/* line 7, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
+/* line 8, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
 .select-file__input {
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
-  visibility: hidden;
   opacity: 0; }
+
+/* line 15, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
+.select-file--icon {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: inline-block; }
+  /* line 20, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
+  .select-file--icon:before {
+    content: "";
+    display: block;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    vertical-align: middle; }
+
+/* line 28, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/select-file */
+.select-file--icon-pencil:before {
+  width: 100%;
+  height: 100%;
+  background-size: 50% auto;
+  background-image: url(/assets/pencil_black.svg); }
 
 /* line 1, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/radiobtn */
 .radiobtn {
@@ -7587,7 +7608,7 @@ html {
     font-size: 14px;
     border-radius: 0 0 5px 5px !important; }
 
-/* line 17, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 19, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings {
   width: 300px;
   height: 100%;
@@ -7597,20 +7618,21 @@ html {
   background-color: #32373b;
   font-size: 14px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #121212;
   z-index: 500; }
-  /* line 29, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 32, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings .switcher__input:checked + .switcher__box .switcher__knob {
     left: 15px; }
-  /* line 31, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 34, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings .switcher__box {
     width: 35px;
     height: 20px; }
-  /* line 34, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 37, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings .switcher__knob {
     width: 20px;
     height: 20px; }
 
-/* line 38, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 41, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__header {
   height: 40px;
   padding: 0 12px;
@@ -7623,7 +7645,7 @@ html {
   color: #dfe1e3;
   text-align: center; }
 
-/* line 50, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 53, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__body {
   height: 100%;
   margin-top: -40px;
@@ -7631,17 +7653,20 @@ html {
   padding-bottom: 40px;
   box-sizing: border-box; }
 
-/* line 57, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 60, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__scroll {
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
 
-/* line 62, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 65, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__group {
   padding: 12px; }
+  /* line 68, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  .design-settings__group:first-child .design-settings__group-header {
+    padding-top: 0; }
 
-/* line 65, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 71, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__group-header {
   padding: 10px 0;
   font-weight: 700;
@@ -7651,61 +7676,65 @@ html {
   text-transform: uppercase;
   color: #8e9398; }
 
-/* line 74, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 80, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__group-content {
   background-color: #fff;
   border-radius: 3px; }
 
-/* line 78, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 84, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__option {
   position: relative; }
-  /* line 80, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 86, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option + .design-settings__option {
     border-top: 1px solid #e9e9e9; }
-  /* line 82, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 88, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option .noUi-value {
     position: absolute;
     top: 12px;
     right: 12px;
     color: #888; }
 
-/* line 88, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 94, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__option--row {
   width: 100%;
   display: table; }
-  /* line 92, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 98, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option--row .design-settings__option-title, .design-settings__option--row .design-settings__option-content {
     display: table-cell;
     vertical-align: middle; }
-  /* line 95, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 101, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option--row .design-settings__option-title + .design-settings__option-content {
     padding-top: 12px; }
-  /* line 97, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 103, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option--row .design-settings__option-content {
     text-align: right; }
 
-/* line 100, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 106, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__option-title {
   padding: 12px; }
 
-/* line 103, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 109, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__option-content {
   padding: 12px; }
-  /* line 105, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 111, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__option-title + .design-settings__option-content {
     padding-top: 0; }
 
-/* line 108, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 114, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__attach {
   margin: -12px;
   text-align: center; }
-  /* line 111, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 117, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__attach .select-file {
     padding: 12px;
     display: block;
     text-decoration: none; }
+  /* line 121, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  .design-settings__attach .select-file--icon {
+    padding: 0;
+    display: inline-block; }
 
-/* line 118, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 127, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__attach-box {
   padding: 12px 0;
   position: relative;
@@ -7713,13 +7742,54 @@ html {
   overflow: hidden;
   border-radius: 3px 3px 0 0; }
 
-/* line 125, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 134, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+.design-settings__attach-delete {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  display: block;
+  top: 12px;
+  right: 12px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: url(/assets/cross_white.svg);
+  background-size: 30px auto;
+  cursor: pointer;
+  border-radius: 50%; }
+
+/* line 149, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+.design-settings__attach-img {
+  max-width: 100%;
+  vertical-align: top; }
+
+/* line 153, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+.design-settings__attach--image {
+  padding-top: 12px; }
+  /* line 155, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  .design-settings__attach--image .design-settings__attach-box {
+    min-height: 54px;
+    padding: 0;
+    border-bottom: 0;
+    border-radius: 0; }
+  /* line 160, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  .design-settings__attach--image .select-file--icon {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease; }
+    /* line 166, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+    .design-settings__attach--image .select-file--icon:hover {
+      opacity: 1; }
+
+/* line 169, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__footer {
   height: 40px;
   margin-top: -40px;
   position: relative; }
 
-/* line 130, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+/* line 174, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
 .design-settings__save-button {
   height: 40px;
   width: 100%;
@@ -7735,7 +7805,7 @@ html {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer; }
-  /* line 145, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
+  /* line 189, /Users/volosojui/code/projects/kiosk/git/kiosk-public-static-v2/app/stylesheets/sass/block/design-settings */
   .design-settings__save-button.__disabled {
     background: #4e5358;
     cursor: default; }
