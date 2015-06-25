@@ -17,7 +17,7 @@ require 'fancybox'
 require 'fancybox.wannabe'
 require 'nouislider'
 
-window.accounting.settings =
+window.accounting.settings = gon.accounting_settings ||
   currency:
     symbol:    'руб.'    # // default currency symbol is '$'
     format:    '%v %s'  # // controls output: %s = symbol, %v = value/number (can be object: see below)
