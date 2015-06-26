@@ -24,7 +24,7 @@ let CatalogFilterOptions = React.createClass({
     return this.props.options.map((item, i) => {
       switch(item.type) {
         case 'checkbox':
-          let { title, paramName, items } = item;
+          var { title, paramName, items } = item;
 
           return (
             <CatalogFilterCheckbox
@@ -35,7 +35,7 @@ let CatalogFilterOptions = React.createClass({
                 key={i} />
           );
         case 'radio':
-          let { title, value, paramName, items } = item;
+          var { title, value, paramName, items } = item;
 
           return (
             <CatalogFilterRadio
@@ -47,7 +47,7 @@ let CatalogFilterOptions = React.createClass({
                 key={i} />
           );
         case 'range':
-          let { title, paramName, units, valueFrom, valueTo, from, to, step } = item;
+          var { title, paramName, units, valueFrom, valueTo, from, to, step } = item;
 
           return (
             <CatalogFilterRange
@@ -63,7 +63,7 @@ let CatalogFilterOptions = React.createClass({
                 key={i} />
           );
         case 'color':
-          let { title, paramName, items } = item;
+          var { title, paramName, items } = item;
 
           return (
             <CatalogFilterColor

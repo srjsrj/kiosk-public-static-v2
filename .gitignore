@@ -1,7 +1,6 @@
 app/bower_components/
-bower_components/
+build
 /secret
-/build
 /rails
 tags
 *.swo
@@ -16,3 +15,6 @@ www
 .tmp
 *.bak
 .idea
+*tags
+/tags
+.publish
