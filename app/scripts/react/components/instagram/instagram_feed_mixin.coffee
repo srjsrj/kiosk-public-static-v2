@@ -16,7 +16,10 @@ window.InstagramFeed_Mixin =
       url: @_getRequestUrl()
       success: (photos) =>
         if @isMounted() && photos?
-          return console.error(photos) if parseInt(photos.meta.code) != 200
+          if parseInt(photos.meta.code) != 200
+            @_activateErrorState()
+            return console.error(photos)
+
           @setState {
             currentState: @STATE_LOADED
             photos: photos.data
