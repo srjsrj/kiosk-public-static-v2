@@ -142,13 +142,13 @@ const initialState = {
       name: 'designoption-logo',
       attachment: {
         id: null,
-        url: '/images/cc/logo.png'
+        url: '../images/cc/logo.png'
       }
     },
     feedTransparency: {
       type: DESIGN_SLIDER_TYPE,
       name: 'designoption-feed-transparency',
-      value: 50,
+      value: 70,
       from: 0,
       to: 100
     }
