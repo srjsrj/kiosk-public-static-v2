@@ -56,7 +56,7 @@ export default {
   },
   haml: {
     static: {
-      src: 'app/haml/*.haml',
+      src: 'app/haml/**/*.haml',
       dest: build
     }
   },

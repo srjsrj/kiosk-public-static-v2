@@ -10,9 +10,12 @@ import { scripts as config } from '../config';
 
 // External dependencies we do not want to rebundle while developing,
 // but include in our dist bundle
-
 const dependencies = {
   'react': './node_modules/react',
+  'redux': './node_modules/redux',
+  'classnames': './node_modules/classnames',
+  'perfect-scrollbar': './node_modules/perfect-scrollbar',
+
   'reactUjs': './app/scripts/resources/react_ujs',
   'jss': './node_modules/jss/lib/index',
   'jquery': './node_modules/jquery/dist/jquery',
