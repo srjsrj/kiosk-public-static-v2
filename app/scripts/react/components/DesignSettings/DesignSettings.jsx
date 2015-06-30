@@ -7,6 +7,7 @@ import * as designActions from '../../actions/designActions';
 import Scroller from '../common/Scroller';
 import DesignSettingsGroup from './DesignSettingsGroup';
 import DesignSettingsOption from './DesignSettingsOption';
+import DesignSettingsSlider from './DesignSettingsSlider';
 import DesignSettingsRadioList from './DesignSettingsRadioList';
 import DesignSettingsCheckbox from './DesignSettingsCheckbox';
 import DesignSettingsAttach from './DesignSettingsAttach';
@@ -31,11 +32,13 @@ class DesignSettings {
                 <DesignSettingsAttach
                     {...this.props.options.pageBg}
                     className="design-settings__attach--image">
-                  {
-                    (SelectFile) =>
-                      <SelectFile className="select-file--icon select-file--icon-pencil" />
+                  {(SelectFile) =>
+                    <SelectFile className="select-file--icon select-file--icon-pencil" />
                   }
                 </DesignSettingsAttach>
+              </DesignSettingsOption>
+              <DesignSettingsOption title="Прозрачность ленты">
+                <DesignSettingsSlider {...this.props.options.feedTransparency} />
               </DesignSettingsOption>
               <DesignSettingsOption title="Цвет текста">
                 <DesignSettingsRadioList {...this.props.options.textColor} />

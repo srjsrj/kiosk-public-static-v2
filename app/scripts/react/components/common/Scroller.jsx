@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, findDOMNode } from 'react';
 import classNames from 'classnames';
 import Ps from 'perfect-scrollbar';
 
@@ -9,15 +9,15 @@ export default class Scroller {
   }
   componentDidMount() {
     // TODO: Props in cases when only one axis should be enabled
-    Ps.initialize(React.findDOMNode(this), {
+    Ps.initialize(findDOMNode(this), {
       suppressScrollX: true
     });
   }
   componentDidUpdate() {
-    Ps.update(React.findDOMNode(this))
+    Ps.update(findDOMNode(this))
   }
   componentWillUnmount() {
-    Ps.destroy(React.findDOMNode(this));
+    Ps.destroy(findDOMNode(this));
   }
   render() {
     let scrollerClasses = classNames('b-scroller', this.props.className);

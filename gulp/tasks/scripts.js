@@ -15,6 +15,7 @@ const dependencies = {
   'redux': './node_modules/redux',
   'classnames': './node_modules/classnames',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
+  'nouislider': './node_modules/noUiSlider/distribute/nouislider',
 
   'reactUjs': './app/scripts/resources/react_ujs',
   'jss': './node_modules/jss/lib/index',
@@ -27,8 +28,7 @@ const dependencies = {
   'fancybox': './app/bower_components/fancybox/source/jquery.fancybox',
   'fancybox.wannabe': './app/bower_components/fancybox-wannabe-fix/index',
   'accounting': './app/bower_components/accounting.js/accounting',
-  'lodash': './node_modules/lodash',
-  'nouislider': './app/bower_components/nouislider/distribute/jquery.nouislider.all'
+  'lodash': './node_modules/lodash'
 };
 const nonProductionDependencies = [
   'react', 'reactUjs'

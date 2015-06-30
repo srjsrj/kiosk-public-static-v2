@@ -2,6 +2,7 @@ import {
   DESIGN_ANY_TYPE,
   DESIGN_FONT_TYPE,
   DESIGN_COLOR_TYPE,
+  DESIGN_SLIDER_TYPE,
   DESIGN_CHECKBOX_TYPE,
   DESIGN_FONT_SIZE_TYPE,
   DESIGN_ATTACHMENT_TYPE
@@ -128,14 +129,6 @@ const initialState = {
       type: DESIGN_CHECKBOX_TYPE,
       name: 'designoption-photo-on-top'
     },
-    logo: {
-      type: DESIGN_ATTACHMENT_TYPE,
-      name: 'designoption-logo',
-      attachment: {
-        id: null,
-        url: 'http://eandys.ru/image.php?di=PZUV'
-      }
-    },
     pageBg: {
       type: DESIGN_ATTACHMENT_TYPE,
       name: 'designoption-pagebg',
@@ -143,6 +136,21 @@ const initialState = {
         id: null,
         url: 'http://eandys.ru/image.php?di=PZUV'
       }
+    },
+    logo: {
+      type: DESIGN_ATTACHMENT_TYPE,
+      name: 'designoption-logo',
+      attachment: {
+        id: null,
+        url: '/images/cc/logo.png'
+      }
+    },
+    feedTransparency: {
+      type: DESIGN_SLIDER_TYPE,
+      name: 'designoption-feed-transparency',
+      value: 50,
+      from: 0,
+      to: 100
     }
   },
   unsavedFields: {}
