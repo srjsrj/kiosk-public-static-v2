@@ -83,6 +83,9 @@
               %label.radiobtn.radiobtn--circle
                 %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
                 %span.radiobtn__ind{style: 'background-color: #f4d3c4;'}
+              %label.radiobtn.radiobtn--circle.radiobtn--custom
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Фон страницы
             -# .design-settings__option-content
@@ -143,6 +146,9 @@
               %label.radiobtn.radiobtn--circle
                 %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
                 %span.radiobtn__ind{style: 'background-color: #38434e;'}
+              %label.radiobtn.radiobtn--circle.radiobtn--custom
+                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Цвет активных элементов
             .design-settings__option-content
@@ -161,6 +167,9 @@
               %label.radiobtn.radiobtn--circle
                 %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
                 %span.radiobtn__ind{style: 'background-color: #1a0f17;'}
+              %label.radiobtn.radiobtn--circle.radiobtn--custom
+                %input.radiobtn__input{type: 'radio', name: 'designoption-activecolor'}
+                %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Шрифт
             .design-settings__option-content
@@ -239,3 +248,8 @@
   .design-settings__footer
     %button.design-settings__save-button.__disabled Изменений нет
     / %button.design-settings__save-button Сохранить
+
+.color-picker-popup{style: 'top: 146px; left: 135px;'}
+  %i.color-picker-popup__arrow
+  :plain
+    <div class=" cp" data-reactid=".c.1"><div class="cp-saturation-spectrum" style="height:140px;width:140px;background-color:rgb(255, 0, 0);" data-reactid=".c.1.0"><div class="cp-saturation-white" data-reactid=".c.1.0.0"><div class="cp-saturation-black" data-reactid=".c.1.0.0.0"></div></div><div class="cp-saturation-drag" style="width:7px;height:7px;top:137px;left:-3px;display:block;" data-reactid=".c.1.0.1"><div class="inner" data-reactid=".c.1.0.1.0"></div></div></div><div class="cp-hue-spectrum" style="margin-left:10px;height:140px;width:6px;" data-reactid=".c.1.1"><div class="cp-hue-drag" style="height:3px;top:-2px;display:block;" data-reactid=".c.1.1.0"><div class="inner" data-reactid=".c.1.1.0.0"></div></div></div></div>
