@@ -66,37 +66,55 @@
           .design-settings__option
             .design-settings__option-title Цвет страницы
             .design-settings__option-content
+              %label.radiobtn.radiobtn--circle.radiobtn--light>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #ffffff;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor', checked: 'true'}
-                %span.radiobtn__ind{style: 'background-color: #bf443f;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #000000;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
-                %span.radiobtn__ind{style: 'background-color: #569a9f;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #e74c3c;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
-                %span.radiobtn__ind{style: 'background-color: #4f617d;'}
-              %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
-                %span.radiobtn__ind{style: 'background-color: #f4d3c4;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #6c7a89;'}
               %label.radiobtn.radiobtn--circle
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor'}
-                %span.radiobtn__ind{style: 'background-color: #d4c3c9;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #f4d3c4;'}
           .design-settings__option
             .design-settings__option-title Фон страницы
             -# .design-settings__option-content
             -#   %label.radiobtn.radiobtn--circle>
-            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg', checked: 'true'}
+            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgimage', checked: 'true'}
             -#     %span.radiobtn__ind{style: 'background-color: #000;'}
             -#   %label.radiobtn.radiobtn--circle
-            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebg'}
+            -#     %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgimage'}
             -#     %span.radiobtn__ind{style: 'background-color: #53575a;'}
             .design-settings__option-content
               .design-settings__attach.design-settings__attach--image
                 .design-settings__attach-box
                   %i.design-settings__attach-delete
                   %img.design-settings__attach-img{src: 'http://eandys.ru/image.php?di=PZUV', alt: ''}
-                %label.select-file.select-file--icon.select-file--icon-pencil{for: 'designoption-pagebg', title: 'Выбрать файл'}
-                  %input#designoption-pagebg.select-file__input{type: 'file'}
+                %label.select-file.select-file--icon.select-file--icon-pencil{for: 'designoption-pagebgimage', title: 'Выбрать файл'}
+                  %input#designoption-pagebgimage.select-file__input{type: 'file'}
+          .design-settings__option
+            .design-settings__option-title Цвет ленты
+            .design-settings__option-content
+              %label.radiobtn.radiobtn--circle.radiobtn--light>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #ffffff;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #000000;'}
+              %label.radiobtn.radiobtn--circle
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #2ac67e;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #e74c3c;'}
+              %label.radiobtn.radiobtn--circle>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #c6c9cc;'}
           .design-settings__option
             .design-settings__option-title Прозрачность ленты
             .design-settings__option-content
@@ -108,21 +126,21 @@
           .design-settings__option
             .design-settings__option-title Цвет текста
             .design-settings__option-content
+              %label.radiobtn.radiobtn--circle.radiobtn--light>
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
+                %span.radiobtn__ind{style: 'background-color: #ffffff;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor', checked: 'true'}
-                %span.radiobtn__ind{style: 'background-color: #894c00;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor', checked: 'true'}
+                %span.radiobtn__ind{style: 'background-color: #000000;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
-                %span.radiobtn__ind{style: 'background-color: #fff2a6;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
+                %span.radiobtn__ind{style: 'background-color: #c6c9cc;'}
               %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
-                %span.radiobtn__ind{style: 'background-color: #720000;'}
-              %label.radiobtn.radiobtn--circle>
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
-                %span.radiobtn__ind{style: 'background-color: #513100;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
+                %span.radiobtn__ind{style: 'background-color: #6c7a89;'}
               %label.radiobtn.radiobtn--circle
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
-                %span.radiobtn__ind{style: 'background-color: #ffd46c;'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
+                %span.radiobtn__ind{style: 'background-color: #38434e;'}
           .design-settings__option
             .design-settings__option-title Цвет активных элементов
             .design-settings__option-content
