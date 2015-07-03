@@ -16,6 +16,8 @@ const dependencies = {
   'classnames': './node_modules/classnames',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
   'nouislider': './node_modules/noUiSlider/distribute/nouislider',
+  'tinycolor2': './node_modules/tinycolor2',
+  'immutable': './node_modules/immutable/dist/immutable',
 
   'reactUjs': './app/scripts/resources/react_ujs',
   'jss': './node_modules/jss/lib/index',

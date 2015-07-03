@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import Immutable from 'immutable';
 import classNames from 'classnames';
 
-function selectFile(name, text) {
+function selectFile(name, text, onChange) {
   return class SelectFile {
     static propTypes = {
       withText: PropTypes.bool,
@@ -12,7 +13,11 @@ function selectFile(name, text) {
         <label htmlFor={name}
                className={classNames('select-file', this.props.className)}>
           {this.props.withText && text}
-          <input type="file" id={name} className="select-file__input" />
+          <input type="file"
+                 accept="image/*"
+                 id={name}
+                 className="select-file__input"
+                 onChange={onChange} />
         </label>
       );
     }
@@ -24,11 +29,9 @@ export default class DesignSettingsAttach {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
-    attachment: PropTypes.shape({
-      id: PropTypes.number,
-      url: PropTypes.string
-    }).isRequired,
-    children: PropTypes.func
+    value: PropTypes.instanceOf(Immutable.Map).isRequired,
+    children: PropTypes.func,
+    onChange: PropTypes.func.isRequired
   }
   render() {
     const { name, children } = this.props;
@@ -37,23 +40,33 @@ export default class DesignSettingsAttach {
     return (
       <div className={classNames('design-settings__attach', this.props.className)}>
         {this.renderBox()}
-        {children && children(selectFile(name, selectText))}
+        {children && children(selectFile(name, selectText, ::this.handleChange))}
       </div>
     );
   }
   renderBox() {
-    if (this.props.attachment && this.props.attachment.url) {
+    if (this.props.value && this.props.value.get('url')) {
       return (
         <div className="design-settings__attach-box">
-          <i className="design-settings__attach-delete" />
-          <img src={this.props.attachment.url} className="design-settings__attach-img" />
+          <span onClick={::this.handleDelete}>
+            <i className="design-settings__attach-delete" />
+          </span>
+          <img src={this.props.value.get('url')} className="design-settings__attach-img" />
         </div>
       );
     }
   }
   getSelectText() {
-    const { id, url } = this.props.attachment;
-    return (id || url) ? 'Выбрать другой файл...' : 'Выбрать файл...'
+    const { value } = this.props;
+    return (value.get('id') || value.get('url'))
+      ? 'Выбрать другой файл...'
+      : 'Выбрать файл...'
+  }
+  handleChange(e) {
+    this.props.onChange(e.target.files[0]);
+  }
+  handleDelete() {
+    this.props.onChange(null);
   }
 }
 

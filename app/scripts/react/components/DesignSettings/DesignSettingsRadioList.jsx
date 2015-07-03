@@ -1,16 +1,15 @@
 import React, { PropTypes } from 'react';
+import { List } from 'immutable';
 import classNames from 'classnames';
-import {
-  DESIGN_FONT_TYPE,
-  DESIGN_COLOR_TYPE,
-  DESIGN_FONT_SIZE_TYPE
-} from '../../constants/designTypes';
+import tinycolor from 'tinycolor2';
+import * as designTypes from '../../constants/designTypes';
 
 export default class DesignSettingsRadioList {
   static propTypes = {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired
+    items: PropTypes.instanceOf(List).isRequired,
+    onChange: PropTypes.func.isRequired
   }
   render() {
     const listItems = this.props.items.map(::this.renderItem);
@@ -20,34 +19,39 @@ export default class DesignSettingsRadioList {
     return <DesignSettingsRadioListItem {...this.getItemProps(item)} />;
   }
   getItemProps(item) {
-    let props = {
+    const value = item.get('value');
+    const props = {
       name: this.props.name,
-      key: this.props.name + '-' + item.value
+      checked: this.props.value === value,
+      onChange: this.props.onChange.bind(this, value),
+      key: this.props.name + '-' + value
     };
 
     switch(this.props.type) {
-      case DESIGN_COLOR_TYPE:
+      case designTypes.DESIGN_COLOR_TYPE:
         return {
           ...props,
-          style: { backgroundColor: item.value },
-          className: 'radiobtn--circle'
+          style: { backgroundColor: value },
+          className: classNames('radiobtn--circle', {
+            'radiobtn--light': tinycolor(value).isLight()
+          })
         }
-      case DESIGN_FONT_TYPE:
+      case designTypes.DESIGN_FONT_TYPE:
         return {
           ...props,
-          className: 'radiobtn--font radiobtn--font-' + item.value,
+          className: 'radiobtn--font radiobtn--font-' + value,
           text: 'Aa'
         }
-      case DESIGN_FONT_SIZE_TYPE:
+      case designTypes.DESIGN_FONT_SIZE_TYPE:
         return {
           ...props,
-          className: 'radiobtn--font radiobtn--fontsize-' + item.value,
+          className: 'radiobtn--font radiobtn--fontsize-' + value,
           text: 'Aa'
         }
       default:
         return {
           ...props,
-          text: item.value,
+          text: item.get('value'),
           className: 'radiobtn--circle'
         }
     }
@@ -59,12 +63,18 @@ class DesignSettingsRadioListItem {
     name: PropTypes.string.isRequired,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     style: PropTypes.object,
-    className: PropTypes.string.isRequired
+    checked: PropTypes.bool.isRequired,
+    className: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
   }
   render() {
     return (
       <label className={classNames('radiobtn', this.props.className)}>
-        <input className="radiobtn__input" type="radio" name={this.props.name} />
+        <input type="radio"
+               name={this.props.name}
+               checked={this.props.checked}
+               className="radiobtn__input"
+               onChange={this.props.onChange} />
         <span className="radiobtn__ind" style={this.props.style}>
           {this.props.text}
         </span>

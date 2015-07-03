@@ -2,15 +2,17 @@ import React, { PropTypes, findDOMNode } from 'react';
 import noUiSlider from 'nouislider';
 
 const MINIMUM_VALUE = 0,
-      MAXIMUM_VALUE = 1,
-      STEP = 0.01;
+      MAXIMUM_VALUE = 100,
+      STEP = 1;
 
 export default class Slider {
   static propTypes = {
     from: PropTypes.number,
     to: PropTypes.number,
     value: PropTypes.number,
-    step: PropTypes.number
+    step: PropTypes.number,
+    onSlide: PropTypes.func,
+    onChange: PropTypes.func.isRequired
   }
   static defaultProps = {
     from: MINIMUM_VALUE,
@@ -28,6 +30,9 @@ export default class Slider {
       },
       step: this.props.step
     });
+
+    slider.noUiSlider.on('slide', ::this.handleSlide);
+    slider.noUiSlider.on('change', ::this.handleChange);
   }
   componentWillUnmount() {
     const slider = findDOMNode(this);
@@ -36,63 +41,14 @@ export default class Slider {
   render() {
     return <div />;
   }
+  handleSlide(range) {
+    if (this.props.onSlide) {
+      this.props.onSlide(range);
+    }
+  }
+  handleChange(range) {
+    if (this.props.onChange) {
+      this.props.onChange(range);
+    }
+  }
 }
-
-
-// { PropTypes } = React
-
-
-// DesignSettingsRange = React.createClass
-//   displayName: 'DesignSettingsRange'
-
-//   propTypes:
-//     value: PropTypes.number.isRequired
-//     from: PropTypes.number
-//     to: PropTypes.number
-//     step: PropTypes.number
-//     onChange: PropTypes.func.isRequired
-
-//   getDefaultProps: ->
-//     from: MINIMUM
-//     to:   MAXIMUM
-//     step: STEP
-
-//   getInitialState: ->
-//     value: @props.value
-
-//   componentDidMount: ->
-//     range = @refs.range.getDOMNode()
-
-//     $(range).slider
-//       min: @props.from
-//       max: @props.to
-//       step: @props.step
-//       range: 'min'
-//       value: @props.value
-//       animate: true
-//       slide: @handleSlide
-
-//   componentWillUnmount: ->
-//     range = @refs.range.getDOMNode()
-//     $(range).slider 'destroy'
-
-//   render: ->
-//     <span>
-//       <span ref="range" className="form-range ds-absolute-left ds-fadein-down">
-//         <input type="text" className="form-range__input" />
-//       </span>
-//       { @renderValue() }
-//     </span>
-
-//   renderValue: ->
-//     formattedValue = (@state.value * 100).toFixed() + '%'
-
-//     return <span className="form-range-value">
-//              { formattedValue }
-//            </span>
-
-//   handleSlide: (e, ui) ->
-//     @setState(value: ui.value)
-//     @props.onChange ui.value
-
-// module.exports = DesignSettingsRange
