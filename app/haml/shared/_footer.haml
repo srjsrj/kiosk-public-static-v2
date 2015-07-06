@@ -59,9 +59,9 @@
 %div{data-react-class: 'DesignSettings'}
 
 .design-settings
-  .design-settings__header
+  %header.design-settings__header
     Управление дизайном
-    .design-settings__close
+    %button.design-settings__close-button Закрыть
   .design-settings__body
     .design-settings__scroll
       .design-settings__group
@@ -86,7 +86,7 @@
                 %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor'}
                 %span.radiobtn__ind{style: 'background-color: #f4d3c4;'}
               %label.radiobtn.radiobtn--circle.radiobtn--custom
-                %input.radiobtn__input{type: 'radio', name: 'designoption-pagecolor', checked: 'true'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-pagebgcolor', checked: 'true'}
                 %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Фон страницы
@@ -122,6 +122,9 @@
               %label.radiobtn.radiobtn--circle>
                 %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
                 %span.radiobtn__ind{style: 'background-color: #c6c9cc;'}
+              %label.radiobtn.radiobtn--circle.radiobtn--custom
+                %input.radiobtn__input{type: 'radio', name: 'designoption-feedbgcolor'}
+                %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Прозрачность ленты
             .design-settings__option-content
@@ -149,7 +152,7 @@
                 %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
                 %span.radiobtn__ind{style: 'background-color: #38434e;'}
               %label.radiobtn.radiobtn--circle.radiobtn--custom
-                %input.radiobtn__input{type: 'radio', name: 'designoption-textcolor'}
+                %input.radiobtn__input{type: 'radio', name: 'designoption-fontcolor'}
                 %span.radiobtn__ind{style: 'background-color: #cfe6ff;'}
           .design-settings__option
             .design-settings__option-title Цвет активных элементов
@@ -247,7 +250,7 @@
                 %label.select-file{for: 'designoption-logo'} Выбрать другой файл...
                   %input#designoption-logo.select-file__input{type: 'file'}
                 / end Когда загрузили
-  .design-settings__footer
+  %footer.design-settings__footer
     %button.design-settings__save-button.__disabled Изменений нет
     / %button.design-settings__save-button Сохранить
 
