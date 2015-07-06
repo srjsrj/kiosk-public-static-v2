@@ -45,6 +45,30 @@
   &.radiobtn--light
     .radiobtn__ind
       box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08)
+  &.radiobtn--custom
+    .radiobtn__ind
+      &:before
+        content: ""
+        position: absolute
+        top: -5px
+        left: -5px
+        right: -5px
+        bottom: -5px
+        border-top: 2px solid #be6be4 !important
+        border-right: 2px solid #6ba7ea !important
+        border-bottom: 2px solid #83d870 !important
+        border-left: 2px solid #ffbc75 !important
+        border-radius: 50%
+        transform: rotate(0deg)
+        transition: border .3s ease, opacity .3s ease, transform .3s ease
+        opacity: .4
+    .radiobtn__input
+      &:checked
+        & + .radiobtn__ind
+          &:before
+            border-width: 4px !important
+            opacity: 1
+            transform: rotate(360deg)
 
 .radiobtn--font
   margin-right: 14px
