@@ -21,24 +21,24 @@ export default {
       value: '#f4d3c4'
     }]
   },
-  textColor: {
+  fontColor: {
     type: designTypes.DESIGN_COLOR_TYPE,
-    name: 'designoption-textcolor',
+    name: 'designoption-fontcolor',
     items: [{
-      title: 'Оранжевый',
-      value: '#894c00'
+      title: 'Белый',
+      value: '#ffffff'
     }, {
-      title: 'Светло-жёлтый',
-      value: '#fff2a6'
+      title: 'Чёрный',
+      value: '#000000'
+    }, {
+      title: 'Салатовый',
+      value: '#2ac67e'
     }, {
       title: 'Красный',
-      value: '#720000'
+      value: '#e74c3c'
     }, {
-      title: 'Коричневый',
-      value: '#513100'
-    }, {
-      title: 'Жёлтый',
-      value: '#ffd46c'
+      title: 'Серый',
+      value: '#c6c9cc'
     }]
   },
   activeColor: {
@@ -59,6 +59,26 @@ export default {
     }, {
       title: 'Чёрный',
       value: '#1a0f17'
+    }]
+  },
+  feedBgColor: {
+    type: designTypes.DESIGN_COLOR_TYPE,
+    name: 'designoption-feedbgcolor',
+    items: [{
+      title: 'Белый',
+      value: '#ffffff'
+    }, {
+      title: 'Чёрный',
+      value: '#000000'
+    }, {
+      title: 'Салатовый',
+      value: '#2ac67e'
+    }, {
+      title: 'Оранжевый',
+      value: '#e74c3c'
+    }, {
+      title: 'Серый',
+      value: '#c6c9cc'
     }]
   },
   fontFamily: {
@@ -117,20 +137,21 @@ export default {
   },
   photoOnTop: {
     type: designTypes.DESIGN_CHECKBOX_TYPE,
-    name: 'designoption-photo-on-top'
+    name: 'designoption-photoontop'
   },
-  pageBg: {
+  pageBgUrl: {
     type: designTypes.DESIGN_ATTACHMENT_TYPE,
-    name: 'designoption-pagebg'
+    name: 'designoption-pagebgurl'
   },
-  logo: {
+  logoUrl: {
     type: designTypes.DESIGN_ATTACHMENT_TYPE,
-    name: 'designoption-logo'
+    name: 'designoption-logourl'
   },
   feedTransparency: {
     type: designTypes.DESIGN_SLIDER_TYPE,
-    name: 'designoption-feed-transparency',
+    name: 'designoption-feedtransparency',
     from: 0,
-    to: 100
+    to: 1,
+    step: .01
   }
 }

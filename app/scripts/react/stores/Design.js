@@ -4,23 +4,17 @@ import * as actionTypes from '../constants/actionTypes';
 import designOptions from '../models/designOptions';
 
 const current = {
-  pageColor: '#bf443f',
-  textColor: '#894c00',
+  pageBgColor: '#6c7a89',
   activeColor: '#1a0f17',
   fontFamily: 'verdana',
+  fontColor: '#2ac67e',
   fontSize: 'lg',
+  feedBgColor: '#000000',
+  feedTransparency: .5,
   columns: 3,
   photoOnTop: false,
-  feedTransparency: 15,
-  pageBg: {
-    id: null,
-    // url: 'http://eandys.ru/image.php?di=PZUV'
-    url: null
-  },
-  logo: {
-    id: null,
-    url: '../images/cc/logo.png'
-  }
+  pageBgUrl: 'http://eandys.ru/image.php?di=PZUV',
+  logoUrl: '../images/cc/logo.png'
 };
 
 const initialState = Immutable.fromJS({

@@ -18,9 +18,9 @@ const dependencies = {
   'nouislider': './node_modules/noUiSlider/distribute/nouislider',
   'tinycolor2': './node_modules/tinycolor2',
   'immutable': './node_modules/immutable/dist/immutable',
+  'jss': './node_modules/jss/lib',
 
   'reactUjs': './app/scripts/resources/react_ujs',
-  'jss': './node_modules/jss/lib/index',
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.mmenu': './app/bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',
   'jquery.role': './app/bower_components/jquery.role/lib/jquery.role',

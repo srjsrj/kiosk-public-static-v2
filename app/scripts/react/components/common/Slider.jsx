@@ -11,6 +11,7 @@ export default class Slider {
     to: PropTypes.number,
     value: PropTypes.number,
     step: PropTypes.number,
+    reverse: PropTypes.bool,
     onSlide: PropTypes.func,
     onChange: PropTypes.func.isRequired
   }

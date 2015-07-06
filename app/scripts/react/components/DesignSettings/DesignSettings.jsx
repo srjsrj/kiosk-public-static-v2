@@ -35,18 +35,21 @@ class DesignSettings {
               </DesignSettingsOption>
               <DesignSettingsOption title="Фон страницы">
                 <DesignSettingsAttach
-                    {...this.getAttachProps('pageBg')}
+                    {...this.getAttachProps('pageBgUrl')}
                     className="design-settings__attach--image">
                   {(SelectFile) =>
                     <SelectFile className="select-file--icon select-file--icon-pencil" />
                   }
                 </DesignSettingsAttach>
               </DesignSettingsOption>
+              <DesignSettingsOption title="Цвет ленты">
+                <DesignSettingsRadioList {...this.getProps('feedBgColor')} />
+              </DesignSettingsOption>
               <DesignSettingsOption title="Прозрачность ленты">
                 <DesignSettingsSlider {...this.getProps('feedTransparency')} />
               </DesignSettingsOption>
               <DesignSettingsOption title="Цвет текста">
-                <DesignSettingsRadioList {...this.getProps('textColor')} />
+                <DesignSettingsRadioList {...this.getProps('fontColor')} />
               </DesignSettingsOption>
               <DesignSettingsOption title="Цвет активных элементов">
                 <DesignSettingsRadioList {...this.getProps('activeColor')} />
@@ -73,7 +76,7 @@ class DesignSettings {
 
             <DesignSettingsGroup title="Логотип">
               <DesignSettingsOption>
-                <DesignSettingsAttach {...this.getAttachProps('logo')}>
+                <DesignSettingsAttach {...this.getAttachProps('logoUrl')}>
                   {(SelectFile) => <SelectFile withText={true} />}
                 </DesignSettingsAttach>
               </DesignSettingsOption>

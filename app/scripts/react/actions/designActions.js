@@ -15,10 +15,10 @@ export function changeOption(name, value) {
 }
 
 export function changeImage(name, file) {
-  return changeOption(name, {
-    id: null,
-    url: file ? createObjectURL(file) : file
-  });
+  return changeOption(
+    name,
+    file ? createObjectURL(file) : file
+  );
 }
 
 export function saveChanges() {

@@ -17,6 +17,6 @@ export default class DesignSettingsSlider {
     );
   }
   handleSlide(range) {
-    this.props.onChange(parseInt(range[0]));
+    this.props.onChange(parseFloat(range[0]));
   }
 }
