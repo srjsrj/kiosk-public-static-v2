@@ -17,7 +17,7 @@ export default class DesignSettingsSaveButton {
     );
   }
   getTitle() {
-    return this.props.hasChanges ? 'Сохранить' : 'Закрыть';
+    return this.props.hasChanges ? 'Сохранить' : 'Изменений нет';
   }
   handleClick() {
     if (this.props.hasChanges) {

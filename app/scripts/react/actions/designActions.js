@@ -1,6 +1,6 @@
-import createObjectURL from '../utils/createObjectURL';
 import {
   DESIGN_CHANGE_OPTION,
+  DESIGN_CHANGE_ATTACHMENT_OPTION,
   DESIGN_SAVE,
   DESIGN_SAVE_SUCCESS,
   DESIGN_SAVE_FAIL
@@ -15,17 +15,16 @@ export function changeOption(name, value) {
 }
 
 export function changeImage(name, file) {
-  return changeOption(
+  return {
+    type: DESIGN_CHANGE_ATTACHMENT_OPTION,
     name,
-    file ? createObjectURL(file) : file
-  );
+    file
+  };
 }
 
 export function saveChanges() {
   return (dispatch, getState) => {
     console.log(getState().design.get('current').toJS());
-
-
     const { counter } = getState();
 
     // if (counter % 2 === 0) {

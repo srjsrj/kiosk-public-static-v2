@@ -27,7 +27,7 @@ const _rules = {
       rule(depValue) {
         return {
           '.b-page__content__inner': {
-            'background-color': tinycolor(value).setAlpha(depValue).toRgbString()
+            'background-color': tinycolor(value).setAlpha(1 - depValue).toRgbString()
           }
         }
       }
@@ -50,7 +50,11 @@ const _rules = {
 };
 const _states = {
   fontFamily: 'b-page_ff',
-  fontSize: 'b-page_fs'
+  fontSize: 'b-page_fs',
+  productsInRow: 'b-page_cols'
+};
+const _switchableStates = {
+  photoOnTop: 'b-page_layout-bigpic'
 };
 
 @connect((state) => ({
@@ -75,16 +79,29 @@ class DesignPreview {
     return null;
   }
   apply(design) {
-    let states = {},
-        cssRules = fromJS({}),
+    let states = this.getAvailableStates(design),
+        cssRules = this.getAvailableRules(design),
+        pageClasses = this.getPageClasses(design, states),
         page = this.getElements().page;
 
-    design.forEach((value, property) => {
-      // Filling list of cssRules
-      const rule = _rules[property];
-
-      if (rule) {
-        let cssRule = rule(value);
+    this.sheet.addRules(cssRules.toJS());
+    page.className = pageClasses.join(' ').trim();
+  }
+  getAvailableStates(design) {
+    return design.reduce((states, value, property) => {
+      if (_states[property]) {
+        states[property] = {
+          key: _states[property],
+          value
+        }
+      }
+      return states;
+    }, {});
+  }
+  getAvailableRules(design) {
+    return design.reduce((cssRules, value, property) => {
+      if (_rules[property]) {
+        let cssRule = _rules[property](value);
 
         if (cssRule.dep) {
           let depValue = design.get(cssRule.dep);
@@ -92,20 +109,14 @@ class DesignPreview {
         } else {
           cssRules = cssRules.mergeDeep(cssRule);
         }
-      };
-
-      // Filling list of page classes
-      const state = _states[property];
-
-      if (state) {
-        states[property] = {
-          key: state,
-          value: value
-        };
       }
-    });
+      return cssRules;
+    }, fromJS({}));
+  }
+  getPageClasses(design, states) {
+    const page = this.getElements().page;
 
-    let pageClasses = page.className.split(' ').filter((className) => {
+    let classes = page.className.split(' ').filter((className) => {
       for (let key in states) {
         if (states.hasOwnProperty(key)) {
           if (className.indexOf(states[key].key) === 0) return false;
@@ -114,15 +125,14 @@ class DesignPreview {
       return true;
     });
 
-    for (let key in states) {
+    Object.keys(states).reduce(function(previous, key) {
       if (states.hasOwnProperty(key)) {
-        const newClass = _states[key] + '-' + states[key].value;
-        pageClasses.push(newClass);
+        previous.push(_states[key] + '-' + states[key].value);
       }
-    }
+      return previous;
+    }, classes);
 
-    this.sheet.addRules(cssRules.toJS());
-    page.className = pageClasses.join(' ').trim();
+    return classes;
   }
   getElements() {
     return {

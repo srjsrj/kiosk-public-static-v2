@@ -1,11 +1,20 @@
-const initialState = {
-  popups: [],
-  current: null
-};
+import Immutable from 'immutable';
+import createReducer from '../lib/createReducer';
+import * as actionTypes from '../constants/actionTypes';
 
-export default function(state = initialState, action = {}) {
-  switch (action.type) {
-    default:
-      return state;
+const initialState = Immutable.fromJS({
+  popups: []
+});
+
+export default createReducer(initialState, {
+  [actionTypes.POPUP_OPEN](state, { style, props }) {
+    return state.mergeDeep({
+      popups: [{ style, props }]
+    });
+  },
+  [actionTypes.POPUP_CLOSE](state, { style }) {
+    return state.merge({
+      popups: state.getIn(['popups']).filter((popup) => popup.get('style') !== style)
+    });
   }
-}
+});

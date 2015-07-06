@@ -115,9 +115,9 @@ export default {
       value: 'lg'
     }]
   },
-  columns: {
+  productsInRow: {
     type: designTypes.DESIGN_ANY_TYPE,
-    name: 'designoption-columns',
+    name: 'designoption-productsinrow',
     items: [{
       title: '1 ряд',
       value: 1
@@ -130,14 +130,11 @@ export default {
     }, {
       title: '4 ряда',
       value: 4
-    }, {
-      title: '5 рядов',
-      value: 5
     }]
   },
-  photoOnTop: {
+  productLayoutBigpic: {
     type: designTypes.DESIGN_CHECKBOX_TYPE,
-    name: 'designoption-photoontop'
+    name: 'designoption-productbigpic'
   },
   pageBgUrl: {
     type: designTypes.DESIGN_ATTACHMENT_TYPE,
