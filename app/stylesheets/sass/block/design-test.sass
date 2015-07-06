@@ -50,21 +50,26 @@
         @extend %portable--one-whole
 
   // Товаров в ряд
-  &[data-in-row="2"]
+  &_cols-1
+    .b-item-list
+      &__item
+        @extend %one-whole
+
+  &_cols-2
     .b-item-list
       &__item
         @extend %one-half
         @extend %lap--one-half
         @extend %palm--one-half
 
-  &[data-in-row="3"]
+  &_cols-3
     .b-item-list
       &__item
         @extend %one-third
         @extend %lap--one-half
         @extend %palm--one-half
 
-  &[data-in-row="4"]
+  &_cols-4
     .b-item-list
       &__item
         @extend %three-twelfths
