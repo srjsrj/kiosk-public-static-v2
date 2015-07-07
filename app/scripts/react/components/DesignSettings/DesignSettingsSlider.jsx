@@ -11,9 +11,11 @@ export default class DesignSettingsSlider {
   }
   render() {
     return (
-      <Slider {...this.props}
-              onSlide={::this.handleSlide}
-              onChange={::this.handleSlide} />
+      <Slider
+        {...this.props}
+        onSlide={::this.handleSlide}
+        onChange={::this.handleSlide}
+      />
     );
   }
   handleSlide(range) {

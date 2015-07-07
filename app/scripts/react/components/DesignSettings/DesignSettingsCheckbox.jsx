@@ -8,10 +8,11 @@ export default class DesignSettingsCheckbox {
   render() {
     return (
       <label className="switcher">
-        <input type="checkbox"
-               checked={this.props.value}
-               className="switcher__input"
-               onChange={::this.handleChange} />
+        <input
+          type="checkbox"
+          checked={this.props.value}
+          className="switcher__input"
+          onChange={::this.handleChange} />
         <span className="switcher__box">
           <span className="switcher__knob" />
         </span>

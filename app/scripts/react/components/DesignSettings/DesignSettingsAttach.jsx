@@ -10,14 +10,18 @@ function selectFile(name, text, onChange) {
     }
     render() {
       return (
-        <label htmlFor={name}
-               className={classNames('select-file', this.props.className)}>
+        <label
+          htmlFor={name}
+          className={classNames('select-file', this.props.className)}
+        >
           {this.props.withText && text}
-          <input type="file"
-                 accept="image/*"
-                 id={name}
-                 className="select-file__input"
-                 onChange={onChange} />
+          <input
+            type="file"
+            accept="image/*"
+            id={name}
+            className="select-file__input"
+            onChange={onChange}
+          />
         </label>
       );
     }
@@ -51,7 +55,10 @@ export default class DesignSettingsAttach {
           <span onClick={::this.handleDelete}>
             <i className="design-settings__attach-delete" />
           </span>
-          <img src={this.props.value} className="design-settings__attach-img" />
+          <img
+            src={this.props.value}
+            className="design-settings__attach-img"
+          />
         </div>
       );
     }

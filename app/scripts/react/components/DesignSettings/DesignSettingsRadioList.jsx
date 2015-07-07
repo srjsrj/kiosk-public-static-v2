@@ -70,12 +70,17 @@ class DesignSettingsRadioListItem {
   render() {
     return (
       <label className={classNames('radiobtn', this.props.className)}>
-        <input type="radio"
-               name={this.props.name}
-               checked={this.props.checked}
-               className="radiobtn__input"
-               onChange={this.props.onChange} />
-        <span className="radiobtn__ind" style={this.props.style}>
+        <input
+          type="radio"
+          name={this.props.name}
+          checked={this.props.checked}
+          className="radiobtn__input"
+          onChange={this.props.onChange}
+        />
+        <span
+          className="radiobtn__ind"
+          style={this.props.style}
+        >
           {this.props.text}
         </span>
       </label>

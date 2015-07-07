@@ -6,7 +6,7 @@ import designOptions from '../models/designOptions';
 
 const current = {
   pageBgColor: '#6c7a89',
-  pageBgUrl: 'http://eandys.ru/image.php?di=PZUV',
+  pageBgUrl: '../images/cc/logo.png',
   fontFamily: 'verdana',
   fontColor: '#2ac67e',
   fontSize: 'lg',
@@ -21,7 +21,8 @@ const initialState = Immutable.fromJS({
   current: current,
   currentSaved: current,
   hasUnsavedFields: false,
-  options: designOptions
+  options: designOptions,
+  updating: false
 });
 
 export default createReducer(initialState, {
@@ -34,10 +35,28 @@ export default createReducer(initialState, {
   [actionTypes.DESIGN_CHANGE_ATTACHMENT_OPTION](state, { name, file }) {
     return state.mergeDeep({
       current: {
-        [name]: file,
-        [name + 'Url']: file ? createObjectURL(file) : file
+        [name + 'Url']: file ? createObjectURL(file) : file,
+        [name + 'File']: file
       },
       hasUnsavedFields: state.getIn(['currentSaved', name]) !== file
+    });
+  },
+  [actionTypes.DESIGN_SAVE](state) {
+    return state.merge({
+      updating: true
+    });
+  },
+  [actionTypes.DESIGN_SAVE_FAILURE](state) {
+    return state.merge({
+      updating: false
+    });
+  },
+  [actionTypes.DESIGN_SAVE_SUCCESS](state, { design }) {
+    return state.merge({
+      current: design,
+      currentSaved: design,
+      hasUnsavedFields: false,
+      updating: false
     });
   }
 });

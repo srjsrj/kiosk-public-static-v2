@@ -30,8 +30,6 @@ require './react/components/instagram/instagram_v2'
 # require './react/components/design/layoutlist'
 global.CatalogFilter = require './react/components/CatalogFilter/CatalogFilter'
 # global.DesignSettings = require './react/components/designSettings/designSettings'
-global.DesignSettings = require './react/components/DesignSettings/DesignSettings';
-global.DesignPreview = require './react/components/DesignPreview/DesignPreview';
 global.Userbar = require './react/components/Userbar/Userbar';
 
 require './react/dispatchers/basket'

@@ -1,14 +1,10 @@
-import {
-  DESIGN_CHANGE_OPTION,
-  DESIGN_CHANGE_ATTACHMENT_OPTION,
-  DESIGN_SAVE,
-  DESIGN_SAVE_SUCCESS,
-  DESIGN_SAVE_FAIL
-} from '../constants/actionTypes';
+import Requester from '../api/Requester';
+import * as apiRoutes from '../routes/apiRoutes';
+import * as actionTypes from '../constants/actionTypes';
 
 export function changeOption(name, value) {
   return {
-    type: DESIGN_CHANGE_OPTION,
+    type: actionTypes.DESIGN_CHANGE_OPTION,
     name,
     value
   };
@@ -16,7 +12,7 @@ export function changeOption(name, value) {
 
 export function changeImage(name, file) {
   return {
-    type: DESIGN_CHANGE_ATTACHMENT_OPTION,
+    type: actionTypes.DESIGN_CHANGE_ATTACHMENT_OPTION,
     name,
     file
   };
@@ -24,19 +20,30 @@ export function changeImage(name, file) {
 
 export function saveChanges() {
   return (dispatch, getState) => {
-    console.log(getState().design.get('current').toJS());
-    const { counter } = getState();
+    const current = getState().design.get('current').toJS();
+    const availableKeys = [
+      'pageBgColor', 'pageBgFile', 'fontFamily', 'fontColor', 'fontSize',
+      'feedBgColor', 'feedTransparency', 'productsInRow', 'productLayoutBigpic',
+      'logoFile'
+    ];
+    const data = Object.keys(current).reduce(function (previous, key) {
+      if (availableKeys.indexOf(key) !== -1) previous[key] = current[key];
+      return previous;
+    }, {});
 
-    // if (counter % 2 === 0) {
-    //   return;
-    // }
-
-    // dispatch(increment());
-  };
-
-
-  // return {
-  //   types: [DESIGN_SAVE, DESIGN_SAVE_SUCCESS, DESIGN_SAVE_FAIL],
-  //   promise: (client) => loadFromServer(client) 
-  // };
+    // FIXME: Use redux-actions with promise field
+    dispatch({ type: actionTypes.DESIGN_SAVE });
+    Requester.update(apiRoutes.designSettings(), data)
+      .then((design) => {
+        dispatch({
+          type: actionTypes.DESIGN_SAVE_SUCCESS,
+          design
+        });
+      })
+      .fail((xhr) => {
+        dispatch({ type: actionTypes.DESIGN_SAVE_FAILURE });
+        // FIXME: Use nice and clean NoticeService.errorResponse
+        alert(JSON.parse(xhr.responseText).error);
+      });
+  }
 }

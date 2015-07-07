@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 export default class DesignSettingsSaveButton {
   static propTypes = {
+    inProcess: PropTypes.bool.isRequired,
     hasChanges: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired
   }
@@ -11,13 +12,20 @@ export default class DesignSettingsSaveButton {
       '__disabled': !this.props.hasChanges
     });
     return (
-      <button className={buttonClasses} onClick={::this.handleClick}>
+      <button
+        className={buttonClasses}
+        onClick={::this.handleClick}
+      >
         {this.getTitle()}
       </button>
     );
   }
   getTitle() {
-    return this.props.hasChanges ? 'Сохранить' : 'Изменений нет';
+    if (this.props.inProcess) {
+      return 'Сохраняем...';
+    } else {
+      return this.props.hasChanges ? 'Сохранить' : 'Изменений нет';
+    }
   }
   handleClick() {
     if (this.props.hasChanges) {

@@ -6,8 +6,8 @@ export default class DesignSettingsCloseButton {
   }
   render() {
     return (
-      <div
-        className="design-settings__close"
+      <button
+        className="design-settings__close-button"
         onClick={this.props.onClick}
       />
     );
