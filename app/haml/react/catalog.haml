@@ -52,5 +52,21 @@
 
         +include 'app/haml/shared/_footer.haml'
 
+    %script
+      var __data = {
+        design: {
+          pageBgColor: '#e74c3c',
+          pageBgUrl: '/images/cc/logo.png',
+          fontFamily: 'verdana',
+          fontColor: '#2ac67e',
+          fontSize: 'lg',
+          feedBgColor: '#000000',
+          feedTransparency: .7,
+          productsInRow: 3,
+          productLayoutBigpic: false,
+          logoUrl: '/images/cc/logo.png'
+        }
+      };
+
     %script{src: '../scripts/vendor.js'}
     %script{src: '../scripts/client.js'}
