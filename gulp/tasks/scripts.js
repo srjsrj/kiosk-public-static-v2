@@ -10,11 +10,18 @@ import { scripts as config } from '../config';
 
 // External dependencies we do not want to rebundle while developing,
 // but include in our dist bundle
-
 const dependencies = {
   'react': './node_modules/react',
+  'redux': './node_modules/redux',
+  'classnames': './node_modules/classnames',
+  'perfect-scrollbar': './node_modules/perfect-scrollbar',
+  'nouislider': './node_modules/noUiSlider/distribute/nouislider',
+  'tinycolor2': './node_modules/tinycolor2',
+  'immutable': './node_modules/immutable/dist/immutable',
+  'jss': './node_modules/jss/lib',
+  'reqwest': './node_modules/reqwest',
+
   'reactUjs': './app/scripts/resources/react_ujs',
-  'jss': './node_modules/jss/lib/index',
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.mmenu': './app/bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',
   'jquery.role': './app/bower_components/jquery.role/lib/jquery.role',
@@ -24,8 +31,7 @@ const dependencies = {
   'fancybox': './app/bower_components/fancybox/source/jquery.fancybox',
   'fancybox.wannabe': './app/bower_components/fancybox-wannabe-fix/index',
   'accounting': './app/bower_components/accounting.js/accounting',
-  'lodash': './node_modules/lodash',
-  'nouislider': './app/bower_components/nouislider/distribute/jquery.nouislider.all'
+  'lodash': './node_modules/lodash'
 };
 const nonProductionDependencies = [
   'react', 'reactUjs'

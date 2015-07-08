@@ -17,7 +17,7 @@
               .b-item-list__item
                 %a.b-item{href: 'product.html'}
                   .b-item__pic-wrap
-                    %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                    %img.b-item__pic{src: '../images/product-square.jpg', alt:'paste product name here'}
                     .b-item__status
                       -if i == 1
                         %span.b-status.b-status_sold Распродано
@@ -40,6 +40,8 @@
                       = i
 
         +include 'app/haml/shared/_footer_without_designer.haml'
+  %div{data: {react-class: 'DesignSettings'}}
+  %div{data: {react-class: 'DesignPreview'}}
 
-    %script{src: 'scripts/vendor.js'}
-    %script{src: 'scripts/client.js'}
+    %script{src: '../scripts/vendor.js'}
+    %script{src: '../scripts/client.js'}

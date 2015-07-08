@@ -1,4 +1,5 @@
 import numeral from 'numeral';
+import noUiSlider from 'nouislider';
 
 let CatalogFilterRange = React.createClass({
   propTypes: {
@@ -33,9 +34,9 @@ let CatalogFilterRange = React.createClass({
   },
 
   componentDidMount() {
-    let slider = this.refs.slider.getDOMNode();
+    const slider = React.findDOMNode(this.refs.slider);
 
-    $(slider).noUiSlider({
+    noUiSlider.create(slider, {
       step: this.props.step,
       start: [this.state.from, this.state.to],
       range: {
@@ -46,14 +47,15 @@ let CatalogFilterRange = React.createClass({
       connect: true
     });
 
-    $(slider).on('slide', this.handleSlide);
-    $(slider).on('change', this.handleChange);
+    slider.noUiSlider.on('slide', this.handleSlide);
+    slider.noUiSlider.on('change', this.handleChange);
   },
 
   componentWillUnmount() {
-    let slider = this.refs.slider.getDOMNode();
-    $(slider).off('slide', this.handleSlide);
-    $(slider).off('change', this.handleChange);
+    const slider = React.findDOMNode(this.refs.slider);
+
+    slider.noUiSlider.off('slide', this.handleSlide);
+    slider.noUiSlider.off('change', this.handleChange);
   },
 
   render() {
@@ -119,7 +121,7 @@ let CatalogFilterRange = React.createClass({
     return range;
   },
 
-  handleSlide(e, range) {
+  handleSlide(range) {
     this.setState({
       from: parseInt(range[0]),
       to: parseInt(range[1])

@@ -10,15 +10,14 @@
       .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list.b-item-list_has-filter
           .b-item-list__filter
-            %form{method: 'POST'}
-              %div{data-react-class: 'CatalogFilter'}
-
+            +include 'app/haml/shared/_filter.haml'
+          
           .b-item-list__content
             - for i in [1..8]
               .b-item-list__item
                 %a.b-item{href: 'product.html'}
                   .b-item__pic-wrap
-                    %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                    %img.b-item__pic{src: '../images/product-square.jpg', alt:'paste product name here'}
                     .b-item__status
                       -if i == 1
                         %span.b-status.b-status_sold Распродано
@@ -32,32 +31,42 @@
 
             .b-item-list__paginator
               .pagination
-                %li.first
-                  %a{href: '#'}
-                    «
                 %li.prev
                   %a{href: '#'}
-                    <
+                    &lsaquo;
                 - for i in [1..6]
-                  -if i == 1
+                  - if i == 1
                     %li.page.active
                       %a{href: '#'}
                         = i
-                  -if i == 4
+                  - else if i == 4
                     %li.page.disabled.gap
                       %a{href: '#'} ...
-                  -else
+                  - else
                     %li.page
                       %a{href: '#'}
                         = i
                 %li.next
                   %a{href: '#'}
-                    >
-                %li.last
-                  %a{href: '#'}
-                    »
+                    &rsaquo;
 
         +include 'app/haml/shared/_footer.haml'
 
-    %script{src: 'scripts/vendor.js'}
-    %script{src: 'scripts/client.js'}
+    %script
+      var __data = {
+        design: {
+          pageBgColor: '#e74c3c',
+          pageBgUrl: '/images/cc/logo.png',
+          fontFamily: 'verdana',
+          fontColor: '#2ac67e',
+          fontSize: 'lg',
+          feedBgColor: '#000000',
+          feedTransparency: .7,
+          productsInRow: 3,
+          productLayoutBigpic: false,
+          logoUrl: '/images/cc/logo.png'
+        }
+      };
+
+    %script{src: '../scripts/vendor.js'}
+    %script{src: '../scripts/client.js'}

@@ -27,6 +27,7 @@ $designSettingsSaveButtonColor: #fff
   font-family: $designSettingsFontFamily
   color: $designSettingsColor
   z-index: $designSettingsZindex
+  will-change: transform
   .switcher__input
     &:checked + .switcher__box
       .switcher__knob
@@ -208,6 +209,7 @@ $designSettingsSaveButtonColor: #fff
   text-transform: uppercase
   color: $designSettingsSaveButtonColor
   cursor: pointer
+  outline: none
   &.__disabled
     // background-color: lighten($designSettingsSaveButtonBg, 12%)
     // color: lighten($designSettingsSaveButtonBg, 34%)
