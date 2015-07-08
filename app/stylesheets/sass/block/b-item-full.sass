@@ -109,7 +109,17 @@ $articulColor: #828282
     margin-top: 10px
     margin-bottom: 17px
 
+    &__title
+      margin-top: 0
+      margin-bottom: .5em
+      font-weight: normal
+
+    &__row
+      margin-top: 17px
+
     &__option
+      &.b-item-full__form__option_full
+        @extend %one-whole
       select
         box-sizing: border-box
         height: 43px
@@ -137,3 +147,6 @@ $articulColor: #828282
       @extend %grid__item
       @extend %one-half
       @extend %palm--one-whole
+
+    .radiobtn--color
+      margin: 5px 11px 6px 0
