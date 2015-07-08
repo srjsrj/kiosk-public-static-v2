@@ -4,8 +4,8 @@ import * as stores from './stores';
 
 // Bootstraping serverside data
 let data = {};
-if (global.__data) {
-  const { design } = global.__data;
+if (global.gon.__data) {
+  const { design } = global.gon.__data;
 
   data = {
     design: {
