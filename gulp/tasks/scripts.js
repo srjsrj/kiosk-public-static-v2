@@ -34,7 +34,7 @@ const dependencies = {
   'lodash': './node_modules/lodash'
 };
 const nonProductionDependencies = [
-  'react', 'reactUjs'
+  'reactUjs'
 ];
 
 gulp.task('[Static] Scripts', () => {
