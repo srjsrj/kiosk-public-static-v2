@@ -1,15 +1,16 @@
 import React, { PropTypes } from 'react';
+import { Map } from 'immutable';
 import classNames from 'classnames';
 
 export default class DesignSettingsSaveButton {
   static propTypes = {
-    inProcess: PropTypes.bool.isRequired,
-    hasChanges: PropTypes.bool.isRequired,
+    isSaving: PropTypes.bool.isRequired,
+    unsavedFields: PropTypes.instanceOf(Map).isRequired,
     onClick: PropTypes.func.isRequired
   }
   render() {
     const buttonClasses = classNames('design-settings__save-button', {
-      '__disabled': !this.props.hasChanges
+      '__disabled': !this.hasChanges()
     });
     return (
       <button
@@ -20,15 +21,18 @@ export default class DesignSettingsSaveButton {
       </button>
     );
   }
+  hasChanges() {
+    return !!Object.keys(this.props.unsavedFields.toJS()).length;
+  }
   getTitle() {
-    if (this.props.inProcess) {
+    if (this.props.isSaving) {
       return 'Сохраняем...';
     } else {
-      return this.props.hasChanges ? 'Сохранить' : 'Изменений нет';
+      return this.hasChanges() ? 'Сохранить' : 'Изменений нет';
     }
   }
   handleClick() {
-    if (this.props.hasChanges) {
+    if (this.hasChanges()) {
       this.props.onClick();
     }
   }

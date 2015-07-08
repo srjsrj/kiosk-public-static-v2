@@ -5,6 +5,7 @@ import { connect } from 'redux/react';
 import connectToRedux from '../HoC/connectToRedux';
 import * as designActions from '../../actions/designActions';
 import * as popupActions from '../../actions/popupActions';
+import designOptions from '../../models/designOptions';
 
 import Scroller from '../common/Scroller';
 import DesignSettingsGroup from './DesignSettingsGroup';
@@ -19,16 +20,13 @@ import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 class DesignSettings {
   static propTypes = {
     current: PropTypes.instanceOf(Map).isRequired,
-    options: PropTypes.instanceOf(Map).isRequired,
-    hasUnsavedFields: PropTypes.bool.isRequired,
-    updating: PropTypes.bool.isRequired,
+    unsavedFields: PropTypes.object.isRequired,
+    isSaving: PropTypes.bool.isRequired,
     changeOption: PropTypes.func.isRequired,
     saveChanges: PropTypes.func.isRequired,
     closeDesignSettingsPopup: PropTypes.func.isRequired
   }
   render() {
-    const { current, options, hasUnsavedFields } = this.props;
-
     return (
       <div className="design-settings">
         <header className="design-settings__header">
@@ -94,8 +92,8 @@ class DesignSettings {
         </div>
         <div className="design-settings__footer">
           <DesignSettingsSaveButton
-            inProcess={this.props.updating}
-            hasChanges={this.props.hasUnsavedFields}
+            isSaving={this.props.isSaving}
+            unsavedFields={this.props.unsavedFields}
             onClick={this.props.saveChanges}
           />
         </div>
@@ -103,17 +101,17 @@ class DesignSettings {
     );
   }
   getProps(property) {
-    const { current, options, changeOption } = this.props;
+    const { current, changeOption } = this.props;
     return {
-      ...options.get(property).toObject(),
+      ...designOptions[property],
       value: current.get(property),
       onChange: changeOption.bind(this, property)
     };
   }
   getAttachProps(property) {
-    const { current, options, changeImage } = this.props;
+    const { current, changeImage } = this.props;
     return {
-      ...options.get(property + 'Url').toObject(),
+      ...designOptions[property + 'Url'],
       value: current.get(property + 'Url'),
       onChange: changeImage.bind(this, property)
     }

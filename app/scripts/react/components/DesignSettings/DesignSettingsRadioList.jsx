@@ -8,7 +8,7 @@ export default class DesignSettingsRadioList {
   static propTypes = {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    items: PropTypes.instanceOf(List).isRequired,
+    items: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired
   }
   render() {
@@ -19,41 +19,40 @@ export default class DesignSettingsRadioList {
     return <DesignSettingsRadioListItem {...this.getItemProps(item)} />;
   }
   getItemProps(item) {
-    const value = item.get('value');
     const props = {
       name: this.props.name,
-      checked: this.props.value === value,
-      onChange: this.props.onChange.bind(this, value),
-      key: this.props.name + '-' + value
+      checked: this.props.value === item.value,
+      onChange: this.props.onChange.bind(this, item.value),
+      key: this.props.name + '-' + item.value
     };
 
     switch(this.props.type) {
       case designTypes.DESIGN_COLOR_TYPE:
         return {
           ...props,
-          style: { backgroundColor: value },
+          style: { backgroundColor: item.value },
           className: classNames('radiobtn--circle', {
-            'radiobtn--light': tinycolor(value).isLight()
+            'radiobtn--light': tinycolor(item.value).isLight()
           })
-        }
+        };
       case designTypes.DESIGN_FONT_TYPE:
         return {
           ...props,
-          className: 'radiobtn--font radiobtn--font-' + value,
+          className: 'radiobtn--font radiobtn--font-' + item.value,
           text: 'Aa'
-        }
+        };
       case designTypes.DESIGN_FONT_SIZE_TYPE:
         return {
           ...props,
-          className: 'radiobtn--font radiobtn--fontsize-' + value,
+          className: 'radiobtn--font radiobtn--fontsize-' + item.value,
           text: 'Aa'
-        }
+        };
       default:
         return {
           ...props,
-          text: item.get('value'),
+          text: item.value,
           className: 'radiobtn--circle'
-        }
+        };
     }
   }
 }
