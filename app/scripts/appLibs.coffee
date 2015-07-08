@@ -1,4 +1,5 @@
 window._ = require 'lodash'
+window.React = require 'react'
 window.Dispatcher = require('flux').Dispatcher
 window.EventEmitter = require 'eventEmitter'
 window.accounting = require 'accounting'

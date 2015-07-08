@@ -2,3 +2,5 @@ window.gon =
 
   # localStorage.setItem('public_api_url', 'http://wanna-be.ru.3001.vkontraste.ru/api')
   public_api_url: localStorage.getItem('public_api_url') || 'http://wanna-be.ru.3001.vkontraste.ru/api'
+      
+gon.thumbor_url="http:\/\/thumball.brandydev.ru";gon.fallback_product_image_url="http:\/\/assets.kiiiosk.ru\/assets\/fallback\/product-none.png";gon.env="development";gon.i18n={"locale":"ru","defaultLocale":"ru"};gon.accounting_settings={"currency":{"symbol":"\u0440\u0443\u0431.","format":"%v %s","decimal":",","thousand":" ","precision":0},"number":{"precision":0,"thousand":" ","decimal":","}};gon.root_url="http:\/\/wannabe.3001.vkontraste.ru";gon.public_api_url="http:\/\/wannabe.3001.vkontraste.ru\/api";gon.__data={"design":{"pageBgUrl":null,"pageBgColor":"#ffffff","fontFamily":"helvetica","fontColor":"#000000","fontSize":"md","feedBgColor":"#ffffff","feedTransparency":0,"productsInRow":4,"productLayoutBigpic":false,"logoUrl":"http:\/\/assets.kiiiosk.ru\/uploads\/vendor\/logo\/5\/logo.svg"}};
