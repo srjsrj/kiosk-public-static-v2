@@ -1,11 +1,11 @@
 import Immutable from 'immutable';
-import createReducer from '../lib/createReducer';
-import * as actionTypes from '../constants/actionTypes';
+import createReducer from '../utils/createReducer';
 import createObjectURL from '../utils/createObjectURL';
+import * as actionTypes from '../constants/actionTypes';
 
 const current = {
   pageBgColor: '#6c7a89',
-  pageBgUrl: '../images/cc/logo.png',
+  pageBgUrl: null,
   fontFamily: 'verdana',
   fontColor: '#2ac67e',
   fontSize: 'lg',
@@ -13,7 +13,7 @@ const current = {
   feedTransparency: .7,
   productsInRow: 3,
   productLayoutBigpic: false,
-  logoUrl: '../images/cc/logo.png'
+  logoUrl: null
 };
 
 const initialState = Immutable.fromJS({
