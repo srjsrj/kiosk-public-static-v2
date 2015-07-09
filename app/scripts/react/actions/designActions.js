@@ -1,5 +1,5 @@
 import Requester from '../api/Requester';
-import * as apiRoutes from '../routes/apiRoutes';
+import * as apiRoutes from '../../routes/api';
 import * as actionTypes from '../constants/actionTypes';
 
 export function changeOption(name, value) {

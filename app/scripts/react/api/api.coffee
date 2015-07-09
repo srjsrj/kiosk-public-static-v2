@@ -1,3 +1,5 @@
+ApiRoutes = require('../../routes/api');
+
 TIMEOUT = 10000
 _pendingRequests = {}
 
