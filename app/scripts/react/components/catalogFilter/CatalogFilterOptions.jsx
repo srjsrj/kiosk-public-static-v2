@@ -14,12 +14,16 @@ let CatalogFilterOptions = React.createClass({
   render() {
     return (
       <ul className="b-full-filter__list-wrap">
-        <CatalogFilterSelectedOptions selectedOptions={this.props.selectedOptions} />
+        {this.renderSelectedOptions()}
         {this.renderOptions()}
       </ul>
     );
   },
-
+  renderSelectedOptions() {
+    if (this.props.selectedOptions.length) {
+      return <CatalogFilterSelectedOptions {...this.props} />;
+    }
+  },
   renderOptions() {
     return this.props.options.map((item, i) => {
       switch(item.type) {
