@@ -1,4 +1,4 @@
-ApiRoutes = require('../../routes/api');
+apiRoutes = require('../../routes/api');
 
 TIMEOUT = 10000
 _pendingRequests = {}
@@ -42,7 +42,7 @@ Api =
 
   catalogFilter:
     getFilteredCount: (filter) ->
-      url  = ApiRoutes.productsFilteredCount filter
+      url  = apiRoutes.productsFilteredCount filter
       key  = 'productsFilteredCount'
 
       abortPendingRequests key

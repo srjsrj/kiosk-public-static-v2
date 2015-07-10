@@ -1,44 +1,36 @@
-let CatalogFilterSelectedOptions = React.createClass({
-  propTypes: {
-    selectedOptions: React.PropTypes.array.isRequired
-  },
+import React, { PropTypes } from 'react';
+import URI from 'URIjs';
 
+export default class CatalogFilterSelectedOptions {
+  static propTypes = {
+    selectedOptions: PropTypes.array.isRequired
+  }
   render() {
-    if (this.props.selectedOptions.length) {
-      return (
-        <li className="b-full-filter__item">
-          <div className="b-full-filter__item__title">
-            Текущий выбор
-          </div>
-          {this.renderOptions()}
-        </li>
-      );
-    }
-
-    return null;
-  },
-
+    return (
+      <li className="b-full-filter__item">
+        <div className="b-full-filter__item__title">Текущий выбор</div>
+        {this.renderOptions()}
+      </li>
+    );
+  }
   renderOptions() {
-    let options = this.props.selectedOptions.map((item, i) => {
-      return (
-        <span className="b-full-filter__value"
-              onClick={this.removeOption.bind(null, item.url)}
-              key={i}>
-          {item.name}
-        </span>
-      );
-    });
+    const options = this.props.selectedOptions.map((item, i) => (
+      <span
+        className="b-full-filter__value"
+        onClick={() => this.removeOption(item)}
+        key={i}
+      >
+        {item.name}
+      </span>
+    ));
 
     return (
       <div className="b-full-filter__widget">
         {options}
       </div>
     );
-  },
-
-  removeOption(url) {
-    window.location = url;
   }
-});
-
-export default CatalogFilterSelectedOptions;
+  removeOption(item) {
+    window.location = new URI().search(item.query).toString();
+  }
+}

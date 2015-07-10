@@ -20,6 +20,7 @@ const dependencies = {
   'immutable': './node_modules/immutable/dist/immutable',
   'jss': './node_modules/jss/lib',
   'reqwest': './node_modules/reqwest',
+  'URIjs': './node_modules/URIjs/src/URI',
 
   'reactUjs': './app/scripts/resources/react_ujs',
   'jquery': './node_modules/jquery/dist/jquery',

@@ -26,7 +26,7 @@ import './react/dispatchers/basket';
 import './react/actions/view/basket';
 import './react/stores/basket';
 
-import CatalogFilter from './react/components/CatalogFilter/CatalogFilter';
+import CatalogFilter from './react/components/CatalogFilter';
 import Userbar from './react/components/Userbar';
 
 import KioskEvents from './react/controllers/events';
