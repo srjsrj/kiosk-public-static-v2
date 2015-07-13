@@ -7,25 +7,22 @@ function vendorToken () {
 }
 
 function request(_method, url, srcData = {}) {
+  let contentType, processData, method;
   const headers = prepareData({
     'X-Requested-With': 'XMLHttpRequest',
     'X-Vendor-Token': vendorToken()
   });
-  const data = prepareData({
-    ...srcData,
-    _method
-  });
+  const data = prepareData({ ...srcData, _method });
 
-  let dataType, processData;
   if (data instanceof FormData) {
-    dataType = 'multipart/form-data';
+    console.log('instance');
+    contentType = 'multipart/form-data';
     processData = false;
   } else {
-    dataType = 'json';
+    contentType = 'application/json';
     processData = true;
   }
 
-  let method;
   switch(_method) {
     case 'POST': case 'PUT': case 'DELETE':
       method = 'POST'; break;
@@ -33,7 +30,7 @@ function request(_method, url, srcData = {}) {
       method = 'GET'; break;
   }
 
-  return reqwest({ url, headers, method, data, dataType, processData });
+  return reqwest({ url, headers, method, data, contentType, processData });
 }
 
 export default {

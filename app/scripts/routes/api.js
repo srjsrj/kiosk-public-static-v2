@@ -1,5 +1,7 @@
-const operatorApiUrl = gon.operator_api_url || 'http://kiiiosk.ru/operator/api',
-      publicApiUrl = gon.public_api_url || '';
+const {
+  operator_api_url: operatorApiUrl,
+  public_api_url: publicApiUrl
+} = gon;
 
 export function designSettings() {
   return operatorApiUrl + '/v1/design_settings';
