@@ -1,4 +1,4 @@
-import Requester from '../api/Requester';
+import buildParams from '../utils/buildParams';
 import * as apiRoutes from '../../routes/api';
 import * as actionTypes from '../constants/actionTypes';
 
@@ -33,8 +33,26 @@ export function saveChanges() {
 
     // FIXME: Use redux-actions with promise field
     dispatch({ type: actionTypes.DESIGN_SAVE });
-    Requester.update(apiRoutes.designSettings(), data)
-      .then((design) => {
+
+    const formData = new FormData();
+    const add = function add(key, value) {
+      formData.append(key, value);
+    }
+
+    for(let key in data) {
+      if(data.hasOwnProperty(key)) {
+        buildParams(key, data[key], false, add);
+      }
+    }
+
+    $.ajax({
+      url: apiRoutes.designSettings(),
+      method: 'PUT',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false
+    }).then((design) => {
         dispatch({
           type: actionTypes.DESIGN_SAVE_SUCCESS,
           design

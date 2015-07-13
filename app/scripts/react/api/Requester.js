@@ -15,8 +15,7 @@ function request(_method, url, srcData = {}) {
   const data = prepareData({ ...srcData, _method });
 
   if (data instanceof FormData) {
-    console.log('instance');
-    contentType = 'multipart/form-data';
+    contentType = null;
     processData = false;
   } else {
     contentType = 'application/json';
