@@ -94,11 +94,11 @@ export default {
       title: 'PT Sans',
       value: 'ptsans'
     }, {
-      title: 'Verdana',
-      value: 'verdana'
+      title: 'Gotham Pro',
+      value: 'gotham'
     }, {
-      title: 'Courier',
-      value: 'courier'
+      title: 'Lora',
+      value: 'lora'
     }]
   },
   fontSize: {
