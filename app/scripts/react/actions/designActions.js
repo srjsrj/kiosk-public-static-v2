@@ -33,7 +33,7 @@ export function saveChanges() {
 
     // FIXME: Use redux-actions with promise field
     dispatch({ type: actionTypes.DESIGN_SAVE });
-    Requester.update(apiRoutes.designSettings(), data)
+    Requester.create(apiRoutes.designSettings(), data)
       .then((design) => {
         dispatch({
           type: actionTypes.DESIGN_SAVE_SUCCESS,
