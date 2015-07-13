@@ -42,7 +42,7 @@ const _rules = {
   },
   logoUrl(value) {
     return {
-      '.b-logo__img': {
+      '#b-logo__image': {
         'content': value ? `url("${value}")` : 'none'
       }
     };
