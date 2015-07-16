@@ -51,7 +51,7 @@ export default {
     production: {
       src: src + '/stylesheets/production.scss',
       dest: dist + '/stylesheets',
-      outputName: 'bundle.min.css'
+      outputName: 'bundle.css'
     }
   },
   haml: {

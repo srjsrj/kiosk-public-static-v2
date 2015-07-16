@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import minifyCss from 'gulp-minify-css';
+import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
 import handleErrors from '../../util/handleErrors';
 import { styles as config } from '../../config';
@@ -19,5 +20,6 @@ gulp.task('[Production] Styles', () => {
     }))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(minifyCss())
+    .pipe(rename(config.production.outputName))
     .pipe(gulp.dest(config.production.dest));
 });
