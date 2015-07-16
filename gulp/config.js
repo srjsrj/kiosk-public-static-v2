@@ -44,12 +44,12 @@ export default {
   },
   styles: {
     static: {
-      src: src + '/stylesheets/main.scss',
+      src: src + '/stylesheets/local.scss',
       dest: build + '/stylesheets',
       outputName: 'local.css'
     },
     production: {
-      src: src + '/stylesheets/bundle.scss',
+      src: src + '/stylesheets/production.scss',
       dest: dist + '/stylesheets',
       outputName: 'bundle.min.css'
     }

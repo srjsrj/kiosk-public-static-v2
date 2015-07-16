@@ -1,14 +1,39 @@
 @charset "UTF-8";
 
+
+// =====================================================================
+// Base
+// =====================================================================
+
 // Normalize
-@import "utilities/_normalize";
+@import "base/normalize";
 
 // Grid
-@import "utilities/grid";
+@import "base/grid";
+
+
+// =====================================================================
+// Bower Components: Variables/Mixins and etc.
+// =====================================================================
 
 // Bootstrap variables/mixins
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+
+// =====================================================================
+// Global: Variables/Mixins and etc.
+// =====================================================================
+
+@import "global/variables";
+@import "global/mixins";
+@import "global/placeholders";
+@import "global/helpers";
+
+
+// =====================================================================
+// Bower Components: Other
+// =====================================================================
 
 // Bootstrap components
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip";
@@ -20,76 +45,95 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/alerts";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
 
+// jQuery.mmenu
+@import "jQuery.mmenu/src/scss/jquery.mmenu.all";
+
+
+// =====================================================================
+// Vendors
+// =====================================================================
+@import "vendors/owlcarousel";
+@import "vendors/fancybox";
+@import "vendors/range";
+
+
+// =====================================================================
 // Fonts
+// =====================================================================
+
+// Google Fonts
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700italic,400italic,700|PT+Serif:400,700italic,400italic,700|Lora:400,700,400italic,700italic&subset=latin,cyrillic);
+
+// Static
 @import "fonts/gotham";
 @import "fonts/apercu";
 
-// Variables
-@import "settings/vars";
 
-// Plugins
-@import "jQuery.mmenu/src/scss/jquery.mmenu.all";
-@import "modules/owlcarousel";
-@import "modules/fancybox";
-@import "modules/range";
+// =====================================================================
+// Partials
+// =====================================================================
 
-//Blocks
-@import "block/b-layout"; // Лейаут
-@import "block/b-btn"; // Кнопочки
-@import "block/b-alert"; // Алерты
-@import "block/b-logo"; // Логотип
-@import "block/b-site-description"; // Описание сайта
-@import "block/b-item-list"; // Список товаров
-@import "block/b-item"; // Товар в списке
-@import "block/b-item-full"; // Товар
-@import "block/b-status"; // Статус товара
-@import "block/b-instafeed"; // Фид с инстаграмма
-@import "block/b-admin"; // Кнопка админки
-@import "block/userbar"; // Кнопки пользователей
-@import "block/b-search"; // Поле поиска
-@import "block/b-cart-trigger"; // Кнопка корзины (триггер)
-@import "block/b-slider"; // Слайдер (прим. слайдер товаров)
-@import "block/b-characteristics"; // Характеристики товара
-@import "block/b-float-cart"; // Плавающая корзина
-@import "block/b-cart"; // Корзина
-@import "block/b-article"; // Статья
-@import "block/b-text"; // Текстовый блок
-@import "block/b-form"; // Форма
-@import "block/b-scroller"; // Скроллер
-@import "block/b-cbox"; // Чекбокс
-@import "block/b-radio"; // Радио
-@import "block/b-full-filter"; // Фильтр
-@import "block/b-theme-switcher"; // Свитч для тем
-@import "block/b-feature-list"; // Фичиры, фичирлист
-@import "block/b-modification-list"; // Список модов
-@import "block/b-q-status"; // Статус количества товара
-@import "block/b-paginator"; // Пагинатор
-@import "block/b-show-more"; // Показать еще
-@import "block/b-breadcrumbs"; //Хлебные крошки
-@import "block/b-tooltip"; // Подсказка
-@import "block/select-file"; // Кастомный выбор локального файла
-@import "block/radiobtn"; // Кастомные радио-кнопки
-@import "block/switcher"; // Переключалка в стиле iOS
-@import "block/color-picker"; // Палитра цветов
-@import "block/mmenu"; // Статус количества товара
-@import "block/column-list"; // Колоночный список (например, список категорий на 404 странице)
+@import "partials/b-layout"; // Лейаут
+@import "partials/b-btn"; // Кнопочки
+@import "partials/b-alert"; // Алерты
+@import "partials/b-logo"; // Логотип
+@import "partials/b-site-description"; // Описание сайта
+@import "partials/b-item-list"; // Список товаров
+@import "partials/b-item"; // Товар в списке
+@import "partials/b-item-full"; // Товар
+@import "partials/b-status"; // Статус товара
+@import "partials/b-instafeed"; // Фид с инстаграмма
+@import "partials/b-admin"; // Кнопка админки
+@import "partials/userbar"; // Кнопки пользователей
+@import "partials/b-search"; // Поле поиска
+@import "partials/b-cart-trigger"; // Кнопка корзины (триггер)
+@import "partials/b-slider"; // Слайдер (прим. слайдер товаров)
+@import "partials/b-characteristics"; // Характеристики товара
+@import "partials/b-float-cart"; // Плавающая корзина
+@import "partials/b-cart"; // Корзина
+@import "partials/b-article"; // Статья
+@import "partials/b-text"; // Текстовый блок
+@import "partials/b-form"; // Форма
+@import "partials/b-scroller"; // Скроллер
+@import "partials/b-cbox"; // Чекбокс
+@import "partials/b-radio"; // Радио
+@import "partials/b-full-filter"; // Фильтр
+@import "partials/b-theme-switcher"; // Свитч для тем
+@import "partials/b-feature-list"; // Фичиры, фичирлист
+@import "partials/b-modification-list"; // Список модов
+@import "partials/b-q-status"; // Статус количества товара
+@import "partials/b-paginator"; // Пагинатор
+@import "partials/b-show-more"; // Показать еще
+@import "partials/b-breadcrumbs"; //Хлебные крошки
+@import "partials/b-tooltip"; // Подсказка
+@import "partials/mmenu";
+@import "partials/select-file"; // Кастомный выбор локального файла
+@import "partials/radiobtn"; // Кастомные радио-кнопки
+@import "partials/switcher"; // Переключалка в стиле iOS
+@import "partials/color-picker"; // Палитра цветов
+@import "partials/column-list"; // Колоночный список (например, список категорий на 404 странице)
+@import "partials/design-settings"; // Настройщик дизайна
 
-//Global layout blocks
-@import "block/b-page"; // Основная страница
-@import "block/b-header"; // Шапка сайта
-@import "block/b-nav"; // Основная навигация по сайту
-@import "block/b-footer"; // Подвал сайта
+// Global layout blocks
+@import "partials/b-page"; // Основная страница
+@import "partials/b-header"; // Шапка сайта
+@import "partials/b-nav"; // Основная навигация по сайту
+@import "partials/b-footer"; // Подвал сайта
 
-//Themes
-@import "block/theme/dark"; // Темная тема
-@import "block/theme/wannabe"; // Вонаби тема
-@import "block/theme/sugar"; // Сахар тема
-@import "block/theme/etc"; // Etc тема
-@import "block/theme/cc"; // cc тема
 
-@import "block/b-design-option"; // Попап смены диза
-@import "block/design-settings";
+// =====================================================================
+// Themes
+// =====================================================================
 
-@import "demo"; // Login demo page
-@import "block/design-test"; //Design editor test
+@import "themes/dark"; // Темная тема
+@import "themes/wannabe"; // Вонаби тема
+@import "themes/sugar"; // Сахар тема
+@import "themes/etc"; // Etc тема
+@import "themes/cc"; // cc тема
+
+
+// =====================================================================
+// Global: States
+// =====================================================================
+
+@import "global/states";
