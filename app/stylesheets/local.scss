@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+$images-path: "../images";
+$fonts-path: "../fonts";
+
+@import "sass/bundle";
+
+// Используем только на статике
+// для стилизации списка страниц
+@import "sass/demo";
