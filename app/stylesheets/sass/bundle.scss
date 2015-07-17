@@ -48,13 +48,21 @@
 // jQuery.mmenu
 @import "jQuery.mmenu/src/scss/jquery.mmenu.all";
 
+// OwlCarousel
+@import "OwlCarousel/owl-carousel/scss/carousel";
+@import "OwlCarousel/owl-carousel/scss/theme";
+@import "OwlCarousel/owl-carousel/scss/transitions";
+
 
 // =====================================================================
 // Vendors
 // =====================================================================
-@import "vendors/owlcarousel";
+
 @import "vendors/fancybox";
 @import "vendors/range";
+
+// Overrides
+@import "vendors/overrides/owl.carousel";
 
 
 // =====================================================================
