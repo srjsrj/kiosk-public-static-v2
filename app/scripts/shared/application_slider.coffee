@@ -11,10 +11,11 @@ $ ->
     options = _.clone defaultCarouselOptions
 
     if $(@).hasClass 'b-slider_promo'
-      options['singleItem'] = true
-      options['autoHeight'] = true
-      options['lazyLoad']   = true
-      options['afterInit']  = -> @.$elem.addClass 'loaded'
+      options['singleItem']      = true
+      options['autoHeight']      = true
+      options['lazyLoad']        = true
+      options['transitionStyle'] = 'fade'
+      options['afterInit']       = -> @.$elem.addClass 'loaded'
     if $(@).hasClass 'application-slider_photos'
       options['singleItem']   = false
       options['items']        = 3
