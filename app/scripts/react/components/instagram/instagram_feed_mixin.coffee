@@ -3,16 +3,13 @@ window.InstagramFeed_Mixin =
   STATE_LOADED:  'loaded'
   STATE_ERROR:   'error'
 
-  INSTAGRAM_API_URL: 'https://api.instagram.com/v1/'
-
   _getRequestUrl: ->
-    url = @INSTAGRAM_API_URL + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
-    url += '&count=' + @props.limit if @props.limit?
+    url = gon.public_api_url + '/v1/instagram/feed/'
+    url += '?limit=' + @props.limit if @props.limit?
     url
 
   _loadPhotos: ->
     $.ajax(
-      dataType: "jsonp"
       url: @_getRequestUrl()
       success: (photos) =>
         if @isMounted() && photos?

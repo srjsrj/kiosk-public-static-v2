@@ -1,8 +1,6 @@
 window.InstagramFeed_Controllable_v2 = React.createClass
   propTypes:
     isVisible: React.PropTypes.bool.isRequired
-    clientId:  React.PropTypes.string.isRequired
-    userId:    React.PropTypes.number.isRequired
     limit:     React.PropTypes.number
 
   getDefaultProps: ->
@@ -19,7 +17,7 @@ window.InstagramFeed_Controllable_v2 = React.createClass
 
   render: ->
     if @state.isVisible
-      return <InstagramFeed_v2 clientId={this.props.clientId} userId={this.props.userId} limit={this.props.limit} />
+      return <InstagramFeed_v2 limit={this.props.limit} />
     else
       return <span/>
 
@@ -29,8 +27,6 @@ window.InstagramFeed_v2 = React.createClass
   mixins: [InstagramFeed_Mixin]
 
   propTypes:
-    clientId: React.PropTypes.string.isRequired
-    userId: React.PropTypes.number.isRequired
     limit: React.PropTypes.number
 
   getInitialState: ->
