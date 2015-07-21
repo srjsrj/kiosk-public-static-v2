@@ -6,16 +6,16 @@
     .b-page__content
       .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
-      
+
       .b-page__content__inner.b-page__content__inner_slider
         .b-slider.b-slider_promo(application-slider)
           .b-slider__item
-            %img{src: 'images/slidertest.jpg', alt: ''}
+            %img{src: '../images/slidertest.jpg', alt: ''}
           .b-slider__item
             %img{src: 'http://placehold.it/1000x300', alt: ''}
           .b-slider__item
             %img{src: 'http://placehold.it/400x400', alt: ''}
-      
+
       .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list
           .b-item-list__content
@@ -23,7 +23,7 @@
               .b-item-list__item
                 %a.b-item{href: 'product.html'}
                   .b-item__pic-wrap
-                    %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                    %img.b-item__pic{src: '../images/product-square.jpg', alt:'paste product name here'}
                     .b-item__status
                       -if i == 1
                         %span.b-status.b-status_sold Распродано
@@ -37,5 +37,5 @@
 
         +include 'app/haml/shared/_footer.haml'
 
-    %script{src: 'scripts/vendor.js'}
-    %script{src: 'scripts/client.js'}
+    %script{src: '../scripts/vendor.js'}
+    %script{src: '../scripts/client.js'}

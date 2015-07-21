@@ -5,7 +5,7 @@
         - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
         - for l in footer_links
           %a.b-footer__link{href: '#'}= "#{l}"
-      
+
       .b-footer__nav.b-footer__nav_soc
         %a.b-footer__link{href: '#'} Facebook
         %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
@@ -16,16 +16,16 @@
 #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
 
 %div{data-react-class: 'BasketButton', data-react-props: '{"cartUrl": "cart.html", "itemsCount": 1}'}
-  
+
 %div{data-react-class: 'BasketPopup', data-react-props: '{"cartUrl": "cart.html", "cartClearUrl": "cart.html", "items": []}'}
 
 .b-theme-switch
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page", data-logourl: "images/wannabe/logo.png"} Basic
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-dark", data-logourl: "images/wannabe/logo.png"} Basic dark
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-wannabe", data-logourl: "images/wannabe/logo.svg"} Wannabe
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-sugar", data-logourl: "images/sugar/logo.png"} Sugar
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-cc", data-logourl: "images/cc/logo.png"} Citycicle
-  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-etc", data-logourl: "images/etc/logo.png"} etc
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page", data-logourl: "../images/wannabe/logo.png"} Basic
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-dark", data-logourl: "../images/wannabe/logo.png"} Basic dark
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-wannabe", data-logourl: "../images/wannabe/logo.svg"} Wannabe
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-sugar", data-logourl: "../images/sugar/logo.png"} Sugar
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-cc", data-logourl: "../images/cc/logo.png"} Citycicle
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-etc", data-logourl: "../images/etc/logo.png"} etc
 
 #nav(ks-mob-nav)
   %ul
@@ -84,7 +84,7 @@
 /           .b-design-option__color{style: 'background-color: green'}
 /       .b-design-option__item__available-params
 /         %div{data-react-class: 'ColorList', data-react-props: '{"name": "layout-color","colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
-        
+
 /     .b-design-option__item
 /       %span.b-design-option__item__name прозрачность ленты
 /       .b-design-option__item__val
