@@ -48,6 +48,7 @@ let CatalogFilterOptions = React.createClass({
                 items={items}
                 title={title}
                 value={value}
+                default={item.default}
                 paramName={paramName}
                 filterName={this.props.filterName}
                 params={this.props.params}

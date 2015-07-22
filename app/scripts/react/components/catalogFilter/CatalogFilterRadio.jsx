@@ -1,6 +1,3 @@
-import URI from 'URIjs';
-global.URI = URI;
-
 let CatalogFilterRadio = React.createClass({
   propTypes: {
     items: React.PropTypes.array.isRequired,
@@ -8,6 +5,14 @@ let CatalogFilterRadio = React.createClass({
     value: React.PropTypes.string.isRequired,
     paramName: React.PropTypes.string.isRequired,
     filterName: React.PropTypes.string
+  },
+
+  getInitialState() {
+    let currentIndex;
+    this.props.items.forEach((item, i) => {
+      if (item.paramValue === this.props.value) currentIndex = i;
+    });
+    return { currentIndex };
   },
 
   render() {
@@ -26,11 +31,11 @@ let CatalogFilterRadio = React.createClass({
       return (
         <label className="b-radio" key={i}>
           <input type="radio"
-                 name={this.getFieldName()}
-                 defaultChecked={item.paramValue == this.props.value}
+                 name={this.getFieldName(item)}
+                 checked={this.state.currentIndex === i}
                  value={item.paramValue}
                  className="b-radio__native"
-                 onChange={this.handleChange} />
+                 onChange={this.handleChange.bind(this, i)} />
           <div className="b-radio__val">
             {item.name}
           </div>
@@ -45,7 +50,9 @@ let CatalogFilterRadio = React.createClass({
     );
   },
 
-  getFieldName() {
+  getFieldName(item) {
+    if (item.paramValue === this.props.default) return;
+
     if (this.props.filterName != null) {
       return `${this.props.filterName}[${this.props.paramName}]`;
     } else {
@@ -53,7 +60,7 @@ let CatalogFilterRadio = React.createClass({
     }
   },
 
-  handleChange(e) {
+  handleChange(index, e) {
     let elRect = e.target.getBoundingClientRect(),
         offsetLeft = 15;
 
@@ -63,6 +70,7 @@ let CatalogFilterRadio = React.createClass({
       top: elRect.top + document.body.scrollTop - elRect.height / 2
     };
 
+    this.setState({ currentIndex: index });
     KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
   },
 
