@@ -41,9 +41,10 @@ const _rules = {
     };
   },
   logoUrl(value) {
+    const imageUrl = value ? value : gon.default_logo_url;
     return {
       '#b-logo__image': {
-        'content': value ? `url("${value}")` : 'none'
+        'content': `url("${imageUrl}")`
       }
     };
   }
