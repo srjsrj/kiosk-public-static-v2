@@ -24,7 +24,6 @@ let CatalogFilter = React.createClass({
         </label>
         <CatalogFilterOptions {...this.props} />
         <CatalogFilterShowResultsButton />
-        {this.renderHiddenParams()}
       </div>
     );
   },

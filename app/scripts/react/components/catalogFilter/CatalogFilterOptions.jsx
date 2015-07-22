@@ -8,6 +8,7 @@ let CatalogFilterOptions = React.createClass({
   propTypes: {
     options: React.PropTypes.array.isRequired,
     selectedOptions: React.PropTypes.array,
+    params: React.PropTypes.object,
     filterName: React.PropTypes.string
   },
 
@@ -36,6 +37,7 @@ let CatalogFilterOptions = React.createClass({
                 title={title}
                 paramName={paramName}
                 filterName={this.props.filterName}
+                params={this.props.params}
                 key={i} />
           );
         case 'radio':
@@ -48,6 +50,7 @@ let CatalogFilterOptions = React.createClass({
                 value={value}
                 paramName={paramName}
                 filterName={this.props.filterName}
+                params={this.props.params}
                 key={i} />
           );
         case 'range':
@@ -64,6 +67,7 @@ let CatalogFilterOptions = React.createClass({
                 paramName={paramName}
                 step={step}
                 filterName={this.props.filterName}
+                params={this.props.params}
                 key={i} />
           );
         case 'color':
@@ -75,6 +79,7 @@ let CatalogFilterOptions = React.createClass({
                 title={title}
                 paramName={paramName}
                 filterName={this.props.filterName}
+                params={this.props.params}
                 key={i} />
           );
         default:

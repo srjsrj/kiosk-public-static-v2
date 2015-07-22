@@ -52,13 +52,25 @@ let CatalogFilterColor = React.createClass({
         listRect = this.refs.list.getDOMNode().getBoundingClientRect(),
         offsetLeft = 15;
 
-    let filter = $(this.getDOMNode()).closest('form').serialize();
+    let filter = this.getFilter();
     let position = {
       left: listRect.right + offsetLeft,
       top: elRect.top + document.body.scrollTop - elRect.height / 2
     };
 
     KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+  },
+
+  getFilter() {
+    let filter = $(this.getDOMNode()).closest('form').serialize();
+
+    if (this.props.params && this.props.params.category_id) {
+      filter = filter ?
+        filter + '&category_id=' + this.props.params.category_id :
+        '?category_id=' + this.props.params.category_id
+    }
+
+    return filter;
   }
 });
 

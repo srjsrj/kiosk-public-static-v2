@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import URI from 'URIjs';
 
 export default class CatalogFilterSelectedOptions {
   static propTypes = {
