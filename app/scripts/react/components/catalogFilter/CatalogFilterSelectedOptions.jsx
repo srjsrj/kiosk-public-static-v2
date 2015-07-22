@@ -15,13 +15,12 @@ export default class CatalogFilterSelectedOptions {
   }
   renderOptions() {
     const options = this.props.selectedOptions.map((item, i) => (
-      <span
-        className="b-full-filter__value"
-        onClick={() => this.removeOption(item)}
-        key={i}
+      <a href={item.url}
+         className="b-full-filter__value"
+         key={i}
       >
         {item.name}
-      </span>
+      </a>
     ));
 
     return (
@@ -29,8 +28,5 @@ export default class CatalogFilterSelectedOptions {
         {options}
       </div>
     );
-  }
-  removeOption(item) {
-    window.location = new URI().search(item.query).toString();
   }
 }
