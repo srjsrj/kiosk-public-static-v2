@@ -99,10 +99,6 @@ let CatalogFilterCheckbox = React.createClass({
   },
 
   handleChange(e) {
-    if (!e.target.checked) {
-      return KioskEvents.emit(KioskEvents.keys.commandTooltipHide());
-    }
-
     let elRect = e.target.getBoundingClientRect(),
         offsetLeft = 15;
 
