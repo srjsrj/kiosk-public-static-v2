@@ -36,7 +36,7 @@ export function saveChanges() {
 
     const formData = new FormData();
     const add = function add(key, value) {
-      formData.append(key, value);
+      formData.append(key, value === null ? '' : value);
     }
 
     for(let key in data) {

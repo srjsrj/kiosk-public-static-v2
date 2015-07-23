@@ -6,6 +6,7 @@ import * as actionTypes from '../constants/actionTypes';
 const current = {
   pageBgColor: '#6c7a89',
   pageBgUrl: null,
+  pageBgFile: null,
   fontFamily: 'verdana',
   fontColor: '#2ac67e',
   fontSize: 'lg',
@@ -13,7 +14,8 @@ const current = {
   feedTransparency: .7,
   productsInRow: 3,
   productLayoutBigpic: false,
-  logoUrl: null
+  logoUrl: null,
+  logoFile: null
 };
 
 const initialState = Immutable.fromJS({
