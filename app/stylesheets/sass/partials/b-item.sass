@@ -1,12 +1,13 @@
 .b-item
   display: block
-  font-size: 1rem
+  // font-size: 1em
+  font-size: 14px
   &__pic
     width: 100%
     vertical-align: top
     &-wrap
       position: relative
-  
+
   &__status
     position: absolute
     bottom: 0
@@ -15,7 +16,7 @@
     .b-status
       display: inline-block
       vertical-align: bottom
-  
+
   &__info
     margin: 8px 0 0
 
@@ -28,7 +29,7 @@
     // margin: 0.5em 0 0
     padding-right: 10px
     display: inline
-    font-size: 1rem
+    font-size: 1em
     &_old
       text-decoration: line-through
       color: #AEAEAE
@@ -39,4 +40,4 @@
   @include grid-media-query("palm")
     &__name,
     &__price
-      font-size: .9rem
+      font-size: .9em
