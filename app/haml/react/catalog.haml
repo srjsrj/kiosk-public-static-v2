@@ -11,7 +11,7 @@
         %section.b-item-list.b-item-list_has-filter
           .b-item-list__filter
             +include 'app/haml/shared/_filter.haml'
-          
+
           .b-item-list__content
             - for i in [1..8]
               .b-item-list__item
@@ -50,6 +50,7 @@
                   %a{href: '#'}
                     &rsaquo;
 
+      .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'
 
     %script{src: '../scripts/vendor.js'}
