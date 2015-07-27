@@ -53,7 +53,7 @@ window.InstagramFeed_v2 = React.createClass
 window.InstagramFeed_v2_Error = React.createClass
   render: ->
     <div className='b-instafeed-v2 b-insafeed_error'>
-      Ошибка при загрузке фотографий
+      Ошибка при загрузке фотографий в копмоненте Instagram
     </div>
 
 window.InstagramFeed_v2_Spinner = React.createClass
