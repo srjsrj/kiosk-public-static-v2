@@ -121,6 +121,33 @@ $articulColor: #828282
     &__row
       margin-top: 17px
 
+      &_fixed
+        @include grid-media-query((lap, palm))
+          width: 100%
+          margin-left: 0
+          position: fixed
+          // lte ie9
+          display: table
+          // modern browsers
+          display: flex
+          flex-flow: row nowrap
+          right: 0
+          bottom: 0
+          left: 0
+          background-color: #fff
+          letter-spacing: 0
+          word-spacing: 0
+          z-index: 100
+          will-change: transform
+
+          .b-item-full__form__option,
+          .b-item-full__form__submit
+            padding-left: 0
+            // lte ie9
+            display: table-cell
+            // modern browsers
+            flex-grow: 1
+
     &__option
       &.b-item-full__form__option_full
         @extend %one-whole
