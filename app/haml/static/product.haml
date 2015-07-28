@@ -88,8 +88,18 @@
                 - for obj, i in details
                   - for key of obj
                     %li
-                      = "#{key}:"
-                      = obj[key]
+                      %a{href: '#'}
+                        = "#{key}:"
+                        = obj[key]
+                %li
+                  %a{href: '#'}
+                    Инструкция .png (26.8 КБ)
+                    %i.icon-attachment
+                %li
+                  %a{href: '#'}
+                    Ссылка на страницу
+                    %i.icon-popup
+
 
             .b-item-full__video
               %h1.b-item-full__title
