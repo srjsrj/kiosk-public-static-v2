@@ -64,6 +64,13 @@ export default {
     static: {
       src: src + '/**/*.{eot,svg,ttf,woff,woff2}',
       dest: build + '/fonts'
+    },
+    production: {
+      src: [
+        src + '/**/*.{eot,svg,ttf,woff,woff2}',
+        '!' + src + '/images/**/*'
+      ],
+      dest: dist + '/fonts'
     }
   },
   images: {
