@@ -9,6 +9,7 @@ gulp.task('dist', ['[Shared] Clean'], () => {
   gulp.start(
     '[Production] Scripts',
     '[Production] Styles',
+    '[Production] Fonts',
     '[Production] Images'
   );
 });
