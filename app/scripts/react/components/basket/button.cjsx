@@ -2,6 +2,7 @@ window.BasketButton = React.createClass
   propTypes:
     # Если количество не установлено, то оно берется из BasketStore
     itemsCount: React.PropTypes.number
+    cartText:   React.PropTypes.string
     cartUrl:    React.PropTypes.string.isRequired
 
   getDefaultProps: ->
@@ -24,21 +25,38 @@ window.BasketButton = React.createClass
 
   render: ->
     if @state.itemsCount > 0
-      return <BasketButton_Full cartUrl={this.props.cartUrl} itemsCount={this.state.itemsCount}/>
+      return <BasketButton_Full cartUrl={this.props.cartUrl} cartText={this.props.cartText} itemsCount={this.state.itemsCount}/>
     else
-      return <BasketButton_Empty cartUrl={this.props.cartUrl}/>
+      return <BasketButton_Empty cartUrl={this.props.cartUrl} cartText={this.props.cartText}/>
 
 window.BasketButton_Full = React.createClass
   propTypes:
     itemsCount: React.PropTypes.number.isRequired
     cartUrl:    React.PropTypes.string.isRequired
+    cartText:   React.PropTypes.string.isRequired
 
   render: ->
-    return <a className='b-cart-trigger b-cart-trigger_full' href={this.props.cartUrl}><span className='b-cart-trigger__count'>{this.props.itemsCount}</span></a>
+    cartText = if @props.cartText? and @props.cartText != ''
+                 <span className='b-cart-trigger__text'>{@props.cartText}</span>
+               else
+                 ''
+
+    return <a className='b-cart-trigger b-cart-trigger_full' href={this.props.cartUrl}>
+             {cartText}
+             <span className='b-cart-trigger__count'>{this.props.itemsCount}</span>
+           </a>
 
 window.BasketButton_Empty = React.createClass
   propTypes:
-    cartUrl: React.PropTypes.string.isRequired
+    cartUrl:  React.PropTypes.string.isRequired
+    cartText: React.PropTypes.string.isRequired
 
   render: ->
-    return <a className='b-cart-trigger' href={this.props.cartUrl}></a>
+    cartText = if @props.cartText? and @props.cartText != ''
+                 <span className='b-cart-trigger__text'>{@props.cartText}</span>
+               else
+                 ''
+
+    return <a className='b-cart-trigger' href={this.props.cartUrl}>
+             {cartText}
+           </a>

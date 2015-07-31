@@ -1,22 +1,32 @@
-$cartTriggerColor: $basicColorHover
-$cartTriggerFullColor: $basicColor
-$cartTriggerCounterColor: #00AEFF
+$cartTriggerSize: 50px
+$cartTriggerBackground: #31383f
+$cartTriggerBackgroundHover:#4d5257
+$cartTriggerFullBackground: cartTriggerBackground
+$cartTriggerZindex: 10
+$cartTriggerCounterBackground: #00aeff
 
 .b-cart-trigger
   position: fixed
-  z-index: 10
+  z-index: $cartTriggerZindex
   right: 30px
   top: 30px
-  width: 50px
-  height: 50px
+  min-width: $cartTriggerSize
+  height: $cartTriggerSize
   border-radius: 25px
   margin: 0
-  background-color: $cartTriggerColor
+  background-color: $cartTriggerBackground
+  &__text
+    padding:
+      right: 20px
+      left: $cartTriggerSize - 2
+    display: inline-block
+    line-height: $cartTriggerSize
+    color: #fff
   &__count
     position: absolute
     bottom: 100%
     left: 100%
-    background: $cartTriggerCounterColor
+    background: $cartTriggerCounterBackground
     width: 30px
     height: 30px
     margin: 0 0 -15px -15px
@@ -29,19 +39,19 @@ $cartTriggerCounterColor: #00AEFF
     letter-spacing: normal
   &:before
     content: ''
-    width: 26px
-    height: 23px
-    background: url(#{$images-path}/cart.svg)
-    margin: -12px 0 0 -13px
+    width: 25px
+    height: 25px
+    background: url(#{$images-path}/cart_icon.svg)
+    margin: -13px 0 0
     position: absolute
     top: 50%
-    left: 50%
+    left: 12px
   &_full
-    background-color: $cartTriggerFullColor
+    background-color: $cartTriggerFullBackground
     transition: background-color .2s ease
-    cursor: pointer  
+    cursor: pointer
   &:hover
-    background-color: $cartTriggerColor
+    background-color: $cartTriggerBackgroundHover
 
   .fancybox-lock &
     display: none
