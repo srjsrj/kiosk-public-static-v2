@@ -32,6 +32,8 @@ import './react/stores/basket';
 // Exposing neccessary resources outside
 global.CatalogFilter = require('./react/components/CatalogFilter');
 global.Userbar = require('./react/components/Userbar/UserbarContainer');
-global.Logo = require('./react/components/Logo/LogoContainer');
+global.Logo = require('./react/components/Logo');
+global.ProductProperties = require('./react/components/ProductProperties');
+global.PropertyList = require('./react/components/ProductProperties/PropertyList');
 
 import './react/application';
