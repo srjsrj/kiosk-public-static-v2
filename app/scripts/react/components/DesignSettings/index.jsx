@@ -81,7 +81,7 @@ class DesignSettings {
               </DesignSettingsOption>
             </DesignSettingsGroup>
 
-            <DesignSettingsGroup title="Логотип">
+            <DesignSettingsGroup title="Логотип (желательно .SVG)">
               <DesignSettingsOption>
                 <DesignSettingsAttach {...this.getAttachProps('logo')}>
                   {(SelectFile) => <SelectFile withText={true} />}
