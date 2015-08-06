@@ -10,6 +10,7 @@ window.InstagramFeed_Mixin =
 
   _loadPhotos: ->
     $.ajax(
+      cache: true
       url: @_getRequestUrl()
       success: (photos) =>
         if @isMounted() && photos?
