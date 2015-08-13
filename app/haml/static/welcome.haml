@@ -2,8 +2,12 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.b-page
+  %body.b-page.b-page_topbanner-enabled
     .b-page__content
+      .top-banner(ks-topbanner)
+        .top-banner__close(ks-topbanner-close)
+        %a.top-banner__link{href: '#'}
+          .top-banner__content Только до 23 сентября! Акция! Бесплатная доставка от 500 рублей
       .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
 
