@@ -24,6 +24,8 @@ $cartTriggerCounterBackground: #00aeff
     color: #fff
     letter-spacing: 0
     word-spacing: 0
+    @include grid-media-query((lap, palm))
+      display: none
   &__count
     position: absolute
     bottom: 100%
