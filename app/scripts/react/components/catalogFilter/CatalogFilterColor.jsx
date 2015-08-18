@@ -1,3 +1,5 @@
+import { showFilteredCount } from '../../actions/catalogFilterActions';
+
 let CatalogFilterColor = React.createClass({
   propTypes: {
     items: React.PropTypes.array.isRequired,
@@ -48,17 +50,8 @@ let CatalogFilterColor = React.createClass({
   },
 
   handleChange(e) {
-    let elRect = e.target.getBoundingClientRect(),
-        listRect = this.refs.list.getDOMNode().getBoundingClientRect(),
-        offsetLeft = 15;
-
-    let filter = this.getFilter();
-    let position = {
-      left: listRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-
-    KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+    const filter = this.getFilter();
+    showFilteredCount(filter);
   },
 
   getFilter() {

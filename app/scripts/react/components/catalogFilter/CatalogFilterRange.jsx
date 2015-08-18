@@ -1,5 +1,6 @@
 import numeral from 'numeral';
 import noUiSlider from 'nouislider';
+import { showFilteredCount } from '../../actions/catalogFilterActions';
 
 let CatalogFilterRange = React.createClass({
   propTypes: {
@@ -129,16 +130,8 @@ let CatalogFilterRange = React.createClass({
   },
 
   handleChange() {
-    let elRect = this.refs.rangeValue.getDOMNode().getBoundingClientRect(),
-        offsetLeft = 15;
-
-    let filter = this.getFilter();
-    let position = {
-      left: elRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-
-    KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+    const filter = this.getFilter();
+    showFilteredCount(filter);
   },
 
   getFilter() {

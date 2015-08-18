@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import CatalogFilterExpandButton from './CatalogFilterExpandButton';
+import { showFilteredCount } from '../../actions/catalogFilterActions';
 
 const MAX_VISIBLE_LIMIT = 10,
       COLLAPSED_VISIBLE_COUNT = 5;
@@ -99,16 +100,8 @@ let CatalogFilterCheckbox = React.createClass({
   },
 
   handleChange(e) {
-    let elRect = e.target.getBoundingClientRect(),
-        offsetLeft = 15;
-
-    let filter = this.getFilter();
-    let position = {
-      left: elRect.right + offsetLeft,
-      top: elRect.top + document.body.scrollTop - elRect.height / 2
-    };
-
-    KioskEvents.emit(KioskEvents.keys.commandTooltipShow(), position, filter);
+    const filter = this.getFilter();
+    showFilteredCount(filter);
   },
 
   getFilter() {
