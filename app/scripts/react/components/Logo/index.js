@@ -3,23 +3,26 @@ import { connect } from 'redux/react';
 import connectToRedux from '../HoC/connectToRedux';
 
 @connect((state) => ({
-  vendorLogoUrl: state.design.getIn(['current', 'logoUrl'])
+  logoUrl: state.design.getIn(['current', 'logoUrl'])
 }))
 class Logo {
   static propTypes = {
     linkUrl: PropTypes.string.isRequired,
     logoText: PropTypes.string.isRequired,
-    vendorLogoUrl: PropTypes.string
+    logoUrl: PropTypes.string,
+    imageAlt: PropTypes.string,
   }
   render() {
     return (
       <a href={this.props.linkUrl} className="b-logo">
-        {this.renderContent(this.props.vendorLogoUrl, this.props.logoText)}
+        {this.renderContent(this.props.logoUrl, this.props.logoText, this.props.imageAlt)}
       </a>
     );
   }
-  renderContent(vendorLogoUrl, logoText) {
-    return vendorLogoUrl ? <img src={vendorLogoUrl} /> : <span>{logoText}</span>;
+  renderContent(logoUrl, logoText, imageAlt) {
+    return logoUrl
+      ? <img src={logoUrl} alt={imageAlt} />
+      : <span className="b-logo__text">{logoText}</span>;
   }
 }
 
