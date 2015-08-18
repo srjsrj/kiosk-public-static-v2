@@ -39,14 +39,6 @@ const _rules = {
         'color': value
       }
     };
-  },
-  logoUrl(value) {
-    const imageUrl = value ? value : gon.default_logo_url;
-    return {
-      '#b-logo__image': {
-        'content': `url("${imageUrl}")`
-      }
-    };
   }
 };
 const _states = {

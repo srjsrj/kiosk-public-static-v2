@@ -28,9 +28,11 @@ import './react/stores/basket';
 
 import CatalogFilter from './react/components/CatalogFilter';
 import Userbar from './react/components/Userbar';
+import Logo from './react/components/Logo';
 
 // Exposing neccessary resources outside
 global.CatalogFilter = CatalogFilter;
 global.Userbar = Userbar;
+global.Logo = Logo;
 
 import './react/application';
