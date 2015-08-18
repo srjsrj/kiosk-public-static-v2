@@ -29,13 +29,8 @@ import './react/stores/basket';
 import CatalogFilter from './react/components/CatalogFilter';
 import Userbar from './react/components/Userbar';
 
-import KioskEvents from './react/controllers/events';
-import TooltipController from './react/controllers/tooltip';
-
 // Exposing neccessary resources outside
-global.KioskEvents = KioskEvents;
 global.CatalogFilter = CatalogFilter;
 global.Userbar = Userbar;
 
-new TooltipController()
 import './react/application';
