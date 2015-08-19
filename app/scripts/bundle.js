@@ -1,3 +1,6 @@
+// Libs configuration
+import './react/libsConfigs';
+
 // Polyfills
 import './lib/console-polyfill';
 

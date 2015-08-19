@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react';
+import localforage from 'localforage';
 import { Map } from 'immutable';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
 import connectToRedux from '../HoC/connectToRedux';
 import * as designActions from '../../actions/designActions';
 import * as popupActions from '../../actions/popupActions';
+import { DESIGN_IS_OPEN } from '../../constants/storageKeys';
 import designOptions from '../../models/designOptions';
 
 import Scroller from '../common/Scroller';
@@ -127,23 +129,26 @@ class DesignSettingsContainer {
     design: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
   }
+  componentWillUpdate(nextProps) {
+    localforage.setItem(DESIGN_IS_OPEN, this.isOpened(nextProps));
+  }
   render() {
     const { design, dispatch } = this.props;
 
-    if (this.isOpened()) {
+    if (this.isOpened(this.props)) {
       return (
         <DesignSettings
           {...design.toObject()}
           {...bindActionCreators({...designActions, ...popupActions}, dispatch)}
         />
       );
-    } else {
-      return null;
     }
+    
+    return null;
   }
-  isOpened() {
+  isOpened(props) {
     // TODO: User "reselect"
-    return this.props.popups.some((popup) => (
+    return props.popups.some((popup) => (
       popup.get('style') === 'DesignSettings'
     ));
   }
