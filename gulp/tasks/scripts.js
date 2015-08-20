@@ -18,6 +18,7 @@ const dependencies = {
   'nouislider': './node_modules/noUiSlider/distribute/nouislider',
   'tinycolor2': './node_modules/tinycolor2',
   'immutable': './node_modules/immutable/dist/immutable',
+  'localforage': './node_modules/localforage/src/localforage',
   'jss': './node_modules/jss/lib',
   'reqwest': './node_modules/reqwest',
   'URIjs': './node_modules/URIjs/src/URI',

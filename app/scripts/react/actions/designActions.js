@@ -4,17 +4,17 @@ import * as actionTypes from '../constants/actionTypes';
 
 export function changeOption(name, value) {
   return {
-    type: actionTypes.DESIGN_CHANGE_OPTION,
     name,
-    value
+    value,
+    type: actionTypes.DESIGN_CHANGE_OPTION,
   };
 }
 
 export function changeImage(name, file) {
   return {
-    type: actionTypes.DESIGN_CHANGE_ATTACHMENT_OPTION,
     name,
-    file
+    file,
+    type: actionTypes.DESIGN_CHANGE_ATTACHMENT_OPTION,
   };
 }
 

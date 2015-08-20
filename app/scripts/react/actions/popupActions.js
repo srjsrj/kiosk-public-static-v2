@@ -1,20 +1,17 @@
-import {
-  POPUP_OPEN,
-  POPUP_CLOSE
-} from '../constants/actionTypes';
+import { POPUP_OPEN, POPUP_CLOSE } from '../constants/actionTypes';
 
 export function openPopup(style, props) {
   return {
-    type: POPUP_OPEN,
     style,
-    props
+    props,
+    type: POPUP_OPEN,
   };
 }
 
 export function closePopup(style) {
   return {
+    style,
     type: POPUP_CLOSE,
-    style
   };
 }
 
