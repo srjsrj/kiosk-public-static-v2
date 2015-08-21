@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import createReducer from '../utils/createReducer';
-import createObjectURL from '../utils/createObjectURL';
+import createObjectUrl from '../utils/createObjectUrl';
 import * as actionTypes from '../constants/actionTypes';
 
 const current = {
@@ -51,7 +51,7 @@ export default createReducer(initialState, {
     return state
       .mergeDeep({
         current: {
-          [name + 'Url']: file ? createObjectURL(file) : file,
+          [name + 'Url']: file ? createObjectUrl(file) : file,
           [name + 'File']: file
         }
       })
