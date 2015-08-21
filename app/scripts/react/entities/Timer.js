@@ -3,14 +3,14 @@ class Timer {
     let timerID, start, remaining = delay;
 
     this.pause = function() {
-      window.clearTimeout(timerID);
+      clearTimeout(timerID);
       remaining -= new Date() - start;
     };
 
     this.resume = function() {
       start = new Date();
-      window.clearTimeout(timerID);
-      timerID = window.setTimeout(callback, remaining);
+      clearTimeout(timerID);
+      timerID = setTimeout(callback, remaining);
     };
 
     this.resume();

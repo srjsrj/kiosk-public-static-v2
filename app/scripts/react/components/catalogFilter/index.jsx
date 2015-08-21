@@ -8,7 +8,6 @@ let CatalogFilter = React.createClass({
     params: React.PropTypes.object,
     filterName: React.PropTypes.string
   },
-
   render() {
     return (
       <div className="b-full-filter">

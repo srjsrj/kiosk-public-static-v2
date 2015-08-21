@@ -1,3 +1,4 @@
+import React from 'react';
 import { Provider } from 'redux/react';
 
 export default function(Component) {
