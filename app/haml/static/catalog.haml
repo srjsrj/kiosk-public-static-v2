@@ -30,25 +30,30 @@
                     .b-item__price 8 900 руб.
 
             .b-item-list__paginator
-              .pagination
-                %li.prev
+              %nav.pagination
+                %span.prev
                   %a{href: '#'}
                     &lsaquo;
                 - for i in [1..6]
                   - if i == 1
-                    %li.page.active
-                      %a{href: '#'}
-                        = i
+                    %span.page.current
+                      = i
                   - else if i == 4
-                    %li.page.disabled.gap
-                      %a{href: '#'} ...
+                    %span.page.gap
+                      &hellip;
                   - else
-                    %li.page
+                    %span.page
                       %a{href: '#'}
                         = i
-                %li.next
+                %span.next
                   %a{href: '#'}
                     &rsaquo;
+                %span.last
+                  %a{href: '#'}
+                    &raquo;
+                %span.page
+                  %a{href: '#'}
+                    Показать все
 
       .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'
