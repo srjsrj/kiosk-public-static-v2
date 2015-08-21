@@ -11,7 +11,7 @@ import { scripts as config } from '../config';
 // External dependencies we do not want to rebundle while developing,
 // but include in our dist bundle
 const dependencies = {
-  'react': './node_modules/react',
+  'react': './node_modules/react/addons',
   'redux': './node_modules/redux',
   'classnames': './node_modules/classnames',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
@@ -40,24 +40,21 @@ const nonProductionDependencies = [
   'reactUjs'
 ];
 
-gulp.task('[Static] Scripts', () => {
-
-  /*==========  Client scripts  ==========*/
-
-  let clientBundler = browserify({
+gulp.task('[Static] Client scripts', () => {
+  let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.static.client.entries,
     extensions: config.static.client.extensions
   });
 
   Object.keys(dependencies).forEach((dep) => {
-    clientBundler.external(dep);
+    bundler.external(dep);
   });
 
   function rebundle() {
     bundleLogger.start(config.static.client.outputName);
 
-    clientBundler.bundle()
+    bundler.bundle()
       .on('error', handleErrors)
       .pipe(source(config.static.client.outputName))
       .pipe(gulp.dest(config.static.client.dest))
@@ -67,16 +64,16 @@ gulp.task('[Static] Scripts', () => {
   };
 
   if (global.isWatching) {
-    clientBundler = watchify(clientBundler
+    bundler = watchify(bundler
       .transform('coffee-reactify')
       .transform('babelify', {
         stage: 0,
         ignore: /(node_modules|bower_components)/
       })
     );
-    clientBundler.on('update', rebundle);
+    bundler.on('update', rebundle);
   } else {
-    clientBundler
+    bundler
       .transform('coffee-reactify')
       .transform('babelify', {
         stage: 0,
@@ -85,22 +82,22 @@ gulp.task('[Static] Scripts', () => {
   }
 
   rebundle();
+});
 
-  /*==========  Vendor scripts  ==========*/
-
-  var vendorBundler = browserify({
+gulp.task('[Static] Vendor scripts', (cb) => {
+  let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.static.vendor.entries,
     extensions: config.static.vendor.extensions
   });
 
   Object.keys(dependencies).forEach((dep) => {
-    vendorBundler.require(dependencies[dep], { expose: dep });
+    bundler.require(dependencies[dep], { expose: dep });
   });
 
   bundleLogger.start(config.static.vendor.outputName);
 
-  vendorBundler
+  bundler
     .transform('coffee-reactify')
     .bundle()
     .on('error', handleErrors)
@@ -108,7 +105,52 @@ gulp.task('[Static] Scripts', () => {
     .pipe(gulp.dest(config.static.vendor.dest))
     .on('end', () => {
       bundleLogger.end(config.static.vendor.outputName);
+      cb();
     });
+});
+
+gulp.task('[Static] Test scripts', () => {
+  let testBundler = browserify({
+    cache: {}, packageCache: {},
+    entries: config.static.test.entries,
+    extensions: config.static.test.extensions
+  });
+
+  Object.keys(dependencies).forEach((dep) => {
+    testBundler.external(dep);
+  });
+
+  function rebundle() {
+    bundleLogger.start(config.static.test.outputName);
+
+    return testBundler.bundle()
+      .on('error', handleErrors)
+      .pipe(source(config.static.test.outputName))
+      .pipe(gulp.dest(config.static.test.dest))
+      .on('end', function() {
+        bundleLogger.end(config.static.test.outputName);
+      });
+  };
+
+  if (global.isWatching) {
+    testBundler = watchify(testBundler
+      .transform('coffee-reactify')
+      .transform('babelify', {
+        stage: 0,
+        ignore: /(node_modules|bower_components)/
+      })
+    );
+    testBundler.on('update', rebundle);
+  } else {
+    testBundler
+      .transform('coffee-reactify')
+      .transform('babelify', {
+        stage: 0,
+        ignore: /(node_modules|bower_components)/
+      });
+  }
+
+  return rebundle();
 });
 
 gulp.task('[Production] Scripts', () => {

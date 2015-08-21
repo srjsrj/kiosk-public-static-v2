@@ -1,6 +1,7 @@
-const src = './app',
-      build = './build',
-      dist = './dist';
+const src = './app';
+const build = './build';
+const dist = './dist';
+const test = './test';
 
 export default {
   clean: {
@@ -33,6 +34,12 @@ export default {
         dest: build + '/scripts',
         outputName: 'vendor.js',
         extensions: ['.coffee']
+      },
+      test: {
+        entries: test + '/index.js',
+        dest: build + '/scripts/',
+        outputName: 'test.js',
+        extensions: ['.jsx', '.cjsx', '.coffee']
       }
     },
     production: {

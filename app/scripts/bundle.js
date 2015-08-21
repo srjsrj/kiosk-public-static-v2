@@ -29,13 +29,9 @@ import './react/dispatchers/basket';
 import './react/actions/view/basket';
 import './react/stores/basket';
 
-import CatalogFilter from './react/components/CatalogFilter';
-import Userbar from './react/components/Userbar';
-import Logo from './react/components/Logo';
-
 // Exposing neccessary resources outside
-global.CatalogFilter = CatalogFilter;
-global.Userbar = Userbar;
-global.Logo = Logo;
+global.CatalogFilter = require('./react/components/CatalogFilter');
+global.Userbar = require('./react/components/Userbar/UserbarContainer');
+global.Logo = require('./react/components/Logo/LogoContainer');
 
 import './react/application';
