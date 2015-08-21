@@ -1,4 +1,5 @@
 .b-paginator
+  font-weight: bold
   font-size: 1.143rem
   &__item
     @extend .b-btn
@@ -26,14 +27,14 @@
       background-color: transparent
       background-position: 50% 50%
       background-repeat: no-repeat
-      background-size: 36% auto
+      background-size: 30% auto
       font-size: 18px
       border-radius: 50%
       text-indent: -9999em
-      opacity: .55
+      opacity: 1
       &:hover
-        background-color: #eee
-        opacity: 1
+        background-color: transparent
+        opacity: .8
   .first
     a
       background-image: url(#{$images-path}/laquo-light-black.svg)
@@ -52,19 +53,29 @@
     &.current
       @extend .b-paginator__item
       min-width: 32px
-      background: none
-      color: #999
+      background-color: transparent
+      color: inherit
       border-radius: 2em
+      opacity: 1
       &:hover
         background: none
-        color: #222
+        color: inherit
+        opacity: .8
     &.current
       @extend .b-paginator__item_current
-      border: 1px solid #eee
-      background: none
-      color: #222
+      background-color: transparent
+      opacity: .4
     &.disabled
       a
-        background: none
+        background-color: transparent
         color: #ccc
         cursor: not-allowed
+  .gap
+    @extend .b-paginator__item
+    min-width: 32px
+    display: inline-block
+    background: none
+    color: inherit
+    &:hover
+      background-color: transparent
+      color: inherit
