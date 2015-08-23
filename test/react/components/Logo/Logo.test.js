@@ -4,8 +4,8 @@ import Logo from '../../../../app/scripts/react/components/Logo';
 const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] Logo', function() {
-  before('render and locate element', function() {
-    this.renderedComponent = renderIntoDocument(
+  it('renders without errors', function() {
+    const renderedComponent = renderIntoDocument(
       <Logo
         logoUrl="http://assets.kiiiosk.ru/uploads/vendor/logo/5/logo.svg"
         linkUrl="http://google.ru"
@@ -13,9 +13,7 @@ describe('[Component] Logo', function() {
         imageAlt="Test2"
       />
     );
-  });
 
-  it('renders without errors', function() {
-    expect(this.renderedComponent).to.be.an('object');
+    expect(renderedComponent).to.be.an('object');
   });
 });

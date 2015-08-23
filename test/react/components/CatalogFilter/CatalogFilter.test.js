@@ -4,7 +4,7 @@ import CatalogFilter from '../../../../app/scripts/react/components/CatalogFilte
 const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] CatalogFilter', function() {
-  before('render and locate element', function() {
+  it('renders without errors', function() {
     const options = [{
       'title': 'Показывать',
       'type': 'checkbox',
@@ -64,16 +64,14 @@ describe('[Component] CatalogFilter', function() {
       }]
     }];
 
-    this.renderedComponent = renderIntoDocument(
+    const renderedComponent = renderIntoDocument(
       <CatalogFilter
         options={options}
         selectedOptions={[]}
         params={{'category_id': 5}}
       />
     );
-  });
 
-  it('renders without errors', function() {
-    expect(this.renderedComponent).to.be.an('object');
+    expect(renderedComponent).to.be.an('object');
   });
 });
