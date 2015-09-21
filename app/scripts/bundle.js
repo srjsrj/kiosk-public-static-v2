@@ -2,7 +2,6 @@
 import './react/libsConfigs';
 
 // Polyfills & Shims
-import './lib/es5-shim';
 import './lib/console-polyfill';
 
 // Locales
