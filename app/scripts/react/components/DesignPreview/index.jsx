@@ -72,11 +72,11 @@ class DesignPreview {
     return null;
   }
   apply(design) {
-    let states = this.getStates(design, _states),
-        switchableStates = this.getStates(design, _switchableStates),
-        cssRules = this.getRules(design),
-        pageClasses = this.getPageClasses(design, {...states, ...switchableStates}),
-        page = this.getElements().page;
+    const states = this.getStates(design, _states);
+    const switchableStates = this.getStates(design, _switchableStates);
+    const cssRules = this.getRules(design);
+    const pageClasses = this.getPageClasses(design, {...states, ...switchableStates});
+    const page = this.getElements().page;
 
     this.sheet.addRules(cssRules);
     page.className = pageClasses.join(' ');
