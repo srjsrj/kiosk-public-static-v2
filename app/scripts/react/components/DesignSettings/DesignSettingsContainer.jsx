@@ -18,7 +18,10 @@ class DesignSettingsContainer {
     dispatch: PropTypes.func.isRequired
   }
   componentWillUpdate(nextProps) {
-    localforage.setItem(DESIGN_IS_OPEN, this.isOpened(nextProps));
+    const isOpened = this.isOpened(nextProps);
+
+    this.updatePageClass(isOpened);
+    localforage.setItem(DESIGN_IS_OPEN, isOpened);
   }
   render() {
     const { design, dispatch } = this.props;
@@ -39,6 +42,13 @@ class DesignSettingsContainer {
     return props.popups.some((popup) => (
       popup.get('style') === 'DesignSettings'
     ));
+  }
+  updatePageClass(isOpened) {
+    if (isOpened) {
+      $('.b-page').addClass('b-page--design-settings');
+    } else {
+      $('.b-page').removeClass('b-page--design-settings');
+    }
   }
 }
 
