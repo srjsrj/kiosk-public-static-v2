@@ -1,6 +1,6 @@
 $cartTriggerSize: 50px
-$cartTriggerBackground: #31383f
-$cartTriggerBackgroundHover:#4d5257
+$cartTriggerBackground: rgba(black, 0.8)
+$cartTriggerBackgroundHover: rgba(black, 0.7)
 $cartTriggerFullBackground: cartTriggerBackground
 $cartTriggerZindex: 10
 $cartTriggerCounterBackground: #00aeff
@@ -15,6 +15,7 @@ $cartTriggerCounterBackground: #00aeff
   border-radius: 25px
   margin: 0
   background-color: $cartTriggerBackground
+  transition: background-color .2s ease
   &__text
     padding:
       right: 20px
@@ -52,7 +53,6 @@ $cartTriggerCounterBackground: #00aeff
     left: 12px
   &_full
     background-color: $cartTriggerFullBackground
-    transition: background-color .2s ease
     cursor: pointer
   &:hover
     background-color: $cartTriggerBackgroundHover
