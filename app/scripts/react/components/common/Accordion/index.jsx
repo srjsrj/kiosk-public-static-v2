@@ -1,0 +1,84 @@
+import React, { Children, cloneElement, Component, findDOMNode, PropTypes } from 'react';
+
+export default class Accordion extends Component {
+  static propTypes = {
+    allowMultiple: PropTypes.bool,
+    selectedIndex: PropTypes.number,
+  }
+  defaultProps = {
+    allowMultiple: false,
+  }
+  constructor(props) {
+    super(props);
+
+    const selectedIndex = props.selectedIndex || 0;
+    const state = { selectedIndex };
+
+    if (props.allowMultiple) {
+      state.activeItems = [selectedIndex];
+    }
+
+    this.state = state;
+  }
+  componentDidMount() {
+    this.allowOverflowByIndex(this.state.selectedIndex);
+
+    // allow overflow for absolute positioned elements inside
+    // the item body, but only after animation is complete
+    findDOMNode(this).addEventListener('transitionend', () => {
+      if (this.state.selectedIndex > -1) {
+        this.allowOverflowByIndex(this.state.selectedIndex);
+      }
+    });
+  }
+  allowOverflowByIndex(idx) {
+    const item = this.refs[`item-${ idx }`];
+    if (item) { item.allowOverflow(); }
+  }
+  handleClick(index) {
+    const newState = { selectedIndex: index };
+
+    if (this.props.allowMultiple) {
+      newState.activeItems = [...this.state.activeItems];
+
+      const position = newState.activeItems.indexOf(index);
+
+      if (position > -1) {
+        newState.activeItems.splice(position, 1);
+        newState.selectedIndex = -1;
+      } else {
+        newState.activeItems.push(index);
+      }
+    } else if (index === this.state.selectedIndex) {
+      newState.selectedIndex = -1;
+    }
+
+    this.setState(newState);
+  }
+  renderItems() {
+    const { allowMultiple, children } = this.props;
+    const { activeItems, selectedIndex } = this.state;
+
+    if (!children) { return null; }
+
+    return Children.map(children, (el, idx) => {
+      const expanded = (
+        selectedIndex === idx || (allowMultiple && activeItems.indexOf(idx) > -1)
+      );
+
+      return cloneElement(el, {
+        expanded,
+        key: idx,
+        onClick: this.handleClick.bind(this, idx),
+        ref: `item-${ idx }`
+      })
+    });
+  }
+  render() {
+    return (
+      <div className="react-sanfona" role="tablist">
+        {this.renderItems()}
+      </div>
+    );
+  }
+}
