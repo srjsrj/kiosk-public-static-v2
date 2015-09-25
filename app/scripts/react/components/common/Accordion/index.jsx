@@ -4,6 +4,7 @@ export default class Accordion extends Component {
   static propTypes = {
     allowMultiple: PropTypes.bool,
     selectedIndex: PropTypes.number,
+    updateEvent: PropTypes.string,
   }
   defaultProps = {
     allowMultiple: false,
@@ -21,13 +22,17 @@ export default class Accordion extends Component {
     this.state = state;
   }
   componentDidMount() {
-    this.allowOverflowByIndex(this.state.selectedIndex);
+    const { updateEvent } = this.props;
 
+    this.allowOverflowByIndex(this.state.selectedIndex);
     // allow overflow for absolute positioned elements inside
     // the item body, but only after animation is complete
     findDOMNode(this).addEventListener('transitionend', () => {
       if (this.state.selectedIndex > -1) {
         this.allowOverflowByIndex(this.state.selectedIndex);
+      }
+      if (updateEvent) {
+        $(document).trigger(updateEvent);
       }
     });
   }

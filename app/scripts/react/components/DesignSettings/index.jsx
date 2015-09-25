@@ -55,8 +55,8 @@ export default class DesignSettings {
           <DesignSettingsCloseButton onClick={this.props.closeDesignSettingsPopup} />
         </header>
         <div className="design-settings__body">
-          <Scroller className="design-settings__scroll">
-            <Accordion>
+          <Scroller className="design-settings__scroll" updateEvent="dsUpdate">
+            <Accordion updateEvent="dsUpdate">
               <AccordionItem {...this.getAccordionItemProps('Главная страница')}>
                 <DesignSettingsOption title="Товаров в ряд">
                   <DesignSettingsRadioList {...this.getProps('mainPageProductsInRow')} />
@@ -64,16 +64,13 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Строк товаров">
                   <DesignSettingsSlider {...this.getProps('mainPageRows')} displayValue={true} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать Instagram">
-                  <DesignSettingsCheckbox {...this.getProps('mainPageInstagram')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать слайдер">
-                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать баннер">
+                <DesignSettingsOption inRow={true} title="Баннер сверху">
                   <DesignSettingsCheckbox {...this.getProps('mainPageBanner')} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать фильтр">
+                <DesignSettingsOption inRow={true} title="Слайдер посередине">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
+                </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Фильтр товаров слева">
                   <DesignSettingsCheckbox {...this.getProps('mainPageFilter')} />
                 </DesignSettingsOption>
               </AccordionItem>
@@ -85,30 +82,27 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Строк товаров">
                   <DesignSettingsSlider {...this.getProps('categoryPageRows')} displayValue={true} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать Instagram">
-                  <DesignSettingsCheckbox {...this.getProps('categoryPageInstagram')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать слайдер">
-                  <DesignSettingsCheckbox {...this.getProps('categoryPageSlider')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать баннер">
-                  <DesignSettingsCheckbox {...this.getProps('categoryPageBanner')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать фильтр">
+                <DesignSettingsOption inRow={true} title="Фильтр товаров слева">
                   <DesignSettingsCheckbox {...this.getProps('categoryPageFilter')} />
                 </DesignSettingsOption>
               </AccordionItem>
 
               <AccordionItem {...this.getAccordionItemProps('Страница товара')}>
-                <DesignSettingsOption title="Фото">
+                <DesignSettingsOption title="Расположение фото">
                   <DesignSettingsRadioList {...this.getProps('productPagePhoto')} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Показывать подобные товары">
+                <DesignSettingsOption inRow={true} title="Подобные товары снизу">
                   <DesignSettingsCheckbox {...this.getProps('productPageSimilarProducts')} />
                 </DesignSettingsOption>
               </AccordionItem>
 
               <AccordionItem {...this.getAccordionItemProps('Общие настройки')}>
+                <DesignSettingsOption inRow={true} title="Галерея Instagram снизу">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageInstagram')} />
+                </DesignSettingsOption>
+              </AccordionItem>
+
+              <AccordionItem {...this.getAccordionItemProps('Стиль')}>
                 <DesignSettingsOption title="Логотип (желательно .SVG)">
                   <DesignSettingsAttach
                     {...this.getAttachProps('logo')}
