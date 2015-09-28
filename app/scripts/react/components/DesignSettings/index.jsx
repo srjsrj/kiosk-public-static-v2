@@ -64,12 +64,6 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Строк товаров">
                   <DesignSettingsSlider {...this.getProps('mainPageRows')} displayValue={true} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Баннер сверху">
-                  <DesignSettingsCheckbox {...this.getProps('mainPageBanner')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Слайдер посередине">
-                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
-                </DesignSettingsOption>
                 <DesignSettingsOption inRow={true} title="Фильтр товаров слева">
                   <DesignSettingsCheckbox {...this.getProps('mainPageFilter')} />
                 </DesignSettingsOption>
@@ -99,6 +93,12 @@ export default class DesignSettings {
               <AccordionItem {...this.getAccordionItemProps('Общие настройки')}>
                 <DesignSettingsOption inRow={true} title="Галерея Instagram снизу">
                   <DesignSettingsCheckbox {...this.getProps('mainPageInstagram')} />
+                </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Баннер сверху">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageBanner')} />
+                </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Слайдер посередине">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
                 </DesignSettingsOption>
               </AccordionItem>
 
