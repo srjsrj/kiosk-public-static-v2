@@ -46,7 +46,7 @@ $ ->
     })
 
   reinitSlider = ->
-    if $productSlider
+    if $productSlider.length
       $productSlider.data('owlCarousel').reinit({
         singleItem: true
         afterAction: syncPosition
