@@ -46,10 +46,11 @@ $ ->
     })
 
   reinitSlider = ->
-    $productSlider.data('owlCarousel').reinit({
-      singleItem: true
-      afterAction: syncPosition
-    })
+    if $productSlider
+      $productSlider.data('owlCarousel').reinit({
+        singleItem: true
+        afterAction: syncPosition
+      })
 
   initThumbs()
   initSlider()
