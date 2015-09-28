@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Map } from 'immutable';
 
 import designOptions from '../../models/designOptions';
+
 import Scroller from '../common/Scroller';
 import Accordion from '../common/Accordion';
 import AccordionItem from '../common/Accordion/AccordionItem';
@@ -15,6 +16,7 @@ import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 
 export default class DesignSettings {
   static propTypes = {
+    authUrl: PropTypes.string.isRequired,
     current: PropTypes.instanceOf(Map).isRequired,
     unsavedFields: PropTypes.object.isRequired,
     isSaving: PropTypes.bool.isRequired,
@@ -149,7 +151,7 @@ export default class DesignSettings {
           <DesignSettingsSaveButton
             isSaving={this.props.isSaving}
             unsavedFields={this.props.unsavedFields}
-            onClick={this.props.saveChanges}
+            onClick={this.props.saveChanges.bind(this, this.props.authUrl)}
           />
         </div>
       </div>

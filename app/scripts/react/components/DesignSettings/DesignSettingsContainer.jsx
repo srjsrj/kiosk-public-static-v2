@@ -14,6 +14,7 @@ import DesignSettings from '.';
 }))
 class DesignSettingsContainer {
   static propTypes = {
+    authUrl: PropTypes.string.isRequired,
     design: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
   }
@@ -24,13 +25,14 @@ class DesignSettingsContainer {
     localforage.setItem(DESIGN_IS_OPEN, isOpened);
   }
   render() {
-    const { design, dispatch } = this.props;
+    const { authUrl, design, dispatch } = this.props;
 
     if (this.isOpened(this.props)) {
       return (
         <DesignSettings
           {...design.toObject()}
           {...bindActionCreators({...designActions, ...popupActions}, dispatch)}
+          authUrl={authUrl}
         />
       );
     }

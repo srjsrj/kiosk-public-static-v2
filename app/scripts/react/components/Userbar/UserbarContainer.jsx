@@ -10,13 +10,14 @@ import DesignPreview from '../DesignPreview';
 @connect(() => ({}))
 class UserbarContainer {
   static propTypes = {
+    authUrl: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired,
     isDesignOpen: PropTypes.bool.isRequired,
     operatorUrl: PropTypes.string.isRequired,
     pageType: PropTypes.string.isRequired,
   }
   render() {
-    const { dispatch, pageType } = this.props;
+    const { authUrl, dispatch, pageType } = this.props;
 
     return (
       <div>
@@ -24,7 +25,7 @@ class UserbarContainer {
           {...this.props}
           {...bindActionCreators(popupActions, dispatch)}
         />
-        <DesignSettings />
+        <DesignSettings authUrl={authUrl} />
         <DesignPreview pageType={pageType} />
       </div>
     );

@@ -19,7 +19,7 @@ export function changeImage(name, file) {
   };
 }
 
-export function saveChanges() {
+export function saveChanges(authUrl) {
   return (dispatch, getState) => {
     const current = getState().design.get('current').toJS();
     const ignoredKeys = ['logoUrl', 'pageBgUrl'];
@@ -55,9 +55,15 @@ export function saveChanges() {
           design
         });
       })
-      .fail((xhr) => {
+      .fail((jqXHR) => {
+        if (jqXHR.status === 401 && authUrl) {
+          window.alert('Нет доступа для сохранения настроек, авторизуйтесь');
+          window.location = authUrl;
+        } else {
+          NoticeService.errorResponse(jqXHR);
+        }
+
         dispatch({ type: actionTypes.DESIGN_SAVE_FAILURE });
-        NoticeService.errorResponse(xhr);
       });
   }
 }
