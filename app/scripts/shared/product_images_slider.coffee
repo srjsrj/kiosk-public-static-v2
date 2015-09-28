@@ -55,3 +55,5 @@ $ ->
   initSlider()
   if $productSlider.width() != $productSlider.find('.owl-item').eq(0).width()
     reinitSlider()
+
+  $(document).on('updateProductImages', reinitSlider);

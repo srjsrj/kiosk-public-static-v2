@@ -44,10 +44,11 @@ const _rules = {
 const _states = {
   fontFamily: 'b-page_ff',
   fontSize: 'b-page_fs',
-  productsInRow: 'b-page_cols'
+  productsInRow: 'b-page_cols',
+  productPagePhoto: 'b-page_layout-photo',
 };
 const _switchableStates = {
-  productLayoutBigpic: 'b-page_layout-bigpic'
+  // productLayoutBigpic: 'b-page_layout-bigpic'
 };
 
 @connect((state) => ({
@@ -80,6 +81,7 @@ class DesignPreview {
 
     this.sheet.addRules(cssRules);
     page.className = pageClasses.join(' ');
+    this.emitChangeEvents();
   }
   getStates(design, states) {
     return design.reduce((previous, value, property) => {
@@ -139,6 +141,9 @@ class DesignPreview {
     return {
       page: document.body || document.getElementsByTagName('body')[0]
     };
+  }
+  emitChangeEvents() {
+    $(document).trigger('updateProductImages');
   }
 }
 

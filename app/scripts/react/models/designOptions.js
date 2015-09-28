@@ -51,18 +51,6 @@ export default {
     to: 20,
     step: 1,
   },
-  categoryPageInstagram: {
-    type: designTypes.DESIGN_CHECKBOX_TYPE,
-    name: 'designoption-categoryPageInstagram',
-  },
-  categoryPageSlider: {
-    type: designTypes.DESIGN_CHECKBOX_TYPE,
-    name: 'designoption-categoryPageSlider',
-  },
-  categoryPageBanner: {
-    type: designTypes.DESIGN_CHECKBOX_TYPE,
-    name: 'designoption-categoryPageBanner',
-  },
   categoryPageFilter: {
     type: designTypes.DESIGN_CHECKBOX_TYPE,
     name: 'designoption-categoryPageFilter',
