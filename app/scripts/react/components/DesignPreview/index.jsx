@@ -8,9 +8,8 @@ import connectToRedux from '../HoC/connectToRedux';
 
 const _rules = {
   welcome: {
-    mainPageRows(value, design) {
-      const newValue = (value * design.mainPageProductsInRow) + 1;
-      console.log(newValue);
+    mainPageRows(value, { mainPageProductsInRow }) {
+      const newValue = (value * mainPageProductsInRow) + 1;
 
       return {
         ['.b-page .b-item-list_catalog .b-item-list__item:nth-child(n + ' + newValue + ')']: {
@@ -20,8 +19,8 @@ const _rules = {
     }
   },
   categories: {
-    categoryPageRows(value, design) {
-      const newValue = (value * design.categoryPageProductsInRow) + 1;
+    categoryPageRows(value, { categoryPageProductsInRow }) {
+      const newValue = (value * categoryPageProductsInRow) + 1;
 
       return {
         ['.b-page .b-item-list_catalog .b-item-list__item:nth-child(n + ' + newValue + ')']: {
@@ -84,6 +83,7 @@ const _states = {
 const _switchableStates = {
   welcome: {
     mainPageFilter: 'b-page_layout-filter',
+    mainPageSlider: 'b-page_layout-slider',
   },
   categories: {
     categoryPageFilter: 'b-page_layout-filter',
@@ -94,7 +94,6 @@ const _switchableStates = {
   common: {
     mainPageBanner: 'b-page_layout-banner',
     mainPageInstagram: 'b-page_layout-instagram',
-    mainPageSlider: 'b-page_layout-slider',
   },
 };
 
