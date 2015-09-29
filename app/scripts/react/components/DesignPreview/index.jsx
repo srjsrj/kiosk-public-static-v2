@@ -6,41 +6,30 @@ import assign from 'react/lib/Object.assign';
 import tinycolor from 'tinycolor2';
 import connectToRedux from '../HoC/connectToRedux';
 
-      // "mainPageProductsInRow": 2,
-      // "mainPageRows": 5,
-      // "mainPageInstagram": true,
-      // "mainPageSlider": false,
-      // "mainPageBanner": true,
-      // "mainPageFilter": true,
-      // "categoryPageProductsInRow": 2,
-      // "categoryPageRows": 5,
-      // "categoryPageFilter": true,
-      // "productPagePhoto": "aside",
-      // "productPageSimilarProducts": false,
-      // "logoUrl": "http://assets.kiiiosk.ru/uploads/vendor/logo/5/logo.svg",
-      // "pageBgUrl": null,
-      // "pageBgColor": "#6c7a89",
-      // "feedBgColor": "#000000",
-      // "feedTransparency": 0,
-      // "fontColor": "#000000",
-      // "fontFamily": "helvetica",
-      // "fontSize": "md",
-
 const _rules = {
-  // welcome: {
-  //   mainPageRows(value) {
-  //     return {
-  //       '.b-page .b-item-list:nth-child(-n+1)': {
-  //         display: 'none'
-  //       },
-  //     };
-  //   }
-  // },
-  // categories: {
-  //   categoryPageRows(value) {
+  welcome: {
+    mainPageRows(value, design) {
+      const newValue = (value * design.mainPageProductsInRow) + 1;
+      console.log(newValue);
 
-  //   }
-  // },
+      return {
+        ['.b-page .b-item-list_catalog .b-item-list__item:nth-child(n + ' + newValue + ')']: {
+          display: 'none'
+        },
+      };
+    }
+  },
+  categories: {
+    categoryPageRows(value, design) {
+      const newValue = (value * design.categoryPageProductsInRow) + 1;
+
+      return {
+        ['.b-page .b-item-list_catalog .b-item-list__item:nth-child(n + ' + newValue + ')']: {
+          display: 'none'
+        },
+      };
+    }
+  },
   common: {
     pageBgColor(value) {
       return {
@@ -120,15 +109,23 @@ class DesignPreview {
     ]).isRequired,
   }
   componentDidMount() {
-    this.sheet = jss.createStyleSheet({}, { named: false }).attach();
-    this.sheet.element.setAttribute('design-settings-sheet', '');
+    this.attachSheet();
   }
   componentWillUpdate(nextProps) {
+    this.reattachSheet();
     this.apply(nextProps.design.get('current'));
   }
   componentWillUnmount() {
     this.sheet.detach();
     this.sheet = null;
+  }
+  attachSheet() {
+    this.sheet = jss.createStyleSheet({}, { named: false }).attach();
+    this.sheet.element.setAttribute('design-settings-sheet', '');
+  }
+  reattachSheet() {
+    this.sheet.detach();
+    this.attachSheet();
   }
   apply(design) {
     const { pageType } = this.props;
@@ -172,7 +169,7 @@ class DesignPreview {
       const rule = rulesForPageType[property];
 
       if (rule) {
-        const cssRule = rule(value);
+        const cssRule = rule(value, design.toJS());
 
         if (cssRule.dep) {
           const depValue = design.get(cssRule.dep);
