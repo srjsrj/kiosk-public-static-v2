@@ -93,6 +93,12 @@ const _states = {
   },
 };
 const _switchableStates = {
+  welcome: {
+    mainPageFilter: 'b-page_layout-filter',
+  },
+  categories: {
+    categoryPageFilter: 'b-page_layout-filter',
+  },
   products: {
     productPageSimilarProducts: 'b-page_layout-similar-products',
   },

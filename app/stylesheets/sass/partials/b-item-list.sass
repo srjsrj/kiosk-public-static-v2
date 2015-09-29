@@ -49,37 +49,6 @@
     @extend %one-whole
     padding-top: 40px
 
-  &_has-filter
-    padding-top: 40px
-    overflow: hidden
-    @include grid-media-query("palm")
-      padding-top: 0
-    .b-item-list
-      &__filter
-        width: 190px
-        float: left
-        border-right: 1px solid $basicBorderColor
-        padding-right: 10px
-      &__content
-        margin-left: 210px
-
-    @include grid-media-query((lap, palm))
-      .b-item-list
-        &__filter
-          float: none
-          width: 100%
-          padding: 0
-          border: none
-          max-width: 500px
-          margin-left: auto
-          margin-right: auto
-        &__content
-          margin-left: -18px
-
-.b-item-list_has-filter
-  .b-item-list
-    &__title
-      padding-top: 0
-      line-height: 100%
-      @include grid-media-query("palm")
-        padding-top: 42px
+  &_catalog
+    .b-item-list__filter
+      display: none
