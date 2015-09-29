@@ -45,7 +45,7 @@ window.InstagramFeed_v2 = React.createClass
       when @STATE_LOADING then <InstagramFeed_v2_Spinner/>
       when @STATE_ERROR   then <InstagramFeed_v2_Error/>
       else console.warn 'Неизвестное состояние #{@state.currentState}'
-    <div>
+    <div className="b-instafeed">
       <h2 className="b-item-list__title b-instafeed-v2__title"><a href={ this.state.profileUrl } rel='nofollow' target='_blank'>{ this.state.hashtag }</a></h2>
       { result }
     </div>

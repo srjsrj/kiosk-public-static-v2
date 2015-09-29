@@ -67,6 +67,9 @@ export default class DesignSettings {
                 <DesignSettingsOption inRow={true} title="Фильтр товаров слева">
                   <DesignSettingsCheckbox {...this.getProps('mainPageFilter')} />
                 </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Слайдер посередине">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
+                </DesignSettingsOption>
               </AccordionItem>
 
               <AccordionItem {...this.getAccordionItemProps('Страница категории')}>
@@ -96,9 +99,6 @@ export default class DesignSettings {
                 </DesignSettingsOption>
                 <DesignSettingsOption inRow={true} title="Баннер сверху">
                   <DesignSettingsCheckbox {...this.getProps('mainPageBanner')} />
-                </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Слайдер посередине">
-                  <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
                 </DesignSettingsOption>
               </AccordionItem>
 

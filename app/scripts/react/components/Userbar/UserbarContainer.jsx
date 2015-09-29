@@ -11,10 +11,13 @@ import DesignPreview from '../DesignPreview';
 class UserbarContainer {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    operatorUrl: PropTypes.string.isRequired
+    isDesignOpen: PropTypes.bool.isRequired,
+    operatorUrl: PropTypes.string.isRequired,
+    pageType: PropTypes.string.isRequired,
   }
   render() {
-    const { dispatch } = this.props;
+    const { dispatch, pageType } = this.props;
+
     return (
       <div>
         <Userbar
@@ -22,7 +25,7 @@ class UserbarContainer {
           {...bindActionCreators(popupActions, dispatch)}
         />
         <DesignSettings />
-        <DesignPreview />
+        <DesignPreview pageType={pageType} />
       </div>
     );
   }
