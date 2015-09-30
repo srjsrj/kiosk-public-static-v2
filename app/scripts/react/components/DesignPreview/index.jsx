@@ -2,9 +2,12 @@ import React, { PropTypes } from 'react';
 import { connect } from 'redux/react';
 import { fromJS } from 'immutable';
 import jss from 'jss';
+import nested from 'jss-nested'
 import assign from 'react/lib/Object.assign';
 import tinycolor from 'tinycolor2';
 import connectToRedux from '../HoC/connectToRedux';
+
+jss.use(nested);
 
 const _rules = {
   welcome: {
@@ -63,6 +66,22 @@ const _rules = {
         }
       };
     },
+    activeElementsColor(value) {
+      const color = tinycolor(value);
+      return {
+        '.b-page': {
+          '& .element--active': {
+            'background-color': color.toRgbString(),
+          },
+          '& .element--active-opacity': {
+            'background-color': color.setAlpha(.8).toRgbString(),
+          },
+          '& .element--active-opacity:hover': {
+            'background-color': color.setAlpha(.7).toRgbString(),
+          },
+        },
+      };
+    }
   }
 };
 const _states = {
@@ -140,7 +159,6 @@ class DesignPreview {
   }
   getStatesValues(design, states, pageType) {
     const statesForPageType = this.getStatesByPageType(states, pageType);
-
     return design.reduce((previous, value, property) => {
       const state = statesForPageType[property];
       if (state) {
@@ -163,13 +181,10 @@ class DesignPreview {
   }
   getRules(design, pageType) {
     const rulesForPageType = this.getRulesByPageType(_rules, pageType);
-
     return design.reduce((previous, value, property) => {
       const rule = rulesForPageType[property];
-
       if (rule) {
         const cssRule = rule(value, design.toJS());
-
         if (cssRule.dep) {
           const depValue = design.get(cssRule.dep);
           previous = previous.mergeDeep(cssRule.rule(depValue));
@@ -177,13 +192,11 @@ class DesignPreview {
           previous = previous.mergeDeep(cssRule);
         }
       }
-
       return previous;
     }, fromJS({})).toJS();
   }
   getPageClasses(design, states) {
     const page = this.getElements().page;
-
     let classes = page.className.split(' ').filter((className) => {
       for (let key in states) {
         if (states.hasOwnProperty(key)) {
@@ -196,7 +209,6 @@ class DesignPreview {
     Object.keys(states).reduce(function(previous, key) {
       if (states.hasOwnProperty(key)) {
         const value = states[key];
-
         if (value) {
           previous.push(value !== true ? key + '-' + value : key);
         }

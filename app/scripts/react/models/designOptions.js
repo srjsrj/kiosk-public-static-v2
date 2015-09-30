@@ -179,4 +179,24 @@ export default {
       value: 'lg',
     }],
   },
+  activeElementsColor: {
+    type: designTypes.DESIGN_COLOR_TYPE,
+    name: 'designoption-activeElementsColor',
+    items: [{
+      title: 'Белый',
+      value: '#ffffff',
+    }, {
+      title: 'Чёрный',
+      value: '#000000',
+    }, {
+      title: 'Оранжевый',
+      value: '#e74c3c',
+    }, {
+      title: 'Серый',
+      value: '#6c7a89',
+    }, {
+      title: 'Бежевый',
+      value: '#f4d3c4',
+    }],
+  },
 }

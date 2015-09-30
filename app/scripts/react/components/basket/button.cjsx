@@ -24,7 +24,7 @@ window.BasketButton = React.createClass
     @setState itemsCount: BasketStore.getBasketCount()
 
   render: ->
-    if @state.itemsCount > 0
+    if @state.itemsCount
       return <BasketButton_Full cartUrl={this.props.cartUrl} cartText={this.props.cartText} itemsCount={this.state.itemsCount}/>
     else
       return <BasketButton_Empty cartUrl={this.props.cartUrl} cartText={this.props.cartText}/>
@@ -41,7 +41,7 @@ window.BasketButton_Full = React.createClass
                else
                  ''
 
-    return <a className='b-cart-trigger b-cart-trigger_full' href={this.props.cartUrl}>
+    return <a className='b-cart-trigger b-cart-trigger_full element--active-opacity' href={this.props.cartUrl}>
              {cartText}
              <span className='b-cart-trigger__count'>{this.props.itemsCount}</span>
            </a>
@@ -57,6 +57,6 @@ window.BasketButton_Empty = React.createClass
                else
                  ''
 
-    return <a className='b-cart-trigger' href={this.props.cartUrl}>
+    return <a className='b-cart-trigger element--active-opacity' href={this.props.cartUrl}>
              {cartText}
            </a>

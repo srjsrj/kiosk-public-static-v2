@@ -6,6 +6,7 @@ import DesignSettings from '../../../../app/scripts/react/components/DesignSetti
 const { renderIntoDocument } = addons.TestUtils;
 
 const current = {
+  "activeElementsColor": "#000000",
   "mainPageProductsInRow": 2,
   "mainPageRows": 5,
   "mainPageInstagram": true,

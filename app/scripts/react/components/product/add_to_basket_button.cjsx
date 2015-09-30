@@ -15,4 +15,4 @@ window.AddToBasketButton = React.createClass
       alert "Ошибка при добавлении товара в корзину. Нет атрибута good в выбранном пункте"
   
   render: ->
-    return <button className="b-btn" onClick={this.addToBasket}>В корзину</button>
+    return <button className="b-btn element--active" onClick={this.addToBasket}>В корзину</button>

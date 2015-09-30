@@ -143,6 +143,9 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Размер шрифта">
                   <DesignSettingsRadioList {...this.getProps('fontSize')} />
                 </DesignSettingsOption>
+                <DesignSettingsOption title="Цвет активных элементов">
+                  <DesignSettingsRadioList {...this.getProps('activeElementsColor')} />
+                </DesignSettingsOption>
               </AccordionItem>
             </Accordion>
           </Scroller>

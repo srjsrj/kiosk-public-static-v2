@@ -26,6 +26,7 @@ global.gon = {
   "operator_api_url": "http://wannabe.3001.vkontraste.ru/operator/api",
   "__data": {
     "design": {
+      "activeElementsColor": "#000000",
       "mainPageProductsInRow": 2,
       "mainPageRows": 5,
       "mainPageInstagram": true,

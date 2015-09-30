@@ -4,6 +4,7 @@ import createObjectUrl from '../utils/createObjectUrl';
 import * as actionTypes from '../constants/actionTypes';
 
 const current = {
+  activeElementsColor: '#000000',
   mainPageProductsInRow: 2,
   mainPageRows: 5,
   mainPageInstagram: true,
