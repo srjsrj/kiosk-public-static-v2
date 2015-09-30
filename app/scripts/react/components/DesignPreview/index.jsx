@@ -117,7 +117,8 @@ const _switchableStates = {
 };
 
 @connect((state) => ({
-  design: state.design
+  design: state.design,
+  popups: state.popup.get('popups'),
 }))
 class DesignPreview {
   static propTypes = {
@@ -128,7 +129,9 @@ class DesignPreview {
   }
   componentDidMount() {
     this.attachSheet();
-    this.apply(this.props.design.get('current'));
+    if (this.isPopupOpened(this.props)) {
+      this.apply(this.props.design.get('current'));
+    }
   }
   componentWillUpdate(nextProps) {
     this.reattachSheet();
@@ -137,6 +140,11 @@ class DesignPreview {
   componentWillUnmount() {
     this.sheet.detach();
     this.sheet = null;
+  }
+  isPopupOpened(props) {
+    return props.popups.some((popup) => (
+      popup.get('style') === 'DesignSettings'
+    ));
   }
   attachSheet() {
     this.sheet = jss.createStyleSheet({}, { named: false }).attach();

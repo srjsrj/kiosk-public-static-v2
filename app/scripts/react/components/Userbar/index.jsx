@@ -14,11 +14,12 @@ export default class Userbar {
 
     if (isDesignOpen) {
       openDesignSettingsPopup();
-    } else if (isDesignOpen === null) {
-      if (store.get(storageKeys.DESIGN_IS_OPEN)) {
-        openDesignSettingsPopup();
-      }
     }
+    //  else if (isDesignOpen === null) {
+    //   if (store.get(storageKeys.DESIGN_IS_OPEN)) {
+    //     openDesignSettingsPopup();
+    //   }
+    // }
   }
   render() {
     const { openDesignSettingsPopup, operatorUrl } = this.props;
