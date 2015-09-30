@@ -41,10 +41,18 @@ describe('[Component] DesignSettings', () => {
       changeOption: sinon.spy(),
       saveChanges: sinon.spy(),
       closeDesignSettingsPopup: sinon.spy(),
+      onItemClick: sinon.spy(),
     };
 
     const renderedComponent = renderIntoDocument(
-      <DesignSettings {...design.toObject()} {...callbacks} />
+      <DesignSettings
+        {...design.toObject()}
+        {...callbacks}
+        authUrl="http://google.ru"
+        categoryPageUrl="http://wanna-be.ru/categories/635-braslety"
+        productPageUrl="http://wanna-be.ru/products/33302-kulon-merkaba-s-tsirkonami-serebryanyy-r"
+        selectedIndex={0}
+      />
     );
 
     expect(renderedComponent).to.be.an('object');

@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
-import localforage from 'localforage';
+import React, { Component, PropTypes } from 'react';
+import store from 'store';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
 import connectToRedux from '../HoC/connectToRedux';
 import * as designActions from '../../actions/designActions';
 import * as popupActions from '../../actions/popupActions';
-import { DESIGN_IS_OPEN } from '../../constants/storageKeys';
+import * as storageKeys from '../../constants/storageKeys';
 import DesignSettings from '.';
 
 @connect((state) => ({
@@ -15,32 +15,27 @@ import DesignSettings from '.';
 class DesignSettingsContainer {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
+    categoryPageUrl: PropTypes.string.isRequired,
     design: PropTypes.object.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    productPageUrl: PropTypes.string.isRequired,
   }
-  componentWillUpdate(nextProps) {
-    const isOpened = this.isOpened(nextProps);
+  componentDidUpdate() {
+    const isOpened = this.isOpened(this.props);
+
+    if (isOpened) {
+      store.set(storageKeys.DESIGN_CURRENT, this.props.design.toJS().current);
+    } else {
+      store.remove(storageKeys.DESIGN_CURRENT);
+    }
 
     this.updatePageClass(isOpened);
-    localforage.setItem(DESIGN_IS_OPEN, isOpened);
+    store.set(storageKeys.DESIGN_IS_OPEN, isOpened);
   }
-  render() {
-    const { authUrl, design, dispatch } = this.props;
-
-    if (this.isOpened(this.props)) {
-      return (
-        <DesignSettings
-          {...design.toObject()}
-          {...bindActionCreators({...designActions, ...popupActions}, dispatch)}
-          authUrl={authUrl}
-        />
-      );
-    }
-    
-    return null;
+  getSelectedIndex() {
+    return store.get(storageKeys.DESIGN_SELECTED_INDEX) || 0;
   }
   isOpened(props) {
-    // TODO: User "reselect"
     return props.popups.some((popup) => (
       popup.get('style') === 'DesignSettings'
     ));
@@ -51,6 +46,30 @@ class DesignSettingsContainer {
     } else {
       $('.b-page').removeClass('b-page--design-settings');
     }
+  }
+  onItemClick(idx, url) {
+    if (url && idx !== this.getSelectedIndex()) {
+      window.location = url;
+    }
+    store.set(storageKeys.DESIGN_SELECTED_INDEX, idx);
+  }
+  render() {
+    const { authUrl, categoryPageUrl, design, dispatch, productPageUrl } = this.props;
+
+    if (this.isOpened(this.props)) {
+      return (
+        <DesignSettings
+          {...design.toObject()}
+          {...bindActionCreators({...designActions, ...popupActions}, dispatch)}
+          authUrl={authUrl}
+          categoryPageUrl={categoryPageUrl}
+          onItemClick={this.onItemClick.bind(this)}
+          productPageUrl={productPageUrl}
+          selectedIndex={this.getSelectedIndex()}
+        />
+      );
+    }
+    return null;
   }
 }
 

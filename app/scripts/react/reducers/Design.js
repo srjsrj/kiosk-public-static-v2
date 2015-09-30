@@ -1,7 +1,10 @@
+import store from 'store';
 import Immutable from 'immutable';
+import { diff } from 'deep-diff';
 import createReducer from '../utils/createReducer';
 import createObjectUrl from '../utils/createObjectUrl';
 import * as actionTypes from '../constants/actionTypes';
+import * as storageKeys from '../constants/storageKeys';
 
 const current = {
   activeElementsColor: '#000000',
@@ -33,7 +36,38 @@ const initialState = Immutable.fromJS({
   isSaving: false
 });
 
+function getUnsavedFields(currentSaved, current) {
+  return Object.keys(current).reduce((prev, key) => {
+    if (currentSaved[key] !== current[key]) {
+      return { ...prev, [key]: current[key] };
+    }
+    return prev;
+  }, {});
+}
+
 export default createReducer(initialState, {
+  [actionTypes.POPUP_CLOSE](state) {
+    const currentSaved = state.toJS().currentSaved;
+
+    return state.merge({
+      current: currentSaved,
+      unsavedFields: {},
+      isSaving: false,
+    });
+  },
+  [actionTypes.DESIGN_INIT](state) {
+    const currentSaved = state.toJS().current;
+    const currentCached = store.get(storageKeys.DESIGN_CURRENT);
+
+    if (currentCached && diff(currentSaved, currentCached)) {
+      return state.merge({
+        current: currentCached,
+        unsavedFields: getUnsavedFields(currentSaved, currentCached),
+      });
+    } else {
+      return state;
+    }
+  },
   [actionTypes.DESIGN_CHANGE_OPTION](state, { name, value }) {
     let unsavedFields = state.get('unsavedFields');
 
@@ -76,6 +110,8 @@ export default createReducer(initialState, {
     });
   },
   [actionTypes.DESIGN_SAVE_SUCCESS](state, { design }) {
+    store.remove(storageKeys.DESIGN_CURRENT);
+
     return state.merge({
       current: design,
       currentSaved: design,
