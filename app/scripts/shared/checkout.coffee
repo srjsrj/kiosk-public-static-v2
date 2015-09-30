@@ -1,16 +1,21 @@
 $ ->
   $checkoutTotal = $ '[checkout-total]'
 
-  setCheckoutDeliveryPrice= (price)->
+  setCheckoutDeliveryPrice = ($e)->
+    deliveryPrice = parseInt $e.data('delivery-price')
+    freeDeliveryThreshold = parseInt $e.data('free-delivery-threshold')
+    productsPrice = parseInt $checkoutTotal.data('products-price')
+    price = if productsPrice > freeDeliveryThreshold then 0 else deliveryPrice
+
     $checkoutTotal.data 'delivery-price', price
     updateCheckoutTotal()
 
-  updateCheckoutTotal= ->
+  updateCheckoutTotal = ->
     totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price')
 
     $checkoutTotal.html accounting.formatMoney totalPrice
 
-  toggleDeliveryOnlyElementsVisibility= (showFieldsQuery) ->
+  toggleDeliveryOnlyElementsVisibility = (showFieldsQuery) ->
     $('[hideable]').slideUp()
 
     if showFieldsQuery
@@ -29,7 +34,7 @@ $ ->
   selectDeliveryType = ($e) ->
     if $e?
       setCity $e.data('city')
-      setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
+      setCheckoutDeliveryPrice $e
 
       toggleDeliveryOnlyElementsVisibility $e.data('show-fields-query')
     else
