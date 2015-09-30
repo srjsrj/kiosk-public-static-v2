@@ -20,11 +20,13 @@ class DesignSettingsContainer {
     dispatch: PropTypes.func.isRequired,
     productPageUrl: PropTypes.string.isRequired,
   }
-  componentWillUpdate(nextProps) {
-    const isOpened = this.isOpened(nextProps);
+  componentDidUpdate() {
+    const isOpened = this.isOpened(this.props);
 
-    if (!isOpened) {
-      store.remove(storageKeys.DESIGN_CACHE);
+    if (isOpened) {
+      store.set(storageKeys.DESIGN_CURRENT, this.props.design.toJS().current);
+    } else {
+      store.remove(storageKeys.DESIGN_CURRENT);
     }
 
     this.updatePageClass(isOpened);
@@ -47,7 +49,6 @@ class DesignSettingsContainer {
   }
   onItemClick(idx, url) {
     if (url && idx !== this.getSelectedIndex()) {
-      store.set(storageKeys.DESIGN_CACHE, this.props.design.toJS());
       window.location = url;
     }
     store.set(storageKeys.DESIGN_SELECTED_INDEX, idx);
@@ -68,7 +69,6 @@ class DesignSettingsContainer {
         />
       );
     }
-    
     return null;
   }
 }
