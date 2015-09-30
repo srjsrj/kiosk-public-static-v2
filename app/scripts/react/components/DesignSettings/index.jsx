@@ -17,13 +17,17 @@ import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 export default class DesignSettings {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
-    current: PropTypes.instanceOf(Map).isRequired,
-    unsavedFields: PropTypes.object.isRequired,
-    isSaving: PropTypes.bool.isRequired,
+    categoryPageUrl: PropTypes.string.isRequired,
     changeImage: PropTypes.func.isRequired,
     changeOption: PropTypes.func.isRequired,
+    closeDesignSettingsPopup: PropTypes.func.isRequired,
+    current: PropTypes.instanceOf(Map).isRequired,
+    isSaving: PropTypes.bool.isRequired,
+    onItemClick: PropTypes.func.isRequired,
+    productPageUrl: PropTypes.string.isRequired,
     saveChanges: PropTypes.func.isRequired,
-    closeDesignSettingsPopup: PropTypes.func.isRequired
+    selectedIndex: PropTypes.number.isRequired,
+    unsavedFields: PropTypes.object.isRequired,
   }
   getProps(property) {
     const { current, changeOption } = this.props;
@@ -49,17 +53,32 @@ export default class DesignSettings {
       titleClassName: 'design-settings__group-header',
     };
   }
+  onItemClick(idx, item) {
+    this.props.onItemClick(idx, item.redirectUrl);
+  }
   render() {
+    const {
+      authUrl, categoryPageUrl, closeDesignSettingsPopup, isSaving,
+      productPageUrl, saveChanges, selectedIndex, unsavedFields
+    } = this.props;
+
     return (
       <div className="design-settings">
         <header className="design-settings__header">
           <span>Управление дизайном</span>
-          <DesignSettingsCloseButton onClick={this.props.closeDesignSettingsPopup} />
+          <DesignSettingsCloseButton onClick={closeDesignSettingsPopup} />
         </header>
         <div className="design-settings__body">
           <Scroller className="design-settings__scroll" updateEvent="dsUpdate">
-            <Accordion updateEvent="dsUpdate">
-              <AccordionItem {...this.getAccordionItemProps('Главная страница')}>
+            <Accordion
+              onItemClick={this.onItemClick.bind(this)}
+              selectedIndex={selectedIndex}
+              updateEvent="dsUpdate"
+            >
+              <AccordionItem
+                {...this.getAccordionItemProps('Главная страница')}
+                redirectUrl="/"
+              >
                 <DesignSettingsOption title="Товаров в ряд">
                   <DesignSettingsRadioList {...this.getProps('mainPageProductsInRow')} />
                 </DesignSettingsOption>
@@ -74,7 +93,10 @@ export default class DesignSettings {
                 </DesignSettingsOption>
               </AccordionItem>
 
-              <AccordionItem {...this.getAccordionItemProps('Страница категории')}>
+              <AccordionItem
+                {...this.getAccordionItemProps('Страница категории')}
+                redirectUrl={categoryPageUrl}
+              >
                 <DesignSettingsOption title="Товаров в ряд">
                   <DesignSettingsRadioList {...this.getProps('categoryPageProductsInRow')} />
                 </DesignSettingsOption>
@@ -86,7 +108,10 @@ export default class DesignSettings {
                 </DesignSettingsOption>
               </AccordionItem>
 
-              <AccordionItem {...this.getAccordionItemProps('Страница товара')}>
+              <AccordionItem
+                {...this.getAccordionItemProps('Страница товара')}
+                redirectUrl={productPageUrl}
+              >
                 <DesignSettingsOption title="Расположение фото">
                   <DesignSettingsRadioList {...this.getProps('productPagePhoto')} />
                 </DesignSettingsOption>
@@ -152,9 +177,9 @@ export default class DesignSettings {
         </div>
         <div className="design-settings__footer">
           <DesignSettingsSaveButton
-            isSaving={this.props.isSaving}
-            unsavedFields={this.props.unsavedFields}
-            onClick={this.props.saveChanges.bind(this, this.props.authUrl)}
+            isSaving={isSaving}
+            unsavedFields={unsavedFields}
+            onClick={saveChanges.bind(this, authUrl)}
           />
         </div>
       </div>

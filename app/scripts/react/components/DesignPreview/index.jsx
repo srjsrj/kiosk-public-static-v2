@@ -128,6 +128,7 @@ class DesignPreview {
   }
   componentDidMount() {
     this.attachSheet();
+    this.apply(this.props.design.get('current'));
   }
   componentWillUpdate(nextProps) {
     this.reattachSheet();

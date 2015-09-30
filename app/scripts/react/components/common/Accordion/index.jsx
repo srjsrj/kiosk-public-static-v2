@@ -4,6 +4,7 @@ export default class Accordion extends Component {
   static propTypes = {
     allowMultiple: PropTypes.bool,
     selectedIndex: PropTypes.number,
+    onItemClick: PropTypes.func,
     updateEvent: PropTypes.string,
   }
   defaultProps = {
@@ -40,7 +41,7 @@ export default class Accordion extends Component {
     const item = this.refs[`item-${ idx }`];
     if (item) { item.allowOverflow(); }
   }
-  handleClick(index) {
+  handleClick(index, item) {
     const newState = { selectedIndex: index };
 
     if (this.props.allowMultiple) {
@@ -56,6 +57,10 @@ export default class Accordion extends Component {
       }
     } else if (index === this.state.selectedIndex) {
       newState.selectedIndex = -1;
+    }
+
+    if (this.props.onItemClick) {
+      this.props.onItemClick(index, item.props);
     }
 
     this.setState(newState);
@@ -74,7 +79,7 @@ export default class Accordion extends Component {
       return cloneElement(el, {
         expanded,
         key: idx,
-        onClick: this.handleClick.bind(this, idx),
+        onClick: this.handleClick.bind(this, idx, el),
         ref: `item-${ idx }`
       })
     });

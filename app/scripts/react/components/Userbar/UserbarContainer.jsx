@@ -11,13 +11,15 @@ import DesignPreview from '../DesignPreview';
 class UserbarContainer {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
+    categoryPageUrl: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired,
-    isDesignOpen: PropTypes.bool.isRequired,
+    isDesignOpen: PropTypes.bool,
     operatorUrl: PropTypes.string.isRequired,
     pageType: PropTypes.string.isRequired,
+    productPageUrl: PropTypes.string.isRequired,
   }
   render() {
-    const { authUrl, dispatch, pageType } = this.props;
+    const { authUrl, categoryPageUrl, dispatch, pageType, productPageUrl } = this.props;
 
     return (
       <div>
@@ -25,7 +27,11 @@ class UserbarContainer {
           {...this.props}
           {...bindActionCreators(popupActions, dispatch)}
         />
-        <DesignSettings authUrl={authUrl} />
+        <DesignSettings
+          authUrl={authUrl}
+          categoryPageUrl={categoryPageUrl}
+          productPageUrl={productPageUrl}
+        />
         <DesignPreview pageType={pageType} />
       </div>
     );

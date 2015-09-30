@@ -1,7 +1,9 @@
+import store from 'store';
 import Immutable from 'immutable';
 import createReducer from '../utils/createReducer';
 import createObjectUrl from '../utils/createObjectUrl';
 import * as actionTypes from '../constants/actionTypes';
+import * as storageKeys from '../constants/storageKeys';
 
 const current = {
   activeElementsColor: '#000000',
@@ -34,6 +36,10 @@ const initialState = Immutable.fromJS({
 });
 
 export default createReducer(initialState, {
+  [actionTypes.DESIGN_INIT](state) {
+    const cache = store.get(storageKeys.DESIGN_CACHE);
+    return cache ? Immutable.fromJS(cache) : state;
+  },
   [actionTypes.DESIGN_CHANGE_OPTION](state, { name, value }) {
     let unsavedFields = state.get('unsavedFields');
 
@@ -76,6 +82,8 @@ export default createReducer(initialState, {
     });
   },
   [actionTypes.DESIGN_SAVE_SUCCESS](state, { design }) {
+    store.remove(storageKeys.DESIGN_CACHE);
+
     return state.merge({
       current: design,
       currentSaved: design,

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import localforage from 'localforage';
-import { DESIGN_IS_OPEN } from '../../constants/storageKeys';
+import store from 'store';
+import * as storageKeys from '../../constants/storageKeys';
 import UserbarItem from './UserbarItem';
 
 export default class Userbar {
@@ -15,22 +15,17 @@ export default class Userbar {
     if (isDesignOpen) {
       openDesignSettingsPopup();
     } else if (isDesignOpen === null) {
-      localforage.getItem(DESIGN_IS_OPEN, (err, value) => {
-        if (value) openDesignSettingsPopup();
-      });
+      if (store.get(storageKeys.DESIGN_IS_OPEN)) {
+        openDesignSettingsPopup();
+      }
     }
   }
   render() {
+    const { openDesignSettingsPopup, operatorUrl } = this.props;
     return (
       <div className="userbar">
-        <UserbarItem
-          url={this.props.operatorUrl}
-          className="userbar__button--admin"
-        />
-        <UserbarItem
-          className="userbar__button--design"
-          onClick={this.props.openDesignSettingsPopup}
-        />
+        <UserbarItem url={operatorUrl} className="userbar__button--admin" />
+        <UserbarItem className="userbar__button--design" onClick={openDesignSettingsPopup} />
       </div>
     );
   }
