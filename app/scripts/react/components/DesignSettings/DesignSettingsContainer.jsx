@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Cookies from 'cookies-js';
 import store from 'store';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
@@ -6,6 +7,7 @@ import connectToRedux from '../HoC/connectToRedux';
 import * as designActions from '../../actions/designActions';
 import * as popupActions from '../../actions/popupActions';
 import * as storageKeys from '../../constants/storageKeys';
+import * as cookieKeys from '../../constants/cookieKeys';
 import DesignSettings from '.';
 
 @connect((state) => ({
@@ -30,7 +32,7 @@ class DesignSettingsContainer {
     }
 
     this.updatePageClass(isOpened);
-    store.set(storageKeys.DESIGN_IS_OPEN, isOpened);
+    Cookies.set(cookieKeys.DESIGN_IS_OPEN, isOpened);
   }
   getSelectedIndex() {
     return store.get(storageKeys.DESIGN_SELECTED_INDEX) || 0;

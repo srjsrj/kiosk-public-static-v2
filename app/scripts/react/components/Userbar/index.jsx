@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import store from 'store';
-import * as storageKeys from '../../constants/storageKeys';
+import Cookies from 'cookies-js';
+import * as cookieKeys from '../../constants/cookieKeys';
 import UserbarItem from './UserbarItem';
 
 export default class Userbar {
@@ -12,14 +12,16 @@ export default class Userbar {
   componentDidMount() {
     const { isDesignOpen, openDesignSettingsPopup } = this.props;
 
-    if (isDesignOpen) {
+    if (isDesignOpen === true) {
       openDesignSettingsPopup();
+      Cookies.set(cookieKeys.DESIGN_IS_OPEN, true);
+    } else if (isDesignOpen === false) {
+      Cookies.set(cookieKeys.DESIGN_IS_OPEN, false);
+    } else {
+      if (Cookies.get(cookieKeys.DESIGN_IS_OPEN) === 'true') {
+        openDesignSettingsPopup();
+      }
     }
-    //  else if (isDesignOpen === null) {
-    //   if (store.get(storageKeys.DESIGN_IS_OPEN)) {
-    //     openDesignSettingsPopup();
-    //   }
-    // }
   }
   render() {
     const { openDesignSettingsPopup, operatorUrl } = this.props;
