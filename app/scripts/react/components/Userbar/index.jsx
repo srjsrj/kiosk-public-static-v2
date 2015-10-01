@@ -5,9 +5,10 @@ import UserbarItem from './UserbarItem';
 
 export default class Userbar {
   static propTypes = {
-    operatorUrl: PropTypes.string.isRequired,
+    designParamName: PropTypes.string.isRequired,
     isDesignOpen: PropTypes.bool,
     openDesignSettingsPopup: PropTypes.func.isRequired,
+    operatorUrl: PropTypes.string.isRequired,
   }
   componentDidMount() {
     const { isDesignOpen, openDesignSettingsPopup } = this.props;
@@ -24,11 +25,18 @@ export default class Userbar {
     }
   }
   render() {
-    const { openDesignSettingsPopup, operatorUrl } = this.props;
+    const { designParamName, openDesignSettingsPopup, operatorUrl } = this.props;
+
     return (
       <div className="userbar">
-        <UserbarItem url={operatorUrl} className="userbar__button--admin" />
-        <UserbarItem className="userbar__button--design" onClick={openDesignSettingsPopup} />
+        <UserbarItem
+          className="userbar__button--admin"
+          url={operatorUrl}
+        />
+        <UserbarItem
+          className="userbar__button--design"
+          url={'?' + designParamName + '=true'}
+        />
       </div>
     );
   }
