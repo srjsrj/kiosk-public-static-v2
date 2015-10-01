@@ -6,22 +6,26 @@ import UserbarItem from './UserbarItem';
 export default class Userbar {
   static propTypes = {
     designParamName: PropTypes.string.isRequired,
-    isDesignOpen: PropTypes.bool,
+    designMode: PropTypes.string.isRequired,
     openDesignSettingsPopup: PropTypes.func.isRequired,
     operatorUrl: PropTypes.string.isRequired,
   }
   componentDidMount() {
-    const { isDesignOpen, openDesignSettingsPopup } = this.props;
+    const { designMode, openDesignSettingsPopup } = this.props;
 
-    if (isDesignOpen === true) {
-      openDesignSettingsPopup();
-      Cookies.set(cookieKeys.DESIGN_IS_OPEN, true);
-    } else if (isDesignOpen === false) {
-      Cookies.set(cookieKeys.DESIGN_IS_OPEN, false);
-    } else {
-      if (Cookies.get(cookieKeys.DESIGN_IS_OPEN) === 'true') {
+    switch(designMode) {
+      case 'auto':
+        if (Cookies.get(cookieKeys.DESIGN_IS_OPEN) === 'true') {
+          openDesignSettingsPopup();
+        }
+        break;
+      case 'open':
         openDesignSettingsPopup();
-      }
+        Cookies.set(cookieKeys.DESIGN_IS_OPEN, true);
+        break;
+      case 'close':
+        Cookies.set(cookieKeys.DESIGN_IS_OPEN, false);
+        break;
     }
   }
   render() {

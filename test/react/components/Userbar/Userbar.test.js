@@ -11,7 +11,7 @@ describe('[Component] Userbar', function() {
       this.renderedComponent = renderIntoDocument(
         <Userbar
           operatorUrl="http://google.ru/"
-          isDesignOpen={true}
+          designMode="open"
           designParamName="open_design"
           openDesignSettingsPopup={this.openDesignSettingsPopup}
         />
@@ -33,7 +33,7 @@ describe('[Component] Userbar', function() {
       this.renderedComponent = renderIntoDocument(
         <Userbar
           operatorUrl="http://google.ru/"
-          isDesignOpen={false}
+          designMode="close"
           designParamName="open_design"
           openDesignSettingsPopup={this.openDesignSettingsPopup}
         />
