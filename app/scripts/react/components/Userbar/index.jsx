@@ -5,7 +5,6 @@ import UserbarItem from './UserbarItem';
 
 export default class Userbar {
   static propTypes = {
-    designParamName: PropTypes.string.isRequired,
     designMode: PropTypes.string.isRequired,
     openDesignSettingsPopup: PropTypes.func.isRequired,
     operatorUrl: PropTypes.string.isRequired,
@@ -29,7 +28,7 @@ export default class Userbar {
     }
   }
   render() {
-    const { designParamName, openDesignSettingsPopup, operatorUrl } = this.props;
+    const { openDesignSettingsPopup, operatorUrl } = this.props;
 
     return (
       <div className="userbar">
