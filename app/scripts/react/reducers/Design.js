@@ -18,7 +18,7 @@ const current = {
   categoryPageRows: 5,
   categoryPageFilter: true,
   productPagePhoto: 'aside',
-  productPageSimilarProducts: false,
+  productPageSimilarProducts: 'off',
   logoUrl: null,
   pageBgUrl: null,
   pageBgColor: '#6c7a89',

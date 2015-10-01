@@ -93,6 +93,7 @@ const _states = {
   },
   products: {
     productPagePhoto: 'b-page_layout-photo',
+    productPageSimilarProducts: 'b-page_layout-similar-products',
   },
   common: {
     fontFamily: 'b-page_ff',
@@ -106,9 +107,6 @@ const _switchableStates = {
   },
   categories: {
     categoryPageFilter: 'b-page_layout-filter',
-  },
-  products: {
-    productPageSimilarProducts: 'b-page_layout-similar-products',
   },
   common: {
     mainPageBanner: 'b-page_layout-banner',

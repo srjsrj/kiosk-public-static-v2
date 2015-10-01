@@ -115,8 +115,8 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Расположение фото">
                   <DesignSettingsRadioList {...this.getProps('productPagePhoto')} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Подобные товары снизу">
-                  <DesignSettingsCheckbox {...this.getProps('productPageSimilarProducts')} />
+                <DesignSettingsOption title="Подобные товары снизу">
+                  <DesignSettingsRadioList {...this.getProps('productPageSimilarProducts')} />
                 </DesignSettingsOption>
               </AccordionItem>
 

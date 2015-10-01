@@ -67,8 +67,18 @@ export default {
     }],
   },
   productPageSimilarProducts: {
-    type: designTypes.DESIGN_CHECKBOX_TYPE,
+    type: designTypes.DESIGN_RADIO_TYPE,
     name: 'designoption-productPageSimilarProducts',
+    items: [{
+      title: 'Нет',
+      value: 'off',
+    }, {
+      title: 'Установленные',
+      value: 'manual',
+    }, {
+      title: 'Авто',
+      value: 'auto',
+    },],
   },
   logoUrl: {
     type: designTypes.DESIGN_ATTACHMENT_TYPE,
