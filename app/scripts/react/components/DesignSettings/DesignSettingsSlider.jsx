@@ -24,10 +24,10 @@ export default class DesignSettingsSlider {
           onSlide={::this.handleSlide}
           onChange={::this.handleSlide}
         />
-        {displayValue
-         && <span className="design-settings__slider-value">
-              {value}
-            </span>
+        {displayValue &&
+          <span className="design-settings__slider-value">
+            {value}
+          </span>
         }
       </span>
     );

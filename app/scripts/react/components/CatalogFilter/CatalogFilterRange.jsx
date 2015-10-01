@@ -81,28 +81,18 @@ let CatalogFilterRange = React.createClass({
   },
 
   renderHiddenRange() {
-    let range = [],
-        paramName;
+    const { filterName, paramName, from: pFrom, to: pTo } = this.props;
+    const { from: sFrom, to: sTo } = this.state;
+    const parName = filterName ? `${filterName}[${paramName}]` : paramName;
 
-    if (this.props.filterName != null) {
-      paramName = `${this.props.filterName}[${this.props.paramName}]`;
-    } else {
-      paramName = this.props.paramName;
-    }
-
-    if (this.props.from != this.state.from) {
-      range.push(
-        <input type="hidden" name={paramName + '[from]'} value={this.state.from} key="from" />
+    if (sFrom !== pFrom || sTo !== pTo) {
+      return (
+        <span>
+          <input name={parName + '[from]'} type="hidden" value={sFrom} />
+          <input name={parName + '[to]'} type="hidden" value={sTo} />
+        </span>
       );
     }
-
-    if (this.props.to != this.state.to) {
-      range.push(
-        <input type="hidden" name={paramName + '[to]'} value={this.state.to} key="to" />
-      );
-    }
-
-    return range;
   },
 
   getRange() {
