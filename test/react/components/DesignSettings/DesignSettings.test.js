@@ -50,8 +50,8 @@ describe('[Component] DesignSettings', () => {
         {...callbacks}
         authUrl="http://google.ru"
         categoryPageUrl="http://wanna-be.ru/categories/635-braslety"
+        pageType="welcome"
         productPageUrl="http://wanna-be.ru/products/33302-kulon-merkaba-s-tsirkonami-serebryanyy-r"
-        selectedIndex={0}
       />
     );
 

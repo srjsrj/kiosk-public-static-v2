@@ -12,6 +12,7 @@ describe('[Component] Userbar', function() {
         <Userbar
           operatorUrl="http://google.ru/"
           isDesignOpen={true}
+          designParamName="open_design"
           openDesignSettingsPopup={this.openDesignSettingsPopup}
         />
       );
@@ -33,6 +34,7 @@ describe('[Component] Userbar', function() {
         <Userbar
           operatorUrl="http://google.ru/"
           isDesignOpen={false}
+          designParamName="open_design"
           openDesignSettingsPopup={this.openDesignSettingsPopup}
         />
       );
