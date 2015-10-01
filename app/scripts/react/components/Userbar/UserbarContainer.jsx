@@ -20,7 +20,7 @@ class UserbarContainer {
     productPageUrl: PropTypes.string.isRequired,
   }
   static defaultProps = {
-    designParamName: 'design_open',
+    designParamName: 'open_design',
   }
   render() {
     const { authUrl, categoryPageUrl, dispatch, pageType, productPageUrl } = this.props;

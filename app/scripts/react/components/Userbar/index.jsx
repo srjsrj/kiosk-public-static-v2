@@ -35,7 +35,7 @@ export default class Userbar {
         />
         <UserbarItem
           className="userbar__button--design"
-          url={'?' + designParamName + '=true'}
+          onClick={openDesignSettingsPopup}
         />
       </div>
     );
