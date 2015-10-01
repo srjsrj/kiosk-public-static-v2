@@ -34,6 +34,7 @@ class UserbarContainer {
         <DesignSettings
           authUrl={authUrl}
           categoryPageUrl={categoryPageUrl}
+          pageType={pageType}
           productPageUrl={productPageUrl}
         />
         <DesignPreview pageType={pageType} />

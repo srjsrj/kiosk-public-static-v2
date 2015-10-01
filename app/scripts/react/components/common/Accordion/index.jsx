@@ -3,7 +3,9 @@ import React, { Children, cloneElement, Component, findDOMNode, PropTypes } from
 export default class Accordion extends Component {
   static propTypes = {
     allowMultiple: PropTypes.bool,
+    defaultSelectedKey: PropTypes.string,
     selectedIndex: PropTypes.number,
+    selectedKey: PropTypes.string,
     onItemClick: PropTypes.func,
     updateEvent: PropTypes.string,
   }
@@ -13,7 +15,20 @@ export default class Accordion extends Component {
   constructor(props) {
     super(props);
 
-    const selectedIndex = props.selectedIndex || 0;
+    let selectedIndex = props.selectedIndex || 0;
+
+    if (props.selectedKey) {
+      const childKeys = props.children.map((el) => el.props.itemKey);
+      const childIndex = childKeys.indexOf(props.selectedKey);
+      const childDefaultIndex = childKeys.indexOf(props.defaultSelectedKey);
+
+      if (childIndex > -1) {
+        selectedIndex = childIndex;
+      } else if (childDefaultIndex > -1) {
+        selectedIndex = childDefaultIndex;
+      }
+    }
+
     const state = { selectedIndex };
 
     if (props.allowMultiple) {

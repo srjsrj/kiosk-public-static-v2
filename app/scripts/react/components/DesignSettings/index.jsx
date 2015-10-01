@@ -14,6 +14,8 @@ import DesignSettingsAttach from './DesignSettingsAttach';
 import DesignSettingsSaveButton from './DesignSettingsSaveButton';
 import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 
+
+
 export default class DesignSettings {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
@@ -24,9 +26,11 @@ export default class DesignSettings {
     current: PropTypes.instanceOf(Map).isRequired,
     isSaving: PropTypes.bool.isRequired,
     onItemClick: PropTypes.func.isRequired,
+    pageType: PropTypes.oneOf([
+      'welcome', 'categories', 'products'
+    ]).isRequired,
     productPageUrl: PropTypes.string.isRequired,
     saveChanges: PropTypes.func.isRequired,
-    selectedIndex: PropTypes.number.isRequired,
     unsavedFields: PropTypes.object.isRequired,
   }
   getProps(property) {
@@ -53,13 +57,20 @@ export default class DesignSettings {
       titleClassName: 'design-settings__group-header',
     };
   }
+  selectedIndex(pageType) {
+    const itemList = ['welcome', 'categories', 'products', 'common'];
+    const commonIndex = itemList.indexOf('common');
+    const selectedIndex = itemList.indexOf(pageType);
+
+    return selectedIndex > -1 ? selectedIndex : commonIndex;
+  }
   onItemClick(idx, item) {
-    this.props.onItemClick(idx, item.redirectUrl);
+    this.props.onItemClick(item.itemKey, item.redirectUrl);
   }
   render() {
     const {
-      authUrl, categoryPageUrl, closeDesignSettingsPopup, isSaving,
-      productPageUrl, saveChanges, selectedIndex, unsavedFields
+      authUrl, categoryPageUrl, closeDesignSettingsPopup, isSaving, pageType,
+      productPageUrl, saveChanges, unsavedFields
     } = this.props;
 
     return (
@@ -71,12 +82,14 @@ export default class DesignSettings {
         <div className="design-settings__body">
           <Scroller className="design-settings__scroll" updateEvent="dsUpdate">
             <Accordion
+              defaultSelectedKey="common"
               onItemClick={this.onItemClick.bind(this)}
-              selectedIndex={selectedIndex}
+              selectedKey={pageType}
               updateEvent="dsUpdate"
             >
               <AccordionItem
                 {...this.getAccordionItemProps('Главная страница')}
+                itemKey="welcome"
                 redirectUrl="/"
               >
                 <DesignSettingsOption title="Товаров в ряд">
@@ -95,6 +108,7 @@ export default class DesignSettings {
 
               <AccordionItem
                 {...this.getAccordionItemProps('Страница категории')}
+                itemKey="categories"
                 redirectUrl={categoryPageUrl}
               >
                 <DesignSettingsOption title="Товаров в ряд">
@@ -110,6 +124,7 @@ export default class DesignSettings {
 
               <AccordionItem
                 {...this.getAccordionItemProps('Страница товара')}
+                itemKey="products"
                 redirectUrl={productPageUrl}
               >
                 <DesignSettingsOption title="Расположение фото">
@@ -120,7 +135,10 @@ export default class DesignSettings {
                 </DesignSettingsOption>
               </AccordionItem>
 
-              <AccordionItem {...this.getAccordionItemProps('Общие настройки')}>
+              <AccordionItem
+                {...this.getAccordionItemProps('Общие настройки')}
+                itemKey="common"
+              >
                 <DesignSettingsOption inRow={true} title="Галерея Instagram снизу">
                   <DesignSettingsCheckbox {...this.getProps('mainPageInstagram')} />
                 </DesignSettingsOption>

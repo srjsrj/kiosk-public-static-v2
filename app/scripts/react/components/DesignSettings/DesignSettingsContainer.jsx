@@ -20,6 +20,7 @@ class DesignSettingsContainer {
     categoryPageUrl: PropTypes.string.isRequired,
     design: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
+    pageType: PropTypes.string.isRequired,
     productPageUrl: PropTypes.string.isRequired,
   }
   componentDidUpdate() {
@@ -34,9 +35,6 @@ class DesignSettingsContainer {
     this.updatePageClass(isOpened);
     Cookies.set(cookieKeys.DESIGN_IS_OPEN, isOpened);
   }
-  getSelectedIndex() {
-    return store.get(storageKeys.DESIGN_SELECTED_INDEX) || 0;
-  }
   isOpened(props) {
     return props.popups.some((popup) => (
       popup.get('style') === 'DesignSettings'
@@ -49,14 +47,15 @@ class DesignSettingsContainer {
       $('.b-page').removeClass('b-page--design-settings');
     }
   }
-  onItemClick(idx, url) {
-    if (url && idx !== this.getSelectedIndex()) {
+  onItemClick(type, url) {
+    if (url && type && this.props.pageType !== type) {
       window.location = url;
     }
-    store.set(storageKeys.DESIGN_SELECTED_INDEX, idx);
   }
   render() {
-    const { authUrl, categoryPageUrl, design, dispatch, productPageUrl } = this.props;
+    const {
+      authUrl, categoryPageUrl, design, dispatch, pageType, productPageUrl
+    } = this.props;
 
     if (this.isOpened(this.props)) {
       return (
@@ -66,8 +65,8 @@ class DesignSettingsContainer {
           authUrl={authUrl}
           categoryPageUrl={categoryPageUrl}
           onItemClick={this.onItemClick.bind(this)}
+          pageType={pageType}
           productPageUrl={productPageUrl}
-          selectedIndex={this.getSelectedIndex()}
         />
       );
     }
