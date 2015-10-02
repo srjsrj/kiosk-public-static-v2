@@ -109,6 +109,7 @@ const _switchableStates = {
     categoryPageFilter: 'b-page_layout-filter',
   },
   common: {
+    w1Widget: 'b-page_layout-w1widget',
     mainPageBanner: 'b-page_layout-banner',
     mainPageInstagram: 'b-page_layout-instagram',
   },

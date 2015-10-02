@@ -104,6 +104,9 @@ export default class DesignSettings {
                 <DesignSettingsOption inRow={true} title="Слайдер посередине">
                   <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
                 </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Товары в случайном порядке">
+                  <DesignSettingsCheckbox {...this.getProps('mainPageOrdered')} />
+                </DesignSettingsOption>
               </AccordionItem>
 
               <AccordionItem
@@ -144,6 +147,9 @@ export default class DesignSettings {
                 </DesignSettingsOption>
                 <DesignSettingsOption inRow={true} title="Баннер сверху">
                   <DesignSettingsCheckbox {...this.getProps('mainPageBanner')} />
+                </DesignSettingsOption>
+                <DesignSettingsOption inRow={true} title="Виджет W1 снизу">
+                  <DesignSettingsCheckbox {...this.getProps('w1Widget')} />
                 </DesignSettingsOption>
               </AccordionItem>
 

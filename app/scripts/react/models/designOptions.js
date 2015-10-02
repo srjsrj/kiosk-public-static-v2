@@ -34,6 +34,10 @@ export default {
     type: designTypes.DESIGN_CHECKBOX_TYPE,
     name: 'designoption-mainPageFilter',
   },
+  mainPageOrdered: {
+    type: designTypes.DESIGN_CHECKBOX_TYPE,
+    name: 'designoption-mainPageOrdered',
+  },
   categoryPageProductsInRow: {
     type: designTypes.DESIGN_ANY_TYPE,
     name: 'designoption-categoryPageProductsInRow',
@@ -79,6 +83,10 @@ export default {
       title: 'Авто',
       value: 'auto',
     },],
+  },
+  wOneWidget: {
+    type: designTypes.DESIGN_CHECKBOX_TYPE,
+    name: 'designoption-wOneWidget',
   },
   logoUrl: {
     type: designTypes.DESIGN_ATTACHMENT_TYPE,
