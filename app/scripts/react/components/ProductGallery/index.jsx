@@ -8,14 +8,16 @@ export default class ProductGallery extends Component {
         url: PropTypes.string.isRequired,
       })
     ),
-    previewWidth: PropTypes.number.isRequired,
-    thumbWidth: PropTypes.number.isRequired,
+    previewWidth: PropTypes.number,
+    thumbWidth: PropTypes.number,
   }
   state = {
     selectedIndex: 0,
   }
   static defaultProps = {
     images: [],
+    previewWidth: 486,
+    thumbWidth: 115
   }
   componentDidMount() {
     this.initSliders();
