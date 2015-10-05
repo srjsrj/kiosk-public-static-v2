@@ -1,7 +1,7 @@
 # Lightbox
 $ ->
 
-  $('[lightbox]').fancybox({
+  $('[lightbox], [data-lightbox]').fancybox({
     padding: 0
     margin: 0
     helpers: {
