@@ -1,11 +1,12 @@
 import { Component, PropTypes } from 'react';
 import { getMatchedGood, getUpdatedValues } from './utils/utils';
+import HiddenInput from '../common/HiddenInput';
 import PropertyList from './PropertyList';
 import ProductAddToCartButton from './ProductAddToCartButton';
 
 // TODO: i18n
-const PRODUCT_ADD_TO_CART_BUTTON = 'В корзину';
-const PRODUCT_NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характеристик';
+const ADD_TO_CART_BUTTON = 'В корзину';
+const NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характеристик';
 
 // const defaultProps = {
 //   properties: [{
@@ -61,7 +62,7 @@ const PRODUCT_NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характ
 //   goods: [{
 //     article: 'Артикул 12', 
 //     global_id: 'qweqwewqeq',
-//     image_url: 'htttp://...product.png', 
+//     image_url: 'http://citycycle.ru/upload/product_images/13976/ac433b32eeb1e39147083a6d0c6cbfe9_0x0.jpg', 
 //     quantity: 12,
 //     attributes: {
 //       345: 1,
@@ -70,6 +71,7 @@ const PRODUCT_NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характ
 //   }, {
 //     article: 'Артикул 13', 
 //     global_id: 'qweqwewqeq123', 
+//     image_url: 'http://citycycle.ru/upload/product_images/69063/8cebf4c6a251a09f0ab2ebf66feb0026_0x0.jpg',
 //     quantity: 1, 
 //     attributes: {
 //       345: 13,
@@ -78,7 +80,8 @@ const PRODUCT_NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характ
 //     }
 //   }, {
 //     article: 'Артикул 19', 
-//     global_id: 'qweddqwewqeq123', 
+//     global_id: 'qweddqwewqeq123',
+//     image_url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/28960/60bdcb79-3c3b-421e-8a78-36257d1cb196.jpg',
 //     quantity: 5, 
 //     attributes: {
 //       345: null,
@@ -86,7 +89,8 @@ const PRODUCT_NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характ
 //     }
 //   }, {
 //     article: 'Артикул 19', 
-//     global_id: 'qweddqwewqeq123', 
+//     global_id: 'qweddqwewqeq123',
+//     image_url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/28960/60bdcb79-3c3b-421e-8a78-36257d1cb196.jpg',
 //     quantity: 5, 
 //     attributes: {
 //       345: 12,
@@ -110,39 +114,41 @@ export default class ProductProperties extends Component {
     good: null,
     values: {},
   }
+  componentDidUpdate() {
+    if (this.state.good) {
+      $(document).trigger('productPhotoChange', this.state.good.image_url);
+    } else {
+      $(document).trigger('productPhotoChange', null);
+    }
+  }
   render() {
+    const { formAction, properties } = this.props;
+    const { good, values } = this.state;
+
     return (
       <form
-        action={this.props.formAction}
-        method="POST"
+        action={formAction}
         className="b-product-properties"
+        method="POST"
       >
         <PropertyList
           {...this.props}
-          values={this.state.values}
           onChange={this.updateValues.bind(this)}
+          values={values}
         />
-        {this.renderGlobalGoodID(this.state.good)}
-        {this.renderAddToCart(this.props.properties)}
+        {good &&
+          <HiddenInput name="global_good_id" value={good.global_id} />
+        }
+        {!!properties.length &&
+          <div className="b-item-full__form__row b-item-full__form__submit">
+            <ProductAddToCartButton
+              text={!!good ? ADD_TO_CART_BUTTON : NOT_ENOUGH_DATA_BUTTON}
+              disabled={!good}
+            />
+          </div>
+        }
       </form>
     );
-  }
-  renderGlobalGoodID(good) {
-    if (good) {
-      return <input type="hidden" name="global_good_id" value={good.global_id} />;
-    }
-  }
-  renderAddToCart(properties) {
-    if (properties.length) {
-      return (
-        <div className="b-item-full__form__row b-item-full__form__submit">
-          <ProductAddToCartButton
-            text={!!this.state.good ? PRODUCT_ADD_TO_CART_BUTTON : PRODUCT_NOT_ENOUGH_DATA_BUTTON}
-            disabled={!this.state.good}
-          />
-        </div>
-      );
-    }
   }
   updateValues(property, value) {
     const { properties, goods } = this.props;

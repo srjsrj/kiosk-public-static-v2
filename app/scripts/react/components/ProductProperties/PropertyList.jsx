@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
-import PropertyListItem from './PropertyListItem';
 import { getOptions } from './utils/utils';
+import PropertyListItem from './PropertyListItem';
 
 export default class PropertyList {
   static propTypes = {
     goods: PropTypes.array.isRequired,
-    values: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
     properties: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired
+    values: PropTypes.object.isRequired,
   }
   render() {
     const { goods, values, properties, onChange } = this.props;

@@ -12,7 +12,6 @@ import './shared/cart';
 import './shared/load_more';
 import './shared/lightbox';
 import './shared/jump';
-import './shared/product_images_slider';
 import './shared/application_slider';
 import './shared/theme_switcher';
 import './shared/mobile_navigation';
@@ -35,5 +34,6 @@ global.Userbar = require('./react/components/Userbar/UserbarContainer');
 global.Logo = require('./react/components/Logo');
 global.ProductProperties = require('./react/components/ProductProperties');
 global.PropertyList = require('./react/components/ProductProperties/PropertyList');
+global.ProductGallery = require('./react/components/ProductGallery');
 
 import './react/application';
