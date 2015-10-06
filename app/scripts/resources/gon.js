@@ -50,4 +50,5 @@ global.gon = {
       fontSize: 'md',
     },
   },
+  thumbor_url: 'http://thumbor.kiiiosk.ru',
 }
