@@ -20,7 +20,7 @@ import './shared/checkout';
 // TODO: Refactor and cleaning legacy shit
 import './react/components/basket/button';
 import './react/components/basket/popup';
-import './react/components/product/add_to_basket_button';
+import './react/components/Product/add_to_basket_button';
 import './react/components/instagram/instagram_feed_mixin';
 import './react/components/instagram/instagram';
 import './react/components/instagram/instagram_v2';
@@ -35,5 +35,6 @@ global.Logo = require('./react/components/Logo');
 global.ProductProperties = require('./react/components/ProductProperties');
 global.PropertyList = require('./react/components/ProductProperties/PropertyList');
 global.ProductGallery = require('./react/components/ProductGallery');
+global.ProductBlock = require('./react/components/Product/ProductBlock');
 
 import './react/application';
