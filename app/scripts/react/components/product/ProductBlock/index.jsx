@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Image from '../../common/Image';
-import ProductBadges from '../ProductBadges';
+import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
 
 // const product = {
@@ -68,7 +68,7 @@ export default class ProductBlock {
               maxWidth={458}
               title={product.title}
             />
-            <ProductBadges product={product} />
+            <ProductBlockBadges product={product} />
           </div>
           <div className="b-item__info">
             <h2 className="b-item__name">

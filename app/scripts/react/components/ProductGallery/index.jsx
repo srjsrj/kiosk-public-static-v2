@@ -39,8 +39,9 @@ export default class ProductGallery extends Component {
     const $productThumbs = $(findDOMNode(this.refs.productThumbs));
 
     $productPhoto.owlCarousel({
-      singleItem: true,
       afterAction: this.onAfterPhotoAction.bind(this),
+      autoHeight: true,
+      singleItem: true,
     });
 
     if ($productThumbs.length) {
