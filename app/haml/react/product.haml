@@ -70,25 +70,7 @@
               %iframe{width: "100%", height: "400", src: "https://www.youtube.com/embed/NYwco_4XCzg", frameborder: "0", allowfullscreen: true}
 
         / Иные товары
-
-        %section.b-item-list.b-item-list_additional
-          %h1.b-item-list__title Табуретки
-          .b-item-list__content
-            - for i in [1..3]
-              .b-item-list__item
-                %a.b-item{href: 'product.html'}
-                  .b-item__pic-wrap
-                    %img.b-item__pic{src: '../images/product-square.jpg', alt:'paste product name here'}
-                    .b-item__status
-                      -if i == 1
-                        %span.b-status.b-status_sold Распродано
-                      -if i == 2
-                        %span.b-status.b-status_preorder Под заказ
-                      -if i == 3
-                        %span.b-status.b-status_sale Sale -24%
-                  .b-item__info
-                    %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                    .b-item__price 8 900 руб.
+        %div{data: {react-class: 'ProductCardSimilarProducts'}}
 
       .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'
