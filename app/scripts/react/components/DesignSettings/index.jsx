@@ -14,8 +14,6 @@ import DesignSettingsAttach from './DesignSettingsAttach';
 import DesignSettingsSaveButton from './DesignSettingsSaveButton';
 import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 
-
-
 export default class DesignSettings {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
@@ -26,9 +24,7 @@ export default class DesignSettings {
     current: PropTypes.instanceOf(Map).isRequired,
     isSaving: PropTypes.bool.isRequired,
     onItemClick: PropTypes.func.isRequired,
-    pageType: PropTypes.oneOf([
-      'welcome', 'categories', 'products'
-    ]).isRequired,
+    pageType: PropTypes.string.isRequired,
     productPageUrl: PropTypes.string.isRequired,
     saveChanges: PropTypes.func.isRequired,
     unsavedFields: PropTypes.object.isRequired,
@@ -57,15 +53,8 @@ export default class DesignSettings {
       titleClassName: 'design-settings__group-header',
     };
   }
-  selectedIndex(pageType) {
-    const itemList = ['welcome', 'categories', 'products', 'common'];
-    const commonIndex = itemList.indexOf('common');
-    const selectedIndex = itemList.indexOf(pageType);
-
-    return selectedIndex > -1 ? selectedIndex : commonIndex;
-  }
-  onItemClick(idx, item) {
-    this.props.onItemClick(item.itemKey, item.redirectUrl);
+  onItemClick(idx, {itemKey, redirectUrl}) {
+    this.props.onItemClick(itemKey, redirectUrl);
   }
   render() {
     const {
