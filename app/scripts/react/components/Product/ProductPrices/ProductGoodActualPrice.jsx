@@ -8,10 +8,10 @@ export default class ProductGoodActualPrice {
   render() {
     const { good } = this.props;
 
-    if (good.actual_price.cents === 0) {
-      return <span>{'Цена неизвестна'}</span>;
-    } else {
+    if (good.actual_price) {
       return <HumanizedMoneyWithCurrency money={good.actual_price} />;
+    } else {
+      return <span>{'Цена неизвестна'}</span>;
     }
   }
 }
