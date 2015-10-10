@@ -4,16 +4,17 @@ import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCur
 
 export default class ProductGoodPrices {
   static propTypes = {
-    prices: PropTypes.object.isRequired,
+    minPrice: PropTypes.object.isRequired,
+    maxPrice: PropTypes.object.isRequired,
   }
   render() {
-    const { prices } = this.props;
+    const { minPrice, maxPrice } = this.props;
 
     return (
       <div className="b-item__price">
-        <HumanizedMoney money={prices.min_price} />
+        <HumanizedMoney money={minPrice} />
         &nbsp;&mdash;&nbsp;
-        <HumanizedMoneyWithCurrency money={prices.max_price} />
+        <HumanizedMoneyWithCurrency money={maxPrice} />
       </div>
     );
   }

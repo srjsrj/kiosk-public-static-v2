@@ -10,10 +10,10 @@ export default class ProductCardBadges {
     const { product } = this.props;
 
     return (
-      <div className="b-item__status">
+      <span>
         <ProductBadgeNew product={product} />
         <ProductBadgeSale product={product} />
-      </div>
+      </span>
     );
   }
 }
