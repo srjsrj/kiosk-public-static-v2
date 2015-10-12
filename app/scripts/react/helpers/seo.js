@@ -25,7 +25,7 @@ export function schemaOrgGoodAvailability(good) {
     return 'SoldOut';
   } else if (good.is_run_out) {
     return 'OutOfStock';
-  } else if (good.preorder) {
+  } else if (good.is_preorder) {
     return 'PreOrder';
   } else {
     return 'InStock';

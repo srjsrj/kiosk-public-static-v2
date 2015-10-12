@@ -12,7 +12,7 @@ export function productCategoryPath({ categories }) {
 }
 
 export function categoryLink(category) {
-  if (!category || category.id === category.vendor.root_category_id) return;
+  if (!category || category.is_root) return;
 
   return (
     <a href={category.url} key={category.id}>
