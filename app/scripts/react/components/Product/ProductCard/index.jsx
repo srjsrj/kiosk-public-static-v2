@@ -17,7 +17,6 @@ import ProductCardBadges from './ProductCardBadges';
 export default class ProductCard {
   static propTypes = {
     product: PropTypes.object.isRequired,
-    productImages: PropTypes.array.isRequired,
   }
   render() {
     const { product, productImages } = this.props;
@@ -36,7 +35,7 @@ export default class ProductCard {
 
         <div className="b-item-full__content">
           <div className="b-item-full__gallery">
-            <ProductGallery images={productImages} />
+            <ProductGallery images={product.images} />
           </div>
           <div className="b-item-full__description">
             <div className="b-item-full__header">

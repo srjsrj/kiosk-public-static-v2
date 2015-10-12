@@ -7,6 +7,13 @@ const props = {
     title: 'Миникольцо Полоски без камней черненое',
     article: 'MR005-02',
     is_sale: false,
+    images: [{
+      title: 'Миникольцо Полоски без камней черненое',
+      url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png'
+    }, {
+      title: 'Миникольцо Полоски без камней черненое',
+      url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg'
+    }],
     categories: [{
       id: 1524,
       name: 'Главная страница',
@@ -81,13 +88,6 @@ const props = {
       }
     }],
   },
-  productImages: [{
-    title: 'Миникольцо Полоски без камней черненое',
-    url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png'
-  }, {
-    title: 'Миникольцо Полоски без камней черненое',
-    url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg'
-  }],
 }
 
 export default class ProductCardContainer {
