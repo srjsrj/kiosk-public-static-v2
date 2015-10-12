@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
-import ProductArticle from '../ProductArticle';
-import ProductBreadcrumbs from '../ProductBreadcrumbs';
+import { h1 } from '../../../helpers/seo';
+import { productCategoryPath } from '../../../helpers/vendors';
+import { schemaOrgMarkup } from '../../../helpers/product';
+// import ProductArticle from '../ProductArticle';
+// import ProductBreadcrumbs from '../ProductBreadcrumbs';
 import ProductGallery from '../ProductGallery';
 import ProductPrices from '../ProductPrices';
-import ProductTitle from '../ProductTitle';
+// import ProductTitle from '../ProductTitle';
 import ProductCardBadges from './ProductCardBadges';
-import ProductCardSchemaMarkup from './ProductCardSchemaMarkup';
+// import ProductCardSchemaMarkup from './ProductCardSchemaMarkup';
 
 // import ProductBreadcrumbs from '../ProductBreadcrumbs';
 // import ProductCardSimilarProducts from './ProductCardSimilarProducts';
@@ -27,42 +30,97 @@ export default class ProductCard {
       >
         <div className="b-item-full">
           {
-            // <div className="b-item-full__header b-item-full__header_mobile">
-            //   <ProductBreadcrumbs product={product} />
-            //   <h1 className="b-item-full__title">
-            //     <ProductTitle product={product} /> {}
-            //     <ProductArticle product={product} />
-            //   </h1>
-            //   <ProductCardBadges product={product} />
-            // </div>
+            //Мобильная версия
           }
-          <div className="b-item-full__content">
-            <div className="b-item-full__gallery">
-              <ProductGallery images={productImages} />
-            </div>
-            <div className="b-item-full__description">
-              <div className="b-item-full__header">
-                <ProductBreadcrumbs className="p-category" product={product} />
-                <h1 className="b-item-full__title p-name">
-                  <ProductTitle product={product} />
-                  <ProductArticle className="u-identifier" product={product} />
-                </h1>
-                <ProductCardBadges product={product} />
+        </div>
+
+        <div className="b-item-full__content">
+          <div className="b-item-full__gallery">
+            <ProductGallery images={productImages} />
+          </div>
+          <div className="b-item-full__description">
+            <div className="b-item-full__header">
+              <div className="b-breadcrumbs p-category">
+                {productCategoryPath(product)}
               </div>
-              <div className="b-item-full__price p-price">
-                <ProductPrices product={product} />
-              </div>
-              <ProductCardSchemaMarkup product={product} />
             </div>
+            <h1 className="b-item-full__title p-name">
+              {h1(product)}
+              {product.article &&
+                <span
+                  className="b-item-full__articul u-identifier"
+                  product-article={true}
+                >
+                  &nbsp;{product.article}
+                </span>
+              }
+            </h1>
+            <ProductCardBadges product={product} />
+            <div className="b-item-full__price p-price">
+              <ProductPrices product={product} />
+            </div>
+            {schemaOrgMarkup(product)}
           </div>
         </div>
-        {
-          //<ProductCardSimilarProducts products={similarProducts} />
-        }
       </div>
     );
   }
 }
+
+// export default class ProductCard {
+//   static propTypes = {
+//     product: PropTypes.object.isRequired,
+//     productImages: PropTypes.array.isRequired,
+//   }
+//   render() {
+//     const { product, productImages } = this.props;
+
+//     return (
+//       <div
+//         className="b-page__content__inner b-page__content__inner_content h-product"
+//         itemScope={true}
+//         itemType="http://schema.org/Product"
+//       >
+//         <div className="b-item-full">
+//           {
+//             // <div className="b-item-full__header b-item-full__header_mobile">
+//             //   <ProductBreadcrumbs product={product} />
+//             //   <h1 className="b-item-full__title">
+//             //     <ProductTitle product={product} /> {}
+//             //     <ProductArticle product={product} />
+//             //   </h1>
+//             //   <ProductCardBadges product={product} />
+//             // </div>
+//           }
+//           <div className="b-item-full__content">
+//             <div className="b-item-full__gallery">
+//               <ProductGallery images={productImages} />
+//             </div>
+//             <div className="b-item-full__description">
+//               <div className="b-item-full__header">
+//                 <ProductBreadcrumbs className="p-category" product={product} />
+//                 <h1 className="b-item-full__title p-name">
+//                   <ProductTitle product={product} />
+//                   <ProductArticle className="u-identifier" product={product} />
+//                 </h1>
+//                 <ProductCardBadges product={product} />
+//               </div>
+//               <div className="b-item-full__price p-price">
+//                 <ProductPrices product={product} />
+//               </div>
+//               <ProductCardSchemaMarkup product={product} />
+//             </div>
+//           </div>
+//         </div>
+//         {
+//           //<ProductCardSimilarProducts products={similarProducts} />
+//         }
+//       </div>
+//     );
+//   }
+// }
+
+
 
 
 
@@ -70,6 +128,7 @@ export default class ProductCard {
 //   .b-item-full
 //     .b-item-full__header.b-item-full__header_mobile
 //       .b-breadcrumbs
+//         - # product.categories - массив категорий
 //         = product_category_path product
 
 //       %h1.b-item-full__title
@@ -77,11 +136,13 @@ export default class ProductCard {
 //         %span.b-item-full__articul{'product-article' => true}
 //           = product.article
 
+//       -# product_card_badges
+//       -# product_block_badges
 //       = product_badges product, show_not_aval: false
 
 //     .b-item-full__content
 //       .b-item-full__gallery
-//         = render_cell :product_images_gallery, :show, product
+//         = product_gallery product
 //       .b-item-full__description
 //         .b-item-full__header
 //           .b-breadcrumbs.p-category
@@ -106,7 +167,7 @@ export default class ProductCard {
 
 //       - if product.video_present?
 //         .b-item-full__video
-//           -# %h1.b-item-full__title Видео
+//           -# product.embed_video_html
 //           = embed_product_video product
 
 //   = similar_products_component product
