@@ -23,7 +23,7 @@ export default class ProductGoodPrice {
       );
     } else {
       const priceClasses = classNames('b-item__price', {
-        'b-item__price_unknown': good.actual_price.cents === 0,
+        'b-item__price_unknown': good.actual_price && good.actual_price.cents === 0,
       });
 
       return (
