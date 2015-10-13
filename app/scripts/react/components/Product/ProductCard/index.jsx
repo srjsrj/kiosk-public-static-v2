@@ -30,7 +30,7 @@ export default class ProductCard {
               {productCategoryPath(product)}
             </div>
             <h1 className="b-item-full__title">
-              {h1(product)}&nbsp;
+              {h1(product)}
               {product.article &&
                 <span className="b-item-full__articul" product-article={true}>
                   {product.article}
@@ -50,7 +50,7 @@ export default class ProductCard {
                   {productCategoryPath(product)}
                 </div>
                 <h1 className="b-item-full__title p-name">
-                  {h1(product)}&nbsp;
+                  {h1(product)}
                   {product.article &&
                     <span
                       className="b-item-full__articul u-identifier"
