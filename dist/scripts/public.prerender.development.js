@@ -1108,8 +1108,7 @@ var ProductCart = (function () {
           acceptCharset: 'UTF-8',
           action: (0, _routesApp.vendorCartItems)(),
           className: 'simple_form cart_item',
-          method: 'POST',
-          noValidate: ''
+          method: 'POST'
         },
         this.renderContent(product)
       );
