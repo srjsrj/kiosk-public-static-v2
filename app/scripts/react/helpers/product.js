@@ -18,7 +18,7 @@ export function schemaOrgGoodPrice(good, category) {
   return (
     <div
       itemProp="offers"
-      itemScope={true}
+      itemScope=""
       itemType="http://schema.org/Offer"
       key={good.global_id}
     >

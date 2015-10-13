@@ -32,7 +32,7 @@ export default class ProductCard {
             <h1 className="b-item-full__title">
               {h1(product)}
               {product.article &&
-                <span className="b-item-full__articul" product-article={true}>
+                <span className="b-item-full__articul">
                   {product.article}
                 </span>
               }
@@ -52,10 +52,7 @@ export default class ProductCard {
                 <h1 className="b-item-full__title p-name">
                   {h1(product)}
                   {product.article &&
-                    <span
-                      className="b-item-full__articul u-identifier"
-                      product-article={true}
-                    >
+                    <span className="b-item-full__articul u-identifier">
                       {product.article}
                     </span>
                   }

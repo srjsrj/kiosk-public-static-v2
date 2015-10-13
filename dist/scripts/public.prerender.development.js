@@ -720,7 +720,7 @@ var ProductCard = (function () {
               (0, _helpersSeo.h1)(product),
               product.article && _react2['default'].createElement(
                 'span',
-                { className: 'b-item-full__articul', 'product-article': true },
+                { className: 'b-item-full__articul' },
                 product.article
               )
             ),
@@ -751,10 +751,7 @@ var ProductCard = (function () {
                   (0, _helpersSeo.h1)(product),
                   product.article && _react2['default'].createElement(
                     'span',
-                    {
-                      className: 'b-item-full__articul u-identifier',
-                      'product-article': true
-                    },
+                    { className: 'b-item-full__articul u-identifier' },
                     product.article
                   )
                 ),
@@ -1372,7 +1369,7 @@ var ProductGallery = (function (_Component) {
         'a',
         {
           className: 'b-slider__item',
-          'data-lightbox': true,
+          'data-lightbox': '',
           href: el.url,
           key: idx,
           rel: 'photo-stack'
@@ -2153,7 +2150,7 @@ function schemaOrgGoodPrice(good, category) {
     'div',
     {
       itemProp: 'offers',
-      itemScope: true,
+      itemScope: '',
       itemType: 'http://schema.org/Offer',
       key: good.global_id
     },
