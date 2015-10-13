@@ -59,12 +59,12 @@ export function goodActualPrice({ actual_price }) {
 }
 
 export function attributeValue(attribute) {
-  const { dictionary_entity, readable_value, title, url, value } = attribute
+  const { products_path, title, value } = attribute
 
   switch(attribute.type) {
     case 'AttributeLink':
       return (
-        <a href={url} target="_blank" className="link link--external">
+        <a href={value} target="_blank" className="link link--external">
           {title}
         </a>
       );
@@ -72,7 +72,7 @@ export function attributeValue(attribute) {
       if (!value) return;
 
       return (
-        <a href={url} target="_blank" className="link link--file">
+        <a href={value.url} target="_blank" className="link link--file">
           {title} {value.extension} ({numberToHumanSize(value.size)})
         </a>
       );
@@ -80,8 +80,8 @@ export function attributeValue(attribute) {
       return (
         <span>
           {title}:&nbsp;
-          <a href={dictionary_entity.public_path}>
-            {readable_value}
+          <a href={products_path}>
+            {value}
           </a>
         </span>
       );
