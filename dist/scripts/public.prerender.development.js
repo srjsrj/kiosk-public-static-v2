@@ -27,7 +27,7 @@ _numeral2['default'].language('ru');
 
 global.gon = {
   env: 'development',
-  thumbor_url: 'http://thumbor.kiiiosk.ru'
+  thumbor_url: 'http://thumball.brandydev.ru'
 };
 
 require('./bundlePrerender');
