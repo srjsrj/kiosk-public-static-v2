@@ -39,41 +39,42 @@ export default class ProductCard {
             </h1>
             <ProductCardBadges product={product} />
           </div>
+
+          <div className="b-item-full__content">
+            <div className="b-item-full__gallery">
+              <ProductGallery images={product.images} />
+            </div>
+            <div className="b-item-full__description">
+              <div className="b-item-full__header">
+                <div className="b-breadcrumbs p-category">
+                  {productCategoryPath(product)}
+                </div>
+                <h1 className="b-item-full__title p-name">
+                  {h1(product)}&nbsp;
+                  {product.article &&
+                    <span
+                      className="b-item-full__articul u-identifier"
+                      product-article={true}
+                    >
+                      {product.article}
+                    </span>
+                  }
+                </h1>
+                <ProductCardBadges product={product} />
+              </div>
+              <div className="b-item-full__price p-price">
+                <ProductPrices product={product} />
+              </div>
+              {schemaOrgMarkup(product)}
+              <div className="b-item-full__form">
+                <ProductCart product={product} />
+              </div>
+              <ProductDetails product={product} />
+            </div>
+            <ProductVideo product={product} />
+          </div>
         </div>
 
-        <div className="b-item-full__content">
-          <div className="b-item-full__gallery">
-            <ProductGallery images={product.images} />
-          </div>
-          <div className="b-item-full__description">
-            <div className="b-item-full__header">
-              <div className="b-breadcrumbs p-category">
-                {productCategoryPath(product)}
-              </div>
-              <h1 className="b-item-full__title p-name">
-                {h1(product)}&nbsp;
-                {product.article &&
-                  <span
-                    className="b-item-full__articul u-identifier"
-                    product-article={true}
-                  >
-                    {product.article}
-                  </span>
-                }
-              </h1>
-              <ProductCardBadges product={product} />
-            </div>
-            <div className="b-item-full__price p-price">
-              <ProductPrices product={product} />
-            </div>
-            {schemaOrgMarkup(product)}
-            <div className="b-item-full__form">
-              <ProductCart product={product} />
-            </div>
-            <ProductDetails product={product} />
-          </div>
-          <ProductVideo product={product} />
-        </div>
         <ProductCardSimilarProducts products={similarProducts} />
       </div>
     );
