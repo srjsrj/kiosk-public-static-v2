@@ -1,101 +1,105 @@
 import React, { PropTypes } from 'react';
 import ProductCard from '.';
 
-// const props = {
-//   product: {
-//     id: 4273,
-//     title: 'Миникольцо Полоски без камней черненое',
-//     article: 'MR005-02',
-//     is_sale: false,
-//     images: [{
-//       title: 'Миникольцо Полоски без камней черненое',
-//       url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png'
-//     }, {
-//       title: 'Миникольцо Полоски без камней черненое',
-//       url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg'
-//     }],
-//     categories: [{
-//       id: 1524,
-//       name: 'Главная страница',
-//       is_root: true,
-//       url: 'http://ya.ru'
-//     }, {
-//       id: 628,
-//       name: 'Миникольцо',
-//       is_root: false,
-//       url: 'http://google.ru/2',
-//       vendor: {
-//         root_category_id: 666
-//       },
-//       parent: {
-//         id: 200,
-//         name: 'Кольца',
-//         is_root: false,
-//         url: 'http://google.ru/1',
-//         parent: {
-//           id: 666,
-//           name: 'Категория',
-//           is_root: false,
-//           url: 'http://google.ru/0',
-//           vendor: {
-//             root_category_id: 666
-//           },
-//         },
-//         vendor: {
-//           root_category_id: 666
-//         },
-//       },
-//     }],
-//     goods: [{
-//       is_sale: true,
-//       title: 'Размер 13',
-//       article: '123c',
-//       price: {
-//         cents: 175000,
-//         currency: {
-//           html_name: 'руб.',
-//           iso_code: 'RUB',
-//           subunit_to_unit: 100,
-//         },
-//       },
-//       actual_price: {
-//         cents: 175000,
-//         currency: {
-//           html_name: 'руб.',
-//           iso_code: 'RUB',
-//           subunit_to_unit: 100,
-//         },
-//       }
-//     }, {
-//       is_sale: true,
-//       title: 'Размер 14',
-//       article: '123b',
-//       price: {
-//         cents: 174000,
-//         currency: {
-//           html_name: 'руб.',
-//           iso_code: 'RUB',
-//           subunit_to_unit: 100,
-//         },
-//       },
-//       actual_price: {
-//         cents: 10550,
-//         currency: {
-//           html_name: 'руб.',
-//           iso_code: 'RUB',
-//           subunit_to_unit: 100,
-//         },
-//       }
-//     }],
-//   },
-// }
+const props = {
+  product: {
+    id: 4273,
+    title: 'Миникольцо Полоски без камней черненое',
+    article: 'MR005-02',
+    is_sale: false,
+    has_ordering_goods: false,
+    images: [{
+      title: 'Миникольцо Полоски без камней черненое',
+      url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png'
+    }, {
+      title: 'Миникольцо Полоски без камней черненое',
+      url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg'
+    }],
+    attributes: [],
+    text_blocks: [{
+      title: 'ok',
+      content_rendered: '<span>Helo!</span>',
+    }],
+    categories: [{
+      id: 1524,
+      name: 'Главная страница',
+      is_root: true,
+      public_url: 'http://ya.ru'
+    }, {
+      id: 628,
+      name: 'Миникольцо',
+      is_root: false,
+      public_url: 'http://google.ru/2',
+      parent: {
+        id: 200,
+        name: 'Кольца',
+        is_root: false,
+        public_url: 'http://google.ru/1',
+        parent: {
+          id: 666,
+          name: 'Категория',
+          is_root: false,
+          public_url: 'http://google.ru/0',
+        },
+      },
+    }],
+    goods: [{
+      id: 629,
+      is_sale: true,
+      is_ordering: true,
+      global_id: 1,
+      title: 'Размер 13',
+      article: '123c',
+      price: {
+        cents: 175000,
+        currency: {
+          html_name: 'руб.',
+          iso_code: 'RUB',
+          subunit_to_unit: 100,
+        },
+      },
+      actual_price: {
+        cents: 175000,
+        currency: {
+          html_name: 'руб.',
+          iso_code: 'RUB',
+          subunit_to_unit: 100,
+        },
+      }
+    }, {
+      id: 630,
+      is_sale: true,
+      title: 'Размер 14',
+      global_id: 2,
+      article: '123b',
+      price: {
+        cents: 174000,
+        currency: {
+          html_name: 'руб.',
+          iso_code: 'RUB',
+          subunit_to_unit: 100,
+        },
+      },
+      actual_price: {
+        cents: 10550,
+        currency: {
+          html_name: 'руб.',
+          iso_code: 'RUB',
+          subunit_to_unit: 100,
+        },
+      }
+    }],
+  },
+}
 
 export default class ProductCardContainer {
   static propTypes = {
     product: PropTypes.object.isRequired,
+    similarProducts: PropTypes.array.isRequired,
   }
+  static defaultProps = {...props};
   render() {
-    return <ProductCard product={this.props.product} />;
+    return <ProductCard {...this.props} />;
   }
 }
 

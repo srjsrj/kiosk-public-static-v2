@@ -45,8 +45,8 @@ export default class ProductPrices {
       } else {
         return <ProductGoodPrice good={product.goods[0]} />; 
       }
-    } else {
-      return null;
     }
+
+    return null;
   }
 }

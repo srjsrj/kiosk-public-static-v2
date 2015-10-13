@@ -2,24 +2,21 @@ import React, { PropTypes } from 'react';
 import { h1 } from '../../../helpers/seo';
 import { productCategoryPath } from '../../../helpers/vendors';
 import { schemaOrgMarkup } from '../../../helpers/product';
-// import ProductArticle from '../ProductArticle';
-// import ProductBreadcrumbs from '../ProductBreadcrumbs';
+import ProductCart from '../ProductCart';
+import ProductDetails from '../ProductDetails';
 import ProductGallery from '../ProductGallery';
 import ProductPrices from '../ProductPrices';
-// import ProductTitle from '../ProductTitle';
+import ProductVideo from '../ProductVideo';
 import ProductCardBadges from './ProductCardBadges';
-// import ProductCardSchemaMarkup from './ProductCardSchemaMarkup';
-
-// import ProductBreadcrumbs from '../ProductBreadcrumbs';
-// import ProductCardSimilarProducts from './ProductCardSimilarProducts';
-// import ProductCardTitle from './ProductCardTitle';
+import ProductCardSimilarProducts from './ProductCardSimilarProducts';
 
 export default class ProductCard {
   static propTypes = {
     product: PropTypes.object.isRequired,
+    similarProducts: PropTypes.array.isRequired,
   }
   render() {
-    const { product, productImages } = this.props;
+    const { product, similarProducts } = this.props;
 
     return (
       <div
@@ -28,9 +25,20 @@ export default class ProductCard {
         itemType="http://schema.org/Product"
       >
         <div className="b-item-full">
-          {
-            //Мобильная версия
-          }
+          <div className="b-item-full__header b-item-full__header_mobile">
+            <div className="b-breadcrumbs">
+              {productCategoryPath(product)}
+            </div>
+            <h1 className="b-item-full__title">
+              {h1(product)}&nbsp;
+              {product.article &&
+                <span className="b-item-full__articul" product-article={true}>
+                  {product.article}
+                </span>
+              }
+            </h1>
+            <ProductCardBadges product={product} />
+          </div>
         </div>
 
         <div className="b-item-full__content">
@@ -42,84 +50,35 @@ export default class ProductCard {
               <div className="b-breadcrumbs p-category">
                 {productCategoryPath(product)}
               </div>
+              <h1 className="b-item-full__title p-name">
+                {h1(product)}&nbsp;
+                {product.article &&
+                  <span
+                    className="b-item-full__articul u-identifier"
+                    product-article={true}
+                  >
+                    {product.article}
+                  </span>
+                }
+              </h1>
+              <ProductCardBadges product={product} />
             </div>
-            <h1 className="b-item-full__title p-name">
-              {h1(product)}
-              {product.article &&
-                <span
-                  className="b-item-full__articul u-identifier"
-                  product-article={true}
-                >
-                  &nbsp;{product.article}
-                </span>
-              }
-            </h1>
-            <ProductCardBadges product={product} />
             <div className="b-item-full__price p-price">
               <ProductPrices product={product} />
             </div>
             {schemaOrgMarkup(product)}
+            <div className="b-item-full__form">
+              <ProductCart product={product} />
+            </div>
+            <ProductDetails product={product} />
           </div>
+          <ProductVideo product={product} />
         </div>
+        <ProductCardSimilarProducts products={similarProducts} />
       </div>
     );
   }
 }
-
-// export default class ProductCard {
-//   static propTypes = {
-//     product: PropTypes.object.isRequired,
-//     productImages: PropTypes.array.isRequired,
-//   }
-//   render() {
-//     const { product, productImages } = this.props;
-
-//     return (
-//       <div
-//         className="b-page__content__inner b-page__content__inner_content h-product"
-//         itemScope={true}
-//         itemType="http://schema.org/Product"
-//       >
-//         <div className="b-item-full">
-//           {
-//             // <div className="b-item-full__header b-item-full__header_mobile">
-//             //   <ProductBreadcrumbs product={product} />
-//             //   <h1 className="b-item-full__title">
-//             //     <ProductTitle product={product} /> {}
-//             //     <ProductArticle product={product} />
-//             //   </h1>
-//             //   <ProductCardBadges product={product} />
-//             // </div>
-//           }
-//           <div className="b-item-full__content">
-//             <div className="b-item-full__gallery">
-//               <ProductGallery images={productImages} />
-//             </div>
-//             <div className="b-item-full__description">
-//               <div className="b-item-full__header">
-//                 <ProductBreadcrumbs className="p-category" product={product} />
-//                 <h1 className="b-item-full__title p-name">
-//                   <ProductTitle product={product} />
-//                   <ProductArticle className="u-identifier" product={product} />
-//                 </h1>
-//                 <ProductCardBadges product={product} />
-//               </div>
-//               <div className="b-item-full__price p-price">
-//                 <ProductPrices product={product} />
-//               </div>
-//               <ProductCardSchemaMarkup product={product} />
-//             </div>
-//           </div>
-//         </div>
-//         {
-//           //<ProductCardSimilarProducts products={similarProducts} />
-//         }
-//       </div>
-//     );
-//   }
-// }
-
-
 
 
 

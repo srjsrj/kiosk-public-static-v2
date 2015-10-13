@@ -1,10 +1,8 @@
+import { humanizedMoneyWithCurrency } from './money';
+import { numberToHumanSize } from './number';
 import {
-  h1,
-  schemaOrgGoodAvailability,
-  schemaOrgProductArticle,
-  schemaOrgProductCategory,
+  h1, schemaOrgGoodAvailability, schemaOrgProductArticle, schemaOrgProductCategory,
 } from './seo';
-import HumanizedMoneyWithCurrency from '../components/common/Money/HumanizedMoneyWithCurrency';
 
 export function schemaOrgMarkup(product) {
   return (
@@ -22,6 +20,7 @@ export function schemaOrgGoodPrice(good, category) {
       itemProp="offers"
       itemScope={true}
       itemType="http://schema.org/Offer"
+      key={good.id}
     >
       <meta itemProp="name" content={good.title} />
       <meta itemProp="sku" content={good.article} />
@@ -37,10 +36,76 @@ export function schemaOrgGoodPrice(good, category) {
   );
 }
 
+export function goodOrderTitle(product, good) {
+  let title = good.title;
+
+  if (hasDifferentPrices(product)) {
+    title += ` (${humanizedMoneyWithCurrency(good.actual_price)})`;
+  }
+
+  if (good.is_run_out) {
+    title += ' - нет в наличии';
+  }
+
+  return title;
+}
+
 export function goodActualPrice({ actual_price }) {
   if (actual_price) {
-    return <HumanizedMoneyWithCurrency money={actual_price} />;
+    return humanizedMoneyWithCurrency(actual_price);
   } else {
-    return <span>{'Цена неизвестна'}</span>;
+    return 'Цена неизвестна';
   }
+}
+
+export function attributeValue(attribute) {
+  const { dictionary_entity, readable_value, title, url, value } = attribute
+
+  switch(attribute.type) {
+    case 'AttributeLink':
+      return (
+        <a href={url} target="_blank" className="link link--external">
+          {title}
+        </a>
+      );
+    case 'AttributeFile':
+      if (!value) return;
+
+      return (
+        <a href={url} target="_blank" className="link link--file">
+          {title} {value.extension} ({numberToHumanSize(value.size)})
+        </a>
+      );
+    case 'AttributeDictionary':
+      return (
+        <span>
+          {title}:&nbsp;
+          <a href={dictionary_entity.public_path}>
+            {readable_value}
+          </a>
+        </span>
+      );
+    default:
+      return `${title}: ${value}`;
+  }
+}
+
+export function textBlockContent(block) {
+  return <span dangerouslySetInnerHTML={{ __html: block.content_rendered }} />;
+}
+
+function hasDifferentPrices(product) {
+  const diffCents = product.goods.reduce((prev, good) => {
+    if (good.actual_price) {
+      const actualCents = good.actual_price.cents;
+
+      if (prev.indexOf(actualCents) === -1) {
+        return prev.concat([actualCents]);
+      }
+    }
+
+    return prev;
+  }, []);
+
+  return diffCents.length > 1;
 }
