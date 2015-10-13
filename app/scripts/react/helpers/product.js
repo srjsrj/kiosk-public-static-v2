@@ -90,10 +90,6 @@ export function attributeValue(attribute) {
   }
 }
 
-export function textBlockContent(block) {
-  return <span dangerouslySetInnerHTML={{ __html: block.content_rendered }} />;
-}
-
 function hasDifferentPrices(product) {
   const diffCents = product.goods.reduce((prev, good) => {
     if (good.actual_price) {

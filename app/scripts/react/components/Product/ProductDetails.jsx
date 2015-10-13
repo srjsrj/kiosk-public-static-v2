@@ -35,7 +35,7 @@ export default class ProductDetails {
     return product.text_blocks.map((block, idx) =>
       <div className="b-item-full__text" key={idx}>
         <h4>{block.title}</h4>
-        {textBlockContent(block)}
+        <span dangerouslySetInnerHTML={{ __html: block.content }} />
       </div>
     );
   }
