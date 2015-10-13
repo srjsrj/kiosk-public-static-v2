@@ -2,75 +2,12 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.b-page
+  %body.b-page.b-page_cols-4
     .b-page__content
       .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
 
-      .b-page__content__inner.b-page__content__inner_content
-        .b-item-full
-          / Шапка, которая используется для мобильных устройств
-          .b-item-full__header.b-item-full__header_mobile
-            .b-breadcrumbs
-              %a{href: '/'}
-                Столы
-              \ /
-              %a{href: '/'}
-                Маленькие столы
-
-            %h1.b-item-full__title
-              Моно-серьга лалала
-                %span.b-item-full__articul Арт. 123123
-
-            .b-status.b-status_sale Статус товара
-
-          / Основной контент о товаре
-          .b-item-full__content
-            .b-item-full__gallery
-              +include 'app/haml/shared/_product-carousel.haml'
-
-            .b-item-full__description
-              .b-item-full__header
-                .b-breadcrumbs
-                  %a{href: '/'}
-                    Столы
-                  \ /
-                  %a{href: '/'}
-                    Маленькие столы
-
-                %h1.b-item-full__title
-                  Моно-серьга лалала
-                    %span.b-item-full__articul Арт. 123123
-
-                .b-status.b-status_sale Статус товара
-
-                .b-item-full__price
-                  .b-item__price.b-item__price_unknown
-                    Цена неизвестна
-
-              .b-item-full__form
-                / %div{data: {react-class: 'PropertyList', react-props: '{"property": {"title": "Цвет", "value": 456}}'}}
-                %div{data: {react-class: 'ProductProperties', react-props: ''}}
-
-              .b-item-full__text
-                %p Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну.
-                %p Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
-
-              %ul.b-characteristics
-                - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
-                - for obj, i in details
-                  - for key of obj
-                    %li
-                      = "#{key}:"
-                      = obj[key]
-
-            .b-item-full__video
-              %h1.b-item-full__title
-                Видео
-              %iframe{width: "100%", height: "400", src: "https://www.youtube.com/embed/NYwco_4XCzg", frameborder: "0", allowfullscreen: true}
-
-        / Иные товары
-        %div{data: {react-class: 'ProductCardSimilarProducts'}}
+      %div{data: {react-class: 'ProductCard'}}
 
       .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'

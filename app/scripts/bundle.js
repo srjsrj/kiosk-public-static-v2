@@ -34,9 +34,9 @@ global.Userbar = require('./react/components/Userbar/UserbarContainer');
 global.Logo = require('./react/components/Logo');
 global.ProductProperties = require('./react/components/ProductProperties');
 global.PropertyList = require('./react/components/ProductProperties/PropertyList');
-global.ProductGallery = require('./react/components/ProductGallery');
 global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCardSimilarProducts = require('./react/components/Product/ProductCard/ProductCardSimilarProducts');
 global.TopBanner = require('./react/components/TopBanner');
+global.ProductCard = require('./react/components/Product/ProductCard/ProductCardContainer');
 
 import './react/application';

@@ -107,7 +107,7 @@ export default class ProductGallery extends Component {
     return (
       <a
         className="b-slider__item"
-        data-lightbox={true}
+        data-lightbox={''}
         href={el.url}
         key={idx}
         rel="photo-stack"
