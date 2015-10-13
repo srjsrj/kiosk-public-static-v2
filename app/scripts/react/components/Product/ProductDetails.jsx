@@ -11,8 +11,8 @@ export default class ProductDetails {
     return (
       <ul className="b-characteristics">
         {
-          product.attributes.map((attr) =>
-            <li key={attr.id}>
+          product.attributes.map((attr, idx) =>
+            <li key={idx}>
               {attributeValue(attr)}
             </li>
           )
