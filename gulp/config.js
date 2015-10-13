@@ -42,11 +42,27 @@ export default {
         extensions: ['.jsx', '.cjsx', '.coffee']
       }
     },
+    development: {
+      components: {
+        entries: src + '/scripts/prerender.development.js',
+        extensions: ['.jsx', '.cjsx', '.coffee'],
+        dest: dist + '/scripts/',
+        outputName: 'public.prerender.development.js',
+      },
+    },
     production: {
-      entries: src + '/scripts/appBundle.coffee',
-      dest: dist + '/scripts/',
-      outputName: 'appBundle.js',
-      extensions: ['.jsx', '.cjsx', '.coffee']
+      bundle: {
+        entries: src + '/scripts/appBundle.coffee',
+        extensions: ['.jsx', '.cjsx', '.coffee'],
+        dest: dist + '/scripts/',
+        outputName: 'appBundle.js',
+      },
+      components: {
+        entries: src + '/scripts/prerender.production.js',
+        extensions: ['.jsx', '.cjsx', '.coffee'],
+        dest: dist + '/scripts/',
+        outputName: 'public.prerender.production.js',
+      },
     }
   },
   styles: {

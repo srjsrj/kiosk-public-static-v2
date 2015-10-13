@@ -20,7 +20,7 @@ export function schemaOrgGoodPrice(good, category) {
       itemProp="offers"
       itemScope={true}
       itemType="http://schema.org/Offer"
-      key={good.id}
+      key={good.global_id}
     >
       <meta itemProp="name" content={good.title} />
       <meta itemProp="sku" content={good.article} />

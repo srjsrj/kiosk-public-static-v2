@@ -155,8 +155,8 @@ gulp.task('[Static] Test scripts', () => {
 gulp.task('[Production] Scripts', () => {
   var appBundler = browserify({
     cache: {}, packageCache: {},
-    entries: config.production.entries,
-    extensions: config.production.extensions
+    entries: config.production.bundle.entries,
+    extensions: config.production.bundle.extensions
   });
 
   Object.keys(dependencies).forEach((dep) => {
@@ -165,7 +165,7 @@ gulp.task('[Production] Scripts', () => {
     }
   });
 
-  bundleLogger.start(config.production.outputName);
+  bundleLogger.start(config.production.bundle.outputName);
 
   return appBundler
     .transform('babelify', {
@@ -175,10 +175,67 @@ gulp.task('[Production] Scripts', () => {
     .transform('coffee-reactify')
     .bundle()
     .on('error', handleErrors)
-    .pipe(source(config.production.outputName))
+    .pipe(source(config.production.bundle.outputName))
     .pipe(streamify(uglify()))
-    .pipe(gulp.dest(config.production.dest))
+    .pipe(gulp.dest(config.production.bundle.dest))
     .on('end', function() {
-      bundleLogger.end(config.production.outputName);
+      bundleLogger.end(config.production.bundle.outputName);
+    });
+});
+
+gulp.task('[Production] Components scripts', () => {
+  let bundler = browserify({
+    cache: {}, packageCache: {},
+    entries: config.production.components.entries,
+    extensions: config.production.components.extensions,
+  });
+
+  Object.keys(dependencies).forEach((dep) => {
+    bundler.require(dependencies[dep], { expose: dep });
+  });
+
+  bundleLogger.start(config.production.components.outputName);
+
+  return bundler
+    .transform('babelify', {
+      stage: 0,
+      ignore: /(node_modules|bower_components|bundlePrerender\.js)/
+    })
+    .transform('coffee-reactify')
+    .bundle()
+    .on('error', handleErrors)
+    .pipe(source(config.production.components.outputName))
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest(config.production.components.dest))
+    .on('end', () => {
+      bundleLogger.end(config.production.components.outputName);
+    });
+});
+
+gulp.task('[Development] Components scripts', () => {
+  let bundler = browserify({
+    cache: {}, packageCache: {},
+    entries: config.development.components.entries,
+    extensions: config.development.components.extensions
+  });
+
+  Object.keys(dependencies).forEach((dep) => {
+    bundler.require(dependencies[dep], { expose: dep });
+  });
+
+  bundleLogger.start(config.development.components.outputName);
+
+  return bundler
+    .transform('babelify', {
+      stage: 0,
+      ignore: /(node_modules|bower_components|bundlePrerender\.js)/
+    })
+    .transform('coffee-reactify')
+    .bundle()
+    .on('error', handleErrors)
+    .pipe(source(config.development.components.outputName))
+    .pipe(gulp.dest(config.development.components.dest))
+    .on('end', () => {
+      bundleLogger.end(config.development.components.outputName);
     });
 });
