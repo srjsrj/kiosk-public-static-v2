@@ -16,7 +16,7 @@ export default class ProductCartForProductItems {
             const option = (
               <option
                 disabled={!good.is_ordering}
-                key={good.id}
+                key={good.global_id}
                 selected={good.is_ordering && !selected}
                 value={good.global_id}
               >
