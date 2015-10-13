@@ -4,11 +4,16 @@ export function productCategoryPath({ categories }) {
 
   if (!category) return;
 
-  return [
-    ...[categoryLink(category.parent)],
-    ...[<span key="delimeter"> / </span>],
-    ...[categoryLink(category)],
-  ];
+  let path = [];
+
+  if (category.parent && !category.parent.is_root) {
+    path.push(categoryLink(category.parent));
+    path.push(<span key="delimeter"> / </span>);
+  }
+
+  path.push(categoryLink(category));
+
+  return path;
 }
 
 export function categoryLink(category) {
