@@ -1109,7 +1109,7 @@ var ProductCart = (function () {
           action: (0, _routesApp.vendorCartItems)(),
           className: 'simple_form cart_item',
           method: 'POST',
-          noValidate: 'novalidate'
+          noValidate: ''
         },
         this.renderContent(product)
       );

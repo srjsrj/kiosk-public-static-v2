@@ -28,7 +28,7 @@ export default class ProductCart {
         action={vendorCartItems()}
         className="simple_form cart_item"
         method="POST"
-        noValidate="novalidate"
+        noValidate={''}
       >
         {this.renderContent(product)}
       </form>
