@@ -2225,7 +2225,7 @@ function attributeValue(attribute) {
         'span',
         null,
         title,
-        ': ',
+        ':',
         React.createElement(
           'a',
           { href: products_path },

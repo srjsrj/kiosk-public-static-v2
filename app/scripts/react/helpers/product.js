@@ -79,7 +79,7 @@ export function attributeValue(attribute) {
     case 'AttributeDictionary':
       return (
         <span>
-          {title}:&nbsp;
+          {title}:
           <a href={products_path}>
             {value}
           </a>
