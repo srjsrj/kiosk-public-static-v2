@@ -431,23 +431,23 @@ var cardProps = {
   },
   "similarProducts": [
     {
-      "id": 20498,
-      "title": "Миникольцо Shen-10 серебряное",
+      "id": 4308,
+      "title": "Миникольцо Полоски с цирконами серебряное",
       "is_sale": false,
       "has_ordering_goods": true,
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/7297/5469d232-3e98-4204-804e-9f64450e0dfc.jpg",
-      "public_url": "http://wannabe.3001.vkontraste.ru/products/20498-minikoltso-shen-10-serebryanoe",
+      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/5352/image.png",
+      "public_url": "http://wannabe.3001.vkontraste.ru/products/4308-minikoltso-poloski-s-tsirkonami-serebryanoe",
       "goods": [
         {
-          "id": 14606,
+          "id": 9733,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -465,8 +465,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -485,12 +485,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14607,
+          "id": 9730,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -508,8 +508,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -528,12 +528,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14608,
+          "id": 9731,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -551,8 +551,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -571,12 +571,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14612,
+          "id": 9732,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -594,8 +594,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -614,12 +614,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14609,
+          "id": 9735,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -637,8 +637,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -657,12 +657,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14610,
+          "id": 9729,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -680,8 +680,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -700,12 +700,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14611,
+          "id": 9734,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -723,8 +723,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -745,23 +745,23 @@ var cardProps = {
       ]
     },
     {
-      "id": 20500,
-      "title": "Миникольцо Shen-10 золоченое",
+      "id": 4281,
+      "title": "Миникольцо Ви без камней золоченое",
       "is_sale": false,
       "has_ordering_goods": true,
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/7296/6195cda4-a15e-4c9d-9f43-4b03d2c38d10.jpg",
-      "public_url": "http://wannabe.3001.vkontraste.ru/products/20500-minikoltso-shen-10-zolochenoe",
+      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/5321/image.png",
+      "public_url": "http://wannabe.3001.vkontraste.ru/products/4281-minikoltso-vi-bez-kamney-zolochenoe",
       "goods": [
         {
-          "id": 14622,
+          "id": 9635,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -779,8 +779,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -799,12 +799,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14626,
+          "id": 9636,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -822,8 +822,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -842,12 +842,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14621,
+          "id": 9638,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -865,8 +865,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -885,12 +885,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14624,
+          "id": 9637,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -908,8 +908,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -928,12 +928,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14625,
+          "id": 9639,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -951,8 +951,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -971,12 +971,12 @@ var cardProps = {
           }
         },
         {
-          "id": 14620,
+          "id": 9640,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -994,51 +994,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
-            },
-            "currency_iso_code": "RUB"
-          }
-        },
-        {
-          "id": 14623,
-          "type": "ProductItem",
-          "is_sale": false,
-          "price": {
-            "cents": 249000,
-            "to_f": 2490,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
-            },
-            "currency_iso_code": "RUB"
-          },
-          "actual_price": {
-            "cents": 249000,
-            "to_f": 2490,
+            "cents": 200000,
+            "to_f": 2000,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1059,23 +1016,23 @@ var cardProps = {
       ]
     },
     {
-      "id": 30490,
-      "title": "Миникольцо Дорожка на цепочке с цирконами черненое р",
+      "id": 4323,
+      "title": "Миникольцо Ви с цирконами черненое",
       "is_sale": false,
       "has_ordering_goods": true,
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/25443/efc96d31-d435-47a8-a1bd-f0b970c99bc3.jpg",
-      "public_url": "http://wannabe.3001.vkontraste.ru/products/30490-minikoltso-dorozhka-na-tsepochke-s-tsirkonami-chernenoe-r",
+      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/5360/image.png",
+      "public_url": "http://wannabe.3001.vkontraste.ru/products/4323-minikoltso-vi-s-tsirkonami-chernenoe",
       "goods": [
         {
-          "id": 28168,
+          "id": 9786,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1093,8 +1050,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1113,12 +1070,12 @@ var cardProps = {
           }
         },
         {
-          "id": 28167,
+          "id": 9787,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1136,8 +1093,8 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1156,12 +1113,12 @@ var cardProps = {
           }
         },
         {
-          "id": 28166,
+          "id": 9788,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1179,8 +1136,137 @@ var cardProps = {
             "currency_iso_code": "RUB"
           },
           "actual_price": {
-            "cents": 290000,
-            "to_f": 2900,
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        },
+        {
+          "id": 9789,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        },
+        {
+          "id": 9790,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        },
+        {
+          "id": 9791,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 350000,
+            "to_f": 3500,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 350000,
+            "to_f": 3500,
             "currency": {
               "iso_code": "RUB",
               "iso_numeric": "643",
@@ -1201,18 +1287,18 @@ var cardProps = {
       ]
     },
     {
-      "id": 4304,
-      "title": "Миникольцо Крестик с белыми цирконами черненое",
+      "id": 4275,
+      "title": "Миникольцо Ви без камней черненое",
       "is_sale": false,
-      "has_ordering_goods": false,
+      "has_ordering_goods": true,
       "is_label_new": false,
-      "is_run_out": true,
-      "is_sold": true,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/5442/image.png",
-      "public_url": "http://wannabe.3001.vkontraste.ru/products/4304-minikoltso-krestik-s-belymi-tsirkonami-chernenoe",
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/5309/image.png",
+      "public_url": "http://wannabe.3001.vkontraste.ru/products/4275-minikoltso-vi-bez-kamney-chernenoe",
       "goods": [
         {
-          "id": 9715,
+          "id": 9607,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
@@ -1255,7 +1341,7 @@ var cardProps = {
           }
         },
         {
-          "id": 9713,
+          "id": 9608,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
@@ -1298,7 +1384,7 @@ var cardProps = {
           }
         },
         {
-          "id": 9714,
+          "id": 9603,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
@@ -1341,7 +1427,7 @@ var cardProps = {
           }
         },
         {
-          "id": 9792,
+          "id": 9605,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
@@ -1384,7 +1470,50 @@ var cardProps = {
           }
         },
         {
-          "id": 9793,
+          "id": 9604,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 200000,
+            "to_f": 2000,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 200000,
+            "to_f": 2000,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        },
+        {
+          "id": 9606,
           "type": "ProductItem",
           "is_sale": false,
           "price": {
@@ -1432,5 +1561,5 @@ var cardProps = {
 };
 
 React.renderToString(React.createElement(ProductBlock, blockProps));
-React.renderToString(React.createElement(ProductCard, cardProps));
+console.log(React.renderToString(React.createElement(ProductCard, cardProps)));
 console.log('Prendering public components test finished successfully');
