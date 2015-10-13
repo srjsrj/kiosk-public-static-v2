@@ -23,9 +23,11 @@ export default class ProductDetails {
   renderDescription(product) {
     if (product.description) {
       return (
-        <div className="b-item-full__text e-description" itemProp="description">
-          {simpleFormat(product.description)}
-        </div>
+        <div
+          className="b-item-full__text e-description"
+          dangerouslySetInnerHTML={{ __html: product.description }}
+          itemProp="description"
+        />
       );
     } else {
       return <meta itemProp="description" content={h1(product)} />;
