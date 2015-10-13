@@ -21,7 +21,7 @@ export default class ProductCard {
     return (
       <div
         className="b-page__content__inner b-page__content__inner_content"
-        itemScope={true}
+        itemScope=""
         itemType="http://schema.org/Product"
       >
         <div className="b-item-full">

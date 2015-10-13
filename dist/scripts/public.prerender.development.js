@@ -683,7 +683,7 @@ var ProductCard = (function () {
         'div',
         {
           className: 'b-page__content__inner b-page__content__inner_content',
-          itemScope: true,
+          itemScope: '',
           itemType: 'http://schema.org/Product'
         },
         _react2['default'].createElement(
@@ -918,26 +918,30 @@ var ProductCartForProductItems = (function () {
   _createClass(ProductCartForProductItems, [{
     key: 'renderSelect',
     value: function renderSelect(product) {
-      var selected = false;
+      var selectedValue = undefined;
+
+      for (var i = 0; i < product.goods.length; i++) {
+        var good = product.goods[i];
+
+        if (good.is_ordering) {
+          selectedValue = good.global_id;
+          break;
+        }
+      }
 
       return _react2['default'].createElement(
         'select',
-        { name: 'cart_item[good_id]' },
+        { defaultValue: selectedValue, name: 'cart_item[good_id]' },
         product.goods.map(function (good) {
           var option = _react2['default'].createElement(
             'option',
             {
               disabled: !good.is_ordering,
               key: good.global_id,
-              selected: good.is_ordering && !selected,
               value: good.global_id
             },
             (0, _helpersProduct.goodOrderTitle)(product, good)
           );
-
-          if (good.is_ordering && !selected) {
-            selected = true;
-          }
 
           return option;
         })

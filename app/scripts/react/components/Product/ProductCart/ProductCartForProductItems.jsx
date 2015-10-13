@@ -7,26 +7,30 @@ export default class ProductCartForProductItems {
     product: PropTypes.object.isRequired,
   }
   renderSelect(product) {
-    let selected = false;
+    let selectedValue;
+
+    for (let i = 0; i < product.goods.length; i++) {
+      const good = product.goods[i];
+
+      if (good.is_ordering) {
+        selectedValue = good.global_id;
+        break;
+      }
+    }
 
     return (
-      <select name="cart_item[good_id]">
+      <select defaultValue={selectedValue} name="cart_item[good_id]">
         {
           product.goods.map((good) => {
             const option = (
               <option
                 disabled={!good.is_ordering}
                 key={good.global_id}
-                selected={good.is_ordering && !selected}
                 value={good.global_id}
               >
                 {goodOrderTitle(product, good)}
               </option>
             );
-
-            if (good.is_ordering && !selected) {
-              selected = true;
-            }
 
             return option;
           })
