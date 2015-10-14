@@ -3558,12 +3558,13 @@ var bool = _react.PropTypes.bool;
 var number = _react.PropTypes.number;
 var object = _react.PropTypes.object;
 var oneOf = _react.PropTypes.oneOf;
+var oneOfType = _react.PropTypes.oneOfType;
 var shape = _react.PropTypes.shape;
 var string = _react.PropTypes.string;
 exports['default'] = shape({
   is_sale: bool.isRequired,
-  price: _money2['default'].isRequired,
-  actual_price: _money2['default'].isRequired
+  price: _money2['default'],
+  actual_price: _money2['default']
 });
 module.exports = exports['default'];
 
