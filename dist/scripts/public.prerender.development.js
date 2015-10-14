@@ -1606,6 +1606,7 @@ var ProductCard = (function () {
               'h1',
               { className: 'b-item-full__title' },
               (0, _helpersSeo.h1)(product),
+              ' ',
               product.article && _react2['default'].createElement(
                 'span',
                 { className: 'b-item-full__articul' },
