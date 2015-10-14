@@ -807,11 +807,6 @@ export default class ProductCardContainer extends Component {
   state = {
     product: this.props.product
   }
-  constructor(props) {
-    super(props);
-
-    this.handleProductChange = this.handleProductChange.bind(this);
-  }
   handleProductChange(field, value) {
     const { product } = this.state;
 
@@ -826,7 +821,7 @@ export default class ProductCardContainer extends Component {
       <ProductCard
         product={this.state.product}
         similarProducts={this.props.similarProducts}
-        onProductChange={this.handleProductChange}
+        onProductChange={this.handleProductChange.bind(this)}
       />
     );
   }
