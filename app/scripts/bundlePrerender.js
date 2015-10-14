@@ -4,6 +4,6 @@ require('./locales/numeral/ru');
 
 Logo = require('./react/components/Logo');
 ProductBlock = require('./react/components/Product/ProductBlock');
-ProductCard = require('./react/components/Product/ProductCard');
+ProductCard = require('./react/components/Product/ProductCard/ProductCardContainer');
 ProductProperties = require('./react/components/ProductProperties');
 TopBanner = require('./react/components/TopBanner');
