@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git@github.com:BrandyMint/kiosk-public-static-v2.git"
   },
+  "scripts": {
+    "dist-test": "node ./dist_tests/prerender"
+  },
   "dependencies": {
     "URIjs": "^1.15.2",
     "classnames": "^2.1.2",
