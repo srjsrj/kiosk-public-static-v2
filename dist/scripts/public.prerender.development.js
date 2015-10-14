@@ -1767,7 +1767,7 @@ var ProductCartForProduct = (function () {
       return _react2['default'].createElement(
         'span',
         null,
-        _react2['default'].createElement(_commonHiddenInput2['default'], { name: 'good_id', value: good.global_id }),
+        _react2['default'].createElement(_commonHiddenInput2['default'], { name: 'cart_item[good_id]', value: good.global_id }),
         _react2['default'].createElement(
           'div',
           { className: 'b-item-full__form__row b-item-full__form__row_fixed' },

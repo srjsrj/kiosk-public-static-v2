@@ -11,7 +11,7 @@ export default class ProductCartForProduct {
 
     return (
       <span>
-        <HiddenInput name="good_id" value={good.global_id} />
+        <HiddenInput name="cart_item[good_id]" value={good.global_id} />
         <div className="b-item-full__form__row b-item-full__form__row_fixed">
           <div className="b-item-full__form__submit">
             <ProductCartAddButton />
