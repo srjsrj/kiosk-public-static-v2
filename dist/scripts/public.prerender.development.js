@@ -701,66 +701,18 @@ var ProductCard = (function () {
     _classCallCheck(this, ProductCard);
   }
 
-  // .b-page__content__inner.b-page__content__inner_content.h-product{itemscope: true, itemtype: 'http://schema.org/Product'}
-  //   .b-item-full
-  //     .b-item-full__header.b-item-full__header_mobile
-  //       .b-breadcrumbs
-  //         - # product.categories - массив категорий
-  //         = product_category_path product
-
-  //       %h1.b-item-full__title
-  //         = h1(product)
-  //         %span.b-item-full__articul{'product-article' => true}
-  //           = product.article
-
-  //       -# product_card_badges
-  //       -# product_block_badges
-  //       = product_badges product, show_not_aval: false
-
-  //     .b-item-full__content
-  //       .b-item-full__gallery
-  //         = product_gallery product
-  //       .b-item-full__description
-  //         .b-item-full__header
-  //           .b-breadcrumbs.p-category
-  //             = product_category_path product
-
-  //           %h1.b-item-full__title.p-name
-  //             = h1(product)
-  //             %span.b-item-full__articul.u-identifier{'product-article' => true}
-  //               = product.article
-
-  //           = product_badges product, show_not_aval: false
-
-  //         .b-item-full__price.p-price
-  //           = product_prices product
-
-  //         = schema_org_markup product
-
-  //         .b-item-full__form
-  //           = render 'cart', product: product
-
-  //         = render 'product_details', product: product
-
-  //       - if product.video_present?
-  //         .b-item-full__video
-  //           -# product.embed_video_html
-  //           = embed_product_video product
-
-  //   = similar_products_component product
-
   _createClass(ProductCard, [{
     key: 'render',
     value: function render() {
       var _props = this.props;
       var product = _props.product;
+      var onProductChange = _props.onProductChange;
       var similarProducts = _props.similarProducts;
 
       return _react2['default'].createElement(
         'div',
         {
           className: 'b-page__content__inner b-page__content__inner_content',
-          itemScope: '',
           itemType: 'http://schema.org/Product'
         },
         _react2['default'].createElement(
@@ -826,7 +778,10 @@ var ProductCard = (function () {
               _react2['default'].createElement(
                 'div',
                 { className: 'b-item-full__form' },
-                _react2['default'].createElement(_ProductCart2['default'], { product: product })
+                _react2['default'].createElement(_ProductCart2['default'], {
+                  product: product,
+                  onProductChange: onProductChange
+                })
               ),
               _react2['default'].createElement(_ProductDetails2['default'], { product: product })
             ),
@@ -840,7 +795,8 @@ var ProductCard = (function () {
     key: 'propTypes',
     value: {
       product: _react.PropTypes.object.isRequired,
-      similarProducts: _react.PropTypes.array.isRequired
+      similarProducts: _react.PropTypes.array.isRequired,
+      onProductChange: _react.PropTypes.func.isRequired
     },
     enumerable: true
   }]);
@@ -988,8 +944,23 @@ var ProductCartForProductItems = (function () {
   }
 
   _createClass(ProductCartForProductItems, [{
+    key: 'renderOption',
+    value: function renderOption(good, product) {
+      return _react2['default'].createElement(
+        'option',
+        {
+          disabled: !good.is_ordering,
+          key: good.global_id,
+          value: good.global_id
+        },
+        (0, _helpersProduct.goodOrderTitle)(product, good)
+      );
+    }
+  }, {
     key: 'renderSelect',
     value: function renderSelect(product) {
+      var _this = this;
+
       var selectedValue = undefined;
 
       for (var i = 0; i < product.goods.length; i++) {
@@ -1003,21 +974,32 @@ var ProductCartForProductItems = (function () {
 
       return _react2['default'].createElement(
         'select',
-        { defaultValue: selectedValue, name: 'cart_item[good_id]' },
+        {
+          defaultValue: selectedValue,
+          name: 'cart_item[good_id]',
+          onChange: this.handleSelectChange.bind(this)
+        },
         product.goods.map(function (good) {
-          var option = _react2['default'].createElement(
-            'option',
-            {
-              disabled: !good.is_ordering,
-              key: good.global_id,
-              value: good.global_id
-            },
-            (0, _helpersProduct.goodOrderTitle)(product, good)
-          );
-
-          return option;
+          return _this.renderOption(good, product);
         })
       );
+    }
+  }, {
+    key: 'handleSelectChange',
+    value: function handleSelectChange(e) {
+      var value = e.target.value;
+      var _props = this.props;
+      var onProductChange = _props.onProductChange;
+      var goods = _props.product.goods;
+
+      for (var i = 0; i < goods.length; i++) {
+        var good = goods[i];
+
+        if (good.global_id === value) {
+          onProductChange('article', good.article);
+          break;
+        }
+      };
     }
   }, {
     key: 'render',
@@ -1042,6 +1024,7 @@ var ProductCartForProductItems = (function () {
   }], [{
     key: 'propTypes',
     value: {
+      onProductChange: _react.PropTypes.func.isRequired,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true
@@ -1146,12 +1129,14 @@ var ProductCart = (function () {
 
   _createClass(ProductCart, [{
     key: 'renderContent',
-    value: function renderContent(product) {
+    value: function renderContent(product, onProductChange) {
       if (product.has_ordering_goods) {
         if (product.goods.length === 1) {
           return _react2['default'].createElement(_ProductCartForProduct2['default'], { good: product.goods[0] });
         } else {
-          return _react2['default'].createElement(_ProductCartForProductItems2['default'], { product: product });
+          return _react2['default'].createElement(_ProductCartForProductItems2['default'], {
+            onProductChange: onProductChange,
+            product: product });
         }
       } else {
         return _react2['default'].createElement(_ProductCartNotAvailable2['default'], { title: 'Не доступно' });
@@ -1160,7 +1145,9 @@ var ProductCart = (function () {
   }, {
     key: 'render',
     value: function render() {
-      var product = this.props.product;
+      var _props = this.props;
+      var onProductChange = _props.onProductChange;
+      var product = _props.product;
 
       return _react2['default'].createElement(
         'form',
@@ -1170,12 +1157,13 @@ var ProductCart = (function () {
           className: 'simple_form cart_item',
           method: 'POST'
         },
-        this.renderContent(product)
+        this.renderContent(product, onProductChange)
       );
     }
   }], [{
     key: 'propTypes',
     value: {
+      onProductChange: _react.PropTypes.func.isRequired,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true

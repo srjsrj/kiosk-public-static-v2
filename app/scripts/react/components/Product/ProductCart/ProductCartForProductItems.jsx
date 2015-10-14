@@ -4,7 +4,19 @@ import ProductCartAddButton from './ProductCartAddButton';
 
 export default class ProductCartForProductItems {
   static propTypes = {
+    onProductChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
+  }
+  renderOption(good, product) {
+    return (
+      <option
+        disabled={!good.is_ordering}
+        key={good.global_id}
+        value={good.global_id}
+      >
+        {goodOrderTitle(product, good)}
+      </option>
+    );
   }
   renderSelect(product) {
     let selectedValue;
@@ -19,24 +31,27 @@ export default class ProductCartForProductItems {
     }
 
     return (
-      <select defaultValue={selectedValue} name="cart_item[good_id]">
-        {
-          product.goods.map((good) => {
-            const option = (
-              <option
-                disabled={!good.is_ordering}
-                key={good.global_id}
-                value={good.global_id}
-              >
-                {goodOrderTitle(product, good)}
-              </option>
-            );
-
-            return option;
-          })
-        }
+      <select
+        defaultValue={selectedValue}
+        name="cart_item[good_id]"
+        onChange={this.handleSelectChange.bind(this)}
+      >
+        {product.goods.map((good) => this.renderOption(good, product))}
       </select>
     );
+  }
+  handleSelectChange(e) {
+    const value = e.target.value;
+    const { onProductChange, product: { goods } } = this.props;
+
+    for (let i = 0; i < goods.length; i++) {
+      const good = goods[i];
+
+      if (good.global_id === value) {
+        onProductChange('article', good.article);
+        break;
+      }
+    };
   }
   render() {
     const { product } = this.props;
