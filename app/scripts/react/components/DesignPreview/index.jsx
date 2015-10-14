@@ -122,9 +122,7 @@ const _switchableStates = {
 class DesignPreview {
   static propTypes = {
     design: PropTypes.object.isRequired,
-    pageType: PropTypes.oneOf([
-      'welcome', 'categories', 'products'
-    ]).isRequired,
+    pageType: PropTypes.string.isRequired,
   }
   componentDidMount() {
     this.attachSheet();
