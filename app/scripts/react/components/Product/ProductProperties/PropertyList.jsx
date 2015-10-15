@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { getOptions } from './utils/utils';
+import { getOptions } from './utils';
 import PropertyListItem from './PropertyListItem';
 
 export default class PropertyList {
@@ -17,10 +17,10 @@ export default class PropertyList {
       const propertyList = properties.map((property) => (
         <PropertyListItem
           key={property.id}
-          value={values[property.id] || null}
+          onChange={onChange.bind(this, property)}
           options={options[property.id] || []}
           property={property}
-          onChange={onChange.bind(this, property)}
+          value={values[property.id] || null}
         />
       ));
 

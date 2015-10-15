@@ -29,17 +29,19 @@
 // }
 
 export function getOptions(properties, goods, filters) {
-  return properties.reduce((previous, property) => {
+  return properties.reduce((prev, property) => {
     const propertyFilters = getFiltersForProperty(property, properties, filters);
-    previous[property.id] = getOptionsForProperty(property, goods, propertyFilters);
 
-    return previous;
+    return {
+      ...prev,
+      [property.id]: getOptionsForProperty(property, goods, propertyFilters)
+    };
   }, {});
 }
 
 export function getUpdatedValues(property, properties, filters, data) {
   const newValues = getFiltersForProperty(property, properties, filters);
-  return {...newValues, ...data};
+  return { ...newValues, ...data };
 }
 
 export function getMatchedGood(properties, goods, filters) {
@@ -61,6 +63,7 @@ function getFiltersForProperty(property, properties, filters) {
     const prop = properties[i];
 
     if (prop === property) break;
+
     if (typeof filters[prop.id] !== 'undefined') {
       propertyFilters[prop.id] = filters[prop.id];
     }

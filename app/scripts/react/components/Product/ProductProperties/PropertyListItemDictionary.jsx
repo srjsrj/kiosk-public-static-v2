@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import RadioColor from '../common/RadioColor';
+import Select from '../../common/Select';
 
-export default class PropertyListItemColor {
+export default class PropertyListItemDictionary {
   static propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.any,
@@ -16,11 +16,11 @@ export default class PropertyListItemColor {
           <h3 className="b-item-full__form__title">
             {this.props.propertyTitle}
           </h3>
-          <RadioColor
+          <Select
             name={this.props.name}
-            value={this.props.value}
-            options={this.props.options}
             onChange={this.props.onChange}
+            options={this.props.options}
+            value={this.props.value}
           />
         </div>
       </div>

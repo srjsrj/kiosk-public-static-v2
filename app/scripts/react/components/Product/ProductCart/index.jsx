@@ -17,8 +17,9 @@ export default class ProductCart {
         return (
           <ProductCartForProductItems
             onProductChange={onProductChange}
-            product={product} />
-          );
+            product={product}
+          />
+        );
       }
     } else {
       return <ProductCartNotAvailable title="Не доступно" />;

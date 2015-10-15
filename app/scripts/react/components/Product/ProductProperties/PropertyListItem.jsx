@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
-import * as propertyTypes from '../../constants/propertyTypes';
+import * as propertyTypes from '../../../constants/propertyTypes';
 import PropertyListItemColor from './PropertyListItemColor';
 import PropertyListItemDictionary from './PropertyListItemDictionary';
 
 export default class PropertyListItem {
   static propTypes = {
-    value: PropTypes.any,
+    onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired,
     property: PropTypes.object.isRequired,
-    onChange: PropTypes.func.isRequired
+    value: PropTypes.any,
   }
   render() {
     const { value, options, property, onChange } = this.props;
@@ -19,10 +19,10 @@ export default class PropertyListItem {
         <Component
           key={property.id}
           name={this.getItemName(property.id)}
-          value={value}
+          onChange={this.props.onChange}
           options={options}
           propertyTitle={property.title}
-          onChange={this.props.onChange}
+          value={value}
         />
       );
     } else {

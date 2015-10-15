@@ -32,8 +32,6 @@ import './react/stores/basket';
 global.CatalogFilter = require('./react/components/CatalogFilter');
 global.Userbar = require('./react/components/Userbar/UserbarContainer');
 global.Logo = require('./react/components/Logo');
-global.ProductProperties = require('./react/components/ProductProperties');
-global.PropertyList = require('./react/components/ProductProperties/PropertyList');
 global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCard = require('./react/components/Product/ProductCard/ProductCardContainer');
 global.TopBanner = require('./react/components/TopBanner');
