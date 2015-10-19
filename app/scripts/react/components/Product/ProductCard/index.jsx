@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import containerProps from './containerProps';
 import ProductCart from '../ProductCart';
 import ProductDetails from '../ProductDetails';
 import ProductGallery from '../ProductGallery';
@@ -69,7 +68,6 @@ export default class ProductCardContainer extends Component {
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array.isRequired,
   }
-  static defaultProps = {...containerProps};
   state = {
     product: this.props.product
   }

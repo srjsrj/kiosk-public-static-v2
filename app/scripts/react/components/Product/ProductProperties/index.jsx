@@ -45,10 +45,9 @@ export default class ProductProperties extends Component {
     const newValues = getUpdatedValues(property, properties, values, {
       [property.id]: value
     });
-    const newGood = getMatchedGood(properties, goods, newValues)
 
     this.setState({
-      good: newGood,
+      good: getMatchedGood(properties, goods, newValues),
       values: newValues
     });
   }
