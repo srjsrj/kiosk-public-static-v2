@@ -5,7 +5,7 @@ export default class Select {
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     options: PropTypes.array.isRequired,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
   }
   hasOptionWithValue(value) {
     return this.props.options.some((o) => o.value === value);

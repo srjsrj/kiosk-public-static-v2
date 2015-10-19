@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ProductGoods from '../ProductGoods';
 import ProductProperties from '../ProductProperties';
 
 export default class ProductCartForProductItems {
@@ -7,13 +8,22 @@ export default class ProductCartForProductItems {
     product: PropTypes.object.isRequired,
   }
   render() {
-    const { product: { goods, properties } } = this.props;
+    const { onProductChange, product: { goods, properties } } = this.props;
 
-    return (
-      <ProductProperties
-        goods={goods}
-        properties={properties}
-      />
-    );
+    if (properties.length) {
+      return (
+        <ProductProperties
+          goods={goods}
+          properties={properties}
+        />
+      );
+    } else {
+      return (
+        <ProductGoods
+          product={this.props.product}
+          onProductChange={onProductChange}
+        />
+      );
+    }
   }
 }

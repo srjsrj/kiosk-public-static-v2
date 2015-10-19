@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 export default class ProductAddToCartButton {
   static propTypes = {
-    disabled: PropTypes.bool.isRequired,
+    disabled: PropTypes.bool,
     text: PropTypes.string.isRequired,
   }
   render() {

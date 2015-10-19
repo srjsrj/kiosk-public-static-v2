@@ -1,12 +1,14 @@
 import { Component, PropTypes } from 'react';
-import { getMatchedGood, getUpdatedValues } from './utils';
+import {
+  getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
+} from './utils';
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
 
 // TODO: i18n
 const ADD_TO_CART_BUTTON = 'В корзину';
-const NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характеристик';
+const NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 
 export default class ProductProperties extends Component {
   static propTypes = {
@@ -17,9 +19,15 @@ export default class ProductProperties extends Component {
     goods: [],
     properties: [],
   }
-  state = {
-    good: null,
-    values: {},
+  constructor(props) {
+    super(props);
+
+    const { goods, properties } = props;
+
+    this.state = {
+      good: getInitialGood(properties, goods),
+      values: getInitialValues(properties, goods),
+    };
   }
   componentDidUpdate() {
     const { good } = this.state;
@@ -29,6 +37,19 @@ export default class ProductProperties extends Component {
     } else {
       $(document).trigger('productPhotoChange', null);
     }
+  }
+  updateValues(property, value) {
+    const { properties, goods } = this.props;
+    const { values } = this.state;
+
+    const newValues = getUpdatedValues(property, properties, values, {
+      [property.id]: value
+    });
+
+    this.setState({
+      good: getMatchedGood(properties, goods, newValues),
+      values: newValues
+    });
   }
   render() {
     const { good, values } = this.state;
@@ -54,19 +75,5 @@ export default class ProductProperties extends Component {
         }
       </span>
     );
-  }
-  updateValues(property, value) {
-    const { properties, goods } = this.props;
-    const { values } = this.state;
-
-    const newValues = getUpdatedValues(property, properties, values, {
-      [property.id]: value
-    });
-    const newGood = getMatchedGood(properties, goods, newValues)
-
-    this.setState({
-      good: newGood,
-      values: newValues
-    });
   }
 }

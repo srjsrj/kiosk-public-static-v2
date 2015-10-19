@@ -33,7 +33,7 @@ global.CatalogFilter = require('./react/components/CatalogFilter');
 global.Userbar = require('./react/components/Userbar/UserbarContainer');
 global.Logo = require('./react/components/Logo');
 global.ProductBlock = require('./react/components/Product/ProductBlock');
-global.ProductCard = require('./react/components/Product/ProductCard/ProductCardContainer');
+global.ProductCard = require('./react/components/Product/ProductCard');
 global.TopBanner = require('./react/components/TopBanner');
 
 import './react/application';
