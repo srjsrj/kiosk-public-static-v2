@@ -1,10 +1,12 @@
 import { Component, PropTypes } from 'react';
+import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import {
   getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
 } from './utils';
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
+import PropertySingle from './PropertySingle';
 
 // TODO: i18n
 const ADD_TO_CART_BUTTON = 'В корзину';
@@ -33,9 +35,9 @@ export default class ProductProperties extends Component {
     const { good } = this.state;
 
     if (good) {
-      $(document).trigger('productPhotoChange', good.image_url);
+      $(document).trigger(PHOTO_CHANGE, good.image_url);
     } else {
-      $(document).trigger('productPhotoChange', null);
+      $(document).trigger(PHOTO_CHANGE, null);
     }
   }
   updateValues(property, value) {
@@ -54,26 +56,51 @@ export default class ProductProperties extends Component {
   render() {
     const { good, values } = this.state;
 
-    return (
-      <span>
-        <PropertyList
-          goods={this.props.goods}
-          onChange={this.updateValues.bind(this)}
-          properties={this.props.properties}
-          values={values}
-        />
-        {good &&
-          <HiddenInput name="cart_item[good_id]" value={good.global_id} />
-        }
-        {!!this.props.properties.length &&
+    const hiddenInput = good && (
+      <HiddenInput
+        name="cart_item[good_id]"
+        value={good.global_id}
+      />
+    );
+    const addToCartButton = (
+      <ProductAddToCartButton
+        text={!!good ? ADD_TO_CART_BUTTON : NOT_ENOUGH_DATA_BUTTON}
+        disabled={!good}
+      />
+    );
+
+    if (this.props.properties.length > 1) {
+      return (
+        <span>
+          <PropertyList
+            goods={this.props.goods}
+            onChange={this.updateValues.bind(this)}
+            properties={this.props.properties}
+            values={values}
+          />
+          {hiddenInput}
           <div className="b-item-full__form__row b-item-full__form__submit">
-            <ProductAddToCartButton
-              text={!!good ? ADD_TO_CART_BUTTON : NOT_ENOUGH_DATA_BUTTON}
-              disabled={!good}
+            {addToCartButton}
+          </div>
+        </span>
+      );
+    } else {
+      return (
+        <div className="b-item-full__form__row b-item-full__form__row_fixed">
+          <div className="b-item-full__form__option">
+            <PropertySingle
+              goods={this.props.goods}
+              onChange={this.updateValues.bind(this)}
+              properties={this.props.properties}
+              values={values}
             />
           </div>
-        }
-      </span>
-    );
+        <div className="b-item-full__form__submit">
+          {hiddenInput}
+          {addToCartButton}
+        </div>
+      </div>
+      );
+    }
   }
 }
