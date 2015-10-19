@@ -5,7 +5,7 @@ export default class Select {
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     options: PropTypes.array.isRequired,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
   }
   hasOptionWithValue(value) {
     return this.props.options.some((o) => o.value === value);
@@ -21,14 +21,19 @@ export default class Select {
     }
   }
   render() {
-    const { name, options, value } = this.props;
+    const { name, options, placeholder, value } = this.props;
 
     return (
       <select
         name={name}
         onChange={this.handleChange.bind(this)}
-        value={value}
+        value={value || ''}
       >
+        {placeholder &&
+          <option value="" disabled={true} hidden={true}>
+            {placeholder}
+          </option>
+        }
         {
           options.map((option) =>
             <option {...option} key={option.value}>

@@ -12,7 +12,9 @@ export default class ProductCart {
   renderContent(product, onProductChange) {
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
-        return <ProductCartForProduct good={product.goods[0]} />;
+        return (
+          <ProductCartForProduct good={product.goods[0]} />
+        );
       } else {
         return (
           <ProductCartForProductItems
@@ -22,7 +24,9 @@ export default class ProductCart {
         );
       }
     } else {
-      return <ProductCartNotAvailable title="Не доступно" />;
+      return (
+        <ProductCartNotAvailable title="Не доступно" />
+      );
     }
   }
   render() {

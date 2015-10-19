@@ -6,7 +6,7 @@ import PropertyList from './PropertyList';
 
 // TODO: i18n
 const ADD_TO_CART_BUTTON = 'В корзину';
-const NOT_ENOUGH_DATA_BUTTON = 'Укажите больше характеристик';
+const NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 
 export default class ProductProperties extends Component {
   static propTypes = {
@@ -29,6 +29,20 @@ export default class ProductProperties extends Component {
     } else {
       $(document).trigger('productPhotoChange', null);
     }
+  }
+  updateValues(property, value) {
+    const { properties, goods } = this.props;
+    const { values } = this.state;
+
+    const newValues = getUpdatedValues(property, properties, values, {
+      [property.id]: value
+    });
+    const newGood = getMatchedGood(properties, goods, newValues)
+
+    this.setState({
+      good: newGood,
+      values: newValues
+    });
   }
   render() {
     const { good, values } = this.state;
@@ -54,19 +68,5 @@ export default class ProductProperties extends Component {
         }
       </span>
     );
-  }
-  updateValues(property, value) {
-    const { properties, goods } = this.props;
-    const { values } = this.state;
-
-    const newValues = getUpdatedValues(property, properties, values, {
-      [property.id]: value
-    });
-    const newGood = getMatchedGood(properties, goods, newValues)
-
-    this.setState({
-      good: newGood,
-      values: newValues
-    });
   }
 }

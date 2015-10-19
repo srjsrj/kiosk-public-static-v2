@@ -1,16 +1,17 @@
-import React, { PropTypes } from 'react';
-import { h1 } from '../../../helpers/seo';
-import { productCategoryPath } from '../../../helpers/vendors';
-import { schemaOrgMarkup } from '../../../helpers/product';
+import React, { Component, PropTypes } from 'react';
+import containerProps from './containerProps';
 import ProductCart from '../ProductCart';
 import ProductDetails from '../ProductDetails';
 import ProductGallery from '../ProductGallery';
 import ProductPrices from '../ProductPrices';
 import ProductVideo from '../ProductVideo';
 import ProductCardBadges from './ProductCardBadges';
+import ProductCardBreadcrumbs from './ProductCardBreadcrumbs';
+import ProductCardSchema from './ProductCardSchema';
 import ProductCardSimilarProducts from './ProductCardSimilarProducts';
+import ProductCardTitle from './ProductCardTitle';
 
-export default class ProductCard {
+class ProductCard {
   static propTypes = {
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array.isRequired,
@@ -26,17 +27,8 @@ export default class ProductCard {
       >
         <div className="b-item-full">
           <div className="b-item-full__header b-item-full__header_mobile">
-            <div className="b-breadcrumbs">
-              {productCategoryPath(product)}
-            </div>
-            <h1 className="b-item-full__title">
-              {h1(product)}
-              {product.article &&
-                <span className="b-item-full__articul">
-                  {} {product.article}
-                </span>
-              }
-            </h1>
+            <ProductCardBreadcrumbs product={product} />
+            <ProductCardTitle product={product} />
             <ProductCardBadges product={product} />
           </div>
 
@@ -46,23 +38,14 @@ export default class ProductCard {
             </div>
             <div className="b-item-full__description">
               <div className="b-item-full__header">
-                <div className="b-breadcrumbs p-category">
-                  {productCategoryPath(product)}
-                </div>
-                <h1 className="b-item-full__title p-name">
-                  {h1(product)}
-                  {product.article &&
-                    <span className="b-item-full__articul u-identifier">
-                      {} {product.article}
-                    </span>
-                  }
-                </h1>
+                <ProductCardBreadcrumbs className="p-category" product={product} />
+                <ProductCardTitle className="p-name" product={product} />
                 <ProductCardBadges product={product} />
               </div>
               <div className="b-item-full__price p-price">
                 <ProductPrices product={product} />
               </div>
-              {schemaOrgMarkup(product)}
+              <ProductCardSchema product={product} />
               <div className="b-item-full__form">
                 <ProductCart
                   product={product}
@@ -77,6 +60,35 @@ export default class ProductCard {
 
         <ProductCardSimilarProducts products={similarProducts} />
       </div>
+    );
+  }
+}
+
+export default class ProductCardContainer extends Component {
+  static propTypes = {
+    product: PropTypes.object.isRequired,
+    similarProducts: PropTypes.array.isRequired,
+  }
+  static defaultProps = {...containerProps};
+  state = {
+    product: this.props.product
+  }
+  handleProductChange(field, value) {
+    const { product } = this.state;
+
+    if (!!value) {
+      this.setState({
+        product: { ...product, [field]: value }
+      });
+    }
+  }
+  render() {
+    return (
+      <ProductCard
+        product={this.state.product}
+        similarProducts={this.props.similarProducts}
+        onProductChange={this.handleProductChange.bind(this)}
+      />
     );
   }
 }
