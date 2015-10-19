@@ -11,6 +11,25 @@ export default class ProductGoods {
     onProductChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
   }
+  isTitlesValid(product, maxLength = 30) {
+    return !product.goods.some((el) =>
+      goodOrderTitle(product, el).length > maxLength
+    );
+  }
+  handleSelectChange(e) {
+    const value = e.target.value;
+    const { onProductChange, product: { goods } } = this.props;
+
+    for (let i = 0; i < goods.length; i++) {
+      const good = goods[i];
+
+      if (good.global_id === value) {
+        $(document).trigger(PHOTO_CHANGE, good.digest);
+        onProductChange('article', good.article);
+        break;
+      }
+    };
+  }
   renderOption(good, product) {
     return (
       <option
@@ -44,32 +63,33 @@ export default class ProductGoods {
       </select>
     );
   }
-  handleSelectChange(e) {
-    const value = e.target.value;
-    const { onProductChange, product: { goods } } = this.props;
-
-    for (let i = 0; i < goods.length; i++) {
-      const good = goods[i];
-
-      if (good.global_id === value) {
-        $(document).trigger(PHOTO_CHANGE, good.image_url);
-        onProductChange('article', good.article);
-        break;
-      }
-    };
-  }
   render() {
     const { product } = this.props;
 
-    return (
-      <div className="b-item-full__form__row b-item-full__form__row_fixed">
-        <div className="b-item-full__form__option">
-          {this.renderSelect(product)}
+    if (this.isTitlesValid(product)) {
+      return (
+        <div className="b-item-full__form__row b-item-full__form__row_fixed">
+          <div className="b-item-full__form__option">
+            {this.renderSelect(product)}
+          </div>
+          <div className="b-item-full__form__submit">
+            <ProductAddToCartButton text={ADD_TO_CART_BUTTON} />
+          </div>
         </div>
-        <div className="b-item-full__form__submit">
-          <ProductAddToCartButton text={ADD_TO_CART_BUTTON} />
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <span>
+          <div className="b-item-full__form__row">
+            <div className="b-item-full__form__option b-item-full__form__option_full">
+              {this.renderSelect(product)}
+            </div>
+          </div>
+          <div className="b-item-full__form__row b-item-full__form__submit">
+            <ProductAddToCartButton text={ADD_TO_CART_BUTTON} />
+          </div>
+        </span>
+      );
+    }
   }
 }

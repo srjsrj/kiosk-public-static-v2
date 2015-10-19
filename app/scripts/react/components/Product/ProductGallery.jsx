@@ -5,6 +5,7 @@ export default class ProductGallery extends Component {
   static propTypes = {
     images: PropTypes.arrayOf(
       PropTypes.shape({
+        digest: PropTypes.string.isRequired,
         title: PropTypes.string,
         url: PropTypes.string.isRequired,
       })
@@ -68,13 +69,11 @@ export default class ProductGallery extends Component {
       });
     }
   }
-  getIndexByUrl(images, url) {
+  getIndexByDigest(images, digest) {
     for (let i = 0; i < images.length; i++) {
       const image = images[i];
 
-      if (image.url === url) {
-        return i;
-      }
+      if (image.digest === digest) return i;
     };
 
     return -1;
@@ -89,9 +88,9 @@ export default class ProductGallery extends Component {
       });
     }
   }
-  onPhotoChange(ev, url) {
-    if (url) {
-      const selectedIndex = this.getIndexByUrl(this.props.images, url);
+  onPhotoChange(ev, digest) {
+    if (digest) {
+      const selectedIndex = this.getIndexByDigest(this.props.images, digest);
 
       if (selectedIndex > -1) {
         this.setState({ selectedIndex });
