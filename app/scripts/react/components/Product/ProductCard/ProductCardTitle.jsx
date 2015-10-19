@@ -5,7 +5,7 @@ import { h1 } from '../../../helpers/seo';
 export default class ProductCardTitle {
   static propTypes = {
     className: PropTypes.string,
-    product: PropTypes.object,
+    product: PropTypes.object.isRequired,
   }
   render() {
     const { className, product } = this.props;

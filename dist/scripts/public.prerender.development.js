@@ -664,7 +664,7 @@ var ProductCardBreadcrumbs = (function () {
     key: 'propTypes',
     value: {
       className: _react.PropTypes.string,
-      product: _react.PropTypes.object
+      product: _react.PropTypes.object.isRequired
     },
     enumerable: true
   }]);
@@ -846,7 +846,7 @@ var ProductCardTitle = (function () {
     key: 'propTypes',
     value: {
       className: _react.PropTypes.string,
-      product: _react.PropTypes.object
+      product: _react.PropTypes.object.isRequired
     },
     enumerable: true
   }]);

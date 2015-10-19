@@ -5,7 +5,7 @@ import { productCategoryPath } from '../../../helpers/vendors';
 export default class ProductCardBreadcrumbs {
   static propTypes = {
     className: PropTypes.string,
-    product: PropTypes.object,
+    product: PropTypes.object.isRequired,
   }
   render() {
     const { className, product } = this.props;
