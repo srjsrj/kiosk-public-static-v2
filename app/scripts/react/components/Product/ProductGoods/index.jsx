@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { goodOrderTitle } from '../../../helpers/product';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 
@@ -51,6 +52,7 @@ export default class ProductGoods {
       const good = goods[i];
 
       if (good.global_id === value) {
+        $(document).trigger(PHOTO_CHANGE, good.image_url);
         onProductChange('article', good.article);
         break;
       }

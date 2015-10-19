@@ -1,4 +1,5 @@
 import React, { Component, findDOMNode, PropTypes } from 'react';
+import { PHOTO_CHANGE } from '../../constants/globalEventKeys';
 
 export default class ProductGallery extends Component {
   static propTypes = {
@@ -22,7 +23,7 @@ export default class ProductGallery extends Component {
   componentDidMount() {
     this.initSliders();
 
-    $(document).on('productPhotoChange', this.onPhotoChange.bind(this));
+    $(document).on(PHOTO_CHANGE, this.onPhotoChange.bind(this));
     $(document).on('updateProductImages', this.reinitSliders.bind(this));
   }
   componentDidUpdate(prevProps, prevState) {
