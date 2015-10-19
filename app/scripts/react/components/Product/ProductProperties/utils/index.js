@@ -39,9 +39,29 @@ export function getOptions(properties, goods, filters) {
   }, {});
 }
 
+export function getInitialValues(properties, goods) {
+  const initialValues = {};
+
+  for (let i = 0; i < properties.length; i++) {
+    const prop = properties[i];
+    const enabledValues = getEnabledValues(prop.id, goods, initialValues);
+
+    if (enabledValues.length) {
+      initialValues[prop.id] = enabledValues[0];
+    }
+  }
+
+  return initialValues;
+}
+
 export function getUpdatedValues(property, properties, filters, data) {
   const newValues = getFiltersForProperty(property, properties, filters);
   return { ...newValues, ...data };
+}
+
+export function getInitialGood(properties, goods) {
+  const filters = getInitialValues(properties, goods);
+  return getMatchedGood(properties, goods, filters);
 }
 
 export function getMatchedGood(properties, goods, filters) {
@@ -51,7 +71,7 @@ export function getMatchedGood(properties, goods, filters) {
     if (isGoodStrictlyFiltered(good, filters)) {
       return good;
     }
-  };
+  }
 
   return null;
 }
@@ -67,7 +87,7 @@ function getFiltersForProperty(property, properties, filters) {
     if (typeof filters[prop.id] !== 'undefined') {
       propertyFilters[prop.id] = filters[prop.id];
     }
-  };
+  }
 
   return propertyFilters;
 }

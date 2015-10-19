@@ -1,5 +1,7 @@
 import { Component, PropTypes } from 'react';
-import { getMatchedGood, getUpdatedValues } from './utils';
+import {
+  getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
+} from './utils';
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
@@ -17,9 +19,15 @@ export default class ProductProperties extends Component {
     goods: [],
     properties: [],
   }
-  state = {
-    good: null,
-    values: {},
+  constructor(props) {
+    super(props);
+
+    const { goods, properties } = props;
+
+    this.state = {
+      good: getInitialGood(properties, goods),
+      values: getInitialValues(properties, goods),
+    };
   }
   componentDidUpdate() {
     const { good } = this.state;

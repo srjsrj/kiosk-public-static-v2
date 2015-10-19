@@ -21,19 +21,14 @@ export default class Select {
     }
   }
   render() {
-    const { name, options, placeholder, value } = this.props;
+    const { name, options, value } = this.props;
 
     return (
       <select
         name={name}
         onChange={this.handleChange.bind(this)}
-        value={value || ''}
+        value={value}
       >
-        {placeholder &&
-          <option value="" disabled={true} hidden={true}>
-            {placeholder}
-          </option>
-        }
         {
           options.map((option) =>
             <option {...option} key={option.value}>
