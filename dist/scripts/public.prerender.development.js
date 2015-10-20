@@ -1518,14 +1518,12 @@ var ProductGallery = (function (_Component) {
       }
     }
   }, {
-    key: 'getIndexByUrl',
-    value: function getIndexByUrl(images, url) {
+    key: 'getIndexByDigest',
+    value: function getIndexByDigest(images, digest) {
       for (var i = 0; i < images.length; i++) {
         var image = images[i];
 
-        if (image.url === url) {
-          return i;
-        }
+        if (image.digest === digest) return i;
       };
 
       return -1;
@@ -1544,9 +1542,9 @@ var ProductGallery = (function (_Component) {
     }
   }, {
     key: 'onPhotoChange',
-    value: function onPhotoChange(ev, url) {
-      if (url) {
-        var selectedIndex = this.getIndexByUrl(this.props.images, url);
+    value: function onPhotoChange(ev, digest) {
+      if (digest) {
+        var selectedIndex = this.getIndexByDigest(this.props.images, digest);
 
         if (selectedIndex > -1) {
           this.setState({ selectedIndex: selectedIndex });
@@ -1623,6 +1621,7 @@ var ProductGallery = (function (_Component) {
     key: 'propTypes',
     value: {
       images: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+        digest: _react.PropTypes.string.isRequired,
         title: _react.PropTypes.string,
         url: _react.PropTypes.string.isRequired
       })),
@@ -1680,6 +1679,33 @@ var ProductGoods = (function () {
   }
 
   _createClass(ProductGoods, [{
+    key: 'isTitlesValid',
+    value: function isTitlesValid(product) {
+      var maxLength = arguments.length <= 1 || arguments[1] === undefined ? 30 : arguments[1];
+
+      return !product.goods.some(function (el) {
+        return (0, _helpersProduct.goodOrderTitle)(product, el).length > maxLength;
+      });
+    }
+  }, {
+    key: 'handleSelectChange',
+    value: function handleSelectChange(e) {
+      var value = e.target.value;
+      var _props = this.props;
+      var onProductChange = _props.onProductChange;
+      var goods = _props.product.goods;
+
+      for (var i = 0; i < goods.length; i++) {
+        var good = goods[i];
+
+        if (good.global_id === value) {
+          $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.digest);
+          onProductChange('article', good.article);
+          break;
+        }
+      };
+    }
+  }, {
     key: 'renderOption',
     value: function renderOption(good, product) {
       return _react2['default'].createElement(
@@ -1721,42 +1747,45 @@ var ProductGoods = (function () {
       );
     }
   }, {
-    key: 'handleSelectChange',
-    value: function handleSelectChange(e) {
-      var value = e.target.value;
-      var _props = this.props;
-      var onProductChange = _props.onProductChange;
-      var goods = _props.product.goods;
-
-      for (var i = 0; i < goods.length; i++) {
-        var good = goods[i];
-
-        if (good.global_id === value) {
-          $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image_url);
-          onProductChange('article', good.article);
-          break;
-        }
-      };
-    }
-  }, {
     key: 'render',
     value: function render() {
       var product = this.props.product;
 
-      return _react2['default'].createElement(
-        'div',
-        { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
-        _react2['default'].createElement(
+      if (this.isTitlesValid(product)) {
+        return _react2['default'].createElement(
           'div',
-          { className: 'b-item-full__form__option' },
-          this.renderSelect(product)
-        ),
-        _react2['default'].createElement(
-          'div',
-          { className: 'b-item-full__form__submit' },
-          _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
-        )
-      );
+          { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-item-full__form__option' },
+            this.renderSelect(product)
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-item-full__form__submit' },
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
+          )
+        );
+      } else {
+        return _react2['default'].createElement(
+          'span',
+          null,
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-item-full__form__row' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'b-item-full__form__option b-item-full__form__option_full' },
+              this.renderSelect(product)
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-item-full__form__row b-item-full__form__submit' },
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
+          )
+        );
+      }
     }
   }], [{
     key: 'propTypes',
@@ -2541,7 +2570,7 @@ var ProductProperties = (function (_Component) {
       var good = this.state.good;
 
       if (good) {
-        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image_url);
+        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.digest);
       } else {
         $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, null);
       }
