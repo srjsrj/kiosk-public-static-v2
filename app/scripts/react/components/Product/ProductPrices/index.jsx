@@ -5,6 +5,7 @@ import ProductGoodPrices from './ProductGoodPrices';
 
 export default class ProductPrices {
   static propTypes = {
+    good: PropTypes.object,
     product: PropTypes.object.isRequired,
   }
   getMinPrice(goods) {
@@ -34,16 +35,24 @@ export default class ProductPrices {
     return maxPrice;
   }
   render() {
-    const { product } = this.props;
+    const { good, product } = this.props;
 
-    if (product.goods && product.goods.length) {
+    if (good) {
+      return (
+        <ProductGoodPrice good={good} />
+      ); 
+    } else if (product.goods && product.goods.length) {
       const maxPrice = this.getMaxPrice(product.goods);
       const minPrice = this.getMinPrice(product.goods);
 
       if (diff(minPrice, maxPrice)) {
-        return <ProductGoodPrices minPrice={minPrice} maxPrice={maxPrice} />;
+        return (
+          <ProductGoodPrices minPrice={minPrice} maxPrice={maxPrice} />
+        );
       } else {
-        return <ProductGoodPrice good={product.goods[0]} />; 
+        return (
+          <ProductGoodPrice good={product.goods[0]} />
+        );
       }
     }
 

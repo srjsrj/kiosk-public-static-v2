@@ -4,16 +4,17 @@ import ProductProperties from '../ProductProperties';
 
 export default class ProductCartForProductItems {
   static propTypes = {
-    onProductChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
   }
   render() {
-    const { onProductChange, product: { goods, properties } } = this.props;
+    const { onGoodChange, product: { goods, properties } } = this.props;
 
     if (properties.length) {
       return (
         <ProductProperties
           goods={goods}
+          onGoodChange={onGoodChange}
           properties={properties}
         />
       );
@@ -21,7 +22,7 @@ export default class ProductCartForProductItems {
       return (
         <ProductGoods
           product={this.props.product}
-          onProductChange={onProductChange}
+          onGoodChange={onGoodChange}
         />
       );
     }

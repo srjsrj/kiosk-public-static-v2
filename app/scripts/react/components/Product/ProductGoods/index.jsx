@@ -8,8 +8,20 @@ const ADD_TO_CART_BUTTON = 'В корзину';
 
 export default class ProductGoods {
   static propTypes = {
-    onProductChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
+  }
+  componentDidMount() {
+    const { product, onGoodChange } = this.props;
+
+    for (let i = 0; i < product.goods.length; i++) {
+      const good = product.goods[i];
+
+      if (good.is_ordering) {
+        onGoodChange(good);
+        break;
+      }
+    }
   }
   isTitlesValid(product, maxLength = 30) {
     return !product.goods.some((el) =>
@@ -18,14 +30,14 @@ export default class ProductGoods {
   }
   handleSelectChange(e) {
     const value = e.target.value;
-    const { onProductChange, product: { goods } } = this.props;
+    const { onGoodChange, product: { goods } } = this.props;
 
     for (let i = 0; i < goods.length; i++) {
       const good = goods[i];
 
       if (good.global_id === value) {
         $(document).trigger(PHOTO_CHANGE, good.image);
-        onProductChange('article', good.article);
+        onGoodChange(good);
         break;
       }
     };

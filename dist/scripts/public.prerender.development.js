@@ -872,8 +872,6 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
@@ -931,8 +929,9 @@ var ProductCard = (function () {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var good = _props.good;
       var product = _props.product;
-      var onProductChange = _props.onProductChange;
+      var onGoodChange = _props.onGoodChange;
       var similarProducts = _props.similarProducts;
 
       return _react2['default'].createElement(
@@ -972,7 +971,7 @@ var ProductCard = (function () {
               _react2['default'].createElement(
                 'div',
                 { className: 'b-item-full__price p-price' },
-                _react2['default'].createElement(_ProductPrices2['default'], { product: product })
+                _react2['default'].createElement(_ProductPrices2['default'], { good: good, product: product })
               ),
               _react2['default'].createElement(_ProductCardSchema2['default'], { product: product }),
               _react2['default'].createElement(
@@ -980,7 +979,7 @@ var ProductCard = (function () {
                 { className: 'b-item-full__form' },
                 _react2['default'].createElement(_ProductCart2['default'], {
                   product: product,
-                  onProductChange: onProductChange
+                  onGoodChange: onGoodChange
                 })
               ),
               _react2['default'].createElement(_ProductDetails2['default'], { product: product })
@@ -994,9 +993,10 @@ var ProductCard = (function () {
   }], [{
     key: 'propTypes',
     value: {
+      good: _react.PropTypes.object,
       product: _react.PropTypes.object.isRequired,
       similarProducts: _react.PropTypes.array.isRequired,
-      onProductChange: _react.PropTypes.func.isRequired
+      onGoodChange: _react.PropTypes.func.isRequired
     },
     enumerable: true
   }]);
@@ -1013,28 +1013,28 @@ var ProductCardContainer = (function (_Component) {
     _get(Object.getPrototypeOf(ProductCardContainer.prototype), 'constructor', this).apply(this, arguments);
 
     this.state = {
+      good: null,
       product: this.props.product
     };
   }
 
   _createClass(ProductCardContainer, [{
-    key: 'handleProductChange',
-    value: function handleProductChange(field, value) {
-      var product = this.state.product;
+    key: 'handleGoodChange',
+    value: function handleGoodChange(good) {
+      var product = _extends({}, this.state.product, {
+        article: good.article
+      });
 
-      if (!!value) {
-        this.setState({
-          product: _extends({}, product, _defineProperty({}, field, value))
-        });
-      }
+      this.setState({ good: good, product: product });
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(ProductCard, {
+        onGoodChange: this.handleGoodChange.bind(this),
+        good: this.state.good,
         product: this.state.product,
-        similarProducts: this.props.similarProducts,
-        onProductChange: this.handleProductChange.bind(this)
+        similarProducts: this.props.similarProducts
       });
     }
   }], [{
@@ -1153,7 +1153,7 @@ var ProductCartForProductItems = (function () {
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var onProductChange = _props.onProductChange;
+      var onGoodChange = _props.onGoodChange;
       var _props$product = _props.product;
       var goods = _props$product.goods;
       var properties = _props$product.properties;
@@ -1161,19 +1161,20 @@ var ProductCartForProductItems = (function () {
       if (properties.length) {
         return _react2['default'].createElement(_ProductProperties2['default'], {
           goods: goods,
+          onGoodChange: onGoodChange,
           properties: properties
         });
       } else {
         return _react2['default'].createElement(_ProductGoods2['default'], {
           product: this.props.product,
-          onProductChange: onProductChange
+          onGoodChange: onGoodChange
         });
       }
     }
   }], [{
     key: 'propTypes',
     value: {
-      onProductChange: _react.PropTypes.func.isRequired,
+      onGoodChange: _react.PropTypes.func.isRequired,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true
@@ -1278,13 +1279,13 @@ var ProductCart = (function () {
 
   _createClass(ProductCart, [{
     key: 'renderContent',
-    value: function renderContent(product, onProductChange) {
+    value: function renderContent(product) {
       if (product.has_ordering_goods) {
         if (product.goods.length === 1) {
           return _react2['default'].createElement(_ProductCartForProduct2['default'], { good: product.goods[0] });
         } else {
           return _react2['default'].createElement(_ProductCartForProductItems2['default'], {
-            onProductChange: onProductChange,
+            onGoodChange: this.props.onGoodChange,
             product: product
           });
         }
@@ -1307,13 +1308,13 @@ var ProductCart = (function () {
           className: 'simple_form cart_item',
           method: 'POST'
         },
-        this.renderContent(product, onProductChange)
+        this.renderContent(product)
       );
     }
   }], [{
     key: 'propTypes',
     value: {
-      onProductChange: _react.PropTypes.func.isRequired,
+      onGoodChange: _react.PropTypes.func.isRequired,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true
@@ -1679,6 +1680,22 @@ var ProductGoods = (function () {
   }
 
   _createClass(ProductGoods, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props;
+      var product = _props.product;
+      var onGoodChange = _props.onGoodChange;
+
+      for (var i = 0; i < product.goods.length; i++) {
+        var good = product.goods[i];
+
+        if (good.is_ordering) {
+          onGoodChange(good);
+          break;
+        }
+      }
+    }
+  }, {
     key: 'isTitlesValid',
     value: function isTitlesValid(product) {
       var maxLength = arguments.length <= 1 || arguments[1] === undefined ? 30 : arguments[1];
@@ -1691,16 +1708,16 @@ var ProductGoods = (function () {
     key: 'handleSelectChange',
     value: function handleSelectChange(e) {
       var value = e.target.value;
-      var _props = this.props;
-      var onProductChange = _props.onProductChange;
-      var goods = _props.product.goods;
+      var _props2 = this.props;
+      var onGoodChange = _props2.onGoodChange;
+      var goods = _props2.product.goods;
 
       for (var i = 0; i < goods.length; i++) {
         var good = goods[i];
 
         if (good.global_id === value) {
           $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image);
-          onProductChange('article', good.article);
+          onGoodChange(good);
           break;
         }
       };
@@ -1790,7 +1807,7 @@ var ProductGoods = (function () {
   }], [{
     key: 'propTypes',
     value: {
-      onProductChange: _react.PropTypes.func.isRequired,
+      onGoodChange: _react.PropTypes.func.isRequired,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true
@@ -2062,9 +2079,13 @@ var ProductPrices = (function () {
   }, {
     key: 'render',
     value: function render() {
-      var product = this.props.product;
+      var _props = this.props;
+      var good = _props.good;
+      var product = _props.product;
 
-      if (product.goods && product.goods.length) {
+      if (good) {
+        return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: good });
+      } else if (product.goods && product.goods.length) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
@@ -2080,6 +2101,7 @@ var ProductPrices = (function () {
   }], [{
     key: 'propTypes',
     value: {
+      good: _react.PropTypes.object,
       product: _react.PropTypes.object.isRequired
     },
     enumerable: true
@@ -2507,6 +2529,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var _react = require('react');
 
+var _deepDiff = require('deep-diff');
+
 var _constantsGlobalEventKeys = require('../../../constants/globalEventKeys');
 
 var _utils = require('./utils');
@@ -2538,6 +2562,7 @@ var ProductProperties = (function (_Component) {
     key: 'propTypes',
     value: {
       goods: _react.PropTypes.array.isRequired,
+      onGoodChange: _react.PropTypes.func.isRequired,
       properties: _react.PropTypes.array.isRequired
     },
     enumerable: true
@@ -2565,14 +2590,18 @@ var ProductProperties = (function (_Component) {
   }
 
   _createClass(ProductProperties, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.onGoodChange(this.state.good);
+    }
+  }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps, prevState) {
       var good = this.state.good;
 
-      if (good) {
-        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image);
-      } else {
-        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, null);
+      if ((0, _deepDiff.diff)(this.state.good, prevState.good)) {
+        this.props.onGoodChange(this.state.good);
+        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good ? good.image : null);
       }
     }
   }, {
@@ -2654,7 +2683,7 @@ var ProductProperties = (function (_Component) {
 exports['default'] = ProductProperties;
 module.exports = exports['default'];
 
-},{"../../../constants/globalEventKeys":45,"../../common/HiddenInput":39,"../ProductAddToCartButton":5,"./PropertyList":30,"./PropertySingle":34,"./utils":36,"react":"react"}],36:[function(require,module,exports){
+},{"../../../constants/globalEventKeys":45,"../../common/HiddenInput":39,"../ProductAddToCartButton":5,"./PropertyList":30,"./PropertySingle":34,"./utils":36,"deep-diff":63,"react":"react"}],36:[function(require,module,exports){
 // Example of format
 // properties: [{
 //   id: 123,

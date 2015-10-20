@@ -1,4 +1,5 @@
 import { Component, PropTypes } from 'react';
+import { diff } from 'deep-diff';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import {
   getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
@@ -15,6 +16,7 @@ const NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 export default class ProductProperties extends Component {
   static propTypes = {
     goods: PropTypes.array.isRequired,
+    onGoodChange: PropTypes.func.isRequired,
     properties: PropTypes.array.isRequired,
   }
   static defaultProps = {
@@ -31,13 +33,15 @@ export default class ProductProperties extends Component {
       values: getInitialValues(properties, goods),
     };
   }
-  componentDidUpdate() {
+  componentDidMount() {
+    this.props.onGoodChange(this.state.good);
+  }
+  componentDidUpdate(prevProps, prevState) {
     const { good } = this.state;
 
-    if (good) {
-      $(document).trigger(PHOTO_CHANGE, good.image);
-    } else {
-      $(document).trigger(PHOTO_CHANGE, null);
+    if (diff(this.state.good, prevState.good)) {
+      this.props.onGoodChange(this.state.good);
+      $(document).trigger(PHOTO_CHANGE, good ? good.image : null);
     }
   }
   updateValues(property, value) {

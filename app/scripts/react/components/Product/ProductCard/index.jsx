@@ -12,12 +12,13 @@ import ProductCardTitle from './ProductCardTitle';
 
 class ProductCard {
   static propTypes = {
+    good: PropTypes.object,
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array.isRequired,
-    onProductChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func.isRequired,
   }
   render() {
-    const { product, onProductChange, similarProducts } = this.props;
+    const { good, product, onGoodChange, similarProducts } = this.props;
 
     return (
       <div
@@ -42,13 +43,13 @@ class ProductCard {
                 <ProductCardBadges product={product} />
               </div>
               <div className="b-item-full__price p-price">
-                <ProductPrices product={product} />
+                <ProductPrices good={good} product={product} />
               </div>
               <ProductCardSchema product={product} />
               <div className="b-item-full__form">
                 <ProductCart
                   product={product}
-                  onProductChange={onProductChange}
+                  onGoodChange={onGoodChange}
                 />
               </div>
               <ProductDetails product={product} />
@@ -69,23 +70,24 @@ export default class ProductCardContainer extends Component {
     similarProducts: PropTypes.array.isRequired,
   }
   state = {
+    good: null,
     product: this.props.product
   }
-  handleProductChange(field, value) {
-    const { product } = this.state;
+  handleGoodChange(good) {
+    const product = {
+      ...this.state.product,
+      article: good.article,
+    };
 
-    if (!!value) {
-      this.setState({
-        product: { ...product, [field]: value }
-      });
-    }
+    this.setState({ good, product });
   }
   render() {
     return (
       <ProductCard
+        onGoodChange={this.handleGoodChange.bind(this)}
+        good={this.state.good}
         product={this.state.product}
         similarProducts={this.props.similarProducts}
-        onProductChange={this.handleProductChange.bind(this)}
       />
     );
   }

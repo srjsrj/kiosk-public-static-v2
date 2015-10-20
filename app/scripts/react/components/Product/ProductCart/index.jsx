@@ -6,10 +6,10 @@ import ProductCartNotAvailable from './ProductCartNotAvailable';
 
 export default class ProductCart {
   static propTypes = {
-    onProductChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
   }
-  renderContent(product, onProductChange) {
+  renderContent(product) {
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
         return (
@@ -18,7 +18,7 @@ export default class ProductCart {
       } else {
         return (
           <ProductCartForProductItems
-            onProductChange={onProductChange}
+            onGoodChange={this.props.onGoodChange}
             product={product}
           />
         );
@@ -39,7 +39,7 @@ export default class ProductCart {
         className="simple_form cart_item"
         method="POST"
       >
-        {this.renderContent(product, onProductChange)}
+        {this.renderContent(product)}
       </form>
     );
   }
