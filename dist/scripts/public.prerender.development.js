@@ -1543,7 +1543,7 @@ var ProductGallery = (function (_Component) {
   }, {
     key: 'onPhotoChange',
     value: function onPhotoChange(ev, image) {
-      if (uid) {
+      if (image && image.uid) {
         var selectedIndex = this.getIndexByUID(this.props.images, image.uid);
 
         if (selectedIndex > -1) {

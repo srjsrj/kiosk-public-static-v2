@@ -92,7 +92,7 @@ export default class ProductGallery extends Component {
     }
   }
   onPhotoChange(ev, image) {
-    if (uid) {
+    if (image && image.uid) {
       const selectedIndex = this.getIndexByUID(this.props.images, image.uid);
 
       if (selectedIndex > -1) {
