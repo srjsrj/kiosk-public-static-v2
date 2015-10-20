@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ErrorService from '../../../services/Error';
 import ProductCart from '../ProductCart';
 import ProductDetails from '../ProductDetails';
 import ProductGallery from '../ProductGallery';
@@ -72,6 +73,28 @@ export default class ProductCardContainer extends Component {
   state = {
     good: null,
     product: this.props.product
+  }
+  componentDidMount() {
+    // TODO: Make TestComponentService or smth
+    this.testProps(this.props);
+  }
+  testProps(props) {
+    // Number of attributes in every good equals number of product properties
+    const { product: { goods, properties } } = props;
+
+    if (properties.length && goods.length) {
+      const propertiesCount = properties.length;
+      const hasDifferentCount = goods.some((el) =>
+        Object.keys(el.attributes).length !== propertiesCount
+      );
+
+      if (hasDifferentCount) {
+        ErrorService.notifyErrorProps('Количество свойств товара отличается от количества аттрибутов варианта', {
+          props,
+          component: 'ProductCard',
+        });
+      }
+    }
   }
   handleGoodChange(good) {
     const product = {
