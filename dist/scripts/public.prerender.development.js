@@ -1518,12 +1518,12 @@ var ProductGallery = (function (_Component) {
       }
     }
   }, {
-    key: 'getIndexByDigest',
-    value: function getIndexByDigest(images, digest) {
+    key: 'getIndexByUID',
+    value: function getIndexByUID(images, uid) {
       for (var i = 0; i < images.length; i++) {
         var image = images[i];
 
-        if (image.digest === digest) return i;
+        if (image.uid === uid) return i;
       };
 
       return -1;
@@ -1542,9 +1542,9 @@ var ProductGallery = (function (_Component) {
     }
   }, {
     key: 'onPhotoChange',
-    value: function onPhotoChange(ev, digest) {
-      if (digest) {
-        var selectedIndex = this.getIndexByDigest(this.props.images, digest);
+    value: function onPhotoChange(ev, image) {
+      if (uid) {
+        var selectedIndex = this.getIndexByUID(this.props.images, image.uid);
 
         if (selectedIndex > -1) {
           this.setState({ selectedIndex: selectedIndex });
@@ -1621,8 +1621,8 @@ var ProductGallery = (function (_Component) {
     key: 'propTypes',
     value: {
       images: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-        digest: _react.PropTypes.string.isRequired,
         title: _react.PropTypes.string,
+        uid: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
         url: _react.PropTypes.string.isRequired
       })),
       previewWidth: _react.PropTypes.number,
@@ -1699,7 +1699,7 @@ var ProductGoods = (function () {
         var good = goods[i];
 
         if (good.global_id === value) {
-          $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.digest);
+          $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image);
           onProductChange('article', good.article);
           break;
         }
@@ -2570,7 +2570,7 @@ var ProductProperties = (function (_Component) {
       var good = this.state.good;
 
       if (good) {
-        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.digest);
+        $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, good.image);
       } else {
         $(document).trigger(_constantsGlobalEventKeys.PHOTO_CHANGE, null);
       }

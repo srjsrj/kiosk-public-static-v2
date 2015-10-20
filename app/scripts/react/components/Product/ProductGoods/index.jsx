@@ -24,7 +24,7 @@ export default class ProductGoods {
       const good = goods[i];
 
       if (good.global_id === value) {
-        $(document).trigger(PHOTO_CHANGE, good.digest);
+        $(document).trigger(PHOTO_CHANGE, good.image);
         onProductChange('article', good.article);
         break;
       }

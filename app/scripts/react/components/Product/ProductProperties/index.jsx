@@ -35,7 +35,7 @@ export default class ProductProperties extends Component {
     const { good } = this.state;
 
     if (good) {
-      $(document).trigger(PHOTO_CHANGE, good.digest);
+      $(document).trigger(PHOTO_CHANGE, good.image);
     } else {
       $(document).trigger(PHOTO_CHANGE, null);
     }
