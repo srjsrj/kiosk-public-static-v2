@@ -76,9 +76,9 @@ export default class ProductCardContainer extends Component {
   }
   componentDidMount() {
     // TODO: Make TestComponentService or smth
-    this.testProps(this.props);
+    this.validateProps(this.props);
   }
-  testProps(props) {
+  validateProps(props) {
     // Number of attributes in every good equals number of product properties
     const { product: { goods, properties } } = props;
 

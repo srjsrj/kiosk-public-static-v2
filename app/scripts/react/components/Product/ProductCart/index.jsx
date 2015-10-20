@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { vendorCartItems } from '../../../../routes/app';
+import CSRFToken from '../../common/CSRFToken';
 import ProductCartForProduct from './ProductCartForProduct';
 import ProductCartForProductItems from './ProductCartForProductItems';
 import ProductCartNotAvailable from './ProductCartNotAvailable';
@@ -39,6 +40,7 @@ export default class ProductCart {
         className="simple_form cart_item"
         method="POST"
       >
+        <CSRFToken />
         {this.renderContent(product)}
       </form>
     );
