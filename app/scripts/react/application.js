@@ -17,6 +17,10 @@ if (global.gon.__data) {
   };
 }
 
+global.Kiosk = {
+  version: '1.0.0',
+};
+
 // Unless we have no one common component, we will be pass <Provider /> global redux
 // instance
 global.redux = createRedux(reducers, data);

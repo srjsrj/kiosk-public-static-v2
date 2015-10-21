@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { vendorCartItems } from '../../../../routes/app';
 import CSRFToken from '../../common/CSRFToken';
+import HiddenInput from '../../common/HiddenInput';
 import ProductCartForProduct from './ProductCartForProduct';
 import ProductCartForProductItems from './ProductCartForProductItems';
 import ProductCartNotAvailable from './ProductCartNotAvailable';
@@ -41,7 +42,10 @@ export default class ProductCart {
         className="simple_form cart_item"
         method="POST"
       >
-        <CSRFToken {...this.props.formAuthenticity} />
+        <div style={{ display: 'none'}}>
+          <HiddenInput name="utf8" value="✓" />
+          <CSRFToken {...this.props.formAuthenticity} />
+        </div>
         {this.renderContent(product)}
       </form>
     );
