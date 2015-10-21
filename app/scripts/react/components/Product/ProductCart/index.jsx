@@ -7,6 +7,7 @@ import ProductCartNotAvailable from './ProductCartNotAvailable';
 
 export default class ProductCart {
   static propTypes = {
+    formAuthenticity: PropTypes.object.isRequired,
     onGoodChange: PropTypes.func.isRequired,
     product: PropTypes.object.isRequired,
   }
@@ -40,7 +41,7 @@ export default class ProductCart {
         className="simple_form cart_item"
         method="POST"
       >
-        <CSRFToken />
+        <CSRFToken {...this.props.formAuthenticity} />
         {this.renderContent(product)}
       </form>
     );

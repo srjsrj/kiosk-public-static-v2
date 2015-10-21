@@ -3,12 +3,12 @@ import HiddenInput from './HiddenInput';
 
 export default class CSRFToken extends Component {
   static propTypes = {
-    name: PropTypes.string,
+    field: PropTypes.string,
     nodeSelector: PropTypes.string,
     token: PropTypes.string,
   }
   static defaultProps = {
-    name: 'authenticity_token',
+    field: 'authenticity_token',
     nodeSelector: '[name="csrf-token"]',
     token: null,
   }
@@ -18,7 +18,9 @@ export default class CSRFToken extends Component {
   componentDidMount() {
     // Node doesn't have document object, therefore we will get & render
     // token only after first mount with null value
-    this.setState({ token: this.csrfToken() });
+    if (!this.state.token) {
+      this.setState({ token: this.csrfToken() });
+    }
   }
   csrfToken() {
     const { nodeSelector } = this.props;
@@ -27,11 +29,11 @@ export default class CSRFToken extends Component {
     return tokenNode != null ? tokenNode.getAttribute('content') : null;
   }
   render() {
-    const { name } = this.props;
+    const { field } = this.props;
     const { token } = this.state;
 
     if (token) {
-      return <HiddenInput name={name} value={token} />;
+      return <HiddenInput name={field} value={token} />;
     }
 
     return null;

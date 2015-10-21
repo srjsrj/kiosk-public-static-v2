@@ -13,6 +13,7 @@ import ProductCardTitle from './ProductCardTitle';
 
 class ProductCard {
   static propTypes = {
+    formAuthenticity: PropTypes.object.isRequired,
     good: PropTypes.object,
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array.isRequired,
@@ -49,6 +50,7 @@ class ProductCard {
               <ProductCardSchema product={product} />
               <div className="b-item-full__form">
                 <ProductCart
+                  formAuthenticity={this.props.formAuthenticity}
                   product={product}
                   onGoodChange={onGoodChange}
                 />
@@ -67,6 +69,7 @@ class ProductCard {
 
 export default class ProductCardContainer extends Component {
   static propTypes = {
+    formAuthenticity: PropTypes.object.isRequired,
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array.isRequired,
   }
@@ -107,8 +110,9 @@ export default class ProductCardContainer extends Component {
   render() {
     return (
       <ProductCard
-        onGoodChange={this.handleGoodChange.bind(this)}
+        formAuthenticity={this.props.formAuthenticity}
         good={this.state.good}
+        onGoodChange={this.handleGoodChange.bind(this)}
         product={this.state.product}
         similarProducts={this.props.similarProducts}
       />
