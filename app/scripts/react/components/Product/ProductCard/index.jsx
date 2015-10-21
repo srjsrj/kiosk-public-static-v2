@@ -102,7 +102,7 @@ export default class ProductCardContainer extends Component {
   handleGoodChange(good) {
     const product = {
       ...this.state.product,
-      article: good.article,
+      article: good ? good.article : null,
     };
 
     this.setState({ good, product });

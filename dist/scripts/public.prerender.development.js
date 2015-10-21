@@ -1058,7 +1058,7 @@ var ProductCardContainer = (function (_Component) {
     key: 'handleGoodChange',
     value: function handleGoodChange(good) {
       var product = _extends({}, this.state.product, {
-        article: good.article
+        article: good ? good.article : null
       });
 
       this.setState({ good: good, product: product });
@@ -2665,7 +2665,7 @@ var ProductProperties = (function (_Component) {
       var goods = _props.goods;
       var values = this.state.values;
 
-      var newValues = (0, _utils.getUpdatedValues)(property, properties, values, _defineProperty({}, property.id, value));
+      var newValues = (0, _utils.getUpdatedValues)(property, properties, goods, values, _defineProperty({}, property.id, value));
 
       this.setState({
         good: (0, _utils.getMatchedGood)(properties, goods, newValues),
@@ -2806,9 +2806,22 @@ function getInitialValues(properties, goods) {
   return initialValues;
 }
 
-function getUpdatedValues(property, properties, filters, data) {
-  var newValues = getFiltersForProperty(property, properties, filters);
-  return _extends({}, newValues, data);
+function getUpdatedValues(property, properties, goods, filters, data) {
+  var newValues = _extends({}, getFiltersForProperty(property, properties, filters), data);
+
+  for (var i = 0; i < properties.length; i++) {
+    var prop = properties[i];
+
+    if (!nextValues.hasOwnProperty(prop.id)) {
+      var enabledValues = getEnabledValues(prop.id, goods, nextValues);
+
+      if (enabledValues.length) {
+        nextValues[prop.id] = enabledValues[0];
+      }
+    }
+  }
+
+  return nextValues;
 }
 
 function getInitialGood(properties, goods) {

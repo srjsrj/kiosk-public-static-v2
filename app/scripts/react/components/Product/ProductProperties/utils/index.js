@@ -54,9 +54,25 @@ export function getInitialValues(properties, goods) {
   return initialValues;
 }
 
-export function getUpdatedValues(property, properties, filters, data) {
-  const newValues = getFiltersForProperty(property, properties, filters);
-  return { ...newValues, ...data };
+export function getUpdatedValues(property, properties, goods, filters, data) {
+  const newValues = {
+    ...getFiltersForProperty(property, properties, filters),
+    ...data,
+  }
+
+  for (let i = 0; i < properties.length; i++) {
+    const prop = properties[i];
+
+    if (!nextValues.hasOwnProperty(prop.id)) {
+      const enabledValues = getEnabledValues(prop.id, goods, nextValues);
+
+      if (enabledValues.length) {
+        nextValues[prop.id] = enabledValues[0];
+      }
+    }
+  }
+
+  return nextValues;
 }
 
 export function getInitialGood(properties, goods) {

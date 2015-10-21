@@ -48,8 +48,8 @@ export default class ProductProperties extends Component {
     const { properties, goods } = this.props;
     const { values } = this.state;
 
-    const newValues = getUpdatedValues(property, properties, values, {
-      [property.id]: value
+    const newValues = getUpdatedValues(property, properties, goods, values, {
+      [property.id]: value,
     });
 
     this.setState({
