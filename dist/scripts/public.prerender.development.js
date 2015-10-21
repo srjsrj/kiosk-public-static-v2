@@ -2124,7 +2124,7 @@ var ProductPrices = (function () {
 
       if (good) {
         return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: good });
-      } else if (product.goods && product.goods.length) {
+      } else if (product.has_ordering_goods) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 

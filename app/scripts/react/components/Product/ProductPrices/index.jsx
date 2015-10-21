@@ -41,7 +41,7 @@ export default class ProductPrices {
       return (
         <ProductGoodPrice good={good} />
       ); 
-    } else if (product.goods && product.goods.length) {
+    } else if (product.has_ordering_goods) {
       const maxPrice = this.getMaxPrice(product.goods);
       const minPrice = this.getMinPrice(product.goods);
 
