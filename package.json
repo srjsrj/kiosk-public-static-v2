@@ -1,6 +1,6 @@
 {
   "name": "KioskPublicStatic",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
+    "gulp-bump": "^1.0.0",
     "gulp-file-include": "^0.11.0",
     "gulp-flatten": "0.0.4",
     "gulp-gh-pages": "^0.5.2",
@@ -49,6 +50,7 @@
     "gulp-mocha-phantomjs": "^0.8.1",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "1.1.0",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.0.1",
@@ -57,6 +59,7 @@
     "pretty-hrtime": "^0.2.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.1.1",
+    "semver": "^5.0.3",
     "sinon": "^1.16.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"

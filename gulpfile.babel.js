@@ -7,7 +7,7 @@ requireDir('./gulp/tasks', { recurse: true });
 
 gulp.task('dist', ['[Shared] Test with build'], (cb) => {
   runSequence(
-    ['[Shared] Clean'],
+    ['[Shared] Clean', '[Shared] Bump'],
     ['[Production] Styles', '[Production] Fonts', '[Production] Images'],
     ['[Production] Scripts', '[Production] Components scripts', '[Development] Components scripts'],
   cb);
