@@ -15,7 +15,7 @@ export default class ProductCardSimilarProducts {
   render() {
     const { products } = this.props;
 
-    if (products.length) {
+    if (products && products.length) {
       return (
         <section className="b-item-list b-item-list_additional">
           <h1 className="b-item-list__title">

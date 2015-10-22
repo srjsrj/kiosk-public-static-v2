@@ -756,7 +756,7 @@ var ProductCardSimilarProducts = (function () {
     value: function render() {
       var products = this.props.products;
 
-      if (products.length) {
+      if (products && products.length) {
         return _react2['default'].createElement(
           'section',
           { className: 'b-item-list b-item-list_additional' },
