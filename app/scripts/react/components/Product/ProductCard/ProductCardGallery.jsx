@@ -1,7 +1,7 @@
 import React, { Component, findDOMNode, PropTypes } from 'react';
-import { PHOTO_CHANGE } from '../../constants/globalEventKeys';
+import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 
-export default class ProductGallery extends Component {
+export default class ProductCardGallery extends Component {
   static propTypes = {
     images: PropTypes.arrayOf(
       PropTypes.shape({

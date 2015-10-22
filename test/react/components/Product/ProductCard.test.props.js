@@ -1,5 +1,9 @@
-const baseSimilarProducts = [];
-const baseProduct = {
+export const baseFormAuthenticity = {
+  token: 'HDbhKZ79CgJJszMyRb7FflQli7P63A0FUTItVMmU7+I=',
+  field: 'authenticity_token',
+};
+export const baseSimilarProducts = [];
+export const baseProduct = {
   id: 4273,
   global_id: 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQyNzM',
   title: 'Миникольцо Полоски без камней черненое',
@@ -70,47 +74,34 @@ const baseProduct = {
   ],
   attributes: [],
   goods: [],
-  text_blocks: [],
+  text_blocks: []
 };
 
-const allAttributeTypes = [
-  {
-    property_id: 89,
-    type: 'AttributeDictionary',
-    title: 'Цвет покрытия',
-    value: 'чернение',
-    products_path: '/entities/46-chernenie'
-  },
-  {
-    property_id: 2378,
-    type: 'AttributeLink',
-    title: 'Ссылочка',
-    value: 'http://google.ru',
-    products_path: null
-  },
-  {
-    property_id: 2379,
-    type: "AttributeFile",
-    title: "Файлик",
-    value: {
-      extension: '.png',
-      filename: '59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png',
-      size: 38144,
-      url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png'
-    },
-    products_path: null
-  }
-];
-
-export const productCard = {
-  product: baseProduct,
-  similarProducts: baseSimilarProducts,
-}
-
-export const productCardWithAllAttributeTypes = {
-  ...productCard,
-  product: {
-    ...productCard.product,
-    attributes: allAttributeTypes,
-  }
-}
+// const allAttributeTypes = [
+//   {
+//     property_id: 89,
+//     type: 'AttributeDictionary',
+//     title: 'Цвет покрытия',
+//     value: 'чернение',
+//     products_path: '/entities/46-chernenie'
+//   },
+//   {
+//     property_id: 2378,
+//     type: 'AttributeLink',
+//     title: 'Ссылочка',
+//     value: 'http://google.ru',
+//     products_path: null
+//   },
+//   {
+//     property_id: 2379,
+//     type: "AttributeFile",
+//     title: "Файлик",
+//     value: {
+//       extension: '.png',
+//       filename: '59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png',
+//       size: 38144,
+//       url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png'
+//     },
+//     products_path: null
+//   }
+// ];
