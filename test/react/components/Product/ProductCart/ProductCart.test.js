@@ -1,5 +1,4 @@
 import React, { addons, findDOMNode } from 'react';
-import { spy } from 'sinon';
 import { expect } from 'chai';
 import ProductCart from '../../../../../app/scripts/react/components/Product/ProductCart';
 
