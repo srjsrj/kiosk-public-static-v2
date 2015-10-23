@@ -3862,7 +3862,7 @@ function schemaOrgGoodPrice(good, category) {
     good.price && React.createElement(
       'div',
       { itemProp: 'price' },
-      React.createElement('meta', { itemProp: 'priceCurrency', content: good.price.currency.iso_code }),
+      React.createElement('meta', { itemProp: 'priceCurrency', content: good.price.currency_iso_code }),
       React.createElement(
         'div',
         null,
