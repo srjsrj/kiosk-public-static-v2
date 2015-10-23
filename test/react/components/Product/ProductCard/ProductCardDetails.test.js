@@ -1,0 +1,171 @@
+import React, { addons, findDOMNode } from 'react';
+import { expect } from 'chai';
+import ProductCardDetails from '../../../../../app/scripts/react/components/Product/ProductCard/ProductCardDetails';
+
+const { renderIntoDocument } = addons.TestUtils;
+
+describe('[Component] ProductCardDetails', () => {
+  it('should render when product is empty object', () => {
+    const product = {};
+    const component = renderIntoDocument(
+      <ProductCardDetails product={product} />
+    );
+
+    expect(component).to.be.an('object');
+  });
+
+  describe('Text blocks', () => {
+    it('shouldn\'t render text blocks container when no text blocks to display', () => {
+      const product = { text_blocks: [] };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+
+      expect(component.refs.textBlocks).to.be.undefined;
+    });
+
+    it('should render text blocks which count is equals product\'s text_blocks length', () => {
+      const product = {
+        text_blocks: [
+          {
+            title: 'Подробнее о продукте',
+            content: '<ul><li>тип:\tбокс мод</li></ul>',
+          },
+          {
+            title: 'Безупречное качество',
+            content: '<ul><li>оценка:\t5</li></ul>',
+          },
+        ],
+      };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+      const textBlocks = component.refs.textBlocks;
+
+      expect(textBlocks).to.be.an('object');
+      expect(product.text_blocks.length).to.equal(textBlocks.props.children.length);
+    });
+  });
+
+  describe('Attributes', () => {
+    it('shouldn\'t render attributes container when no attributes to display', () => {
+      const product = { attributes: [] };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+
+      expect(component.refs.attributes).to.be.undefined;
+    });
+
+    it('should render AttributeDictionary attribute type', () => {
+      const product = {
+        attributes: [
+          {
+            property_id: 89,
+            type: 'AttributeDictionary',
+            title: 'Цвет покрытия',
+            value: 'чернение',
+            products_path: '/entities/46-chernenie'
+          },
+        ],
+      };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+      const attributes = findDOMNode(component.refs.attributes);
+      const attribute = attributes.firstChild;
+
+      expect(attribute).to.be.instanceof(HTMLLIElement);
+
+      const attributeTitle = attribute.querySelector('.attribute__title');
+      const attributeValue = attribute.querySelector('a');
+
+      expect(attributeTitle.textContent).to.equal('Цвет покрытия: ');
+      expect(attributeValue.textContent).to.equal('чернение');
+      expect(attributeValue).to.have.property('href').that.contain('/entities/46-chernenie');
+    });
+
+    it('should render AttributeLink attribute type', () => {
+      const product = {
+        attributes: [
+          {
+            property_id: 2378,
+            type: 'AttributeLink',
+            title: 'Ссылочка',
+            value: 'http://google.ru',
+            products_path: null,
+          },
+        ],
+      };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+      const attributes = findDOMNode(component.refs.attributes);
+      const attribute = attributes.firstChild;
+
+      expect(attribute).to.be.instanceof(HTMLLIElement);
+
+      const attributeValue = attribute.querySelector('a');
+
+      expect(attributeValue).to.have.property('href').that.contain('http://google.ru');
+      expect(attributeValue).to.have.property('className').that.is.equals('link link--external');
+      expect(attributeValue).to.have.property('textContent').that.is.equals('Ссылочка');
+    });
+
+    it('should render AttributeFile attribute type', () => {
+      const product = {
+        attributes: [
+          {
+            property_id: 2379,
+            type: "AttributeFile",
+            title: "Файлик",
+            value: {
+              extension: '.png',
+              filename: '59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png',
+              size: 38144,
+              url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png'
+            },
+            products_path: null,
+          },
+        ],
+      };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+      const attributes = findDOMNode(component.refs.attributes);
+      const attribute = attributes.firstChild;
+
+      expect(attribute).to.be.instanceof(HTMLLIElement);
+
+      const attributeValue = attribute.querySelector('a');
+
+      expect(attributeValue).to.have.property('href').that.contain('http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png');
+      expect(attributeValue).to.have.property('className').that.is.equals('link link--file');
+      expect(attributeValue).to.have.property('textContent').that.is.equals('Файлик .png (37.25 KB)');
+    });
+  });
+
+  describe('Description', () => {
+    it('shouldn\'t render description container when description doesn\'t exist', () => {
+      const product = { description: null };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+
+      expect(component.refs.description).to.be.undefined;
+    });
+
+    it('should render product description with html', () => {
+      const product = {
+        description: '<p>Батарея увеличенной мощности с функцией проверки заряда.</p>'
+      };
+      const component = renderIntoDocument(
+        <ProductCardDetails product={product} />
+      );
+      const description = findDOMNode(component.refs.description);
+
+      expect(description.querySelector('p'))
+        .property('textContent').that.is.equals('Батарея увеличенной мощности с функцией проверки заряда.');
+    });
+  });
+});

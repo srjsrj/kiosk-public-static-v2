@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export default class ProductVideo {
+export default class ProductCardVideo {
   static propTypes = {
     product: PropTypes.object.isRequired,
   }

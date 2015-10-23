@@ -11,4 +11,5 @@ import './react/components/Notice/Notice.test';
 import './react/components/DesignSettings/DesignSettings.test';
 import './react/components/CatalogFilter/CatalogFilter.test';
 // import './react/components/Product/ProductCard.test';
+import './react/components/Product/ProductCard/ProductCardDetails.test';
 // import './react/components/Product/ProductCard/ProductCardSimilarProducts.test';

@@ -73,13 +73,15 @@ export function attributeValue(attribute) {
 
       return (
         <a href={value.url} target="_blank" className="link link--file">
-          {title} {value.extension} ({numberToHumanSize(value.size)})
+          {`${title} ${value.extension} (${numberToHumanSize(value.size)})`}
         </a>
       );
     case 'AttributeDictionary':
       return (
         <span>
-          {title}: {}
+          <span className="attribute__title">
+            {`${title}: `}
+          </span>
           <a href={products_path}>
             {value}
           </a>
