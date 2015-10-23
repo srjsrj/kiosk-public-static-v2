@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { vendorCartItems } from '../../../../routes/app';
 import CSRFToken from '../../common/CSRFToken';
 import HiddenInput from '../../common/HiddenInput';
@@ -6,11 +6,14 @@ import ProductCartForProduct from './ProductCartForProduct';
 import ProductCartForProductItems from './ProductCartForProductItems';
 import ProductCartNotAvailable from './ProductCartNotAvailable';
 
-export default class ProductCart {
+export default class ProductCart extends Component {
   static propTypes = {
-    formAuthenticity: PropTypes.object.isRequired,
-    onGoodChange: PropTypes.func.isRequired,
+    formAuthenticity: PropTypes.object,
+    onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
+  }
+  static defaultProps = {
+    formAuthenticity: {},
   }
   renderContent(product) {
     if (product.has_ordering_goods) {

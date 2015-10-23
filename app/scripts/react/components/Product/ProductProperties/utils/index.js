@@ -63,16 +63,16 @@ export function getUpdatedValues(property, properties, goods, filters, data) {
   for (let i = 0; i < properties.length; i++) {
     const prop = properties[i];
 
-    if (!nextValues.hasOwnProperty(prop.id)) {
-      const enabledValues = getEnabledValues(prop.id, goods, nextValues);
+    if (!newValues.hasOwnProperty(prop.id)) {
+      const enabledValues = getEnabledValues(prop.id, goods, newValues);
 
       if (enabledValues.length) {
-        nextValues[prop.id] = enabledValues[0];
+        newValues[prop.id] = enabledValues[0];
       }
     }
   }
 
-  return nextValues;
+  return newValues;
 }
 
 export function getInitialGood(properties, goods) {

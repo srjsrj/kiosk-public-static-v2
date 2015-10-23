@@ -12,11 +12,11 @@ import ProductCardVideo from './ProductCardVideo';
 
 export default class ProductCard {
   static propTypes = {
-    formAuthenticity: PropTypes.object.isRequired,
+    formAuthenticity: PropTypes.object,
     good: PropTypes.object,
     product: PropTypes.object.isRequired,
-    similarProducts: PropTypes.array.isRequired,
-    onGoodChange: PropTypes.func.isRequired,
+    similarProducts: PropTypes.array,
+    onGoodChange: PropTypes.func,
   }
   render() {
     const { good, product, onGoodChange, similarProducts } = this.props;

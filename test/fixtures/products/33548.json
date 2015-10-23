@@ -1,0 +1,149 @@
+{
+  "product": {
+    "id": 33548,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNTQ4",
+    "title": "Электронный набор для курения i like™ storm",
+    "article": null,
+    "has_ordering_goods": true,
+    "is_sale": false,
+    "is_label_new": false,
+    "is_run_out": false,
+    "is_sold": false,
+    "description": "<p><p><span></span>Батарея увеличенной мощности с функцией проверки заряда.<br>Клиаромайзер со сменным испарителем, жидкость заливается сверху. Очень удобно.<br>Матовое покрытие серый металлик.<br>Лучшее соотношение возможностей, цены и качества.</p><p><strong>Cодержимое</strong><br></p><ul><li>1 аккумулятор</li><li>клиаромайзер (i like™ space 5)</li><li>USB/510 зарядка</li></ul><p><strong>Подробнее о продукте:</strong></p><ul><li>ёмкость клиаромайзера: 1,6 мл</li><li>вес: 78 гр (набор)</li><li>ёмкость аккумулятора: 760 mah</li><li>испаритель: сменный верхний (space 5)</li><li>размер: Д14х78 мм</li><li>резьба: 510/ego</li><li>сопротивление: 2.2 ом</li><li>срок службы аккумулятора: не менее 340 циклов</li><li>характеристики аккумулятора: литий-ионный</li><li>характеристики батареи: уровень заряда</li><li>цвет: серый металлик, мат</li><li>совместимость: i like™ space 5</li><li>количество пара: 7 из 10</li></ul></p>",
+    "sale_percent": null,
+    "main_category": {
+      "id": 2780,
+      "name": "Наборы",
+      "is_root": false,
+      "public_url": "http://ilike-ekb.ru/categories/2780-nabory",
+      "parent": {
+        "id": 2763,
+        "name": "Каталог",
+        "is_root": true,
+        "public_url": "http://ilike-ekb.ru/categories/2763-katalog",
+        "parent": null
+      }
+    },
+    "categories": [
+      {
+        "id": 2780,
+        "name": "Наборы",
+        "is_root": false,
+        "public_url": "http://ilike-ekb.ru/categories/2780-nabory",
+        "parent": {
+          "id": 2763,
+          "name": "Каталог",
+          "is_root": true,
+          "public_url": "http://ilike-ekb.ru/categories/2763-katalog",
+          "parent": null
+        }
+      }
+    ],
+    "goods": [
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNTQ4",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Электронный набор для курения i like™ storm",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28372/07b4ce52-2086-47f4-851b-433d1a14f622.png",
+          "uid": "0eab1d7c028b39b20655acb7a15499d5cc4881169aeaebdef44a4eb345c27720"
+        },
+        "attributes": {},
+        "quantity": null,
+        "price": {
+          "cents": 160000,
+          "to_f": 1600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 160000,
+          "to_f": 1600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      }
+    ],
+    "images": [
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28372/07b4ce52-2086-47f4-851b-433d1a14f622.png",
+        "uid": "0eab1d7c028b39b20655acb7a15499d5cc4881169aeaebdef44a4eb345c27720"
+      },
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28375/e0d7efa9-2ccd-4a53-a935-1572653f8055.png",
+        "uid": "63334ebf2ffae07b80958ba4091462fcc5c3dcbccdbbae2419318e79378fc91c"
+      },
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28376/33ba5162-c435-40f0-8019-20b27b306aac.png",
+        "uid": "263f91280e49390e47b119ed36741e9716640c098a4f69b73983b8bced3245a2"
+      },
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28377/d7c3487f-fb20-42d8-a303-cfd36e0a6c4f.png",
+        "uid": "4efd60bd0613e8ee25c0f36eebc7e74efad8d4648b6fb38bc806eb037bd1eab8"
+      },
+      {
+        "title": "Электронный набор для курения i like™ storm",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/product_image/image/28378/21b75ec5-4333-4f97-832f-9902c0abf590.png",
+        "uid": "1e7ac6eebbbf9c32e8fc072e425b6fc7330db08dee64e6f794b919ac2da00435"
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 1697,
+        "type": "AttributeFile",
+        "title": "Инструкция пользователя",
+        "value": {
+          "extension": ".pdf",
+          "filename": "6dfa3031-d1e1-4769-b4cd-4ff6d9f9d0e4.pdf",
+          "size": 54770,
+          "url": "http://assets.kiiiosk.ru/uploads/shop/440/uploads/af/1697/6dfa3031-d1e1-4769-b4cd-4ff6d9f9d0e4.pdf"
+        },
+        "products_path": null
+      }
+    ],
+    "custom_product_html": "<div class=\"spk-good-rating\" shop-id=\"3ef67f83a8b83144149476\" good-id=\"33548\"></div>\r\n<div id=\"spk-widget-reviews\" style=\"display:none; width: 100%;\" shop-id=\"3ef67f83a8b83144149476\"\r\ngood-id=\"33548\"\r\ngood-title=\"Электронный набор для курения i like™ storm\"\r\ngood-url=\"http://ilike-ekb.ru/products/33548-elektronnyy-nabor-dlya-kureniya-i-like-storm\"> </div>",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [],
+  "formAuthenticity": {
+    "token": "HDbhKZ79CgJJszMyRb7FflQli7P63A0FUTItVMmU7+I=",
+    "field": "authenticity_token"
+  }
+}

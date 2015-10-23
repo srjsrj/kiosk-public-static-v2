@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
+import ErrorService from '../../../services/Error';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import {
   getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
@@ -16,7 +17,7 @@ const NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 export default class ProductProperties extends Component {
   static propTypes = {
     goods: PropTypes.array.isRequired,
-    onGoodChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func,
     properties: PropTypes.array.isRequired,
   }
   static defaultProps = {
@@ -34,14 +35,38 @@ export default class ProductProperties extends Component {
     };
   }
   componentDidMount() {
-    this.props.onGoodChange(this.state.good);
+    if (this.props.onGoodChange) {
+      this.props.onGoodChange(this.state.good);
+    }
+    // TODO: Make TestComponentService or smth
+    this.validateProps(this.props);
   }
   componentDidUpdate(prevProps, prevState) {
     const { good } = this.state;
 
     if (diff(this.state.good, prevState.good)) {
-      this.props.onGoodChange(this.state.good);
+      if (this.props.onGoodChange) {
+        this.props.onGoodChange(this.state.good);
+      }
       $(document).trigger(PHOTO_CHANGE, good ? good.image : null);
+    }
+  }
+  validateProps(props) {
+    // Number of attributes in every good equals number of product properties
+    const { goods, properties } = props;
+
+    if (properties && properties.length && goods && goods.length) {
+      const propertiesCount = properties.length;
+      const hasDifferentCount = goods.some((el) =>
+        Object.keys(el.attributes).length !== propertiesCount
+      );
+
+      if (hasDifferentCount) {
+        ErrorService.notifyErrorProps('Количество свойств товара отличается от количества аттрибутов варианта', {
+          props,
+          component: 'ProductProperties',
+        });
+      }
     }
   }
   updateValues(property, value) {

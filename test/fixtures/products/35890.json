@@ -1,0 +1,266 @@
+{
+  "product": {
+    "id": 35890,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0VW5pb24vMzU4OTA",
+    "title": "Муфта для рук Teutonia",
+    "article": null,
+    "has_ordering_goods": true,
+    "is_sale": false,
+    "is_label_new": false,
+    "is_run_out": false,
+    "is_sold": false,
+    "description": "<p><ul><li><span></span>Защищает руки от холода</li><li>Подкладка — теплый мех</li><li>Верх сделан из водонепроницаемой ткани</li><li>Муфту можно постирать при 30 градусах <span></span></li></ul></p>",
+    "sale_percent": null,
+    "main_category": {
+      "id": 3596,
+      "name": "Аксессуары",
+      "is_root": false,
+      "public_url": "http://orange8.ru/categories/3596-kolyaski-teutonia-aksessuary",
+      "parent": {
+        "id": 3568,
+        "name": "Коляски Teutonia",
+        "is_root": false,
+        "public_url": "http://orange8.ru/categories/3568-kolyaski-teutonia",
+        "parent": {
+          "id": 3483,
+          "name": "Корневая категория",
+          "is_root": true,
+          "public_url": "http://orange8.ru/categories/3483-kornevaya-kategoriya",
+          "parent": null
+        }
+      }
+    },
+    "categories": [
+      {
+        "id": 3596,
+        "name": "Аксессуары",
+        "is_root": false,
+        "public_url": "http://orange8.ru/categories/3596-kolyaski-teutonia-aksessuary",
+        "parent": {
+          "id": 3568,
+          "name": "Коляски Teutonia",
+          "is_root": false,
+          "public_url": "http://orange8.ru/categories/3568-kolyaski-teutonia",
+          "parent": {
+            "id": 3483,
+            "name": "Корневая категория",
+            "is_root": true,
+            "public_url": "http://orange8.ru/categories/3483-kornevaya-kategoriya",
+            "parent": null
+          }
+        }
+      }
+    ],
+    "goods": [
+      {
+        "title": "Муфта для рук Teutonia White Leatherette белая кожа",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1ODg5",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Муфта для рук Teutonia White Leatherette белая кожа",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32222/0441e777-f194-4dd2-8a8d-600e89665267.jpg",
+          "uid": "8adb1a6777b57a960e5fed50575b388db2bb1a1770c6214909afa7d4e1b9ddb8"
+        },
+        "attributes": {},
+        "quantity": null,
+        "price": {
+          "cents": 345000,
+          "to_f": 3450,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 345000,
+          "to_f": 3450,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      },
+      {
+        "title": "Муфта для рук Teutonia Grey Leatherette серая кожа",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1ODg4",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Муфта для рук Teutonia Grey Leatherette серая кожа",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32219/8c1f141e-f6b3-4084-a23e-5528cd751fd5.jpg",
+          "uid": "a7a9bffc02edf4e019430353909c105a8426b3aa4721fd35b2a96e100828d183"
+        },
+        "attributes": {},
+        "quantity": null,
+        "price": {
+          "cents": 345000,
+          "to_f": 3450,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 345000,
+          "to_f": 3450,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      },
+      {
+        "title": "Муфта для рук Teutonia",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1ODg3",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Муфта для рук Teutonia",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32216/2bb6a5b8-c3d9-49f0-b9ee-bbc7de1093a1.jpg",
+          "uid": "2457883211d1198b970952f401c6158de3d48699ea4bb01617c77f3bc26155d3"
+        },
+        "attributes": {},
+        "quantity": null,
+        "price": {
+          "cents": 285000,
+          "to_f": 2850,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 285000,
+          "to_f": 2850,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      }
+    ],
+    "images": [
+      {
+        "title": "Муфта для рук Teutonia",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32227/589af8e0-80b8-44b5-b064-c39d5e50d981.jpg",
+        "uid": "2457883211d1198b970952f401c6158de3d48699ea4bb01617c77f3bc26155d3"
+      },
+      {
+        "title": "Муфта для рук Teutonia",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32225/fc47b44b-bf0c-425f-be18-079ab5f59946.jpg",
+        "uid": "2ce0928ab649aef8bf1f4ba1335a4090e7453f702e1c6177515a8e2f4419fa39"
+      },
+      {
+        "title": "Муфта для рук Teutonia",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32224/780f68c7-bb79-45b9-8f9b-8004ab44f82c.jpg",
+        "uid": "a7a9bffc02edf4e019430353909c105a8426b3aa4721fd35b2a96e100828d183"
+      },
+      {
+        "title": "Муфта для рук Teutonia",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/637/uploads/product_image/image/32226/f32a1386-a6f6-443b-9996-e3059ed94ce6.jpg",
+        "uid": "8adb1a6777b57a960e5fed50575b388db2bb1a1770c6214909afa7d4e1b9ddb8"
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 2228,
+        "type": "AttributeDictionary",
+        "title": "Бренд",
+        "value": "Teutonia",
+        "products_path": "/entities/9606-teutonia"
+      },
+      {
+        "property_id": 2313,
+        "type": "AttributeDictionary",
+        "title": "Коляски",
+        "value": "Аксессуары",
+        "products_path": "/entities/9605-aksessuary"
+      }
+    ],
+    "custom_product_html": "",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [],
+  "formAuthenticity": {
+    "token": "RxzJOAHtJYU+/Bdz/vs22FivNJ27ZvlIGc+9rjKOPrU=",
+    "field": "authenticity_token"
+  }
+}

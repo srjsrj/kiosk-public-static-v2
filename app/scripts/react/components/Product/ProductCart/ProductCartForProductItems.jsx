@@ -4,7 +4,7 @@ import ProductProperties from '../ProductProperties';
 
 export default class ProductCartForProductItems {
   static propTypes = {
-    onGoodChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
   }
   render() {

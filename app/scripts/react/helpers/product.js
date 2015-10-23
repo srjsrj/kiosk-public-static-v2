@@ -9,7 +9,10 @@ export function schemaOrgMarkup(product) {
     <div style={{display: 'none'}}>
       <meta itemProp="name" content={h1(product)} />
       <meta itemProp="productID" content={schemaOrgProductArticle(product)} />
-      {product.goods.map((el) => schemaOrgGoodPrice(el, product.main_category))}
+      {product.goods
+        && product.goods.length
+        && product.goods.map((el) => schemaOrgGoodPrice(el, product.main_category))
+      }
     </div>
   );
 }

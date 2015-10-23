@@ -8,7 +8,7 @@ const ADD_TO_CART_BUTTON = 'В корзину';
 
 export default class ProductGoods {
   static propTypes = {
-    onGoodChange: PropTypes.func.isRequired,
+    onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
   }
   componentDidMount() {
@@ -18,7 +18,7 @@ export default class ProductGoods {
       const good = product.goods[i];
 
       if (good.is_ordering) {
-        onGoodChange(good);
+        if (onGoodChange) onGoodChange(good);
         break;
       }
     }
@@ -37,7 +37,7 @@ export default class ProductGoods {
 
       if (good.global_id === value) {
         $(document).trigger(PHOTO_CHANGE, good.image);
-        onGoodChange(good);
+        if (onGoodChange) onGoodChange(good);
         break;
       }
     };

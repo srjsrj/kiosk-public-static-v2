@@ -58,14 +58,17 @@ describe('[Component] ProductCardDetails', () => {
     });
 
     it('should render AttributeDictionary attribute type', () => {
+      const title = 'Цвет покрытия';
+      const products_path = '/entities/46-chernenie';
+      const value = 'чернение';
       const product = {
         attributes: [
           {
+            products_path,
+            title,
+            value,
             property_id: 89,
             type: 'AttributeDictionary',
-            title: 'Цвет покрытия',
-            value: 'чернение',
-            products_path: '/entities/46-chernenie'
           },
         ],
       };
@@ -80,9 +83,9 @@ describe('[Component] ProductCardDetails', () => {
       const attributeTitle = attribute.querySelector('.attribute__title');
       const attributeValue = attribute.querySelector('a');
 
-      expect(attributeTitle.textContent).to.equal('Цвет покрытия: ');
-      expect(attributeValue.textContent).to.equal('чернение');
-      expect(attributeValue).to.have.property('href').that.contain('/entities/46-chernenie');
+      expect(attributeTitle.textContent).contain(title);
+      expect(attributeValue.textContent).to.equal(value);
+      expect(attributeValue).to.have.property('href').that.contain(products_path);
     });
 
     it('should render AttributeLink attribute type', () => {
@@ -113,17 +116,19 @@ describe('[Component] ProductCardDetails', () => {
     });
 
     it('should render AttributeFile attribute type', () => {
+      const title = 'Файлик';
+      const url = 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png';
       const product = {
         attributes: [
           {
+            title,
             property_id: 2379,
             type: "AttributeFile",
-            title: "Файлик",
             value: {
+              url,
               extension: '.png',
               filename: '59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png',
               size: 38144,
-              url: 'http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png'
             },
             products_path: null,
           },
@@ -139,9 +144,9 @@ describe('[Component] ProductCardDetails', () => {
 
       const attributeValue = attribute.querySelector('a');
 
-      expect(attributeValue).to.have.property('href').that.contain('http://assets.kiiiosk.ru/uploads/shop/5/uploads/af/2379/59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png');
+      expect(attributeValue).to.have.property('href').that.contain(url);
       expect(attributeValue).to.have.property('className').that.is.equals('link link--file');
-      expect(attributeValue).to.have.property('textContent').that.is.equals('Файлик .png (37.25 KB)');
+      expect(attributeValue).to.have.property('textContent').that.contain(title);
     });
   });
 
@@ -156,16 +161,16 @@ describe('[Component] ProductCardDetails', () => {
     });
 
     it('should render product description with html', () => {
+      const desc = 'Батарея увеличенной мощности с функцией проверки заряда.';
       const product = {
-        description: '<p>Батарея увеличенной мощности с функцией проверки заряда.</p>'
+        description: `<p>${desc}</p>`,
       };
       const component = renderIntoDocument(
         <ProductCardDetails product={product} />
       );
       const description = findDOMNode(component.refs.description);
 
-      expect(description.querySelector('p'))
-        .property('textContent').that.is.equals('Батарея увеличенной мощности с функцией проверки заряда.');
+      expect(description.querySelector('p')).property('textContent').that.is.equals(desc);
     });
   });
 });
