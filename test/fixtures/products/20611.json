@@ -1,0 +1,381 @@
+{
+  "product": {
+    "id": 20611,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzIwNjEx",
+    "title": "Тестовый товар – не удалять",
+    "article": "TEST-GOOD",
+    "has_ordering_goods": true,
+    "is_sale": false,
+    "is_label_new": false,
+    "is_run_out": false,
+    "is_sold": false,
+    "description": "<p></p>",
+    "sale_percent": null,
+    "main_category": {
+      "id": 9,
+      "name": "Без Категории",
+      "is_root": true,
+      "public_url": "http://cc.kiiiosk.ru/categories/9-bez-kategorii",
+      "parent": null
+    },
+    "categories": [
+      {
+        "id": 9,
+        "name": "Без Категории",
+        "is_root": true,
+        "public_url": "http://cc.kiiiosk.ru/categories/9-bez-kategorii",
+        "parent": null
+      }
+    ],
+    "goods": [
+      {
+        "title": "Цвет: белый",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8yNjQzNw",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Тестовый товар – не удалять",
+          "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+          "uid": null
+        },
+        "attributes": {
+          "462": "белый"
+        },
+        "quantity": 5,
+        "price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      },
+      {
+        "title": "Цвет: Синий",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8yNjQzNQ",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Тестовый товар – не удалять",
+          "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+          "uid": null
+        },
+        "attributes": {
+          "462": "Синий"
+        },
+        "quantity": 2,
+        "price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      },
+      {
+        "title": "Цвет: Черный",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8yNjQzNg",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Тестовый товар – не удалять",
+          "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+          "uid": null
+        },
+        "attributes": {
+          "462": "Черный"
+        },
+        "quantity": 1,
+        "price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 1000,
+          "to_f": 10,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      }
+    ],
+    "images": [
+      {
+        "title": "Тестовый товар – не удалять",
+        "url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+        "uid": null
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 207,
+        "type": "AttributeBoolean",
+        "title": "Женская модель",
+        "value": "Нет",
+        "products_path": null
+      },
+      {
+        "property_id": 208,
+        "type": "AttributeBoolean",
+        "title": "Осень / Зима",
+        "value": "Нет",
+        "products_path": null
+      },
+      {
+        "property_id": 209,
+        "type": "AttributeBoolean",
+        "title": "Наличие манометра",
+        "value": "Нет",
+        "products_path": null
+      },
+      {
+        "property_id": 282,
+        "type": "AttributeLong",
+        "title": "Тест ЧИСЛО ЦЕЛОЕ",
+        "value": 10000,
+        "products_path": null
+      },
+      {
+        "property_id": 283,
+        "type": "AttributeTime",
+        "title": "Тест ДАТА",
+        "value": "2015-02-19T16:01:00.000+03:00",
+        "products_path": null
+      },
+      {
+        "property_id": 285,
+        "type": "AttributeDouble",
+        "title": "Тест ЧИСЛО ДРОБНОЕ",
+        "value": 88.544,
+        "products_path": null
+      },
+      {
+        "property_id": 286,
+        "type": "AttributeString",
+        "title": "Тест ФЛАЖОК",
+        "value": "да",
+        "products_path": null
+      }
+    ],
+    "custom_product_html": "<div class=\"fb-like\" data-href=\"https://developers.facebook.com/docs/plugins/\" data-layout=\"standard\" data-action=\"like\" data-show-faces=\"true\" data-share=\"true\"></div>",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [
+    {
+      "id": 16445,
+      "title": "Велосипед Specialized «Pitch Comp 650B» (2015), размер S, красный",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "public_url": "http://cc.kiiiosk.ru/products/16445-velosiped-specialized-pitch-comp-650b-2015-razmer-s-krasnyy",
+      "goods": [
+        {
+          "id": 22728,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 5909000,
+            "to_f": 59090,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 5909000,
+            "to_f": 59090,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    },
+    {
+      "id": 18589,
+      "title": "Цепь Kryptonite «Evolution Series 4 1055 Mini»",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "public_url": "http://cc.kiiiosk.ru/products/18589-tsep-kryptonite-evolution-series-4-1055-mini",
+      "goods": [
+        {
+          "id": 19206,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 359000,
+            "to_f": 3590,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 359000,
+            "to_f": 3590,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    }
+  ],
+  "formAuthenticity": {
+    "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
+    "field": "authenticity_token"
+  }
+}

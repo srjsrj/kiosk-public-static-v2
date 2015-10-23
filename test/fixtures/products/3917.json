@@ -1,0 +1,395 @@
+{
+  "product": {
+    "id": 3917,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM5MTc",
+    "title": "Анклет с Кистью с цирконами черненый",
+    "article": "A001-22",
+    "has_ordering_goods": false,
+    "is_sale": true,
+    "is_label_new": false,
+    "is_run_out": true,
+    "is_sold": true,
+    "description": "<p></p>",
+    "sale_percent": 30,
+    "main_category": {
+      "id": 613,
+      "name": "Анклет",
+      "is_root": false,
+      "public_url": "http://wanna-be.ru/categories/613-na-telo-anklet",
+      "parent": {
+        "id": 638,
+        "name": "На тело",
+        "is_root": false,
+        "public_url": "http://wanna-be.ru/categories/638-na-telo",
+        "parent": {
+          "id": 612,
+          "name": "Корневая категория",
+          "is_root": true,
+          "public_url": "http://wanna-be.ru/categories/612-kornevaya-kategoriya",
+          "parent": null
+        }
+      }
+    },
+    "categories": [
+      {
+        "id": 613,
+        "name": "Анклет",
+        "is_root": false,
+        "public_url": "http://wanna-be.ru/categories/613-na-telo-anklet",
+        "parent": {
+          "id": 638,
+          "name": "На тело",
+          "is_root": false,
+          "public_url": "http://wanna-be.ru/categories/638-na-telo",
+          "parent": {
+            "id": 612,
+            "name": "Корневая категория",
+            "is_root": true,
+            "public_url": "http://wanna-be.ru/categories/612-kornevaya-kategoriya",
+            "parent": null
+          }
+        }
+      },
+      {
+        "id": 1443,
+        "name": "Дисконт",
+        "is_root": false,
+        "public_url": "http://wanna-be.ru/categories/1443-diskont",
+        "parent": {
+          "id": 612,
+          "name": "Корневая категория",
+          "is_root": true,
+          "public_url": "http://wanna-be.ru/categories/612-kornevaya-kategoriya",
+          "parent": null
+        }
+      }
+    ],
+    "goods": [
+      {
+        "title": "Анклет с Кистью с цирконами черненый",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8xNjQzNA",
+        "is_ordering": false,
+        "is_run_out": true,
+        "is_sale": true,
+        "is_preorder": false,
+        "image": {
+          "title": "Анклет с Кистью с цирконами черненый",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/30785/a2ddd08c-4880-424e-9769-3a3fa801438d.jpg",
+          "uid": "59b6c68ac4a4a79a086d80d72e2523a1eccd85afaaca28c11fd852b28b9b3127"
+        },
+        "attributes": {},
+        "quantity": 0,
+        "price": {
+          "cents": 490000,
+          "to_f": 4900,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 343000,
+          "to_f": 3430,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      }
+    ],
+    "images": [
+      {
+        "title": "Анклет с Кистью с цирконами черненый",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/30785/a2ddd08c-4880-424e-9769-3a3fa801438d.jpg",
+        "uid": "59b6c68ac4a4a79a086d80d72e2523a1eccd85afaaca28c11fd852b28b9b3127"
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 89,
+        "type": "AttributeDictionary",
+        "title": "Цвет покрытия",
+        "value": "чернение",
+        "products_path": "/entities/46-chernenie"
+      },
+      {
+        "property_id": 91,
+        "type": "AttributeDictionary",
+        "title": "Цвет вставок",
+        "value": "черный",
+        "products_path": "/entities/39-chernyy"
+      },
+      {
+        "property_id": 93,
+        "type": "AttributeDictionary",
+        "title": "Металл, проба",
+        "value": "Серебро 925",
+        "products_path": "/entities/37-serebro-925"
+      },
+      {
+        "property_id": 99,
+        "type": "AttributeDictionary",
+        "title": "Вставки",
+        "value": "куб. циркон",
+        "products_path": "/entities/65-kub-tsirkon"
+      }
+    ],
+    "custom_product_html": "",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [
+    {
+      "id": 19194,
+      "title": "Браслет на кисть Nami черненый с цирконами",
+      "is_sale": false,
+      "has_ordering_goods": false,
+      "is_label_new": false,
+      "is_run_out": true,
+      "is_sold": true,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/7358/eb46934b-a418-41e9-b14c-df89cf430567.jpg",
+      "public_url": "http://wanna-be.ru/products/19194-braslet-na-kist-nami-chernenyy-s-tsirkonami",
+      "goods": [
+        {
+          "id": 17168,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 599000,
+            "to_f": 5990,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 599000,
+            "to_f": 5990,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4333,
+      "title": "Цепь на тело Икс с цирконами черненая",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/8591/ac49ed76-14fb-4700-affd-e94a71bc354b.jpg",
+      "public_url": "http://wanna-be.ru/products/4333-tsep-na-telo-iks-s-tsirkonami-chernenaya",
+      "goods": [
+        {
+          "id": 16447,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 690000,
+            "to_f": 6900,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 690000,
+            "to_f": 6900,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    },
+    {
+      "id": 35968,
+      "title": "Анклет Sona-3 с цирконами серебрянный",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "public_url": "http://wanna-be.ru/products/35968-anklet-sona-3-s-tsirkonami-serebryannyy",
+      "goods": [
+        {
+          "id": 32419,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 549000,
+            "to_f": 5490,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 549000,
+            "to_f": 5490,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4165,
+      "title": "Кольцо на ноготь Хаг с цирконами черненое",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5150/image.png",
+      "public_url": "http://wanna-be.ru/products/4165-koltso-na-nogot-hag-s-tsirkonami-chernenoe",
+      "goods": [
+        {
+          "id": 16636,
+          "type": "ProductItem",
+          "is_sale": false,
+          "price": {
+            "cents": 199000,
+            "to_f": 1990,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 199000,
+            "to_f": 1990,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    }
+  ],
+  "formAuthenticity": {
+    "token": "U9pqrQGs/+7Ht9qSAjOLpsN18IL6EJyPNSfJu45oLT4=",
+    "field": "authenticity_token"
+  }
+}

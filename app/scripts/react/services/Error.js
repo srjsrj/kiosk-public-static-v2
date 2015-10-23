@@ -8,13 +8,14 @@ export default {
   notify(name, message, metaData, severity) {
     if (this.remoteService != null && this.remoteService.notify) {
       this.remoteService.notify(name, message, metaData, severity);
-    } else {
-      console.group(`[${severity}] ${name}`);
-      if (metaData != null && Object.keys(metaData).length) {
-        console.log('Meta:', metaData);
-      }
-      console.groupEnd();
     }
+    // else {
+    //   console.group(`[${severity}] ${name}`);
+    //   if (metaData != null && Object.keys(metaData).length) {
+    //     console.log('Meta:', metaData);
+    //   }
+    //   console.groupEnd();
+    // }
   },
 
   notifyError(name, metaData = {}) {

@@ -1,0 +1,225 @@
+{
+  "product": {
+    "id": 33427,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
+    "title": "Spring Flowers",
+    "article": null,
+    "has_ordering_goods": true,
+    "is_sale": false,
+    "is_label_new": false,
+    "is_run_out": false,
+    "is_sold": false,
+    "description": "<p><p>Один размер</p></p>",
+    "sale_percent": null,
+    "main_category": {
+      "id": 2638,
+      "name": "Кимоно",
+      "is_root": true,
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/categories/2638-kimono",
+      "parent": null
+    },
+    "categories": [
+      {
+        "id": 2638,
+        "name": "Кимоно",
+        "is_root": true,
+        "public_url": "http://babe-in-the-woods.kiiiosk.ru/categories/2638-kimono",
+        "parent": null
+      }
+    ],
+    "goods": [
+      {
+        "title": "Spring Flowers",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Spring Flowers",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
+          "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
+        },
+        "attributes": {},
+        "quantity": 1,
+        "price": {
+          "cents": 260000,
+          "to_f": 2600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 260000,
+          "to_f": 2600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        }
+      }
+    ],
+    "images": [
+      {
+        "title": "Spring Flowers",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
+        "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 1439,
+        "type": "AttributeDictionary",
+        "title": "Цвет",
+        "value": "Белый",
+        "products_path": "/entities/3935-belyy"
+      }
+    ],
+    "custom_product_html": "",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [
+    {
+      "id": 33474,
+      "title": "Pop Culture",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": true,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28249/6fae58b6-7657-4d28-9683-eac2dcae3f47.png",
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33474-pop-culture",
+      "goods": [
+        {
+          "id": 33474,
+          "type": "Product",
+          "is_sale": false,
+          "price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33472,
+      "title": "Summer Flowers",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28246/0a4ef555-884c-4e36-b389-68317896d53b.JPG",
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33472-summer-flowers",
+      "goods": [
+        {
+          "id": 33472,
+          "type": "Product",
+          "is_sale": false,
+          "price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ]
+    }
+  ],
+  "formAuthenticity": {
+    "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
+    "field": "authenticity_token"
+  }
+}

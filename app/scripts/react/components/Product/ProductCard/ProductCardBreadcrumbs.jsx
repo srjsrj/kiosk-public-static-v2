@@ -10,10 +10,14 @@ export default class ProductCardBreadcrumbs {
   render() {
     const { className, product } = this.props;
 
-    return (
-      <div className={classNames('b-breadcrumbs', className)}>
-        {productCategoryPath(product)}
-      </div>
-    );
+    if (product.categories && product.categories.length) {
+      return (
+        <div className={classNames('b-breadcrumbs', className)}>
+          {productCategoryPath(product)}
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }

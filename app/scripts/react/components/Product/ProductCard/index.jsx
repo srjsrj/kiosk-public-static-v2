@@ -1,38 +1,19 @@
 import React, { Component, PropTypes } from 'react';
-import ErrorService from '../../../services/Error';
 import ProductCard from './ProductCard';
 
 export default class ProductCardContainer extends Component {
   static propTypes = {
-    formAuthenticity: PropTypes.object.isRequired,
+    formAuthenticity: PropTypes.object,
     product: PropTypes.object.isRequired,
-    similarProducts: PropTypes.array.isRequired,
+    similarProducts: PropTypes.array,
+  }
+  static defaultProps = {
+    formAuthenticity: {},
+    similarProducts: [],
   }
   state = {
     good: null,
     product: this.props.product
-  }
-  componentDidMount() {
-    // TODO: Make TestComponentService or smth
-    this.validateProps(this.props);
-  }
-  validateProps(props) {
-    // Number of attributes in every good equals number of product properties
-    const { product: { goods, properties } } = props;
-
-    if (properties && properties.length && goods && goods.length) {
-      const propertiesCount = properties.length;
-      const hasDifferentCount = goods.some((el) =>
-        Object.keys(el.attributes).length !== propertiesCount
-      );
-
-      if (hasDifferentCount) {
-        ErrorService.notifyErrorProps('Количество свойств товара отличается от количества аттрибутов варианта', {
-          props,
-          component: 'ProductCard',
-        });
-      }
-    }
   }
   handleGoodChange(good) {
     const product = {
