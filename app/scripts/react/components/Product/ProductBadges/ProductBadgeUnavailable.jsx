@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import ProductBadge from './ProductBadge';
 
 export default class ProductBadgeUnavailable {
@@ -9,7 +10,7 @@ export default class ProductBadgeUnavailable {
     const { product } = this.props;
 
     if (!product.has_ordering_goods && !product.is_run_out) {
-      return <ProductBadge text="Не продается" status="sold" />;
+      return <ProductBadge text={t('vendor.badges.not_available')} status="sold" />;
     } else {
       return null;
     }
