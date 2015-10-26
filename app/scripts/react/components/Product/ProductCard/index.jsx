@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import makeTranslatable from '../../HoC/makeTranslatable';
 import ProductCard from './ProductCard';
 
+@makeTranslatable
 export default class ProductCardContainer extends Component {
   static propTypes = {
     formAuthenticity: PropTypes.object,

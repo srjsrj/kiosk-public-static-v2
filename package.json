@@ -1,6 +1,6 @@
 {
   "name": "KioskPublicStatic",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
@@ -55,6 +55,7 @@
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.1",
+    "i18next-client": "^1.10.3",
     "mocha": "^2.2.5",
     "pretty-hrtime": "^0.2.2",
     "require-dir": "^0.1.0",

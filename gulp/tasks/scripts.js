@@ -8,21 +8,19 @@ import bundleLogger from '../util/bundleLogger';
 import handleErrors from '../util/handleErrors';
 import { scripts as config } from '../config';
 
-// External dependencies we do not want to rebundle while developing,
-// but include in our dist bundle
-const dependencies = {
-  'react': './node_modules/react/addons',
-  'redux': './node_modules/redux',
+const baseDependencies = {
   'classnames': './node_modules/classnames',
   'immutable': './node_modules/immutable/dist/immutable',
   'jss': './node_modules/jss/lib',
   'nouislider': './node_modules/noUiSlider/distribute/nouislider',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
+  'react': './node_modules/react/addons',
+  'redux': './node_modules/redux',
   'reqwest': './node_modules/reqwest',
   'tinycolor2': './node_modules/tinycolor2',
   'URIjs': './node_modules/URIjs/src/URI',
+  'i18next': './node_modules/i18next-client',
 
-  'reactUjs': './app/scripts/resources/react_ujs',
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.mmenu': './app/bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',
   'jquery.role': './app/bower_components/jquery.role/lib/jquery.role',
@@ -33,11 +31,43 @@ const dependencies = {
   'fancybox': './app/bower_components/fancybox/source/jquery.fancybox',
   'fancybox.wannabe': './app/bower_components/fancybox-wannabe-fix/index',
   'accounting': './app/bower_components/accounting.js/accounting',
-  'lodash': './node_modules/lodash'
+  'lodash': './node_modules/lodash',
 };
-const nonProductionDependencies = [
-  'reactUjs'
-];
+const staticDependencies = {
+  'reactUjs': './app/scripts/resources/react_ujs',
+}
+const prerenderDependencies = {
+  // For now we will use client version of i18next, but later
+  // it can change to i18next-node
+  'i18next': './node_modules/i18next-client',
+}
+
+function getDependencies(env) {
+  switch(env) {
+    case 'static':
+      return {...baseDependencies, ...staticDependencies};
+    case 'prerender':
+      return {...baseDependencies, ...prerenderDependencies};
+    default:
+      return baseDependencies;
+  }
+}
+
+function requireDependencies(env, bundler) {
+  const dependencies = getDependencies(env);
+
+  Object.keys(dependencies).forEach((dep) => {
+    bundler.require(dependencies[dep], { expose: dep });
+  });
+}
+
+function externalDependencies(env, bundler) {
+  const dependencies = getDependencies(env);
+
+  Object.keys(dependencies).forEach((dep) => {
+    bundler.external(dep);
+  });
+}
 
 gulp.task('[Static] Client scripts', () => {
   let bundler = browserify({
@@ -46,9 +76,7 @@ gulp.task('[Static] Client scripts', () => {
     extensions: config.static.client.extensions
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    bundler.external(dep);
-  });
+  externalDependencies('static', bundler);
 
   function rebundle() {
     bundleLogger.start(config.static.client.outputName);
@@ -90,9 +118,7 @@ gulp.task('[Static] Vendor scripts', (cb) => {
     extensions: config.static.vendor.extensions
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    bundler.require(dependencies[dep], { expose: dep });
-  });
+  requireDependencies('static', bundler);
 
   bundleLogger.start(config.static.vendor.outputName);
 
@@ -109,20 +135,18 @@ gulp.task('[Static] Vendor scripts', (cb) => {
 });
 
 gulp.task('[Static] Test scripts', () => {
-  let testBundler = browserify({
+  let bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.static.test.entries,
     extensions: config.static.test.extensions
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    testBundler.external(dep);
-  });
+  externalDependencies('static', bundler);
 
   function rebundle() {
     bundleLogger.start(config.static.test.outputName);
 
-    return testBundler.bundle()
+    return bundler.bundle()
       .on('error', handleErrors)
       .pipe(source(config.static.test.outputName))
       .pipe(gulp.dest(config.static.test.dest))
@@ -132,16 +156,16 @@ gulp.task('[Static] Test scripts', () => {
   };
 
   if (global.isWatching) {
-    testBundler = watchify(testBundler
+    bundler = watchify(bundler
       .transform('coffee-reactify')
       .transform('babelify', {
         stage: 0,
         ignore: /(node_modules|bower_components)/
       })
     );
-    testBundler.on('update', rebundle);
+    bundler.on('update', rebundle);
   } else {
-    testBundler
+    bundler
       .transform('coffee-reactify')
       .transform('babelify', {
         stage: 0,
@@ -153,21 +177,17 @@ gulp.task('[Static] Test scripts', () => {
 });
 
 gulp.task('[Production] Scripts', () => {
-  var appBundler = browserify({
+  var bundler = browserify({
     cache: {}, packageCache: {},
     entries: config.production.bundle.entries,
     extensions: config.production.bundle.extensions
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    if (nonProductionDependencies.indexOf(dep) == -1) {
-      appBundler.require(dependencies[dep], { expose: dep });
-    }
-  });
+  requireDependencies('production', bundler);
 
   bundleLogger.start(config.production.bundle.outputName);
 
-  return appBundler
+  return bundler
     .transform('babelify', {
       stage: 0,
       ignore: /(node_modules|bower_components)/
@@ -190,9 +210,7 @@ gulp.task('[Production] Components scripts', () => {
     extensions: config.production.components.extensions,
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    bundler.require(dependencies[dep], { expose: dep });
-  });
+  requireDependencies('prerender', bundler);
 
   bundleLogger.start(config.production.components.outputName);
 
@@ -219,9 +237,7 @@ gulp.task('[Development] Components scripts', () => {
     extensions: config.development.components.extensions
   });
 
-  Object.keys(dependencies).forEach((dep) => {
-    bundler.require(dependencies[dep], { expose: dep });
-  });
+  requireDependencies('prerender', bundler);
 
   bundleLogger.start(config.development.components.outputName);
 

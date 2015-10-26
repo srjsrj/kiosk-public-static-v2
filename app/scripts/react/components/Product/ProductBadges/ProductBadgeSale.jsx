@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import ProductBadge from './ProductBadge';
 
 export default class ProductBadgeSale {
@@ -9,7 +10,7 @@ export default class ProductBadgeSale {
     const { product } = this.props;
 
     if (product.is_sale) {
-      let title = 'SALE';
+      let title = t('vendor.badges.sale');
 
       if (product.sale_percent) {
         let salePercent = product.sale_percent;
@@ -18,7 +19,7 @@ export default class ProductBadgeSale {
           salePercent = parseInt(salePercent, 10);
         }
 
-        title = `SALE - ${salePercent}%`;
+        title = t('vendor.badges.sale_percent', { percent: salePercent });
       }
 
       return <ProductBadge text={title} status="sale" />;
