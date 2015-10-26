@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
+import makeTranslatable from '../../HoC/makeTranslatable';
 import Image from '../../common/Image';
 import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
 
+@makeTranslatable
 export default class ProductBlock {
   static propTypes = {
     product: PropTypes.object.isRequired,

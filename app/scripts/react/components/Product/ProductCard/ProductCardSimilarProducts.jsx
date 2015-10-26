@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import { product } from '../../../projectTypes';
 import ProductBlock from '../ProductBlock';
 
@@ -19,7 +20,7 @@ export default class ProductCardSimilarProducts {
       return (
         <section className="b-item-list b-item-list_additional">
           <h1 className="b-item-list__title">
-            {'С этим товаром покупают также'}
+            {t('vendor.similar_product.title')}
           </h1>
           <div className="b-item-list__content">
             {products.map(this.renderProduct)}

@@ -1,4 +1,5 @@
 window._ = require 'lodash'
+window.I18n = require 'i18next' # Fallback for rails I18n
 window.$ = window.jQuery = require 'jquery'
 window.React = require 'react'
 window.Dispatcher = require('flux').Dispatcher

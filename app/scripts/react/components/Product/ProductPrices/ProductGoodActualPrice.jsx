@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
 export default class ProductGoodActualPrice {
@@ -11,7 +12,7 @@ export default class ProductGoodActualPrice {
     if (good.actual_price) {
       return <HumanizedMoneyWithCurrency money={good.actual_price} />;
     } else {
-      return <span>{'Цена неизвестна'}</span>;
+      return <span>{t('vendor.product.blank_price')}</span>;
     }
   }
 }

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import { getOptions } from './utils';
 import PropertyListItem from './PropertyListItem';
 
@@ -28,7 +29,7 @@ export default class PropertyList {
     } else {
       return (
         <div className="p-lg text-center">
-          <p>Нет характеристик для вывода</p>
+          <p>{t('vendor.properties.empty')}</p>
         </div>
       );
     }

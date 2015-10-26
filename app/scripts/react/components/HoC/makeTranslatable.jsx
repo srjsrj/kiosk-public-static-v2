@@ -17,17 +17,7 @@ export default (ComposedComponent) => (
     static defaultProps = {
       i18n: {
         locale: 'ru',
-        translations: {
-          vendor: {
-            badges: {
-              new: 'Новиночка',
-              sale_percent: 'SALE - __percent__%',
-              not_available: 'Не продаётся',
-              sale: 'SALE',
-              sold: 'Продано',
-            },
-          },
-        },
+        translations: {},
       },
     }
     componentWillMount() {
@@ -35,6 +25,8 @@ export default (ComposedComponent) => (
 
       i18n.init({
         fallbackLng: 'ru',
+        interpolationPrefix: '%{',
+        interpolationSuffix: '}',
         lng: locale,
         resStore: {
           [locale]: {

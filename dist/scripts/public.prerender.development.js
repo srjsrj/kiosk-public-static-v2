@@ -85,6 +85,8 @@ exports['default'] = function (ComposedComponent) {
 
         _i18next2['default'].init({
           fallbackLng: 'ru',
+          interpolationPrefix: '%{',
+          interpolationSuffix: '}',
           lng: locale,
           resStore: _defineProperty({}, locale, {
             translation: translations
@@ -113,17 +115,7 @@ exports['default'] = function (ComposedComponent) {
       value: {
         i18n: {
           locale: 'ru',
-          translations: {
-            vendor: {
-              badges: {
-                'new': 'Новиночка',
-                sale_percent: 'SALE - __percent__%',
-                not_available: 'Не продаётся',
-                sale: 'SALE',
-                sold: 'Продано'
-              }
-            }
-          }
+          translations: {}
         }
       },
       enumerable: true
@@ -193,21 +185,23 @@ exports["default"] = Logo;
 module.exports = exports["default"];
 
 },{"react":"react"}],6:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _i18next = require('i18next');
 
 var ProductAddToCartButton = (function () {
   function ProductAddToCartButton() {
@@ -215,22 +209,22 @@ var ProductAddToCartButton = (function () {
   }
 
   _createClass(ProductAddToCartButton, [{
-    key: "render",
+    key: 'render',
     value: function render() {
-      return _react2["default"].createElement(
-        "button",
+      return _react2['default'].createElement(
+        'button',
         {
-          className: "b-btn element--active-opacity",
-          "data-disable-with": "Добавляем...",
+          className: 'b-btn element--active-opacity',
+          'data-disable-with': (0, _i18next.t)('vendor.button.disable_with.adding'),
           disabled: this.props.disabled,
-          name: "to_cart",
-          type: "submit"
+          name: 'to_cart',
+          type: 'submit'
         },
         this.props.text
       );
     }
   }], [{
-    key: "propTypes",
+    key: 'propTypes',
     value: {
       disabled: _react.PropTypes.bool,
       text: _react.PropTypes.string.isRequired
@@ -241,10 +235,10 @@ var ProductAddToCartButton = (function () {
   return ProductAddToCartButton;
 })();
 
-exports["default"] = ProductAddToCartButton;
-module.exports = exports["default"];
+exports['default'] = ProductAddToCartButton;
+module.exports = exports['default'];
 
-},{"react":"react"}],7:[function(require,module,exports){
+},{"i18next":"i18next","react":"react"}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -605,6 +599,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _HoCMakeTranslatable = require('../../HoC/makeTranslatable');
+
+var _HoCMakeTranslatable2 = _interopRequireDefault(_HoCMakeTranslatable);
+
 var _commonImage = require('../../common/Image');
 
 var _commonImage2 = _interopRequireDefault(_commonImage);
@@ -619,7 +617,7 @@ var _ProductPrices2 = _interopRequireDefault(_ProductPrices);
 
 var ProductBlock = (function () {
   function ProductBlock() {
-    _classCallCheck(this, ProductBlock);
+    _classCallCheck(this, _ProductBlock);
   }
 
   _createClass(ProductBlock, [{
@@ -665,13 +663,15 @@ var ProductBlock = (function () {
     enumerable: true
   }]);
 
+  var _ProductBlock = ProductBlock;
+  ProductBlock = (0, _HoCMakeTranslatable2['default'])(ProductBlock) || ProductBlock;
   return ProductBlock;
 })();
 
 exports['default'] = ProductBlock;
 module.exports = exports['default'];
 
-},{"../../common/Image":43,"../ProductPrices":32,"./ProductBlockBadges":12,"react":"react"}],14:[function(require,module,exports){
+},{"../../HoC/makeTranslatable":4,"../../common/Image":43,"../ProductPrices":32,"./ProductBlockBadges":12,"react":"react"}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1324,6 +1324,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _i18next = require('i18next');
+
 var _projectTypes = require('../../../projectTypes');
 
 var _ProductBlock = require('../ProductBlock');
@@ -1352,7 +1354,7 @@ var ProductCardSimilarProducts = (function () {
           _react2['default'].createElement(
             'h1',
             { className: 'b-item-list__title' },
-            'С этим товаром покупают также'
+            (0, _i18next.t)('vendor.similar_product.title')
           ),
           _react2['default'].createElement(
             'div',
@@ -1384,7 +1386,7 @@ var ProductCardSimilarProducts = (function () {
 exports['default'] = ProductCardSimilarProducts;
 module.exports = exports['default'];
 
-},{"../../../projectTypes":57,"../ProductBlock":13,"react":"react"}],21:[function(require,module,exports){
+},{"../../../projectTypes":57,"../ProductBlock":13,"i18next":"i18next","react":"react"}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1602,6 +1604,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _i18next = require('i18next');
+
 var _commonHiddenInput = require('../../common/HiddenInput');
 
 var _commonHiddenInput2 = _interopRequireDefault(_commonHiddenInput);
@@ -1609,9 +1613,6 @@ var _commonHiddenInput2 = _interopRequireDefault(_commonHiddenInput);
 var _ProductAddToCartButton = require('../ProductAddToCartButton');
 
 var _ProductAddToCartButton2 = _interopRequireDefault(_ProductAddToCartButton);
-
-// TODO: i18n
-var ADD_TO_CART_BUTTON = 'В корзину';
 
 var ProductCartForProduct = (function () {
   function ProductCartForProduct() {
@@ -1633,7 +1634,7 @@ var ProductCartForProduct = (function () {
           _react2['default'].createElement(
             'div',
             { className: 'b-item-full__form__submit' },
-            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
           )
         )
       );
@@ -1652,7 +1653,7 @@ var ProductCartForProduct = (function () {
 exports['default'] = ProductCartForProduct;
 module.exports = exports['default'];
 
-},{"../../common/HiddenInput":42,"../ProductAddToCartButton":6,"react":"react"}],25:[function(require,module,exports){
+},{"../../common/HiddenInput":42,"../ProductAddToCartButton":6,"i18next":"i18next","react":"react"}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1795,6 +1796,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _i18next = require('i18next');
+
 var _routesApp = require('../../../../routes/app');
 
 var _commonCSRFToken = require('../../common/CSRFToken');
@@ -1839,7 +1842,7 @@ var ProductCart = (function (_Component) {
           });
         }
       } else {
-        return _react2['default'].createElement(_ProductCartNotAvailable2['default'], { title: 'Не доступно' });
+        return _react2['default'].createElement(_ProductCartNotAvailable2['default'], { title: (0, _i18next.t)('vendor.product.not_available') });
       }
     }
   }, {
@@ -1888,7 +1891,7 @@ var ProductCart = (function (_Component) {
 exports['default'] = ProductCart;
 module.exports = exports['default'];
 
-},{"../../../../routes/app":63,"../../common/CSRFToken":41,"../../common/HiddenInput":42,"./ProductCartForProduct":24,"./ProductCartForProductItems":25,"./ProductCartNotAvailable":26,"react":"react"}],28:[function(require,module,exports){
+},{"../../../../routes/app":63,"../../common/CSRFToken":41,"../../common/HiddenInput":42,"./ProductCartForProduct":24,"./ProductCartForProductItems":25,"./ProductCartNotAvailable":26,"i18next":"i18next","react":"react"}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1905,6 +1908,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _i18next = require('i18next');
+
 var _constantsGlobalEventKeys = require('../../../constants/globalEventKeys');
 
 var _helpersProduct = require('../../../helpers/product');
@@ -1912,9 +1917,6 @@ var _helpersProduct = require('../../../helpers/product');
 var _ProductAddToCartButton = require('../ProductAddToCartButton');
 
 var _ProductAddToCartButton2 = _interopRequireDefault(_ProductAddToCartButton);
-
-// TODO: i18n
-var ADD_TO_CART_BUTTON = 'В корзину';
 
 var ProductGoods = (function () {
   function ProductGoods() {
@@ -2022,7 +2024,7 @@ var ProductGoods = (function () {
           _react2['default'].createElement(
             'div',
             { className: 'b-item-full__form__submit' },
-            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
           )
         );
       } else {
@@ -2041,7 +2043,7 @@ var ProductGoods = (function () {
           _react2['default'].createElement(
             'div',
             { className: 'b-item-full__form__row b-item-full__form__submit' },
-            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: ADD_TO_CART_BUTTON })
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
           )
         );
       }
@@ -2061,7 +2063,7 @@ var ProductGoods = (function () {
 exports['default'] = ProductGoods;
 module.exports = exports['default'];
 
-},{"../../../constants/globalEventKeys":48,"../../../helpers/product":53,"../ProductAddToCartButton":6,"react":"react"}],29:[function(require,module,exports){
+},{"../../../constants/globalEventKeys":48,"../../../helpers/product":53,"../ProductAddToCartButton":6,"i18next":"i18next","react":"react"}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2077,6 +2079,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _i18next = require('i18next');
 
 var _commonMoneyHumanizedMoneyWithCurrency = require('../../common/Money/HumanizedMoneyWithCurrency');
 
@@ -2098,7 +2102,7 @@ var ProductGoodActualPrice = (function () {
         return _react2['default'].createElement(
           'span',
           null,
-          'Цена неизвестна'
+          (0, _i18next.t)('vendor.product.blank_price')
         );
       }
     }
@@ -2116,7 +2120,7 @@ var ProductGoodActualPrice = (function () {
 exports['default'] = ProductGoodActualPrice;
 module.exports = exports['default'];
 
-},{"../../common/Money/HumanizedMoneyWithCurrency":45,"react":"react"}],30:[function(require,module,exports){
+},{"../../common/Money/HumanizedMoneyWithCurrency":45,"i18next":"i18next","react":"react"}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2237,7 +2241,7 @@ var ProductGoodPrices = (function () {
         'div',
         { className: 'b-item__price' },
         _react2['default'].createElement(_commonMoneyHumanizedMoney2['default'], { money: minPrice }),
-        ' — ',
+        ' - ',
         _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: maxPrice })
       );
     }
@@ -2372,6 +2376,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _i18next = require('i18next');
+
 var _utils = require('./utils');
 
 var _PropertyListItem = require('./PropertyListItem');
@@ -2424,7 +2430,7 @@ var PropertyList = (function () {
           _react2['default'].createElement(
             'p',
             null,
-            'Нет характеристик для вывода'
+            (0, _i18next.t)('vendor.properties.empty')
           )
         );
       }
@@ -2446,7 +2452,7 @@ var PropertyList = (function () {
 exports['default'] = PropertyList;
 module.exports = exports['default'];
 
-},{"./PropertyListItem":34,"./utils":39,"react":"react"}],34:[function(require,module,exports){
+},{"./PropertyListItem":34,"./utils":39,"i18next":"i18next","react":"react"}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2466,6 +2472,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _i18next = require('i18next');
 
 var _constantsPropertyTypes = require('../../../constants/propertyTypes');
 
@@ -2508,7 +2516,7 @@ var PropertyListItem = (function () {
         return _react2['default'].createElement(
           'span',
           null,
-          'Неизвестный тип характеристики'
+          (0, _i18next.t)('vendor.property.unknown_type')
         );
       }
     }
@@ -2543,7 +2551,7 @@ var PropertyListItem = (function () {
 exports['default'] = PropertyListItem;
 module.exports = exports['default'];
 
-},{"../../../constants/propertyTypes":50,"./PropertyListItemColor":35,"./PropertyListItemDictionary":36,"react":"react"}],35:[function(require,module,exports){
+},{"../../../constants/propertyTypes":50,"./PropertyListItemColor":35,"./PropertyListItemDictionary":36,"i18next":"i18next","react":"react"}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2773,6 +2781,8 @@ var _react = require('react');
 
 var _deepDiff = require('deep-diff');
 
+var _i18next = require('i18next');
+
 var _servicesError = require('../../../services/Error');
 
 var _servicesError2 = _interopRequireDefault(_servicesError);
@@ -2796,10 +2806,6 @@ var _PropertyList2 = _interopRequireDefault(_PropertyList);
 var _PropertySingle = require('./PropertySingle');
 
 var _PropertySingle2 = _interopRequireDefault(_PropertySingle);
-
-// TODO: i18n
-var ADD_TO_CART_BUTTON = 'В корзину';
-var NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 
 var ProductProperties = (function (_Component) {
   _inherits(ProductProperties, _Component);
@@ -2906,7 +2912,7 @@ var ProductProperties = (function (_Component) {
         value: good.global_id
       });
       var addToCartButton = React.createElement(_ProductAddToCartButton2['default'], {
-        text: !!good ? ADD_TO_CART_BUTTON : NOT_ENOUGH_DATA_BUTTON,
+        text: !!good ? (0, _i18next.t)('vendor.button.to_cart') : (0, _i18next.t)('vendor.button.select_good'),
         disabled: !good
       });
 
@@ -2958,7 +2964,7 @@ var ProductProperties = (function (_Component) {
 exports['default'] = ProductProperties;
 module.exports = exports['default'];
 
-},{"../../../constants/globalEventKeys":48,"../../../services/Error":61,"../../common/HiddenInput":42,"../ProductAddToCartButton":6,"./PropertyList":33,"./PropertySingle":37,"./utils":39,"deep-diff":68,"react":"react"}],39:[function(require,module,exports){
+},{"../../../constants/globalEventKeys":48,"../../../services/Error":61,"../../common/HiddenInput":42,"../ProductAddToCartButton":6,"./PropertyList":33,"./PropertySingle":37,"./utils":39,"deep-diff":68,"i18next":"i18next","react":"react"}],39:[function(require,module,exports){
 // Example of format
 // properties: [{
 //   id: 123,

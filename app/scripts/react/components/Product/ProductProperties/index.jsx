@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
+import { t } from 'i18next';
 import ErrorService from '../../../services/Error';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import {
@@ -9,10 +10,6 @@ import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
 import PropertySingle from './PropertySingle';
-
-// TODO: i18n
-const ADD_TO_CART_BUTTON = 'В корзину';
-const NOT_ENOUGH_DATA_BUTTON = 'Выберите характеристику';
 
 export default class ProductProperties extends Component {
   static propTypes = {
@@ -93,7 +90,7 @@ export default class ProductProperties extends Component {
     );
     const addToCartButton = (
       <ProductAddToCartButton
-        text={!!good ? ADD_TO_CART_BUTTON : NOT_ENOUGH_DATA_BUTTON}
+        text={!!good ? t('vendor.button.to_cart') : t('vendor.button.select_good')}
         disabled={!good}
       />
     );

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import * as propertyTypes from '../../../constants/propertyTypes';
 import PropertyListItemColor from './PropertyListItemColor';
 import PropertyListItemDictionary from './PropertyListItemDictionary';
@@ -26,7 +27,7 @@ export default class PropertyListItem {
         />
       );
     } else {
-      return <span>Неизвестный тип характеристики</span>;
+      return <span>{t('vendor.property.unknown_type')}</span>;
     }
   }
   getComponentByType(propertyType) {
