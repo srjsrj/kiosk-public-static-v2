@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { t } from 'i18next';
 import { vendorCartItems } from '../../../../routes/app';
 import CSRFToken from '../../common/CSRFToken';
 import HiddenInput from '../../common/HiddenInput';
@@ -31,7 +32,7 @@ export default class ProductCart extends Component {
       }
     } else {
       return (
-        <ProductCartNotAvailable title="Не доступно" />
+        <ProductCartNotAvailable title={t('vendor.product.not_available')} />
       );
     }
   }

@@ -40,7 +40,7 @@ describe('[Component] ProductCart', () => {
         <ProductCart {...props} />
       );
       const button = findDOMNode(component).querySelector('.b-btn_trans');
-      expect(button).to.have.property('textContent').that.equals('Не доступно');
+      expect(button.textContent).is.equals('Не продаётся');
     });
   });
 

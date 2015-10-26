@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 
 export default class ProductAddToCartButton {
   static propTypes = {
@@ -9,7 +10,7 @@ export default class ProductAddToCartButton {
     return (
       <button
         className="b-btn element--active-opacity"
-        data-disable-with="Добавляем..."
+        data-disable-with={t('vendor.button.disable_with.adding')}
         disabled={this.props.disabled}
         name="to_cart"
         type="submit"

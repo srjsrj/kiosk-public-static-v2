@@ -13,7 +13,7 @@ export default class ProductGoodPrices {
     return (
       <div className="b-item__price">
         <HumanizedMoney money={minPrice} />
-        &nbsp;&mdash;&nbsp;
+        {' - '}
         <HumanizedMoneyWithCurrency money={maxPrice} />
       </div>
     );

@@ -1,10 +1,8 @@
 import React, { PropTypes } from 'react';
+import { t } from 'i18next';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { goodOrderTitle } from '../../../helpers/product';
 import ProductAddToCartButton from '../ProductAddToCartButton';
-
-// TODO: i18n
-const ADD_TO_CART_BUTTON = 'В корзину';
 
 export default class ProductGoods {
   static propTypes = {
@@ -85,7 +83,7 @@ export default class ProductGoods {
             {this.renderSelect(product)}
           </div>
           <div className="b-item-full__form__submit">
-            <ProductAddToCartButton text={ADD_TO_CART_BUTTON} />
+            <ProductAddToCartButton text={t('vendor.button.to_cart')} />
           </div>
         </div>
       );
@@ -98,7 +96,7 @@ export default class ProductGoods {
             </div>
           </div>
           <div className="b-item-full__form__row b-item-full__form__submit">
-            <ProductAddToCartButton text={ADD_TO_CART_BUTTON} />
+            <ProductAddToCartButton text={t('vendor.button.to_cart')} />
           </div>
         </span>
       );

@@ -5,10 +5,6 @@ import localeLanguages from '../../constants/localeLanguages';
 export default (ComposedComponent) => (
   class Translatable extends Component {
     static propTypes = {
-      children: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.arrayOf(PropTypes.element),
-      ]),
       i18n: PropTypes.shape({
         locale: PropTypes.oneOf(localeLanguages).isRequired,
         translations: PropTypes.object.isRequired,
@@ -17,17 +13,7 @@ export default (ComposedComponent) => (
     static defaultProps = {
       i18n: {
         locale: 'ru',
-        translations: {
-          vendor: {
-            badges: {
-              new: 'Новиночка',
-              sale_percent: 'SALE - __percent__%',
-              not_available: 'Не продаётся',
-              sale: 'SALE',
-              sold: 'Продано',
-            },
-          },
-        },
+        translations: {},
       },
     }
     componentWillMount() {
@@ -35,6 +21,8 @@ export default (ComposedComponent) => (
 
       i18n.init({
         fallbackLng: 'ru',
+        interpolationPrefix: '%{',
+        interpolationSuffix: '}',
         lng: locale,
         resStore: {
           [locale]: {
