@@ -103,7 +103,6 @@ exports['default'] = function (ComposedComponent) {
     }], [{
       key: 'propTypes',
       value: {
-        children: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.arrayOf(_react.PropTypes.element)]),
         i18n: _react.PropTypes.shape({
           locale: _react.PropTypes.oneOf(_constantsLocaleLanguages2['default']).isRequired,
           translations: _react.PropTypes.object.isRequired

@@ -5,10 +5,6 @@ import localeLanguages from '../../constants/localeLanguages';
 export default (ComposedComponent) => (
   class Translatable extends Component {
     static propTypes = {
-      children: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.arrayOf(PropTypes.element),
-      ]),
       i18n: PropTypes.shape({
         locale: PropTypes.oneOf(localeLanguages).isRequired,
         translations: PropTypes.object.isRequired,
