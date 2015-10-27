@@ -31,13 +31,4 @@ const initialState = Immutable.fromJS({
   isSaving: false
 });
 
-function getUnsavedFields(currentSaved, current) {
-  return Object.keys(current).reduce((prev, key) => {
-    if (currentSaved[key] !== current[key]) {
-      return { ...prev, [key]: current[key] };
-    }
-    return prev;
-  }, {});
-}
-
 export default createReducer(initialState, {});

@@ -4555,11 +4555,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var _immutable = require('immutable');
 
@@ -4598,15 +4594,6 @@ var initialState = _immutable2['default'].fromJS({
   unsavedFields: {},
   isSaving: false
 });
-
-function getUnsavedFields(currentSaved, current) {
-  return Object.keys(current).reduce(function (prev, key) {
-    if (currentSaved[key] !== current[key]) {
-      return _extends({}, prev, _defineProperty({}, key, current[key]));
-    }
-    return prev;
-  }, {});
-}
 
 exports['default'] = (0, _utilsCreateReducer2['default'])(initialState, {});
 module.exports = exports['default'];
