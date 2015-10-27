@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'redux/react';
 import connectToRedux from '../HoC/connectToRedux';
-import Logo from '.';
+import Logo from './index';
 
 @connect((state) => ({
   globalLogoUrl: state.design.getIn(['current', 'logoUrl'])

@@ -910,7 +910,14 @@ var cardProps = {
     "field": "authenticity_token"
   }
 };
+var logoProps = {
+  "linkUrl": "http://wannabe.vagrant.dev:3000",
+  "logoText": "Wannabe Jewelry Moscow",
+  "imageAlt": "Wannabe Jewelry Moscow",
+  "logoUrl": null
+};
 
+React.renderToString(React.createElement(Logo, logoProps));
 React.renderToString(React.createElement(ProductBlock, blockProps));
 React.renderToString(React.createElement(ProductCard, cardProps));
 console.log('Prendering public components test finished successfully');

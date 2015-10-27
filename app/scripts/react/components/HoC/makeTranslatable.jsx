@@ -19,19 +19,21 @@ export default (ComposedComponent) => (
     componentWillMount() {
       const { locale, translations } = this.props.i18n;
 
-      i18n.init({
-        fallbackLng: 'ru',
-        interpolationPrefix: '%{',
-        interpolationSuffix: '}',
-        lng: locale,
-        resStore: {
-          [locale]: {
-            translation: translations,
+      if (!i18n.hasResourceBundle(locale)) {
+        i18n.init({
+          fallbackLng: 'ru',
+          interpolationPrefix: '%{',
+          interpolationSuffix: '}',
+          lng: locale,
+          resStore: {
+            [locale]: {
+              translation: translations,
+            },
           },
-        },
-      });
+        });
 
-      i18n.setLng(locale);
+        i18n.setLng(locale);
+      }
     }
     render() {
       return (
