@@ -41,7 +41,7 @@
 
     &__col
       &-clear,
-      &-code,
+      &-right,
       &-back,
       &-submit
         @extend %grid__item
@@ -52,7 +52,7 @@
         @extend %palm--one-whole
         @extend %desk--three-twelfths
 
-      &-code
+      &-right
         @extend %six-twelfths
         @extend %lap--eight-twelfths
         @extend %palm--one-whole
@@ -66,24 +66,40 @@
         @extend %five-twelfths
         @extend %palm--one-whole
 
+      &-code,
       &-submit
+        width: 46%
+        display: inline-block
+        vertical-align: top
+
+        .coupon-info
+          margin-top: 10px
+
+        @include grid-media-query("palm")
+          width: 100%
+
+          .coupon-info
+            margin-top: 0
+            margin-bottom: 10px
+
+      &-submit
+        padding-left: 0
+        margin-left: 2%
         .b-cart__action__next,
         .b-cart__action__submit
           width: 100%
           margin-left: 0
-          @include grid-media-query("palm")
-            margin-top: 10px
+        @include grid-media-query("palm")
+          margin-left: 0
 
     &__next,
     &__submit
-      margin-left: 2%
       padding-top: 13px
       padding-bottom: 13px
 
-    &__code,
     &__next,
-    &__submit
       width: 46%
+      margin-left: 2%
       display: inline-block
       vertical-align: top
 
@@ -91,9 +107,9 @@
       border: 1px solid #e2e2e2
       padding: 14px 3px 13px 17px
       box-sizing: border-box
+      width: 100%
       @include grid-media-query("palm")
         text-align: center
-        width: 100%
         margin: 0 0 10px
 
     &__next

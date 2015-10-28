@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import * as apiRoutes from '../../../routes/api';
 import makeTranslatable from '../HoC/makeTranslatable';
-import CartAlert from './CartAlert';
+import OrderAlert from './OrderAlert';
 import TextInput from '../common/TextInput';
 
 @makeTranslatable
-export default class CartCoupon extends Component {
+export default class OrderCoupon extends Component {
   static propTypes = {
     code: PropTypes.string,
     message: PropTypes.string,
@@ -73,15 +73,24 @@ export default class CartCoupon extends Component {
     const { code, message } = this.state;
 
     return (
-      <div className="b-cart__action__col-code">
-        <TextInput
-          className="b-cart__action__code"
-          name="coupon_code"
-          onChange={::this.handleChange}
-          placeholder={t('vendor.placeholders.coupon')}
-          value={code}
-        />
-        {code && <CartAlert text={message} />}
+      <div className="b-form__row__widget">
+        <div className="form-group string optional">
+          <label
+            className="string optional control-label"
+            htmlFor="vendor_order_coupon_code"
+          >
+            {t('vendor.order.fields.coupon_code')}
+          </label>
+          <TextInput
+            className="string optional form-control"
+            id="vendor_order_coupon_code"
+            name="vendor_order[coupon_code]"
+            onChange={::this.handleChange}
+            placeholder={t('vendor.placeholders.coupon')}
+            value={code}
+          />
+        </div>
+        {code && <OrderAlert text={message} />}
       </div>
     );
   }

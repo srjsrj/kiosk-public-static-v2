@@ -64,12 +64,12 @@
                     %a.b-cart__action__clear.b-btn.b-btn_trans{href: 'welcome.html'}
                       Очистить корзину
 
-                  %span{data: {react-class: 'CartCoupon'}}
-                  / .b-cart__action__col-code
-                  /   %input.b-cart__action__code{type: 'text', placeholder: 'Промо-код (если есть)'}
-                  /   %button.b-cart__action__submit.b-btn{type: 'submit'}
-                  /     Оформить заказ
+                  .b-cart__action__col-right
+                    %span{data: {react-class: 'CartCoupon'}}
 
+                    .b-cart__action__col-submit
+                      %button.b-btn.b-cart__action__submit{type: 'submit'}
+                        Оформить заказ
 
       .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'
