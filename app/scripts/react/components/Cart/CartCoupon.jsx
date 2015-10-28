@@ -19,22 +19,12 @@ export default class CartCoupon extends Component {
     code: this.props.code,
     message: this.props.message,
   }
-  updateMessage(message) {
-    this.setState({ message });
+  componentDidMount() {
+    if (this.props.code) {
+      this.processCode(this.props.code);
+    }
   }
-  checkCode(code) {
-    if (this.pendingRequest) this.pendingRequest.abort();
-
-    this.pendingRequest = $.ajax({
-      url: apiRoutes.checkCouponCode(),
-      type: 'POST',
-      data: { code },
-    });
-
-    return this.pendingRequest;
-  }
-  handleChange(e) {
-    const { value } = e.target;
+  processCode(value) {
     const { code } = this.state;
 
     if (value === code || value === '') {
@@ -55,19 +45,27 @@ export default class CartCoupon extends Component {
           this.updateMessage(message);
         })
         .fail((xhr, textStatus) => {
-          let message;
-
-          if (textStatus === 'abort') {
-            message = t('vendor.coupon.invalid', { value });
-          } else {
-            message = t('vendor.coupon.error');
+          if (textStatus !== 'abort') {
+            this.updateMessage(t('vendor.coupon.error'));
           }
-
-          this.updateMessage(message);
         });
     }
 
     this.setState({ code: value });
+  }
+  checkCode(code) {
+    if (this.pendingRequest) this.pendingRequest.abort();
+
+    this.pendingRequest = $.ajax({
+      url: apiRoutes.checkCouponCode(),
+      type: 'POST',
+      data: { code },
+    });
+
+    return this.pendingRequest;
+  }
+  updateMessage(message) {
+    this.setState({ message });
   }
   render() {
     const { code, message } = this.state;
@@ -77,11 +75,11 @@ export default class CartCoupon extends Component {
         <TextInput
           className="b-cart__action__code"
           name="coupon_code"
-          onChange={::this.handleChange}
+          onChange={(e) => this.processCode(e.target.value)}
           placeholder={t('vendor.placeholders.coupon')}
           value={code}
         />
-        {code && <CartAlert text={message} />}
+        {code && message && <CartAlert text={message} />}
       </div>
     );
   }

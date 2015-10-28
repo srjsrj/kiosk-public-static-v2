@@ -26,12 +26,13 @@ describe('[Component] CartCoupon', () => {
 
   it ('should display alert when code isn\'t empty', (done) => {
     const code = 'code';
+    const message = 'message';
     const tComponent = renderIntoDocument(
       <CartCoupon />
     );
     const component = tComponent.refs.translatable;
 
-    component.setState({ code });
+    component.setState({ code, message });
 
     then(() => {
       const alerts = scryRenderedComponentsWithType(component, Alert);

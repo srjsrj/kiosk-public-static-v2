@@ -163,29 +163,17 @@ var CartCoupon = (function (_Component) {
   }
 
   _createClass(CartCoupon, [{
-    key: 'updateMessage',
-    value: function updateMessage(message) {
-      this.setState({ message: message });
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.code) {
+        this.processCode(this.props.code);
+      }
     }
   }, {
-    key: 'checkCode',
-    value: function checkCode(code) {
-      if (this.pendingRequest) this.pendingRequest.abort();
-
-      this.pendingRequest = $.ajax({
-        url: apiRoutes.checkCouponCode(),
-        type: 'POST',
-        data: { code: code }
-      });
-
-      return this.pendingRequest;
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(e) {
+    key: 'processCode',
+    value: function processCode(value) {
       var _this = this;
 
-      var value = e.target.value;
       var code = this.state.code;
 
       if (value === code || value === '') {
@@ -204,23 +192,37 @@ var CartCoupon = (function (_Component) {
 
           _this.updateMessage(message);
         }).fail(function (xhr, textStatus) {
-          var message = undefined;
-
-          if (textStatus === 'abort') {
-            message = (0, _i18next.t)('vendor.coupon.invalid', { value: value });
-          } else {
-            message = (0, _i18next.t)('vendor.coupon.error');
+          if (textStatus !== 'abort') {
+            _this.updateMessage((0, _i18next.t)('vendor.coupon.error'));
           }
-
-          _this.updateMessage(message);
         });
       }
 
       this.setState({ code: value });
     }
   }, {
+    key: 'checkCode',
+    value: function checkCode(code) {
+      if (this.pendingRequest) this.pendingRequest.abort();
+
+      this.pendingRequest = $.ajax({
+        url: apiRoutes.checkCouponCode(),
+        type: 'POST',
+        data: { code: code }
+      });
+
+      return this.pendingRequest;
+    }
+  }, {
+    key: 'updateMessage',
+    value: function updateMessage(message) {
+      this.setState({ message: message });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _state = this.state;
       var code = _state.code;
       var message = _state.message;
@@ -231,11 +233,13 @@ var CartCoupon = (function (_Component) {
         _react2['default'].createElement(_commonTextInput2['default'], {
           className: 'b-cart__action__code',
           name: 'coupon_code',
-          onChange: this.handleChange.bind(this),
+          onChange: function (e) {
+            return _this2.processCode(e.target.value);
+          },
           placeholder: (0, _i18next.t)('vendor.placeholders.coupon'),
           value: code
         }),
-        code && _react2['default'].createElement(_CartAlert2['default'], { text: message })
+        code && message && _react2['default'].createElement(_CartAlert2['default'], { text: message })
       );
     }
   }], [{
@@ -658,29 +662,17 @@ var OrderCoupon = (function (_Component) {
   }
 
   _createClass(OrderCoupon, [{
-    key: 'updateMessage',
-    value: function updateMessage(message) {
-      this.setState({ message: message });
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.code) {
+        this.processCode(this.props.code);
+      }
     }
   }, {
-    key: 'checkCode',
-    value: function checkCode(code) {
-      if (this.pendingRequest) this.pendingRequest.abort();
-
-      this.pendingRequest = $.ajax({
-        url: apiRoutes.checkCouponCode(),
-        type: 'POST',
-        data: { code: code }
-      });
-
-      return this.pendingRequest;
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(e) {
+    key: 'processCode',
+    value: function processCode(value) {
       var _this = this;
 
-      var value = e.target.value;
       var code = this.state.code;
 
       if (value === code || value === '') {
@@ -699,23 +691,37 @@ var OrderCoupon = (function (_Component) {
 
           _this.updateMessage(message);
         }).fail(function (xhr, textStatus) {
-          var message = undefined;
-
-          if (textStatus === 'abort') {
-            message = (0, _i18next.t)('vendor.coupon.invalid', { value: value });
-          } else {
-            message = (0, _i18next.t)('vendor.coupon.error');
+          if (textStatus !== 'abort') {
+            _this.updateMessage((0, _i18next.t)('vendor.coupon.error'));
           }
-
-          _this.updateMessage(message);
         });
       }
 
       this.setState({ code: value });
     }
   }, {
+    key: 'checkCode',
+    value: function checkCode(code) {
+      if (this.pendingRequest) this.pendingRequest.abort();
+
+      this.pendingRequest = $.ajax({
+        url: apiRoutes.checkCouponCode(),
+        type: 'POST',
+        data: { code: code }
+      });
+
+      return this.pendingRequest;
+    }
+  }, {
+    key: 'updateMessage',
+    value: function updateMessage(message) {
+      this.setState({ message: message });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _state = this.state;
       var code = _state.code;
       var message = _state.message;
@@ -738,12 +744,14 @@ var OrderCoupon = (function (_Component) {
             className: 'string optional form-control',
             id: 'vendor_order_coupon_code',
             name: 'vendor_order[coupon_code]',
-            onChange: this.handleChange.bind(this),
+            onChange: function (e) {
+              return _this2.processCode(e.target.value);
+            },
             placeholder: (0, _i18next.t)('vendor.placeholders.coupon'),
             value: code
           })
         ),
-        code && _react2['default'].createElement(_OrderAlert2['default'], { text: message })
+        code && message && _react2['default'].createElement(_OrderAlert2['default'], { text: message })
       );
     }
   }], [{
