@@ -32,7 +32,7 @@ export default class CartCoupon extends Component {
     } else {
       this.updateMessage(t('vendor.coupon.checking'));
 
-      this.checkCode(code)
+      this.checkCode(value)
         .then((data) => {
           let message;
 

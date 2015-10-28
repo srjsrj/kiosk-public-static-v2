@@ -181,7 +181,7 @@ var CartCoupon = (function (_Component) {
       } else {
         this.updateMessage((0, _i18next.t)('vendor.coupon.checking'));
 
-        this.checkCode(code).then(function (data) {
+        this.checkCode(value).then(function (data) {
           var message = undefined;
 
           if (data && data.isActual) {
@@ -680,7 +680,7 @@ var OrderCoupon = (function (_Component) {
       } else {
         this.updateMessage((0, _i18next.t)('vendor.coupon.checking'));
 
-        this.checkCode(code).then(function (data) {
+        this.checkCode(value).then(function (data) {
           var message = undefined;
 
           if (data && data.isActual) {
@@ -764,7 +764,7 @@ var OrderCoupon = (function (_Component) {
   }, {
     key: 'defaultProps',
     value: {
-      code: '',
+      code: 'asd',
       message: ''
     },
     enumerable: true

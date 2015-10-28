@@ -12,7 +12,7 @@ export default class OrderCoupon extends Component {
     message: PropTypes.string,
   }
   static defaultProps = {
-    code: '',
+    code: 'asd',
     message: '',
   }
   state = {
@@ -32,7 +32,7 @@ export default class OrderCoupon extends Component {
     } else {
       this.updateMessage(t('vendor.coupon.checking'));
 
-      this.checkCode(code)
+      this.checkCode(value)
         .then((data) => {
           let message;
 
