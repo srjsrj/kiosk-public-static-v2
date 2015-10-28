@@ -35,5 +35,7 @@ global.Logo = require('./react/components/Logo/LogoContainer');
 global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCard = require('./react/components/Product/ProductCard');
 global.TopBanner = require('./react/components/TopBanner');
+global.CartCoupon = require('./react/components/Cart/CartCoupon');
+global.OrderCoupon = require('./react/components/Order/OrderCoupon');
 
 import './react/application';
