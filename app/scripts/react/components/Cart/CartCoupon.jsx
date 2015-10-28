@@ -27,7 +27,7 @@ export default class CartCoupon extends Component {
   processCode(value) {
     const { code } = this.state;
 
-    if (value === code || value === '') {
+    if (value === '') {
       this.updateMessage('');
     } else {
       this.updateMessage(t('vendor.coupon.checking'));

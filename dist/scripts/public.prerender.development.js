@@ -176,7 +176,7 @@ var CartCoupon = (function (_Component) {
 
       var code = this.state.code;
 
-      if (value === code || value === '') {
+      if (value === '') {
         this.updateMessage('');
       } else {
         this.updateMessage((0, _i18next.t)('vendor.coupon.checking'));
@@ -675,7 +675,7 @@ var OrderCoupon = (function (_Component) {
 
       var code = this.state.code;
 
-      if (value === code || value === '') {
+      if (value === '') {
         this.updateMessage('');
       } else {
         this.updateMessage((0, _i18next.t)('vendor.coupon.checking'));
