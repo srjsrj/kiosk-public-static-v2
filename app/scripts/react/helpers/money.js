@@ -30,6 +30,12 @@ export function isSymbolFirst(money) {
   return currency.symbol_first;
 }
 
+export function money(money) {
+  if (!money) return '-';
+
+  return numeral(getUnit(money)).format('0');
+}
+
 export function humanizedMoneyWithCurrency(money) {
   if (!money) return '-';
 

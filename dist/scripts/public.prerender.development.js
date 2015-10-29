@@ -1339,7 +1339,8 @@ var ProductCard = (function () {
       return _react2['default'].createElement(
         'div',
         {
-          className: 'b-page__content__inner b-page__content__inner_content',
+          className: 'b-page__content__inner b-page__content__inner_content h-product',
+          itemScope: true,
           itemType: 'http://schema.org/Product'
         },
         _react2['default'].createElement(
@@ -4629,6 +4630,7 @@ Object.defineProperty(exports, '__esModule', {
 exports.getHTMLName = getHTMLName;
 exports.getUnit = getUnit;
 exports.isSymbolFirst = isSymbolFirst;
+exports.money = money;
 exports.humanizedMoneyWithCurrency = humanizedMoneyWithCurrency;
 exports.humanizedMoney = humanizedMoney;
 
@@ -4669,6 +4671,12 @@ function getUnit(money) {
 function isSymbolFirst(money) {
   var currency = getCurrency(money);
   return currency.symbol_first;
+}
+
+function money(money) {
+  if (!money) return '-';
+
+  return (0, _numeral2['default'])(getUnit(money)).format('0');
 }
 
 function humanizedMoneyWithCurrency(money) {
@@ -4722,7 +4730,7 @@ function schemaOrgMarkup(product) {
     'div',
     { style: { display: 'none' } },
     React.createElement('meta', { itemProp: 'name', content: (0, _seo.h1)(product) }),
-    React.createElement('meta', { itemProp: 'productID', content: (0, _seo.schemaOrgProductArticle)(product) }),
+    product.article && React.createElement('span', { itemProp: 'productID', content: (0, _seo.schemaOrgProductArticle)(product) }),
     product.goods && product.goods.length && product.goods.map(function (el) {
       return schemaOrgGoodPrice(el, product.main_category);
     })
@@ -4734,7 +4742,7 @@ function schemaOrgGoodPrice(good, category) {
     'div',
     {
       itemProp: 'offers',
-      itemScope: '',
+      itemScope: true,
       itemType: 'http://schema.org/Offer',
       key: good.global_id
     },
@@ -4742,14 +4750,14 @@ function schemaOrgGoodPrice(good, category) {
     React.createElement('meta', { itemProp: 'sku', content: good.article }),
     React.createElement('meta', { itemProp: 'category', content: (0, _seo.schemaOrgProductCategory)(category) }),
     React.createElement('meta', { itemProp: 'availability', content: (0, _seo.schemaOrgGoodAvailability)(good) }),
-    good.price && React.createElement(
+    good.actual_price && React.createElement(
       'div',
       { itemProp: 'price' },
-      React.createElement('meta', { itemProp: 'priceCurrency', content: good.price.currency_iso_code }),
+      React.createElement('meta', { itemProp: 'priceCurrency', content: good.actual_price.currency_iso_code }),
       React.createElement(
         'div',
         null,
-        goodActualPrice(good)
+        (0, _money.money)(good.actual_price)
       )
     )
   );

@@ -1,4 +1,4 @@
-import { humanizedMoneyWithCurrency } from './money';
+import { money, humanizedMoneyWithCurrency } from './money';
 import { numberToHumanSize } from './number';
 import {
   h1, schemaOrgGoodAvailability, schemaOrgProductArticle, schemaOrgProductCategory,
@@ -8,7 +8,9 @@ export function schemaOrgMarkup(product) {
   return (
     <div style={{display: 'none'}}>
       <meta itemProp="name" content={h1(product)} />
-      <meta itemProp="productID" content={schemaOrgProductArticle(product)} />
+      {product.article &&
+        <span itemProp="productID" content={schemaOrgProductArticle(product)} />
+      }
       {product.goods
         && product.goods.length
         && product.goods.map((el) => schemaOrgGoodPrice(el, product.main_category))
@@ -21,7 +23,7 @@ export function schemaOrgGoodPrice(good, category) {
   return (
     <div
       itemProp="offers"
-      itemScope=""
+      itemScope={true}
       itemType="http://schema.org/Offer"
       key={good.global_id}
     >
@@ -29,10 +31,10 @@ export function schemaOrgGoodPrice(good, category) {
       <meta itemProp="sku" content={good.article} />
       <meta itemProp="category" content={schemaOrgProductCategory(category)} />
       <meta itemProp="availability" content={schemaOrgGoodAvailability(good)} />
-      {good.price &&
+      {good.actual_price &&
         <div itemProp="price">
-          <meta itemProp="priceCurrency" content={good.price.currency_iso_code} />
-          <div>{goodActualPrice(good)}</div>
+          <meta itemProp="priceCurrency" content={good.actual_price.currency_iso_code} />
+          <div>{money(good.actual_price)}</div>
         </div>
       }
     </div>
