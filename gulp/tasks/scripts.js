@@ -20,6 +20,7 @@ const baseDependencies = {
   'tinycolor2': './node_modules/tinycolor2',
   'URIjs': './node_modules/URIjs/src/URI',
   'i18next': './node_modules/i18next-client',
+  'propTypes': './app/scripts/react/propTypes',
 
   'jquery': './node_modules/jquery/dist/jquery',
   'jquery.mmenu': './app/bower_components/jQuery.mmenu/src/js/jquery.mmenu.min.all',
@@ -124,6 +125,10 @@ gulp.task('[Static] Vendor scripts', (cb) => {
 
   bundler
     .transform('coffee-reactify')
+    .transform('babelify', {
+      stage: 0,
+      ignore: /(node_modules|bower_components)/
+    })
     .bundle()
     .on('error', handleErrors)
     .pipe(source(config.static.vendor.outputName))

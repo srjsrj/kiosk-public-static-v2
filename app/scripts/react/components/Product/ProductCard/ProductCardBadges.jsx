@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'propTypes';
 import ProductBadgeNew from '../ProductBadges/ProductBadgeNew';
 import ProductBadgeSale from '../ProductBadges/ProductBadgeSale';
 

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'propTypes';
 import { h1 } from '../../../helpers/seo';
 import { attributeValue } from '../../../helpers/product';
 
