@@ -1,5 +1,4 @@
-import React, { Component, findDOMNode } from 'react';
-import PropTypes from 'propTypes';
+import React, { Component, findDOMNode, PropTypes } from 'react';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 
 export default class ProductCardGallery extends Component {

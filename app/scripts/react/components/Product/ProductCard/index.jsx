@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'propTypes';
+import React, { Component, PropTypes } from 'react';
 import makeTranslatable from '../../HoC/makeTranslatable';
 import ProductCard from './ProductCard';
 

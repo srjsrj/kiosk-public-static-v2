@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'propTypes';
+import React, { PropTypes } from 'react';
 import ProductCart from '../ProductCart';
 import ProductPrices from '../ProductPrices';
 import ProductCardBadges from './ProductCardBadges';

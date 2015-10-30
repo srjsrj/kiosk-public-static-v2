@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'propTypes';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import { productCategoryPath } from '../../../helpers/vendors';
 
