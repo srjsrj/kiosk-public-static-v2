@@ -23,7 +23,7 @@ export default {
     subunit: 'Kopeck',
     subunit_to_unit: 100,
     symbol_first: false,
-    html_entity: '&#x20BD;',
+    html_entity: '\u20BD',
     decimal_mark: ',',
     thousands_separator: '.',
     iso_numeric: '643',
@@ -38,7 +38,7 @@ export default {
     subunit: 'Kopiyka',
     subunit_to_unit: 100,
     symbol_first: false,
-    html_entity: '&#x20B4;',
+    html_entity: '\u20B4',
     decimal_mark: '.',
     thousands_separator: ',',
     iso_numeric: '980',
@@ -59,4 +59,19 @@ export default {
     iso_numeric: '840',
     smallest_denomination: 1
   },
+  eur: {
+    priority: 2,
+    iso_code: 'EUR',
+    name: 'Euro',
+    symbol: '€',
+    alternate_symbols: [],
+    subunit: 'Cent',
+    subunit_to_unit: 100,
+    symbol_first: true,
+    html_entity: '\u20AC',
+    decimal_mark: ',',
+    thousands_separator: '.',
+    iso_numeric: '978',
+    smallest_denomination: 1
+  }
 }
