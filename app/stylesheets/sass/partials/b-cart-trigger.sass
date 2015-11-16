@@ -71,3 +71,7 @@ $cartTriggerCounterBackground: #00aeff
 
   @include grid-media-query("palm")
     right: 15px
+  @include grid-media-query((lap, palm))
+    min-width: $cartTriggerSize
+    &_wishlist
+      left: 14px
