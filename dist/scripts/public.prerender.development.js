@@ -1824,7 +1824,8 @@ var ProductCardGallery = (function (_Component) {
       if ($productThumbs.length) {
         $productThumbs.owlCarousel({
           items: 4,
-          pagination: false
+          pagination: false,
+          itemsMobile: 2
         });
       }
     }

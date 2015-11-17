@@ -53,6 +53,7 @@ export default class ProductCardGallery extends Component {
       $productThumbs.owlCarousel({
         items: 4,
         pagination: false,
+        itemsMobile: 2,
       });
     }
   }
