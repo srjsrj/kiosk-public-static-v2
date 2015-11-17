@@ -5,8 +5,8 @@ import { WishlistButton } from '../buttons/WishlistButton';
 export default class ClientBar extends Component {
   static propTypes = {
     cartItemsCount: PropTypes.number,
-    cartText: PropTypes.string.isRequired,
-    cartUrl: PropTypes.string.isRequired,
+    cartText: PropTypes.string,
+    cartUrl: PropTypes.string,
     wishlistText: PropTypes.string,
     wishlistUrl: PropTypes.string,
   }

@@ -1,0 +1,17 @@
+.client-bar
+  top: 30px
+  right: 30px
+  position: fixed
+  .bubble
+    float: left
+  .bubble:not(:last-child)
+    margin-right: 12px
+  @include grid-media-query(palm)
+    right: 15px
+  @include grid-media-query((lap, palm))
+    .bubble
+      float: right
+      clear: both
+    .bubble:not(:last-child)
+      margin-right: 0
+      margin-bottom: 12px
