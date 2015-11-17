@@ -33,6 +33,7 @@ export default class ProductCardContainer extends Component {
         onGoodChange={this.handleGoodChange.bind(this)}
         product={this.state.product}
         similarProducts={this.props.similarProducts}
+        wishlistUrl={this.props.wishlistUrl}
       />
     );
   }

@@ -10,12 +10,14 @@ import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
 import PropertySingle from './PropertySingle';
+import ProductCartWishlist from '../ProductCart/ProductCartWishlist';
 
 export default class ProductProperties extends Component {
   static propTypes = {
     goods: PropTypes.array.isRequired,
     onGoodChange: PropTypes.func,
     properties: PropTypes.array.isRequired,
+    wishlistUrl: PropTypes.string,
   }
   static defaultProps = {
     goods: [],
@@ -104,6 +106,7 @@ export default class ProductProperties extends Component {
             properties={this.props.properties}
             values={values}
           />
+          <ProductCartWishlist url={this.props.wishlistUrl} />
           {hiddenInput}
           <div className="b-item-full__form__row b-item-full__form__submit">
             {addToCartButton}
@@ -120,6 +123,7 @@ export default class ProductProperties extends Component {
               properties={this.props.properties}
               values={values}
             />
+            <ProductCartWishlist url={this.props.wishlistUrl} />
           </div>
         <div className="b-item-full__form__submit">
           {hiddenInput}

@@ -17,9 +17,10 @@ export default class ProductCard {
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array,
     onGoodChange: PropTypes.func,
+    wishlistUrl: PropTypes.string,
   }
   render() {
-    const { good, product, onGoodChange, similarProducts } = this.props;
+    const { good, product, onGoodChange, similarProducts, wishlistUrl } = this.props;
 
     return (
       <div
@@ -53,6 +54,7 @@ export default class ProductCard {
                   formAuthenticity={this.props.formAuthenticity}
                   product={product}
                   onGoodChange={onGoodChange}
+                  wishlistUrl={wishlistUrl}
                 />
               </div>
               <ProductCardDetails product={product} />

@@ -12,6 +12,7 @@ export default class ProductCart extends Component {
     formAuthenticity: PropTypes.object,
     onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
+    wishlistUrl: PropTypes.string,
   }
   static defaultProps = {
     formAuthenticity: {},
@@ -20,13 +21,17 @@ export default class ProductCart extends Component {
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
         return (
-          <ProductCartForProduct good={product.goods[0]} />
+          <ProductCartForProduct
+            good={product.goods[0]}
+            wishlistUrl={this.props.wishlistUrl}
+          />
         );
       } else {
         return (
           <ProductCartForProductItems
             onGoodChange={this.props.onGoodChange}
             product={product}
+            wishlistUrl={this.props.wishlistUrl}
           />
         );
       }

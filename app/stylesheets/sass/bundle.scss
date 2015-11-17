@@ -20,6 +20,8 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 
+// Font-awesome
+@import "font-awesome/scss/font-awesome";
 
 // =====================================================================
 // Global: Variables/Mixins and etc.
@@ -119,6 +121,7 @@
 @import "partials/b-breadcrumbs"; //Хлебные крошки
 @import "partials/b-tooltip"; // Подсказка
 @import "partials/mmenu";
+@import "partials/add-to-wishlist";
 @import "partials/bubble";
 @import "partials/client-bar";
 @import "partials/select-file"; // Кастомный выбор локального файла

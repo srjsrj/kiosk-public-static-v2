@@ -26,6 +26,7 @@ $bubbleCartBackgroundHover: rgba(#2453cb, 0.7)
     content: ''
     position: absolute
     top: 50%
+    font-family: "FontAwesome"
     left: $bubbleSmallWidth / 4
     width: $bubbleSmallWidth / 2
     height: $bubbleSmallWidth / 2
@@ -65,9 +66,8 @@ $bubbleCartBackgroundHover: rgba(#2453cb, 0.7)
     &:hover
       background-color: $bubbleWishlistBackgroundHover
     &:before
-      content: '\2661'
+      content: "\f004"
       font-size: 25px
-      left: 12px
       color: #fff
   @include grid-media-query((lap, palm))
     min-width: $bubbleSmallWidth
