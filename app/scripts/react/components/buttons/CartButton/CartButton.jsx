@@ -14,6 +14,7 @@ export default class CartButton extends Component {
       <Bubble
         className="bubble--cart"
         count={itemsCount}
+        data={['cart-button']}
         text={text}
         url={url}
       />
