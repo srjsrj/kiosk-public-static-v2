@@ -2,6 +2,7 @@
 
 $images-path: "/shop/images";
 $fonts-path: "/shop/fonts";
+$fa-font-path: $fonts-path;
 $entypoPlusWebfontPath: $fonts-path;
 
 @import "sass/bundle";
