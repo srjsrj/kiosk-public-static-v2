@@ -37,7 +37,7 @@ export default class TopBanner {
 
     return (
       <div className="top-banner" ref="banner">
-        <a className="top-banner__link" href={url}>
+        <a className="top-banner__link" href={url || null}>
           <div className="top-banner__content">
             {content}
           </div>
