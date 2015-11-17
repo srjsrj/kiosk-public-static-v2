@@ -58,11 +58,12 @@ $cartTriggerCounterBackground: #00aeff
   &:hover
     background-color: $cartTriggerBackgroundHover
   &_wishlist
-    top: 125px !important
+    top: 95px !important
     &:before
       content: '\2661'
-      left: 16px
-      font-size: 21px
+      font-size: 25px
+      left: 12px
+      margin-top: -15px
       background: none
       color: #fff
 
@@ -73,5 +74,3 @@ $cartTriggerCounterBackground: #00aeff
     right: 15px
   @include grid-media-query((lap, palm))
     min-width: $cartTriggerSize
-    &_wishlist
-      left: 14px
