@@ -18,8 +18,6 @@ import './shared/mobile_navigation';
 import './shared/checkout';
 
 // TODO: Refactor and cleaning legacy shit
-import './react/components/basket/button';
-import './react/components/basket/popup';
 import './react/components/Product/add_to_basket_button';
 import './react/components/instagram/instagram_feed_mixin';
 import './react/components/instagram/instagram';
@@ -31,6 +29,7 @@ import './react/stores/basket';
 // Exposing neccessary resources outside
 global.CatalogFilter = require('./react/components/CatalogFilter');
 global.Userbar = require('./react/components/Userbar/UserbarContainer');
+global.ClientBar = require('./react/components/ClientBar').ClientBar;
 global.Logo = require('./react/components/Logo/LogoContainer');
 global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCard = require('./react/components/Product/ProductCard');
