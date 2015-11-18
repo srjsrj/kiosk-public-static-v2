@@ -175,7 +175,9 @@ global.gon = {
           }
         },
         "button": {
+          "go_wishlist": 'Перейти в избранное',
           "to_cart": "В корзину",
+          "to_wishlist": 'Добавить в избранное',
           "select_good": "Выберите характеристику",
           "disable_with": {
             "sending": "Отправляем...",
