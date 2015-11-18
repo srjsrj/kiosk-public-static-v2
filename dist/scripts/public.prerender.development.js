@@ -321,6 +321,10 @@ var ClientBar = (function (_Component) {
       return _react2['default'].createElement(
         'div',
         { className: 'client-bar' },
+        hasCabinet && cabinetUrl && _react2['default'].createElement(_buttonsCabinetButton.CabinetButton, {
+          text: cabinetText,
+          url: cabinetUrl
+        }),
         hasWishlist && wishlistUrl && _react2['default'].createElement(_buttonsWishlistButton.WishlistButton, {
           text: wishlistText,
           url: wishlistUrl
@@ -329,10 +333,6 @@ var ClientBar = (function (_Component) {
           itemsCount: cartItemsCount,
           text: cartText,
           url: cartUrl
-        }),
-        hasCabinet && cabinetUrl && _react2['default'].createElement(_buttonsCabinetButton.CabinetButton, {
-          text: cabinetText,
-          url: cabinetUrl
         })
       );
     }

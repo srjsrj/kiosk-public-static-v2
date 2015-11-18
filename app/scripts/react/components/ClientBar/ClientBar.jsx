@@ -28,6 +28,12 @@ export default class ClientBar extends Component {
 
     return (
       <div className="client-bar">
+        {hasCabinet && cabinetUrl &&
+          <CabinetButton
+            text={cabinetText}
+            url={cabinetUrl}
+          />
+        }
         {hasWishlist && wishlistUrl &&
           <WishlistButton
             text={wishlistText}
@@ -39,12 +45,6 @@ export default class ClientBar extends Component {
             itemsCount={cartItemsCount}
             text={cartText}
             url={cartUrl}
-          />
-        }
-        {hasCabinet && cabinetUrl &&
-          <CabinetButton
-            text={cabinetText}
-            url={cabinetUrl}
           />
         }
       </div>
