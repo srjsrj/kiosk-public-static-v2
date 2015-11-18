@@ -4,29 +4,26 @@ import ProductProperties from '../ProductProperties';
 
 export default class ProductCartForProductItems {
   static propTypes = {
+    addWishlistUrl: PropTypes.string,
+    isWishlisted: PropTypes.bool,
     onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
     wishlistUrl: PropTypes.string,
   }
   render() {
-    const { onGoodChange, product: { goods, properties }, wishlistUrl } = this.props;
+    const { product: { goods, properties } } = this.props;
 
     if (properties.length) {
       return (
         <ProductProperties
+          {...this.props}
           goods={goods}
-          onGoodChange={onGoodChange}
           properties={properties}
-          wishlistUrl={wishlistUrl}
         />
       );
     } else {
       return (
-        <ProductGoods
-          product={this.props.product}
-          onGoodChange={onGoodChange}
-          wishlistUrl={wishlistUrl}
-        />
+        <ProductGoods {...this.props} />
       );
     }
   }

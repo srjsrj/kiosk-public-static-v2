@@ -7,6 +7,8 @@ import ProductCartWishlist from '../ProductCart/ProductCartWishlist';
 
 export default class ProductGoods {
   static propTypes = {
+    addWishlistUrl: PropTypes.string,
+    isWishlisted: PropTypes.bool,
     onGoodChange: PropTypes.func,
     product: PropTypes.object.isRequired,
     wishlistUrl: PropTypes.string,
@@ -80,19 +82,21 @@ export default class ProductGoods {
 
     if (this.isTitlesValid(product)) {
       return (
-        <div className="b-item-full__form__row b-item-full__form__row_fixed">
-          <div className="b-item-full__form__option">
-            {this.renderSelect(product)}
-            <ProductCartWishlist
-              {...this.props}
-              addWishlistText={t('vendor.button.to_wishlist')}
-              goWishlistText={t('vendor.button.go_wishlist')}
-            />
+        <span>
+          <div className="b-item-full__form__row b-item-full__form__row_fixed">
+            <div className="b-item-full__form__option">
+              {this.renderSelect(product)}
+            </div>
+            <div className="b-item-full__form__submit">
+              <ProductAddToCartButton text={t('vendor.button.to_cart')} />
+            </div>
           </div>
-          <div className="b-item-full__form__submit">
-            <ProductAddToCartButton text={t('vendor.button.to_cart')} />
-          </div>
-        </div>
+          <ProductCartWishlist
+            {...this.props}
+            addWishlistText={t('vendor.button.to_wishlist')}
+            goWishlistText={t('vendor.button.go_wishlist')}
+          />
+        </span>
       );
     } else {
       return (

@@ -2356,13 +2356,13 @@ var ProductCartForProduct = (function () {
           _react2['default'].createElement(
             'div',
             { className: 'b-item-full__form__submit' },
-            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') }),
-            _react2['default'].createElement(_ProductCartWishlist2['default'], _extends({}, this.props, {
-              addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
-              goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
-            }))
+            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
           )
-        )
+        ),
+        _react2['default'].createElement(_ProductCartWishlist2['default'], _extends({}, this.props, {
+          addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
+          goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
+        }))
       );
     }
   }], [{
@@ -2388,6 +2388,8 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -2415,31 +2417,24 @@ var ProductCartForProductItems = (function () {
   _createClass(ProductCartForProductItems, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var onGoodChange = _props.onGoodChange;
-      var _props$product = _props.product;
+      var _props$product = this.props.product;
       var goods = _props$product.goods;
       var properties = _props$product.properties;
-      var wishlistUrl = _props.wishlistUrl;
 
       if (properties.length) {
-        return _react2['default'].createElement(_ProductProperties2['default'], {
+        return _react2['default'].createElement(_ProductProperties2['default'], _extends({}, this.props, {
           goods: goods,
-          onGoodChange: onGoodChange,
-          properties: properties,
-          wishlistUrl: wishlistUrl
-        });
+          properties: properties
+        }));
       } else {
-        return _react2['default'].createElement(_ProductGoods2['default'], {
-          product: this.props.product,
-          onGoodChange: onGoodChange,
-          wishlistUrl: wishlistUrl
-        });
+        return _react2['default'].createElement(_ProductGoods2['default'], this.props);
       }
     }
   }], [{
     key: 'propTypes',
     value: {
+      addWishlistUrl: _react.PropTypes.string,
+      isWishlisted: _react.PropTypes.bool,
       onGoodChange: _react.PropTypes.func,
       product: _react.PropTypes.object.isRequired,
       wishlistUrl: _react.PropTypes.string
@@ -2553,7 +2548,7 @@ var ProductCartWishlist = (function (_Component) {
       var isWishlisted = _props.isWishlisted;
       var wishlistUrl = _props.wishlistUrl;
 
-      if (hasWishlist && wishlistUrl) {
+      if (hasWishlist && wishlistUrl || addWishlistUrl) {
         var content = undefined;
 
         if (isWishlisted) {
@@ -2849,22 +2844,26 @@ var ProductGoods = (function () {
 
       if (this.isTitlesValid(product)) {
         return _react2['default'].createElement(
-          'div',
-          { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
+          'span',
+          null,
           _react2['default'].createElement(
             'div',
-            { className: 'b-item-full__form__option' },
-            this.renderSelect(product),
-            _react2['default'].createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
-              addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
-              goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
-            }))
+            { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'b-item-full__form__option' },
+              this.renderSelect(product)
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'b-item-full__form__submit' },
+              _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
+            )
           ),
-          _react2['default'].createElement(
-            'div',
-            { className: 'b-item-full__form__submit' },
-            _react2['default'].createElement(_ProductAddToCartButton2['default'], { text: (0, _i18next.t)('vendor.button.to_cart') })
-          )
+          _react2['default'].createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
+            addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
+            goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
+          }))
         );
       } else {
         return _react2['default'].createElement(
@@ -2894,6 +2893,8 @@ var ProductGoods = (function () {
   }], [{
     key: 'propTypes',
     value: {
+      addWishlistUrl: _react.PropTypes.string,
+      isWishlisted: _react.PropTypes.bool,
       onGoodChange: _react.PropTypes.func,
       product: _react.PropTypes.object.isRequired,
       wishlistUrl: _react.PropTypes.string
@@ -3663,7 +3664,9 @@ var ProductProperties = (function (_Component) {
   _createClass(ProductProperties, null, [{
     key: 'propTypes',
     value: {
+      addWishlistUrl: _react.PropTypes.string,
       goods: _react.PropTypes.array.isRequired,
+      isWishlisted: _react.PropTypes.bool,
       onGoodChange: _react.PropTypes.func,
       properties: _react.PropTypes.array.isRequired,
       wishlistUrl: _react.PropTypes.string
@@ -3777,16 +3780,16 @@ var ProductProperties = (function (_Component) {
             properties: this.props.properties,
             values: values
           }),
-          React.createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
-            addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
-            goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
-          })),
           hiddenInput,
           React.createElement(
             'div',
             { className: 'b-item-full__form__row b-item-full__form__submit' },
             addToCartButton
-          )
+          ),
+          React.createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
+            addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
+            goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
+          }))
         );
       } else {
         return React.createElement(
@@ -3800,18 +3803,18 @@ var ProductProperties = (function (_Component) {
               onChange: this.updateValues.bind(this),
               properties: this.props.properties,
               values: values
-            }),
-            React.createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
-              addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
-              goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
-            }))
+            })
           ),
           React.createElement(
             'div',
             { className: 'b-item-full__form__submit' },
             hiddenInput,
             addToCartButton
-          )
+          ),
+          React.createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
+            addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
+            goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
+          }))
         );
       }
     }

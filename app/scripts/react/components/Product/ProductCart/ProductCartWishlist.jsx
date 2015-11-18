@@ -16,7 +16,7 @@ export default class ProductCartWishlist extends Component {
       isWishlisted, wishlistUrl,
     } = this.props;
 
-    if (hasWishlist && wishlistUrl) {
+    if (hasWishlist && wishlistUrl || addWishlistUrl) {
       let content;
 
       if (isWishlisted) {

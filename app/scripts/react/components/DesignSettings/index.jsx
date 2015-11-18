@@ -166,7 +166,7 @@ export default class DesignSettings {
                 <DesignSettingsOption title="Цвет страницы">
                   <DesignSettingsRadioList {...this.getProps('pageBgColor')} />
                 </DesignSettingsOption>
-                <DesignSettingsOption title="Цвет ленты">
+                <DesignSettingsOption title="Цвет контента">
                   <DesignSettingsRadioList {...this.getProps('feedBgColor')} />
                 </DesignSettingsOption>
                 <DesignSettingsOption title="Прозрачность ленты">
