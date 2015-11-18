@@ -106,7 +106,11 @@ export default class ProductProperties extends Component {
             properties={this.props.properties}
             values={values}
           />
-          <ProductCartWishlist url={this.props.wishlistUrl} />
+          <ProductCartWishlist
+            {...this.props}
+            addWishlistText={t('vendor.button.to_wishlist')}
+            goWishlistText={t('vendor.button.go_wishlist')}
+          />
           {hiddenInput}
           <div className="b-item-full__form__row b-item-full__form__submit">
             {addToCartButton}
@@ -123,7 +127,11 @@ export default class ProductProperties extends Component {
               properties={this.props.properties}
               values={values}
             />
-            <ProductCartWishlist url={this.props.wishlistUrl} />
+            <ProductCartWishlist
+              {...this.props}
+              addWishlistText={t('vendor.button.to_wishlist')}
+              goWishlistText={t('vendor.button.go_wishlist')}
+            />
           </div>
         <div className="b-item-full__form__submit">
           {hiddenInput}

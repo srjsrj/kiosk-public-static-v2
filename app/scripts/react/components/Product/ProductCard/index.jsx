@@ -5,9 +5,13 @@ import ProductCard from './ProductCard';
 @makeTranslatable
 export default class ProductCardContainer extends Component {
   static propTypes = {
+    addWishlistUrl: PropTypes.string,
     formAuthenticity: PropTypes.object,
+    hasWishlist: PropTypes.bool,
+    isWishlisted: PropTypes.bool,
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array,
+    wishlistUrl: PropTypes.string,
   }
   static defaultProps = {
     formAuthenticity: {},
@@ -28,12 +32,10 @@ export default class ProductCardContainer extends Component {
   render() {
     return (
       <ProductCard
-        formAuthenticity={this.props.formAuthenticity}
+        {...this.props}
         good={this.state.good}
         onGoodChange={this.handleGoodChange.bind(this)}
         product={this.state.product}
-        similarProducts={this.props.similarProducts}
-        wishlistUrl={this.props.wishlistUrl}
       />
     );
   }

@@ -83,7 +83,11 @@ export default class ProductGoods {
         <div className="b-item-full__form__row b-item-full__form__row_fixed">
           <div className="b-item-full__form__option">
             {this.renderSelect(product)}
-            <ProductCartWishlist url={wishlistUrl} />
+            <ProductCartWishlist
+              {...this.props}
+              addWishlistText={t('vendor.button.to_wishlist')}
+              goWishlistText={t('vendor.button.go_wishlist')}
+            />
           </div>
           <div className="b-item-full__form__submit">
             <ProductAddToCartButton text={t('vendor.button.to_cart')} />
@@ -96,7 +100,11 @@ export default class ProductGoods {
           <div className="b-item-full__form__row">
             <div className="b-item-full__form__option b-item-full__form__option_full">
               {this.renderSelect(product)}
-              <ProductCartWishlist url={wishlistUrl} />
+              <ProductCartWishlist
+                {...this.props}
+                addWishlistText={t('vendor.button.to_wishlist')}
+                goWishlistText={t('vendor.button.go_wishlist')}
+              />
             </div>
           </div>
           <div className="b-item-full__form__row b-item-full__form__submit">

@@ -28,12 +28,13 @@ $bubbleCartBackgroundHover: rgba(#2453cb, 0.7)
     content: ''
     position: absolute
     top: 50%
-    font-family: "FontAwesome"
+    font-family: "Flaticon"
     left: $bubbleSmallWidth / 4
     width: $bubbleSmallWidth / 2
     height: $bubbleSmallWidth / 2
     margin-top: $bubbleHeight / -4
     line-height: $bubbleHeight / 2
+    color: #fff
   &:hover
     background-color: $bubbleBackgroundHover
   &__text
@@ -58,18 +59,16 @@ $bubbleCartBackgroundHover: rgba(#2453cb, 0.7)
     font-size: 14px
     font-weight: bold
   &--cart
-    background-color: $bubbleCartBackground
-    &:hover
-      background-color: $bubbleCartBackgroundHover
     &:before
       background-image: url(#{$images-path}/cart_icon.svg)
   &--wishlist
-    background-color: $bubbleWishlistBackground
-    &:hover
-      background-color: $bubbleWishlistBackgroundHover
     &:before
-      content: "\f004"
+      content: "\e000"
       font-size: 25px
-      color: #fff
+  &--cabinet
+    &:before
+      content: "\e001"
+      font-size: 25px
+
   @include grid-media-query((lap, palm))
     min-width: $bubbleSmallWidth

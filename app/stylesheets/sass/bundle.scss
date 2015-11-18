@@ -20,9 +20,6 @@
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 
-// Font-awesome
-@import "font-awesome/scss/font-awesome";
-
 // =====================================================================
 // Global: Variables/Mixins and etc.
 // =====================================================================
@@ -80,7 +77,7 @@
 // Static
 @import "fonts/gotham";
 @import "fonts/apercu";
-
+@import "fonts/flaticon";
 
 // =====================================================================
 // Partials

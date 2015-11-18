@@ -12,7 +12,7 @@ export default class CartButton extends Component {
 
     return (
       <Bubble
-        className="bubble--cart"
+        className="bubble--cart element--active-opacity"
         count={itemsCount}
         data={['cart-button']}
         text={text}

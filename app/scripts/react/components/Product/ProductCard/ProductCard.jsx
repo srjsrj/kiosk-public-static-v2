@@ -12,15 +12,18 @@ import ProductCardVideo from './ProductCardVideo';
 
 export default class ProductCard {
   static propTypes = {
+    addWishlistUrl: PropTypes.string,
     formAuthenticity: PropTypes.object,
     good: PropTypes.object,
+    hasWishlist: PropTypes.bool,
+    isWishlisted: PropTypes.bool,
     product: PropTypes.object.isRequired,
     similarProducts: PropTypes.array,
     onGoodChange: PropTypes.func,
     wishlistUrl: PropTypes.string,
   }
   render() {
-    const { good, product, onGoodChange, similarProducts, wishlistUrl } = this.props;
+    const { good, product, onGoodChange, similarProducts } = this.props;
 
     return (
       <div
@@ -50,12 +53,7 @@ export default class ProductCard {
               </div>
               <ProductCardSchema product={product} />
               <div className="b-item-full__form">
-                <ProductCart
-                  formAuthenticity={this.props.formAuthenticity}
-                  product={product}
-                  onGoodChange={onGoodChange}
-                  wishlistUrl={wishlistUrl}
-                />
+                <ProductCart {...this.props} />
               </div>
               <ProductCardDetails product={product} />
             </div>

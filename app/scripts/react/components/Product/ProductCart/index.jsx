@@ -9,9 +9,11 @@ import ProductCartNotAvailable from './ProductCartNotAvailable';
 
 export default class ProductCart extends Component {
   static propTypes = {
+    addWishlistUrl: PropTypes.string,
     formAuthenticity: PropTypes.object,
-    onGoodChange: PropTypes.func,
+    isWishlisted: PropTypes.bool,
     product: PropTypes.object.isRequired,
+    onGoodChange: PropTypes.func,
     wishlistUrl: PropTypes.string,
   }
   static defaultProps = {
@@ -21,18 +23,11 @@ export default class ProductCart extends Component {
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
         return (
-          <ProductCartForProduct
-            good={product.goods[0]}
-            wishlistUrl={this.props.wishlistUrl}
-          />
+          <ProductCartForProduct {...this.props} good={product.goods[0]} />
         );
       } else {
         return (
-          <ProductCartForProductItems
-            onGoodChange={this.props.onGoodChange}
-            product={product}
-            wishlistUrl={this.props.wishlistUrl}
-          />
+          <ProductCartForProductItems {...this.props} />
         );
       }
     } else {

@@ -1,22 +1,47 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+import Icon from '../../common/Icon';
 
 export default class ProductCartWishlist extends Component {
   static propTypes = {
-    url: PropTypes.string.isRequired,
+    addWishlistText: PropTypes.string,
+    addWishlistUrl: PropTypes.string,
+    goWishlistText: PropTypes.string,
+    hasWishlist: PropTypes.bool,
+    isWishlisted: PropTypes.bool,
+    wishlistUrl: PropTypes.string,
   }
   render() {
-    if (this.props.url) {
+    const {
+      addWishlistText, addWishlistUrl, goWishlistText, hasWishlist,
+      isWishlisted, wishlistUrl,
+    } = this.props;
+
+    if (hasWishlist && wishlistUrl) {
+      let content;
+
+      if (isWishlisted) {
+        content = (
+          <a href={wishlistUrl} rel="nofollow">
+            <Icon active={true} name="wishlist" />
+            {goWishlistText}
+          </a>
+        );
+      } else {
+        content = (
+          <a href={addWishlistUrl} rel="nofollow">
+            <Icon active={true} name="wishlist" />
+            {addWishlistText}
+          </a>
+        );
+      }
+
       return (
         <div className="add-to-wishlist">
-          <a href={this.props.url} rel="nofollow">
-            <i className="fa fa-heart" />
-            Добавить в "Мои желания"
-          </a>
+          {content}
         </div>
       );
-    } else {
-      return null;
     }
+
+    return null;
   }
 }
