@@ -10,12 +10,12 @@ import p33548 from '../../../../fixtures/products/33548';
 import p35026 from '../../../../fixtures/products/35026';
 import p35671 from '../../../../fixtures/products/35671';
 import p35890 from '../../../../fixtures/products/35890';
-import ProductCardContainer from '../../../../../app/scripts/react/components/Product/ProductCard';
+import { ProductCardContainer } from '../../../../../app/scripts/react/components/Product/ProductCard';
 
 const { renderIntoDocument } = addons.TestUtils;
 
 function fixtureRenderer(fixture) {
-  it('should render product with id ' + fixture.product.id, () => {
+  it('should render product with id ' + fixture.productCard.product.id, () => {
     const fn = () => {
       renderIntoDocument(
         <ProductCardContainer {...fixture} />
@@ -28,10 +28,10 @@ function fixtureRenderer(fixture) {
 
 describe('[Component] ProductCardContainer', () => {
   it('should render when product is empty object', () => {
-    const product = {};
+    const productCard = {};
     const fn = () => {
       renderIntoDocument(
-        <ProductCardContainer product={product} />
+        <ProductCardContainer productCard={productCard} />
       );
     };
 

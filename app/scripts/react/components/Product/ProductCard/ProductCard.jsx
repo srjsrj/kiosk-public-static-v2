@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import makeTranslatable from '../../HoC/makeTranslatable';
 import ProductCart from '../ProductCart';
 import ProductPrices from '../ProductPrices';
 import ProductCardBadges from './ProductCardBadges';
@@ -10,18 +11,8 @@ import ProductCardSimilarProducts from './ProductCardSimilarProducts';
 import ProductCardTitle from './ProductCardTitle';
 import ProductCardVideo from './ProductCardVideo';
 
-export default class ProductCard {
-  static propTypes = {
-    addWishlistUrl: PropTypes.string,
-    formAuthenticity: PropTypes.object,
-    good: PropTypes.object,
-    hasWishlist: PropTypes.bool,
-    isWishlisted: PropTypes.bool,
-    product: PropTypes.object.isRequired,
-    similarProducts: PropTypes.array,
-    onGoodChange: PropTypes.func,
-    wishlistUrl: PropTypes.string,
-  }
+@makeTranslatable
+class ProductCard extends Component {
   render() {
     const { good, product, onGoodChange, similarProducts } = this.props;
 
@@ -59,10 +50,29 @@ export default class ProductCard {
             </div>
             <ProductCardVideo product={product} />
           </div>
-        </div>
 
-        <ProductCardSimilarProducts products={similarProducts} />
+          <ProductCardSimilarProducts products={similarProducts} />
+        </div>
       </div>
     );
   }
 }
+
+ProductCard.propTypes = {
+  addWishlistUrl: PropTypes.string,
+  formAuthenticity: PropTypes.object,
+  good: PropTypes.object,
+  hasWishlist: PropTypes.bool,
+  isWishlisted: PropTypes.bool,
+  product: PropTypes.object.isRequired,
+  similarProducts: PropTypes.array,
+  onGoodChange: PropTypes.func,
+  wishlistUrl: PropTypes.string,
+};
+ProductCard.defaultProps = {
+  formAuthenticity: {},
+  product: {},
+  similarProducts: [],
+};
+
+export default ProductCard;

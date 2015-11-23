@@ -1,5 +1,6 @@
 // Mocks
 import './mocks/gon';
+import './mocks/mrch';
 
 // Libs
 import '../app/scripts/libs';

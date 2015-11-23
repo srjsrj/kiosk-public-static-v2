@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function productCategoryPath({ categories }) {
   const notRootCategories = categories.filter((el) => el.is_root === false);
   const category = notRootCategories[0];

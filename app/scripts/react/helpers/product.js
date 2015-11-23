@@ -1,3 +1,4 @@
+import React from 'react';
 import { money, humanizedMoneyWithCurrency } from './money';
 import { numberToHumanSize } from './number';
 import {

@@ -1,211 +1,404 @@
 {
-  "product": {
-    "id": 35671,
-    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1Njcx",
-    "title": "Набор пелёнок Лето",
-    "article": "set1",
-    "has_ordering_goods": true,
-    "is_sale": false,
-    "is_label_new": false,
-    "is_run_out": false,
-    "is_sold": false,
-    "description": "<p><p>Две пелёнки из органического муслина</p></p>",
-    "sale_percent": 17,
-    "main_category": null,
-    "categories": [],
-    "goods": [
-      {
-        "title": "Набор пелёнок Лето",
-        "article": "set1",
-        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1Njcx",
-        "is_ordering": true,
-        "is_run_out": false,
-        "is_sale": false,
-        "is_preorder": false,
-        "image": {
+  "productCard": {
+    "i18n": {
+      "locale": "ru",
+      "translations": {
+        "vendor": {
+          "not_published": "Магазин временно не работает",
+          "made_in_kiiiosk": "Сделано на «Киоске»",
+          "badges": {
+            "new": "Новинка",
+            "sale_percent": "SALE - %{percent}%",
+            "not_available": "Не продается",
+            "sale": "SALE",
+            "sold": "Продано"
+          },
+          "search": {
+            "results_title": "Результаты поиска (%{count})",
+            "nothing_found": "К сожалению, ничего не найдено."
+          },
+          "errors": {
+            "cart": {
+              "empty": "В корзине нет товаров"
+            },
+            "coupon": {
+              "not_found": "Несуществующий промокод %{code}",
+              "expired": "Промокод просрочен %{code}"
+            }
+          },
+          "placeholders": {
+            "coupon": "Промо-код (если есть)",
+            "search": "Поиск"
+          },
+          "alerts": {
+            "confirm": "Точно очистить?"
+          },
+          "flashes": {
+            "good_added_to_basket": "Товар \"%{title}\" добавлен в корзину"
+          },
+          "mails": {
+            "signature": "С уважением, интернет-магазин \"%{name}\""
+          },
+          "auto_menu_items": {
+            "blog": "Блог"
+          },
+          "top_banner": {
+            "default_content": "Мы открылись!"
+          },
+          "order": {
+            "fields": {
+              "phone": "Телефон",
+              "name": "Полное имя",
+              "email": "Email",
+              "city_title": "Город доставки",
+              "address": "Адрес доставки",
+              "comment": "Комментарий",
+              "coupon_code": "Промокод"
+            },
+            "submit": "Оформить заказ",
+            "pickup_address": "Адрес самовывоза:",
+            "title": "Заказ №%{number}",
+            "payment_type": "Способ оплаты: %{title}",
+            "delivery_type": "Способ доставки: %{title}",
+            "free_delivery_text_html": "Бесплатная доставка при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
+            "checkout_free_delivery_text_html": "Бесплатно при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
+            "go_back": "Вернуться назад",
+            "next": "Продолжить",
+            "delivery_tracking_id": "Трекинг-номер доставки: %{number}",
+            "check_state": "Проверить статус доставки",
+            "public_offer_accepted_html": "Согласен с условиями <u><a href=\"%{url}\" target=\"_blank\">публичной оферты</a></u>",
+            "created": {
+              "title": "Спасибо за заказ",
+              "desc_html": "В ближайшее время менеджер свяжется с вами для подтверждения заказа. <br> Ваш телефон %{phone} <br> Ваш заказ %{link} на сумму %{price}\n"
+            },
+            "new": {
+              "delivery_title": "Выберите тип доставки.",
+              "payment_title": "Способы оплаты",
+              "contacts_title": "Введите данные",
+              "sum": "на сумму"
+            },
+            "redirect": "В течение 5-и секунд вы будете переправлены на страницу оплаты.",
+            "redirecting": "Переправляю на сайт оплаты",
+            "go_to_payment": "Перейти к оплате",
+            "continue_shopping": "Продолжить покупки"
+          },
+          "coupon": {
+            "discount": "Скидка - %{discount}",
+            "invalid": "Купон \"%{value}\" НЕ действующий",
+            "checking": "Проверяю купон..",
+            "error": "Ошибка при проверке купона. Попробуйте еще раз"
+          },
+          "cart": {
+            "basket_button": "Корзина",
+            "amount": "Количество",
+            "overall": "Итого:",
+            "title": "Корзина",
+            "clear": "Очистить корзину",
+            "not_available": "Больше не продается",
+            "empty": "Пока тут ничего нет"
+          },
+          "wishlist": {
+            "add_item": "Добавить в избранное",
+            "wishlist_button": "Избранное",
+            "private_title": "Ваше избранное",
+            "foreign_title": "Чужое избранное",
+            "empty": "Пока тут ничего нет"
+          },
+          "packaging": {
+            "add": "Добавить",
+            "add_gift_package": "Добавить к заказу",
+            "no_package": "Не добавлять"
+          },
+          "payment": {
+            "w1": {
+              "failure": {
+                "title": "Оплата не прошла",
+                "desc": "Оплата заказа не была произведена"
+              },
+              "success": {
+                "title": "Спасибо за заказ",
+                "desc": "Оплата заказа была произведена"
+              }
+            }
+          },
+          "category": {
+            "continue_shopping": "Продолжить покупки",
+            "empty": "Ой, а здесь ничего нет. Пока."
+          },
+          "dictionary_entity": {
+            "continue_shopping": "Продолжить покупки",
+            "empty": "Ой, а здесь ничего нет. Пока."
+          },
+          "similar_product": {
+            "title": "С этим товаром покупают также"
+          },
+          "product": {
+            "title": "Товар",
+            "blank_price": "Цена неизвестна",
+            "run_out": "Нет в наличии",
+            "not_available": "Не продается",
+            "available": "Можно купить",
+            "sold_out_message_html": "&laquo;%{title}&raquo; сейчас не продается",
+            "nothing_found_by_criteria": "Сожалеем, ничего не найдено. Попробуйте изменить критерии поиска.",
+            "category_title": "Категория",
+            "show_other_products": "Посмотреть другие товары",
+            "show_all": "Показать все"
+          },
+          "properties": {
+            "empty": "Нет характеристик для вывода"
+          },
+          "property": {
+            "unknown_type": "Неизвестный тип характеристики",
+            "defaults": {
+              "size": "Размер",
+              "color": "Цвет"
+            }
+          },
+          "pages": {
+            "titles": {
+              "cart": "Корзина",
+              "order": "Оформление заказа",
+              "payment": "Оплата",
+              "payment_success": "Успешная оплата",
+              "payment_error": "Ошибка оплаты"
+            }
+          },
+          "filter": {
+            "availability": "Доступность",
+            "price_range": "Ценовой диапазон",
+            "selected_options": {
+              "availability": "Доступность",
+              "price_range": "Цена от %{from} до %{to} %{currency}"
+            },
+            "selected_availability": {
+              "all": "Все",
+              "available": "В наличии",
+              "run_out": "Под заказ",
+              "sale": "Распродажа",
+              "unknown": "unknown"
+            }
+          },
+          "button": {
+            "to_cart": "В корзину",
+            "select_good": "Выберите характеристику",
+            "disable_with": {
+              "sending": "Отправляем...",
+              "saving": "Сохраняем...",
+              "waiting": "Подождите...",
+              "adding": "Добавляем..."
+            }
+          }
+        }
+      }
+    },
+    "product": {
+      "id": 35671,
+      "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1Njcx",
+      "title": "Набор пелёнок Лето",
+      "article": "set1",
+      "has_ordering_goods": true,
+      "is_sale": false,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "description": "<p><p>Две пелёнки из органического муслина</p></p>",
+      "sale_percent": 17,
+      "main_category": null,
+      "categories": [],
+      "goods": [
+        {
+          "title": "Набор пелёнок Лето",
+          "article": "set1",
+          "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzM1Njcx",
+          "is_ordering": true,
+          "is_run_out": false,
+          "is_sale": false,
+          "is_preorder": false,
+          "image": {
+            "title": "Набор пелёнок Лето",
+            "url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31404/0fa1d868-f53a-4844-95c0-9d2344d4e0c5.jpg",
+            "uid": "3e92dd19dc2dbd06f39f57c3b702f8b51e572585b240e1ed8747b038c1409699"
+          },
+          "attributes": {},
+          "quantity": null,
+          "price": {
+            "cents": 59900,
+            "to_f": 599,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 59900,
+            "to_f": 599,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
+            },
+            "currency_iso_code": "RUB"
+          }
+        }
+      ],
+      "images": [
+        {
           "title": "Набор пелёнок Лето",
           "url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31404/0fa1d868-f53a-4844-95c0-9d2344d4e0c5.jpg",
           "uid": "3e92dd19dc2dbd06f39f57c3b702f8b51e572585b240e1ed8747b038c1409699"
-        },
-        "attributes": {},
-        "quantity": null,
-        "price": {
-          "cents": 59900,
-          "to_f": 599,
-          "currency": {
-            "iso_code": "RUB",
-            "iso_numeric": "643",
-            "name": "Russian Ruble",
-            "symbol": "₽",
-            "html_name": "руб.",
-            "human_name": "Российские рубли",
-            "symbol_first": false,
-            "thousands_separator": " ",
-            "decimal_mark": ",",
-            "subunit_to_unit": 100,
-            "smallest_denomination": 1,
-            "exponent": 2
-          },
-          "currency_iso_code": "RUB"
-        },
-        "actual_price": {
-          "cents": 59900,
-          "to_f": 599,
-          "currency": {
-            "iso_code": "RUB",
-            "iso_numeric": "643",
-            "name": "Russian Ruble",
-            "symbol": "₽",
-            "html_name": "руб.",
-            "human_name": "Российские рубли",
-            "symbol_first": false,
-            "thousands_separator": " ",
-            "decimal_mark": ",",
-            "subunit_to_unit": 100,
-            "smallest_denomination": 1,
-            "exponent": 2
-          },
-          "currency_iso_code": "RUB"
         }
-      }
-    ],
-    "images": [
-      {
-        "title": "Набор пелёнок Лето",
-        "url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31404/0fa1d868-f53a-4844-95c0-9d2344d4e0c5.jpg",
-        "uid": "3e92dd19dc2dbd06f39f57c3b702f8b51e572585b240e1ed8747b038c1409699"
-      }
-    ],
-    "properties": [],
-    "attributes": [
-      {
-        "property_id": 2305,
-        "type": "AttributeDictionary",
-        "title": "Цвет",
-        "value": "Белый",
-        "products_path": "/entities/9538-belyy"
-      }
-    ],
-    "custom_product_html": "",
-    "text_blocks": [],
-    "video_embed_html": null
-  },
-  "similarProducts": [
-    {
-      "id": 35672,
-      "title": "Набор пелёнок Зима",
-      "is_sale": false,
-      "has_ordering_goods": true,
-      "is_label_new": false,
-      "is_run_out": false,
-      "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31405/d05e54d0-311b-4254-9a0b-ea35ab6fd187.jpg",
-      "public_url": "http://nina.kiiiosk.ru/products/35672-nabor-pelyonok-zima",
-      "goods": [
+      ],
+      "properties": [],
+      "attributes": [
         {
-          "id": 35672,
-          "type": "Product",
-          "is_sale": false,
-          "price": {
-            "cents": 59900,
-            "to_f": 599,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
-            },
-            "currency_iso_code": "RUB"
-          },
-          "actual_price": {
-            "cents": 59900,
-            "to_f": 599,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
-            },
-            "currency_iso_code": "RUB"
-          }
+          "property_id": 2305,
+          "type": "AttributeDictionary",
+          "title": "Цвет",
+          "value": "Белый",
+          "products_path": "/entities/9538-belyy"
         }
-      ]
+      ],
+      "custom_product_html": "",
+      "text_blocks": [],
+      "video_embed_html": null
     },
-    {
-      "id": 35673,
-      "title": "Набор пеленок Лето + Зима",
-      "is_sale": false,
-      "has_ordering_goods": true,
-      "is_label_new": false,
-      "is_run_out": false,
-      "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31406/3a5bca84-55f1-4184-9b4c-8c93908ebbdd.jpg",
-      "public_url": "http://nina.kiiiosk.ru/products/35673-nabor-pelenok-leto-zima",
-      "goods": [
-        {
-          "id": 35673,
-          "type": "Product",
-          "is_sale": false,
-          "price": {
-            "cents": 59900,
-            "to_f": 599,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
+    "similarProducts": [
+      {
+        "id": 35672,
+        "title": "Набор пелёнок Зима",
+        "is_sale": false,
+        "has_ordering_goods": true,
+        "is_label_new": false,
+        "is_run_out": false,
+        "is_sold": false,
+        "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31405/d05e54d0-311b-4254-9a0b-ea35ab6fd187.jpg",
+        "public_url": "http://nina.kiiiosk.ru/products/35672-nabor-pelyonok-zima",
+        "goods": [
+          {
+            "id": 35672,
+            "type": "Product",
+            "is_sale": false,
+            "price": {
+              "cents": 59900,
+              "to_f": 599,
+              "currency": {
+                "iso_code": "RUB",
+                "iso_numeric": "643",
+                "name": "Russian Ruble",
+                "symbol": "₽",
+                "html_name": "руб.",
+                "human_name": "Российские рубли",
+                "symbol_first": false,
+                "thousands_separator": " ",
+                "decimal_mark": ",",
+                "subunit_to_unit": 100,
+                "smallest_denomination": 1,
+                "exponent": 2
+              },
+              "currency_iso_code": "RUB"
             },
-            "currency_iso_code": "RUB"
-          },
-          "actual_price": {
-            "cents": 59900,
-            "to_f": 599,
-            "currency": {
-              "iso_code": "RUB",
-              "iso_numeric": "643",
-              "name": "Russian Ruble",
-              "symbol": "₽",
-              "html_name": "руб.",
-              "human_name": "Российские рубли",
-              "symbol_first": false,
-              "thousands_separator": " ",
-              "decimal_mark": ",",
-              "subunit_to_unit": 100,
-              "smallest_denomination": 1,
-              "exponent": 2
-            },
-            "currency_iso_code": "RUB"
+            "actual_price": {
+              "cents": 59900,
+              "to_f": 599,
+              "currency": {
+                "iso_code": "RUB",
+                "iso_numeric": "643",
+                "name": "Russian Ruble",
+                "symbol": "₽",
+                "html_name": "руб.",
+                "human_name": "Российские рубли",
+                "symbol_first": false,
+                "thousands_separator": " ",
+                "decimal_mark": ",",
+                "subunit_to_unit": 100,
+                "smallest_denomination": 1,
+                "exponent": 2
+              },
+              "currency_iso_code": "RUB"
+            }
           }
-        }
-      ]
+        ]
+      },
+      {
+        "id": 35673,
+        "title": "Набор пеленок Лето + Зима",
+        "is_sale": false,
+        "has_ordering_goods": true,
+        "is_label_new": false,
+        "is_run_out": false,
+        "is_sold": false,
+        "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31406/3a5bca84-55f1-4184-9b4c-8c93908ebbdd.jpg",
+        "public_url": "http://nina.kiiiosk.ru/products/35673-nabor-pelenok-leto-zima",
+        "goods": [
+          {
+            "id": 35673,
+            "type": "Product",
+            "is_sale": false,
+            "price": {
+              "cents": 59900,
+              "to_f": 599,
+              "currency": {
+                "iso_code": "RUB",
+                "iso_numeric": "643",
+                "name": "Russian Ruble",
+                "symbol": "₽",
+                "html_name": "руб.",
+                "human_name": "Российские рубли",
+                "symbol_first": false,
+                "thousands_separator": " ",
+                "decimal_mark": ",",
+                "subunit_to_unit": 100,
+                "smallest_denomination": 1,
+                "exponent": 2
+              },
+              "currency_iso_code": "RUB"
+            },
+            "actual_price": {
+              "cents": 59900,
+              "to_f": 599,
+              "currency": {
+                "iso_code": "RUB",
+                "iso_numeric": "643",
+                "name": "Russian Ruble",
+                "symbol": "₽",
+                "html_name": "руб.",
+                "human_name": "Российские рубли",
+                "symbol_first": false,
+                "thousands_separator": " ",
+                "decimal_mark": ",",
+                "subunit_to_unit": 100,
+                "smallest_denomination": 1,
+                "exponent": 2
+              },
+              "currency_iso_code": "RUB"
+            }
+          }
+        ]
+      }
+    ],
+    "formAuthenticity": {
+      "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
+      "field": "authenticity_token"
     }
-  ],
-  "formAuthenticity": {
-    "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
-    "field": "authenticity_token"
   }
 }

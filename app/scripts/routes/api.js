@@ -1,20 +1,18 @@
-const {
-  operator_api_url: operatorApiUrl,
-  public_api_url: publicApiUrl
-} = window.gon;
+const pUrl = window.mrch.config.public_api_url || window.gon.public_api_url;
+const oUrl = window.mrch.config.operator_api_url || window.gon.operator_api_url;
 
 export function designSettings() {
-  return operatorApiUrl + '/v1/design_settings';
+  return oUrl + '/v1/design_settings';
 }
 
 export function productsFilteredCount(filter) {
-  return publicApiUrl + '/v1/products/filtered/count?' + filter;
+  return pUrl + '/v1/products/filtered/count?' + filter;
 }
 
 export function checkCouponCode() {
-  return publicApiUrl + '/v1/coupon/call';
+  return pUrl + '/v1/coupon/call';
 }
 
 export function productCards(id) {
-  return `${publicApiUrl}/v1/product_cards/${id}`;
+  return `${pUrl}/v1/product_cards/${id}`;
 }

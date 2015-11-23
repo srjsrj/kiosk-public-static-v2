@@ -1,38 +1,51 @@
 import React, { Component, PropTypes } from 'react';
 import { load } from '../../../actions/productCardActions';
-// import makeTranslatable from '../../HoC/makeTranslatable';
 import ProductCard from './ProductCard';
 
 class ProductCardContainer extends Component {
-  state = {
-    good: null,
-    isLoading: !this.props.productCard,
-    productCard: this.props.productCard || null,
+  constructor(props) {
+    super(props);
+    const { productCard, productCardID } = props;
+
+    this.state = {
+      good: null,
+      isLoading: !!(!productCard && productCardID),
+      productCard: productCard || null,
+    };
   }
   componentDidMount() {
-    const { productCardID } = this.props;
+    const { productCard, productCardID } = this.props;
 
-    if (productCardID) {
+    if (!productCard && productCardID) {
       load(productCardID)
-        .then((productCard) => this.setState({ productCard, isLoading: false }));
+        .then((productCard) => {
+          this.setState({
+            productCard, isLoading: false,
+          });
+        });
     }
   }
   handleGoodChange(good) {
-    const product = {
-      ...this.state.productCard.product,
-      article: good ? good.article : null,
-    };
+    const { product } = this.state.productCard;
 
-    this.setState({ good, product });
+    this.setState({
+      good,
+      product: {
+        ...product,
+        article: good ? good.article : null,
+      }
+    });
   }
   render() {
-    if (this.state.isLoading) {
+    const { good, isLoading, productCard } = this.state;
+
+    if (isLoading) {
       return <span>Loading...</span>;
     } else {
       return (
         <ProductCard
-          {...this.state.productCard}
-          good={this.state.good}
+          {...productCard}
+          good={good}
           onGoodChange={this.handleGoodChange.bind(this)}
         />
       );
@@ -46,76 +59,3 @@ ProductCardContainer.propTypes = {
 };
 
 export default ProductCardContainer;
-
-// import React, { Component, PropTypes } from 'react';
-// import ProductCard from './ProductCard';
-
-// class ProductCardContainer extends Component {
-//   state = {
-//     loading: true,
-//     productCard: {}
-//   }
-//   componentDidMount() {
-//     setTimeout(() => {
-//       this.setState({
-//         loading: false,
-//         productCard: { product: {title: 'Продукт'}},
-//       });
-//     }, 3000)
-//   }
-//   render() {
-//     return (
-//       <ProductCard
-//         loading={this.state.loading}
-//         {...this.state.productCard}
-//       />
-//     );
-//   }
-// }
-
-// ProductCardContainer.propTypes = {
-//   productCardID: PropTypes.number.isRequired,
-// };
-
-// export default ProductCardContainer;
-
-
-
-// @makeTranslatable
-// export default class ProductCardContainer extends Component {
-//   static propTypes = {
-//     addWishlistUrl: PropTypes.string,
-//     formAuthenticity: PropTypes.object,
-//     hasWishlist: PropTypes.bool,
-//     isWishlisted: PropTypes.bool,
-//     product: PropTypes.object.isRequired,
-//     similarProducts: PropTypes.array,
-//     wishlistUrl: PropTypes.string,
-//   }
-//   static defaultProps = {
-//     formAuthenticity: {},
-//     similarProducts: [],
-//   }
-//   state = {
-//     good: null,
-//     product: this.props.product
-//   }
-//   handleGoodChange(good) {
-//     const product = {
-//       ...this.state.product,
-//       article: good ? good.article : null,
-//     };
-
-//     this.setState({ good, product });
-//   }
-//   render() {
-//     return (
-//       <ProductCard
-//         {...this.props}
-//         good={this.state.good}
-//         onGoodChange={this.handleGoodChange.bind(this)}
-//         product={this.state.product}
-//       />
-//     );
-//   }
-// }
