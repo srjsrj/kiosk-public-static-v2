@@ -1,6 +1,10 @@
+global.mrch = {};
+global.mrch.config = {};
 global.gon = {
-  env: 'development',
-  thumbor_url: 'http://thumball.brandydev.ru',
+  env: 'production',
+  operator_api_url: 'http://wannabe.vagrant.dev:3000/operator/api',
+  public_api_url: 'http://wannabe.vagrant.dev:3000/api',
+  thumbor_url: 'http://thumbor.kiiiosk.ru',
 };
 
 require('./bundlePrerender');
