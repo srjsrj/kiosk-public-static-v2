@@ -6195,8 +6195,8 @@ exports.designSettings = designSettings;
 exports.productsFilteredCount = productsFilteredCount;
 exports.checkCouponCode = checkCouponCode;
 exports.productCards = productCards;
-var pUrl = global.mrch.config.public_api_url || global.gon.public_api_url;
-var oUrl = global.mrch.config.operator_api_url || global.gon.operator_api_url;
+var pUrl = global.mrch ? global.mrch.config.public_api_url : global.gon.public_api_url;
+var oUrl = global.mrch ? global.mrch.config.operator_api_url : global.gon.operator_api_url;
 
 function designSettings() {
   return oUrl + '/v1/design_settings';

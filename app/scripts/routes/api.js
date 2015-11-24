@@ -1,5 +1,5 @@
-const pUrl = global.mrch.config.public_api_url || global.gon.public_api_url;
-const oUrl = global.mrch.config.operator_api_url || global.gon.operator_api_url;
+const pUrl = (global.mrch) ? global.mrch.config.public_api_url : global.gon.public_api_url;
+const oUrl = (global.mrch) ? global.mrch.config.operator_api_url : global.gon.operator_api_url;
 
 export function designSettings() {
   return oUrl + '/v1/design_settings';
