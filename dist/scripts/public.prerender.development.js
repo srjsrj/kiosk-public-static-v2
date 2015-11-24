@@ -59,22 +59,16 @@ Object.defineProperty(exports, '__esModule', {
 });
 exports.load = load;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _reqwest = require('reqwest');
-
-var _reqwest2 = _interopRequireDefault(_reqwest);
-
 var _routesApi = require('../../routes/api');
 
 function load(vendorID, productCardID) {
-  return (0, _reqwest2['default'])({
+  return reqwest({
     url: (0, _routesApi.productCards)(productCardID),
     type: 'json'
   });
 }
 
-},{"../../routes/api":89,"reqwest":"reqwest"}],5:[function(require,module,exports){
+},{"../../routes/api":89}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

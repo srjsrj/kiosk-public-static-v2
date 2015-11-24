@@ -1,4 +1,3 @@
-import reqwest from 'reqwest';
 import { productCards } from '../../routes/api';
 
 export function load(vendorID, productCardID) {
