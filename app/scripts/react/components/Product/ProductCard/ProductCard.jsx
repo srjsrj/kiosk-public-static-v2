@@ -18,9 +18,10 @@ class ProductCard extends Component {
     product: this.props.product,
   }
   handleGoodChange(good) {
+    const article = good && good.article || this.state.product.article;
     const product = {
       ...this.state.product,
-      article: good ? good.article : null,
+      article,
     };
 
     this.setState({ good, product });

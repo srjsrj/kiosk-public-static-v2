@@ -3,7 +3,6 @@ var baseConfig = require('./webpack.config.base');
 var config = Object.create(baseConfig);
 
 config.devtool = 'source-map';
-config.watch = true;
 config.output = {
   path: 'build/scripts',
   filename: '[name].js',
