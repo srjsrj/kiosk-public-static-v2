@@ -1,5 +1,6 @@
 // Mocks
 import './mocks/gon';
+import './mocks/mrch';
 
 // Libs
 import '../app/scripts/libs';
@@ -12,7 +13,8 @@ import './react/components/Notice/Notice.test';
 import './react/components/DesignSettings/DesignSettings.test';
 import './react/components/CatalogFilter/CatalogFilter.test';
 import './react/components/Product/ProductCart/ProductCart.test';
-import './react/components/Product/ProductCard/index.test';
+import './react/components/Product/ProductCard/ProductCardContainer.test';
+import './react/components/Product/ProductCard/ProductCard.test';
 import './react/components/Product/ProductCard/ProductCardDetails.test';
 import './react/components/Product/ProductCard/ProductCardGallery.test';
 import './react/components/Product/ProductProperties/index.test';

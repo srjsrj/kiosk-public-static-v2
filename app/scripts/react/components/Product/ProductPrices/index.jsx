@@ -12,7 +12,7 @@ export default class ProductPrices {
     let minPrice = goods[0].actual_price;
 
     for (let i = 1; i < goods.length; i++) {
-      const good =  goods[i];
+      const good = goods[i];
 
       if (good.actual_price.cents < minPrice.cents) {
         minPrice = good.actual_price;
@@ -25,7 +25,7 @@ export default class ProductPrices {
     let maxPrice = goods[0].actual_price;
 
     for (let i = 1; i < goods.length; i++) {
-      const good =  goods[i];
+      const good = goods[i];
 
       if (good.actual_price.cents > maxPrice.cents) {
         maxPrice = good.actual_price;
