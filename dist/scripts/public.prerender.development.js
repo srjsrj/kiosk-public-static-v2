@@ -6185,6 +6185,7 @@ function createReducer(initialState, handlers) {
 module.exports = exports['default'];
 
 },{"immutable":"immutable"}],89:[function(require,module,exports){
+(function (global){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6194,8 +6195,8 @@ exports.designSettings = designSettings;
 exports.productsFilteredCount = productsFilteredCount;
 exports.checkCouponCode = checkCouponCode;
 exports.productCards = productCards;
-var pUrl = window.mrch.config.public_api_url || window.gon.public_api_url;
-var oUrl = window.mrch.config.operator_api_url || window.gon.operator_api_url;
+var pUrl = global.mrch.config.public_api_url || global.gon.public_api_url;
+var oUrl = global.mrch.config.operator_api_url || global.gon.operator_api_url;
 
 function designSettings() {
   return oUrl + '/v1/design_settings';
@@ -6213,6 +6214,7 @@ function productCards(id) {
   return pUrl + '/v1/product_cards/' + id;
 }
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],90:[function(require,module,exports){
 'use strict';
 
