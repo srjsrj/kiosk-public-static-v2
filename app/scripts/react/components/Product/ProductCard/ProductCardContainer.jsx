@@ -1,61 +1,53 @@
 import React, { Component, PropTypes } from 'react';
 import { load } from '../../../actions/productCardActions';
+import { ERROR_STATE, LOADING_STATE, READY_STATE } from './ProductCardContainer.constants';
 import ProductCard from './ProductCard';
 
 class ProductCardContainer extends Component {
-  constructor(props) {
-    super(props);
-    const { productCard, productCardID } = props;
-
-    this.state = {
-      good: null,
-      isLoading: !!(!productCard && productCardID),
-      productCard: productCard || null,
-    };
+  state = {
+    currentState: this.isNeededLoading(this.props) ? LOADING_STATE : ERROR_STATE,
+    productCard: null,
   }
   componentDidMount() {
-    const { productCard, productCardID } = this.props;
+    const { productCardID, vendorID } = this.props;
 
-    if (!productCard && productCardID) {
-      load(productCardID)
+    if (this.isNeededLoading(this.props)) {
+      load(vendorID, productCardID)
         .then((productCard) => {
           this.setState({
-            productCard, isLoading: false,
+            productCard,
+            currentState: READY_STATE,
+          });
+        })
+        .fail(() => {
+          this.setState({
+            currentState: ERROR_STATE
           });
         });
     }
   }
-  handleGoodChange(good) {
-    const { product } = this.state.productCard;
-
-    this.setState({
-      good,
-      product: {
-        ...product,
-        article: good ? good.article : null,
-      }
-    });
+  isNeededLoading(props) {
+    return Boolean(props.productCardID && props.vendorID);
   }
   render() {
-    const { good, isLoading, productCard } = this.state;
+    const { currentState, productCard } = this.state;
 
-    if (isLoading) {
-      return <span>Loading...</span>;
-    } else {
-      return (
-        <ProductCard
-          {...productCard}
-          good={good}
-          onGoodChange={this.handleGoodChange.bind(this)}
-        />
-      );
+    switch(currentState) {
+      case READY_STATE:
+        return <ProductCard {...productCard} />;
+      case LOADING_STATE:
+        return <span>Loading...</span>;
+      case ERROR_STATE:
+        return <span>Loading error</span>;
+      default:
+        return null;
     }
   }
 }
 
 ProductCardContainer.propTypes = {
-  productCard: PropTypes.object,
   productCardID: PropTypes.number,
+  vendorID: PropTypes.number,
 };
 
 export default ProductCardContainer;

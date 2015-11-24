@@ -13,8 +13,21 @@ import ProductCardVideo from './ProductCardVideo';
 
 @makeTranslatable
 class ProductCard extends Component {
+  state = {
+    good: null,
+    product: this.props.product,
+  }
+  handleGoodChange(good) {
+    const product = {
+      ...this.state.product,
+      article: good ? good.article : null,
+    };
+
+    this.setState({ good, product });
+  }
   render() {
-    const { good, product, onGoodChange, similarProducts } = this.props;
+    const { similarProducts } = this.props;
+    const { good, product } = this.state;
 
     return (
       <div
@@ -44,7 +57,11 @@ class ProductCard extends Component {
               </div>
               <ProductCardSchema product={product} />
               <div className="b-item-full__form">
-                <ProductCart {...this.props} />
+                <ProductCart
+                  {...this.props}
+                  onGoodChange={this.handleGoodChange.bind(this)}
+                  product={this.state.product}
+                />
               </div>
               <ProductCardDetails product={product} />
             </div>
@@ -61,12 +78,10 @@ class ProductCard extends Component {
 ProductCard.propTypes = {
   addWishlistUrl: PropTypes.string,
   formAuthenticity: PropTypes.object,
-  good: PropTypes.object,
   hasWishlist: PropTypes.bool,
   isWishlisted: PropTypes.bool,
-  product: PropTypes.object.isRequired,
+  product: PropTypes.object,
   similarProducts: PropTypes.array,
-  onGoodChange: PropTypes.func,
   wishlistUrl: PropTypes.string,
 };
 ProductCard.defaultProps = {

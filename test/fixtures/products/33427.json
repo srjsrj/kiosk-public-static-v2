@@ -1,240 +1,316 @@
 {
-  "productCard": {
-    "i18n": {
-      "locale": "ru",
-      "translations": {
-        "vendor": {
-          "not_published": "Магазин временно не работает",
-          "made_in_kiiiosk": "Сделано на «Киоске»",
-          "badges": {
-            "new": "Новинка",
-            "sale_percent": "SALE - %{percent}%",
-            "not_available": "Не продается",
-            "sale": "SALE",
-            "sold": "Продано"
-          },
-          "search": {
-            "results_title": "Результаты поиска (%{count})",
-            "nothing_found": "К сожалению, ничего не найдено."
-          },
-          "errors": {
-            "cart": {
-              "empty": "В корзине нет товаров"
-            },
-            "coupon": {
-              "not_found": "Несуществующий промокод %{code}",
-              "expired": "Промокод просрочен %{code}"
-            }
-          },
-          "placeholders": {
-            "coupon": "Промо-код (если есть)",
-            "search": "Поиск"
-          },
-          "alerts": {
-            "confirm": "Точно очистить?"
-          },
-          "flashes": {
-            "good_added_to_basket": "Товар \"%{title}\" добавлен в корзину"
-          },
-          "mails": {
-            "signature": "С уважением, интернет-магазин \"%{name}\""
-          },
-          "auto_menu_items": {
-            "blog": "Блог"
-          },
-          "top_banner": {
-            "default_content": "Мы открылись!"
-          },
-          "order": {
-            "fields": {
-              "phone": "Телефон",
-              "name": "Полное имя",
-              "email": "Email",
-              "city_title": "Город доставки",
-              "address": "Адрес доставки",
-              "comment": "Комментарий",
-              "coupon_code": "Промокод"
-            },
-            "submit": "Оформить заказ",
-            "pickup_address": "Адрес самовывоза:",
-            "title": "Заказ №%{number}",
-            "payment_type": "Способ оплаты: %{title}",
-            "delivery_type": "Способ доставки: %{title}",
-            "free_delivery_text_html": "Бесплатная доставка при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
-            "checkout_free_delivery_text_html": "Бесплатно при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
-            "go_back": "Вернуться назад",
-            "next": "Продолжить",
-            "delivery_tracking_id": "Трекинг-номер доставки: %{number}",
-            "check_state": "Проверить статус доставки",
-            "public_offer_accepted_html": "Согласен с условиями <u><a href=\"%{url}\" target=\"_blank\">публичной оферты</a></u>",
-            "created": {
-              "title": "Спасибо за заказ",
-              "desc_html": "В ближайшее время менеджер свяжется с вами для подтверждения заказа. <br> Ваш телефон %{phone} <br> Ваш заказ %{link} на сумму %{price}\n"
-            },
-            "new": {
-              "delivery_title": "Выберите тип доставки.",
-              "payment_title": "Способы оплаты",
-              "contacts_title": "Введите данные",
-              "sum": "на сумму"
-            },
-            "redirect": "В течение 5-и секунд вы будете переправлены на страницу оплаты.",
-            "redirecting": "Переправляю на сайт оплаты",
-            "go_to_payment": "Перейти к оплате",
-            "continue_shopping": "Продолжить покупки"
+  "i18n": {
+    "locale": "ru",
+    "translations": {
+      "vendor": {
+        "not_published": "Магазин временно не работает",
+        "made_in_kiiiosk": "Сделано на «Киоске»",
+        "badges": {
+          "new": "Новинка",
+          "sale_percent": "SALE - %{percent}%",
+          "not_available": "Не продается",
+          "sale": "SALE",
+          "sold": "Продано"
+        },
+        "search": {
+          "results_title": "Результаты поиска (%{count})",
+          "nothing_found": "К сожалению, ничего не найдено."
+        },
+        "errors": {
+          "cart": {
+            "empty": "В корзине нет товаров"
           },
           "coupon": {
-            "discount": "Скидка - %{discount}",
-            "invalid": "Купон \"%{value}\" НЕ действующий",
-            "checking": "Проверяю купон..",
-            "error": "Ошибка при проверке купона. Попробуйте еще раз"
+            "not_found": "Несуществующий промокод %{code}",
+            "expired": "Промокод просрочен %{code}"
+          }
+        },
+        "placeholders": {
+          "coupon": "Промо-код (если есть)",
+          "search": "Поиск"
+        },
+        "alerts": {
+          "confirm": "Точно очистить?"
+        },
+        "flashes": {
+          "good_added_to_basket": "Товар \"%{title}\" добавлен в корзину"
+        },
+        "mails": {
+          "signature": "С уважением, интернет-магазин \"%{name}\""
+        },
+        "auto_menu_items": {
+          "blog": "Блог"
+        },
+        "top_banner": {
+          "default_content": "Мы открылись!"
+        },
+        "order": {
+          "fields": {
+            "phone": "Телефон",
+            "name": "Полное имя",
+            "email": "Email",
+            "city_title": "Город доставки",
+            "address": "Адрес доставки",
+            "comment": "Комментарий",
+            "coupon_code": "Промокод"
           },
-          "cart": {
-            "basket_button": "Корзина",
-            "amount": "Количество",
-            "overall": "Итого:",
-            "title": "Корзина",
-            "clear": "Очистить корзину",
-            "not_available": "Больше не продается",
-            "empty": "Пока тут ничего нет"
+          "submit": "Оформить заказ",
+          "pickup_address": "Адрес самовывоза:",
+          "title": "Заказ №%{number}",
+          "payment_type": "Способ оплаты: %{title}",
+          "delivery_type": "Способ доставки: %{title}",
+          "free_delivery_text_html": "Бесплатная доставка при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
+          "checkout_free_delivery_text_html": "Бесплатно при заказе свыше <nobr>%{free_delivery_threshold}</nobr>",
+          "go_back": "Вернуться назад",
+          "next": "Продолжить",
+          "delivery_tracking_id": "Трекинг-номер доставки: %{number}",
+          "check_state": "Проверить статус доставки",
+          "public_offer_accepted_html": "Согласен с условиями <u><a href=\"%{url}\" target=\"_blank\">публичной оферты</a></u>",
+          "created": {
+            "title": "Спасибо за заказ",
+            "desc_html": "В ближайшее время менеджер свяжется с вами для подтверждения заказа. <br> Ваш телефон %{phone} <br> Ваш заказ %{link} на сумму %{price}\n"
           },
-          "wishlist": {
-            "add_item": "Добавить в избранное",
-            "wishlist_button": "Избранное",
-            "private_title": "Ваше избранное",
-            "foreign_title": "Чужое избранное",
-            "empty": "Пока тут ничего нет"
+          "new": {
+            "delivery_title": "Выберите тип доставки.",
+            "payment_title": "Способы оплаты",
+            "contacts_title": "Введите данные",
+            "sum": "на сумму"
           },
-          "packaging": {
-            "add": "Добавить",
-            "add_gift_package": "Добавить к заказу",
-            "no_package": "Не добавлять"
-          },
-          "payment": {
-            "w1": {
-              "failure": {
-                "title": "Оплата не прошла",
-                "desc": "Оплата заказа не была произведена"
-              },
-              "success": {
-                "title": "Спасибо за заказ",
-                "desc": "Оплата заказа была произведена"
-              }
-            }
-          },
-          "category": {
-            "continue_shopping": "Продолжить покупки",
-            "empty": "Ой, а здесь ничего нет. Пока."
-          },
-          "dictionary_entity": {
-            "continue_shopping": "Продолжить покупки",
-            "empty": "Ой, а здесь ничего нет. Пока."
-          },
-          "similar_product": {
-            "title": "С этим товаром покупают также"
-          },
-          "product": {
-            "title": "Товар",
-            "blank_price": "Цена неизвестна",
-            "run_out": "Нет в наличии",
-            "not_available": "Не продается",
-            "available": "Можно купить",
-            "sold_out_message_html": "&laquo;%{title}&raquo; сейчас не продается",
-            "nothing_found_by_criteria": "Сожалеем, ничего не найдено. Попробуйте изменить критерии поиска.",
-            "category_title": "Категория",
-            "show_other_products": "Посмотреть другие товары",
-            "show_all": "Показать все"
-          },
-          "properties": {
-            "empty": "Нет характеристик для вывода"
-          },
-          "property": {
-            "unknown_type": "Неизвестный тип характеристики",
-            "defaults": {
-              "size": "Размер",
-              "color": "Цвет"
-            }
-          },
-          "pages": {
-            "titles": {
-              "cart": "Корзина",
-              "order": "Оформление заказа",
-              "payment": "Оплата",
-              "payment_success": "Успешная оплата",
-              "payment_error": "Ошибка оплаты"
-            }
-          },
-          "filter": {
-            "availability": "Доступность",
-            "price_range": "Ценовой диапазон",
-            "selected_options": {
-              "availability": "Доступность",
-              "price_range": "Цена от %{from} до %{to} %{currency}"
+          "redirect": "В течение 5-и секунд вы будете переправлены на страницу оплаты.",
+          "redirecting": "Переправляю на сайт оплаты",
+          "go_to_payment": "Перейти к оплате",
+          "continue_shopping": "Продолжить покупки"
+        },
+        "coupon": {
+          "discount": "Скидка - %{discount}",
+          "invalid": "Купон \"%{value}\" НЕ действующий",
+          "checking": "Проверяю купон..",
+          "error": "Ошибка при проверке купона. Попробуйте еще раз"
+        },
+        "cart": {
+          "basket_button": "Корзина",
+          "amount": "Количество",
+          "overall": "Итого:",
+          "title": "Корзина",
+          "clear": "Очистить корзину",
+          "not_available": "Больше не продается",
+          "empty": "Пока тут ничего нет"
+        },
+        "wishlist": {
+          "add_item": "Добавить в избранное",
+          "wishlist_button": "Избранное",
+          "private_title": "Ваше избранное",
+          "foreign_title": "Чужое избранное",
+          "empty": "Пока тут ничего нет"
+        },
+        "packaging": {
+          "add": "Добавить",
+          "add_gift_package": "Добавить к заказу",
+          "no_package": "Не добавлять"
+        },
+        "payment": {
+          "w1": {
+            "failure": {
+              "title": "Оплата не прошла",
+              "desc": "Оплата заказа не была произведена"
             },
-            "selected_availability": {
-              "all": "Все",
-              "available": "В наличии",
-              "run_out": "Под заказ",
-              "sale": "Распродажа",
-              "unknown": "unknown"
+            "success": {
+              "title": "Спасибо за заказ",
+              "desc": "Оплата заказа была произведена"
             }
+          }
+        },
+        "category": {
+          "continue_shopping": "Продолжить покупки",
+          "empty": "Ой, а здесь ничего нет. Пока."
+        },
+        "dictionary_entity": {
+          "continue_shopping": "Продолжить покупки",
+          "empty": "Ой, а здесь ничего нет. Пока."
+        },
+        "similar_product": {
+          "title": "С этим товаром покупают также"
+        },
+        "product": {
+          "title": "Товар",
+          "blank_price": "Цена неизвестна",
+          "run_out": "Нет в наличии",
+          "not_available": "Не продается",
+          "available": "Можно купить",
+          "sold_out_message_html": "&laquo;%{title}&raquo; сейчас не продается",
+          "nothing_found_by_criteria": "Сожалеем, ничего не найдено. Попробуйте изменить критерии поиска.",
+          "category_title": "Категория",
+          "show_other_products": "Посмотреть другие товары",
+          "show_all": "Показать все"
+        },
+        "properties": {
+          "empty": "Нет характеристик для вывода"
+        },
+        "property": {
+          "unknown_type": "Неизвестный тип характеристики",
+          "defaults": {
+            "size": "Размер",
+            "color": "Цвет"
+          }
+        },
+        "pages": {
+          "titles": {
+            "cart": "Корзина",
+            "order": "Оформление заказа",
+            "payment": "Оплата",
+            "payment_success": "Успешная оплата",
+            "payment_error": "Ошибка оплаты"
+          }
+        },
+        "filter": {
+          "availability": "Доступность",
+          "price_range": "Ценовой диапазон",
+          "selected_options": {
+            "availability": "Доступность",
+            "price_range": "Цена от %{from} до %{to} %{currency}"
           },
-          "button": {
-            "to_cart": "В корзину",
-            "select_good": "Выберите характеристику",
-            "disable_with": {
-              "sending": "Отправляем...",
-              "saving": "Сохраняем...",
-              "waiting": "Подождите...",
-              "adding": "Добавляем..."
-            }
+          "selected_availability": {
+            "all": "Все",
+            "available": "В наличии",
+            "run_out": "Под заказ",
+            "sale": "Распродажа",
+            "unknown": "unknown"
+          }
+        },
+        "button": {
+          "to_cart": "В корзину",
+          "select_good": "Выберите характеристику",
+          "disable_with": {
+            "sending": "Отправляем...",
+            "saving": "Сохраняем...",
+            "waiting": "Подождите...",
+            "adding": "Добавляем..."
           }
         }
       }
+    }
+  },
+  "product": {
+    "id": 33427,
+    "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
+    "title": "Spring Flowers",
+    "article": null,
+    "has_ordering_goods": true,
+    "is_sale": false,
+    "is_label_new": false,
+    "is_run_out": false,
+    "is_sold": false,
+    "description": "<p><p>Один размер</p></p>",
+    "sale_percent": null,
+    "main_category": {
+      "id": 2638,
+      "name": "Кимоно",
+      "is_root": true,
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/categories/2638-kimono",
+      "parent": null
     },
-    "product": {
-      "id": 33427,
-      "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
-      "title": "Spring Flowers",
-      "article": null,
-      "has_ordering_goods": true,
-      "is_sale": false,
-      "is_label_new": false,
-      "is_run_out": false,
-      "is_sold": false,
-      "description": "<p><p>Один размер</p></p>",
-      "sale_percent": null,
-      "main_category": {
+    "categories": [
+      {
         "id": 2638,
         "name": "Кимоно",
         "is_root": true,
         "public_url": "http://babe-in-the-woods.kiiiosk.ru/categories/2638-kimono",
         "parent": null
-      },
-      "categories": [
-        {
-          "id": 2638,
-          "name": "Кимоно",
-          "is_root": true,
-          "public_url": "http://babe-in-the-woods.kiiiosk.ru/categories/2638-kimono",
-          "parent": null
+      }
+    ],
+    "goods": [
+      {
+        "title": "Spring Flowers",
+        "article": null,
+        "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
+        "is_ordering": true,
+        "is_run_out": false,
+        "is_sale": false,
+        "is_preorder": false,
+        "image": {
+          "title": "Spring Flowers",
+          "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
+          "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
+        },
+        "attributes": {},
+        "quantity": 1,
+        "price": {
+          "cents": 260000,
+          "to_f": 2600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
+        },
+        "actual_price": {
+          "cents": 260000,
+          "to_f": 2600,
+          "currency": {
+            "iso_code": "RUB",
+            "iso_numeric": "643",
+            "name": "Russian Ruble",
+            "symbol": "₽",
+            "html_name": "руб.",
+            "human_name": "Российские рубли",
+            "symbol_first": false,
+            "thousands_separator": " ",
+            "decimal_mark": ",",
+            "subunit_to_unit": 100,
+            "smallest_denomination": 1,
+            "exponent": 2
+          },
+          "currency_iso_code": "RUB"
         }
-      ],
+      }
+    ],
+    "images": [
+      {
+        "title": "Spring Flowers",
+        "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
+        "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
+      }
+    ],
+    "properties": [],
+    "attributes": [
+      {
+        "property_id": 1439,
+        "type": "AttributeDictionary",
+        "title": "Цвет",
+        "value": "Белый",
+        "products_path": "/entities/3935-belyy"
+      }
+    ],
+    "custom_product_html": "",
+    "text_blocks": [],
+    "video_embed_html": null
+  },
+  "similarProducts": [
+    {
+      "id": 33474,
+      "title": "Pop Culture",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": true,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28249/6fae58b6-7657-4d28-9683-eac2dcae3f47.png",
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33474-pop-culture",
       "goods": [
         {
-          "title": "Spring Flowers",
-          "article": null,
-          "global_id": "Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzMzNDI3",
-          "is_ordering": true,
-          "is_run_out": false,
+          "id": 33474,
+          "type": "Product",
           "is_sale": false,
-          "is_preorder": false,
-          "image": {
-            "title": "Spring Flowers",
-            "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
-            "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
-          },
-          "attributes": {},
-          "quantity": 1,
           "price": {
             "cents": 260000,
             "to_f": 2600,
@@ -274,145 +350,67 @@
             "currency_iso_code": "RUB"
           }
         }
-      ],
-      "images": [
-        {
-          "title": "Spring Flowers",
-          "url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28185/3b85b7ad-8ccf-49ff-b661-667daafae401.png",
-          "uid": "d3df8f76a1ed12cd6324fe512b85d53221143304b2daaa0619ff54596f1cdb1f"
-        }
-      ],
-      "properties": [],
-      "attributes": [
-        {
-          "property_id": 1439,
-          "type": "AttributeDictionary",
-          "title": "Цвет",
-          "value": "Белый",
-          "products_path": "/entities/3935-belyy"
-        }
-      ],
-      "custom_product_html": "",
-      "text_blocks": [],
-      "video_embed_html": null
+      ]
     },
-    "similarProducts": [
-      {
-        "id": 33474,
-        "title": "Pop Culture",
-        "is_sale": false,
-        "has_ordering_goods": true,
-        "is_label_new": true,
-        "is_run_out": false,
-        "is_sold": false,
-        "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28249/6fae58b6-7657-4d28-9683-eac2dcae3f47.png",
-        "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33474-pop-culture",
-        "goods": [
-          {
-            "id": 33474,
-            "type": "Product",
-            "is_sale": false,
-            "price": {
-              "cents": 260000,
-              "to_f": 2600,
-              "currency": {
-                "iso_code": "RUB",
-                "iso_numeric": "643",
-                "name": "Russian Ruble",
-                "symbol": "₽",
-                "html_name": "руб.",
-                "human_name": "Российские рубли",
-                "symbol_first": false,
-                "thousands_separator": " ",
-                "decimal_mark": ",",
-                "subunit_to_unit": 100,
-                "smallest_denomination": 1,
-                "exponent": 2
-              },
-              "currency_iso_code": "RUB"
+    {
+      "id": 33472,
+      "title": "Summer Flowers",
+      "is_sale": false,
+      "has_ordering_goods": true,
+      "is_label_new": false,
+      "is_run_out": false,
+      "is_sold": false,
+      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28246/0a4ef555-884c-4e36-b389-68317896d53b.JPG",
+      "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33472-summer-flowers",
+      "goods": [
+        {
+          "id": 33472,
+          "type": "Product",
+          "is_sale": false,
+          "price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
             },
-            "actual_price": {
-              "cents": 260000,
-              "to_f": 2600,
-              "currency": {
-                "iso_code": "RUB",
-                "iso_numeric": "643",
-                "name": "Russian Ruble",
-                "symbol": "₽",
-                "html_name": "руб.",
-                "human_name": "Российские рубли",
-                "symbol_first": false,
-                "thousands_separator": " ",
-                "decimal_mark": ",",
-                "subunit_to_unit": 100,
-                "smallest_denomination": 1,
-                "exponent": 2
-              },
-              "currency_iso_code": "RUB"
-            }
-          }
-        ]
-      },
-      {
-        "id": 33472,
-        "title": "Summer Flowers",
-        "is_sale": false,
-        "has_ordering_goods": true,
-        "is_label_new": false,
-        "is_run_out": false,
-        "is_sold": false,
-        "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28246/0a4ef555-884c-4e36-b389-68317896d53b.JPG",
-        "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33472-summer-flowers",
-        "goods": [
-          {
-            "id": 33472,
-            "type": "Product",
-            "is_sale": false,
-            "price": {
-              "cents": 260000,
-              "to_f": 2600,
-              "currency": {
-                "iso_code": "RUB",
-                "iso_numeric": "643",
-                "name": "Russian Ruble",
-                "symbol": "₽",
-                "html_name": "руб.",
-                "human_name": "Российские рубли",
-                "symbol_first": false,
-                "thousands_separator": " ",
-                "decimal_mark": ",",
-                "subunit_to_unit": 100,
-                "smallest_denomination": 1,
-                "exponent": 2
-              },
-              "currency_iso_code": "RUB"
+            "currency_iso_code": "RUB"
+          },
+          "actual_price": {
+            "cents": 260000,
+            "to_f": 2600,
+            "currency": {
+              "iso_code": "RUB",
+              "iso_numeric": "643",
+              "name": "Russian Ruble",
+              "symbol": "₽",
+              "html_name": "руб.",
+              "human_name": "Российские рубли",
+              "symbol_first": false,
+              "thousands_separator": " ",
+              "decimal_mark": ",",
+              "subunit_to_unit": 100,
+              "smallest_denomination": 1,
+              "exponent": 2
             },
-            "actual_price": {
-              "cents": 260000,
-              "to_f": 2600,
-              "currency": {
-                "iso_code": "RUB",
-                "iso_numeric": "643",
-                "name": "Russian Ruble",
-                "symbol": "₽",
-                "html_name": "руб.",
-                "human_name": "Российские рубли",
-                "symbol_first": false,
-                "thousands_separator": " ",
-                "decimal_mark": ",",
-                "subunit_to_unit": 100,
-                "smallest_denomination": 1,
-                "exponent": 2
-              },
-              "currency_iso_code": "RUB"
-            }
+            "currency_iso_code": "RUB"
           }
-        ]
-      }
-    ],
-    "formAuthenticity": {
-      "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
-      "field": "authenticity_token"
+        }
+      ]
     }
+  ],
+  "formAuthenticity": {
+    "token": "17nYxVowp0vCn6cEAqBPVPD06v4yxDz4K1CPrE0N89s=",
+    "field": "authenticity_token"
   }
 }

@@ -8,8 +8,8 @@
     script.async = true;
     script.src = src;
     script.onload = function () {
-      this.onerror = this.onload = null;
-      cb(null, script);
+      this.onload = null;
+      cb();
     };
 
     head.appendChild(script);
@@ -31,7 +31,7 @@
         var widget = mrch.widgets['ProductCard'];
 
         if (widget) {
-          widget.render({ productCardID: productCardID }, node);
+          widget.render({ productCardID: productCardID, vendorID: vendorID }, node);
         }
       })
     }

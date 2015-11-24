@@ -1,7 +1,7 @@
 import reqwest from 'reqwest';
 import { productCards } from '../../routes/api';
 
-export function load(productCardID) {
+export function load(vendorID, productCardID) {
   return reqwest({
     url: productCards(productCardID),
     type: 'json',
