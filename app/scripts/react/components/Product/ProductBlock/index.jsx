@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import makeTranslatable from '../../HoC/makeTranslatable';
 import Image from '../../common/Image';
 import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
 
 @makeTranslatable
-export default class ProductBlock {
-  static propTypes = {
-    product: PropTypes.object.isRequired,
-  }
+class ProductBlock extends Component {
   render() {
     const { product } = this.props;
 
@@ -28,6 +25,11 @@ export default class ProductBlock {
             <h2 className="b-item__name">
               {product.title}
             </h2>
+            {!!product.short_details &&
+              <div className="b-item__details">
+                {product.short_details}
+              </div>
+            }
             <ProductPrices product={product} />
           </div>
         </a>
@@ -35,3 +37,9 @@ export default class ProductBlock {
     );
   }
 }
+
+ProductBlock.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
+export default ProductBlock;
