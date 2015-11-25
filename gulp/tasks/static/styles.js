@@ -1,8 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import rename from 'gulp-rename';
-import cssPrefix from 'gulp-css-prefix';
-import cssWrap from 'gulp-css-wrap';
 import autoprefixer from 'gulp-autoprefixer';
 import handleErrors from '../../util/handleErrors';
 import { styles as config } from '../../config';
