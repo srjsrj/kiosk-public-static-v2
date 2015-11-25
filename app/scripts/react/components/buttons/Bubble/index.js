@@ -30,8 +30,8 @@ export default class Bubble extends Component {
         className={bubbleClasses}
         href={url}
       >
-        {text && <span className="bubble__text">{text}</span>}
-        {count && <span className="bubble__count">{count}</span>}
+        {!!text && <span className="bubble__text">{text}</span>}
+        {!!count && <span className="bubble__count">{count}</span>}
       </a>
     );
   }

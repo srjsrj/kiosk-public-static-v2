@@ -1478,8 +1478,9 @@ var ProductCard = (function (_Component) {
   _createClass(ProductCard, [{
     key: 'handleGoodChange',
     value: function handleGoodChange(good) {
+      var article = good && good.article || this.state.product.article;
       var product = _extends({}, this.state.product, {
-        article: good ? good.article : null
+        article: article
       });
 
       this.setState({ good: good, product: product });
@@ -4277,12 +4278,12 @@ var Bubble = (function (_Component) {
           className: bubbleClasses,
           href: url
         }),
-        text && _react2['default'].createElement(
+        !!text && _react2['default'].createElement(
           'span',
           { className: 'bubble__text' },
           text
         ),
-        count && _react2['default'].createElement(
+        !!count && _react2['default'].createElement(
           'span',
           { className: 'bubble__count' },
           count

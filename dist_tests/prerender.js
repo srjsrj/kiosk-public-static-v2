@@ -920,4 +920,4 @@ var logoProps = {
 React.renderToString(React.createElement(Logo, logoProps));
 React.renderToString(React.createElement(ProductBlock, blockProps));
 React.renderToString(React.createElement(ProductCard, cardProps));
-console.log('Prendering public components test finished successfully');
+console.log('Prerendering public components test finished successfully');

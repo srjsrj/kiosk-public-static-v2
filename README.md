@@ -1,30 +1,14 @@
 [![Build Status](https://travis-ci.org/BrandyMint/kiosk-public-static-v2.svg?branch=master)](https://travis-ci.org/BrandyMint/kiosk-public-static-v2)
-Установка и настройка
----------------------
-
-    > ./install
 
 Запуск
 ------
 
-    > ./start       # gulp watch
-
-Дальше открываем браузер http://localhost:9000
-
-http://livereload.com/ в помощь!
-
-
-Билд
-----
-
-    > ./build
-
+  > npm run start
 
 Публикация
 ----------
 
-   > ./publicate
-
+  > npm run deploy
 
 Процесс gulp
 ------------
@@ -33,7 +17,6 @@ http://livereload.com/ в помощь!
 2. Стиль `./stylesheepts/app.sass` собирается в `./stylesheets/app.css`
 с помощью gulp-sass (node-sass, libsass).
 3. Сторонние пакеты устанавливаются через bundle в `app/bower_components` и билдятся в `./scripts/vendor.js`
-
 
 Ограничение по браузерам:
 ------------------------
@@ -76,5 +59,3 @@ https://github.com/blueimp/jQuery-File-Upload/wiki/Browser-support
 ## HTML5 FileReader
 
 * Firefox 3.6+, IE10+, and Opera 12+.
-
-test
