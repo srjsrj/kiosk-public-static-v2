@@ -1,25 +1,18 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
-import connectToRedux from '../HoC/connectToRedux';
 import * as popupActions from '../../actions/popupActions';
-import Userbar from '.';
+import connectToRedux from '../HoC/connectToRedux';
 import DesignSettings from '../DesignSettings/DesignSettingsContainer';
 import DesignPreview from '../DesignPreview';
+import Userbar from './Userbar';
 
 @connect(() => ({}))
-class UserbarContainer {
-  static propTypes = {
-    authUrl: PropTypes.string.isRequired,
-    categoryPageUrl: PropTypes.string.isRequired,
-    designMode: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    operatorUrl: PropTypes.string.isRequired,
-    pageType: PropTypes.string.isRequired,
-    productPageUrl: PropTypes.string.isRequired,
-  }
+class UserbarContainer extends Component {
   render() {
-    const { authUrl, categoryPageUrl, dispatch, pageType, productPageUrl } = this.props;
+    const {
+      authUrl, categoryPageUrl, dispatch, pageType, productPageUrl,
+    } = this.props;
 
     return (
       <div>
@@ -38,5 +31,13 @@ class UserbarContainer {
     );
   }
 }
+
+UserbarContainer.propTypes = {
+  authUrl: PropTypes.string.isRequired,
+  categoryPageUrl: PropTypes.string.isRequired,
+  dispatch: PropTypes.func,
+  pageType: PropTypes.string.isRequired,
+  productPageUrl: PropTypes.string.isRequired,
+};
 
 export default connectToRedux(UserbarContainer);

@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import Bubble from '../Bubble';
 
-export default class WishlistButton extends Component {
+export default class DesignButton extends Component {
   static propTypes = {
+    onClick: PropTypes.func.isRequired,
     text: PropTypes.string,
-    url: PropTypes.string.isRequired,
   }
   render() {
-    const { text, url } = this.props;
+    const { onClick, text } = this.props;
 
     return (
       <Bubble
-        className="Bubble--wishlist element--active-opacity"
+        className="Bubble--design element--active-opacity"
+        onClick={onClick}
         text={text}
-        url={url}
       />
     );
   }

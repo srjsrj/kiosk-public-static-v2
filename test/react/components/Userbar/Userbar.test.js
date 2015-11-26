@@ -1,7 +1,7 @@
 import React, { addons, PropTypes } from 'react';
 import sinon from 'sinon';
 import { expect } from 'chai';
-import Userbar from '../../../../app/scripts/react/components/Userbar';
+import { Userbar } from '../../../../app/scripts/react/components/Userbar';
 const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] Userbar', function() {

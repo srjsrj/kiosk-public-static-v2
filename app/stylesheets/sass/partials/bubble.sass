@@ -8,7 +8,7 @@ $bubbleCountSize: 30px
 $bubbleCountTextColor: #fff
 $bubbleCountBackground: #00aeff
 
-.bubble
+.Bubble
   display: inline-block
   position: relative
   height: $bubbleHeight
@@ -24,7 +24,7 @@ $bubbleCountBackground: #00aeff
     content: ''
     position: absolute
     top: 50%
-    font-family: "Flaticon"
+    font-family: "KioskPublicIcons"
     left: $bubbleSmallWidth / 4
     width: $bubbleSmallWidth / 2
     height: $bubbleSmallWidth / 2
@@ -33,7 +33,7 @@ $bubbleCountBackground: #00aeff
     color: #fff
   &:hover
     background-color: $bubbleBackgroundHover
-  &__text
+  &-text
     display: inline-block
     padding-left: $bubbleSmallWidth
     padding-right: $bubbleSmallWidth / 4
@@ -41,7 +41,7 @@ $bubbleCountBackground: #00aeff
     color: $bubbleTextColor
     @include grid-media-query((lap, palm))
       display: none
-  &__count
+  &-count
     position: absolute
     top: $bubbleCountSize / -2
     right: $bubbleCountSize / -2
@@ -59,11 +59,19 @@ $bubbleCountBackground: #00aeff
       background-image: url(#{$images-path}/cart_icon.svg)
   &--wishlist
     &:before
-      content: "\e000"
+      content: "\e001"
       font-size: 25px
   &--cabinet
     &:before
-      content: "\e001"
+      content: "\e002"
+      font-size: 25px
+  &--operator
+    &:before
+      content: "\e003"
+      font-size: 25px
+  &--design
+    &:before
+      content: "\e004"
       font-size: 25px
 
   @include grid-media-query((lap, palm))

@@ -1,14 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class Bubble extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    count: PropTypes.number,
-    data: PropTypes.array,
-    text: PropTypes.string,
-    url: PropTypes.string.isRequired,
-  }
+class Bubble extends Component {
   getDataAttributes(data) {
     if (data) {
       return data.reduce((acc, attr) => ({
@@ -17,22 +10,40 @@ export default class Bubble extends Component {
       }), {});
     }
   }
+  handleClick(ev) {
+    if (this.props.onClick) {
+      ev.preventDefault();
+      this.props.onClick();
+    }
+  }
   render() {
     const { className, count, data, text, url } = this.props;
     const bubbleClasses = classNames({
-      'bubble': true,
-      'bubble--with-text': !!text,
+      'Bubble': true,
+      'Bubble--with-text': !!text,
     }, className);
 
     return (
       <a
         {...this.getDataAttributes(data)}
         className={bubbleClasses}
-        href={url}
+        href={url || '#'}
+        onClick={this.handleClick.bind(this)}
       >
-        {!!text && <span className="bubble__text">{text}</span>}
-        {!!count && <span className="bubble__count">{count}</span>}
+        {!!text && <span className="Bubble-text">{text}</span>}
+        {!!count && <span className="Bubble-count">{count}</span>}
       </a>
     );
   }
 }
+
+Bubble.propTypes = {
+  className: PropTypes.string,
+  count: PropTypes.number,
+  data: PropTypes.array,
+  onClick: PropTypes.func,
+  text: PropTypes.string,
+  url: PropTypes.string,
+};
+
+export default Bubble;

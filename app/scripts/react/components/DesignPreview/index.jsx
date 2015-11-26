@@ -70,7 +70,7 @@ const _rules = {
       const color = tinycolor(value);
       return {
         '.b-page': {
-          '& .icon--active:before': {
+          '& .Icon--active:before': {
             'color': color.toRgbString(),
           },
           '& .element--active': {

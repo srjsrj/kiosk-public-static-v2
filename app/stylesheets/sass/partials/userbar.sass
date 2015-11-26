@@ -1,52 +1,18 @@
-$userbarButtonSize: 50px
-$userbarButtonBackground: rgba(black, 0.8)
-$userbarButtonBackgroundHover: rgba(black, 0.7)
-$userbarButtonZindex: 10
+$barZindex: 10
 
-.userbar
-  position: fixed
+.Userbar
   top: 30px
   left: 30px
-  z-index: $userbarButtonZindex
+  position: fixed
+  z-index: $barZindex
   will-change: transform
-
+  .Bubble:not(:first-child)
+    display: none
   &:hover
-    .userbar__button--design
+    .Bubble
+      float: left
+      clear: both
       display: block
-
-.userbar__button
-  width: $userbarButtonSize
-  height: $userbarButtonSize
-  display: block
-  border: none
-  background-color: $userbarButtonBackground
-  background-repeat: no-repeat
-  background-position: 50%
-  background-size: 30px
-  outline: none
-  text-indent: -9999px
-  cursor: pointer
-  z-index: $userbarButtonZindex
-  border-radius: $userbarButtonSize/2
-  transition: background-color .2s ease
-
-  &:hover
-    background-color: $userbarButtonBackgroundHover
-  @include grid-media-query("palm")
-    display: none
-  @include grid-media-query("lap")
-    display: none
-
-  & + &
-    margin-top: 10px
-
-  .fancybox-lock &
-    display: none
-
-.userbar__button--admin
-  background-image: url(#{$images-path}/b-adm__item_setting.png)
-
-.userbar__button--design
-  display: none
-  background-image: url(#{$images-path}/magic_wand_white.svg)
-  background-size: 26px 26px
+      margin-bottom: 12px
+  @include grid-media-query(palm)
+    left: 15px

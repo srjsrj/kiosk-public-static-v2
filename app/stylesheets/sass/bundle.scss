@@ -77,7 +77,7 @@
 // Static
 @import "fonts/gotham";
 @import "fonts/apercu";
-@import "fonts/flaticon";
+@import "fonts/KioskPublicIcons";
 
 // =====================================================================
 // Partials
@@ -94,7 +94,6 @@
 @import "partials/b-status"; // Статус товара
 @import "partials/b-instafeed"; // Фид с инстаграмма
 @import "partials/b-admin"; // Кнопка админки
-@import "partials/userbar"; // Кнопки пользователей
 @import "partials/b-search"; // Поле поиска
 @import "partials/b-slider"; // Слайдер (прим. слайдер товаров)
 @import "partials/b-characteristics"; // Характеристики товара
@@ -118,8 +117,6 @@
 @import "partials/b-tooltip"; // Подсказка
 @import "partials/mmenu";
 @import "partials/add-to-wishlist";
-@import "partials/bubble";
-@import "partials/client-bar";
 @import "partials/select-file"; // Кастомный выбор локального файла
 @import "partials/radiobtn"; // Кастомные радио-кнопки
 @import "partials/switcher"; // Переключалка в стиле iOS
@@ -133,6 +130,11 @@
 @import "partials/postnav"; // Навигация между страницами (на странице поста)
 @import "partials/w1widget"; // Виджет W1
 @import "partials/b-product-properties"; // Форма выбора характеристик в карточке
+
+// Component styles
+@import "partials/Bubble";
+@import "partials/Clientbar";
+@import "partials/Userbar";
 
 // Global layout blocks
 @import "partials/b-page"; // Основная страница

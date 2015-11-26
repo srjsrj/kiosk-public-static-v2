@@ -11,8 +11,9 @@ export default class Icon extends Component {
 
     if (name) {
       const iconClasses = classNames({
-        ['flaticon-' + name]: true,
-        'icon--active': active,
+        'Icon': true,
+        ['Icon--' + name]: true,
+        'Icon--active': active,
       });
 
       return (

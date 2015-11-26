@@ -341,7 +341,7 @@ var ClientBar = (function (_Component) {
 
       return _react2['default'].createElement(
         'div',
-        { className: 'client-bar' },
+        { className: 'Clientbar' },
         hasCabinet && cabinetUrl && _react2['default'].createElement(_buttonsCabinetButton.CabinetButton, {
           text: cabinetText,
           url: cabinetUrl
@@ -2819,6 +2819,7 @@ var ProductCart = (function (_Component) {
     value: {
       addWishlistUrl: _react.PropTypes.string,
       formAuthenticity: _react.PropTypes.object,
+      hasWishlist: _react.PropTypes.bool,
       isWishlisted: _react.PropTypes.bool,
       product: _react.PropTypes.object.isRequired,
       onGoodChange: _react.PropTypes.func,
@@ -4269,6 +4270,14 @@ var Bubble = (function (_Component) {
       }
     }
   }, {
+    key: 'handleClick',
+    value: function handleClick(ev) {
+      if (this.props.onClick) {
+        ev.preventDefault();
+        this.props.onClick();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -4279,42 +4288,42 @@ var Bubble = (function (_Component) {
       var url = _props.url;
 
       var bubbleClasses = (0, _classnames2['default'])({
-        'bubble': true,
-        'bubble--with-text': !!text
+        'Bubble': true,
+        'Bubble--with-text': !!text
       }, className);
 
       return _react2['default'].createElement(
         'a',
         _extends({}, this.getDataAttributes(data), {
           className: bubbleClasses,
-          href: url
+          href: url || '#',
+          onClick: this.handleClick.bind(this)
         }),
         !!text && _react2['default'].createElement(
           'span',
-          { className: 'bubble__text' },
+          { className: 'Bubble-text' },
           text
         ),
         !!count && _react2['default'].createElement(
           'span',
-          { className: 'bubble__count' },
+          { className: 'Bubble-count' },
           count
         )
       );
     }
-  }], [{
-    key: 'propTypes',
-    value: {
-      className: _react.PropTypes.string,
-      count: _react.PropTypes.number,
-      data: _react.PropTypes.array,
-      text: _react.PropTypes.string,
-      url: _react.PropTypes.string.isRequired
-    },
-    enumerable: true
   }]);
 
   return Bubble;
 })(_react.Component);
+
+Bubble.propTypes = {
+  className: _react.PropTypes.string,
+  count: _react.PropTypes.number,
+  data: _react.PropTypes.array,
+  onClick: _react.PropTypes.func,
+  text: _react.PropTypes.string,
+  url: _react.PropTypes.string
+};
 
 exports['default'] = Bubble;
 module.exports = exports['default'];
@@ -4359,7 +4368,7 @@ var CabinetButton = (function (_Component) {
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(_Bubble2['default'], _extends({}, this.props, {
-        className: 'bubble--cabinet element--active-opacity'
+        className: 'Bubble--cabinet element--active-opacity'
       }));
     }
   }], [{
@@ -4435,7 +4444,7 @@ var CartButton = (function (_Component) {
       var url = _props.url;
 
       return _react2['default'].createElement(_Bubble2['default'], {
-        className: 'bubble--cart element--active-opacity',
+        className: 'Bubble--cart element--active-opacity',
         count: itemsCount,
         data: ['cart-button'],
         text: text,
@@ -4515,7 +4524,7 @@ var WishlistButton = (function (_Component) {
       var url = _props.url;
 
       return _react2['default'].createElement(_Bubble2['default'], {
-        className: 'bubble--wishlist element--active-opacity',
+        className: 'Bubble--wishlist element--active-opacity',
         text: text,
         url: url
       });
@@ -4813,7 +4822,9 @@ var Icon = (function (_Component) {
       if (name) {
         var _classNames;
 
-        var iconClasses = (0, _classnames2['default'])((_classNames = {}, _defineProperty(_classNames, 'flaticon-' + name, true), _defineProperty(_classNames, 'icon--active', active), _classNames));
+        var iconClasses = (0, _classnames2['default'])((_classNames = {
+          'Icon': true
+        }, _defineProperty(_classNames, 'Icon--' + name, true), _defineProperty(_classNames, 'Icon--active', active), _classNames));
 
         return _react2['default'].createElement('i', { className: iconClasses });
       }

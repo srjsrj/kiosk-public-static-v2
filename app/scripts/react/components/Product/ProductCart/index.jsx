@@ -11,6 +11,7 @@ export default class ProductCart extends Component {
   static propTypes = {
     addWishlistUrl: PropTypes.string,
     formAuthenticity: PropTypes.object,
+    hasWishlist: PropTypes.bool,
     isWishlisted: PropTypes.bool,
     product: PropTypes.object.isRequired,
     onGoodChange: PropTypes.func,
