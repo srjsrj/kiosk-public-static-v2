@@ -27,7 +27,7 @@ export default class ClientBar extends Component {
     } = this.props;
 
     return (
-      <div className="client-bar">
+      <div className="Clientbar">
         {hasCabinet && cabinetUrl &&
           <CabinetButton
             text={cabinetText}

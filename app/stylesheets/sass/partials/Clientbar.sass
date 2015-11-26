@@ -1,20 +1,21 @@
 $barZindex: 10
 
-.client-bar
+.Clientbar
   top: 30px
   right: 30px
   position: fixed
   z-index: $barZindex
-  .bubble
+  will-change: transform
+  .Bubble
     float: left
-  .bubble:not(:last-child)
+  .Bubble:not(:last-child)
     margin-right: 12px
   @include grid-media-query(palm)
     right: 15px
   @include grid-media-query((lap, palm))
-    .bubble
+    .Bubble
       float: right
       clear: both
-    .bubble:not(:last-child)
+    .Bubble:not(:last-child)
       margin-right: 0
       margin-bottom: 12px
