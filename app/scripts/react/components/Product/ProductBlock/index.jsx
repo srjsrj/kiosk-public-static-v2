@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import makeTranslatable from '../../HoC/makeTranslatable';
-import Image from '../../common/Image';
+import ProductBlockImage from './ProductBlockImage';
 import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
 
@@ -13,12 +13,7 @@ class ProductBlock extends Component {
       <div className="b-item-list__item">
         <a className="b-item" href={product.public_url}>
           <div className="b-item__pic-wrap">
-            <Image
-              className="b-item__pic"
-              image={{ url: product.index_image_url }}
-              maxWidth={458}
-              title={product.title}
-            />
+            <ProductBlockImage product={product} />
             <ProductBlockBadges product={product} />
           </div>
           <div className="b-item__info">
