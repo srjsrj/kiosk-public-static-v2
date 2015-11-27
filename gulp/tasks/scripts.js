@@ -18,7 +18,7 @@ const baseDependencies = {
   'redux': './node_modules/redux',
   'reqwest': './node_modules/reqwest',
   'tinycolor2': './node_modules/tinycolor2',
-  'URIjs': './node_modules/URIjs/src/URI',
+  'urijs': './node_modules/urijs/src/URI',
   'i18next': './node_modules/i18next-client',
 
   'jquery': './node_modules/jquery/dist/jquery',

@@ -60,8 +60,8 @@ class ProductCard extends Component {
               <div className="b-item-full__form">
                 <ProductCart
                   {...this.props}
+                  {...this.state}
                   onGoodChange={this.handleGoodChange.bind(this)}
-                  product={this.state.product}
                 />
               </div>
               <ProductCardDetails product={product} />

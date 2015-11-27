@@ -27,7 +27,7 @@ class ProductCardContainer extends Component {
     }
   }
   isNeededLoading(props) {
-    return Boolean(props.productCardID && props.vendorID);
+    return !!(props.productCardID && props.vendorID);
   }
   render() {
     const { currentState, productCard } = this.state;

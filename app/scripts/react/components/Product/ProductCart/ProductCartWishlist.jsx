@@ -1,14 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 import Icon from '../../common/Icon';
+import Link from '../../common/Link';
+import URI from 'urijs';
 
 export default class ProductCartWishlist extends Component {
   static propTypes = {
     addWishlistText: PropTypes.string,
     addWishlistUrl: PropTypes.string,
+    good: PropTypes.object,
     goWishlistText: PropTypes.string,
     hasWishlist: PropTypes.bool,
     isWishlisted: PropTypes.bool,
     wishlistUrl: PropTypes.string,
+  }
+  getAddWishlistUrl() {
+    const { addWishlistUrl, good, product } = this.props;
+
+    return new URI(addWishlistUrl)
+      .addQuery('good_id', good ? good.global_id : product.global_id)
+      .toString();
   }
   render() {
     const {
@@ -21,17 +31,17 @@ export default class ProductCartWishlist extends Component {
 
       if (isWishlisted) {
         content = (
-          <a href={wishlistUrl} rel="nofollow">
+          <Link href={wishlistUrl}>
             <Icon active={true} name="wishlist" />
             {goWishlistText}
-          </a>
+          </Link>
         );
       } else {
         content = (
-          <a href={addWishlistUrl} rel="nofollow">
+          <Link href={this.getAddWishlistUrl()} method="POST">
             <Icon active={true} name="wishlist" />
             {addWishlistText}
-          </a>
+          </Link>
         );
       }
 
