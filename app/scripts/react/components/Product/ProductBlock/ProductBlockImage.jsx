@@ -18,7 +18,7 @@ class ProductBlockImage extends Component {
     this.setState({ isHover: false });
   }
   render() {
-    const { title } = this.props.product;
+    const { maxWidth, product: {second_image_url, title} } = this.props;
     const { currentImage } = this.state;
 
     return (
@@ -29,9 +29,17 @@ class ProductBlockImage extends Component {
         <Image
           className="b-item__pic"
           image={{ url: this.getCurrentImage() }}
-          maxWidth={458}
+          maxWidth={maxWidth}
           title={title}
         />
+        {second_image_url &&
+          <span style={{ display: 'none' }}>
+            <Image
+              image={{ url: second_image_url }}
+              maxWidth={maxWidth}
+            />
+          </span>
+        }
       </span>
     );
   }
@@ -39,6 +47,10 @@ class ProductBlockImage extends Component {
 
 ProductBlockImage.propTypes = {
   product: PropTypes.object.isRequired,
+  maxWidth: PropTypes.number,
+};
+ProductBlockImage.defaultProps = {
+  maxWidth: 458,
 };
 
 export default ProductBlockImage;

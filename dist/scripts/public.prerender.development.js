@@ -1366,7 +1366,11 @@ var ProductBlockImage = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var title = this.props.product.title;
+      var _props = this.props;
+      var maxWidth = _props.maxWidth;
+      var _props$product2 = _props.product;
+      var second_image_url = _props$product2.second_image_url;
+      var title = _props$product2.title;
       var currentImage = this.state.currentImage;
 
       return _react2['default'].createElement(
@@ -1378,9 +1382,17 @@ var ProductBlockImage = (function (_Component) {
         _react2['default'].createElement(_commonImage2['default'], {
           className: 'b-item__pic',
           image: { url: this.getCurrentImage() },
-          maxWidth: 458,
+          maxWidth: maxWidth,
           title: title
-        })
+        }),
+        second_image_url && _react2['default'].createElement(
+          'span',
+          { style: { display: 'none' } },
+          _react2['default'].createElement(_commonImage2['default'], {
+            image: { url: second_image_url },
+            maxWidth: maxWidth
+          })
+        )
       );
     }
   }]);
@@ -1389,7 +1401,11 @@ var ProductBlockImage = (function (_Component) {
 })(_react.Component);
 
 ProductBlockImage.propTypes = {
-  product: _react.PropTypes.object.isRequired
+  product: _react.PropTypes.object.isRequired,
+  maxWidth: _react.PropTypes.number
+};
+ProductBlockImage.defaultProps = {
+  maxWidth: 458
 };
 
 exports['default'] = ProductBlockImage;
