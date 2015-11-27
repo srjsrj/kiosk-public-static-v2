@@ -357,32 +357,28 @@ var Clientbar = (function (_Component) {
         })
       );
     }
-  }], [{
-    key: 'propTypes',
-    value: {
-      cabinetText: _react.PropTypes.string,
-      cabinetUrl: _react.PropTypes.string,
-      cartItemsCount: _react.PropTypes.number,
-      cartText: _react.PropTypes.string,
-      cartUrl: _react.PropTypes.string,
-      hasCabinet: _react.PropTypes.bool,
-      hasCart: _react.PropTypes.bool,
-      hasWishlist: _react.PropTypes.bool,
-      wishlistText: _react.PropTypes.string,
-      wishlistUrl: _react.PropTypes.string
-    },
-    enumerable: true
-  }, {
-    key: 'defaultProps',
-    value: {
-      hasWishlist: true,
-      hasCart: true
-    },
-    enumerable: true
   }]);
 
   return Clientbar;
 })(_react.Component);
+
+Clientbar.propTypes = {
+  cabinetText: _react.PropTypes.string,
+  cabinetUrl: _react.PropTypes.string,
+  cartItemsCount: _react.PropTypes.number,
+  cartText: _react.PropTypes.string,
+  cartUrl: _react.PropTypes.string,
+  hasCabinet: _react.PropTypes.bool,
+  hasCart: _react.PropTypes.bool,
+  hasWishlist: _react.PropTypes.bool,
+  wishlistText: _react.PropTypes.string,
+  wishlistUrl: _react.PropTypes.string
+};
+Clientbar.defaultProps = {
+  hasCabinet: false,
+  hasCart: false,
+  hasWishlist: false
+};
 
 exports['default'] = Clientbar;
 module.exports = exports['default'];

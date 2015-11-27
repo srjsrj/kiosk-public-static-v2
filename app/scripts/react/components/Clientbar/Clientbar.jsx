@@ -3,23 +3,7 @@ import { CabinetButton } from '../buttons/CabinetButton';
 import { CartButton } from '../buttons/CartButton';
 import { WishlistButton } from '../buttons/WishlistButton';
 
-export default class Clientbar extends Component {
-  static propTypes = {
-    cabinetText: PropTypes.string,
-    cabinetUrl: PropTypes.string,
-    cartItemsCount: PropTypes.number,
-    cartText: PropTypes.string,
-    cartUrl: PropTypes.string,
-    hasCabinet: PropTypes.bool,
-    hasCart: PropTypes.bool,
-    hasWishlist: PropTypes.bool,
-    wishlistText: PropTypes.string,
-    wishlistUrl: PropTypes.string,
-  }
-  static defaultProps = {
-    hasWishlist: true,
-    hasCart: true
-  }
+class Clientbar extends Component {
   render() {
     const {
       cabinetText, cabinetUrl, cartItemsCount, cartText, cartUrl,
@@ -51,3 +35,23 @@ export default class Clientbar extends Component {
     );
   }
 }
+
+Clientbar.propTypes = {
+  cabinetText: PropTypes.string,
+  cabinetUrl: PropTypes.string,
+  cartItemsCount: PropTypes.number,
+  cartText: PropTypes.string,
+  cartUrl: PropTypes.string,
+  hasCabinet: PropTypes.bool,
+  hasCart: PropTypes.bool,
+  hasWishlist: PropTypes.bool,
+  wishlistText: PropTypes.string,
+  wishlistUrl: PropTypes.string,
+};
+Clientbar.defaultProps = {
+  hasCabinet: false,
+  hasCart: false,
+  hasWishlist: false,
+}
+
+export default Clientbar;
