@@ -1,9 +1,9 @@
 /*global gon */
-function prepareUrl(url) {
+function normalizeUrl(url) {
   return /^\/\/\S*$/.test(url) ? `http:${url}` : url;
 }
 
-function filters(additional = []) {
+function normalizeFilters(additional = []) {
   const common = []; //['no_upscale()'];
   const fx = [
     ...common,
@@ -12,26 +12,28 @@ function filters(additional = []) {
   return fx.length ? `/filters:${fx.join(':')}` : '';
 }
 
-export default {
-  // thumborWithUrl: gon.thumbor_url,
+const ThumborService = {
+  thumbor: gon.thumbor_url,
+  imageUrl(url, size, filters) {
+    const width = size.width ? size.width : '';
+    const height = size.height ? size.height : '';
+    const _url = normalizeUrl(url);
+    const _filters = normalizeFilters(filters);
 
-  imageUrl(url, size) {
-    const _url = prepareUrl(url);
-    const width = size.width || '';
-    const height = size.height || '';
-
-    return this.thumborWithUrl
-      ? `${this.thumborWithUrl}/unsafe/${width}x${height}${filters()}/${_url}`
-      : _url;
+    return this.thumbor
+      ? `${this.thumbor}/unsafe/${width}x${height}${_filters}/${_url}`
+      : url;
   },
-
-  retinaImageUrl(url, size) {
-    const _url = prepareUrl(url);
+  retinaImageUrl(url, size, filters) {
     const width = size.width ? size.width * 2 : '';
     const height = size.height ? size.height * 2 : '';
+    const _url = normalizeUrl(url);
+    const _filters = normalizeFilters(filters);
 
-    return this.thumborWithUrl
-      ? `${this.thumborWithUrl}/unsafe/${width}x${height}${filters()}/${_url} 2x`
-      : _url;
-  }
+    return this.thumbor
+      ? `${this.thumbor}/unsafe/${width}x${height}${_filters}/${_url} 2x`
+      : url;
+  },
 };
+
+export default ThumborService;

@@ -6218,12 +6218,12 @@ Object.defineProperty(exports, '__esModule', {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
 
-function prepareUrl(url) {
+function normalizeUrl(url) {
   return (/^\/\/\S*$/.test(url) ? 'http:' + url : url
   );
 }
 
-function filters() {
+function normalizeFilters() {
   var additional = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
 
   var common = []; //['no_upscale()'];
@@ -6231,25 +6231,27 @@ function filters() {
   return fx.length ? '/filters:' + fx.join(':') : '';
 }
 
-exports['default'] = {
-  // thumborWithUrl: gon.thumbor_url,
+var ThumborService = {
+  thumbor: gon.thumbor_url,
+  imageUrl: function imageUrl(url, size, filters) {
+    var width = size.width ? size.width : '';
+    var height = size.height ? size.height : '';
+    var _url = normalizeUrl(url);
+    var _filters = normalizeFilters(filters);
 
-  imageUrl: function imageUrl(url, size) {
-    var _url = prepareUrl(url);
-    var width = size.width || '';
-    var height = size.height || '';
-
-    return this.thumborWithUrl ? this.thumborWithUrl + '/unsafe/' + width + 'x' + height + filters() + '/' + _url : _url;
+    return this.thumbor ? this.thumbor + '/unsafe/' + width + 'x' + height + _filters + '/' + _url : url;
   },
-
-  retinaImageUrl: function retinaImageUrl(url, size) {
-    var _url = prepareUrl(url);
+  retinaImageUrl: function retinaImageUrl(url, size, filters) {
     var width = size.width ? size.width * 2 : '';
     var height = size.height ? size.height * 2 : '';
+    var _url = normalizeUrl(url);
+    var _filters = normalizeFilters(filters);
 
-    return this.thumborWithUrl ? this.thumborWithUrl + '/unsafe/' + width + 'x' + height + filters() + '/' + _url + ' 2x' : _url;
+    return this.thumbor ? this.thumbor + '/unsafe/' + width + 'x' + height + _filters + '/' + _url + ' 2x' : url;
   }
 };
+
+exports['default'] = ThumborService;
 module.exports = exports['default'];
 
 },{}],89:[function(require,module,exports){
