@@ -28,7 +28,7 @@ class Userbar extends Component {
   render() {
     const {
       cabinetText, cabinetUrl, designText, hasCabinet, hasDesign, hasOperator, hasWishlist,
-      openDesignSettingsPopup, operatorText, operatorUrl, wishlistText, wishlistUrl,
+      openDesignSettingsPopup, operatorText, operatorUrl, wishlistItemsCount, wishlistText, wishlistUrl,
     } = this.props;
 
     return (
@@ -53,6 +53,7 @@ class Userbar extends Component {
         }
         {hasWishlist && wishlistUrl &&
           <WishlistButton
+            itemsCount={wishlistItemsCount}
             text={wishlistText}
             url={wishlistUrl}
           />

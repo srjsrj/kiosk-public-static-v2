@@ -2776,7 +2776,7 @@ var ProductCartWishlist = (function (_Component) {
       var isWishlisted = _props2.isWishlisted;
       var wishlistUrl = _props2.wishlistUrl;
 
-      if (hasWishlist && wishlistUrl || addWishlistUrl) {
+      if (hasWishlist && (wishlistUrl || addWishlistUrl)) {
         var content = undefined;
 
         if (isWishlisted) {
@@ -4624,11 +4624,13 @@ var WishlistButton = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var itemsCount = _props.itemsCount;
       var text = _props.text;
       var url = _props.url;
 
       return _react2['default'].createElement(_Bubble2['default'], {
         className: 'Bubble--wishlist element--active-opacity',
+        count: itemsCount,
         text: text,
         url: url
       });
@@ -4636,6 +4638,7 @@ var WishlistButton = (function (_Component) {
   }], [{
     key: 'propTypes',
     value: {
+      itemsCount: _react.PropTypes.number,
       text: _react.PropTypes.string,
       url: _react.PropTypes.string.isRequired
     },
