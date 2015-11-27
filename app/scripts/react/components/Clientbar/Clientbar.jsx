@@ -3,7 +3,7 @@ import { CabinetButton } from '../buttons/CabinetButton';
 import { CartButton } from '../buttons/CartButton';
 import { WishlistButton } from '../buttons/WishlistButton';
 
-export default class ClientBar extends Component {
+export default class Clientbar extends Component {
   static propTypes = {
     cabinetText: PropTypes.string,
     cabinetUrl: PropTypes.string,

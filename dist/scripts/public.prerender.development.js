@@ -21,9 +21,9 @@ ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 TopBanner = require('./react/components/TopBanner');
 CartCoupon = require('./react/components/Cart/CartCoupon');
 OrderCoupon = require('./react/components/Order/OrderCoupon');
-ClientBar = require('./react/components/ClientBar');
+Clientbar = require('./react/components/Clientbar');
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":2,"./react/components/Cart/CartCoupon":6,"./react/components/ClientBar":8,"./react/components/Logo/LogoContainer":11,"./react/components/Order/OrderCoupon":14,"./react/components/Product/ProductBlock":23,"./react/components/Product/ProductCard":35,"./react/components/TopBanner":53,"./react/reducers/Design.prerender":86,"./react/reducers/Popup":87,"react":"react","redux":"redux","redux/react":315}],2:[function(require,module,exports){
+},{"./locales/numeral/ru":2,"./react/components/Cart/CartCoupon":6,"./react/components/Clientbar":8,"./react/components/Logo/LogoContainer":11,"./react/components/Order/OrderCoupon":14,"./react/components/Product/ProductBlock":23,"./react/components/Product/ProductCard":35,"./react/components/TopBanner":53,"./react/reducers/Design.prerender":86,"./react/reducers/Popup":87,"react":"react","redux":"redux","redux/react":315}],2:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -315,16 +315,16 @@ var _buttonsCartButton = require('../buttons/CartButton');
 
 var _buttonsWishlistButton = require('../buttons/WishlistButton');
 
-var ClientBar = (function (_Component) {
-  _inherits(ClientBar, _Component);
+var Clientbar = (function (_Component) {
+  _inherits(Clientbar, _Component);
 
-  function ClientBar() {
-    _classCallCheck(this, ClientBar);
+  function Clientbar() {
+    _classCallCheck(this, Clientbar);
 
-    _get(Object.getPrototypeOf(ClientBar.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Clientbar.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(ClientBar, [{
+  _createClass(Clientbar, [{
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -381,10 +381,10 @@ var ClientBar = (function (_Component) {
     enumerable: true
   }]);
 
-  return ClientBar;
+  return Clientbar;
 })(_react.Component);
 
-exports['default'] = ClientBar;
+exports['default'] = Clientbar;
 module.exports = exports['default'];
 
 },{"../buttons/CabinetButton":56,"../buttons/CartButton":58,"../buttons/WishlistButton":60,"react":"react"}],8:[function(require,module,exports){
@@ -396,13 +396,13 @@ Object.defineProperty(exports, '__esModule', {
 
 function _interopRequire(obj) { return obj && obj.__esModule ? obj['default'] : obj; }
 
-var _ClientBar = require('./ClientBar');
+var _Clientbar = require('./Clientbar');
 
-exports.ClientBar = _interopRequire(_ClientBar);
+exports.Clientbar = _interopRequire(_Clientbar);
 
-// export { default as ClientBarContainer } from './ClientBarContainer';
+// export { default as ClientbarContainer } from './ClientbarContainer';
 
-},{"./ClientBar":7}],9:[function(require,module,exports){
+},{"./Clientbar":7}],9:[function(require,module,exports){
 (function (global){
 'use strict';
 
