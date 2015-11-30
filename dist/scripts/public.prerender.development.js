@@ -3118,12 +3118,12 @@ var ProductGoods = (function () {
             _react2['default'].createElement(
               'div',
               { className: 'b-item-full__form__option b-item-full__form__option_full' },
-              this.renderSelect(product),
-              _react2['default'].createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
-                addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
-                goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
-              }))
-            )
+              this.renderSelect(product)
+            ),
+            _react2['default'].createElement(_ProductCartProductCartWishlist2['default'], _extends({}, this.props, {
+              addWishlistText: (0, _i18next.t)('vendor.button.to_wishlist'),
+              goWishlistText: (0, _i18next.t)('vendor.button.go_wishlist')
+            }))
           ),
           _react2['default'].createElement(
             'div',
