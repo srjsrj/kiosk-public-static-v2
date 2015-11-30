@@ -1,6 +1,6 @@
 import React, { addons, PropTypes } from 'react';
 import { expect } from 'chai';
-import CatalogFilter from '../../../../app/scripts/react/components/CatalogFilter';
+import { CatalogFilter } from '../../../../app/scripts/react/components/CatalogFilter';
 const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] CatalogFilter', function() {

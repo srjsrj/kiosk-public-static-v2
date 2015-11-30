@@ -1,25 +1,32 @@
-let CatalogFilterExpandButton = React.createClass({
-  propTypes: {
-    expanded: React.PropTypes.bool.isRequired,
-    onClick: React.PropTypes.func.isRequired
-  },
+import React, { Component, PropTypes } from 'react';
 
+class CatalogFilterExpandButton extends Component {
+  handleClick(ev) {
+    ev.preventDefault();
+
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
+  }
   render() {
     if (!this.props.expanded) {
       return (
-        <span className="b-full-filter__item__expand" onClick={this.handleClick}>
+        <span
+          className="b-full-filter__item__expand"
+          onClick={this.handleClick.bind(this)}
+        >
           Развернуть список
         </span>
       );
     }
 
     return null;
-  },
-
-  handleClick(e) {
-    e.preventDefault();
-    this.props.onClick();
   }
-});
+}
+
+CatalogFilterExpandButton.propTypes = {
+  expanded: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default CatalogFilterExpandButton;

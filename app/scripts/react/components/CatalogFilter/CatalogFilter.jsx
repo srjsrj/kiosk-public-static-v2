@@ -1,14 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Checkbox from '../common/Checkbox';
 import CatalogFilterOptions from './CatalogFilterOptions';
 
-export default class CatalogFilter extends Component {
-  static propTypes = {
-    filterName: PropTypes.string,
-    options: PropTypes.array.isRequired,
-    params: PropTypes.object,
-    selectedOptions: PropTypes.array,
-  }
+class CatalogFilter extends Component {
   render() {
     return (
       <div className="b-full-filter">
@@ -32,3 +26,12 @@ export default class CatalogFilter extends Component {
     );
   }
 }
+
+CatalogFilter.propTypes = {
+  filterName: PropTypes.string,
+  options: PropTypes.array.isRequired,
+  params: PropTypes.object,
+  selectedOptions: PropTypes.array,
+};
+
+export default CatalogFilter;

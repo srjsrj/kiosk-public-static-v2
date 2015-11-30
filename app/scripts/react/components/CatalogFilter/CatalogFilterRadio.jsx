@@ -1,47 +1,12 @@
-import React, { Component, PropTypes, findDOMNode } from 'react';
+import React, { Component, findDOMNode, PropTypes } from 'react';
+import { getFilter } from './utils';
 import { showFilteredCount } from '../../actions/catalogFilterActions';
 
-export default class CatalogFilterRadio extends Component {
-  static propTypes = {
-    items: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    paramName: PropTypes.string.isRequired,
-    filterName: PropTypes.string,
-  }
+class CatalogFilterRadio extends Component {
   state = {
     currentIndex: this.props.items.reduce((prev, item, i) => {
       return item.paramValue === this.props.value ? i : prev;
-    }, 0)
-  }
-  render() {
-    return (
-      <li className="b-full-filter__item">
-        <div className="b-full-filter__item__title">
-          {this.props.title}
-        </div>
-        {this.renderOptions.call(this)}
-      </li>
-    );
-  }
-  renderOptions() {
-    const options = this.props.items.map((item, i) => (
-      <label key={i} className="b-radio">
-        <input
-          type="radio"
-          name={this.getFieldName(item)}
-          value={item.paramValue}
-          checked={this.state.currentIndex === i}
-          className="b-radio__native"
-          onChange={this.handleChange.bind(this, i)}
-        />
-        <div className="b-radio__val">
-          {item.name}
-        </div>
-      </label>
-    ));
-
-    return <div className="b-full-filter__widget">{options}</div>;
+    }, 0),
   }
   getFieldName(item) {
     if (item.paramValue === this.props.default) return;
@@ -53,20 +18,48 @@ export default class CatalogFilterRadio extends Component {
     }
   }
   handleChange(index) {
-    const filter = this.getFilter();
-
-    showFilteredCount(filter);
+    showFilteredCount(getFilter(this, this.props.params));
     this.setState({ currentIndex: index });
   }
-  getFilter() {
-    let filter = $(findDOMNode(this)).closest('form').serialize();
+  render() {
+    const { items, title } = this.props;
+    const { currentIndex } = this.state;
 
-    if (this.props.params && this.props.params.category_id) {
-      filter = filter ?
-        filter + '&category_id=' + this.props.params.category_id :
-        '?category_id=' + this.props.params.category_id
-    }
-
-    return filter;
+    return (
+      <li className="b-full-filter__item">
+        <div className="b-full-filter__item__title">
+          {title}
+        </div>
+        <div className="b-full-filter__widget">
+          {
+            items.map((item, i) => (
+              <label className="b-radio" key={i}>
+                <input
+                  type="radio"
+                  name={this.getFieldName(item)}
+                  value={item.paramValue}
+                  checked={currentIndex === i}
+                  className="b-radio__native"
+                  onChange={this.handleChange.bind(this, i)}
+                />
+                <div className="b-radio__val">
+                  {item.name}
+                </div>
+              </label>
+            ))
+          }
+        </div>
+      </li>
+    );
   }
 }
+
+CatalogFilterRadio.propTypes = {
+  filterName: PropTypes.string,
+  items: PropTypes.array.isRequired,
+  paramName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
+export default CatalogFilterRadio;

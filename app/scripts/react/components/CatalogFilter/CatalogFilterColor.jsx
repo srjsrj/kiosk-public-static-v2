@@ -1,70 +1,56 @@
+import React, { Component, findDOMNode, PropTypes } from 'react';
+import { getFilter } from './utils';
 import { showFilteredCount } from '../../actions/catalogFilterActions';
 
-let CatalogFilterColor = React.createClass({
-  propTypes: {
-    items: React.PropTypes.array.isRequired,
-    title: React.PropTypes.string.isRequired,
-    paramName: React.PropTypes.string.isRequired,
-    filterName: React.PropTypes.string
-  },
-
-  render() {
-    return (
-      <li className="b-full-filter__item">
-        <div className="b-full-filter__item__title">
-          {this.props.title}
-        </div>
-        {this.renderOptions()}
-      </li>
-    );
-  },
-
-  renderOptions() {
-    let options = this.props.items.map((item, i) => {
-      return (
-        <label className="b-cbox b-cbox_color" key={i}>
-          <input type="checkbox"
-                 name={this.getFieldName(item)}
-                 defaultChecked={item.checked}
-                 title={item.name}
-                 className="b-radio__native"
-                 onChange={this.handleChange} />
-          <div className="b-cbox__val" style={{backgroundColor: item.hexCode}} />
-        </label>
-      );
-    });
-
-    return (
-      <div ref="list" className="b-full-filter__widget">
-        {options}
-      </div>
-    );
-  },
-
+class CatalogFilterColor extends Component {
   getFieldName(item) {
     if (this.props.filterName != null) {
       return `${this.props.filterName}[${this.props.paramName}][${item.paramValue}]`;
     } else {
       return item.paramValue;
     }
-  },
-
-  handleChange(e) {
-    const filter = this.getFilter();
-    showFilteredCount(filter);
-  },
-
-  getFilter() {
-    let filter = $(this.getDOMNode()).closest('form').serialize();
-
-    if (this.props.params && this.props.params.category_id) {
-      filter = filter ?
-        filter + '&category_id=' + this.props.params.category_id :
-        '?category_id=' + this.props.params.category_id
-    }
-
-    return filter;
   }
-});
+  handleChange() {
+    showFilteredCount(getFilter(this, this.props.params));
+  }
+  render() {
+    const { items, title } = this.props;
+
+    return (
+      <li className="b-full-filter__item">
+        <div className="b-full-filter__item__title">
+          {title}
+        </div>
+        <div className="b-full-filter__widget" ref="list">
+          {
+            items.map((item, i) => (
+              <label className="b-cbox b-cbox_color" key={i}>
+                <input
+                  type="checkbox"
+                  name={this.getFieldName(item)}
+                  defaultChecked={item.checked}
+                  title={item.name}
+                  className="b-radio__native"
+                  onChange={this.handleChange.bind(this)}
+                />
+                <div
+                  className="b-cbox__val"
+                  style={{ backgroundColor: item.hexCode }}
+                />
+              </label>
+            ))
+          }
+        </div>
+      </li>
+    );
+  }
+}
+
+CatalogFilterColor.propTypes = {
+  filterName: React.PropTypes.string,
+  items: React.PropTypes.array.isRequired,
+  paramName: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+};
 
 export default CatalogFilterColor;

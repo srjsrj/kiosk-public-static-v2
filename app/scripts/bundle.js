@@ -27,7 +27,7 @@ import './react/actions/view/basket';
 import './react/stores/basket';
 
 // Exposing neccessary resources outside
-global.CatalogFilter = require('./react/components/CatalogFilter');
+global.CatalogFilter = require('./react/components/CatalogFilter').CatalogFilter;
 global.Userbar = require('./react/components/Userbar').UserbarContainer;
 global.Clientbar = require('./react/components/Clientbar').Clientbar;
 global.Logo = require('./react/components/Logo/LogoContainer');

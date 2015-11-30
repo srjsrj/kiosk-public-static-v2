@@ -1,94 +1,51 @@
+import React, { Component, PropTypes } from 'react';
 import CatalogFilterSelectedOptions from './CatalogFilterSelectedOptions';
 import CatalogFilterCheckbox from './CatalogFilterCheckbox';
 import CatalogFilterRadio from './CatalogFilterRadio';
 import CatalogFilterRange from './CatalogFilterRange';
 import CatalogFilterColor from './CatalogFilterColor';
 
-let CatalogFilterOptions = React.createClass({
-  propTypes: {
-    options: React.PropTypes.array.isRequired,
-    selectedOptions: React.PropTypes.array,
-    params: React.PropTypes.object,
-    filterName: React.PropTypes.string
-  },
-
-  render() {
-    return (
-      <ul className="b-full-filter__list-wrap">
-        {this.renderSelectedOptions()}
-        {this.renderOptions()}
-      </ul>
-    );
-  },
-  renderSelectedOptions() {
-    if (this.props.selectedOptions.length) {
-      return <CatalogFilterSelectedOptions {...this.props} />;
-    }
-  },
+class CatalogFilterOptions extends Component {
   renderOptions() {
-    return this.props.options.map((item, i) => {
+    const { filterName, options, params } = this.props;
+
+    return options.map((item, i) => {
+      const props = {...item, filterName, params, key: i};
+
       switch(item.type) {
         case 'checkbox':
-          var { title, paramName, items } = item;
-
-          return (
-            <CatalogFilterCheckbox
-                items={items}
-                title={title}
-                paramName={paramName}
-                filterName={this.props.filterName}
-                params={this.props.params}
-                key={i} />
-          );
+          return <CatalogFilterCheckbox {...props} />;
         case 'radio':
-          var { title, value, paramName, items } = item;
-
-          return (
-            <CatalogFilterRadio
-                items={items}
-                title={title}
-                value={value}
-                default={item.default}
-                paramName={paramName}
-                filterName={this.props.filterName}
-                params={this.props.params}
-                key={i} />
-          );
+          return <CatalogFilterRadio {...props} />;
         case 'range':
-          var { title, paramName, units, valueFrom, valueTo, from, to, step } = item;
-
-          return (
-            <CatalogFilterRange
-                title={title}
-                from={from}
-                to={to}
-                valueFrom={valueFrom}
-                valueTo={valueTo}
-                units={units}
-                paramName={paramName}
-                step={step}
-                filterName={this.props.filterName}
-                params={this.props.params}
-                key={i} />
-          );
+          return <CatalogFilterRange {...props} />;
         case 'color':
-          var { title, paramName, items } = item;
-
-          return (
-            <CatalogFilterColor
-                items={items}
-                title={title}
-                paramName={paramName}
-                filterName={this.props.filterName}
-                params={this.props.params}
-                key={i} />
-          );
+          return <CatalogFilterColor {...props} />;
         default:
           console.warn('Unknown item type of CatalogFilterList component', item);
           return null;
       }
     });
   }
-});
+  render() {
+    const { selectedOptions } = this.props;
+
+    return (
+      <ul className="b-full-filter__list-wrap">
+        {!!selectedOptions.length &&
+          <CatalogFilterSelectedOptions {...this.props} />
+        }
+        {this.renderOptions()}
+      </ul>
+    );
+  }
+}
+
+CatalogFilterOptions.propTypes = {
+  filterName: PropTypes.string,
+  options: PropTypes.array.isRequired,
+  params: PropTypes.object,
+  selectedOptions: PropTypes.array,
+};
 
 export default CatalogFilterOptions;

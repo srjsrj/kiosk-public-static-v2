@@ -1,31 +1,34 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class CatalogFilterSelectedOptions {
-  static propTypes = {
-    selectedOptions: PropTypes.array.isRequired
-  }
+class CatalogFilterSelectedOptions extends Component {
   render() {
+    const { selectedOptions } = this.props;
+
     return (
       <li className="b-full-filter__item">
-        <div className="b-full-filter__item__title">Текущий выбор</div>
-        {this.renderOptions()}
+        <div className="b-full-filter__item__title">
+          Текущий выбор
+        </div>
+        <div className="b-full-filter__widget">
+          {
+            selectedOptions.map((item, i) => (
+              <a
+                className="b-full-filter__value"
+                href={item.url}
+                key={i}
+              >
+                {item.name}
+              </a>
+            ))
+          }
+        </div>
       </li>
     );
   }
-  renderOptions() {
-    const options = this.props.selectedOptions.map((item, i) => (
-      <a href={item.url}
-         className="b-full-filter__value"
-         key={i}
-      >
-        {item.name}
-      </a>
-    ));
-
-    return (
-      <div className="b-full-filter__widget">
-        {options}
-      </div>
-    );
-  }
 }
+
+CatalogFilterSelectedOptions.propTypes = {
+  selectedOptions: PropTypes.array.isRequired
+};
+
+export default CatalogFilterSelectedOptions;
