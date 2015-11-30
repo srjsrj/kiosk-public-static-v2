@@ -96,7 +96,8 @@ const _states = {
   },
   products: {
     productPagePhoto: 'b-page_layout-photo',
-    productPageSimilarProducts: 'b-page_layout-similar-products',
+    showSimilarProducts: 'b-page_layout-similar-products',
+    // productPageSimilarProducts: 'b-page_layout-similar-products',
   },
   common: {
     fontFamily: 'b-page_ff',
