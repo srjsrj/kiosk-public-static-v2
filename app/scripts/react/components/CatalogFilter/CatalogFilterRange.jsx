@@ -1,41 +1,22 @@
+import React, { Component, findDOMNode, PropTypes } from 'react';
 import numeral from 'numeral';
 import noUiSlider from 'nouislider';
+import { getFilter } from './utils';
 import { showFilteredCount } from '../../actions/catalogFilterActions';
 
-let CatalogFilterRange = React.createClass({
-  propTypes: {
-    title: React.PropTypes.string.isRequired,
-    from: React.PropTypes.number.isRequired,
-    to: React.PropTypes.number.isRequired,
-    valueFrom: React.PropTypes.number,
-    valueTo: React.PropTypes.number,
-    units: React.PropTypes.string,
-    step: React.PropTypes.number,
-    stepRules: React.PropTypes.array,
-    paramName: React.PropTypes.string.isRequired,
-    filterName: React.PropTypes.string
-  },
+class CatalogFilterRange extends Component {
+  constructor(props) {
+    super(props);
 
-  getDefaultProps() {
-    return {
-      step: 1,
-      stepRules: []
-      // stepRules: [
-      //   {from: 5000, step: 500},
-      //   {from: 30000, step: 1000}
-      // ]
-    };
-  },
-
-  getInitialState() {
-    return {
-      from: this.props.valueFrom || this.props.from,
-      to: this.props.valueTo || this.props.to
-    };
-  },
-
+    this.handleSlide = this.handleSlide.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  state = {
+    from: this.props.valueFrom || this.props.from,
+    to: this.props.valueTo || this.props.to
+  }
   componentDidMount() {
-    const slider = React.findDOMNode(this.refs.slider);
+    const slider = findDOMNode(this.refs.slider);
 
     noUiSlider.create(slider, {
       step: this.props.step,
@@ -44,42 +25,27 @@ let CatalogFilterRange = React.createClass({
         min: this.props.from,
         max: this.props.to
       },
-      // range: this.getRange(),
-      connect: true
+      connect: true,
     });
 
     slider.noUiSlider.on('slide', this.handleSlide);
     slider.noUiSlider.on('change', this.handleChange);
-  },
-
+  }
   componentWillUnmount() {
-    const slider = React.findDOMNode(this.refs.slider);
+    const slider = findDOMNode(this.refs.slider);
 
     slider.noUiSlider.off('slide', this.handleSlide);
     slider.noUiSlider.off('change', this.handleChange);
-  },
-
-  render() {
-    return (
-      <li className="b-full-filter__item b-full-filter__item_price">
-        <div className="b-full-filter__item__title">
-          {this.props.title}
-        </div>
-        <div className="b-full-filter__widget">
-          <div className="b-full-filter__slider">
-            <div ref="rangeValue" className="b-full-filter__slider__value">
-              {numeral(this.state.from).format('0,0[.]00')}
-              <span className="slider-divider"> – </span>
-              {numeral(this.state.to).format('0,0[.]00')} <span dangerouslySetInnerHTML={{__html: this.props.units}} />
-            </div>
-            <div ref="slider" className="b-full-filter__slider__embed" />
-          </div>
-        </div>
-        {this.renderHiddenRange()}
-      </li>
-    );
-  },
-
+  }
+  handleSlide([from, to]) {
+    this.setState({
+      from: parseInt(from),
+      to: parseInt(to),
+    });
+  }
+  handleChange() {
+    showFilteredCount(getFilter(this, this.props.params));
+  }
   renderHiddenRange() {
     const { filterName, paramName, from: pFrom, to: pTo } = this.props;
     const { from: sFrom, to: sTo } = this.state;
@@ -93,48 +59,47 @@ let CatalogFilterRange = React.createClass({
         </span>
       );
     }
-  },
-
-  getRange() {
-    let range = {};
-
-    range['min'] = [this.props.from];
-    if (this.props.stepRules.length) {
-      this.props.stepRules.forEach((rule) => {
-        if (rule.from < this.state.to) {
-          let percentage = parseInt((rule.from / this.state.to) * 100, 10);
-          range[percentage + '%'] = [rule.from, rule.step];
-        }
-      });
-    }
-    range['max'] = [this.props.to];
-
-    return range;
-  },
-
-  handleSlide(range) {
-    this.setState({
-      from: parseInt(range[0]),
-      to: parseInt(range[1])
-    });
-  },
-
-  handleChange() {
-    const filter = this.getFilter();
-    showFilteredCount(filter);
-  },
-
-  getFilter() {
-    let filter = $(this.getDOMNode()).closest('form').serialize();
-
-    if (this.props.params && this.props.params.category_id) {
-      filter = filter ?
-        filter + '&category_id=' + this.props.params.category_id :
-        '?category_id=' + this.props.params.category_id
-    }
-
-    return filter;
   }
-});
+  render() {
+    const { title, units } = this.props;
+    const { from , to } = this.state;
+
+    return (
+      <li className="b-full-filter__item b-full-filter__item_price">
+        <div className="b-full-filter__item__title">
+          {title}
+        </div>
+        <div className="b-full-filter__widget">
+          <div className="b-full-filter__slider">
+            <div className="b-full-filter__slider__value" ref="rangeValue">
+              {numeral(from).format('0,0[.]00')}
+              <span className="slider-divider"> – </span>
+              {numeral(to).format('0,0[.]00')} <span dangerouslySetInnerHTML={{__html: units}} />
+            </div>
+            <div className="b-full-filter__slider__embed" ref="slider" />
+          </div>
+        </div>
+        {this.renderHiddenRange()}
+      </li>
+    );
+  }
+}
+
+CatalogFilterRange.propTypes = {
+  filterName: PropTypes.string,
+  from: PropTypes.number.isRequired,
+  paramName: PropTypes.string.isRequired,
+  step: PropTypes.number,
+  stepRules: PropTypes.array,
+  title: PropTypes.string.isRequired,
+  to: PropTypes.number.isRequired,
+  units: PropTypes.string,
+  valueFrom: PropTypes.number,
+  valueTo: PropTypes.number,
+};
+CatalogFilterRange.defaultProps = {
+  step: 1,
+  stepRules: [],
+};
 
 export default CatalogFilterRange;

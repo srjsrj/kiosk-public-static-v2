@@ -1,120 +1,103 @@
-import classnames from 'classnames';
-import CatalogFilterExpandButton from './CatalogFilterExpandButton';
+import React, { Component, findDOMNode, PropTypes } from 'react';
+import classNames from 'classnames';
+import { COLLAPSED_VISIBLE_COUNT, MAX_VISIBLE_LIMIT } from './CatalogFilterCheckbox.constants';
+import { getFilter } from './utils';
 import { showFilteredCount } from '../../actions/catalogFilterActions';
+import CatalogFilterExpandButton from './CatalogFilterExpandButton';
 
-const MAX_VISIBLE_LIMIT = 10,
-      COLLAPSED_VISIBLE_COUNT = 5;
-
-let CatalogFilterCheckbox = React.createClass({
-  propTypes: {
-    items: React.PropTypes.array.isRequired,
-    title: React.PropTypes.string.isRequired,
-    paramName: React.PropTypes.string.isRequired,
-    filterName: React.PropTypes.string
-  },
-
-  getInitialState() {
-    return {
-      expanded: !this.isHugeList()
-    };
-  },
-
-  render() {
-    let itemClasses = classnames('b-full-filter__item', {
-      'b-full-filter__item--full': this.state.expanded,
-      'b-full-filter__item--short': !this.state.expanded
-    });
-
-    return (
-      <li className={itemClasses}>
-        <div className="b-full-filter__item__title">
-          {this.props.title}
-        </div>
-        {this.renderOptions()}
-        <CatalogFilterExpandButton
-            expanded={this.state.expanded}
-            onClick={this.expandList} />
-      </li>
-    );
-  },
-
-  renderOptions() {
-    let checked = [],
-        unchecked = [];
-
-    this.props.items.forEach((item) => {
-      item.checked ? checked.push(item) : unchecked.push(item)
-    });
-
-    let items = checked.concat(unchecked);
-
-    let options = items
-      .map((item, i) => {
-        let optionClasses = classnames('b-cbox', {
-          'b-cbox--full': !this.isOptionVisible(item, i)
-        });
-
-        return (
-          <label className={optionClasses} key={i}>
-            <input type="checkbox"
-                   name={this.getFieldName(item)}
-                   defaultChecked={item.checked}
-                   className="b-cbox__native"
-                   onChange={this.handleChange} />
-            <div className="b-cbox__val">
-              {item.name}
-            </div>
-          </label>
-        );
-      });
-
-    return (
-      <div className="b-full-filter__widget">
-        {options}
-      </div>
-    );
-  },
-
+class CatalogFilterCheckbox extends Component {
+  state = {
+    expanded: !this.isHugeList(),
+  }
   isHugeList() {
     return this.props.items.length > MAX_VISIBLE_LIMIT;
-  },
-
+  }
   isOptionVisible(option, index) {
     if (this.isHugeList()) {
       return option.checked || index + 1 <= COLLAPSED_VISIBLE_COUNT;
-    } else {
-      return true;
     }
-  },
-
-  expandList() {
-    this.setState({expanded: true});
-  },  
-
+    return true;
+  }
   getFieldName(item) {
     if (this.props.filterName != null) {
       return `${this.props.filterName}[${this.props.paramName}][${item.paramValue}]`;
     } else {
       return `${this.props.paramName}[${item.paramValue}]`;
     }
-  },
-
-  handleChange(e) {
-    const filter = this.getFilter();
-    showFilteredCount(filter);
-  },
-
-  getFilter() {
-    let filter = $(this.getDOMNode()).closest('form').serialize();
-
-    if (this.props.params && this.props.params.category_id) {
-      filter = filter ?
-        filter + '&category_id=' + this.props.params.category_id :
-        '?category_id=' + this.props.params.category_id
-    }
-
-    return filter;
   }
-});
+  expandList() {
+    this.setState({ expanded: true });
+  }
+  handleChange() {
+    showFilteredCount(getFilter(this, this.props.params));
+  }
+  renderOptions() {
+    const checked = [];
+    const unchecked = [];
+
+    this.props.items.forEach((item) => {
+      item.checked ? checked.push(item) : unchecked.push(item)
+    });
+
+    const items = checked.concat(unchecked);
+
+    return (
+      <div className="b-full-filter__widget">
+        {
+          items.map((item, i) => {
+            const optionClasses = classNames({
+              'b-cbox': true,
+              'b-cbox--full': !this.isOptionVisible(item, i),
+            });
+
+            return (
+              <label className={optionClasses} key={i}>
+                <input
+                  className="b-cbox__native"
+                  defaultChecked={item.checked}
+                  name={this.getFieldName(item)}
+                  onChange={this.handleChange.bind(this)}
+                  type="checkbox"
+                />
+                <div className="b-cbox__val">
+                  {item.name}
+                </div>
+              </label>
+            );
+          })
+        }
+      </div>
+    );
+  }
+  render() {
+    const { title } = this.props;
+    const { expanded } = this.state;
+    const itemClasses = classNames({
+      'b-full-filter__item': true,
+      'b-full-filter__item--full': expanded,
+      'b-full-filter__item--short': !expanded,
+    });
+
+    return (
+      <li className={itemClasses}>
+        <div className="b-full-filter__item__title">
+          {title}
+        </div>
+        {this.renderOptions()}
+        <CatalogFilterExpandButton
+          expanded={expanded}
+          onClick={this.expandList.bind(this)}
+        />
+      </li>
+    );
+  }
+}
+
+CatalogFilterCheckbox.propTypes = {
+  filterName: React.PropTypes.string,
+  items: React.PropTypes.array.isRequired,
+  paramName: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+};
 
 export default CatalogFilterCheckbox;

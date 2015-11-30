@@ -39,7 +39,6 @@ putRequest =    (url, data) -> request 'PUT', url, data
 deleteRequest = (url, data) -> request 'DELETE', url, data
 
 Api =
-
   catalogFilter:
     getFilteredCount: (filter) ->
       url  = apiRoutes.productsFilteredCount filter
