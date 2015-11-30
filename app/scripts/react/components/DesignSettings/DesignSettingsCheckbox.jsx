@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 export default class DesignSettingsCheckbox {
   static propTypes = {
-    value: PropTypes.bool.isRequired,
+    value: PropTypes.bool,
     onChange: PropTypes.func.isRequired
   }
   render() {

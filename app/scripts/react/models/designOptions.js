@@ -70,20 +70,24 @@ export default {
       value: 'aside',
     }],
   },
-  productPageSimilarProducts: {
-    type: designTypes.DESIGN_RADIO_TYPE,
-    name: 'designoption-productPageSimilarProducts',
-    items: [{
-      title: 'Нет',
-      value: 'off',
-    }, {
-      title: 'Установленные',
-      value: 'manual',
-    }, {
-      title: 'Авто',
-      value: 'auto',
-    },],
+  showSimilarProducts: {
+    type: designTypes.DESIGN_CHECKBOX_TYPE,
+    name: 'designoption-showSimilarProducts',
   },
+  // productPageSimilarProducts: {
+  //   type: designTypes.DESIGN_RADIO_TYPE,
+  //   name: 'designoption-productPageSimilarProducts',
+  //   items: [{
+  //     title: 'Нет',
+  //     value: 'off',
+  //   }, {
+  //     title: 'Установленные',
+  //     value: 'product',
+  //   }, {
+  //     title: 'Авто',
+  //     value: 'on',
+  //   },],
+  // },
   wOneWidget: {
     type: designTypes.DESIGN_CHECKBOX_TYPE,
     name: 'designoption-wOneWidget',
