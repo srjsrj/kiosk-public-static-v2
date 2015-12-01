@@ -16,3 +16,7 @@ export function checkCouponCode() {
 export function productCards(id) {
   return `${pUrl}/v1/product_cards/${id}`;
 }
+
+export function instagram() {
+  return `${pUrl}/v1/instagram/feed`;
+}
