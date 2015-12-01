@@ -6431,6 +6431,7 @@ exports.designSettings = designSettings;
 exports.productsFilteredCount = productsFilteredCount;
 exports.checkCouponCode = checkCouponCode;
 exports.productCards = productCards;
+exports.instagram = instagram;
 var pUrl = global.mrch ? global.mrch.config.public_api_url : global.gon.public_api_url;
 var oUrl = global.mrch ? global.mrch.config.operator_api_url : global.gon.operator_api_url;
 
@@ -6448,6 +6449,10 @@ function checkCouponCode() {
 
 function productCards(id) {
   return pUrl + '/v1/product_cards/' + id;
+}
+
+function instagram() {
+  return pUrl + '/v1/instagram/feed';
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

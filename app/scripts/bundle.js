@@ -19,9 +19,6 @@ import './shared/checkout';
 
 // TODO: Refactor and cleaning legacy shit
 import './react/components/Product/add_to_basket_button';
-import './react/components/instagram/instagram_feed_mixin';
-import './react/components/instagram/instagram';
-import './react/components/instagram/instagram_v2';
 import './react/dispatchers/basket';
 import './react/actions/view/basket';
 import './react/stores/basket';
@@ -36,5 +33,6 @@ global.ProductCard = require('./react/components/Product/ProductCard').ProductCa
 global.TopBanner = require('./react/components/TopBanner');
 global.CartCoupon = require('./react/components/Cart/CartCoupon');
 global.OrderCoupon = require('./react/components/Order/OrderCoupon');
+global.InstagramContainer = require('./react/components/Instagram').InstagramContainer;
 
 import './react/application';
