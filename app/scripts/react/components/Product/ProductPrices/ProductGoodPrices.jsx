@@ -11,7 +11,7 @@ export default class ProductGoodPrices {
     const { minPrice, maxPrice } = this.props;
 
     return (
-      <div className="b-item__price">
+      <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__price'}>
         <HumanizedMoney money={minPrice} />
         {' - '}
         <HumanizedMoneyWithCurrency money={maxPrice} />

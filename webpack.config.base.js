@@ -14,6 +14,16 @@ module.exports = {
         loader: 'babel-loader?stage=0',
         exclude: /(node_modules|bower_components)/
       },
+      {
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'sass'],
+        exclude: /(node_modules|bower_components)/
+      },
+    ],
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname, './app/stylesheets'),
     ],
   },
   resolve: {

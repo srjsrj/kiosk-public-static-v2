@@ -13,7 +13,7 @@ function normalizeFilters(additional = []) {
 }
 
 const ThumborService = {
-  thumbor: gon.thumbor_url,
+  thumbor: global.mrch ? global.mrch.config.thumbor_url : global.gon.thumbor_url,
   imageUrl(url, size, filters) {
     const width = size.width ? size.width : '';
     const height = size.height ? size.height : '';

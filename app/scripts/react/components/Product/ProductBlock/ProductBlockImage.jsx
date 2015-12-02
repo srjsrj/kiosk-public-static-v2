@@ -27,7 +27,7 @@ class ProductBlockImage extends Component {
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
         <Image
-          className="b-item__pic"
+          className={process.env.KIOSK_CSS_PREFIX + 'b-item__pic'}
           image={{ url: this.getCurrentImage() }}
           maxWidth={maxWidth}
           title={title}

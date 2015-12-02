@@ -8,9 +8,15 @@ export default class ProductBadge {
   }
   render() {
     const { status, text } = this.props;
+    const badgeClasses = classNames({
+      'b-status': true,
+      ['b-status_' + status]: true,
+      'ProductBadge': true,
+      ['ProductBadge--' + status]: true,
+    });
 
     return (
-      <span className={classNames('b-status', 'b-status_' + status)}>
+      <span className={badgeClasses}>
         {text}
       </span>
     );

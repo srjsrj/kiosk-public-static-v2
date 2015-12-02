@@ -29,6 +29,10 @@ gulp.task('deploy', ['build'], () => {
   gulp.start('[Shared] GithubPages');
 });
 
+gulp.task('deploy--without-build', () => {
+  gulp.start('[Shared] GithubPages');
+});
+
 gulp.task('server', ['[Shared] SetWatch', 'build'], () => {
   gulp.start('[Shared] Watch');
 });

@@ -12,6 +12,7 @@ config.plugins = [
     'process.env.NODE_ENV': '"production"',
     'process.env.PUBLIC_API_URL': '"http://wannabe.kiiiosk.ru/api"',
     'process.env.OPERATOR_API_URL': '"http://wannabe.kiiiosk.ru/operator/api"',
+    'process.env.KIOSK_CSS_PREFIX': '"mrch-"',
   }),
   new webpack.optimize.UglifyJsPlugin({
     comments: false,

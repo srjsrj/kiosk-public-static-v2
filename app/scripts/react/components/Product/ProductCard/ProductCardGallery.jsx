@@ -127,7 +127,7 @@ export default class ProductCardGallery extends Component {
   renderPhotoItem(el, idx) {
     return (
       <a
-        className="b-slider__item"
+        className={process.env.KIOSK_CSS_PREFIX + 'b-slider__item'}
         data-lightbox={''}
         href={el.url}
         key={idx}
@@ -135,7 +135,7 @@ export default class ProductCardGallery extends Component {
       >
         <img
           alt={el.title}
-          className="u-photo"
+          className={process.env.KIOSK_CSS_PREFIX + 'u-photo'}
           itemProp="image"
           src={el.url}
           title={el.title}
@@ -147,7 +147,7 @@ export default class ProductCardGallery extends Component {
   renderThumbItem(el, idx) {
     return (
       <div
-        className="b-slider__item"
+        className={process.env.KIOSK_CSS_PREFIX + 'b-slider__item'}
         key={idx}
         onClick={this.onThumbClick.bind(this, idx)}
       >
@@ -163,11 +163,17 @@ export default class ProductCardGallery extends Component {
   render() {
     return (
       <div>
-        <div className="b-slider" ref="productPhoto">
+        <div
+          className={process.env.KIOSK_CSS_PREFIX + 'b-slider'}
+          ref="productPhoto"
+        >
           {this.props.images.map(this.renderPhotoItem.bind(this))}
         </div>
         {this.props.images.length > 1 &&
-          <div className="b-slider b-slider_thumbs" ref="productThumbs">
+          <div
+            className={process.env.KIOSK_CSS_PREFIX + 'b-slider ' + process.env.KIOSK_CSS_PREFIX + 'b-slider_thumbs'}
+            ref="productThumbs"
+          >
             {this.props.images.map(this.renderThumbItem.bind(this))}
           </div>
         }

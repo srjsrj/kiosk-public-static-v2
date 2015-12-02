@@ -17,8 +17,8 @@ export default class ProductCartForProduct {
     return (
       <span>
         <HiddenInput name="cart_item[good_id]" value={good.global_id} />
-        <div className="b-item-full__form__row b-item-full__form__row_fixed">
-          <div className="b-item-full__form__submit">
+        <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row_fixed'}>
+          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
             <ProductAddToCartButton text={t('vendor.button.to_cart')} />
           </div>
         </div>

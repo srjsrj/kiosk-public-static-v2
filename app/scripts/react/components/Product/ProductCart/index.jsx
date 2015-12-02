@@ -45,7 +45,7 @@ export default class ProductCart extends Component {
       <form
         acceptCharset="UTF-8"
         action={vendorCartItems()}
-        className="simple_form cart_item"
+        className={process.env.KIOSK_CSS_PREFIX + 'simple_form ' + process.env.KIOSK_CSS_PREFIX + 'cart_item'}
         method="POST"
       >
         <div style={{ display: 'none'}}>

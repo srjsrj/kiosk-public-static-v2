@@ -10,18 +10,21 @@ class ProductBlock extends Component {
     const { product } = this.props;
 
     return (
-      <div className="b-item-list__item">
-        <a className="b-item" href={product.public_url}>
-          <div className="b-item__pic-wrap">
+      <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-list__item'}>
+        <a
+          className={process.env.KIOSK_CSS_PREFIX + 'b-item'}
+          href={product.public_url}
+        >
+          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__pic-wrap'}>
             <ProductBlockImage product={product} />
             <ProductBlockBadges product={product} />
           </div>
-          <div className="b-item__info">
-            <h2 className="b-item__name">
+          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__info'}>
+            <h2 className={process.env.KIOSK_CSS_PREFIX + 'b-item__name'}>
               {product.title}
             </h2>
             {!!product.short_details &&
-              <div className="b-item__details">
+              <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__details'}>
                 {product.short_details}
               </div>
             }

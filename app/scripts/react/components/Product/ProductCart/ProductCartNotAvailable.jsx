@@ -8,9 +8,9 @@ export default class ProductCartNotAvailable {
     const { title } = this.props;
 
     return (
-      <div className="b-item-full__form__row b-item-full__form__row_fixed">
-        <div className="b-item-full__form__submit">
-          <div className="b-btn b-btn_trans">
+      <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row_fixed'}>
+        <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
+          <div className={process.env.KIOSK_CSS_PREFIX + 'b-btn ' + process.env.KIOSK_CSS_PREFIX + 'b-btn_trans'}>
             {title}
           </div>
         </div>

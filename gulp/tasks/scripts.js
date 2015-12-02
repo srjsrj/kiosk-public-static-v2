@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import browserify from 'browserify';
+import envify from 'envify/custom';
 import watchify from 'watchify';
 import source from 'vinyl-source-stream';
 import uglify from 'gulp-uglify';
@@ -97,6 +98,9 @@ gulp.task('[Static] Client scripts', () => {
         stage: 0,
         ignore: /(node_modules|bower_components)/
       })
+      .transform(envify({
+        KIOSK_CSS_PREFIX: ''
+      }))
     );
     bundler.on('update', rebundle);
   } else {
@@ -105,7 +109,10 @@ gulp.task('[Static] Client scripts', () => {
       .transform('babelify', {
         stage: 0,
         ignore: /(node_modules|bower_components)/
-      });
+      })
+      .transform(envify({
+        KIOSK_CSS_PREFIX: ''
+      }));
   }
 
   rebundle();

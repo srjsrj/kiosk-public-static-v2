@@ -28,7 +28,7 @@ export default class PropertyList {
       return <span>{propertyList}</span>;
     } else {
       return (
-        <div className="p-lg text-center">
+        <div className={process.env.KIOSK_CSS_PREFIX + 'p-lg ' + process.env.KIOSK_CSS_PREFIX + 'text-center'}>
           <p>{t('vendor.properties.empty')}</p>
         </div>
       );
