@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import rename from 'gulp-rename';
-import cssPrefix from 'gulp-css-prefix';
 import autoprefixer from 'gulp-autoprefixer';
 import handleErrors from '../../util/handleErrors';
 import { styles as config } from '../../config';
@@ -20,8 +19,5 @@ gulp.task('[Static] Styles', () => {
     }))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(rename(config.static.outputName))
-    .pipe(gulp.dest(config.static.dest))
-    .pipe(cssPrefix('mrch-'))
-    .pipe(rename('widgets.css'))
     .pipe(gulp.dest(config.static.dest));
 });

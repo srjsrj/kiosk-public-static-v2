@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import classNames from 'classnames';
 import React, { Component, findDOMNode, PropTypes } from 'react';
+import { PREVIEW_WIDTH, THUMB_WIDTH } from './ProductCardGallery.constants';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import ProductCardGalleryImage from './ProductCardGalleryImage';
 import ProductCardGallerySlider from './ProductCardGallerySlider';
@@ -31,8 +32,8 @@ ProductCardGallery.propTypes = {
 };
 ProductCardGallery.defaultProps = {
   images: [],
-  previewWidth: 460,
-  thumbWidth: 115,
+  previewWidth: PREVIEW_WIDTH,
+  thumbWidth: THUMB_WIDTH,
 };
 
 export default ProductCardGallery;

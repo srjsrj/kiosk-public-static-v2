@@ -18,7 +18,7 @@ class ProductCard extends Component {
     product: this.props.product,
   }
   isKioskEnvironment() {
-    return !!global.gon;
+    return !!(global.gon && global.gon.kiiiosk);
   }
   handleGoodChange(good) {
     const article = good && good.article || this.state.product.article;

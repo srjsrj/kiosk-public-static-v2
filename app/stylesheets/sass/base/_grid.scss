@@ -236,9 +236,9 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
      * 5. Required to combine fluid widths and fixed gutters.
      */
     #{$class-type}grid__item {
-        display:inline-block!important;           /* [1] */
-        padding-left:$gutter!important;           /* [2] */
-        vertical-align:top!important;             /* [3] */
+        display:inline-block;           /* [1] */
+        padding-left:$gutter;           /* [2] */
+        vertical-align:top;             /* [3] */
         @if $mobile-first {
             width:100%;                 /* [4] */
         }
