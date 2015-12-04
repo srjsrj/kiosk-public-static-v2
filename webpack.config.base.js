@@ -10,11 +10,11 @@ var preLoaders = [
       multiple: [
         {
           search: 'IMAGES_PATH',
-          replace: process.env.NODE_ENV === 'production' ? "'/shop/images'" : "'../images'",
+          replace: process.env.ENV === 'production' ? "'/shop/images'" : "'../images'",
         },
         {
           search: 'FONTS_PATH',
-          replace: process.env.NODE_ENV === 'production' ? "'/shop/fonts'" : "'../fonts'",
+          replace: process.env.ENV === 'production' ? "'/shop/fonts'" : "'../fonts'",
         },
       ]
     },
