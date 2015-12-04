@@ -9,14 +9,10 @@ export default class ProductCardBreadcrumbs {
   }
   render() {
     const { className, product } = this.props;
-    const breadClasses = classNames('ProductCard-breadcrumbs', className);
-    // const breadcrumbsClasses = classNames(className, {
-    //   [process.env.KIOSK_CSS_PREFIX + 'b-breadcrumbs']: true,
-    // });
 
     if (product.categories && product.categories.length) {
       return (
-        <div className={breadClasses}>
+        <div className={classNames('b-breadcrumbs', className)}>
           {productCategoryPath(product)}
         </div>
       );

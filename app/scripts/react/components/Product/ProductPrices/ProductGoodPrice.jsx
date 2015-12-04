@@ -13,18 +13,17 @@ export default class ProductGoodPrice {
     if (good.is_sale) {
       return (
         <span>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__price ' + process.env.KIOSK_CSS_PREFIX + 'b_item_price_sale'}>
+          <div className="b-item__price b_item_price_sale">
             <ProductGoodActualPrice good={good} />
           </div>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__price ' + process.env.KIOSK_CSS_PREFIX + 'b-item__price_old'}>
+          <div className="b-item__price b-item__price_old">
             <HumanizedMoneyWithCurrency money={good.price} />
           </div>
         </span>
       );
     } else {
-      const priceClasses = classNames({
-        [process.env.KIOSK_CSS_PREFIX + 'b-item__price']: true,
-        [process.env.KIOSK_CSS_PREFIX + 'b-item__price_unknown']: good.actual_price && good.actual_price.cents === 0,
+      const priceClasses = classNames('b-item__price', {
+        'b-item__price_unknown': good.actual_price && good.actual_price.cents === 0,
       });
 
       return (

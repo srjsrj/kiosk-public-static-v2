@@ -46,7 +46,7 @@ export default class ProductCartWishlist extends Component {
       }
 
       return (
-        <div className={process.env.KIOSK_CSS_PREFIX + 'add-to-wishlist'}>
+        <div className="add-to-wishlist">
           {content}
         </div>
       );

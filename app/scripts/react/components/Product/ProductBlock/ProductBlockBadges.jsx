@@ -12,7 +12,7 @@ export default class ProductBlockBadges {
     const { product } = this.props;
 
     return (
-      <div className={process.env.KIOSK_CSS_PREFIX + 'b-item__status'}>
+      <div className="b-item__status">
         <ProductBadgeNew product={product} />
         <ProductBadgeSoldOut product={product} />
         <ProductBadgeSale product={product} />

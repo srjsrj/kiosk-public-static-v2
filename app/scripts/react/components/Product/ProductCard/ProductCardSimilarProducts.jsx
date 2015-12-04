@@ -18,11 +18,11 @@ export default class ProductCardSimilarProducts {
 
     if (products && products.length) {
       return (
-        <section className={process.env.KIOSK_CSS_PREFIX + 'b-item-list ' + process.env.KIOSK_CSS_PREFIX + 'b-item-list_additional'}>
-          <h1 className={process.env.KIOSK_CSS_PREFIX + 'b-item-list__title'}>
+        <section className="b-item-list b-item-list_additional">
+          <h1 className="b-item-list__title">
             {t('vendor.similar_product.title')}
           </h1>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-list__content'}>
+          <div className="b-item-list__content">
             {products.map(this.renderProduct)}
           </div>
         </section>

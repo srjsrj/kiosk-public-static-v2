@@ -7,7 +7,7 @@ import {
 
 export function schemaOrgMarkup(product) {
   return (
-    <div style={{display: 'none'}}>
+    <div style={{display: 'none!important'}}>
       <meta itemProp="name" content={h1(product)} />
       {product.article &&
         <span itemProp="productID" content={schemaOrgProductArticle(product)} />

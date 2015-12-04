@@ -17,6 +17,9 @@ class ProductCard extends Component {
     good: null,
     product: this.props.product,
   }
+  isKioskEnvironment() {
+    return !!global.gon;
+  }
   handleGoodChange(good) {
     const article = good && good.article || this.state.product.article;
     const product = {
@@ -31,95 +34,55 @@ class ProductCard extends Component {
     const { good, product } = this.state;
 
     return (
-      <div
-        className="ProductCard h-product cleanslate"
-        itemScope={true}
-        itemType="http://schema.org/Product"
-      >
-        <div className="ProductCard-inner">
-          <div className="ProductCard-content">
-            <div className="ProductCard-description">
-              <div className="ProductCard-header">
-                <ProductCardBreadcrumbs className="p-category" product={product} />
-                <ProductCardTitle className="p-name" product={product} />
-                <ProductCardBadges product={product} />
+      <div className="mrch-ProductCard cleanslate">
+        <div
+          className="b-page__content__inner b-page__content__inner_content h-product"
+          itemScope={true}
+          itemType="http://schema.org/Product"
+        >
+          <div className="b-item-full">
+            <div className="b-item-full__header b-item-full__header_mobile">
+              <ProductCardBreadcrumbs product={product} />
+              <ProductCardTitle product={product} />
+              <ProductCardBadges product={product} />
+            </div>
+
+            <div className="b-item-full__content">
+              <div className="b-item-full__gallery">
+                <ProductCardGallery
+                  images={product.images}
+                  isKioskEnvironment={this.isKioskEnvironment()}
+                />
               </div>
+              <div className="b-item-full__description">
+                <div className="b-item-full__header">
+                  <ProductCardBreadcrumbs className="p-category" product={product} />
+                  <ProductCardTitle className="p-name" product={product} />
+                  <ProductCardBadges product={product} />
+                </div>
+                <div className="b-item-full__price p-price">
+                  <ProductPrices good={good} product={product} />
+                </div>
+                <ProductCardSchema product={product} />
+                <div className="b-item-full__form">
+                  <ProductCart
+                    {...this.props}
+                    {...this.state}
+                    onGoodChange={this.handleGoodChange.bind(this)}
+                  />
+                </div>
+                <ProductCardDetails product={product} />
+              </div>
+              <ProductCardVideo product={product} />
             </div>
-            <div className="ProductCard-price b-item-full__price p-price">
-              <ProductPrices good={good} product={product} />
-            </div>
-            Привет!
+
+            <ProductCardSimilarProducts products={similarProducts} />
           </div>
         </div>
       </div>
     );
   }
 }
-
-// @makeTranslatable
-// class ProductCard extends Component {
-//   state = {
-//     good: null,
-//     product: this.props.product,
-//   }
-//   handleGoodChange(good) {
-//     const article = good && good.article || this.state.product.article;
-//     const product = {
-//       ...this.state.product,
-//       article,
-//     };
-
-//     this.setState({ good, product });
-//   }
-//   render() {
-//     const { similarProducts } = this.props;
-//     const { good, product } = this.state;
-
-//     return (
-//       <div
-//         className={process.env.KIOSK_CSS_PREFIX + 'b-page__content__inner ' + process.env.KIOSK_CSS_PREFIX + 'b-page__content__inner_content h-product cleanslate'}
-//         itemScope={true}
-//         itemType="http://schema.org/Product"
-//       >
-//         <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full'}>
-//           <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__header ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__header_mobile'}>
-//             <ProductCardBreadcrumbs product={product} />
-//             <ProductCardTitle product={product} />
-//             <ProductCardBadges product={product} />
-//           </div>
-
-//           <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__content'}>
-//             <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__gallery'}>
-//               <ProductCardGallery images={product.images} />
-//             </div>
-//             <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__description'}>
-//               <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__header'}>
-//                 <ProductCardBreadcrumbs className="p-category" product={product} />
-//                 <ProductCardTitle className="p-name" product={product} />
-//                 <ProductCardBadges product={product} />
-//               </div>
-//               <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__price p-price'}>
-//                 <ProductPrices good={good} product={product} />
-//               </div>
-//               <ProductCardSchema product={product} />
-//               <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form'}>
-//                 <ProductCart
-//                   {...this.props}
-//                   {...this.state}
-//                   onGoodChange={this.handleGoodChange.bind(this)}
-//                 />
-//               </div>
-//               <ProductCardDetails product={product} />
-//             </div>
-//             <ProductCardVideo product={product} />
-//           </div>
-
-//           <ProductCardSimilarProducts products={similarProducts} />
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 ProductCard.propTypes = {
   addWishlistUrl: PropTypes.string,

@@ -27,13 +27,13 @@ class ProductBlockImage extends Component {
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
         <Image
-          className={process.env.KIOSK_CSS_PREFIX + 'b-item__pic'}
+          className="b-item__pic"
           image={{ url: this.getCurrentImage() }}
           maxWidth={maxWidth}
           title={title}
         />
         {second_image_url &&
-          <span style={{ display: 'none' }}>
+          <span style={{ display: 'none!important' }}>
             <Image
               image={{ url: second_image_url }}
               maxWidth={maxWidth}

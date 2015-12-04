@@ -1,14 +1,14 @@
 import React, { addons, findDOMNode } from 'react';
 import { expect } from 'chai';
 import { PHOTO_CHANGE } from '../../../../../app/scripts/react/constants/globalEventKeys';
-import ProductCardGallery from '../../../../../app/scripts/react/components/Product/ProductCard/ProductCardGallery';
+import ProductCardGallerySlider from '../../../../../app/scripts/react/components/Product/ProductCard/ProductCardGallerySlider';
 
 const { renderIntoDocument } = addons.TestUtils;
 
-describe('[Component] ProductCardGallery', () => {
+describe('[Component] ProductCardGallerySlider', () => {
   it('should render without props', () => {
     const component = renderIntoDocument(
-      <ProductCardGallery />
+      <ProductCardGallerySlider />
     );
 
     expect(component).to.be.an('object');
@@ -23,7 +23,7 @@ describe('[Component] ProductCardGallery', () => {
       },
     ];
     const component = renderIntoDocument(
-      <ProductCardGallery images={images} />
+      <ProductCardGallerySlider images={images} />
     );
 
     expect(component.refs.productThumbs).to.be.undefined;
@@ -43,7 +43,7 @@ describe('[Component] ProductCardGallery', () => {
       }
     ];
     const component = renderIntoDocument(
-      <ProductCardGallery images={images} />
+      <ProductCardGallerySlider images={images} />
     );
 
     expect(component.refs.productThumbs).to.be.an('object');
@@ -63,7 +63,7 @@ describe('[Component] ProductCardGallery', () => {
       }
     ];
     const component = renderIntoDocument(
-      <ProductCardGallery images={images} />
+      <ProductCardGallerySlider images={images} />
     );
 
     expect(component.state.selectedIndex).equals(0);
@@ -92,7 +92,7 @@ describe('[Component] ProductCardGallery', () => {
       }
     ];
     const component = renderIntoDocument(
-      <ProductCardGallery images={images} />
+      <ProductCardGallerySlider images={images} />
     );
 
     expect(component.state.selectedIndex).equals(0);

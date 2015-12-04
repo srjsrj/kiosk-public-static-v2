@@ -16,6 +16,6 @@ import './react/components/Product/ProductCart/ProductCart.test';
 import './react/components/Product/ProductCard/ProductCardContainer.test';
 import './react/components/Product/ProductCard/ProductCard.test';
 import './react/components/Product/ProductCard/ProductCardDetails.test';
-import './react/components/Product/ProductCard/ProductCardGallery.test';
+import './react/components/Product/ProductCard/ProductCardGallerySlider.test';
 import './react/components/Product/ProductProperties/index.test';
 import './react/components/Cart/CartCoupon.test';

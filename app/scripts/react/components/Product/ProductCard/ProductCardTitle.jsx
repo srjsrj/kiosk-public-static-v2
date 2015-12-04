@@ -9,16 +9,12 @@ export default class ProductCardTitle {
   }
   render() {
     const { className, product } = this.props;
-    const titleClasses = classNames('ProductCard-title', className);
-    // const titleClasses = classNames(className, {
-    //   [process.env.KIOSK_CSS_PREFIX + 'b-item-full__title']: true,
-    // });
-     // {process.env.KIOSK_CSS_PREFIX + 'b-item-full__articul'}
+
     return (
-      <h1 className={titleClasses}>
+      <h1 className={classNames('b-item-full__title', className)}>
         {h1(product)}
         {product.article &&
-          <span className="ProductCard-articul">
+          <span className="b-item-full__articul">
             {' '}
             {product.article}
           </span>

@@ -11,9 +11,9 @@ export default class PropertyListItemDictionary {
   }
   render() {
     return (
-      <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row'}>
-        <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option_full'}>
-          <h3 className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__title'}>
+      <div className="b-item-full__form__row">
+        <div className="b-item-full__form__option b-item-full__form__option_full">
+          <h3 className="b-item-full__form__title">
             {this.props.propertyTitle}
           </h3>
           <Select

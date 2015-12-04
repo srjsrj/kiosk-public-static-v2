@@ -83,11 +83,11 @@ export default class ProductGoods {
     if (this.isTitlesValid(product)) {
       return (
         <span>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row_fixed'}>
-            <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option'}>
+          <div className="b-item-full__form__row b-item-full__form__row_fixed">
+            <div className="b-item-full__form__option">
               {this.renderSelect(product)}
             </div>
-            <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
+            <div className="b-item-full__form__submit">
               <ProductAddToCartButton text={t('vendor.button.to_cart')} />
             </div>
           </div>
@@ -101,8 +101,8 @@ export default class ProductGoods {
     } else {
       return (
         <span>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row'}>
-            <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option_full'}>
+          <div className="b-item-full__form__row">
+            <div className="b-item-full__form__option b-item-full__form__option_full">
               {this.renderSelect(product)}
             </div>
             <ProductCartWishlist
@@ -111,7 +111,7 @@ export default class ProductGoods {
               goWishlistText={t('vendor.button.go_wishlist')}
             />
           </div>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
+          <div className="b-item-full__form__row b-item-full__form__submit">
             <ProductAddToCartButton text={t('vendor.button.to_cart')} />
           </div>
         </span>

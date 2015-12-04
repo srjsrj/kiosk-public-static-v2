@@ -107,7 +107,7 @@ export default class ProductProperties extends Component {
             values={values}
           />
           {hiddenInput}
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
+          <div className="b-item-full__form__row b-item-full__form__submit">
             {addToCartButton}
           </div>
           <ProductCartWishlist
@@ -119,8 +119,8 @@ export default class ProductProperties extends Component {
       );
     } else {
       return (
-        <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row ' + process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__row_fixed'}>
-          <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__option'}>
+        <div className="b-item-full__form__row b-item-full__form__row_fixed">
+          <div className="b-item-full__form__option">
             <PropertySingle
               goods={this.props.goods}
               onChange={this.updateValues.bind(this)}
@@ -128,7 +128,7 @@ export default class ProductProperties extends Component {
               values={values}
             />
           </div>
-        <div className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__form__submit'}>
+        <div className="b-item-full__form__submit">
           {hiddenInput}
           {addToCartButton}
         </div>

@@ -10,7 +10,7 @@ export default class ProductCardVideo {
     if (product.video_embed_html) {
       return (
         <div
-          className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__video'}
+          className="b-item-full__video"
           dangerouslySetInnerHTML={{ __html: product.video_embed_html }}
         />
       );

@@ -19,6 +19,7 @@ gulp.task('build', ['[Shared] Clean'], (cb) => {
     '[Static] Vendor scripts',
     '[Static] Test scripts',
     '[Static] Haml',
+    '[Static] Html',
     '[Static] Styles',
     '[Static] Fonts',
     '[Static] Images'

@@ -9,10 +9,7 @@ export default class ProductCardDetails {
   renderAttributes(product) {
     if (product.attributes && product.attributes.length) {
       return (
-        <ul
-          className={process.env.KIOSK_CSS_PREFIX + 'b-characteristics'}
-          ref="attributes"
-        >
+        <ul className="b-characteristics" ref="attributes">
           {
             product.attributes.map((attr, idx) =>
               <li key={idx}>
@@ -28,7 +25,7 @@ export default class ProductCardDetails {
     if (product.description) {
       return (
         <div
-          className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__text e-description'}
+          className="b-item-full__text e-description"
           dangerouslySetInnerHTML={{ __html: product.description }}
           itemProp="description"
           ref="description"
@@ -44,10 +41,7 @@ export default class ProductCardDetails {
         <span ref="textBlocks">
           {
             product.text_blocks.map((block, idx) => (
-              <div
-                className={process.env.KIOSK_CSS_PREFIX + 'b-item-full__text'}
-                key={idx}
-              >
+              <div className="b-item-full__text" key={idx}>
                 <h4>{block.title}</h4>
                 <span dangerouslySetInnerHTML={{ __html: block.content }} />
               </div>
