@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "cleanslate": "premasagar/cleanslate#78d38fa",
     "cookies-js": "^1.2.2",
     "deep-diff": "^0.3.2",
     "flux": "^2.0.1",
