@@ -17,15 +17,7 @@ gulp.task('[Static] Styles', () => {
         './app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap'
       ]
     }))
-    // .pipe(cssPrefix('.mrch'))
-    // .pipe(cssWrap({selector: '.mrch'}))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(rename(config.static.outputName))
     .pipe(gulp.dest(config.static.dest));
 });
-
-// gulp.task('css-wrap', function() {
-//   return gulp.src('src/*.css')
-//     .pipe(cssWrap({selector:'.my-app'}))
-//     .pipe(gulp.dest('dist'));
-// });

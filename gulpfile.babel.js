@@ -19,6 +19,7 @@ gulp.task('build', ['[Shared] Clean'], (cb) => {
     '[Static] Vendor scripts',
     '[Static] Test scripts',
     '[Static] Haml',
+    '[Static] Html',
     '[Static] Styles',
     '[Static] Fonts',
     '[Static] Images'
@@ -26,6 +27,10 @@ gulp.task('build', ['[Shared] Clean'], (cb) => {
 });
 
 gulp.task('deploy', ['build'], () => {
+  gulp.start('[Shared] GithubPages');
+});
+
+gulp.task('deploy--without-build', () => {
   gulp.start('[Shared] GithubPages');
 });
 

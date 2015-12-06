@@ -3,9 +3,7 @@ import { diff } from 'deep-diff';
 import { t } from 'i18next';
 import ErrorService from '../../../services/Error';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
-import {
-  getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues
-} from './utils';
+import { getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues } from './utils';
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';

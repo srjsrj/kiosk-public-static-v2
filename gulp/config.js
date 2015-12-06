@@ -83,6 +83,12 @@ export default {
       dest: build
     }
   },
+  html: {
+    static: {
+      src: 'app/haml/**/*.html',
+      dest: build
+    }
+  },
   fonts: {
     static: {
       src: src + '/**/*.{eot,svg,ttf,woff,woff2}',
