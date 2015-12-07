@@ -34,7 +34,7 @@ export default class ProductCart extends Component {
       }
     } else {
       return (
-        <ProductCartNotAvailable title={t('vendor.product.not_available')} />
+        <ProductCartNotAvailable {...this.props} />
       );
     }
   }
