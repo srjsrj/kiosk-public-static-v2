@@ -185,6 +185,9 @@ global.gon = {
             "waiting": "Подождите...",
             "adding": "Добавляем..."
           }
+        },
+        "money": {
+          "unknown_iso_code": "Неизвестный тип валюты %{isoCode}"
         }
       }
     }

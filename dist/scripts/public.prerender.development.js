@@ -5408,23 +5408,27 @@ Object.defineProperty(exports, '__esModule', {
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _numeral = require('numeral');
-
-var _numeral2 = _interopRequireDefault(_numeral);
-
 var _helpersMoney = require('../../../helpers/money');
 
-var HumanizedMoney = (function () {
+var HumanizedMoney = (function (_Component) {
+  _inherits(HumanizedMoney, _Component);
+
   function HumanizedMoney() {
     _classCallCheck(this, HumanizedMoney);
+
+    _get(Object.getPrototypeOf(HumanizedMoney.prototype), 'constructor', this).apply(this, arguments);
   }
 
   _createClass(HumanizedMoney, [{
@@ -5435,27 +5439,25 @@ var HumanizedMoney = (function () {
       return _react2['default'].createElement(
         'span',
         null,
-        (0, _numeral2['default'])((0, _helpersMoney.getUnit)(money)).format('0,0[.]00')
+        (0, _helpersMoney.humanizedMoney)(money)
       );
     }
-  }], [{
-    key: 'propTypes',
-    value: {
-      money: _react.PropTypes.shape({
-        cents: _react.PropTypes.number.isRequired,
-        currency_iso_code: _react.PropTypes.string.isRequired
-      })
-    },
-    enumerable: true
   }]);
 
   return HumanizedMoney;
-})();
+})(_react.Component);
+
+HumanizedMoney.propTypes = {
+  money: _react.PropTypes.shape({
+    cents: _react.PropTypes.number.isRequired,
+    currency_iso_code: _react.PropTypes.string.isRequired
+  })
+};
 
 exports['default'] = HumanizedMoney;
 module.exports = exports['default'];
 
-},{"../../../helpers/money":79,"numeral":106,"react":"react"}],71:[function(require,module,exports){
+},{"../../../helpers/money":79,"react":"react"}],71:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5464,9 +5466,13 @@ Object.defineProperty(exports, '__esModule', {
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _react = require('react');
 
@@ -5478,9 +5484,13 @@ var _HumanizedMoney = require('./HumanizedMoney');
 
 var _HumanizedMoney2 = _interopRequireDefault(_HumanizedMoney);
 
-var HumanizedMoneyWithCurrency = (function () {
+var HumanizedMoneyWithCurrency = (function (_Component) {
+  _inherits(HumanizedMoneyWithCurrency, _Component);
+
   function HumanizedMoneyWithCurrency() {
     _classCallCheck(this, HumanizedMoneyWithCurrency);
+
+    _get(Object.getPrototypeOf(HumanizedMoneyWithCurrency.prototype), 'constructor', this).apply(this, arguments);
   }
 
   _createClass(HumanizedMoneyWithCurrency, [{
@@ -5488,10 +5498,8 @@ var HumanizedMoneyWithCurrency = (function () {
     value: function render() {
       var money = this.props.money;
 
-      return _react2['default'].createElement(
-        'span',
-        null,
-        (0, _helpersMoney.isSymbolFirst)(money) ? _react2['default'].createElement(
+      if ((0, _helpersMoney.isCurrencyExists)(money)) {
+        return (0, _helpersMoney.isSymbolFirst)(money) ? _react2['default'].createElement(
           'span',
           null,
           (0, _helpersMoney.getHTMLName)(money),
@@ -5503,22 +5511,26 @@ var HumanizedMoneyWithCurrency = (function () {
           _react2['default'].createElement(_HumanizedMoney2['default'], { money: money }),
           ' ',
           (0, _helpersMoney.getHTMLName)(money)
-        )
-      );
+        );
+      } else {
+        return _react2['default'].createElement(
+          'span',
+          null,
+          (0, _helpersMoney.unknownIsoCodeMessage)(money)
+        );
+      }
     }
-  }], [{
-    key: 'propTypes',
-    value: {
-      money: _react.PropTypes.shape({
-        cents: _react.PropTypes.number.isRequired,
-        currency_iso_code: _react.PropTypes.string.isRequired
-      })
-    },
-    enumerable: true
   }]);
 
   return HumanizedMoneyWithCurrency;
-})();
+})(_react.Component);
+
+HumanizedMoneyWithCurrency.propTypes = {
+  money: _react.PropTypes.shape({
+    cents: _react.PropTypes.number.isRequired,
+    currency_iso_code: _react.PropTypes.string.isRequired
+  }).isRequired
+};
 
 exports['default'] = HumanizedMoneyWithCurrency;
 module.exports = exports['default'];
@@ -5852,12 +5864,16 @@ Object.defineProperty(exports, '__esModule', {
 });
 exports.getHTMLName = getHTMLName;
 exports.getUnit = getUnit;
+exports.isCurrencyExists = isCurrencyExists;
 exports.isSymbolFirst = isSymbolFirst;
 exports.money = money;
-exports.humanizedMoneyWithCurrency = humanizedMoneyWithCurrency;
 exports.humanizedMoney = humanizedMoney;
+exports.humanizedMoneyWithCurrency = humanizedMoneyWithCurrency;
+exports.unknownIsoCodeMessage = unknownIsoCodeMessage;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _i18next = require('i18next');
 
 var _numeral = require('numeral');
 
@@ -5882,13 +5898,17 @@ function getHTMLName(money) {
   if (currency && currency.alternate_symbols.length) {
     return currency.alternate_symbols[0];
   } else {
-    return currency.html_entity;
+    return currency.html_entity || currency.symbol;
   }
 }
 
 function getUnit(money) {
   var currency = getCurrency(money);
   return money.cents / currency.subunit_to_unit;
+}
+
+function isCurrencyExists(money) {
+  return !!getCurrency(money);
 }
 
 function isSymbolFirst(money) {
@@ -5898,21 +5918,32 @@ function isSymbolFirst(money) {
 
 function money(money) {
   if (!money) return '-';
+  if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
   return (0, _numeral2['default'])(getUnit(money)).format('0');
 }
 
+function humanizedMoney(money) {
+  if (!money) return '-';
+  if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
+
+  return (0, _numeral2['default'])(getUnit(money)).format('0,0[.]00');
+}
+
 function humanizedMoneyWithCurrency(money) {
   if (!money) return '-';
+  if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
   return isSymbolFirst(money) ? humanizedMoney(money) + ' ' + getHTMLName(money) : getHTMLName(money) + ' ' + humanizedMoney(money);
 }
 
-function humanizedMoney(money) {
-  return (0, _numeral2['default'])(getUnit(money)).format('0,0[.]00');
+function unknownIsoCodeMessage(money) {
+  return (0, _i18next.t)('vendor.money.unknown_iso_code', {
+    isoCode: getCurrencyID(money)
+  });
 }
 
-},{"../models/currencies":84,"numeral":106}],80:[function(require,module,exports){
+},{"../models/currencies":84,"i18next":"i18next","numeral":106}],80:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6169,89 +6200,109 @@ function categoryLink(category) {
 }
 
 },{"react":"react"}],84:[function(require,module,exports){
-'use strict';
+// Source: https://www.omniref.com/ruby/gems/money/6.6.1/files/config/currency_iso.json
 
-Object.defineProperty(exports, '__esModule', {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = {
-  kzt: {
-    priority: 100,
-    iso_code: 'KZT',
-    name: 'Kazakhstani Tenge',
-    symbol: '〒',
-    alternate_symbols: [],
-    subunit: 'Tiyn',
-    subunit_to_unit: 100,
-    symbol_first: false,
-    html_entity: '',
-    decimal_mark: '.',
-    thousands_separator: ',',
-    iso_numeric: '398',
-    smallest_denomination: 100
+var currencies = {
+  "byr": {
+    "priority": 100,
+    "iso_code": "BYR",
+    "name": "Belarusian Ruble",
+    "symbol": "Br",
+    "disambiguate_symbol": "BYR",
+    "alternate_symbols": ["бел. руб.", "б.р.", "руб.", "р."],
+    "subunit": null,
+    "subunit_to_unit": 1,
+    "symbol_first": false,
+    "html_entity": "",
+    "decimal_mark": ",",
+    "thousands_separator": " ",
+    "iso_numeric": "974",
+    "smallest_denomination": 50
   },
-  rub: {
-    priority: 100,
-    iso_code: 'RUB',
-    name: 'Russian Ruble',
-    symbol: '₽',
-    alternate_symbols: ['руб.', 'р.'],
-    subunit: 'Kopeck',
-    subunit_to_unit: 100,
-    symbol_first: false,
-    html_entity: '₽',
-    decimal_mark: ',',
-    thousands_separator: '.',
-    iso_numeric: '643',
-    smallest_denomination: 1
+  "eur": {
+    "priority": 2,
+    "iso_code": "EUR",
+    "name": "Euro",
+    "symbol": "€",
+    "alternate_symbols": [],
+    "subunit": "Cent",
+    "subunit_to_unit": 100,
+    "symbol_first": true,
+    "html_entity": "&#x20AC;",
+    "decimal_mark": ",",
+    "thousands_separator": ".",
+    "iso_numeric": "978",
+    "smallest_denomination": 1
   },
-  uah: {
-    priority: 100,
-    iso_code: 'UAH',
-    name: 'Ukrainian Hryvnia',
-    symbol: '₴',
-    alternate_symbols: [],
-    subunit: 'Kopiyka',
-    subunit_to_unit: 100,
-    symbol_first: false,
-    html_entity: '₴',
-    decimal_mark: '.',
-    thousands_separator: ',',
-    iso_numeric: '980',
-    smallest_denomination: 1
+  "kzt": {
+    "priority": 100,
+    "iso_code": "KZT",
+    "name": "Kazakhstani Tenge",
+    "symbol": "〒",
+    "alternate_symbols": [],
+    "subunit": "Tiyn",
+    "subunit_to_unit": 100,
+    "symbol_first": false,
+    "html_entity": "",
+    "decimal_mark": ".",
+    "thousands_separator": ",",
+    "iso_numeric": "398",
+    "smallest_denomination": 100
   },
-  usd: {
-    priority: 1,
-    iso_code: 'USD',
-    name: 'United States Dollar',
-    symbol: '$',
-    alternate_symbols: ['US$'],
-    subunit: 'Cent',
-    subunit_to_unit: 100,
-    symbol_first: true,
-    html_entity: '$',
-    decimal_mark: '.',
-    thousands_separator: ',',
-    iso_numeric: '840',
-    smallest_denomination: 1
+  "rub": {
+    "priority": 100,
+    "iso_code": "RUB",
+    "name": "Russian Ruble",
+    "symbol": "₽",
+    "alternate_symbols": ["руб.", "р."],
+    "subunit": "Kopeck",
+    "subunit_to_unit": 100,
+    "symbol_first": false,
+    "html_entity": "&#x20BD;",
+    "decimal_mark": ",",
+    "thousands_separator": ".",
+    "iso_numeric": "643",
+    "smallest_denomination": 1
   },
-  eur: {
-    priority: 2,
-    iso_code: 'EUR',
-    name: 'Euro',
-    symbol: '€',
-    alternate_symbols: [],
-    subunit: 'Cent',
-    subunit_to_unit: 100,
-    symbol_first: true,
-    html_entity: '€',
-    decimal_mark: ',',
-    thousands_separator: '.',
-    iso_numeric: '978',
-    smallest_denomination: 1
+  "uah": {
+    "priority": 100,
+    "iso_code": "UAH",
+    "name": "Ukrainian Hryvnia",
+    "symbol": "₴",
+    "alternate_symbols": [],
+    "subunit": "Kopiyka",
+    "subunit_to_unit": 100,
+    "symbol_first": false,
+    "html_entity": "&#x20B4;",
+    "decimal_mark": ".",
+    "thousands_separator": ",",
+    "iso_numeric": "980",
+    "smallest_denomination": 1
+  },
+  "usd": {
+    "priority": 1,
+    "iso_code": "USD",
+    "name": "United States Dollar",
+    "symbol": "$",
+    "alternate_symbols": ["US$"],
+    "subunit": "Cent",
+    "subunit_to_unit": 100,
+    "symbol_first": true,
+    "html_entity": "$",
+    "decimal_mark": ".",
+    "thousands_separator": ",",
+    "iso_numeric": "840",
+    "smallest_denomination": 1
   }
 };
-module.exports = exports['default'];
+
+exports["default"] = currencies;
+module.exports = exports["default"];
 
 },{}],85:[function(require,module,exports){
 'use strict';
