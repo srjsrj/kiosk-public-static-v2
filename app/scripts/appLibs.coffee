@@ -1,10 +1,11 @@
-window._ = require 'lodash'
-window.I18n = require 'i18next' # Fallback for rails I18n
+window._                 = require 'lodash'
+window.reqwest           = require 'reqwest'
+window.I18n              = require 'i18next' # Fallback for rails I18n
 window.$ = window.jQuery = require 'jquery'
-window.React = require 'react'
-window.Dispatcher = require('flux').Dispatcher
-window.EventEmitter = require 'eventEmitter'
-window.accounting = require 'accounting'
+window.React             = require 'react'
+window.Dispatcher        = require('flux').Dispatcher
+window.EventEmitter      = require 'eventEmitter'
+window.accounting        = require 'accounting'
 
 # jQuery plugins
 require 'jquery.role'
