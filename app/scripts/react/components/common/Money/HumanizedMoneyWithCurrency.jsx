@@ -1,24 +1,29 @@
-import React, { PropTypes } from 'react';
-import { getHTMLName, isSymbolFirst } from '../../../helpers/money';
+import React, { Component, PropTypes } from 'react';
+import {
+  getHTMLName, isCurrencyExists, isSymbolFirst, unknownIsoCodeMessage
+} from '../../../helpers/money';
 import HumanizedMoney from './HumanizedMoney';
 
-export default class HumanizedMoneyWithCurrency {
-  static propTypes = {
-    money: PropTypes.shape({
-      cents: PropTypes.number.isRequired,
-      currency_iso_code: PropTypes.string.isRequired,
-    }),
-  }
+class HumanizedMoneyWithCurrency extends Component {
   render() {
     const { money } = this.props;
- 
-    return (
-      <span>
-        {isSymbolFirst(money)
-          ? <span>{getHTMLName(money)} <HumanizedMoney money={money} /></span>
-          : <span><HumanizedMoney money={money} /> {getHTMLName(money)}</span>
-        }
-      </span>
-    );
+
+    if (isCurrencyExists(money)) {
+      return isSymbolFirst(money)
+        ? <span>{getHTMLName(money)} <HumanizedMoney money={money} /></span>
+        : <span><HumanizedMoney money={money} /> {getHTMLName(money)}</span>
+    } else {
+      return (
+        <span>{unknownIsoCodeMessage(money)}</span>
+      );
+    }
   }
 }
+HumanizedMoneyWithCurrency.propTypes = {
+  money: PropTypes.shape({
+    cents: PropTypes.number.isRequired,
+    currency_iso_code: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default HumanizedMoneyWithCurrency;
