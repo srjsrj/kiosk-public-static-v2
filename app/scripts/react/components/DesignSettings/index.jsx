@@ -93,7 +93,7 @@ export default class DesignSettings {
                 <DesignSettingsOption inRow={true} title="Слайдер посередине">
                   <DesignSettingsCheckbox {...this.getProps('mainPageSlider')} />
                 </DesignSettingsOption>
-                <DesignSettingsOption inRow={true} title="Товары в случайном порядке">
+                <DesignSettingsOption inRow={true} title="Товары в порядке установки">
                   <DesignSettingsCheckbox {...this.getProps('mainPageOrdered')} />
                 </DesignSettingsOption>
               </AccordionItem>
