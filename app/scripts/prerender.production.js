@@ -1,5 +1,3 @@
-global.mrch = {};
-global.mrch.config = {};
 global.gon = {
   env: 'production',
   operator_api_url: 'http://wannabe.kiiiosk.ru/operator/api',

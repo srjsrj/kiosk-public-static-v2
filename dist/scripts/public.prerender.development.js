@@ -43,8 +43,6 @@ _numeral2['default'].language('ru');
 (function (global){
 'use strict';
 
-global.mrch = {};
-global.mrch.config = {};
 global.gon = {
   env: 'production',
   operator_api_url: 'http://wannabe.vagrant.dev:3000/operator/api',
@@ -1385,6 +1383,7 @@ var ProductBlockImage = (function (_Component) {
           'span',
           { style: { display: 'none!important' } },
           _react2['default'].createElement(_commonImage2['default'], {
+            className: 'b-item__pic',
             image: { url: second_image_url },
             maxWidth: maxWidth
           })

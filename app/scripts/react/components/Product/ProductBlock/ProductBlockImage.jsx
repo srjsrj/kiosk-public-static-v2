@@ -35,6 +35,7 @@ class ProductBlockImage extends Component {
         {second_image_url &&
           <span style={{ display: 'none!important' }}>
             <Image
+              className="b-item__pic"
               image={{ url: second_image_url }}
               maxWidth={maxWidth}
             />
