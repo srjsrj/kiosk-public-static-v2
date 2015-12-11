@@ -32,6 +32,7 @@ global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 global.TopBanner = require('./react/components/TopBanner');
 global.CartCoupon = require('./react/components/Cart/CartCoupon');
+global.CartContainer = require('./react/components/Cart').CartContainer;
 global.OrderCoupon = require('./react/components/Order/OrderCoupon');
 global.InstagramContainer = require('./react/components/Instagram').InstagramContainer;
 
