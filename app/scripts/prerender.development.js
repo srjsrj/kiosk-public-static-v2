@@ -1,5 +1,3 @@
-global.mrch = {};
-global.mrch.config = {};
 global.gon = {
   env: 'production',
   operator_api_url: 'http://wannabe.vagrant.dev:3000/operator/api',
