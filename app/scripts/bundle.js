@@ -15,7 +15,6 @@ import './shared/jump';
 import './shared/application_slider';
 import './shared/theme_switcher';
 import './shared/mobile_navigation';
-import './shared/checkout';
 
 // TODO: Refactor and cleaning legacy shit
 import './react/components/Product/add_to_basket_button';

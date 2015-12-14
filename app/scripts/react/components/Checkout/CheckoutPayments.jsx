@@ -1,22 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 
-// {
-//   id: 12,
-//   title: 'Оплата банковской картой, через терминал или салон связи',
-//   description: 'Безопасная оплата любым удобным способом',
-// }
-
 class CheckoutPayments extends Component {
   renderItem(item) {
-    const { currentDelivery, itemFieldName } = this.props;
+    const { current, itemFieldName, onChange } = this.props;
 
     return (
       <div className="b-form__row__widget" key={item.id}>
         <span className="b-form__radio">
           <label>
             <input
+              checked={current && item.id === current.id}
               className="form-control radio_buttons"
               name={`vendor_order[${itemFieldName}]`}
+              onChange={() => onChange(item)}
               type="radio"
               value={item.id}
             />
@@ -32,28 +28,21 @@ class CheckoutPayments extends Component {
     );
   }
   render() {
-    const { currentDelivery, items } = this.props;
+    const { current, items } = this.props;
 
     return (
       <span>
-        {items
-          .filter(item => {
-            if (currentDelivery) {
-              return currentDelivery.availablePayments.indexOf(item.id) > -1;
-            }
-            return true;
-          })
-          .map(item => this.renderItem(item))
-        }
+        {items.map(item => this.renderItem(item))}
       </span>
     );
   }
 }
 
 CheckoutPayments.propTypes = {
-  currentDelivery: PropTypes.object,
+  current: PropTypes.object,
   itemFieldName: PropTypes.string,
   items: PropTypes.array,
+  onChange: PropTypes.func,
 };
 CheckoutPayments.defaultProps = {
   itemFieldName: 'payment_type_id',

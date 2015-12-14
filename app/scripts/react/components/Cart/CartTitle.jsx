@@ -5,22 +5,26 @@ class CartTitle extends Component {
   render() {
     const { totalCount, totalPrice } = this.props;
 
-    return (
-      <h1 className="b-cart__title">
-        {'Оформление заказа. '}
-        <strong>{totalCount} товаров</strong>
-        {' на сумму '}
-        <strong>
-          <HumanizedMoneyWithCurrency money={totalPrice} />
-        </strong>
-      </h1>
-    );
+    if (totalCount || totalPrice) {
+      return (
+        <h1 className="b-cart__title">
+          {'Оформление заказа. '}
+          <strong>{totalCount} товаров</strong>
+          {' на сумму '}
+          <strong>
+            <HumanizedMoneyWithCurrency money={totalPrice} />
+          </strong>
+        </h1>
+      );
+    }
+
+    return null;
   }
 }
 
 CartTitle.propTypes = {
-  totalCount: PropTypes.number.isRequired,
-  totalPrice: PropTypes.object.isRequired,
+  totalCount: PropTypes.number,
+  totalPrice: PropTypes.object,
 };
 
 export default CartTitle;

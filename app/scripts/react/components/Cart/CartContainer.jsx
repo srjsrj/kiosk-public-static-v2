@@ -1,48 +1,114 @@
 import React, { Component, PropTypes } from 'react';
+import makeTranslatable from '../HoC/makeTranslatable';
 import Cart from './Cart';
 
+@makeTranslatable
 class CartContainer extends Component {
   constructor(props) {
     super(props);
-    const { cart: { totalCount, totalPrice}, deliveryTypes } = props;
+
+    const { deliveryTypes, fields } = props;
     const delivery = deliveryTypes.length ? deliveryTypes[0] : null;
 
     this.state = {
-      totalCount,
-      ...this.setDelivery(totalPrice, delivery),
+      deliveryType: delivery,
+      fields: props.fields.map((field) => {
+        const isRequired = delivery
+          ? delivery.requiredFields.indexOf(field.fieldName) > -1
+          : false;
+        const isDisabled = delivery
+          ? delivery.reservedFieldValues[field.fieldName]
+          : false;
+        const value = delivery
+          ? delivery.reservedFieldValues[field.fieldName]
+          : field.value;
+
+        return {isDisabled, isRequired, value, source: field};
+      }),
+      paymentMethod: null,
     };
 
     this.changeDelivery = this.changeDelivery.bind(this);
+    this.changeField = this.changeField.bind(this);
+    this.changePayment = this.changePayment.bind(this);
   }
-  setDelivery(totalPrice, delivery) {
+  getFieldsForDelivery(delivery, fields) {
+    if (!delivery) return fields;
+
+    return fields.filter((field) =>
+      delivery.fields.indexOf(field.source.fieldName) > -1
+    );
+  }
+  getPaymentsForDelivery(delivery, payments) {
+    if (!delivery) return payments;
+
+    return payments.filter((payment) =>
+      delivery.availablePayments.indexOf(payment.id) > -1
+    );
+  }
+  getTotalPrice(delivery, cart) {
+    const { totalPrice } = cart;
+
+    if (!delivery) return totalPrice;
+
     return {
-      currentDelivery: delivery,
-      totalPrice: {
-        ...totalPrice,
-        cents: totalPrice.cents + delivery.price.cents,
-      },
+      ...totalPrice,
+      cents: totalPrice.cents + delivery.price.cents,
     };
   }
   changeDelivery(delivery) {
-    const { cart: {totalPrice} } = this.props;
+    const { fields } = this.state;
 
-    this.setState(this.setDelivery(totalPrice, delivery));
+    this.setState({
+      deliveryType: delivery,
+      fields: fields.map((field) => {
+        const isRequired = delivery
+          ? delivery.requiredFields.indexOf(field.source.fieldName) > -1
+          : false;
+        const isDisabled = delivery
+          ? delivery.reservedFieldValues[field.source.fieldName]
+          : false;
+        const value = delivery
+          ? delivery.reservedFieldValues[field.source.fieldName]
+          : field.value;
+
+        return {...field, value, isDisabled, isRequired};
+      }),
+    });
+  }
+  changeField(name, value) {
+    const { fields } = this.state;
+
+    this.setState({
+      fields: fields.map((field) => {
+        if (field.source.fieldName === name) {
+          return {...field, value};
+        }
+        return field;
+      }),
+    });
+  }
+  changePayment(payment) {
+    this.setState({ paymentMethod: payment });
   }
   render() {
-    const { deliveryTypes, fields, formAuthenticity, paymentMethods, coupon } = this.props;
-    const { currentDelivery, totalCount, totalPrice } = this.state;
+    const { cart, coupon, deliveryTypes, formAuthenticity, paymentMethods } = this.props;
+    const { deliveryType, fields, paymentMethod } = this.state;
 
     return (
       <Cart
         coupon={coupon}
-        currentDelivery={currentDelivery}
+        deliveryType={deliveryType}
         deliveryTypes={deliveryTypes}
-        fields={fields}
+        fields={this.getFieldsForDelivery(deliveryType, fields)}
         formAuthenticity={formAuthenticity}
         onDeliveryChange={this.changeDelivery}
-        paymentMethods={paymentMethods}
-        totalCount={totalCount}
-        totalPrice={totalPrice}
+        onFieldChange={this.changeField}
+        onPaymentChange={this.changePayment}
+        paymentMethod={paymentMethod}
+        paymentMethods={this.getPaymentsForDelivery(deliveryType, paymentMethods)}
+        totalCount={cart.totalCount}
+        totalPrice={this.getTotalPrice(deliveryType, cart)}
       />
     );
   }
@@ -51,146 +117,14 @@ class CartContainer extends Component {
 CartContainer.propTypes = {
   deliveryTypes: PropTypes.array.isRequired,
   formAuthenticity: PropTypes.object,
-  itemsInfo: PropTypes.object,
+  cart: PropTypes.object,
   paymentMethods: PropTypes.array,
 };
-
-const samplePrice = {
-  cents: 140000,
-  currency_iso_code: 'RUB',
-};
-const samplePrice2 = {
-  cents: 170000,
-  currency_iso_code: 'RUB',
-};
-
 CartContainer.defaultProps = {
-  formAuthenticity: {
-    token: 'U9pqrQGs/+7Ht9qSAjOLpsN18IL6EJyPNSfJu45oLT4=',
-    field: 'authenticity_token',
-  },
-  cart: {
-    totalCount: 2,
-    totalPrice: samplePrice,
-  },
-  deliveryTypes: [
-    {
-      id: 123,
-      title: 'Доставка',
-      description: 'Супер доставка',
-      price: samplePrice,
-      fields: ['name', 'address'],
-      requiredFields: ['name', 'address'],
-      availablePayments: [12, 13],
-      cityTitle: 'Москва',
-    },
-    {
-      id: 456,
-      title: 'Доставка 2',
-      description: 'Супер доставка 2',
-      price: samplePrice2,
-      fields: ['name', 'address'],
-      requiredFields: ['name'],
-      availablePayments: [12],
-      cityTitle: 'Санкт-Петербург', 
-    },
-  ],
-  fields: [
-    {
-      id: 20,
-      fieldName: 'name',
-      type: 'string',
-      value: '',
-      title: 'Имя',
-      placeholder: 'Иван',
-    },
-    {
-      id: 30,
-      fieldName: 'address',
-      type: 'textarea',
-      value: '',
-      title: 'Адрес доставки',
-      placeholder: 'Например, Академика Вавилова 12-10',
-    },
-  ],
-  paymentMethods: [
-    {
-      id: 12,
-      title: 'Оплата банковской картой, через терминал или салон связи',
-      description: 'Безопасная оплата любым удобным способом',
-    },
-    {
-      id: 13,
-      title: 'Наличные при получении',
-      description: '',
-    },
-  ],
-  coupon: {
-    show: true,
-    value: 'IRA10',
-  },
+  cart: {},
+  deliveryTypes: [],
+  fields: [],
+  paymentMethods: [],
 };
 
 export default CartContainer;
-
-
-
-
-
-
-// $ ->
-//   $checkoutTotal = $ '[checkout-total]'
-
-//   setCheckoutDeliveryPrice = ($e)->
-//     deliveryPrice = parseInt $e.data('delivery-price')
-//     freeDeliveryThreshold = parseInt $e.data('free-delivery-threshold')
-//     productsPrice = parseInt $checkoutTotal.data('products-price')
-//     price = if productsPrice > freeDeliveryThreshold then 0 else deliveryPrice
-
-//     $checkoutTotal.data 'delivery-price', price
-//     updateCheckoutTotal()
-
-//   updateCheckoutTotal = ->
-//     totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price')
-
-//     $checkoutTotal.html accounting.formatMoney totalPrice
-
-//   toggleDeliveryOnlyElementsVisibility = (showFieldsQuery) ->
-//     $('[hideable]').slideUp()
-
-//     if showFieldsQuery
-//       $el = $ showFieldsQuery
-//       $el.stop().slideDown()
-
-//   setCity = (city) ->
-//     $c = $ '[city-field]'
-//     if city? && city.length
-//       $c.attr(disabled: true)
-//       $c.val city
-//     else
-//       $c.val '' if $c.is(':disabled')
-//       $c.removeAttr('disabled')
-
-//   selectDeliveryType = ($e) ->
-//     if $e?
-//       setCity $e.data('city')
-//       setCheckoutDeliveryPrice $e
-
-//       toggleDeliveryOnlyElementsVisibility $e.data('show-fields-query')
-//     else
-//       console.error? 'Ни один способ доставки по умолчанию не выбран'
-
-//   $('[delivery-type]').on 'change', ->
-//     selectDeliveryType $ @
-
-//   findSelectedDeliveryType= ->
-//     $el = $('[delivery-type]').filter(':checked')
-//     if $el.length==0
-//       return null
-//     else
-//       return $el
-
-//   window.InitializeCheckout = ->
-//     console.log 'Initialize Checkout'
-//     selectDeliveryType findSelectedDeliveryType()
-

@@ -1,27 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
-// {
-//   id: 123,
-//   title: 'Доставка',
-//   description: 'Супер доставка',
-//   price: samplePrice,
-//   fields: ['name', 'address'],
-//   requiredFields: ['name', 'address'],
-//   availablePayments: [12, 13],
-//   cityTitle: 'Москва',
-// }
-
 class CheckoutDeliveries extends Component {
   renderItem(item) {
-    const { currentDelivery, itemFieldName, onChange } = this.props;
+    const { current, itemFieldName, onChange } = this.props;
 
     return (
       <div className="b-form__row__widget" key={item.id}>
         <span className="b-form__radio">
           <label>
             <input
-              checked={currentDelivery && item.id === currentDelivery.id}
+              checked={current && item.id === current.id}
               className="form-control radio_buttons"
               name={`vendor_order[${itemFieldName}]`}
               onChange={() => onChange(item)}
@@ -54,7 +43,7 @@ class CheckoutDeliveries extends Component {
 }
 
 CheckoutDeliveries.propTypes = {
-  currentDelivery: PropTypes.object,
+  current: PropTypes.object,
   itemFieldName: PropTypes.string,
   items: PropTypes.array,
   onChange: PropTypes.func,

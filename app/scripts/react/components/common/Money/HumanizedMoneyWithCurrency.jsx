@@ -8,6 +8,10 @@ class HumanizedMoneyWithCurrency extends Component {
   render() {
     const { money } = this.props;
 
+    if (money.cents === 0) {
+      return <span>-</span>;
+    }
+
     if (isCurrencyExists(money)) {
       return isSymbolFirst(money)
         ? <span>{getHTMLName(money)} <HumanizedMoney money={money} /></span>
