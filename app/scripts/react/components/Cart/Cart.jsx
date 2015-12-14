@@ -5,7 +5,16 @@ import CartTitle from './CartTitle';
 class Cart extends Component {
   render() {
     const {
-      deliveryTypes, fields, formAuthenticity, paymentMethods, coupon, totalCount, totalPrice,
+      currentDelivery,
+      deliveryTypes,
+      fields,
+      formAuthenticity,
+      paymentMethods,
+      coupon,
+      totalCount,
+      totalPrice,
+
+      onDeliveryChange,
     } = this.props;
 
     return (
@@ -13,11 +22,13 @@ class Cart extends Component {
         <div className="b-cart__content">
           <CartTitle totalCount={totalCount} totalPrice={totalPrice} />
           <Checkout
+            coupon={coupon}
+            currentDelivery={currentDelivery}
             deliveryTypes={deliveryTypes}
             fields={fields}
             formAuthenticity={formAuthenticity}
+            onDeliveryChange={onDeliveryChange}
             paymentMethods={paymentMethods}
-            coupon={coupon}
           />
         </div>
       </section>
@@ -26,11 +37,13 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
+  coupon: PropTypes.object,
+  currentDelivery: PropTypes.object,
   deliveryTypes: PropTypes.array,
   fields: PropTypes.array,
   formAuthenticity: PropTypes.object,
+  onDeliveryChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.array,
-  coupon: PropTypes.object,
   totalCount: PropTypes.number.isRequired,
   totalPrice: PropTypes.object.isRequired,
 };

@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react';
 
 class CheckoutPayments extends Component {
   renderItem(item) {
-    const { itemFieldName } = this.props;
+    const { currentDelivery, itemFieldName } = this.props;
 
     return (
       <div className="b-form__row__widget" key={item.id}>
@@ -32,17 +32,26 @@ class CheckoutPayments extends Component {
     );
   }
   render() {
-    const { items } = this.props;
+    const { currentDelivery, items } = this.props;
 
     return (
       <span>
-        {items.map(item => this.renderItem(item))}
+        {items
+          .filter(item => {
+            if (currentDelivery) {
+              return currentDelivery.availablePayments.indexOf(item.id) > -1;
+            }
+            return true;
+          })
+          .map(item => this.renderItem(item))
+        }
       </span>
     );
   }
 }
 
 CheckoutPayments.propTypes = {
+  currentDelivery: PropTypes.object,
   itemFieldName: PropTypes.string,
   items: PropTypes.array,
 };

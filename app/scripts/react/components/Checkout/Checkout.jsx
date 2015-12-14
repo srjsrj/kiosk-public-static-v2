@@ -10,7 +10,16 @@ import CheckoutCoupon from './CheckoutCoupon';
 
 class Checkout extends Component {
   render() {
-    const { deliveryTypes, fields, formAuthenticity, paymentMethods, coupon } = this.props;
+    const {
+      currentDelivery,
+      coupon,
+      deliveryTypes,
+      fields,
+      formAuthenticity,
+      paymentMethods,
+
+      onDeliveryChange,
+    } = this.props;
 
     return (
       <form
@@ -24,16 +33,26 @@ class Checkout extends Component {
         <div className="b-cart__form b-form">
           <div className="b-cart__form__inner">
             <CheckoutStep number={1} title="Выберите тип доставки">
-              <CheckoutDeliveries items={deliveryTypes} />
+              <CheckoutDeliveries
+                currentDelivery={currentDelivery}
+                items={deliveryTypes}
+                onChange={onDeliveryChange}
+              />
             </CheckoutStep>
             <CheckoutStep number={2} title="Введите данные">
-              <CheckoutFields items={fields} />
+              <CheckoutFields
+                currentDelivery={currentDelivery}
+                items={fields}
+              />
               {coupon && coupon.show &&
                 <CheckoutCoupon code={coupon.value} />
               }
             </CheckoutStep>
             <CheckoutStep number={3} title="Способы оплаты">
-              <CheckoutPayments items={paymentMethods} />
+              <CheckoutPayments
+                currentDelivery={currentDelivery}
+                items={paymentMethods}
+              />
             </CheckoutStep>
           </div>
           <div className="b-form__row">
@@ -47,9 +66,11 @@ class Checkout extends Component {
 
 Checkout.propTypes = {
   coupon: PropTypes.object,
+  currentDelivery: PropTypes.object,
   deliveryTypes: PropTypes.array.isRequired,
   fields: PropTypes.array.isRequired,
   formAuthenticity: PropTypes.object,
+  onDeliveryChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.array,
 };
 Checkout.defaultProps = {

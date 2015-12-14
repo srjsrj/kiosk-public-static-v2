@@ -13,8 +13,12 @@ const TEXTAREA_TYPE = 'textarea';
 
 class CheckoutFields extends Component {
   renderItem(item) {
+    const { currentDelivery } = this.props;
     const itemID = `vendor_order_${item.fieldName}`;
     const itemName = `vendor_order[${item.fieldName}]`;
+    const itemRequired = currentDelivery
+      ? currentDelivery.requiredFields.indexOf(item.fieldName) > -1
+      : false;
     let itemContent;
 
     switch(item.type) {
@@ -25,7 +29,7 @@ class CheckoutFields extends Component {
               className="string control-label"
               htmlFor={itemID}
             >
-              {item.title}
+              {item.title} {itemRequired && '*'}
             </label>
             <input
               className="string form-control"
@@ -44,7 +48,7 @@ class CheckoutFields extends Component {
               className="text control-label"
               htmlFor={itemID}
             >
-              {item.title}
+              {item.title} {itemRequired && '*'}
             </label>
             <textarea
               className="text form-control"
@@ -66,17 +70,26 @@ class CheckoutFields extends Component {
     );
   }
   render() {
-    const { items } = this.props;
+    const { currentDelivery, items } = this.props;
 
     return (
       <span>
-        {items.map(item => this.renderItem(item))}
+        {items
+          .filter(item => {
+            if (currentDelivery) {
+              return currentDelivery.fields.indexOf(item.fieldName) > -1;
+            }
+            return true;
+          })
+          .map(item => this.renderItem(item))
+        }
       </span>
     );
   }
 }
 
 CheckoutFields.propTypes = {
+  currentDelivery: PropTypes.object,
   items: PropTypes.array,
 };
 CheckoutFields.defaultProps = {

@@ -14,15 +14,17 @@ import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurren
 
 class CheckoutDeliveries extends Component {
   renderItem(item) {
-    const { itemFieldName } = this.props;
+    const { currentDelivery, itemFieldName, onChange } = this.props;
 
     return (
       <div className="b-form__row__widget" key={item.id}>
         <span className="b-form__radio">
           <label>
             <input
+              checked={currentDelivery && item.id === currentDelivery.id}
               className="form-control radio_buttons"
               name={`vendor_order[${itemFieldName}]`}
+              onChange={() => onChange(item)}
               type="radio"
               value={item.id}
             />
@@ -52,8 +54,10 @@ class CheckoutDeliveries extends Component {
 }
 
 CheckoutDeliveries.propTypes = {
+  currentDelivery: PropTypes.object,
   itemFieldName: PropTypes.string,
   items: PropTypes.array,
+  onChange: PropTypes.func,
 };
 CheckoutDeliveries.defaultProps = {
   itemFieldName: 'delivery_type_id',

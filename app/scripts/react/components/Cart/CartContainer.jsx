@@ -2,21 +2,45 @@ import React, { Component, PropTypes } from 'react';
 import Cart from './Cart';
 
 class CartContainer extends Component {
-  state = {
-    totalCount: this.props.cart.totalCount,
-    totalPrice: this.props.cart.totalPrice,
+  constructor(props) {
+    super(props);
+    const { cart: { totalCount, totalPrice}, deliveryTypes } = props;
+    const delivery = deliveryTypes.length ? deliveryTypes[0] : null;
+
+    this.state = {
+      totalCount,
+      ...this.setDelivery(totalPrice, delivery),
+    };
+
+    this.changeDelivery = this.changeDelivery.bind(this);
+  }
+  setDelivery(totalPrice, delivery) {
+    return {
+      currentDelivery: delivery,
+      totalPrice: {
+        ...totalPrice,
+        cents: totalPrice.cents + delivery.price.cents,
+      },
+    };
+  }
+  changeDelivery(delivery) {
+    const { cart: {totalPrice} } = this.props;
+
+    this.setState(this.setDelivery(totalPrice, delivery));
   }
   render() {
     const { deliveryTypes, fields, formAuthenticity, paymentMethods, coupon } = this.props;
-    const { totalCount, totalPrice } = this.state;
+    const { currentDelivery, totalCount, totalPrice } = this.state;
 
     return (
       <Cart
+        coupon={coupon}
+        currentDelivery={currentDelivery}
         deliveryTypes={deliveryTypes}
         fields={fields}
         formAuthenticity={formAuthenticity}
+        onDeliveryChange={this.changeDelivery}
         paymentMethods={paymentMethods}
-        coupon={coupon}
         totalCount={totalCount}
         totalPrice={totalPrice}
       />
@@ -36,7 +60,7 @@ const samplePrice = {
   currency_iso_code: 'RUB',
 };
 const samplePrice2 = {
-  cents: 140000,
+  cents: 170000,
   currency_iso_code: 'RUB',
 };
 
@@ -66,7 +90,7 @@ CartContainer.defaultProps = {
       description: 'Супер доставка 2',
       price: samplePrice2,
       fields: ['name', 'address'],
-      requiredFields: ['name', 'address'],
+      requiredFields: ['name'],
       availablePayments: [12],
       cityTitle: 'Санкт-Петербург', 
     },
@@ -108,3 +132,65 @@ CartContainer.defaultProps = {
 };
 
 export default CartContainer;
+
+
+
+
+
+
+// $ ->
+//   $checkoutTotal = $ '[checkout-total]'
+
+//   setCheckoutDeliveryPrice = ($e)->
+//     deliveryPrice = parseInt $e.data('delivery-price')
+//     freeDeliveryThreshold = parseInt $e.data('free-delivery-threshold')
+//     productsPrice = parseInt $checkoutTotal.data('products-price')
+//     price = if productsPrice > freeDeliveryThreshold then 0 else deliveryPrice
+
+//     $checkoutTotal.data 'delivery-price', price
+//     updateCheckoutTotal()
+
+//   updateCheckoutTotal = ->
+//     totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price')
+
+//     $checkoutTotal.html accounting.formatMoney totalPrice
+
+//   toggleDeliveryOnlyElementsVisibility = (showFieldsQuery) ->
+//     $('[hideable]').slideUp()
+
+//     if showFieldsQuery
+//       $el = $ showFieldsQuery
+//       $el.stop().slideDown()
+
+//   setCity = (city) ->
+//     $c = $ '[city-field]'
+//     if city? && city.length
+//       $c.attr(disabled: true)
+//       $c.val city
+//     else
+//       $c.val '' if $c.is(':disabled')
+//       $c.removeAttr('disabled')
+
+//   selectDeliveryType = ($e) ->
+//     if $e?
+//       setCity $e.data('city')
+//       setCheckoutDeliveryPrice $e
+
+//       toggleDeliveryOnlyElementsVisibility $e.data('show-fields-query')
+//     else
+//       console.error? 'Ни один способ доставки по умолчанию не выбран'
+
+//   $('[delivery-type]').on 'change', ->
+//     selectDeliveryType $ @
+
+//   findSelectedDeliveryType= ->
+//     $el = $('[delivery-type]').filter(':checked')
+//     if $el.length==0
+//       return null
+//     else
+//       return $el
+
+//   window.InitializeCheckout = ->
+//     console.log 'Initialize Checkout'
+//     selectDeliveryType findSelectedDeliveryType()
+
