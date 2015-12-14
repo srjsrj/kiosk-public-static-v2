@@ -1,46 +1,24 @@
 import React, { Component, PropTypes } from 'react';
-import { vendorOrder } from '../../../routes/app';
-import HiddenInput from '../common/HiddenInput';
-import CSRFToken from '../common/CSRFToken';
+import Checkout from '../Checkout';
 import CartTitle from './CartTitle';
-import CartCheckoutStep from './CartCheckoutStep';
 
 class Cart extends Component {
   render() {
-    const { formAuthenticity, totalCount, totalPrice } = this.props;
+    const {
+      deliveryTypes, fields, formAuthenticity, paymentMethods, coupon, totalCount, totalPrice,
+    } = this.props;
 
     return (
       <section className="b-cart">
         <div className="b-cart__content">
-          <CartTitle
-            totalCount={totalCount}
-            totalPrice={totalPrice}
+          <CartTitle totalCount={totalCount} totalPrice={totalPrice} />
+          <Checkout
+            deliveryTypes={deliveryTypes}
+            fields={fields}
+            formAuthenticity={formAuthenticity}
+            paymentMethods={paymentMethods}
+            coupon={coupon}
           />
-          <form
-            acceptCharset="UTF-8"
-            action={vendorOrder()}
-            className="simple_form new_vendor_order"
-            method="POST"
-            noValidate="novalidate"
-          >
-            <div style={{ display: 'none!important'}}>
-              <HiddenInput name="utf8" value="✓" />
-              <CSRFToken {...formAuthenticity} />
-            </div>
-            <div className="b-cart__form b-form">
-              <div className="b-cart__form__inner">
-                <CartCheckoutStep number={1} title="Выберите тип доставки">
-                  <span>Hello</span>
-                </CartCheckoutStep>
-                <CartCheckoutStep number={2} title="Введите данные">
-                  <span>Hello2</span>
-                </CartCheckoutStep>
-                <CartCheckoutStep number={3} title="Способы оплаты">
-                  <span>Hello3</span>
-                </CartCheckoutStep>
-              </div>
-            </div>
-          </form>
         </div>
       </section>
     );
@@ -48,13 +26,21 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  formAuthenticity: PropTypes.object.isRequired,
+  deliveryTypes: PropTypes.array,
+  fields: PropTypes.array,
+  formAuthenticity: PropTypes.object,
+  paymentMethods: PropTypes.array,
+  coupon: PropTypes.object,
   totalCount: PropTypes.number.isRequired,
   totalPrice: PropTypes.object.isRequired,
 };
+Cart.defaultProps = {
+  deliveryTypes: [],
+  fields: [],
+  paymentMethods: [],
+};
 
 export default Cart;
-
 
 // %section.b-cart
 //           .b-cart__content

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class CartCheckoutStep extends Component {
+class CheckoutStep extends Component {
   render() {
     const { children, number, title } = this.props;
 
@@ -22,7 +22,7 @@ class CartCheckoutStep extends Component {
   }
 }
 
-CartCheckoutStep.propTypes = {
+CheckoutStep.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.element,
@@ -31,4 +31,4 @@ CartCheckoutStep.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default CartCheckoutStep;
+export default CheckoutStep;

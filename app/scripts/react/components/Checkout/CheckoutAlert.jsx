@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Alert from '../common/Alert';
 
-export default class OrderAlert extends Component {
-  static propTypes = {
-    text: PropTypes.string.isRequired,
-  }
+class CheckoutAlert extends Component {
   render() {
     return (
       <Alert
@@ -15,3 +12,9 @@ export default class OrderAlert extends Component {
     );
   }
 }
+
+CheckoutAlert.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+export default CheckoutAlert;

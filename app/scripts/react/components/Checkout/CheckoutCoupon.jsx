@@ -1,20 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import * as apiRoutes from '../../../routes/api';
-import makeTranslatable from '../HoC/makeTranslatable';
-import OrderAlert from './OrderAlert';
 import TextInput from '../common/TextInput';
+import CheckoutAlert from './CheckoutAlert';
 
-@makeTranslatable
-export default class OrderCoupon extends Component {
-  static propTypes = {
-    code: PropTypes.string,
-    message: PropTypes.string,
-  }
-  static defaultProps = {
-    code: 'asd',
-    message: '',
-  }
+class CheckoutCoupon extends Component {
   state = {
     code: this.props.code,
     message: this.props.message,
@@ -68,28 +58,44 @@ export default class OrderCoupon extends Component {
     this.setState({ message });
   }
   render() {
+    const { fieldName } = this.props;
     const { code, message } = this.state;
+    const id = `vendor_order_${fieldName}`;
+    const name = `vendor_order[${fieldName}]`;
 
     return (
       <div className="b-form__row__widget">
-        <div className="form-group string optional">
+        <div className="form-group string">
           <label
-            className="string optional control-label"
-            htmlFor="vendor_order_coupon_code"
+            className="string control-label"
+            htmlFor={id}
           >
             {t('vendor.order.fields.coupon_code')}
           </label>
           <TextInput
-            className="string optional form-control"
-            id="vendor_order_coupon_code"
-            name="vendor_order[coupon_code]"
+            className="string form-control"
+            id={id}
+            name={name}
             onChange={(e) => this.processCode(e.target.value)}
             placeholder={t('vendor.placeholders.coupon')}
             value={code}
           />
         </div>
-        {code && message && <OrderAlert text={message} />}
+        {code && message && <CheckoutAlert text={message} />}
       </div>
     );
   }
 }
+
+CheckoutCoupon.propTypes = {
+  code: PropTypes.string,
+  fieldName: PropTypes.string,
+  message: PropTypes.string,
+};
+CheckoutCoupon.defaultProps = {
+  code: '',
+  fieldName: 'coupon_code',
+  message: '',
+};
+
+export default CheckoutCoupon;
