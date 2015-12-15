@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { t } from 'i18next';
 
 class CheckoutActions extends Component {
   render() {
@@ -10,14 +11,14 @@ class CheckoutActions extends Component {
               className="b-btn b-btn_trans b-cart__action__clear"
               href="/cart"
             >
-              Вернуться назад
+              {t('vendor.order.go_back')}
             </a>
           </div>
           <div className="b-cart__action__col-submit">
             <input
               className="b-btn b-cart__action__next"
               type="submit"
-              value="Продолжить"
+              value={t('vendor.order.next')}
             />
           </div>
         </div>

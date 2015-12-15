@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { t } from 'i18next';
 import { vendorOrder } from '../../../routes/app';
 import FormAuthenticity from '../common/FormAuthenticity';
 import CheckoutActions from './CheckoutActions';
@@ -34,14 +35,14 @@ class Checkout extends Component {
         <FormAuthenticity {...formAuthenticity} />
         <div className="b-cart__form b-form">
           <div className="b-cart__form__inner">
-            <CheckoutStep number={1} title="Выберите тип доставки">
+            <CheckoutStep number={1} title={t('vendor.order.new.delivery_title')}>
               <CheckoutDeliveries
                 current={deliveryType}
                 items={deliveryTypes}
                 onChange={onDeliveryChange}
               />
             </CheckoutStep>
-            <CheckoutStep number={2} title="Введите данные">
+            <CheckoutStep number={2} title={t('vendor.order.new.contacts_title')}>
               <CheckoutFields
                 items={fields}
                 onChange={onFieldChange}
@@ -50,7 +51,7 @@ class Checkout extends Component {
                 <CheckoutCoupon code={coupon.value} />
               }
             </CheckoutStep>
-            <CheckoutStep number={3} title="Способы оплаты">
+            <CheckoutStep number={3} title={t('vendor.order.new.payment_title')}>
               <CheckoutPayments
                 current={paymentMethod}
                 items={paymentMethods}

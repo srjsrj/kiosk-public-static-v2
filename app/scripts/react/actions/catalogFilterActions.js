@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import Api from '../api/api';
 import NoticeService from '../services/Notice';
 
@@ -8,7 +9,11 @@ export function showFilteredCount(filter) {
     .then((count) => {
       NoticeService.notifyInfo(
         <span>
-          Выбрано вариантов: {count} <a href={`?${filter}`}>Показать</a>
+          {t('vendor.notice.catalog_filter.selected_products')}:
+          {` ${count} `}
+          <a href={`?${filter}`}>
+            {t('vendor.notice.catalog_filter.show_products')}
+          </a>
         </span>
       )
     })

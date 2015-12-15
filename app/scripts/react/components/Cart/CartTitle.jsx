@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { t } from 'i18next';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartTitle extends Component {
@@ -8,9 +9,9 @@ class CartTitle extends Component {
     if (totalCount || totalPrice) {
       return (
         <h1 className="b-cart__title">
-          {'Оформление заказа. '}
-          <strong>{totalCount} товаров</strong>
-          {' на сумму '}
+          {`${t('vendor.pages.titles.order')} `}
+          <strong>{t('vendor.entities.product', {count: totalCount})}</strong>
+          {` ${t('vendor.order.new.sum')} `}
           <strong>
             <HumanizedMoneyWithCurrency money={totalPrice} />
           </strong>
