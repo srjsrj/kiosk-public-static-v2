@@ -48,6 +48,11 @@ global.gon = {
         top_banner: {
           default_content: "Мы открылись!"
         },
+        entities: {
+          product: '%{count} товар',
+          product_plural_2: '%{count} товара',
+          product_plural_5: '%{count} товаров'
+        },
         order: {
           fields: {
             phone: "Телефон",
@@ -84,6 +89,12 @@ global.gon = {
           "redirecting": "Переправляю на сайт оплаты",
           "go_to_payment": "Перейти к оплате",
           "continue_shopping": "Продолжить покупки"
+        },
+        "notice": {
+          "catalog_filter": {
+            "selected_products": "Выбрано вариантов",
+            "show_products": "Показать",
+          }
         },
         "coupon": {
           "discount": "Скидка - %{discount}",
