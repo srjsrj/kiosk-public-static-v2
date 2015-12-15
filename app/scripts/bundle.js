@@ -15,7 +15,6 @@ import './shared/jump';
 import './shared/application_slider';
 import './shared/theme_switcher';
 import './shared/mobile_navigation';
-import './shared/checkout';
 
 // TODO: Refactor and cleaning legacy shit
 import './react/components/Product/add_to_basket_button';
@@ -32,7 +31,7 @@ global.ProductBlock = require('./react/components/Product/ProductBlock');
 global.ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 global.TopBanner = require('./react/components/TopBanner');
 global.CartCoupon = require('./react/components/Cart/CartCoupon');
-global.OrderCoupon = require('./react/components/Order/OrderCoupon');
+global.CartContainer = require('./react/components/Cart').CartContainer;
 global.InstagramContainer = require('./react/components/Instagram').InstagramContainer;
 
 import './react/application';

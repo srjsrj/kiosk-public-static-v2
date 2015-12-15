@@ -18,5 +18,4 @@ ProductBlock = require('./react/components/Product/ProductBlock');
 ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 TopBanner = require('./react/components/TopBanner');
 CartCoupon = require('./react/components/Cart/CartCoupon');
-OrderCoupon = require('./react/components/Order/OrderCoupon');
 Clientbar = require('./react/components/Clientbar');

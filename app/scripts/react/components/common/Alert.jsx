@@ -1,20 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class Alert extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    info: PropTypes.bool,
-    text: PropTypes.string.isRequired,
-  }
-  static defaultProps = {
-    info: false,
-  }
+class Alert extends Component {
   render() {
-    const { className, info, text } = this.props;
+    const { className, danger, info, text } = this.props;
     const alertClasses = classNames(className, {
       'alert': true,
       'alert-info': info,
+      'alert-danger': danger,
     });
 
     return (
@@ -24,3 +17,16 @@ export default class Alert extends Component {
     );
   }
 }
+
+Alert.propTypes = {
+  className: PropTypes.string,
+  danger: PropTypes.bool,
+  info: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+};
+Alert.defaultProps = {
+  danger: false,
+  info: false,
+};
+
+export default Alert;
