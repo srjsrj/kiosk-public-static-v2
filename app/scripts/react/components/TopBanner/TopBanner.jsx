@@ -1,19 +1,13 @@
-import React, { findDOMNode, PropTypes } from 'react';
+import React, { Component, findDOMNode, PropTypes } from 'react';
 import { DOM_CHANGE } from '../../constants/globalEventKeys';
 
 const STICKY_DETACH = 'sticky_kit:detach';
 const STICKY_RECALC = 'sticky_kit:recalc';
 
-export default class TopBanner {
-  static propTypes = {
-    content: PropTypes.string.isRequired,
-    parent: PropTypes.string,
-    url: PropTypes.string,
-  }
-  static defaultProps = {
-    parent: '.b-page__content',
-  }
-  constructor() {
+class TopBanner extends Component {
+  constructor(props) {
+    super(props);
+
     this.recalcSticky = this.recalcSticky.bind(this);
   }
   componentDidMount() {
@@ -37,12 +31,28 @@ export default class TopBanner {
 
     return (
       <div className="top-banner" ref="banner">
-        <a className="top-banner__link" href={url || null}>
-          <div className="top-banner__content">
-            {content}
-          </div>
-        </a>
+        {url
+          ? <a className="top-banner__link" href={url}>
+              <div className="top-banner__content">
+                {content}
+              </div>
+            </a>
+          : <div className="top-banner__content">
+              {content}
+            </div>
+        }
       </div>
     );
   }
 }
+
+TopBanner.propTypes = {
+  content: PropTypes.string.isRequired,
+  parent: PropTypes.string,
+  url: PropTypes.string,
+};
+TopBanner.defaultProps = {
+  parent: '.b-page__content',
+};
+
+export default TopBanner;
