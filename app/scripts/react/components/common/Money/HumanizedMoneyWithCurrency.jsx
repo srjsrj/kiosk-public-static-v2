@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../../schemas';
 import {
   getHTMLName, isCurrencyExists, isSymbolFirst, unknownIsoCodeMessage
 } from '../../../helpers/money';
@@ -13,9 +14,11 @@ class HumanizedMoneyWithCurrency extends Component {
     }
 
     if (isCurrencyExists(money)) {
+      const symbol = <span dangerouslySetInnerHTML={{ __html: getHTMLName(money) }} />;
+
       return isSymbolFirst(money)
-        ? <span>{getHTMLName(money)} <HumanizedMoney money={money} /></span>
-        : <span><HumanizedMoney money={money} /> {getHTMLName(money)}</span>
+        ? <span>{symbol} <HumanizedMoney money={money} /></span>
+        : <span><HumanizedMoney money={money} /> {symbol}</span>
     } else {
       return (
         <span>{unknownIsoCodeMessage(money)}</span>
@@ -24,10 +27,7 @@ class HumanizedMoneyWithCurrency extends Component {
   }
 }
 HumanizedMoneyWithCurrency.propTypes = {
-  money: PropTypes.shape({
-    cents: PropTypes.number.isRequired,
-    currency_iso_code: PropTypes.string.isRequired,
-  }).isRequired,
+  money: schemas.money,
 };
 
 export default HumanizedMoneyWithCurrency;

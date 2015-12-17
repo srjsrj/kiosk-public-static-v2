@@ -5182,6 +5182,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
@@ -5191,6 +5193,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _schemas = require('../../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
 
 var _helpersMoney = require('../../../helpers/money');
 
@@ -5220,16 +5226,13 @@ var HumanizedMoney = (function (_Component) {
 })(_react.Component);
 
 HumanizedMoney.propTypes = {
-  money: _react.PropTypes.shape({
-    cents: _react.PropTypes.number.isRequired,
-    currency_iso_code: _react.PropTypes.string.isRequired
-  })
+  money: schemas.money
 };
 
 exports['default'] = HumanizedMoney;
 module.exports = exports['default'];
 
-},{"../../../helpers/money":77,"react":"react"}],69:[function(require,module,exports){
+},{"../../../helpers/money":77,"../../../schemas":92,"react":"react"}],69:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -5240,6 +5243,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
@@ -5249,6 +5254,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _schemas = require('../../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
 
 var _helpersMoney = require('../../../helpers/money');
 
@@ -5279,10 +5288,12 @@ var HumanizedMoneyWithCurrency = (function (_Component) {
       }
 
       if ((0, _helpersMoney.isCurrencyExists)(money)) {
+        var symbol = _react2['default'].createElement('span', { dangerouslySetInnerHTML: { __html: (0, _helpersMoney.getHTMLName)(money) } });
+
         return (0, _helpersMoney.isSymbolFirst)(money) ? _react2['default'].createElement(
           'span',
           null,
-          (0, _helpersMoney.getHTMLName)(money),
+          symbol,
           ' ',
           _react2['default'].createElement(_HumanizedMoney2['default'], { money: money })
         ) : _react2['default'].createElement(
@@ -5290,7 +5301,7 @@ var HumanizedMoneyWithCurrency = (function (_Component) {
           null,
           _react2['default'].createElement(_HumanizedMoney2['default'], { money: money }),
           ' ',
-          (0, _helpersMoney.getHTMLName)(money)
+          symbol
         );
       } else {
         return _react2['default'].createElement(
@@ -5306,16 +5317,13 @@ var HumanizedMoneyWithCurrency = (function (_Component) {
 })(_react.Component);
 
 HumanizedMoneyWithCurrency.propTypes = {
-  money: _react.PropTypes.shape({
-    cents: _react.PropTypes.number.isRequired,
-    currency_iso_code: _react.PropTypes.string.isRequired
-  }).isRequired
+  money: schemas.money
 };
 
 exports['default'] = HumanizedMoneyWithCurrency;
 module.exports = exports['default'];
 
-},{"../../../helpers/money":77,"./HumanizedMoney":68,"react":"react"}],70:[function(require,module,exports){
+},{"../../../helpers/money":77,"../../../schemas":92,"./HumanizedMoney":68,"react":"react"}],70:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../../schemas';
 import { humanizedMoney } from '../../../helpers/money';
 
 class HumanizedMoney extends Component {
@@ -10,11 +11,9 @@ class HumanizedMoney extends Component {
     );
   }
 }
+
 HumanizedMoney.propTypes = {
-  money: PropTypes.shape({
-    cents: PropTypes.number.isRequired,
-    currency_iso_code: PropTypes.string.isRequired,
-  }),
+  money: schemas.money,
 };
 
 export default HumanizedMoney;
