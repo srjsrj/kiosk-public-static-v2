@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
+import * as schemas from '../../schemas';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CheckoutDeliveries extends Component {
@@ -51,10 +52,10 @@ class CheckoutDeliveries extends Component {
 }
 
 CheckoutDeliveries.propTypes = {
-  current: PropTypes.object,
+  current: schemas.deliveryType,
   itemFieldName: PropTypes.string,
-  items: PropTypes.array,
-  onChange: PropTypes.func,
+  items: PropTypes.arrayOf(schemas.deliveryType),
+  onChange: PropTypes.func.isRequired,
 };
 CheckoutDeliveries.defaultProps = {
   itemFieldName: 'delivery_type_id',

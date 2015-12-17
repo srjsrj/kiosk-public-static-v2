@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../schemas';
 import makeTranslatable from '../HoC/makeTranslatable';
 import Cart from './Cart';
 
@@ -121,10 +122,15 @@ class CartContainer extends Component {
 }
 
 CartContainer.propTypes = {
-  deliveryTypes: PropTypes.array.isRequired,
-  formAuthenticity: PropTypes.object,
-  cart: PropTypes.object,
-  paymentMethods: PropTypes.array,
+  cart: schemas.cart,
+  coupon: schemas.checkoutCoupon,
+  deliveryType: schemas.deliveryType,
+  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  fields: PropTypes.arrayOf(schemas.checkoutField),
+  formAuthenticity: schemas.formAuthenticity,
+  paymentMethod: schemas.paymentMethod,
+  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  publicOffer: schemas.checkoutPublicOffer,
 };
 CartContainer.defaultProps = {
   cart: {},

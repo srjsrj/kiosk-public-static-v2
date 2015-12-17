@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
+import * as schemas from '../../schemas';
 import CheckoutPublicOffer from './CheckoutPublicOffer';
 
 class CheckoutActions extends Component {
@@ -34,7 +35,7 @@ class CheckoutActions extends Component {
 }
 
 CheckoutActions.propTypes = {
-  publicOffer: PropTypes.object,
+  publicOffer: schemas.checkoutPublicOffer,
 };
 
 export default CheckoutActions;

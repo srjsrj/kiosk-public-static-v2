@@ -1,15 +1,9 @@
 import React, { PropTypes } from 'react';
 import { t } from 'i18next';
-import { product } from '../../../projectTypes';
+import * as schemas from '../../../schemas';
 import ProductBlock from '../ProductBlock';
 
-export default class ProductCardSimilarProducts {
-  static propTypes = {
-    products: PropTypes.arrayOf(product),
-  }
-  static defaultProps = {
-    products: []
-  }
+class ProductCardSimilarProducts {
   renderProduct(product) {
     return <ProductBlock key={product.id} product={product} />;
   }
@@ -32,3 +26,12 @@ export default class ProductCardSimilarProducts {
     }   
   }
 }
+
+ProductCardSimilarProducts.propTypes = {
+  products: PropTypes.arrayOf(schemas.product),
+};
+ProductCardSimilarProducts.defaultProps = {
+  products: [],
+};
+
+export default ProductCardSimilarProducts;
