@@ -15,13 +15,13 @@ class CartContainer extends Component {
       deliveryType: delivery,
       fields: props.fields.map((field) => {
         const isRequired = delivery
-          ? delivery.requiredFields.indexOf(field.fieldName) > -1
+          ? delivery.requiredFields.indexOf(field.name) > -1
           : false;
         const isDisabled = delivery
-          ? delivery.reservedFieldValues[field.fieldName]
+          ? delivery.reservedFieldValues[field.name]
           : false;
         const value = delivery
-          ? delivery.reservedFieldValues[field.fieldName]
+          ? delivery.reservedFieldValues[field.name]
           : field.value;
 
         return {isDisabled, isRequired, value, source: field};
@@ -37,7 +37,7 @@ class CartContainer extends Component {
     if (!delivery) return fields;
 
     return fields.filter((field) =>
-      delivery.fields.indexOf(field.source.fieldName) > -1
+      delivery.fields.indexOf(field.source.name) > -1
     );
   }
   getPaymentsForDelivery(delivery, payments) {
@@ -69,13 +69,13 @@ class CartContainer extends Component {
       deliveryType: delivery,
       fields: fields.map((field) => {
         const isRequired = delivery
-          ? delivery.requiredFields.indexOf(field.source.fieldName) > -1
+          ? delivery.requiredFields.indexOf(field.source.name) > -1
           : false;
         const isDisabled = delivery
-          ? delivery.reservedFieldValues[field.source.fieldName]
+          ? delivery.reservedFieldValues[field.source.name]
           : false;
         const value = delivery
-          ? delivery.reservedFieldValues[field.source.fieldName]
+          ? delivery.reservedFieldValues[field.source.name]
           : field.value;
 
         return {...field, value, isDisabled, isRequired};
@@ -87,7 +87,7 @@ class CartContainer extends Component {
 
     this.setState({
       fields: fields.map((field) => {
-        if (field.source.fieldName === name) {
+        if (field.source.name === name) {
           return {...field, value};
         }
         return field;

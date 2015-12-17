@@ -10,10 +10,10 @@ class CheckoutFields extends Component {
       isDisabled,
       isRequired,
       value,
-      source: { id, fieldName, type, placeholder, title },
+      source: { name, type, placeholder, title },
     } = item;
-    const itemId = `vendor_order_${fieldName}`;
-    const itemName = `vendor_order[${fieldName}]`;
+    const itemId = `vendor_order_${name}`;
+    const itemName = `vendor_order[${name}]`;
 
     let itemContent = null;
     switch(type) {
@@ -28,7 +28,7 @@ class CheckoutFields extends Component {
               disabled={isDisabled}
               id={itemId}
               name={itemName}
-              onChange={(ev) => onChange(fieldName, ev.target.value)}
+              onChange={(ev) => onChange(name, ev.target.value)}
               placeholder={placeholder}
               type="text"
               value={value}
@@ -47,7 +47,7 @@ class CheckoutFields extends Component {
               disabled={isDisabled}
               id={itemId}
               name={itemName}
-              onChange={(ev) => onChange(fieldName, ev.target.value)}
+              onChange={(ev) => onChange(name, ev.target.value)}
               placeholder={placeholder}
               value={value}
             />
@@ -57,7 +57,7 @@ class CheckoutFields extends Component {
     }
 
     return (
-      <div className="b-form__row__widget" key={id}>
+      <div className="b-form__row__widget" key={name}>
         {itemContent}
       </div>
     );

@@ -6230,8 +6230,7 @@ Object.defineProperty(exports, '__esModule', {
 var _react = require('react');
 
 exports['default'] = _react.PropTypes.shape({
-  id: _react.PropTypes.number.isRequired,
-  fieldName: _react.PropTypes.string.isRequired,
+  name: _react.PropTypes.string.isRequired,
   type: _react.PropTypes.oneOf(['string', 'textarea']),
   value: _react.PropTypes.string.isRequired,
   title: _react.PropTypes.string,
