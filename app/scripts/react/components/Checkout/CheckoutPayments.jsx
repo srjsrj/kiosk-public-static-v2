@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../schemas';
 
 class CheckoutPayments extends Component {
   renderItem(item) {
@@ -39,10 +40,10 @@ class CheckoutPayments extends Component {
 }
 
 CheckoutPayments.propTypes = {
-  current: PropTypes.object,
+  current: schemas.paymentMethod,
   itemFieldName: PropTypes.string,
-  items: PropTypes.array,
-  onChange: PropTypes.func,
+  items: PropTypes.arrayOf(schemas.paymentMethod),
+  onChange: PropTypes.func.isRequired,
 };
 CheckoutPayments.defaultProps = {
   itemFieldName: 'payment_type_id',

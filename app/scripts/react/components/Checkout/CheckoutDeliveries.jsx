@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { t } from 'i18next';
+import * as schemas from '../../schemas';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CheckoutDeliveries extends Component {
@@ -23,6 +25,12 @@ class CheckoutDeliveries extends Component {
             <div className="b-cart__form__delivery-price">
               <HumanizedMoneyWithCurrency money={item.price} />
             </div>
+            {item.freeDeliveryThreshold.cents &&
+              <div className="cart__form__delivery-address">
+                <span>{t('vendor.order.checkout_free_delivery')} </span>
+                <HumanizedMoneyWithCurrency money={item.freeDeliveryThreshold} />
+              </div>
+            }
             <div className="cart__form__delivery-address">
               {item.description}
             </div>
@@ -31,6 +39,7 @@ class CheckoutDeliveries extends Component {
       </div>
     );
   }
+
   render() {
     const { items } = this.props;
 
@@ -43,10 +52,10 @@ class CheckoutDeliveries extends Component {
 }
 
 CheckoutDeliveries.propTypes = {
-  current: PropTypes.object,
+  current: schemas.deliveryType,
   itemFieldName: PropTypes.string,
-  items: PropTypes.array,
-  onChange: PropTypes.func,
+  items: PropTypes.arrayOf(schemas.deliveryType),
+  onChange: PropTypes.func.isRequired,
 };
 CheckoutDeliveries.defaultProps = {
   itemFieldName: 'delivery_type_id',

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../schemas';
 import Checkout from '../Checkout';
 import CartTitle from './CartTitle';
 
@@ -15,6 +16,7 @@ class Cart extends Component {
       onPaymentChange,
       paymentMethod,
       paymentMethods,
+      publicOffer,
       totalCount,
       totalPrice,
     } = this.props;
@@ -34,6 +36,7 @@ class Cart extends Component {
             onPaymentChange={onPaymentChange}
             paymentMethod={paymentMethod}
             paymentMethods={paymentMethods}
+            publicOffer={publicOffer}
           />
         </div>
       </section>
@@ -42,18 +45,19 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  coupon: PropTypes.object,
-  deliveryType: PropTypes.object,
-  deliveryTypes: PropTypes.array.isRequired,
+  coupon: schemas.checkoutCoupon,
+  deliveryType: schemas.deliveryType,
+  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
   fields: PropTypes.array.isRequired,
-  formAuthenticity: PropTypes.object,
+  formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentMethod: PropTypes.object,
-  paymentMethods: PropTypes.array.isRequired,
+  paymentMethod: schemas.paymentMethod,
+  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  publicOffer: schemas.checkoutPublicOffer,
   totalCount: PropTypes.number,
-  totalPrice: PropTypes.object,
+  totalPrice: schemas.money,
 };
 
 export default Cart;

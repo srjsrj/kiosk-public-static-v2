@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from '../../schemas';
 import makeTranslatable from '../HoC/makeTranslatable';
 import Cart from './Cart';
 
@@ -47,9 +48,14 @@ class CartContainer extends Component {
     );
   }
   getTotalPrice(delivery, cart) {
-    const { totalPrice } = cart;
-
     if (!delivery) return totalPrice;
+
+    const { totalPrice } = cart;
+    const { freeDeliveryThreshold: threshold } = delivery;
+
+    if (threshold.cents === 'undefined' || totalPrice.cents > threshold.cents) {
+      return totalPrice;
+    }
 
     return {
       ...totalPrice,
@@ -92,7 +98,7 @@ class CartContainer extends Component {
     this.setState({ paymentMethod: payment });
   }
   render() {
-    const { cart, coupon, deliveryTypes, formAuthenticity, paymentMethods } = this.props;
+    const { cart, coupon, deliveryTypes, formAuthenticity, paymentMethods, publicOffer } = this.props;
     const { deliveryType, fields, paymentMethod } = this.state;
 
     return (
@@ -107,6 +113,7 @@ class CartContainer extends Component {
         onPaymentChange={this.changePayment}
         paymentMethod={paymentMethod}
         paymentMethods={this.getPaymentsForDelivery(deliveryType, paymentMethods)}
+        publicOffer={publicOffer}
         totalCount={cart.totalCount}
         totalPrice={this.getTotalPrice(deliveryType, cart)}
       />
@@ -115,10 +122,15 @@ class CartContainer extends Component {
 }
 
 CartContainer.propTypes = {
-  deliveryTypes: PropTypes.array.isRequired,
-  formAuthenticity: PropTypes.object,
-  cart: PropTypes.object,
-  paymentMethods: PropTypes.array,
+  cart: schemas.cart,
+  coupon: schemas.checkoutCoupon,
+  deliveryType: schemas.deliveryType,
+  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  fields: PropTypes.arrayOf(schemas.checkoutField),
+  formAuthenticity: schemas.formAuthenticity,
+  paymentMethod: schemas.paymentMethod,
+  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  publicOffer: schemas.checkoutPublicOffer,
 };
 CartContainer.defaultProps = {
   cart: {},

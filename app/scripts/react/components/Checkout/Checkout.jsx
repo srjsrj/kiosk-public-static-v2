@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
+import * as schemas from '../../schemas';
 import { vendorOrder } from '../../../routes/app';
 import FormAuthenticity from '../common/FormAuthenticity';
 import CheckoutActions from './CheckoutActions';
@@ -22,6 +23,7 @@ class Checkout extends Component {
       onPaymentChange,
       paymentMethod,
       paymentMethods,
+      publicOffer,
     } = this.props;
 
     return (
@@ -60,7 +62,7 @@ class Checkout extends Component {
             </CheckoutStep>
           </div>
           <div className="b-form__row">
-            <CheckoutActions />
+            <CheckoutActions publicOffer={publicOffer} />
           </div>
         </div>
       </form>
@@ -69,16 +71,17 @@ class Checkout extends Component {
 }
 
 Checkout.propTypes = {
-  coupon: PropTypes.object,
-  deliveryType: PropTypes.object,
-  deliveryTypes: PropTypes.array.isRequired,
+  coupon: schemas.checkoutCoupon,
+  deliveryType: schemas.deliveryType,
+  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
   fields: PropTypes.array.isRequired,
-  formAuthenticity: PropTypes.object,
+  formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentMethod: PropTypes.object,
-  paymentMethods: PropTypes.array,
+  paymentMethod: schemas.paymentMethod,
+  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  publicOffer: schemas.checkoutPublicOffer,
 };
 Checkout.defaultProps = {
   formAuthenticity: {},
