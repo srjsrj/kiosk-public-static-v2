@@ -8,7 +8,6 @@ class CheckoutFields extends Component {
     const { onChange } = this.props;
     const {
       isDisabled,
-      isRequired,
       value,
       source: { errorMessage, name, type, placeholder, title },
     } = item;
@@ -21,7 +20,7 @@ class CheckoutFields extends Component {
         itemContent = (
           <div className="form-group string">
             <label className="string control-label" htmlFor={itemId}>
-              {title} {isRequired && '*'}
+              {title}
             </label>
             <input
               className="string form-control"
@@ -43,7 +42,7 @@ class CheckoutFields extends Component {
         itemContent = (
           <div className="form-group text">
             <label className="text control-label" htmlFor={itemId}>
-              {title} {isRequired && '*'}
+              {title}
             </label>
             <textarea
               className="text form-control"

@@ -3,5 +3,5 @@ export function vendorCartItems() {
 }
 
 export function vendorOrder() {
-  return '/order';
+  return '/orders';
 }

@@ -1361,7 +1361,6 @@ var CheckoutFields = (function (_Component) {
     value: function renderItem(item) {
       var onChange = this.props.onChange;
       var isDisabled = item.isDisabled;
-      var isRequired = item.isRequired;
       var value = item.value;
       var _item$source = item.source;
       var errorMessage = _item$source.errorMessage;
@@ -1382,9 +1381,7 @@ var CheckoutFields = (function (_Component) {
             _react2['default'].createElement(
               'label',
               { className: 'string control-label', htmlFor: itemId },
-              title,
-              ' ',
-              isRequired && '*'
+              title
             ),
             _react2['default'].createElement('input', {
               className: 'string form-control',
@@ -1412,9 +1409,7 @@ var CheckoutFields = (function (_Component) {
             _react2['default'].createElement(
               'label',
               { className: 'text control-label', htmlFor: itemId },
-              title,
-              ' ',
-              isRequired && '*'
+              title
             ),
             _react2['default'].createElement('textarea', {
               className: 'text form-control',
@@ -8235,7 +8230,7 @@ function vendorCartItems() {
 }
 
 function vendorOrder() {
-  return '/order';
+  return '/orders';
 }
 
 },{}],116:[function(require,module,exports){
