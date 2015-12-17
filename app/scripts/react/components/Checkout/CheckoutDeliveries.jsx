@@ -25,11 +25,12 @@ class CheckoutDeliveries extends Component {
             <div className="b-cart__form__delivery-price">
               <HumanizedMoneyWithCurrency money={item.price} />
             </div>
-            {item.freeDeliveryThreshold.cents &&
-              <div className="cart__form__delivery-address">
-                <span>{t('vendor.order.checkout_free_delivery')} </span>
-                <HumanizedMoneyWithCurrency money={item.freeDeliveryThreshold} />
-              </div>
+            {item.freeDeliveryThreshold.cents
+              ? <div className="cart__form__delivery-address">
+                  <span>{t('vendor.order.checkout_free_delivery')} </span>
+                  <HumanizedMoneyWithCurrency money={item.freeDeliveryThreshold} />
+                </div>
+              : null
             }
             <div className="cart__form__delivery-address">
               {item.description}
