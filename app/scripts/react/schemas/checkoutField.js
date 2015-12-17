@@ -6,4 +6,5 @@ export default PropTypes.shape({
   value: PropTypes.string.isRequired,
   title: PropTypes.string,
   placeholder: PropTypes.string,
+  errorMessage: PropTypes.string,
 });

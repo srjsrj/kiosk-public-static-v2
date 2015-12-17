@@ -6234,7 +6234,8 @@ exports['default'] = _react.PropTypes.shape({
   type: _react.PropTypes.oneOf(['string', 'textarea']),
   value: _react.PropTypes.string.isRequired,
   title: _react.PropTypes.string,
-  placeholder: _react.PropTypes.string
+  placeholder: _react.PropTypes.string,
+  errorMessage: _react.PropTypes.string
 });
 module.exports = exports['default'];
 

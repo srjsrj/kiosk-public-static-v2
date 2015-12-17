@@ -10,7 +10,7 @@ class CheckoutFields extends Component {
       isDisabled,
       isRequired,
       value,
-      source: { name, type, placeholder, title },
+      source: { errorMessage, name, type, placeholder, title },
     } = item;
     const itemId = `vendor_order_${name}`;
     const itemName = `vendor_order[${name}]`;
@@ -33,6 +33,9 @@ class CheckoutFields extends Component {
               type="text"
               value={value}
             />
+            {errorMessage &&
+              <span className="help-block">{errorMessage}</span>
+            }
           </div>
         );
         break;
@@ -51,6 +54,9 @@ class CheckoutFields extends Component {
               placeholder={placeholder}
               value={value}
             />
+            {errorMessage &&
+              <span className="help-block">{errorMessage}</span>
+            }
           </div>
         );
         break;

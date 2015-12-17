@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import * as schemas from '../../schemas';
 import { vendorOrder } from '../../../routes/app';
+import Alert from '../common/Alert';
 import FormAuthenticity from '../common/FormAuthenticity';
 import CheckoutActions from './CheckoutActions';
 import CheckoutStep from './CheckoutStep';
@@ -16,6 +17,7 @@ class Checkout extends Component {
       coupon,
       deliveryType,
       deliveryTypes,
+      errorMessage,
       fields,
       formAuthenticity,
       onDeliveryChange,
@@ -36,6 +38,9 @@ class Checkout extends Component {
       >
         <FormAuthenticity {...formAuthenticity} />
         <div className="b-cart__form b-form">
+          {errorMessage &&
+            <Alert danger text={errorMessage} />
+          }
           <div className="b-cart__form__inner">
             <CheckoutStep number={1} title={t('vendor.order.new.delivery_title')}>
               <CheckoutDeliveries
@@ -74,6 +79,7 @@ Checkout.propTypes = {
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  errorMessage: PropTypes.string,
   fields: PropTypes.array.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,

@@ -8,30 +8,47 @@ class CartContainer extends Component {
   constructor(props) {
     super(props);
 
-    const { deliveryTypes, fields } = props;
-    const delivery = deliveryTypes.length ? deliveryTypes[0] : null;
+    const {
+      deliveryTypeId,
+      deliveryTypes,
+      fields,
+      paymentMethodId,
+      paymentMethods,
+    } = props;
+    const deliveryType = this.matchEntity(deliveryTypes, deliveryTypeId);
+    const paymentMethod = this.matchEntity(paymentMethods, paymentMethodId);
 
     this.state = {
-      deliveryType: delivery,
+      deliveryType,
+      paymentMethod,
       fields: props.fields.map((field) => {
-        const isRequired = delivery
-          ? delivery.requiredFields.indexOf(field.name) > -1
+        const isRequired = deliveryType
+          ? deliveryType.requiredFields.indexOf(field.name) > -1
           : false;
-        const isDisabled = delivery
-          ? delivery.reservedFieldValues[field.name]
+        const isDisabled = deliveryType
+          ? deliveryType.reservedFieldValues[field.name]
           : false;
-        const value = delivery
-          ? delivery.reservedFieldValues[field.name]
+        const value = deliveryType
+          ? deliveryType.reservedFieldValues[field.name]
           : field.value;
 
         return {isDisabled, isRequired, value, source: field};
       }),
-      paymentMethod: null,
     };
 
     this.changeDelivery = this.changeDelivery.bind(this);
     this.changeField = this.changeField.bind(this);
     this.changePayment = this.changePayment.bind(this);
+  }
+  matchEntity(items, itemId) {
+    if (!items.length) return null;
+
+    if (itemId) {
+      const matched = items.filter((item) => item.id === itemId)[0];
+      if (matched) return matched;
+    }
+
+    return items[0];
   }
   getFieldsForDelivery(delivery, fields) {
     if (!delivery) return fields;
@@ -98,7 +115,15 @@ class CartContainer extends Component {
     this.setState({ paymentMethod: payment });
   }
   render() {
-    const { cart, coupon, deliveryTypes, formAuthenticity, paymentMethods, publicOffer } = this.props;
+    const {
+      cart,
+      coupon,
+      deliveryTypes,
+      errorMessage,
+      formAuthenticity,
+      paymentMethods,
+      publicOffer,
+    } = this.props;
     const { deliveryType, fields, paymentMethod } = this.state;
 
     return (
@@ -106,6 +131,7 @@ class CartContainer extends Component {
         coupon={coupon}
         deliveryType={deliveryType}
         deliveryTypes={deliveryTypes}
+        errorMessage={errorMessage}
         fields={this.getFieldsForDelivery(deliveryType, fields)}
         formAuthenticity={formAuthenticity}
         onDeliveryChange={this.changeDelivery}
@@ -125,10 +151,13 @@ CartContainer.propTypes = {
   cart: schemas.cart,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
+  deliveryTypeId: PropTypes.number,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  errorMessage: PropTypes.string,
   fields: PropTypes.arrayOf(schemas.checkoutField),
   formAuthenticity: schemas.formAuthenticity,
   paymentMethod: schemas.paymentMethod,
+  paymentMethodId: PropTypes.number,
   paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
   publicOffer: schemas.checkoutPublicOffer,
 };

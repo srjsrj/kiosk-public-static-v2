@@ -9,6 +9,7 @@ class Cart extends Component {
       coupon,
       deliveryType,
       deliveryTypes,
+      errorMessage,
       fields,
       formAuthenticity,
       onDeliveryChange,
@@ -29,6 +30,7 @@ class Cart extends Component {
             coupon={coupon}
             deliveryType={deliveryType}
             deliveryTypes={deliveryTypes}
+            errorMessage={errorMessage}
             fields={fields}
             formAuthenticity={formAuthenticity}
             onDeliveryChange={onDeliveryChange}
@@ -48,6 +50,7 @@ Cart.propTypes = {
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  errorMessage: PropTypes.string,
   fields: PropTypes.array.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,
