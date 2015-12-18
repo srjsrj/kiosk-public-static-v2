@@ -362,7 +362,16 @@
       "is_label_new": false,
       "is_run_out": true,
       "is_sold": true,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/7358/eb46934b-a418-41e9-b14c-df89cf430567.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/19194-braslet-na-kist-nami-chernenyy-s-tsirkonami",
       "goods": [
         {
@@ -418,7 +427,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/8591/ac49ed76-14fb-4700-affd-e94a71bc354b.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/4333-tsep-na-telo-iks-s-tsirkonami-chernenaya",
       "goods": [
         {
@@ -474,7 +492,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/35968-anklet-sona-3-s-tsirkonami-serebryannyy",
       "goods": [
         {
@@ -530,7 +557,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5150/image.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/4165-koltso-na-nogot-hag-s-tsirkonami-chernenoe",
       "goods": [
         {

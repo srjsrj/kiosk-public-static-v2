@@ -691,7 +691,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/36062-minikoltso-yasuo-s-tsirkonami-zolochenoe",
       "goods": [
         {
@@ -1005,7 +1014,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/25461/8da9a61c-63a3-488f-ad08-66f11ca594bd.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/24231-minikoltso-double-stripe-s-tsirkonami-zolochenoe",
       "goods": [
         {
@@ -1104,7 +1122,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/25477/34866b05-fca6-46c6-9a1d-e0d54da35ea3.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/24270-minikoltso-shen-13-zolochenoe",
       "goods": [
         {
@@ -1375,7 +1402,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/7296/6195cda4-a15e-4c9d-9f43-4b03d2c38d10.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wanna-be.ru/products/20500-minikoltso-shen-10-zolochenoe",
       "goods": [
         {

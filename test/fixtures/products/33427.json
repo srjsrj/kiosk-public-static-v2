@@ -304,7 +304,16 @@
       "is_label_new": true,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28249/6fae58b6-7657-4d28-9683-eac2dcae3f47.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33474-pop-culture",
       "goods": [
         {
@@ -360,7 +369,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/386/uploads/product_image/image/28246/0a4ef555-884c-4e36-b389-68317896d53b.JPG",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://babe-in-the-woods.kiiiosk.ru/products/33472-summer-flowers",
       "goods": [
         {
