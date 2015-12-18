@@ -7856,7 +7856,7 @@ var _react = require('react');
 
 exports['default'] = _react.PropTypes.shape({
   show: _react.PropTypes.bool.isRequired,
-  value: _react.PropTypes.string.isRequired
+  value: _react.PropTypes.string
 });
 module.exports = exports['default'];
 
@@ -7872,7 +7872,7 @@ var _react = require('react');
 exports['default'] = _react.PropTypes.shape({
   name: _react.PropTypes.string.isRequired,
   type: _react.PropTypes.oneOf(['string', 'textarea']),
-  value: _react.PropTypes.string.isRequired,
+  value: _react.PropTypes.string,
   title: _react.PropTypes.string,
   placeholder: _react.PropTypes.string,
   errorMessage: _react.PropTypes.string
