@@ -14,6 +14,7 @@ import CheckoutCoupon from './CheckoutCoupon';
 class Checkout extends Component {
   render() {
     const {
+      backUrl,
       coupon,
       deliveryType,
       deliveryTypes,
@@ -26,13 +27,15 @@ class Checkout extends Component {
       paymentMethod,
       paymentMethods,
       publicOffer,
+      submitOrderUrl,
     } = this.props;
 
     return (
       <form
         acceptCharset="UTF-8"
-        action={vendorOrder()}
+        action={submitOrderUrl}
         className="simple_form new_vendor_order"
+        id="new_vendor_order"
         method="POST"
         noValidate="novalidate"
       >
@@ -67,7 +70,10 @@ class Checkout extends Component {
             </CheckoutStep>
           </div>
           <div className="b-form__row">
-            <CheckoutActions publicOffer={publicOffer} />
+            <CheckoutActions
+              backUrl={backUrl}
+              publicOffer={publicOffer}
+            />
           </div>
         </div>
       </form>
@@ -76,6 +82,7 @@ class Checkout extends Component {
 }
 
 Checkout.propTypes = {
+  backUrl: PropTypes.string,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
@@ -88,9 +95,12 @@ Checkout.propTypes = {
   paymentMethod: schemas.paymentMethod,
   paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
   publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: PropTypes.string,
 };
 Checkout.defaultProps = {
+  backUrl: '/cart',
   formAuthenticity: {},
+  submitOrderUrl: vendorOrder(),
 };
 
 export default Checkout;

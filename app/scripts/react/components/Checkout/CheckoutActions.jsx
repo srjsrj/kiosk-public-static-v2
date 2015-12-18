@@ -5,18 +5,19 @@ import CheckoutPublicOffer from './CheckoutPublicOffer';
 
 class CheckoutActions extends Component {
   render() {
-    const { publicOffer } = this.props;
+    const { backUrl, publicOffer } = this.props;
 
     return (
       <div className="b-cart__action">
-        {publicOffer && publicOffer.show &&
-          <CheckoutPublicOffer url={publicOffer.url} />
+        {publicOffer && publicOffer.show
+          ? <CheckoutPublicOffer url={publicOffer.url} />
+          : null
         }
         <div className="b-cart__action__container">
           <div className="b-cart__action__col-back">
             <a
               className="b-btn b-btn_trans b-cart__action__clear"
-              href="/cart"
+              href={backUrl}
             >
               {t('vendor.order.go_back')}
             </a>
@@ -35,6 +36,7 @@ class CheckoutActions extends Component {
 }
 
 CheckoutActions.propTypes = {
+  backUrl: PropTypes.string.isRequired,
   publicOffer: schemas.checkoutPublicOffer,
 };
 
