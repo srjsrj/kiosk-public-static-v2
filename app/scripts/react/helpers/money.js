@@ -50,19 +50,16 @@ export function humanizedMoney(money) {
 }
 
 export function humanizedMoneyWithCurrency(money) {
-  if (!money) return '-';
+  if (!money || money.cents === 0) return '-';
   if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
   return isSymbolFirst(money)
-    ? `${humanizedMoney(money)} ${getHTMLName(money)}`
-    : `${getHTMLName(money)} ${humanizedMoney(money)}`
+    ? `${getHTMLName(money)} ${humanizedMoney(money)}`
+    : `${humanizedMoney(money)} ${getHTMLName(money)}`;
 }
 
 export function unknownIsoCodeMessage(money) {
-  return t(
-    'vendor.money.unknown_iso_code',
-    {
-      isoCode: getCurrencyID(money)
-    }
-  );
+  return t('vendor.money.unknown_iso_code', {
+    isoCode: getCurrencyID(money),
+  });
 }

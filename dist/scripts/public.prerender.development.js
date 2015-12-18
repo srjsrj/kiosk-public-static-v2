@@ -118,6 +118,7 @@ var Cart = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var backUrl = _props.backUrl;
       var coupon = _props.coupon;
       var deliveryType = _props.deliveryType;
       var deliveryTypes = _props.deliveryTypes;
@@ -130,6 +131,7 @@ var Cart = (function (_Component) {
       var paymentMethod = _props.paymentMethod;
       var paymentMethods = _props.paymentMethods;
       var publicOffer = _props.publicOffer;
+      var submitOrderUrl = _props.submitOrderUrl;
       var totalCount = _props.totalCount;
       var totalPrice = _props.totalPrice;
 
@@ -141,6 +143,7 @@ var Cart = (function (_Component) {
           { className: 'b-cart__content' },
           _react2['default'].createElement(_CartTitle2['default'], { totalCount: totalCount, totalPrice: totalPrice }),
           _react2['default'].createElement(_Checkout2['default'], {
+            backUrl: backUrl,
             coupon: coupon,
             deliveryType: deliveryType,
             deliveryTypes: deliveryTypes,
@@ -152,7 +155,8 @@ var Cart = (function (_Component) {
             onPaymentChange: onPaymentChange,
             paymentMethod: paymentMethod,
             paymentMethods: paymentMethods,
-            publicOffer: publicOffer
+            publicOffer: publicOffer,
+            submitOrderUrl: submitOrderUrl
           })
         )
       );
@@ -163,6 +167,7 @@ var Cart = (function (_Component) {
 })(_react.Component);
 
 Cart.propTypes = {
+  backUrl: _react.PropTypes.string,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
@@ -175,6 +180,7 @@ Cart.propTypes = {
   paymentMethod: schemas.paymentMethod,
   paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
   publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: _react.PropTypes.string,
   totalCount: _react.PropTypes.number,
   totalPrice: schemas.money
 };
@@ -298,8 +304,9 @@ var CartContainer = (function (_Component) {
       paymentMethod: paymentMethod,
       fields: props.fields.map(function (field) {
         var isRequired = deliveryType ? deliveryType.requiredFields.indexOf(field.name) > -1 : false;
-        var isDisabled = deliveryType ? deliveryType.reservedFieldValues[field.name] : false;
-        var value = deliveryType ? deliveryType.reservedFieldValues[field.name] : field.value;
+        var isReserved = deliveryType ? !!deliveryType.reservedFieldValues[field.name] : false;
+        var isDisabled = isReserved || false;
+        var value = isReserved ? deliveryType.reservedFieldValues[field.name] : field.value;
 
         return { isDisabled: isDisabled, isRequired: isRequired, value: value, source: field };
       })
@@ -397,6 +404,7 @@ var CartContainer = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var backUrl = _props.backUrl;
       var cart = _props.cart;
       var coupon = _props.coupon;
       var deliveryTypes = _props.deliveryTypes;
@@ -404,12 +412,14 @@ var CartContainer = (function (_Component) {
       var formAuthenticity = _props.formAuthenticity;
       var paymentMethods = _props.paymentMethods;
       var publicOffer = _props.publicOffer;
+      var submitOrderUrl = _props.submitOrderUrl;
       var _state = this.state;
       var deliveryType = _state.deliveryType;
       var fields = _state.fields;
       var paymentMethod = _state.paymentMethod;
 
       return _react2['default'].createElement(_Cart2['default'], {
+        backUrl: backUrl,
         coupon: coupon,
         deliveryType: deliveryType,
         deliveryTypes: deliveryTypes,
@@ -422,6 +432,7 @@ var CartContainer = (function (_Component) {
         paymentMethod: paymentMethod,
         paymentMethods: this.getPaymentsForDelivery(deliveryType, paymentMethods),
         publicOffer: publicOffer,
+        submitOrderUrl: submitOrderUrl,
         totalCount: cart.totalCount,
         totalPrice: this.getTotalPrice(deliveryType, cart)
       });
@@ -434,6 +445,7 @@ var CartContainer = (function (_Component) {
 })(_react.Component);
 
 CartContainer.propTypes = {
+  backUrl: _react.PropTypes.string,
   cart: schemas.cart,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
@@ -445,7 +457,8 @@ CartContainer.propTypes = {
   paymentMethod: schemas.paymentMethod,
   paymentMethodId: _react.PropTypes.number,
   paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
-  publicOffer: schemas.checkoutPublicOffer
+  publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: _react.PropTypes.string
 };
 CartContainer.defaultProps = {
   cart: {},
@@ -637,6 +650,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _i18next = require('i18next');
 
 var _commonMoneyHumanizedMoneyWithCurrency = require('../common/Money/HumanizedMoneyWithCurrency');
@@ -653,6 +670,23 @@ var CartTitle = (function (_Component) {
   }
 
   _createClass(CartTitle, [{
+    key: 'componentWillUpdate',
+    value: function componentWillUpdate(nextProps) {
+      if (this.props.totalPrice.cents !== nextProps.totalPrice.cents) {
+        this.animatePriceChanges();
+      }
+    }
+  }, {
+    key: 'animatePriceChanges',
+    value: function animatePriceChanges() {
+      var $priceNode = (0, _jquery2['default'])((0, _react.findDOMNode)(this.refs.price));
+
+      $priceNode.addClass('animated bounce');
+      setTimeout(function () {
+        $priceNode.removeClass('animated bounce');
+      }, 1000);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -672,7 +706,7 @@ var CartTitle = (function (_Component) {
           ' ' + (0, _i18next.t)('vendor.order.new.sum') + ' ',
           _react2['default'].createElement(
             'strong',
-            null,
+            { ref: 'price' },
             _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: totalPrice })
           )
         );
@@ -693,7 +727,7 @@ CartTitle.propTypes = {
 exports['default'] = CartTitle;
 module.exports = exports['default'];
 
-},{"../common/Money/HumanizedMoneyWithCurrency":84,"i18next":"i18next","react":"react"}],10:[function(require,module,exports){
+},{"../common/Money/HumanizedMoneyWithCurrency":84,"i18next":"i18next","jquery":"jquery","react":"react"}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -786,6 +820,7 @@ var Checkout = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var backUrl = _props.backUrl;
       var coupon = _props.coupon;
       var deliveryType = _props.deliveryType;
       var deliveryTypes = _props.deliveryTypes;
@@ -798,13 +833,15 @@ var Checkout = (function (_Component) {
       var paymentMethod = _props.paymentMethod;
       var paymentMethods = _props.paymentMethods;
       var publicOffer = _props.publicOffer;
+      var submitOrderUrl = _props.submitOrderUrl;
 
       return _react2['default'].createElement(
         'form',
         {
           acceptCharset: 'UTF-8',
-          action: (0, _routesApp.vendorOrder)(),
+          action: submitOrderUrl,
           className: 'simple_form new_vendor_order',
+          id: 'new_vendor_order',
           method: 'POST',
           noValidate: 'novalidate'
         },
@@ -847,7 +884,10 @@ var Checkout = (function (_Component) {
           _react2['default'].createElement(
             'div',
             { className: 'b-form__row' },
-            _react2['default'].createElement(_CheckoutActions2['default'], { publicOffer: publicOffer })
+            _react2['default'].createElement(_CheckoutActions2['default'], {
+              backUrl: backUrl,
+              publicOffer: publicOffer
+            })
           )
         )
       );
@@ -858,6 +898,7 @@ var Checkout = (function (_Component) {
 })(_react.Component);
 
 Checkout.propTypes = {
+  backUrl: _react.PropTypes.string,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
@@ -869,10 +910,13 @@ Checkout.propTypes = {
   onPaymentChange: _react.PropTypes.func.isRequired,
   paymentMethod: schemas.paymentMethod,
   paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
-  publicOffer: schemas.checkoutPublicOffer
+  publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: _react.PropTypes.string
 };
 Checkout.defaultProps = {
-  formAuthenticity: {}
+  backUrl: '/cart',
+  formAuthenticity: {},
+  submitOrderUrl: (0, _routesApp.vendorOrder)()
 };
 
 exports['default'] = Checkout;
@@ -923,12 +967,14 @@ var CheckoutActions = (function (_Component) {
   _createClass(CheckoutActions, [{
     key: 'render',
     value: function render() {
-      var publicOffer = this.props.publicOffer;
+      var _props = this.props;
+      var backUrl = _props.backUrl;
+      var publicOffer = _props.publicOffer;
 
       return _react2['default'].createElement(
         'div',
         { className: 'b-cart__action' },
-        publicOffer && publicOffer.show && _react2['default'].createElement(_CheckoutPublicOffer2['default'], { url: publicOffer.url }),
+        publicOffer && publicOffer.show ? _react2['default'].createElement(_CheckoutPublicOffer2['default'], { url: publicOffer.url }) : null,
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__action__container' },
@@ -939,7 +985,7 @@ var CheckoutActions = (function (_Component) {
               'a',
               {
                 className: 'b-btn b-btn_trans b-cart__action__clear',
-                href: '/cart'
+                href: backUrl
               },
               (0, _i18next.t)('vendor.order.go_back')
             )
@@ -962,6 +1008,7 @@ var CheckoutActions = (function (_Component) {
 })(_react.Component);
 
 CheckoutActions.propTypes = {
+  backUrl: _react.PropTypes.string.isRequired,
   publicOffer: schemas.checkoutPublicOffer
 };
 
@@ -1215,6 +1262,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _i18next = require('i18next');
 
+var _helpersMoney = require('../../helpers/money');
+
 var _schemas = require('../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
@@ -1269,17 +1318,14 @@ var CheckoutDeliveries = (function (_Component) {
               { className: 'b-cart__form__delivery-price' },
               _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: item.price })
             ),
-            item.freeDeliveryThreshold.cents ? _react2['default'].createElement(
-              'div',
-              { className: 'cart__form__delivery-address' },
-              _react2['default'].createElement(
-                'span',
-                null,
-                (0, _i18next.t)('vendor.order.checkout_free_delivery'),
-                ' '
-              ),
-              _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: item.freeDeliveryThreshold })
-            ) : null,
+            item.freeDeliveryThreshold.cents ? _react2['default'].createElement('div', {
+              className: 'cart__form__delivery-address',
+              dangerouslySetInnerHTML: {
+                __html: (0, _i18next.t)('vendor.order.checkout_free_delivery_text_html', {
+                  free_delivery_threshold: (0, _helpersMoney.humanizedMoneyWithCurrency)(item.freeDeliveryThreshold)
+                })
+              }
+            }) : null,
             _react2['default'].createElement(
               'div',
               { className: 'cart__form__delivery-address' },
@@ -1323,7 +1369,7 @@ CheckoutDeliveries.defaultProps = {
 exports['default'] = CheckoutDeliveries;
 module.exports = exports['default'];
 
-},{"../../schemas":107,"../common/Money/HumanizedMoneyWithCurrency":84,"i18next":"i18next","react":"react"}],16:[function(require,module,exports){
+},{"../../helpers/money":92,"../../schemas":107,"../common/Money/HumanizedMoneyWithCurrency":84,"i18next":"i18next","react":"react"}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6865,7 +6911,7 @@ var HumanizedMoneyWithCurrency = (function (_Component) {
     value: function render() {
       var money = this.props.money;
 
-      if (money.cents === 0) {
+      if (!money || money.cents === 0) {
         return _react2['default'].createElement(
           'span',
           null,
@@ -6873,29 +6919,29 @@ var HumanizedMoneyWithCurrency = (function (_Component) {
         );
       }
 
-      if ((0, _helpersMoney.isCurrencyExists)(money)) {
-        var symbol = _react2['default'].createElement('span', { dangerouslySetInnerHTML: { __html: (0, _helpersMoney.getHTMLName)(money) } });
-
-        return (0, _helpersMoney.isSymbolFirst)(money) ? _react2['default'].createElement(
-          'span',
-          null,
-          symbol,
-          ' ',
-          _react2['default'].createElement(_HumanizedMoney2['default'], { money: money })
-        ) : _react2['default'].createElement(
-          'span',
-          null,
-          _react2['default'].createElement(_HumanizedMoney2['default'], { money: money }),
-          ' ',
-          symbol
-        );
-      } else {
+      if (!(0, _helpersMoney.isCurrencyExists)(money)) {
         return _react2['default'].createElement(
           'span',
           null,
           (0, _helpersMoney.unknownIsoCodeMessage)(money)
         );
       }
+
+      var symbol = _react2['default'].createElement('span', { dangerouslySetInnerHTML: { __html: (0, _helpersMoney.getHTMLName)(money) } });
+
+      return (0, _helpersMoney.isSymbolFirst)(money) ? _react2['default'].createElement(
+        'span',
+        null,
+        symbol,
+        ' ',
+        _react2['default'].createElement(_HumanizedMoney2['default'], { money: money })
+      ) : _react2['default'].createElement(
+        'span',
+        null,
+        _react2['default'].createElement(_HumanizedMoney2['default'], { money: money }),
+        ' ',
+        symbol
+      );
     }
   }]);
 
@@ -7305,10 +7351,10 @@ function humanizedMoney(money) {
 }
 
 function humanizedMoneyWithCurrency(money) {
-  if (!money) return '-';
+  if (!money || money.cents === 0) return '-';
   if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
-  return isSymbolFirst(money) ? humanizedMoney(money) + ' ' + getHTMLName(money) : getHTMLName(money) + ' ' + humanizedMoney(money);
+  return isSymbolFirst(money) ? getHTMLName(money) + ' ' + humanizedMoney(money) : humanizedMoney(money) + ' ' + getHTMLName(money);
 }
 
 function unknownIsoCodeMessage(money) {
@@ -7794,7 +7840,7 @@ var _money = require('./money');
 var _money2 = _interopRequireDefault(_money);
 
 exports['default'] = _react.PropTypes.shape({
-  totalCount: _react.PropTypes.number.isRequired,
+  totalCount: _react.PropTypes.number,
   totalPrice: _money2['default']
 });
 module.exports = exports['default'];
@@ -7844,7 +7890,7 @@ var _react = require('react');
 
 exports['default'] = _react.PropTypes.shape({
   show: _react.PropTypes.bool.isRequired,
-  url: _react.PropTypes.string.isRequired
+  url: _react.PropTypes.string
 });
 module.exports = exports['default'];
 

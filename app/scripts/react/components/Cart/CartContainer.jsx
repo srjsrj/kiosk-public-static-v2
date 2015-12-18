@@ -25,10 +25,11 @@ class CartContainer extends Component {
         const isRequired = deliveryType
           ? deliveryType.requiredFields.indexOf(field.name) > -1
           : false;
-        const isDisabled = deliveryType
-          ? deliveryType.reservedFieldValues[field.name]
+        const isReserved = deliveryType
+          ? !!deliveryType.reservedFieldValues[field.name]
           : false;
-        const value = deliveryType
+        const isDisabled = isReserved || false;
+        const value = isReserved
           ? deliveryType.reservedFieldValues[field.name]
           : field.value;
 
@@ -116,6 +117,7 @@ class CartContainer extends Component {
   }
   render() {
     const {
+      backUrl,
       cart,
       coupon,
       deliveryTypes,
@@ -123,11 +125,13 @@ class CartContainer extends Component {
       formAuthenticity,
       paymentMethods,
       publicOffer,
+      submitOrderUrl,
     } = this.props;
     const { deliveryType, fields, paymentMethod } = this.state;
 
     return (
       <Cart
+        backUrl={backUrl}
         coupon={coupon}
         deliveryType={deliveryType}
         deliveryTypes={deliveryTypes}
@@ -140,6 +144,7 @@ class CartContainer extends Component {
         paymentMethod={paymentMethod}
         paymentMethods={this.getPaymentsForDelivery(deliveryType, paymentMethods)}
         publicOffer={publicOffer}
+        submitOrderUrl={submitOrderUrl}
         totalCount={cart.totalCount}
         totalPrice={this.getTotalPrice(deliveryType, cart)}
       />
@@ -148,6 +153,7 @@ class CartContainer extends Component {
 }
 
 CartContainer.propTypes = {
+  backUrl: PropTypes.string,
   cart: schemas.cart,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
@@ -160,6 +166,7 @@ CartContainer.propTypes = {
   paymentMethodId: PropTypes.number,
   paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
   publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: PropTypes.string,
 };
 CartContainer.defaultProps = {
   cart: {},

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
+import { humanizedMoneyWithCurrency } from '../../helpers/money';
 import * as schemas from '../../schemas';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
@@ -26,10 +27,14 @@ class CheckoutDeliveries extends Component {
               <HumanizedMoneyWithCurrency money={item.price} />
             </div>
             {item.freeDeliveryThreshold.cents
-              ? <div className="cart__form__delivery-address">
-                  <span>{t('vendor.order.checkout_free_delivery')} </span>
-                  <HumanizedMoneyWithCurrency money={item.freeDeliveryThreshold} />
-                </div>
+              ? <div
+                  className="cart__form__delivery-address"
+                  dangerouslySetInnerHTML={{
+                    __html: t('vendor.order.checkout_free_delivery_text_html', {
+                      free_delivery_threshold: humanizedMoneyWithCurrency(item.freeDeliveryThreshold),
+                    }),
+                  }}
+                />
               : null
             }
             <div className="cart__form__delivery-address">

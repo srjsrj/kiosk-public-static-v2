@@ -1,8 +1,22 @@
-import React, { Component, PropTypes } from 'react';
+import React, { findDOMNode, Component, PropTypes } from 'react';
+import $ from 'jquery';
 import { t } from 'i18next';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartTitle extends Component {
+  componentWillUpdate(nextProps) {
+    if (this.props.totalPrice.cents !== nextProps.totalPrice.cents) {
+      this.animatePriceChanges();
+    }
+  }
+  animatePriceChanges() {
+    const $priceNode = $(findDOMNode(this.refs.price));
+
+    $priceNode.addClass('animated bounce');
+    setTimeout(() => {
+      $priceNode.removeClass('animated bounce');
+    }, 1000);
+  }
   render() {
     const { totalCount, totalPrice } = this.props;
 
@@ -12,7 +26,7 @@ class CartTitle extends Component {
           {`${t('vendor.pages.titles.order')} `}
           <strong>{t('vendor.entities.product', {count: totalCount})}</strong>
           {` ${t('vendor.order.new.sum')} `}
-          <strong>
+          <strong ref="price">
             <HumanizedMoneyWithCurrency money={totalPrice} />
           </strong>
         </h1>

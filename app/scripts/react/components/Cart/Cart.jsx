@@ -6,6 +6,7 @@ import CartTitle from './CartTitle';
 class Cart extends Component {
   render() {
     const {
+      backUrl,
       coupon,
       deliveryType,
       deliveryTypes,
@@ -18,6 +19,7 @@ class Cart extends Component {
       paymentMethod,
       paymentMethods,
       publicOffer,
+      submitOrderUrl,
       totalCount,
       totalPrice,
     } = this.props;
@@ -27,6 +29,7 @@ class Cart extends Component {
         <div className="b-cart__content">
           <CartTitle totalCount={totalCount} totalPrice={totalPrice} />
           <Checkout
+            backUrl={backUrl}
             coupon={coupon}
             deliveryType={deliveryType}
             deliveryTypes={deliveryTypes}
@@ -39,6 +42,7 @@ class Cart extends Component {
             paymentMethod={paymentMethod}
             paymentMethods={paymentMethods}
             publicOffer={publicOffer}
+            submitOrderUrl={submitOrderUrl}
           />
         </div>
       </section>
@@ -47,6 +51,7 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
+  backUrl: PropTypes.string,
   coupon: schemas.checkoutCoupon,
   deliveryType: schemas.deliveryType,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
@@ -59,6 +64,7 @@ Cart.propTypes = {
   paymentMethod: schemas.paymentMethod,
   paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
   publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: PropTypes.string,
   totalCount: PropTypes.number,
   totalPrice: schemas.money,
 };
