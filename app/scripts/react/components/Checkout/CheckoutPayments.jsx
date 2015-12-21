@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { simpleFormat } from '../../helpers/text';
 import * as schemas from '../../schemas';
 
 class CheckoutPayments extends Component {
@@ -20,9 +21,10 @@ class CheckoutPayments extends Component {
             <div className="b-cart__form__payment-name">
               {item.title}
             </div>
-            <div className="b-cart__form__payment-description">
-              {item.description}
-            </div>
+            <div
+              className="b-cart__form__payment-description"
+              dangerouslySetInnerHTML={{ __html: simpleFormat(item.description) }}
+            />
           </label>
         </span>
       </div>

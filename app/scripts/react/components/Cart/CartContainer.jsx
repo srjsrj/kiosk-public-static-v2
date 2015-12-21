@@ -21,7 +21,7 @@ class CartContainer extends Component {
     this.state = {
       deliveryType,
       paymentType,
-      fields: props.fields.map((field) => {
+      fields: fields.map((field) => {
         const isRequired = deliveryType
           ? deliveryType.requiredFields.indexOf(field.name) > -1
           : false;
@@ -156,13 +156,11 @@ CartContainer.propTypes = {
   backUrl: PropTypes.string,
   cart: schemas.cart,
   coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
   deliveryTypeId: PropTypes.number,
   deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
   errorMessage: PropTypes.string,
   fields: PropTypes.arrayOf(schemas.checkoutField),
   formAuthenticity: schemas.formAuthenticity,
-  paymentType: schemas.paymentType,
   paymentTypeId: PropTypes.number,
   paymentTypes: PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
