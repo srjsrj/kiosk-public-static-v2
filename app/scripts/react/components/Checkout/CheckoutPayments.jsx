@@ -40,9 +40,9 @@ class CheckoutPayments extends Component {
 }
 
 CheckoutPayments.propTypes = {
-  current: schemas.paymentMethod,
+  current: schemas.paymentType,
   itemFieldName: PropTypes.string,
-  items: PropTypes.arrayOf(schemas.paymentMethod),
+  items: PropTypes.arrayOf(schemas.paymentType),
   onChange: PropTypes.func.isRequired,
 };
 CheckoutPayments.defaultProps = {

@@ -5,7 +5,7 @@ import HiddenInput from '../common/HiddenInput';
 
 class CheckoutPublicOffer extends Component {
   render() {
-    const { url = '' } = this.props;
+    const { errorMessage, url } = this.props;
 
     return (
       <div className="b-form__row b-cart__form__data-row">
@@ -24,6 +24,10 @@ class CheckoutPublicOffer extends Component {
                 />
                 <span dangerouslySetInnerHTML={{ __html: t('vendor.order.public_offer_accepted_html', { url }) }} />
               </label>
+              {errorMessage
+                ? <span className="help-block">{errorMessage}</span>
+                : null
+              }
             </span>
           </div>
         </div>
@@ -33,7 +37,11 @@ class CheckoutPublicOffer extends Component {
 }
 
 CheckoutPublicOffer.propTypes = {
+  errorMessage: PropTypes.string,
   url: PropTypes.string,
+};
+CheckoutPublicOffer.defaultProps = {
+  url: '',
 };
 
 export default CheckoutPublicOffer;

@@ -24,8 +24,8 @@ class Checkout extends Component {
       onDeliveryChange,
       onFieldChange,
       onPaymentChange,
-      paymentMethod,
-      paymentMethods,
+      paymentType,
+      paymentTypes,
       publicOffer,
       submitOrderUrl,
     } = this.props;
@@ -41,8 +41,13 @@ class Checkout extends Component {
       >
         <FormAuthenticity {...formAuthenticity} />
         <div className="b-cart__form b-form">
-          {errorMessage &&
-            <Alert danger text={errorMessage} />
+          {errorMessage
+            ? <Alert
+                className="cart-info"
+                danger
+                text={errorMessage}
+              />
+            : null
           }
           <div className="b-cart__form__inner">
             <CheckoutStep number={1} title={t('vendor.order.new.delivery_title')}>
@@ -63,8 +68,8 @@ class Checkout extends Component {
             </CheckoutStep>
             <CheckoutStep number={3} title={t('vendor.order.new.payment_title')}>
               <CheckoutPayments
-                current={paymentMethod}
-                items={paymentMethods}
+                current={paymentType}
+                items={paymentTypes}
                 onChange={onPaymentChange}
               />
             </CheckoutStep>
@@ -92,13 +97,12 @@ Checkout.propTypes = {
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
 };
 Checkout.defaultProps = {
-  backUrl: '/cart',
   formAuthenticity: {},
   submitOrderUrl: vendorOrder(),
 };

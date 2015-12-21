@@ -16,8 +16,8 @@ class Cart extends Component {
       onDeliveryChange,
       onFieldChange,
       onPaymentChange,
-      paymentMethod,
-      paymentMethods,
+      paymentType,
+      paymentTypes,
       publicOffer,
       submitOrderUrl,
       totalCount,
@@ -39,8 +39,8 @@ class Cart extends Component {
             onDeliveryChange={onDeliveryChange}
             onFieldChange={onFieldChange}
             onPaymentChange={onPaymentChange}
-            paymentMethod={paymentMethod}
-            paymentMethods={paymentMethods}
+            paymentType={paymentType}
+            paymentTypes={paymentTypes}
             publicOffer={publicOffer}
             submitOrderUrl={submitOrderUrl}
           />
@@ -61,8 +61,8 @@ Cart.propTypes = {
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
   totalCount: PropTypes.number,

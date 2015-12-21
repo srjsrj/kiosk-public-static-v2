@@ -12,15 +12,15 @@ class CartContainer extends Component {
       deliveryTypeId,
       deliveryTypes,
       fields,
-      paymentMethodId,
-      paymentMethods,
+      paymentTypeId,
+      paymentTypes,
     } = props;
     const deliveryType = this.matchEntity(deliveryTypes, deliveryTypeId);
-    const paymentMethod = this.matchEntity(paymentMethods, paymentMethodId);
+    const paymentType = this.matchEntity(paymentTypes, paymentTypeId);
 
     this.state = {
       deliveryType,
-      paymentMethod,
+      paymentType,
       fields: props.fields.map((field) => {
         const isRequired = deliveryType
           ? deliveryType.requiredFields.indexOf(field.name) > -1
@@ -113,7 +113,7 @@ class CartContainer extends Component {
     });
   }
   changePayment(payment) {
-    this.setState({ paymentMethod: payment });
+    this.setState({ paymentType: payment });
   }
   render() {
     const {
@@ -123,11 +123,11 @@ class CartContainer extends Component {
       deliveryTypes,
       errorMessage,
       formAuthenticity,
-      paymentMethods,
+      paymentTypes,
       publicOffer,
       submitOrderUrl,
     } = this.props;
-    const { deliveryType, fields, paymentMethod } = this.state;
+    const { deliveryType, fields, paymentType } = this.state;
 
     return (
       <Cart
@@ -141,8 +141,8 @@ class CartContainer extends Component {
         onDeliveryChange={this.changeDelivery}
         onFieldChange={this.changeField}
         onPaymentChange={this.changePayment}
-        paymentMethod={paymentMethod}
-        paymentMethods={this.getPaymentsForDelivery(deliveryType, paymentMethods)}
+        paymentType={paymentType}
+        paymentTypes={this.getPaymentsForDelivery(deliveryType, paymentTypes)}
         publicOffer={publicOffer}
         submitOrderUrl={submitOrderUrl}
         totalCount={cart.totalCount}
@@ -162,9 +162,9 @@ CartContainer.propTypes = {
   errorMessage: PropTypes.string,
   fields: PropTypes.arrayOf(schemas.checkoutField),
   formAuthenticity: schemas.formAuthenticity,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethodId: PropTypes.number,
-  paymentMethods: PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypeId: PropTypes.number,
+  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
 };

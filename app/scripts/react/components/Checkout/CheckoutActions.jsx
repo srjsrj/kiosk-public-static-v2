@@ -4,20 +4,33 @@ import * as schemas from '../../schemas';
 import CheckoutPublicOffer from './CheckoutPublicOffer';
 
 class CheckoutActions extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(ev) {
+    const { backUrl } = this.props;
+
+    if (!backUrl) {
+      ev.preventDefault();
+      window.history.back();
+    }
+  }
   render() {
     const { backUrl, publicOffer } = this.props;
 
     return (
       <div className="b-cart__action">
         {publicOffer && publicOffer.show
-          ? <CheckoutPublicOffer url={publicOffer.url} />
+          ? <CheckoutPublicOffer {...publicOffer} />
           : null
         }
         <div className="b-cart__action__container">
           <div className="b-cart__action__col-back">
             <a
               className="b-btn b-btn_trans b-cart__action__clear"
-              href={backUrl}
+              href={backUrl || '#'}
+              onClick={this.handleClick}
             >
               {t('vendor.order.go_back')}
             </a>
@@ -36,7 +49,7 @@ class CheckoutActions extends Component {
 }
 
 CheckoutActions.propTypes = {
-  backUrl: PropTypes.string.isRequired,
+  backUrl: PropTypes.string,
   publicOffer: schemas.checkoutPublicOffer,
 };
 
