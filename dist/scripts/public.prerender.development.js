@@ -20,10 +20,11 @@ ProductBlock = require('./react/components/Product/ProductBlock');
 ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 TopBanner = require('./react/components/TopBanner');
 CartCoupon = require('./react/components/Cart/CartCoupon');
+OrderCoupon = require('./react/components/Checkout/CheckoutCoupon');
 Clientbar = require('./react/components/Clientbar');
 OrderContainer = require('./react/components/Cart').CartContainer;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":2,"./react/components/Cart":10,"./react/components/Cart/CartCoupon":8,"./react/components/Clientbar":21,"./react/components/Logo/LogoContainer":24,"./react/components/Product/ProductBlock":34,"./react/components/Product/ProductCard":49,"./react/components/TopBanner":67,"./react/reducers/Design.prerender":99,"./react/reducers/Popup":100,"react":"react","redux":"redux","redux/react":340}],2:[function(require,module,exports){
+},{"./locales/numeral/ru":2,"./react/components/Cart":10,"./react/components/Cart/CartCoupon":8,"./react/components/Checkout/CheckoutCoupon":14,"./react/components/Clientbar":21,"./react/components/Logo/LogoContainer":24,"./react/components/Product/ProductBlock":34,"./react/components/Product/ProductCard":49,"./react/components/TopBanner":67,"./react/reducers/Design.prerender":99,"./react/reducers/Popup":100,"react":"react","redux":"redux","redux/react":340}],2:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
