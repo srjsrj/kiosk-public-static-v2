@@ -1,15 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import Image from '../../common/Image';
+import { RelativeImage } from '../../common/Image';
 
 class ProductBlockImage extends Component {
-  state = {
-    isHover: false,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isHover: false,
+    };
+
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
   getCurrentImage() {
-    const { index_image_url, second_image_url } = this.props.product;
+    const { index_image, second_image } = this.props.product;
     const { isHover } = this.state;
 
-    return isHover && second_image_url ? second_image_url : index_image_url;
+    return isHover && second_image ? second_image : index_image;
   }
   handleMouseEnter() {
     this.setState({ isHover: true });
@@ -18,28 +25,30 @@ class ProductBlockImage extends Component {
     this.setState({ isHover: false });
   }
   render() {
-    const { maxWidth, product: {second_image_url, title} } = this.props;
+    const { maxWidth, product: {second_image, title} } = this.props;
     const { currentImage } = this.state;
 
     return (
       <span
-        onMouseEnter={this.handleMouseEnter.bind(this)}
-        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
       >
-        <Image
+        <RelativeImage
           className="b-item__pic"
-          image={{ url: this.getCurrentImage() }}
-          maxWidth={maxWidth}
+          hasFixedSize={true}
+          image={this.getCurrentImage()}
           title={title}
         />
-        {second_image_url &&
-          <span style={{ display: 'none!important' }}>
-            <Image
-              className="b-item__pic"
-              image={{ url: second_image_url }}
-              maxWidth={maxWidth}
-            />
-          </span>
+        {second_image
+          ? <span style={{ display: 'none!important' }}>
+              <RelativeImage
+                className="b-item__pic"
+                hasFixedSize={true}
+                image={second_image}
+                maxWidth={maxWidth}
+              />
+            </span>
+          : null
         }
       </span>
     );

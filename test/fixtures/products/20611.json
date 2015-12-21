@@ -460,7 +460,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://cc.kiiiosk.ru/products/16445-velosiped-specialized-pitch-comp-650b-2015-razmer-s-krasnyy",
       "goods": [
         {
@@ -516,7 +525,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/images/fallback/product-none.png",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://cc.kiiiosk.ru/products/18589-tsep-kryptonite-evolution-series-4-1055-mini",
       "goods": [
         {

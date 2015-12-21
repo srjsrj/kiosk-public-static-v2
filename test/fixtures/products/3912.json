@@ -580,7 +580,16 @@
       "is_label_new": false,
       "is_run_out": true,
       "is_sold": true,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/32918/19939c0d-6c2b-42fc-beed-c5b05a27ddd4.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wannabe.3001.vkontraste.ru/products/35770-koltso-shibari-5-shnurov-roz-zolochenie",
       "goods": [
         {
@@ -600,7 +609,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/6809/ca40729b-0f0f-4bcf-9f09-c3fcb102a5e7.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wannabe.3001.vkontraste.ru/products/19319-minikoltso-marge-bez-kamney-chernenoe",
       "goods": [
         {
@@ -828,7 +846,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/25446/43faea2b-5cca-4164-ac57-110fedc5f6ff.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wannabe.3001.vkontraste.ru/products/24198-minikoltso-morganna-s-tsirkonami-chernenoe",
       "goods": [
         {
@@ -970,7 +997,16 @@
       "is_label_new": false,
       "is_run_out": true,
       "is_sold": true,
-      "index_image_url": "http://3001.vkontraste.ru/uploads/shop/5/uploads/product_image/image/32890/fc2fadf8-ca36-434e-b8ce-76cd4f19bbc9.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://wannabe.3001.vkontraste.ru/products/35752-koltso-shibari-prostoy-uzel-chernenie",
       "goods": [
         {

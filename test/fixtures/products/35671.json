@@ -290,7 +290,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31405/d05e54d0-311b-4254-9a0b-ea35ab6fd187.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://nina.kiiiosk.ru/products/35672-nabor-pelyonok-zima",
       "goods": [
         {
@@ -346,7 +355,16 @@
       "is_label_new": false,
       "is_run_out": false,
       "is_sold": false,
-      "index_image_url": "http://assets.kiiiosk.ru/uploads/shop/663/uploads/product_image/image/31406/3a5bca84-55f1-4184-9b4c-8c93908ebbdd.jpg",
+      "index_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/5300/image.png",
+        "width": 1500,
+        "height": 1500,
+      },
+      "second_image": {
+        "url": "http://assets.kiiiosk.ru/uploads/shop/5/uploads/product_image/image/26264/450123b4-7c9e-4ae9-a04e-05fda504d0a2.jpg",
+        "width": 1500,
+        "height": 1500,
+      },
       "public_url": "http://nina.kiiiosk.ru/products/35673-nabor-pelenok-leto-zima",
       "goods": [
         {
