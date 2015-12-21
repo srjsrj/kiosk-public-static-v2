@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Image from '../../common/Image';
+import { RelativeImage } from '../../common/Image';
 
 class ProductBlockImage extends Component {
   constructor(props) {
@@ -33,16 +33,17 @@ class ProductBlockImage extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <Image
+        <RelativeImage
           className="b-item__pic"
+          hasFixedSize={true}
           image={this.getCurrentImage()}
-          maxWidth={maxWidth}
           title={title}
         />
         {second_image
           ? <span style={{ display: 'none!important' }}>
-              <Image
+              <RelativeImage
                 className="b-item__pic"
+                hasFixedSize={true}
                 image={second_image}
                 maxWidth={maxWidth}
               />
