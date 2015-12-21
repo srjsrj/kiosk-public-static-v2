@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
+import { simpleFormat } from '../../helpers/text';
 import * as schemas from '../../schemas';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
@@ -37,9 +38,10 @@ class CheckoutDeliveries extends Component {
                 />
               : null
             }
-            <div className="cart__form__delivery-address">
-              {item.description}
-            </div>
+            <div
+              className="cart__form__delivery-address"
+              dangerouslySetInnerHTML={{ __html: simpleFormat(item.description) }}
+            />
           </label>
         </span>
       </div>
