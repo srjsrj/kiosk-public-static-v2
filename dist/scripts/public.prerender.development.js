@@ -128,8 +128,8 @@ var Cart = (function (_Component) {
       var onDeliveryChange = _props.onDeliveryChange;
       var onFieldChange = _props.onFieldChange;
       var onPaymentChange = _props.onPaymentChange;
-      var paymentMethod = _props.paymentMethod;
-      var paymentMethods = _props.paymentMethods;
+      var paymentType = _props.paymentType;
+      var paymentTypes = _props.paymentTypes;
       var publicOffer = _props.publicOffer;
       var submitOrderUrl = _props.submitOrderUrl;
       var totalCount = _props.totalCount;
@@ -153,8 +153,8 @@ var Cart = (function (_Component) {
             onDeliveryChange: onDeliveryChange,
             onFieldChange: onFieldChange,
             onPaymentChange: onPaymentChange,
-            paymentMethod: paymentMethod,
-            paymentMethods: paymentMethods,
+            paymentType: paymentType,
+            paymentTypes: paymentTypes,
             publicOffer: publicOffer,
             submitOrderUrl: submitOrderUrl
           })
@@ -177,8 +177,8 @@ Cart.propTypes = {
   onDeliveryChange: _react.PropTypes.func.isRequired,
   onFieldChange: _react.PropTypes.func.isRequired,
   onPaymentChange: _react.PropTypes.func.isRequired,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: _react.PropTypes.string,
   totalCount: _react.PropTypes.number,
@@ -293,15 +293,15 @@ var CartContainer = (function (_Component) {
     var deliveryTypeId = props.deliveryTypeId;
     var deliveryTypes = props.deliveryTypes;
     var fields = props.fields;
-    var paymentMethodId = props.paymentMethodId;
-    var paymentMethods = props.paymentMethods;
+    var paymentTypeId = props.paymentTypeId;
+    var paymentTypes = props.paymentTypes;
 
     var deliveryType = this.matchEntity(deliveryTypes, deliveryTypeId);
-    var paymentMethod = this.matchEntity(paymentMethods, paymentMethodId);
+    var paymentType = this.matchEntity(paymentTypes, paymentTypeId);
 
     this.state = {
       deliveryType: deliveryType,
-      paymentMethod: paymentMethod,
+      paymentType: paymentType,
       fields: props.fields.map(function (field) {
         var isRequired = deliveryType ? deliveryType.requiredFields.indexOf(field.name) > -1 : false;
         var isReserved = deliveryType ? !!deliveryType.reservedFieldValues[field.name] : false;
@@ -398,7 +398,7 @@ var CartContainer = (function (_Component) {
   }, {
     key: 'changePayment',
     value: function changePayment(payment) {
-      this.setState({ paymentMethod: payment });
+      this.setState({ paymentType: payment });
     }
   }, {
     key: 'render',
@@ -410,13 +410,13 @@ var CartContainer = (function (_Component) {
       var deliveryTypes = _props.deliveryTypes;
       var errorMessage = _props.errorMessage;
       var formAuthenticity = _props.formAuthenticity;
-      var paymentMethods = _props.paymentMethods;
+      var paymentTypes = _props.paymentTypes;
       var publicOffer = _props.publicOffer;
       var submitOrderUrl = _props.submitOrderUrl;
       var _state = this.state;
       var deliveryType = _state.deliveryType;
       var fields = _state.fields;
-      var paymentMethod = _state.paymentMethod;
+      var paymentType = _state.paymentType;
 
       return _react2['default'].createElement(_Cart2['default'], {
         backUrl: backUrl,
@@ -429,8 +429,8 @@ var CartContainer = (function (_Component) {
         onDeliveryChange: this.changeDelivery,
         onFieldChange: this.changeField,
         onPaymentChange: this.changePayment,
-        paymentMethod: paymentMethod,
-        paymentMethods: this.getPaymentsForDelivery(deliveryType, paymentMethods),
+        paymentType: paymentType,
+        paymentTypes: this.getPaymentsForDelivery(deliveryType, paymentTypes),
         publicOffer: publicOffer,
         submitOrderUrl: submitOrderUrl,
         totalCount: cart.totalCount,
@@ -454,9 +454,9 @@ CartContainer.propTypes = {
   errorMessage: _react.PropTypes.string,
   fields: _react.PropTypes.arrayOf(schemas.checkoutField),
   formAuthenticity: schemas.formAuthenticity,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethodId: _react.PropTypes.number,
-  paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypeId: _react.PropTypes.number,
+  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: _react.PropTypes.string
 };
@@ -830,8 +830,8 @@ var Checkout = (function (_Component) {
       var onDeliveryChange = _props.onDeliveryChange;
       var onFieldChange = _props.onFieldChange;
       var onPaymentChange = _props.onPaymentChange;
-      var paymentMethod = _props.paymentMethod;
-      var paymentMethods = _props.paymentMethods;
+      var paymentType = _props.paymentType;
+      var paymentTypes = _props.paymentTypes;
       var publicOffer = _props.publicOffer;
       var submitOrderUrl = _props.submitOrderUrl;
 
@@ -849,7 +849,11 @@ var Checkout = (function (_Component) {
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__form b-form' },
-          errorMessage && _react2['default'].createElement(_commonAlert2['default'], { danger: true, text: errorMessage }),
+          errorMessage ? _react2['default'].createElement(_commonAlert2['default'], {
+            className: 'cart-info',
+            danger: true,
+            text: errorMessage
+          }) : null,
           _react2['default'].createElement(
             'div',
             { className: 'b-cart__form__inner' },
@@ -875,8 +879,8 @@ var Checkout = (function (_Component) {
               _CheckoutStep2['default'],
               { number: 3, title: (0, _i18next.t)('vendor.order.new.payment_title') },
               _react2['default'].createElement(_CheckoutPayments2['default'], {
-                current: paymentMethod,
-                items: paymentMethods,
+                current: paymentType,
+                items: paymentTypes,
                 onChange: onPaymentChange
               })
             )
@@ -908,13 +912,12 @@ Checkout.propTypes = {
   onDeliveryChange: _react.PropTypes.func.isRequired,
   onFieldChange: _react.PropTypes.func.isRequired,
   onPaymentChange: _react.PropTypes.func.isRequired,
-  paymentMethod: schemas.paymentMethod,
-  paymentMethods: _react.PropTypes.arrayOf(schemas.paymentMethod),
+  paymentType: schemas.paymentType,
+  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: _react.PropTypes.string
 };
 Checkout.defaultProps = {
-  backUrl: '/cart',
   formAuthenticity: {},
   submitOrderUrl: (0, _routesApp.vendorOrder)()
 };
@@ -958,13 +961,24 @@ var _CheckoutPublicOffer2 = _interopRequireDefault(_CheckoutPublicOffer);
 var CheckoutActions = (function (_Component) {
   _inherits(CheckoutActions, _Component);
 
-  function CheckoutActions() {
+  function CheckoutActions(props) {
     _classCallCheck(this, CheckoutActions);
 
-    _get(Object.getPrototypeOf(CheckoutActions.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(CheckoutActions.prototype), 'constructor', this).call(this, props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   _createClass(CheckoutActions, [{
+    key: 'handleClick',
+    value: function handleClick(ev) {
+      var backUrl = this.props.backUrl;
+
+      if (!backUrl) {
+        ev.preventDefault();
+        window.history.back();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -974,7 +988,7 @@ var CheckoutActions = (function (_Component) {
       return _react2['default'].createElement(
         'div',
         { className: 'b-cart__action' },
-        publicOffer && publicOffer.show ? _react2['default'].createElement(_CheckoutPublicOffer2['default'], { url: publicOffer.url }) : null,
+        publicOffer && publicOffer.show ? _react2['default'].createElement(_CheckoutPublicOffer2['default'], publicOffer) : null,
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__action__container' },
@@ -985,7 +999,8 @@ var CheckoutActions = (function (_Component) {
               'a',
               {
                 className: 'b-btn b-btn_trans b-cart__action__clear',
-                href: backUrl
+                href: backUrl || '#',
+                onClick: this.handleClick
               },
               (0, _i18next.t)('vendor.order.go_back')
             )
@@ -1008,7 +1023,7 @@ var CheckoutActions = (function (_Component) {
 })(_react.Component);
 
 CheckoutActions.propTypes = {
-  backUrl: _react.PropTypes.string.isRequired,
+  backUrl: _react.PropTypes.string,
   publicOffer: schemas.checkoutPublicOffer
 };
 
@@ -1616,9 +1631,9 @@ var CheckoutPayments = (function (_Component) {
 })(_react.Component);
 
 CheckoutPayments.propTypes = {
-  current: schemas.paymentMethod,
+  current: schemas.paymentType,
   itemFieldName: _react.PropTypes.string,
-  items: _react.PropTypes.arrayOf(schemas.paymentMethod),
+  items: _react.PropTypes.arrayOf(schemas.paymentType),
   onChange: _react.PropTypes.func.isRequired
 };
 CheckoutPayments.defaultProps = {
@@ -1672,8 +1687,9 @@ var CheckoutPublicOffer = (function (_Component) {
   _createClass(CheckoutPublicOffer, [{
     key: 'render',
     value: function render() {
-      var _props$url = this.props.url;
-      var url = _props$url === undefined ? '' : _props$url;
+      var _props = this.props;
+      var errorMessage = _props.errorMessage;
+      var url = _props.url;
 
       return _react2['default'].createElement(
         'div',
@@ -1700,7 +1716,12 @@ var CheckoutPublicOffer = (function (_Component) {
                   value: '1'
                 }),
                 _react2['default'].createElement('span', { dangerouslySetInnerHTML: { __html: (0, _i18next.t)('vendor.order.public_offer_accepted_html', { url: url }) } })
-              )
+              ),
+              errorMessage ? _react2['default'].createElement(
+                'span',
+                { className: 'help-block' },
+                errorMessage
+              ) : null
             )
           )
         )
@@ -1712,7 +1733,11 @@ var CheckoutPublicOffer = (function (_Component) {
 })(_react.Component);
 
 CheckoutPublicOffer.propTypes = {
+  errorMessage: _react.PropTypes.string,
   url: _react.PropTypes.string
+};
+CheckoutPublicOffer.defaultProps = {
+  url: ''
 };
 
 exports['default'] = CheckoutPublicOffer;
@@ -8000,15 +8025,15 @@ var _money = require('./money');
 
 exports.money = _interopRequire(_money);
 
-var _paymentMethod = require('./paymentMethod');
+var _paymentType = require('./paymentType');
 
-exports.paymentMethod = _interopRequire(_paymentMethod);
+exports.paymentType = _interopRequire(_paymentType);
 
 var _product = require('./product');
 
 exports.product = _interopRequire(_product);
 
-},{"./cart":100,"./checkoutCoupon":101,"./checkoutField":102,"./checkoutPublicOffer":103,"./deliveryType":104,"./formAuthenticity":105,"./good":106,"./money":108,"./paymentMethod":109,"./product":110}],108:[function(require,module,exports){
+},{"./cart":100,"./checkoutCoupon":101,"./checkoutField":102,"./checkoutPublicOffer":103,"./deliveryType":104,"./formAuthenticity":105,"./good":106,"./money":108,"./paymentType":109,"./product":110}],108:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

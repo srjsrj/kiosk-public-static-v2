@@ -6,5 +6,5 @@ export { default as deliveryType } from './deliveryType';
 export { default as formAuthenticity } from './formAuthenticity';
 export { default as good } from './good';
 export { default as money } from './money';
-export { default as paymentMethod } from './paymentMethod';
+export { default as paymentType } from './paymentType';
 export { default as product } from './product';
