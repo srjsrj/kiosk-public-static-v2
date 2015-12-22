@@ -5835,38 +5835,6 @@ var ScrollToTop = (function (_Component) {
       return container.scrollTop != null ? container.scrollTop : container.pageYOffset;
     }
   }, {
-    key: 'speedConduct',
-    value: function speedConduct(originSpeed, duration, cur, total) {
-      if (total === 0) return 0;
-
-      var PI = Math.PI;
-      var method = Math.sin;
-
-      var INITIAL_SPEED = 2;
-
-      return originSpeed * method(PI * (total - cur) / total) + INITIAL_SPEED;
-    }
-  }, {
-    key: 'scrollToTop',
-    value: function scrollToTop(elt, duration) {
-      var _this = this;
-
-      var originY = (0, _helpersDom.getScrollTop)(elt);
-      var originSpeed = originY / (duration / 60);
-      var currentY = originY;
-      var currentSpeed = undefined;
-
-      var operate = function operate() {
-        currentSpeed = _this.speedConduct(originSpeed, duration, currentY, originY);
-        currentY -= currentSpeed;
-        if ((0, _helpersDom.setScrollTop)(elt, currentY) !== 0) {
-          (0, _helpersAnimation.animate)(operate);
-        }
-      };
-
-      operate();
-    }
-  }, {
     key: 'updateVisibility',
     value: function updateVisibility() {
       var offset = this.props.offset;
@@ -5881,7 +5849,7 @@ var ScrollToTop = (function (_Component) {
     key: 'handleClick',
     value: function handleClick() {
       var container = this.getContainer();
-      this.scrollToTop(container, this.props.duration);
+      (0, _helpersAnimation.scrollToTop)(container, this.props.duration);
     }
   }, {
     key: 'render',
@@ -5890,7 +5858,8 @@ var ScrollToTop = (function (_Component) {
 
       var buttonClasses = (0, _classnames2['default'])({
         'ScrollToTop': true,
-        'is-visible': isVisible
+        'is-visible': isVisible,
+        'element--active-opacity': true
       });
 
       return _react2['default'].createElement(
@@ -5919,7 +5888,7 @@ ScrollToTop.propTypes = {
 ScrollToTop.defaultProps = {
   containerSelector: 'window',
   duration: 1000,
-  offset: 100
+  offset: 300
 };
 
 exports['default'] = ScrollToTop;
@@ -7605,11 +7574,14 @@ var PROPERTY_DICTIONARY_TYPE = 'items';
 exports.PROPERTY_DICTIONARY_TYPE = PROPERTY_DICTIONARY_TYPE;
 
 },{}],95:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _dom = require('./dom');
+
 var animate = function animate(runner) {
   var action = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (cb) {
     window.setTimeout(cb, 1000 / 60);
@@ -7617,9 +7589,39 @@ var animate = function animate(runner) {
 
   action.call(window, runner);
 };
-exports.animate = animate;
 
-},{}],96:[function(require,module,exports){
+exports.animate = animate;
+var speedConduct = function speedConduct(originSpeed, duration, cur, total) {
+  if (total === 0) return 0;
+
+  var PI = Math.PI;
+  var method = Math.sin;
+
+  var INITIAL_SPEED = 2;
+
+  return originSpeed * method(PI * (total - cur) / total) + INITIAL_SPEED;
+};
+
+exports.speedConduct = speedConduct;
+var scrollToTop = function scrollToTop(elt, duration) {
+  var originY = (0, _dom.getScrollTop)(elt);
+  var originSpeed = originY / (duration / 60);
+  var currentY = originY;
+  var currentSpeed = undefined;
+
+  var operate = function operate() {
+    currentSpeed = speedConduct(originSpeed, duration, currentY, originY);
+    currentY -= currentSpeed;
+    if ((0, _dom.setScrollTop)(elt, currentY) !== 0) {
+      animate(operate);
+    }
+  };
+
+  operate();
+};
+exports.scrollToTop = scrollToTop;
+
+},{"./dom":96}],96:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
