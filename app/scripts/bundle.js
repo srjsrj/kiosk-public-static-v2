@@ -34,5 +34,6 @@ global.CartCoupon = require('./react/components/Cart/CartCoupon');
 global.OrderCoupon = require('./react/components/Checkout/CheckoutCoupon');
 global.OrderContainer = require('./react/components/Cart').CartContainer;
 global.InstagramContainer = require('./react/components/Instagram').InstagramContainer;
+global.ScrollToTop = require('./react/components/ScrollToTop');
 
 import './react/application';

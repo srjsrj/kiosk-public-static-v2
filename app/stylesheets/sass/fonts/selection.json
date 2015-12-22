@@ -17,7 +17,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 1,
-				"order": 6,
+				"order": 3,
 				"ligatures": "",
 				"prevSize": 32,
 				"code": 57345,
@@ -43,7 +43,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 3,
-				"order": 5,
+				"order": 2,
 				"ligatures": "",
 				"prevSize": 32,
 				"code": 57346,
@@ -68,7 +68,7 @@
 			},
 			"attrs": [],
 			"properties": {
-				"order": 8,
+				"order": 4,
 				"id": 4,
 				"prevSize": 32,
 				"code": 57347,
@@ -94,7 +94,7 @@
 			"attrs": [],
 			"properties": {
 				"id": 2,
-				"order": 3,
+				"order": 1,
 				"ligatures": "",
 				"prevSize": 32,
 				"code": 57348,
@@ -103,6 +103,30 @@
 			"setIdx": 0,
 			"setId": 2,
 			"iconIdx": 3
+		},
+		{
+			"icon": {
+				"paths": [
+					"M512.001 0c-282.761 0-512.001 229.24-512.001 512.001 0 282.829 229.24 512.001 512.001 512.001 282.829 0 512.001-229.172 512.001-512.001-0.002-282.761-229.174-512.001-512.001-512.001zM757.624 621.228c-13.313 13.313-34.953 13.313-48.264 0l-197.359-197.359-197.359 197.359c-13.313 13.313-34.953 13.313-48.264 0-13.313-13.244-13.313-34.953 0-48.264l221.388-221.39c6.691-6.691 15.429-9.966 24.235-9.966s17.544 3.278 24.235 9.966l221.388 221.388c13.313 13.313 13.313 34.885 0 48.266z"
+				],
+				"attrs": [],
+				"isMulticolor": false,
+				"grid": 0,
+				"tags": [
+					"arrow40"
+				]
+			},
+			"attrs": [],
+			"properties": {
+				"order": 8,
+				"id": 5,
+				"prevSize": 32,
+				"code": 57349,
+				"name": "scroll-to-top"
+			},
+			"setIdx": 0,
+			"setId": 2,
+			"iconIdx": 4
 		}
 	],
 	"height": 1024,
@@ -132,7 +156,9 @@
 			"classSelector": ".Icon",
 			"showMetrics": true,
 			"showMetadata": true,
-			"showVersion": true
+			"showVersion": true,
+			"noie8": false,
+			"ie7": false
 		},
 		"imagePref": {
 			"prefix": "icon-",
