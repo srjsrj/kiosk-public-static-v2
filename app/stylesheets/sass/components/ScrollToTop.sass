@@ -1,0 +1,44 @@
+$width: 60px
+$height: 60px
+$widthPortable: 40px
+$heightPortable: 40px
+$backgroundColor: #e86256
+$shadowColor: #000000
+$iconColor: #f0f0f0
+
+.ScrollToTop
+  display: inline-block
+  width: $width
+  height: $height
+  position: fixed
+  right: 30px
+  bottom: 30px
+  opacity: 0
+  visibility: hidden
+  cursor: pointer
+  border-radius: 3px
+  box-shadow: 0 0 10px rgba($shadowColor, .05)
+  background-color: rgba($backgroundColor, .8)
+  transition: opacity .3s 0s, background-color .3s
+  &.is-visible
+    visibility: visible
+    opacity: 1
+    &:hover
+      background-color: rgba($backgroundColor, 1)
+  @include grid-media-query(portable)
+    width: $widthPortable
+    height: $heightPortable
+    right: 20px
+    bottom: 20px
+  &-content
+    display: table
+    height: 100%
+    width: 100%
+    text-align: center
+    .Icon
+      color: $iconColor
+      font-size: 40px
+      display: table-cell
+      vertical-align: middle
+      @include grid-media-query(portable)
+        font-size: 25px
