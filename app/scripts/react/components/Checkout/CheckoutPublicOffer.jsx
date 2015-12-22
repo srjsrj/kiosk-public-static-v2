@@ -5,7 +5,7 @@ import HiddenInput from '../common/HiddenInput';
 
 class CheckoutPublicOffer extends Component {
   render() {
-    const { errorMessage, url } = this.props;
+    const { errorMessage, value, url } = this.props;
 
     return (
       <div className="b-form__row b-cart__form__data-row">
@@ -19,6 +19,7 @@ class CheckoutPublicOffer extends Component {
               <label className="boolean optional">
                 <Checkbox
                   className="boolean m-r-sm"
+                  defaultChecked={value}
                   name="vendor_order[public_offer_accepted]"
                   value="1"
                 />
@@ -38,6 +39,7 @@ class CheckoutPublicOffer extends Component {
 
 CheckoutPublicOffer.propTypes = {
   errorMessage: PropTypes.string,
+  value: PropTypes.bool,
   url: PropTypes.string,
 };
 CheckoutPublicOffer.defaultProps = {

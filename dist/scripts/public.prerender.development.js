@@ -1690,6 +1690,7 @@ var CheckoutPublicOffer = (function (_Component) {
     value: function render() {
       var _props = this.props;
       var errorMessage = _props.errorMessage;
+      var value = _props.value;
       var url = _props.url;
 
       return _react2['default'].createElement(
@@ -1713,6 +1714,7 @@ var CheckoutPublicOffer = (function (_Component) {
                 { className: 'boolean optional' },
                 _react2['default'].createElement(_commonCheckbox2['default'], {
                   className: 'boolean m-r-sm',
+                  defaultChecked: value,
                   name: 'vendor_order[public_offer_accepted]',
                   value: '1'
                 }),
@@ -1735,6 +1737,7 @@ var CheckoutPublicOffer = (function (_Component) {
 
 CheckoutPublicOffer.propTypes = {
   errorMessage: _react.PropTypes.string,
+  value: _react.PropTypes.bool,
   url: _react.PropTypes.string
 };
 CheckoutPublicOffer.defaultProps = {
@@ -8071,7 +8074,9 @@ Object.defineProperty(exports, '__esModule', {
 var _react = require('react');
 
 exports['default'] = _react.PropTypes.shape({
+  errorMessage: _react.PropTypes.string,
   show: _react.PropTypes.bool.isRequired,
+  value: _react.PropTypes.bool,
   url: _react.PropTypes.string
 });
 module.exports = exports['default'];
