@@ -20,6 +20,7 @@ class CheckoutPublicOffer extends Component {
                 <Checkbox
                   className="boolean m-r-sm"
                   defaultChecked={value}
+                  id="vendor_order_public_offer_accepted"
                   name="vendor_order[public_offer_accepted]"
                   value="1"
                 />
