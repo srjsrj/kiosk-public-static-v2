@@ -1,7 +1,5 @@
-$width: 60px
-$height: 60px
-$widthPortable: 40px
-$heightPortable: 40px
+$width: 50px
+$height: 50px
 $backgroundColor: #e86256
 $shadowColor: #000000
 $iconColor: #f0f0f0
@@ -16,7 +14,7 @@ $iconColor: #f0f0f0
   opacity: 0
   visibility: hidden
   cursor: pointer
-  border-radius: 3px
+  border-radius: 25px
   box-shadow: 0 0 10px rgba($shadowColor, .05)
   background-color: rgba($backgroundColor, .8)
   transition: opacity .3s 0s, background-color .3s
@@ -25,11 +23,9 @@ $iconColor: #f0f0f0
     opacity: 1
     &:hover
       background-color: rgba($backgroundColor, 1)
-  @include grid-media-query(portable)
-    width: $widthPortable
-    height: $heightPortable
-    right: 20px
-    bottom: 20px
+  @include grid-media-query(palm)
+    right: 15px
+    bottom: 15px
   &-content
     display: table
     height: 100%
@@ -37,8 +33,6 @@ $iconColor: #f0f0f0
     text-align: center
     .Icon
       color: $iconColor
-      font-size: 40px
+      font-size: 25px
       display: table-cell
       vertical-align: middle
-      @include grid-media-query(portable)
-        font-size: 25px
