@@ -1,7 +1,8 @@
 import React, { findDOMNode, Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import * as schemas from '../../../schemas';
-import RelativeImage from '../Image/RelativeImage';
+import ImageSliderSlides from './ImageSliderSlides';
+import ImageSliderThumbs from './ImageSliderThumbs';
 
 const SLIDER_OPTIONS = {
   autoPlay: 5000,
@@ -10,15 +11,19 @@ const SLIDER_OPTIONS = {
 };
 
 class ImageSlider extends Component {
+  constructor(props) {
+    super(props);
+
+    this.initSlider = this.initSlider.bind(this);
+    this.changeSelectedSlide = this.changeSelectedSlide.bind(this);
+  }
   componentDidMount() {
     //FIXME: Если делать без setTimeout, то первый показ слайда пропускается
-    setTimeout(() => {
-      this.initSlider()
-    }, 0);
+    setTimeout(this.initSlider, 0);
   }
   initSlider() {
     const { className } = this.props;
-    const $elt = $(findDOMNode(this.refs.slider));
+    const $elt = $(findDOMNode(this.refs.slides));
     let options = SLIDER_OPTIONS;
 
     if (className) {
@@ -55,32 +60,28 @@ class ImageSlider extends Component {
 
     $elt.owlCarousel(options);
   }
-  renderSlide(slide, idx) {
-    const image = <RelativeImage image={slide.image} title={slide.title} />
-
-    return (
-      <div className="b-slider__item" key={idx}>
-        {slide.url
-          ? <a href={slide.url} title={slide.title} target="_blank">
-              {image}
-            </a>
-          : image
-        }
-      </div>
-    );
+  changeSelectedSlide(idx) {
+    const $elt = $(findDOMNode(this.refs.slides));
+    $elt.trigger('owl.goTo', idx);
   }
   render() {
-    const { className, slides } = this.props;
+    const { className, hasThumbs, slides, thumbHeight, thumbWidth } = this.props;
+    const sliderClasses = classNames('b-slider', className);
     const filtered = slides.filter(slide => slide.image);
 
     return (
       <span>
-        <div
-          className={classNames('b-slider', className)}
-          ref="slider"
-        >
-          {filtered.map(this.renderSlide)}
+        <div className={sliderClasses}>
+          <ImageSliderSlides items={filtered} ref="slides" />
         </div>
+        {hasThumbs &&
+          <ImageSliderThumbs
+            items={filtered}
+            onThumbClick={this.changeSelectedSlide}
+            thumbHeight={thumbHeight}
+            thumbWidth={thumbWidth}
+          />
+        }
       </span>
     );
   }
@@ -94,8 +95,10 @@ ImageSlider.propTypes = {
   thumbWidth: PropTypes.number,
 };
 ImageSlider.defaultProps = {
-  hasThumbs: false,
+  hasThumbs: true,
   slides: [],
+  thumbWidth: 200,
+  thumbHeight: 100,
 };
 
 export default ImageSlider;

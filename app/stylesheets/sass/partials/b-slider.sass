@@ -22,10 +22,11 @@
     overflow: hidden
     background: url(#{$images-path}/loader.gif) 50% 50% no-repeat
     transition: height .2s ease
-    height: 40px
-    &.loaded
-      height: auto
-      background: none
+    &.slides
+      height: 40px
+      &.loaded
+        height: auto
+        background: none
     @include grid-media-query((palm, lap))
       padding-left: 0
       padding-right: 0
@@ -53,6 +54,6 @@
     &.active
       opacity: .8
     img
-      max-width: 100%
+      width: 100%
       height: auto
       vertical-align: top
