@@ -18,7 +18,7 @@ class ImageSlider extends Component {
   }
   initSlider() {
     const { className } = this.props;
-    const $elt = $(findDOMNode(this));
+    const $elt = $(findDOMNode(this.refs.slider));
     let options = SLIDER_OPTIONS;
 
     if (className) {
@@ -55,34 +55,46 @@ class ImageSlider extends Component {
 
     $elt.owlCarousel(options);
   }
-  render() {
-    const { className, slides } = this.props;
+  renderSlide(slide, idx) {
+    const image = <RelativeImage image={slide.image} title={slide.title} />
 
     return (
-      <div className={classNames('b-slider', className)}>
-        {slides
-          .filter((slide) => slide.image)
-          .map((slide) =>
-            <div className="b-slider__item" key={slide.url}>
-              <a href={slide.url} title={slide.title} target="_blank">
-                {slide.image
-                  ? <RelativeImage image={slide.image} title={slide.title} />
-                  : null
-                }
-              </a>
-            </div>
-          )
+      <div className="b-slider__item" key={idx}>
+        {slide.url
+          ? <a href={slide.url} title={slide.title} target="_blank">
+              {image}
+            </a>
+          : image
         }
       </div>
+    );
+  }
+  render() {
+    const { className, slides } = this.props;
+    const filtered = slides.filter(slide => slide.image);
+
+    return (
+      <span>
+        <div
+          className={classNames('b-slider', className)}
+          ref="slider"
+        >
+          {filtered.map(this.renderSlide)}
+        </div>
+      </span>
     );
   }
 }
 
 ImageSlider.propTypes = {
   className: PropTypes.string,
+  hasThumbs: PropTypes.bool,
   slides: PropTypes.arrayOf(schemas.slide),
+  thumbHeight: PropTypes.number,
+  thumbWidth: PropTypes.number,
 };
 ImageSlider.defaultProps = {
+  hasThumbs: false,
   slides: [],
 };
 

@@ -7096,7 +7096,7 @@ var ImageSlider = (function (_Component) {
     value: function initSlider() {
       var className = this.props.className;
 
-      var $elt = $((0, _react.findDOMNode)(this));
+      var $elt = $((0, _react.findDOMNode)(this.refs.slider));
       var options = SLIDER_OPTIONS;
 
       if (className) {
@@ -7131,28 +7131,42 @@ var ImageSlider = (function (_Component) {
       $elt.owlCarousel(options);
     }
   }, {
+    key: 'renderSlide',
+    value: function renderSlide(slide, idx) {
+      var image = _react2['default'].createElement(_ImageRelativeImage2['default'], { image: slide.image, title: slide.title });
+
+      return _react2['default'].createElement(
+        'div',
+        { className: 'b-slider__item', key: idx },
+        slide.url ? _react2['default'].createElement(
+          'a',
+          { href: slide.url, title: slide.title, target: '_blank' },
+          image
+        ) : image
+      );
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
       var className = _props.className;
       var slides = _props.slides;
 
+      var filtered = slides.filter(function (slide) {
+        return slide.image;
+      });
+
       return _react2['default'].createElement(
-        'div',
-        { className: (0, _classnames2['default'])('b-slider', className) },
-        slides.filter(function (slide) {
-          return slide.image;
-        }).map(function (slide) {
-          return _react2['default'].createElement(
-            'div',
-            { className: 'b-slider__item', key: slide.url },
-            _react2['default'].createElement(
-              'a',
-              { href: slide.url, title: slide.title, target: '_blank' },
-              slide.image ? _react2['default'].createElement(_ImageRelativeImage2['default'], { image: slide.image, title: slide.title }) : null
-            )
-          );
-        })
+        'span',
+        null,
+        _react2['default'].createElement(
+          'div',
+          {
+            className: (0, _classnames2['default'])('b-slider', className),
+            ref: 'slider'
+          },
+          filtered.map(this.renderSlide)
+        )
       );
     }
   }]);
@@ -7162,9 +7176,13 @@ var ImageSlider = (function (_Component) {
 
 ImageSlider.propTypes = {
   className: _react.PropTypes.string,
-  slides: _react.PropTypes.arrayOf(schemas.slide)
+  hasThumbs: _react.PropTypes.bool,
+  slides: _react.PropTypes.arrayOf(schemas.slide),
+  thumbHeight: _react.PropTypes.number,
+  thumbWidth: _react.PropTypes.number
 };
 ImageSlider.defaultProps = {
+  hasThumbs: false,
   slides: []
 };
 
