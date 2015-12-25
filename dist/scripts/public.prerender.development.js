@@ -2686,8 +2686,8 @@ var ProductBlockImage = (function (_Component) {
         },
         _react2['default'].createElement(_commonImage.RelativeImage, {
           className: 'b-item__pic',
-          hasFixedSize: true,
           image: this.getCurrentImage(),
+          maxWidth: maxWidth,
           title: title
         }),
         second_image ? _react2['default'].createElement(
@@ -2695,9 +2695,9 @@ var ProductBlockImage = (function (_Component) {
           { style: { display: 'none!important' } },
           _react2['default'].createElement(_commonImage.RelativeImage, {
             className: 'b-item__pic',
-            hasFixedSize: true,
             image: second_image,
-            maxWidth: maxWidth
+            maxWidth: maxWidth,
+            title: title
           })
         ) : null
       );
@@ -6776,7 +6776,7 @@ var _servicesThumbor = require('../../../services/Thumbor');
 
 var _servicesThumbor2 = _interopRequireDefault(_servicesThumbor);
 
-var memoize = function memoize() {
+var curry = function curry() {
   for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
@@ -6852,7 +6852,7 @@ var Image = (function (_Component) {
       var maxWidth = _props.maxWidth;
       var title = _props.title;
 
-      var imageArguments = memoize(image, maxHeight, maxWidth);
+      var imageArguments = curry(image, maxHeight, maxWidth);
 
       return _react2['default'].createElement('img', {
         alt: title,
@@ -6932,7 +6932,7 @@ var RelativeImage = (function (_Component) {
   _createClass(RelativeImage, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setRelativeSize();
+      this.setRelativeSize(this.props.maxHeight, this.props.maxWidth);
     }
   }, {
     key: 'getParentWithSize',
@@ -6951,19 +6951,19 @@ var RelativeImage = (function (_Component) {
     }
   }, {
     key: 'setRelativeSize',
-    value: function setRelativeSize() {
+    value: function setRelativeSize(maxHeight, maxWidth) {
       var elt = (0, _react.findDOMNode)(this);
       var parent = this.getParentWithSize(elt);
 
-      if (parent) {
-        var offsetHeight = parent.offsetHeight;
-        var offsetWidth = parent.offsetWidth;
+      var height = maxHeight;
+      var width = maxWidth;
 
-        this.setState({
-          height: offsetHeight,
-          width: offsetWidth
-        });
+      if (parent) {
+        height = parent.offsetHeight;
+        width = parent.offsetWidth;
       }
+
+      this.setState({ height: height, width: width });
     }
   }, {
     key: 'render',
@@ -6971,10 +6971,10 @@ var RelativeImage = (function (_Component) {
       var _state = this.state;
       var height = _state.height;
       var width = _state.width;
-      var test = _state.test;
 
-      if (height && width) {
+      if (height || width) {
         return _react2['default'].createElement(_Image2['default'], _extends({}, this.props, {
+          hasFixedSize: Boolean(height && width),
           maxHeight: height,
           maxWidth: width
         }));
@@ -6987,7 +6987,14 @@ var RelativeImage = (function (_Component) {
   return RelativeImage;
 })(_react.Component);
 
-RelativeImage.propTypes = _Image2['default'].propTypes;
+RelativeImage.propTypes = {
+  maxHeight: _react.PropTypes.number,
+  maxWidth: _react.PropTypes.number
+};
+RelativeImage.defaultProps = {
+  maxHeight: null,
+  maxWidth: null
+};
 
 exports['default'] = RelativeImage;
 module.exports = exports['default'];
@@ -41031,7 +41038,7 @@ _defaults(exports, _interopRequireWildcard(_libReact));
 
 }(window, document, jQuery));
 },{}],"i18next":[function(require,module,exports){
-// i18next, v1.11.1
+// i18next, v1.11.2
 // Copyright (c)2015 Jan Mühlemann (jamuhl).
 // Distributed under MIT license
 // http://i18next.com
@@ -42631,7 +42638,9 @@ _defaults(exports, _interopRequireWildcard(_libReact));
             }
         }
     
-        var postProcessorsToApply;
+        var postProcessorsToApply,
+            postProcessor,
+            j;
         if (typeof o.postProcess === 'string' && o.postProcess !== '') {
             postProcessorsToApply = [o.postProcess];
         } else if (typeof o.postProcess === 'array' || typeof o.postProcess === 'object') {
@@ -42647,11 +42656,12 @@ _defaults(exports, _interopRequireWildcard(_libReact));
         }
     
         if (found !== undefined && postProcessorsToApply.length) {
-            postProcessorsToApply.forEach(function(postProcessor) {
+            for (j = 0; j < postProcessorsToApply.length; j += 1) {
+                postProcessor = postProcessorsToApply[j];
                 if (postProcessors[postProcessor]) {
                     found = postProcessors[postProcessor](found, key, options);
                 }
-            });
+            }
         }
     
         // process notFound if function exists
@@ -42670,11 +42680,12 @@ _defaults(exports, _interopRequireWildcard(_libReact));
     
             if (postProcessorsToApply.length) {
                 found = _getDefaultValue(key, options);
-                postProcessorsToApply.forEach(function(postProcessor) {
+                for (j = 0; j < postProcessorsToApply.length; j += 1) {
+                    postProcessor = postProcessorsToApply[j];
                     if (postProcessors[postProcessor]) {
                         found = postProcessors[postProcessor](found, key, options);
                     }
-                });
+                }
             }
         }
     

@@ -1,6 +1,6 @@
 {
   "name": "KioskPublicStatic",
-  "version": "0.0.119",
+  "version": "0.0.120",
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "classnames": "^2.1.2",
     "cookies-js": "^1.2.2",
     "deep-diff": "^0.3.2",
+    "exenv": "^1.2.0",
     "flux": "^2.0.1",
     "immutable": "^3.7.4",
     "jquery": "^2.1.4",

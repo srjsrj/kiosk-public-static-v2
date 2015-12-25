@@ -35,17 +35,17 @@ class ProductBlockImage extends Component {
       >
         <RelativeImage
           className="b-item__pic"
-          hasFixedSize={true}
           image={this.getCurrentImage()}
+          maxWidth={maxWidth}
           title={title}
         />
         {second_image
           ? <span style={{ display: 'none!important' }}>
               <RelativeImage
                 className="b-item__pic"
-                hasFixedSize={true}
                 image={second_image}
                 maxWidth={maxWidth}
+                title={title}
               />
             </span>
           : null

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import * as schemas from '../../../schemas';
 import ThumborService from '../../../services/Thumbor';
 
-const memoize = (...args) => (
+const curry = (...args) => (
   (fn) => (fn.apply(null, args))
 );
 const getSize = (image, maxHeight, maxWidth) => {
@@ -59,7 +59,7 @@ class Image extends Component {
       maxWidth,
       title,
     } = this.props;
-    const imageArguments = memoize(image, maxHeight, maxWidth);
+    const imageArguments = curry(image, maxHeight, maxWidth);
 
     return (
       <img

@@ -7,7 +7,7 @@ class RelativeImage extends Component {
     width: null,
   }
   componentDidMount() {
-    this.setRelativeSize();
+    this.setRelativeSize(this.props.maxHeight, this.props.maxWidth);
   }
   getParentWithSize(elt) {
     let current = elt;
@@ -22,26 +22,28 @@ class RelativeImage extends Component {
 
     return null;
   }
-  setRelativeSize() {
+  setRelativeSize(maxHeight, maxWidth) {
     const elt = findDOMNode(this);
     const parent = this.getParentWithSize(elt);
 
-    if (parent) {
-      const { offsetHeight, offsetWidth } = parent;
+    let height = maxHeight;
+    let width = maxWidth;
 
-      this.setState({
-        height: offsetHeight,
-        width: offsetWidth,
-      });
+    if (parent) {
+      height = parent.offsetHeight;
+      width = parent.offsetWidth;
     }
+
+    this.setState({ height, width });
   }
   render() {
-    const { height, width, test } = this.state;
+    const { height, width } = this.state;
 
-    if (height && width) {
+    if (height || width) {
       return (
         <Image
           {...this.props}
+          hasFixedSize={Boolean(height && width)}
           maxHeight={height}
           maxWidth={width}
         />
@@ -52,6 +54,13 @@ class RelativeImage extends Component {
   }
 }
 
-RelativeImage.propTypes = Image.propTypes;
+RelativeImage.propTypes = {
+  maxHeight: PropTypes.number,
+  maxWidth: PropTypes.number,
+};
+RelativeImage.defaultProps = {
+  maxHeight: null,
+  maxWidth: null,
+};
 
 export default RelativeImage;

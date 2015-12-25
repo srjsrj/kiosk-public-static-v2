@@ -223,7 +223,7 @@ gulp.task('[Production] Components scripts', () => {
     .bundle()
     .on('error', handleErrors)
     .pipe(source(config.production.components.outputName))
-    .pipe(streamify(uglify()))
+    .pipe(streamify(uglify({ mangle: false })))
     .pipe(gulp.dest(config.production.components.dest))
     .on('end', () => {
       bundleLogger.end(config.production.components.outputName);
