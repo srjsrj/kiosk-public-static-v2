@@ -1,7 +1,7 @@
 import { PropTypes } from 'react';
 
 export default PropTypes.shape({
-  height: PropTypes.number.isRequired,
+  height: PropTypes.number,
   url: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
+  width: PropTypes.number,
 });

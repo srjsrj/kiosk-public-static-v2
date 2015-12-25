@@ -1,4 +1,5 @@
 import React, { findDOMNode, Component, PropTypes } from 'react';
+import * as schemas from '../../../schemas';
 import Image from './Image';
 
 class RelativeImage extends Component {
@@ -9,13 +10,20 @@ class RelativeImage extends Component {
   componentDidMount() {
     this.setRelativeSize(this.props.maxHeight, this.props.maxWidth);
   }
+  shouldImageBeFixed(image, height, width) {
+    if (!image) {
+      return false;
+    }
+
+    return Boolean((image.width && image.height) && (height || width));
+  }
   getParentWithSize(elt) {
     let current = elt;
 
     while (current.parentNode) {
       current = current.parentNode;
 
-      if (current.offsetHeight && current.offsetWidth) {
+      if (current.offsetHeight || current.offsetWidth) {
         return current;
       }
     }
@@ -26,24 +34,20 @@ class RelativeImage extends Component {
     const elt = findDOMNode(this);
     const parent = this.getParentWithSize(elt);
 
-    let height = maxHeight;
-    let width = maxWidth;
-
-    if (parent) {
-      height = parent.offsetHeight;
-      width = parent.offsetWidth;
-    }
-
-    this.setState({ height, width });
+    this.setState({
+      height: parent ? parent.offsetHeight : maxHeight,
+      width: parent ? parent.offsetWidth : maxWidth,
+    });
   }
   render() {
     const { height, width } = this.state;
+    const { image } = this.props;
 
     if (height || width) {
       return (
         <Image
           {...this.props}
-          hasFixedSize={Boolean(height && width)}
+          hasFixedSize={this.shouldImageBeFixed(image, height, width)}
           maxHeight={height}
           maxWidth={width}
         />
@@ -55,6 +59,7 @@ class RelativeImage extends Component {
 }
 
 RelativeImage.propTypes = {
+  image: schemas.image,
   maxHeight: PropTypes.number,
   maxWidth: PropTypes.number,
 };

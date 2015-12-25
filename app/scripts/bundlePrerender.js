@@ -22,3 +22,4 @@ OrderCoupon = require('./react/components/Checkout/CheckoutCoupon');
 Clientbar = require('./react/components/Clientbar');
 OrderContainer = require('./react/components/Cart').CartContainer;
 ScrollToTop = require('./react/components/ScrollToTop');
+ImageSlider = require('./react/components/common/ImageSlider');
