@@ -8,6 +8,7 @@ class CatalogFilter extends Component {
       <div className="b-full-filter">
         <Checkbox
           className="b-full-filter__toggle"
+          name="filter-toggle"
           id="filter-toggle"
         />
         <label

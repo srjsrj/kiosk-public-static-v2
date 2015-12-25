@@ -9,3 +9,4 @@ export { default as image } from './image';
 export { default as money } from './money';
 export { default as paymentType } from './paymentType';
 export { default as product } from './product';
+export { default as slide } from './slide';
