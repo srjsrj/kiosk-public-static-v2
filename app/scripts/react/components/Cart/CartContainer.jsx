@@ -92,7 +92,7 @@ class CartContainer extends Component {
         const isDisabled = delivery
           ? delivery.reservedFieldValues[field.source.name]
           : false;
-        const value = delivery
+        const value = delivery && delivery.reservedFieldValues[field.source.name]
           ? delivery.reservedFieldValues[field.source.name]
           : field.value;
 

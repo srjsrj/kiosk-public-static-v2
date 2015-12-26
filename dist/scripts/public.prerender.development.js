@@ -378,7 +378,7 @@ var CartContainer = (function (_Component) {
         fields: fields.map(function (field) {
           var isRequired = delivery ? delivery.requiredFields.indexOf(field.source.name) > -1 : false;
           var isDisabled = delivery ? delivery.reservedFieldValues[field.source.name] : false;
-          var value = delivery ? delivery.reservedFieldValues[field.source.name] : field.value;
+          var value = delivery && delivery.reservedFieldValues[field.source.name] ? delivery.reservedFieldValues[field.source.name] : field.value;
 
           return _extends({}, field, { value: value, isDisabled: isDisabled, isRequired: isRequired });
         })
