@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { getElt } from '../../helpers/dom';
-import { scrollToTop } from '../../helpers/animation';
 import Icon from '../common/Icon';
 
 class ScrollToTop extends Component {
@@ -16,45 +15,44 @@ class ScrollToTop extends Component {
     };
   }
   componentDidMount() {
-    const container = this.getContainer();
-    container.addEventListener('scroll', this.updateVisibility, false);
+    const $container = this.getContainer();
+    $container.on('scroll', this.updateVisibility);
   }
   componentWillUnmount() {
-    const container = this.getContainer();
-    container.removeEventListener('scroll', this.updateVisibility, false);
+    const $container = this.getContainer();
+    $container.off('scroll', this.updateVisibility);
   }
   getContainer() {
-    return getElt(this.props.containerSelector) || window;
+    return $(getElt(this.props.containerSelector));
   }
-  getContainerScrollTop() {
-    const container = this.getContainer();
-    return container.scrollTop != null ? container.scrollTop : container.pageYOffset;
+  getScrollableContainer() {
+    const $container = this.getContainer();
+    return $container.get(0).self = $container.get(0) ? $('html, body') : $container;
   }
   updateVisibility() {
     const { offset } = this.props;
-    const scrollTop = this.getContainerScrollTop();
+    const $container = this.getContainer();
 
     this.setState({
-      isVisible: scrollTop > offset
+      isVisible: $container.scrollTop() > offset
     });
   }
   handleClick() {
-    const container = this.getContainer();
-    scrollToTop(container, this.props.duration);
+    const { duration } = this.props;
+    const $container = this.getScrollableContainer();
+
+    $container.animate({ scrollTop: 0 }, duration);
   }
   render() {
     const { isVisible } = this.state;
     const buttonClasses = classNames({
       'ScrollToTop': true,
       'is-visible': isVisible,
-      'element--active-opacity': true
+      'element--active-opacity': true,
     });
 
     return (
-      <div
-        className={buttonClasses}
-        onClick={this.handleClick}
-      >
+      <div className={buttonClasses} onClick={this.handleClick}>
         <div className="ScrollToTop-content">
           <Icon name="scroll-to-top" />
         </div>
