@@ -5,13 +5,13 @@ import ProductCard from './ProductCard';
 
 class ProductCardContainer extends Component {
   state = {
-    currentState: this.isNeededLoading(this.props) ? LOADING_STATE : ERROR_STATE,
+    currentState: this.isLoadingNeeded(this.props) ? LOADING_STATE : ERROR_STATE,
     productCard: null,
   }
   componentDidMount() {
     const { productCardID, vendorID } = this.props;
 
-    if (this.isNeededLoading(this.props)) {
+    if (this.isLoadingNeeded(this.props)) {
       load(vendorID, productCardID)
         .then((productCard) => {
           this.setState({
@@ -26,7 +26,7 @@ class ProductCardContainer extends Component {
         });
     }
   }
-  isNeededLoading(props) {
+  isLoadingNeeded(props) {
     return !!(props.productCardID && props.vendorID);
   }
   render() {
