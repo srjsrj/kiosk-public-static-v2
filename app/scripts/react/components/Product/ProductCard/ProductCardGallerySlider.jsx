@@ -1,13 +1,59 @@
 import $ from 'jquery';
 import React, { Component, findDOMNode, PropTypes } from 'react';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
+import RelativeImage from '../../common/Image/RelativeImage';
 
 class ProductCardGallerySlider extends Component {
-  state = {
-    selectedIndex: 0,
+  constructor(props) {
+    super(props);
+
+    this.initSlider = this.initSlider.bind(this);
+    this.reinitSlider = this.reinitSlider.bind(this);
+    this.renderThumb = this.renderThumb.bind(this);
+    this.onAfterPhotoAction = this.onAfterPhotoAction.bind(this);
+    this.onPhotoChange = this.onPhotoChange.bind(this);
+
+    this.state = {
+      selectedIndex: 0,
+    };
   }
   componentDidMount() {
-    this.initSliders();
+    //FIXME: Если делать без setTimeout, то autoHeight для первого слайда возвращает высоту 0
+    setTimeout(this.initSlider, 0);
+
+    $(document).on(PHOTO_CHANGE, this.onPhotoChange);
+    $(document).on('updateProductImages', this.reinitSlider);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    const $productPhoto = $(findDOMNode(this.refs.productPhoto));
+    const $productThumbs = $(findDOMNode(this.refs.productThumbs));
+
+    if (prevState.selectedIndex !== this.state.selectedIndex) {
+      $productThumbs.trigger('owl.goTo', this.state.selectedIndex);
+      $productPhoto.trigger('owl.goTo', this.state.selectedIndex);
+    }
+  }
+  componentWillUnmount() {
+    $(document).off(PHOTO_CHANGE, this.onPhotoChange);
+    $(document).off('updateProductImages', this.reinitSlider);
+  }
+  initSlider() {
+    const $productPhoto = $(findDOMNode(this.refs.productPhoto));
+    const $productThumbs = $(findDOMNode(this.refs.productThumbs));
+
+    $productPhoto.owlCarousel({
+      afterAction: this.onAfterPhotoAction,
+      autoHeight: true,
+      singleItem: true,
+    });
+
+    if ($productThumbs.length) {
+      $productThumbs.owlCarousel({
+        items: 4,
+        pagination: false,
+        itemsMobile: 2,
+      });
+    }
 
     $('[lightbox], [data-lightbox]').fancybox({
       padding: 0,
@@ -24,44 +70,14 @@ class ProductCardGallerySlider extends Component {
         prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>',
       },
     });
-
-    $(document).on(PHOTO_CHANGE, this.onPhotoChange.bind(this));
-    $(document).on('updateProductImages', this.reinitSliders.bind(this));
   }
-  componentDidUpdate(prevProps, prevState) {
-    const $productPhoto = $(findDOMNode(this.refs.productPhoto));
-    const $productThumbs = $(findDOMNode(this.refs.productThumbs));
-
-    if (prevState.selectedIndex !== this.state.selectedIndex) {
-      $productThumbs.trigger('owl.goTo', this.state.selectedIndex);
-      $productPhoto.trigger('owl.goTo', this.state.selectedIndex);
-    }
-  }
-  initSliders() {
-    const $productPhoto = $(findDOMNode(this.refs.productPhoto));
-    const $productThumbs = $(findDOMNode(this.refs.productThumbs));
-
-    $productPhoto.owlCarousel({
-      afterAction: this.onAfterPhotoAction.bind(this),
-      autoHeight: true,
-      singleItem: true,
-    });
-
-    if ($productThumbs.length) {
-      $productThumbs.owlCarousel({
-        items: 4,
-        pagination: false,
-        itemsMobile: 2,
-      });
-    }
-  }
-  reinitSliders() {
+  reinitSlider() {
     const $productPhoto = $(findDOMNode(this.refs.productPhoto));
     const $productThumbs = $(findDOMNode(this.refs.productThumbs));
 
     $productPhoto.data('owlCarousel').reinit({
       singleItem: true,
-      afterAction: this.onAfterPhotoAction.bind(this),
+      afterAction: this.onAfterPhotoAction,
     });
 
     if ($productThumbs.length) {
@@ -105,38 +121,38 @@ class ProductCardGallerySlider extends Component {
     ev.preventDefault();
     $productPhoto.trigger('owl.goTo', idx);
   }
-  renderPhotoItem(el, idx) {
+  renderPhoto(elt, idx) {
     return (
       <a
         className="b-slider__item"
-        data-lightbox={''}
-        href={el.url}
+        data-lightbox={true}
+        href={elt.url}
         key={idx}
         rel="photo-stack"
       >
-        <img
-          alt={el.title}
+        <RelativeImage
           className="u-photo"
-          itemProp="image"
-          src={el.url}
-          title={el.title}
-          width={this.props.previewWidth}
+          image={{ url: elt.url }}
+          title={elt.title}
         />
       </a>
     );
   }
-  renderThumbItem(el, idx) {
+  renderThumb(elt, idx) {
+    const { thumbHeight, thumbWidth } = this.props;
+
     return (
       <div
         className="b-slider__item"
         key={idx}
         onClick={this.onThumbClick.bind(this, idx)}
       >
-        <img
-          alt={el.title}
-          src={el.url}
-          title={el.title}
-          width={this.props.thumbWidth}
+        <RelativeImage
+          className="u-photo"
+          image={{ url: elt.url }}
+          maxHeight={thumbHeight}
+          maxWidth={thumbWidth}
+          title={elt.title}
         />
       </div>
     );
@@ -147,17 +163,17 @@ class ProductCardGallerySlider extends Component {
     return (
       <div>
         <div
-          className="b-slider"
+          className="b-slider b-slider_productCard"
           ref="productPhoto"
         >
-          {images && images.map(this.renderPhotoItem.bind(this))}
+          {images && images.map(this.renderPhoto)}
         </div>
         {images && images.length > 1 &&
           <div
             className="b-slider b-slider_thumbs"
             ref="productThumbs"
           >
-            {images.map(this.renderThumbItem.bind(this))}
+            {images.map(this.renderThumb)}
           </div>
         }
       </div>
@@ -173,11 +189,9 @@ ProductCardGallerySlider.propTypes = {
       url: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  previewWidth: PropTypes.number,
-  thumbWidth: PropTypes.number,
 };
 ProductCardGallerySlider.defaultProps = {
   images: [],
-}
+};
 
 export default ProductCardGallerySlider;

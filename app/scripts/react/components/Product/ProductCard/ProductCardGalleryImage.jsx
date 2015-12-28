@@ -1,6 +1,7 @@
 import $ from 'jquery';
-import classNames from 'classnames';
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
+import RelativeImage from '../../common/Image/RelativeImage';
 
 class ProductCardGalleryImage extends Component {
   render() {
@@ -15,19 +16,17 @@ class ProductCardGalleryImage extends Component {
             data-lightbox={true}
             href={image.url}
           >
-            <img
-              alt={image.title}
+            <RelativeImage
               className="ProductCardGallery-image u-photo"
-              src={image.url}
+              image={{ url: image.url }}
               title={image.title}
-              width={previewWidth}
             />
           </a>
         </div>
       );
-    } else {
-      return null;
     }
+
+    return null;
   }
 }
 
@@ -39,8 +38,6 @@ ProductCardGalleryImage.propTypes = {
       url: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  previewWidth: PropTypes.number.isRequired,
-  thumbWidth: PropTypes.number.isRequired,
 };
 
 export default ProductCardGalleryImage;

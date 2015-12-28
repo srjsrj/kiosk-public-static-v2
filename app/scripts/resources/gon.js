@@ -3,6 +3,7 @@ global.gon = {
   thumbor_url: 'http://thumball.brandydev.ru',
   fallback_product_image_url: 'http://assets.kiiiosk.ru/assets/fallback/product-none.png',
   env: 'development',
+  kiiiosk: true,
   i18n: {
     locale: "ru",
     translations: {

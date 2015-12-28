@@ -18,7 +18,7 @@ class ImageSlider extends Component {
     this.changeSelectedSlide = this.changeSelectedSlide.bind(this);
   }
   componentDidMount() {
-    //FIXME: Если делать без setTimeout, то первый показ слайда пропускается
+    //FIXME: Если делать без setTimeout, то autoHeight для первого слайда возвращает высоту 0
     setTimeout(this.initSlider, 0);
   }
   initSlider() {
