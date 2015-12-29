@@ -1,5 +1,7 @@
 window = undefined; // React-rails set window to this, it's unexpected behavior
 React = require('react');
+ReactDOM = require('react-dom');
+ReactDOMServer = require('react-dom/server');
 createRedux = require('redux').createRedux;
 Provider = require('redux/react').Provider;
 DesignReducer = require('./react/reducers/Design.prerender');

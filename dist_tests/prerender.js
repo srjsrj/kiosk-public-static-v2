@@ -917,7 +917,7 @@ var logoProps = {
   "logoUrl": null
 };
 
-React.renderToString(React.createElement(Logo, logoProps));
-React.renderToString(React.createElement(ProductBlock, blockProps));
-React.renderToString(React.createElement(ProductCard, cardProps));
+ReactDOMServer.renderToString(React.createElement(Logo, logoProps));
+ReactDOMServer.renderToString(React.createElement(ProductBlock, blockProps));
+ReactDOMServer.renderToString(React.createElement(ProductCard, cardProps));
 console.log('Prerendering public components test finished successfully');

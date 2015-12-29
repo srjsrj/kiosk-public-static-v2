@@ -1,9 +1,8 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { PHOTO_CHANGE } from '../../../../../app/scripts/react/constants/globalEventKeys';
 import ProductCardGallerySlider from '../../../../../app/scripts/react/components/Product/ProductCard/ProductCardGallerySlider';
-
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] ProductCardGallerySlider', () => {
   it('should render without props', () => {
@@ -46,7 +45,7 @@ describe('[Component] ProductCardGallerySlider', () => {
       <ProductCardGallerySlider images={images} />
     );
 
-    expect(component.refs.productThumbs).to.be.an('object');
+    expect(component.refs.productThumbs).to.be.defined;
   });
 
   it('should update selected index when emitted "photo change" event and uid found', () => {

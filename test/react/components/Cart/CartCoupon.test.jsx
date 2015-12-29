@@ -1,10 +1,9 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { scryRenderedComponentsWithType, renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import then from '../../../utils/then';
 import Alert from '../../../../app/scripts/react/components/common/Alert';
 import CartCoupon from '../../../../app/scripts/react/components/Cart/CartCoupon';
-
-const { scryRenderedComponentsWithType, renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] CartCoupon', () => {
   it('should render without errors when there aren\'t any props', () => {

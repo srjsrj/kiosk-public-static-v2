@@ -1,9 +1,9 @@
-import React, { addons, PropTypes } from 'react';
+import React from 'react';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import Immutable from 'immutable';
 import sinon from 'sinon';
 import { expect } from 'chai';
 import DesignSettings from '../../../../app/scripts/react/components/DesignSettings';
-const { renderIntoDocument } = addons.TestUtils;
 
 const current = {
   activeElementsColor: '#000000',

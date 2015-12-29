@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Select from '../../common/Select';
 
-export default class PropertyListItemDictionary {
+export default class PropertyListItemDictionary extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.any,

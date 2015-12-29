@@ -1,7 +1,8 @@
-import React, { PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import Timer from '../../entities/Timer';
 
-export default class Notice {
+export default class Notice extends Component {
   static propTypes = {
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     type: PropTypes.string.isRequired,

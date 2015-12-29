@@ -1,4 +1,5 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { scryRenderedComponentsWithType, renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import p3912 from '../../../../fixtures/products/3912';
 import p3917 from '../../../../fixtures/products/3917';
@@ -11,8 +12,6 @@ import p35026 from '../../../../fixtures/products/35026';
 import p35671 from '../../../../fixtures/products/35671';
 import p35890 from '../../../../fixtures/products/35890';
 import { ProductCard } from '../../../../../app/scripts/react/components/Product/ProductCard';
-
-const { renderIntoDocument } = addons.TestUtils;
 
 function fixtureRenderer(fixture) {
   it('should render product with id ' + fixture.product.id, () => {

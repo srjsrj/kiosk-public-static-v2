@@ -1,4 +1,5 @@
-import React, { Component, findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import { DOM_CHANGE } from '../../constants/globalEventKeys';
 
 const STICKY_DETACH = 'sticky_kit:detach';

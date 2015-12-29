@@ -1,8 +1,8 @@
-import React, { addons, PropTypes } from 'react';
+import React from 'react';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import sinon from 'sinon';
 import { expect } from 'chai';
 import { Userbar } from '../../../../app/scripts/react/components/Userbar';
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] Userbar', function() {
   describe('with isDesignOpen = true', function() {

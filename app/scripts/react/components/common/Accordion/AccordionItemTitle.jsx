@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class AccordionItemTitle {
+export default class AccordionItemTitle extends Component {
   static propTypes = {
     onClick: PropTypes.func,
     title: PropTypes.string,

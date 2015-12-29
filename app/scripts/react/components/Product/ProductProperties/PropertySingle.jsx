@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { getOptions } from './utils';
 import Select from '../../common/Select';
 
-export default class PropertySingle {
+export default class PropertySingle extends Component {
   static propTypes = {
     goods: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,

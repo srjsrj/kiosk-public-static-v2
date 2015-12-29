@@ -6,4 +6,4 @@ global.gon = {
   kiiiosk: true,
 };
 
-require('./bundlePrerender');
+require('./prerender.bundle');

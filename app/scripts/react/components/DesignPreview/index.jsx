@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'redux/react';
 import { fromJS } from 'immutable';
 import jss from 'jss';
@@ -123,7 +123,7 @@ const _switchableStates = {
   design: state.design,
   popups: state.popup.get('popups'),
 }))
-class DesignPreview {
+class DesignPreview extends Component {
   static propTypes = {
     design: PropTypes.object.isRequired,
     pageType: PropTypes.string.isRequired,

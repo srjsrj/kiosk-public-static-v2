@@ -1,7 +1,9 @@
+import React from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
 import _ from 'lodash';
 import Notice from '../components/Notice';
 
-let NoticeService = {
+const NoticeService = {
   getContainer() {
     let container = document.querySelector('[notice-container]');
 
@@ -27,8 +29,8 @@ let NoticeService = {
     const container = this.getContainer();
     const data = {type, text, timeout};
 
-    React.unmountComponentAtNode(container);
-    React.render(<Notice {...data} onClose={this.close.bind(this)} />, container);
+    unmountComponentAtNode(container);
+    render(<Notice {...data} onClose={this.close.bind(this)} />, container);
   },
 
   notifyInfo(text, timeout) {
@@ -69,8 +71,9 @@ let NoticeService = {
 
   close() {
     const container = this.getContainer();
-    React.unmountComponentAtNode(container);
+    unmountComponentAtNode(container);
   }
 };
+global.NoticeService = NoticeService
 
 export default NoticeService;

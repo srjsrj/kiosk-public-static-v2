@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
-export default class ProductGoodActualPrice {
+export default class ProductGoodActualPrice extends Component {
   static propTypes = {
     good: PropTypes.object.isRequired,
   }

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class Logo {
+class Logo extends Component {
   static propTypes = {
     linkUrl: PropTypes.string.isRequired,
     logoText: PropTypes.string.isRequired,

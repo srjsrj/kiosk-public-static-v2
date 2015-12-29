@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { productCategoryPath } from '../../../helpers/vendors';
 
-export default class ProductCardBreadcrumbs {
+export default class ProductCardBreadcrumbs extends Component {
   static propTypes = {
     className: PropTypes.string,
     product: PropTypes.object.isRequired,

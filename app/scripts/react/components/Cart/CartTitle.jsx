@@ -1,4 +1,5 @@
-import React, { findDOMNode, Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import $ from 'jquery';
 import { t } from 'i18next';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';

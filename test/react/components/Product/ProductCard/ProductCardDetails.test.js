@@ -1,8 +1,8 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { findDOMNode } from 'react-dom';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import ProductCardDetails from '../../../../../app/scripts/react/components/Product/ProductCard/ProductCardDetails';
-
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] ProductCardDetails', () => {
   it('should render when product is empty object', () => {
@@ -42,8 +42,8 @@ describe('[Component] ProductCardDetails', () => {
       );
       const textBlocks = component.refs.textBlocks;
 
-      expect(textBlocks).to.be.an('object');
-      expect(product.text_blocks.length).to.equal(textBlocks.props.children.length);
+      expect(textBlocks).to.be.defined;
+      expect(product.text_blocks.length).to.equal(textBlocks.childNodes.length);
     });
   });
 
@@ -54,7 +54,7 @@ describe('[Component] ProductCardDetails', () => {
         <ProductCardDetails product={product} />
       );
 
-      expect(component.refs.attributes).to.be.undefined;
+      expect(component.refs.attributes).to.be.defined;
     });
 
     it('should render AttributeDictionary attribute type', () => {

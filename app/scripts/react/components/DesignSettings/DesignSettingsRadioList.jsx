@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { List } from 'immutable';
 import classNames from 'classnames';
 import tinycolor from 'tinycolor2';
 import * as designTypes from '../../constants/designTypes';
 
-export default class DesignSettingsRadioList {
+export default class DesignSettingsRadioList extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -63,7 +63,7 @@ export default class DesignSettingsRadioList {
   }
 }
 
-class DesignSettingsRadioListItem {
+class DesignSettingsRadioListItem extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 
-export default class ProductAddToCartButton {
+export default class ProductAddToCartButton extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     text: PropTypes.string.isRequired,

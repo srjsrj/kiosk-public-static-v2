@@ -1,7 +1,7 @@
-import React, { addons, PropTypes } from 'react';
+import React from 'react';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { CatalogFilter } from '../../../../app/scripts/react/components/CatalogFilter';
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] CatalogFilter', function() {
   it('renders without errors', function() {

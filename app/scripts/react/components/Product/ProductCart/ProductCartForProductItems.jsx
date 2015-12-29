@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ProductGoods from '../ProductGoods';
 import ProductProperties from '../ProductProperties';
 
-export default class ProductCartForProductItems {
+export default class ProductCartForProductItems extends Component {
   static propTypes = {
     addWishlistUrl: PropTypes.string,
     isWishlisted: PropTypes.bool,

@@ -1,4 +1,5 @@
-import React, { Component, findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import numeral from 'numeral';
 import noUiSlider from 'nouislider';
 import { getFilter } from './utils';

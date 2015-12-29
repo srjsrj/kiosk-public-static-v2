@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
 import ProductGoodPrice from './ProductGoodPrice';
 import ProductGoodPrices from './ProductGoodPrices';
 
-export default class ProductPrices {
+export default class ProductPrices extends Component {
   static propTypes = {
     good: PropTypes.object,
     product: PropTypes.object.isRequired,

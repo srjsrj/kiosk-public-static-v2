@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import HumanizedMoney from '../../common/Money/HumanizedMoney';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
-export default class ProductGoodPrices {
+export default class ProductGoodPrices extends Component {
   static propTypes = {
     minPrice: PropTypes.object.isRequired,
     maxPrice: PropTypes.object.isRequired,

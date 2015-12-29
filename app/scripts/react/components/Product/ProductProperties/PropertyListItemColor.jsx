@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import RadioColor from '../../common/RadioColor';
 
-export default class PropertyListItemColor {
+export default class PropertyListItemColor extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.any,

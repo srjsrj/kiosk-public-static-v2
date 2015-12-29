@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import ProductGoodActualPrice from './ProductGoodActualPrice';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
-export default class ProductGoodPrice {
+export default class ProductGoodPrice extends Component {
   static propTypes = {
     good: PropTypes.object.isRequired,
   }

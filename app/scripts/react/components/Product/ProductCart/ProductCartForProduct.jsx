@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import HiddenInput from '../../common/HiddenInput';
 import ProductCartWishlist from './ProductCartWishlist';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 
-export default class ProductCartForProduct {
+export default class ProductCartForProduct extends Component {
   static propTypes = {
     addWishlistUrl: PropTypes.string,
     good: PropTypes.object.isRequired,

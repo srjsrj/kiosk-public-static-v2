@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import * as schemas from '../../../schemas';
 import ProductBlock from '../ProductBlock';
 
-class ProductCardSimilarProducts {
+class ProductCardSimilarProducts extends Component {
   renderProduct(product) {
     return <ProductBlock key={product.id} product={product} />;
   }

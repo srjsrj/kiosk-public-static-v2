@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class DesignSettingsOption {
+export default class DesignSettingsOption extends Component {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.any.isRequired,
