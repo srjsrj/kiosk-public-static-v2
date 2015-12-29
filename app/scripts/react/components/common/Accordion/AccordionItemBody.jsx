@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class AccordionItemBody {
+export default class AccordionItemBody extends Component {
   static propTypes = {
     bodyClassName: PropTypes.string,
     maxHeight: PropTypes.oneOfType([

@@ -1,2 +1,0 @@
-require './appLibs'
-require './bundle'

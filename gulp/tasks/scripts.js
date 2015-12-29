@@ -14,7 +14,8 @@ const baseDependencies = {
   'jss': './node_modules/jss/lib',
   'nouislider': './node_modules/noUiSlider/distribute/nouislider',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
-  'react': './node_modules/react/addons',
+  'react': './node_modules/react',
+  'react-dom': './node_modules/react-dom',
   'redux': './node_modules/redux',
   'reqwest': './node_modules/reqwest',
   'tinycolor2': './node_modules/tinycolor2',
@@ -34,18 +35,24 @@ const baseDependencies = {
   'lodash': './node_modules/lodash',
 };
 const staticDependencies = {
-  'reactUjs': './app/scripts/resources/react_ujs',
-}
+  'react-addons-test-utils': './node_modules/react-addons-test-utils',
+  // 'reactUjs': './app/scripts/lib/ReactRailsUJS',
+};
+const testDependencies = {
+  'react-addons-test-utils': './node_modules/react-addons-test-utils',
+};
 const prerenderDependencies = {
   // For now we will use client version of i18next, but later
   // it can change to i18next-node
   'i18next': './node_modules/i18next-client',
-}
+};
 
 function getDependencies(env) {
   switch(env) {
     case 'static':
       return {...baseDependencies, ...staticDependencies};
+    case 'test':
+      return {...baseDependencies, ...testDependencies};
     case 'prerender':
       return {...baseDependencies, ...prerenderDependencies};
     default:
@@ -217,7 +224,7 @@ gulp.task('[Production] Components scripts', () => {
   return bundler
     .transform('babelify', {
       stage: 0,
-      ignore: /(node_modules|bower_components|bundlePrerender\.js)/
+      ignore: /(node_modules|bower_components|prerender.bundle\.js)/
     })
     .transform('coffee-reactify')
     .bundle()
@@ -244,7 +251,7 @@ gulp.task('[Development] Components scripts', () => {
   return bundler
     .transform('babelify', {
       stage: 0,
-      ignore: /(node_modules|bower_components|bundlePrerender\.js)/
+      ignore: /(node_modules|bower_components|prerender.bundle\.js)/
     })
     .transform('coffee-reactify')
     .bundle()

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Map } from 'immutable';
 
 import designOptions from '../../models/designOptions';
@@ -14,7 +14,7 @@ import DesignSettingsAttach from './DesignSettingsAttach';
 import DesignSettingsSaveButton from './DesignSettingsSaveButton';
 import DesignSettingsCloseButton from './DesignSettingsCloseButton';
 
-export default class DesignSettings {
+export default class DesignSettings extends Component {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
     categoryPageUrl: PropTypes.string.isRequired,

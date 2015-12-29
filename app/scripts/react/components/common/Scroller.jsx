@@ -1,14 +1,17 @@
 import classNames from 'classnames';
 import Ps from 'perfect-scrollbar';
-import React, { findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 
-export default class Scroller {
+export default class Scroller extends Component {
   static propTypes = {
     className: PropTypes.string,
     onScroll: PropTypes.func,
     updateEvent: PropTypes.string,
   }
-  constructor() {
+  constructor(props) {
+    super(props);
+
     this.updateScroller = this.updateScroller.bind(this);
   }
   componentDidMount() {

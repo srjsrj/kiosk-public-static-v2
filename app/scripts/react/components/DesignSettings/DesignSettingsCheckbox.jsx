@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class DesignSettingsCheckbox {
+export default class DesignSettingsCheckbox extends Component {
   static propTypes = {
     value: PropTypes.bool,
     onChange: PropTypes.func.isRequired

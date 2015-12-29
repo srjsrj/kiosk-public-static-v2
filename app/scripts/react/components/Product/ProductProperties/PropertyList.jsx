@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import { getOptions } from './utils';
 import PropertyListItem from './PropertyListItem';
 
-export default class PropertyList {
+export default class PropertyList extends Component {
   static propTypes = {
     goods: PropTypes.array.isRequired,
     onChange: PropTypes.func.isRequired,

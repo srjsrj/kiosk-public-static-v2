@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ProductBadgeNew from '../ProductBadges/ProductBadgeNew';
 import ProductBadgeSale from '../ProductBadges/ProductBadgeSale';
 
-export default class ProductCardBadges {
+export default class ProductCardBadges extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
   }

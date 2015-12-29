@@ -15,7 +15,7 @@ import DesignSettings from '.';
   design: state.design,
   popups: state.popup.get('popups')
 }))
-class DesignSettingsContainer {
+class DesignSettingsContainer extends Component {
   static propTypes = {
     authUrl: PropTypes.string.isRequired,
     categoryPageUrl: PropTypes.string.isRequired,

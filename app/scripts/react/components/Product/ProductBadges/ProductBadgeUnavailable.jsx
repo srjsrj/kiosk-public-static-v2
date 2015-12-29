@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import ProductBadge from './ProductBadge';
 
-export default class ProductBadgeUnavailable {
+export default class ProductBadgeUnavailable extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
   }

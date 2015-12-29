@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
 import { t } from 'i18next';
 import ErrorService from '../../../services/Error';

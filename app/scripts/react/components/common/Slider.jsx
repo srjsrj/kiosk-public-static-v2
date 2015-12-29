@@ -1,11 +1,12 @@
-import React, { PropTypes, findDOMNode } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import noUiSlider from 'nouislider';
 
 const MINIMUM_VALUE = 0,
       MAXIMUM_VALUE = 100,
       STEP = 1;
 
-export default class Slider {
+export default class Slider extends Component {
   static propTypes = {
     from: PropTypes.number,
     to: PropTypes.number,

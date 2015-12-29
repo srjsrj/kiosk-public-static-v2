@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Map } from 'immutable';
 import classNames from 'classnames';
 
 function selectFile(name, text, onChange) {
-  return class SelectFile {
+  return class SelectFile extends Component {
     static propTypes = {
       withText: PropTypes.bool,
       className: PropTypes.string
@@ -28,7 +28,7 @@ function selectFile(name, text, onChange) {
   }
 }
 
-export default class DesignSettingsAttach {
+export default class DesignSettingsAttach extends Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

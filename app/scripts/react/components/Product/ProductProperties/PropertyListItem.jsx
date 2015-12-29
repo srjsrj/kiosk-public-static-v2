@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { t } from 'i18next';
 import * as propertyTypes from '../../../constants/propertyTypes';
 import PropertyListItemColor from './PropertyListItemColor';
 import PropertyListItemDictionary from './PropertyListItemDictionary';
 
-export default class PropertyListItem {
+export default class PropertyListItem extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired,

@@ -1,5 +1,6 @@
 import $ from 'jquery';
-import React, { Component, findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import RelativeImage from '../../common/Image/RelativeImage';
 

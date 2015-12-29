@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import Slider from '../common/Slider';
 
-export default class DesignSettingsSlider {
+export default class DesignSettingsSlider extends Component {
   static propTypes = {
     displayValue: PropTypes.bool,
     from: PropTypes.number,

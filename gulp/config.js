@@ -24,7 +24,7 @@ export default {
   scripts: {
     static: {
       client: {
-        entries: src + '/scripts/main.coffee',
+        entries: src + '/scripts/render.static.js',
         dest: build + '/scripts',
         outputName: 'client.js',
         extensions: ['.jsx', '.cjsx', '.coffee']
@@ -52,7 +52,7 @@ export default {
     },
     production: {
       bundle: {
-        entries: src + '/scripts/appBundle.coffee',
+        entries: src + '/scripts/render.production.js',
         extensions: ['.jsx', '.cjsx', '.coffee'],
         dest: dist + '/scripts/',
         outputName: 'appBundle.js',
@@ -63,7 +63,7 @@ export default {
         dest: dist + '/scripts/',
         outputName: 'public.prerender.production.js',
       },
-    }
+    },
   },
   styles: {
     static: {

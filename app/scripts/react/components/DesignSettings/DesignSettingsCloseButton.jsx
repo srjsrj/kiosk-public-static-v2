@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class DesignSettingsCloseButton {
+export default class DesignSettingsCloseButton extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired
   }

@@ -1,4 +1,5 @@
-import React, { findDOMNode, Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
 import * as schemas from '../../../schemas';
 import ImageSliderSlides from './ImageSliderSlides';

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { h1 } from '../../../helpers/seo';
 
-export default class ProductCardTitle {
+export default class ProductCardTitle extends Component {
   static propTypes = {
     className: PropTypes.string,
     product: PropTypes.object.isRequired,

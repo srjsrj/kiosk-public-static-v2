@@ -1,8 +1,8 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { findDOMNode } from 'react-dom';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
 import ProductCart from '../../../../../app/scripts/react/components/Product/ProductCart';
-
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] ProductCart', () => {
   it('should render when product is empty object', () => {

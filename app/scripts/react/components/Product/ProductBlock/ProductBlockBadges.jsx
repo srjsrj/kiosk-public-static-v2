@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ProductBadgeNew from '../ProductBadges/ProductBadgeNew';
 import ProductBadgeSale from '../ProductBadges/ProductBadgeSale';
 import ProductBadgeSoldOut from '../ProductBadges/ProductBadgeSoldOut';
 import ProductBadgeUnavailable from '../ProductBadges/ProductBadgeUnavailable';
 
-export default class ProductBlockBadges {
+export default class ProductBlockBadges extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
   }

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import tinycolor from 'tinycolor2';
 import classNames from 'classnames';
 
-export default class RadioColor {
+export default class RadioColor extends Component {
   static propTypes = {
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

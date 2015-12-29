@@ -1,11 +1,10 @@
-import React, { addons, findDOMNode } from 'react';
+import React from 'react';
+import { renderIntoDocument } from 'react-addons-test-utils';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 import then from '../../../../utils/then';
 import { PHOTO_CHANGE } from '../../../../../app/scripts/react/constants/globalEventKeys';
 import ProductProperties from '../../../../../app/scripts/react/components/Product/ProductProperties';
-
-const { renderIntoDocument } = addons.TestUtils;
 
 describe('[Component] ProductProperties', () => {
   it('should render without properties', () => {

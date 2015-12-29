@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { schemaOrgMarkup } from '../../../helpers/product';
 
-export default class ProductCardSchema {
+export default class ProductCardSchema extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
   }

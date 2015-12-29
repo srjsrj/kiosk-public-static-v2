@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import React, { Component, findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import uuid from 'uuid';
 
 import AccordionItemBody from './AccordionItemBody';

@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Map } from 'immutable';
 import classNames from 'classnames';
 
-export default class DesignSettingsSaveButton {
+export default class DesignSettingsSaveButton extends Component {
   static propTypes = {
     isSaving: PropTypes.bool.isRequired,
     unsavedFields: PropTypes.instanceOf(Map).isRequired,
