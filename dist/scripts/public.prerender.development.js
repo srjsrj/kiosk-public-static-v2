@@ -3663,6 +3663,7 @@ var ProductCardGallerySlider = (function (_Component) {
       var $productPhoto = (0, _jquery2['default'])((0, _react.findDOMNode)(this.refs.productPhoto));
 
       $productPhoto.find('[lightbox], [data-lightbox]').fancybox({
+        parent: 'body',
         padding: 0,
         margin: 0,
         helpers: {

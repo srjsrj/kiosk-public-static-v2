@@ -90,6 +90,7 @@ class ProductCardGallerySlider extends Component {
     $productPhoto
       .find('[lightbox], [data-lightbox]')
       .fancybox({
+        parent: 'body',
         padding: 0,
         margin: 0,
         helpers: {
