@@ -8,7 +8,10 @@ class ProductCardGallerySlider extends Component {
     super(props);
 
     this.initSlider = this.initSlider.bind(this);
+    this.initFancybox = this.initFancybox.bind(this);
     this.reinitSlider = this.reinitSlider.bind(this);
+    this.destroySlider = this.destroySlider.bind(this);
+    this.destroyFancybox = this.destroyFancybox.bind(this);
     this.renderThumb = this.renderThumb.bind(this);
     this.onAfterPhotoAction = this.onAfterPhotoAction.bind(this);
     this.onPhotoChange = this.onPhotoChange.bind(this);
@@ -19,7 +22,10 @@ class ProductCardGallerySlider extends Component {
   }
   componentDidMount() {
     //FIXME: Если делать без setTimeout, то autoHeight для первого слайда возвращает высоту 0
-    setTimeout(this.initSlider, 0);
+    setTimeout(() => {
+      this.initSlider();
+      this.initFancybox();
+    }, 0);
 
     $(document).on(PHOTO_CHANGE, this.onPhotoChange);
     $(document).on('updateProductImages', this.reinitSlider);
@@ -34,6 +40,9 @@ class ProductCardGallerySlider extends Component {
     }
   }
   componentWillUnmount() {
+    this.destroySlider();
+    this.destroyFancybox();
+
     $(document).off(PHOTO_CHANGE, this.onPhotoChange);
     $(document).off('updateProductImages', this.reinitSlider);
   }
@@ -54,22 +63,6 @@ class ProductCardGallerySlider extends Component {
         itemsMobile: 2,
       });
     }
-
-    $('[lightbox], [data-lightbox]').fancybox({
-      padding: 0,
-      margin: 0,
-      helpers: {
-        thumbs: {
-          width: 8,
-          height: 8
-        }
-      },
-      tpl: {
-        closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
-        next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
-        prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>',
-      },
-    });
   }
   reinitSlider() {
     const $productPhoto = $(findDOMNode(this.refs.productPhoto));
@@ -86,6 +79,31 @@ class ProductCardGallerySlider extends Component {
         pagination: false,
       });
     }
+  }
+  destroySlider() {
+    $(findDOMNode(this.refs.productPhoto)).data('owlCarousel').destroy();
+    $(findDOMNode(this.refs.productThumbs)).data('owlCarousel').destroy();
+  }
+  initFancybox() {
+    const $productPhoto = $(findDOMNode(this.refs.productPhoto));
+
+    $productPhoto
+      .find('[lightbox], [data-lightbox]')
+      .fancybox({
+        padding: 0,
+        margin: 0,
+        helpers: {
+          thumbs: { width: 8, height: 8 }
+        },
+        tpl: {
+          closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
+          next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
+          prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>',
+        },
+      });
+  }
+  destroyFancybox() {
+    $(document).unbind('click.fb-start');
   }
   getIndexByUID(images, uid) {
     for (let i = 0; i < images.length; i++) {

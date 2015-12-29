@@ -3566,7 +3566,10 @@ var ProductCardGallerySlider = (function (_Component) {
     _get(Object.getPrototypeOf(ProductCardGallerySlider.prototype), 'constructor', this).call(this, props);
 
     this.initSlider = this.initSlider.bind(this);
+    this.initFancybox = this.initFancybox.bind(this);
     this.reinitSlider = this.reinitSlider.bind(this);
+    this.destroySlider = this.destroySlider.bind(this);
+    this.destroyFancybox = this.destroyFancybox.bind(this);
     this.renderThumb = this.renderThumb.bind(this);
     this.onAfterPhotoAction = this.onAfterPhotoAction.bind(this);
     this.onPhotoChange = this.onPhotoChange.bind(this);
@@ -3579,8 +3582,13 @@ var ProductCardGallerySlider = (function (_Component) {
   _createClass(ProductCardGallerySlider, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this = this;
+
       //FIXME: Если делать без setTimeout, то autoHeight для первого слайда возвращает высоту 0
-      setTimeout(this.initSlider, 0);
+      setTimeout(function () {
+        _this.initSlider();
+        _this.initFancybox();
+      }, 0);
 
       (0, _jquery2['default'])(document).on(_constantsGlobalEventKeys.PHOTO_CHANGE, this.onPhotoChange);
       (0, _jquery2['default'])(document).on('updateProductImages', this.reinitSlider);
@@ -3599,6 +3607,9 @@ var ProductCardGallerySlider = (function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      this.destroySlider();
+      this.destroyFancybox();
+
       (0, _jquery2['default'])(document).off(_constantsGlobalEventKeys.PHOTO_CHANGE, this.onPhotoChange);
       (0, _jquery2['default'])(document).off('updateProductImages', this.reinitSlider);
     }
@@ -3621,22 +3632,6 @@ var ProductCardGallerySlider = (function (_Component) {
           itemsMobile: 2
         });
       }
-
-      (0, _jquery2['default'])('[lightbox], [data-lightbox]').fancybox({
-        padding: 0,
-        margin: 0,
-        helpers: {
-          thumbs: {
-            width: 8,
-            height: 8
-          }
-        },
-        tpl: {
-          closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
-          next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
-          prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
-        }
-      });
     }
   }, {
     key: 'reinitSlider',
@@ -3655,6 +3650,35 @@ var ProductCardGallerySlider = (function (_Component) {
           pagination: false
         });
       }
+    }
+  }, {
+    key: 'destroySlider',
+    value: function destroySlider() {
+      (0, _jquery2['default'])((0, _react.findDOMNode)(this.refs.productPhoto)).data('owlCarousel').destroy();
+      (0, _jquery2['default'])((0, _react.findDOMNode)(this.refs.productThumbs)).data('owlCarousel').destroy();
+    }
+  }, {
+    key: 'initFancybox',
+    value: function initFancybox() {
+      var $productPhoto = (0, _jquery2['default'])((0, _react.findDOMNode)(this.refs.productPhoto));
+
+      $productPhoto.find('[lightbox], [data-lightbox]').fancybox({
+        padding: 0,
+        margin: 0,
+        helpers: {
+          thumbs: { width: 8, height: 8 }
+        },
+        tpl: {
+          closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
+          next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
+          prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
+        }
+      });
+    }
+  }, {
+    key: 'destroyFancybox',
+    value: function destroyFancybox() {
+      (0, _jquery2['default'])(document).unbind('click.fb-start');
     }
   }, {
     key: 'getIndexByUID',

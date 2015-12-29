@@ -10,7 +10,7 @@ import './locales/numeral/ru';
 import './shared/app';
 import './shared/cart';
 import './shared/load_more';
-import './shared/lightbox';
+// import './shared/lightbox';
 import './shared/jump';
 import './shared/application_slider';
 import './shared/theme_switcher';
