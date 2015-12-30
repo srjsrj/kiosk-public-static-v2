@@ -1,30 +1,29 @@
-import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+import React, { PropTypes } from 'react';
+import translate from '../../HoC/translate';
 import ProductBadge from './ProductBadge';
 
-export default class ProductBadgeSale extends Component {
-  static propTypes = {
-    product: PropTypes.object.isRequired,
-  }
-  render() {
-    const { product } = this.props;
+const ProductBadgeSale = ({ product, t }) => {
+  if (product.is_sale) {
+    let title = t('vendor.badges.sale');
 
-    if (product.is_sale) {
-      let title = t('vendor.badges.sale');
+    if (product.sale_percent) {
+      let salePercent = product.sale_percent;
 
-      if (product.sale_percent) {
-        let salePercent = product.sale_percent;
-
-        if (parseInt(salePercent, 10) === salePercent) {
-          salePercent = parseInt(salePercent, 10);
-        }
-
-        title = t('vendor.badges.sale_percent', { percent: salePercent });
+      if (parseInt(salePercent, 10) === salePercent) {
+        salePercent = parseInt(salePercent, 10);
       }
 
-      return <ProductBadge text={title} status="sale" />;
-    } else {
-      return null;
+      title = t('vendor.badges.sale_percent', { percent: salePercent });
     }
+
+    return <ProductBadge text={title} status="sale" />;
   }
-}
+
+  return <span />;
+};
+
+ProductBadgeSale.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
+export default ProductBadgeSale;

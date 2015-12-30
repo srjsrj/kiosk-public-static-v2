@@ -11,25 +11,23 @@ export default (ComposedComponent) => (
       }),
     }
     componentWillMount() {
-      if (this.props.i18n) {
-        const { locale, translations } = this.props.i18n;
+      // if (this.props.i18n) {
+      //   const { locale, translations } = this.props.i18n;
 
-        if (!i18n.hasResourceBundle(locale)) {
-          i18n.init({
-            fallbackLng: 'ru',
-            interpolationPrefix: '%{',
-            interpolationSuffix: '}',
-            lng: locale,
-            resStore: {
-              [locale]: {
-                translation: translations,
-              },
-            },
-          });
+      //   i18n.init({
+      //     fallbackLng: 'ru',
+      //     interpolationPrefix: '%{',
+      //     interpolationSuffix: '}',
+      //     lng: locale,
+      //     resStore: {
+      //       [locale]: {
+      //         translation: translations,
+      //       },
+      //     },
+      //   });
 
-          i18n.setLng(locale);
-        }
-      }
+      //   i18n.setLng(locale);
+      // }
     }
     render() {
       return (

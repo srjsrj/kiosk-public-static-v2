@@ -15,4 +15,4 @@ i18n.init({
   },
 });
 
-i18n.setLng(LOCALE);
+// i18n.setLng(LOCALE);

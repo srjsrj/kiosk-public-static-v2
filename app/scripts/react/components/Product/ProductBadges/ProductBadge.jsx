@@ -1,18 +1,15 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class ProductBadge extends Component {
-  static propTypes = {
-    status: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  }
-  render() {
-    const { status, text } = this.props;
+const ProductBadge = ({ status, text }) => (
+  <span className={classNames('b-status', 'b-status_' + status)}>
+    {text}
+  </span>
+);
 
-    return (
-      <span className={classNames('b-status', 'b-status_' + status)}>
-        {text}
-      </span>
-    );
-  }
-}
+ProductBadge.propTypes = {
+  status: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+export default ProductBadge;
