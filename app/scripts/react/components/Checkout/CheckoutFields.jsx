@@ -8,6 +8,7 @@ class CheckoutFields extends Component {
     const { onChange } = this.props;
     const {
       isDisabled,
+      reservedValue,
       value,
       source: { errorMessage, name, type, placeholder, title },
     } = item;
@@ -30,7 +31,7 @@ class CheckoutFields extends Component {
               onChange={(ev) => onChange(name, ev.target.value)}
               placeholder={placeholder}
               type="text"
-              value={value}
+              value={reservedValue || value}
             />
             {errorMessage &&
               <span className="help-block">{errorMessage}</span>

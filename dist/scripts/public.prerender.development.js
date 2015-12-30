@@ -380,10 +380,11 @@ var CartContainer = (function (_Component) {
         deliveryType: delivery,
         fields: fields.map(function (field) {
           var isRequired = delivery ? delivery.requiredFields.indexOf(field.source.name) > -1 : false;
-          var isDisabled = delivery ? delivery.reservedFieldValues[field.source.name] : false;
-          var value = delivery && delivery.reservedFieldValues[field.source.name] ? delivery.reservedFieldValues[field.source.name] : field.value;
+          var isDisabled = delivery ? !!delivery.reservedFieldValues[field.source.name] : false;
+          var value = field.value;
+          var reservedValue = delivery && delivery.reservedFieldValues[field.source.name] ? delivery.reservedFieldValues[field.source.name] : null;
 
-          return _extends({}, field, { value: value, isDisabled: isDisabled, isRequired: isRequired });
+          return _extends({}, field, { reservedValue: reservedValue, value: value, isDisabled: isDisabled, isRequired: isRequired });
         })
       });
     }
@@ -468,7 +469,7 @@ CartContainer.defaultProps = {
   cart: {},
   deliveryTypes: [],
   fields: [],
-  paymentMethods: []
+  paymentTypes: []
 };
 
 exports['default'] = CartContainer;
@@ -1429,6 +1430,7 @@ var CheckoutFields = (function (_Component) {
     value: function renderItem(item) {
       var onChange = this.props.onChange;
       var isDisabled = item.isDisabled;
+      var reservedValue = item.reservedValue;
       var value = item.value;
       var _item$source = item.source;
       var errorMessage = _item$source.errorMessage;
@@ -1461,7 +1463,7 @@ var CheckoutFields = (function (_Component) {
               },
               placeholder: placeholder,
               type: 'text',
-              value: value
+              value: reservedValue || value
             }),
             errorMessage && _react2['default'].createElement(
               'span',
