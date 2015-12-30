@@ -90,13 +90,14 @@ class CartContainer extends Component {
           ? delivery.requiredFields.indexOf(field.source.name) > -1
           : false;
         const isDisabled = delivery
-          ? delivery.reservedFieldValues[field.source.name]
+          ? !!delivery.reservedFieldValues[field.source.name]
           : false;
-        const value = delivery && delivery.reservedFieldValues[field.source.name]
+        const value = field.value;
+        const reservedValue = delivery && delivery.reservedFieldValues[field.source.name]
           ? delivery.reservedFieldValues[field.source.name]
-          : field.value;
+          : null;
 
-        return {...field, value, isDisabled, isRequired};
+        return {...field, reservedValue, value, isDisabled, isRequired};
       }),
     });
   }
@@ -170,7 +171,7 @@ CartContainer.defaultProps = {
   cart: {},
   deliveryTypes: [],
   fields: [],
-  paymentMethods: [],
+  paymentTypes: [],
 };
 
 export default CartContainer;
