@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
-import { t } from 'i18next';
 import ErrorService from '../../../services/Error';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues } from './utils';
+import translate from '../../HoC/translate';
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
 import PropertySingle from './PropertySingle';
 import ProductCartWishlist from '../ProductCart/ProductCartWishlist';
 
-export default class ProductProperties extends Component {
+class ProductProperties extends Component {
   static propTypes = {
     addWishlistUrl: PropTypes.string,
     goods: PropTypes.array.isRequired,
@@ -82,6 +82,7 @@ export default class ProductProperties extends Component {
     });
   }
   render() {
+    const { t } = this.props;
     const { good, values } = this.state;
 
     const hiddenInput = good && (
@@ -142,3 +143,5 @@ export default class ProductProperties extends Component {
     }
   }
 }
+
+export default translate(ProductProperties);

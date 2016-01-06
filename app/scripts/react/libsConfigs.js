@@ -3,7 +3,7 @@ import ErrorService from './services/Error';
 
 // i18n
 if (gon) {
-  const { i18n: { locale = 'ru', translations = {} } } = gon;
+  const { i18n: {locale = 'ru', translations = {}} } = gon;
 
   i18n.init({
     fallbackLng: 'ru',

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import i18n from 'i18next';
+import translate from '../HoC/translate';
 import localeLanguages from '../../constants/localeLanguages';
 
 export default (ComposedComponent) => (

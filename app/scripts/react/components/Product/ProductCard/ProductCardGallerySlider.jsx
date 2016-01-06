@@ -69,12 +69,14 @@ class ProductCardGallerySlider extends Component {
     const $productPhoto = $(findDOMNode(this.refs.productPhoto));
     const $productThumbs = $(findDOMNode(this.refs.productThumbs));
 
-    $productPhoto.data('owlCarousel').reinit({
-      singleItem: true,
-      afterAction: this.onAfterPhotoAction,
-    });
+    if ($productPhoto.data('owlCarousel')) {
+      $productPhoto.data('owlCarousel').reinit({
+        singleItem: true,
+        afterAction: this.onAfterPhotoAction,
+      });
+    }
 
-    if ($productThumbs.length) {
+    if ($productThumbs.length && $productThumbs.data('owlCarousel')) {
       $productThumbs.data('owlCarousel').reinit({
         items: 4,
         pagination: false,

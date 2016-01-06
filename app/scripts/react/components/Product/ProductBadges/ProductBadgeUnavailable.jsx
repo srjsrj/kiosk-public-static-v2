@@ -1,18 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+import translate from '../../HoC/translate';
 import ProductBadge from './ProductBadge';
 
-export default class ProductBadgeUnavailable extends Component {
-  static propTypes = {
-    product: PropTypes.object.isRequired,
-  }
-  render() {
-    const { product } = this.props;
+const ProductBadgeUnavailable = ({ product, t }) => (
+  product.has_ordering_goods && !product.is_run_out
+    ? <ProductBadge text={t('vendor.badges.not_available')} status="sold" />
+    : <span />
+);
 
-    if (!product.has_ordering_goods && !product.is_run_out) {
-      return <ProductBadge text={t('vendor.badges.not_available')} status="sold" />;
-    } else {
-      return null;
-    }
-  }
-}
+ProductBadgeUnavailable.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
+export default translate(ProductBadgeUnavailable);

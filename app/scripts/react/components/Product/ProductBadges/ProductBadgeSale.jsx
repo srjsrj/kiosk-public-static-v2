@@ -26,4 +26,4 @@ ProductBadgeSale.propTypes = {
   product: PropTypes.object.isRequired,
 };
 
-export default ProductBadgeSale;
+export default translate(ProductBadgeSale);

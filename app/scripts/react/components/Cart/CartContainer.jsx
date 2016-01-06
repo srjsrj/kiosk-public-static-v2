@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from '../../schemas';
-import makeTranslatable from '../HoC/makeTranslatable';
+import provideTranslations from '../HoC/provideTranslations';
 import Cart from './Cart';
 
-@makeTranslatable
 class CartContainer extends Component {
   constructor(props) {
     super(props);
@@ -174,4 +173,4 @@ CartContainer.defaultProps = {
   paymentTypes: [],
 };
 
-export default CartContainer;
+export default provideTranslations(CartContainer);

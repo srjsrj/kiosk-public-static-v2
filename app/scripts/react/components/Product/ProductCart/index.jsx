@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
 import { vendorCartItems } from '../../../../routes/app';
 import CSRFToken from '../../common/CSRFToken';
 import HiddenInput from '../../common/HiddenInput';

@@ -1,18 +1,15 @@
-import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+import React, { PropTypes } from 'react';
+import translate from '../../HoC/translate';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
-export default class ProductGoodActualPrice extends Component {
-  static propTypes = {
-    good: PropTypes.object.isRequired,
-  }
-  render() {
-    const { good } = this.props;
+const ProductGoodActualPrice = ({ good, t }) => (
+  good.actual_price
+    ? <HumanizedMoneyWithCurrency money={good.actual_price} />
+    : <span>{t('vendor.product.blank_price')}</span>
+);
 
-    if (good.actual_price) {
-      return <HumanizedMoneyWithCurrency money={good.actual_price} />;
-    } else {
-      return <span>{t('vendor.product.blank_price')}</span>;
-    }
-  }
+ProductGoodActualPrice.propTypes = {
+  good: PropTypes.object.isRequired,
 }
+
+export default translate(ProductGoodActualPrice);

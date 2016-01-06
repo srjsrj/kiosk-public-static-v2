@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
 import * as propertyTypes from '../../../constants/propertyTypes';
+import translate from '../../HoC/translate';
 import PropertyListItemColor from './PropertyListItemColor';
 import PropertyListItemDictionary from './PropertyListItemDictionary';
 
-export default class PropertyListItem extends Component {
+class PropertyListItem extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired,
@@ -12,7 +12,7 @@ export default class PropertyListItem extends Component {
     value: PropTypes.any,
   }
   render() {
-    const { value, options, property, onChange } = this.props;
+    const { value, options, property, onChange, t } = this.props;
     const Component = this.getComponentByType(property.type);
 
     if (typeof Component === 'function') {
@@ -42,3 +42,5 @@ export default class PropertyListItem extends Component {
     return `attribute[${propertyID}]`;
   }
 }
+
+export default translate(PropertyListItem);
