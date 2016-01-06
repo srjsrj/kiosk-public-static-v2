@@ -59,12 +59,12 @@ describe('[Component] ProductCardDetails', () => {
 
     it('should render AttributeDictionary attribute type', () => {
       const title = 'Цвет покрытия';
-      const products_path = '/entities/46-chernenie';
+      const products_url = '/entities/46-chernenie';
       const value = 'чернение';
       const product = {
         attributes: [
           {
-            products_path,
+            products_url,
             title,
             value,
             property_id: 89,
@@ -85,7 +85,7 @@ describe('[Component] ProductCardDetails', () => {
 
       expect(attributeTitle.textContent).contain(title);
       expect(attributeValue.textContent).to.equal(value);
-      expect(attributeValue).to.have.property('href').that.contain(products_path);
+      expect(attributeValue).to.have.property('href').that.contain(products_url);
     });
 
     it('should render AttributeLink attribute type', () => {
@@ -96,7 +96,7 @@ describe('[Component] ProductCardDetails', () => {
             type: 'AttributeLink',
             title: 'Ссылочка',
             value: 'http://google.ru',
-            products_path: null,
+            products_url: null,
           },
         ],
       };
@@ -130,7 +130,7 @@ describe('[Component] ProductCardDetails', () => {
               filename: '59eb28c9-fa4e-4062-b1d8-4582b9dc6c40.png',
               size: 38144,
             },
-            products_path: null,
+            products_url: null,
           },
         ],
       };

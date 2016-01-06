@@ -65,7 +65,7 @@ export function goodActualPrice({ actual_price }) {
 }
 
 export function attributeValue(attribute) {
-  const { products_path, title, value } = attribute
+  const { products_url, title, value } = attribute
 
   switch(attribute.type) {
     case 'AttributeLink':
@@ -88,7 +88,7 @@ export function attributeValue(attribute) {
           <span className="attribute__title">
             {`${title}: `}
           </span>
-          <a href={products_path}>
+          <a href={products_url}>
             {value}
           </a>
         </span>

@@ -8428,7 +8428,7 @@ function goodActualPrice(_ref) {
 }
 
 function attributeValue(attribute) {
-  var products_path = attribute.products_path;
+  var products_url = attribute.products_url;
   var title = attribute.title;
   var value = attribute.value;
 
@@ -8458,7 +8458,7 @@ function attributeValue(attribute) {
         ),
         _react2['default'].createElement(
           'a',
-          { href: products_path },
+          { href: products_url },
           value
         )
       );
