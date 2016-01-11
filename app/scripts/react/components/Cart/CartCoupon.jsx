@@ -7,14 +7,6 @@ import CartAlert from './CartAlert';
 import TextInput from '../common/TextInput';
 
 export class CartCoupon extends Component {
-  static propTypes = {
-    code: PropTypes.string,
-    message: PropTypes.string,
-  }
-  static defaultProps = {
-    code: '',
-    message: '',
-  }
   state = {
     code: this.props.code,
     message: this.props.message,
@@ -86,5 +78,15 @@ export class CartCoupon extends Component {
     );
   }
 }
+
+CartCoupon.propTypes = {
+  code: PropTypes.string,
+  message: PropTypes.string,
+};
+
+CartCoupon.defaultProps = {
+  code: '',
+  message: '',
+};
 
 export default provideTranslations(CartCoupon);

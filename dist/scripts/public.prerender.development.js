@@ -37,7 +37,7 @@ Logo = require('./react/components/Logo/LogoContainer');
 ProductBlock = require('./react/components/Product/ProductBlock');
 ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 TopBanner = require('./react/components/TopBanner');
-CartCoupon = require('./react/components/Cart/CartCoupon');
+CartCoupon = require('./react/components/Cart/CartCoupon').default;
 OrderCoupon = require('./react/components/Checkout/CheckoutCoupon');
 Clientbar = require('./react/components/Clientbar');
 OrderContainer = require('./react/components/Cart').CartContainer;
@@ -616,26 +616,23 @@ var CartCoupon = (function (_Component) {
         code && message && _react2['default'].createElement(_CartAlert2['default'], { text: message })
       );
     }
-  }], [{
-    key: 'propTypes',
-    value: {
-      code: _react.PropTypes.string,
-      message: _react.PropTypes.string
-    },
-    enumerable: true
-  }, {
-    key: 'defaultProps',
-    value: {
-      code: '',
-      message: ''
-    },
-    enumerable: true
   }]);
 
   return CartCoupon;
 })(_react.Component);
 
 exports.CartCoupon = CartCoupon;
+
+CartCoupon.propTypes = {
+  code: _react.PropTypes.string,
+  message: _react.PropTypes.string
+};
+
+CartCoupon.defaultProps = {
+  code: '',
+  message: ''
+};
+
 exports['default'] = (0, _HoCProvideTranslations2['default'])(CartCoupon);
 
 },{"../../../routes/api":123,"../HoC/provideTranslations":23,"../common/TextInput":92,"./CartAlert":6,"react":"react"}],9:[function(require,module,exports){
