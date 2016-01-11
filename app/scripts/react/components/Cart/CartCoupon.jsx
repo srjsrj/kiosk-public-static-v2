@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import * as apiRoutes from '../../../routes/api';
+
 import provideTranslations from '../HoC/provideTranslations';
-import translate from '../HoC/translate';
+
 import CartAlert from './CartAlert';
 import TextInput from '../common/TextInput';
 
@@ -86,4 +87,4 @@ export class CartCoupon extends Component {
   }
 }
 
-export default provideTranslations(translate(CartCoupon));
+export default provideTranslations(CartCoupon);

@@ -3,7 +3,7 @@ import { diff } from 'deep-diff';
 import ErrorService from '../../../services/Error';
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { getInitialGood, getInitialValues, getMatchedGood, getUpdatedValues } from './utils';
-import translate from '../../HoC/translate';
+
 import HiddenInput from '../../common/HiddenInput';
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import PropertyList from './PropertyList';
@@ -93,8 +93,9 @@ class ProductProperties extends Component {
     );
     const addToCartButton = (
       <ProductAddToCartButton
-        text={!!good ? t('vendor.button.to_cart') : t('vendor.button.select_good')}
         disabled={!good}
+        t={t}
+        text={!!good ? t('vendor.button.to_cart') : t('vendor.button.select_good')}
       />
     );
 
@@ -105,6 +106,7 @@ class ProductProperties extends Component {
             goods={this.props.goods}
             onChange={this.updateValues.bind(this)}
             properties={this.props.properties}
+            t={t}
             values={values}
           />
           {hiddenInput}
@@ -144,4 +146,4 @@ class ProductProperties extends Component {
   }
 }
 
-export default translate(ProductProperties);
+export default ProductProperties;

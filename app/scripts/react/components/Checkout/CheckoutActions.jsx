@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../HoC/translate';
+
 import * as schemas from '../../schemas';
 import CheckoutPublicOffer from './CheckoutPublicOffer';
 
@@ -22,7 +22,7 @@ class CheckoutActions extends Component {
     return (
       <div className="b-cart__action">
         {publicOffer && publicOffer.show
-          ? <CheckoutPublicOffer {...publicOffer} />
+          ? <CheckoutPublicOffer {...publicOffer} t={t} />
           : null
         }
         <div className="b-cart__action__container">
@@ -53,4 +53,4 @@ CheckoutActions.propTypes = {
   publicOffer: schemas.checkoutPublicOffer,
 };
 
-export default translate(CheckoutActions);
+export default CheckoutActions;

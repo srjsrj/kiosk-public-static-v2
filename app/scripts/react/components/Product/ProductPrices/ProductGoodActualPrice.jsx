@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import translate from '../../HoC/translate';
+
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
 const ProductGoodActualPrice = ({ good, t }) => (
@@ -12,4 +12,4 @@ ProductGoodActualPrice.propTypes = {
   good: PropTypes.object.isRequired,
 }
 
-export default translate(ProductGoodActualPrice);
+export default ProductGoodActualPrice;

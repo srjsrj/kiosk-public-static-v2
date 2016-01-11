@@ -1,6 +1,7 @@
 import React from 'react';
 import { scryRenderedComponentsWithType, renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
+
 import p3912 from '../../../../fixtures/products/3912';
 import p3917 from '../../../../fixtures/products/3917';
 import p4273 from '../../../../fixtures/products/4273';
@@ -11,13 +12,20 @@ import p33548 from '../../../../fixtures/products/33548';
 import p35026 from '../../../../fixtures/products/35026';
 import p35671 from '../../../../fixtures/products/35671';
 import p35890 from '../../../../fixtures/products/35890';
+
+import t from '../../../../mocks/t';
+
 import { ProductCard } from '../../../../../app/scripts/react/components/Product/ProductCard';
 
 function fixtureRenderer(fixture) {
   it('should render product with id ' + fixture.product.id, () => {
+    const props = {
+      ...fixture,
+      t,
+    };
     const fn = () => {
       renderIntoDocument(
-        <ProductCard {...fixture} />
+        <ProductCard {...props} />
       );
     };
 
@@ -27,9 +35,13 @@ function fixtureRenderer(fixture) {
 
 describe('[Component] ProductCard', () => {
   it('should render when product is empty object', () => {
+    const props = {
+      product: {},
+      t,
+    };
     const fn = () => {
       renderIntoDocument(
-        <ProductCard product={{}} />
+        <ProductCard {...props} />
       );
     };
 

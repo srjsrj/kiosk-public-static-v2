@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import translate from '../HoC/translate';
+
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartTitle extends Component {
@@ -43,4 +43,4 @@ CartTitle.propTypes = {
   totalPrice: PropTypes.object,
 };
 
-export default translate(CartTitle);
+export default CartTitle;

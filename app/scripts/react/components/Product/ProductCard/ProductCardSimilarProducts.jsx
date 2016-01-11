@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
 import * as schemas from '../../../schemas';
-import translate from '../../HoC/translate';
+
 import ProductBlock from '../ProductBlock';
 
 const ProductCardSimilarProducts = ({ products, t }) => (
@@ -11,8 +12,7 @@ const ProductCardSimilarProducts = ({ products, t }) => (
         </h1>
         <div className="b-item-list__content">
           {products.map(product =>
-            <ProductBlock key={product.id} product={product} />
-          )}
+            <ProductBlock key={product.id} product={product} />)}
         </div>
       </section>
     : <span />
@@ -21,8 +21,9 @@ const ProductCardSimilarProducts = ({ products, t }) => (
 ProductCardSimilarProducts.propTypes = {
   products: PropTypes.arrayOf(schemas.product),
 };
+
 ProductCardSimilarProducts.defaultProps = {
   products: [],
 };
 
-export default translate(ProductCardSimilarProducts);
+export default ProductCardSimilarProducts;

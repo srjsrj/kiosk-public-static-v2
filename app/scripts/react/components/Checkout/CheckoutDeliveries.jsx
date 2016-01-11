@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../HoC/translate';
+
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
 import { simpleFormat } from '../../helpers/text';
 import * as schemas from '../../schemas';
+
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CheckoutDeliveries extends Component {
@@ -70,4 +71,4 @@ CheckoutDeliveries.defaultProps = {
   items: [],
 };
 
-export default translate(CheckoutDeliveries);
+export default CheckoutDeliveries;

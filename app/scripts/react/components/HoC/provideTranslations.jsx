@@ -13,17 +13,16 @@ const provideTranslations = (WrappedComponent) => {
       this.i18n = i18next.createInstance({
         lng: locale,
         fallbackLng: 'ru',
-        interpolationPrefix: '%{',
-        interpolationSuffix: '}',
+        interpolation: {
+          prefix: '%{',
+          suffix: '}',
+        },
         resources: {
           [locale]: {
             translation: translations,
           }
         },
       }, () => {});
-    }
-    getChildContext() {
-      return { i18n: this.i18n };
     }
     getLocale() {
       const { i18n } = this.props;
@@ -51,7 +50,7 @@ const provideTranslations = (WrappedComponent) => {
     }
     render() {
       return (
-        <WrappedComponent {...this.props} ref="translatable" />
+        <WrappedComponent t={this.i18n.getFixedT()} {...this.props} />
       );
     }
   }
@@ -61,15 +60,6 @@ const provideTranslations = (WrappedComponent) => {
       locale: PropTypes.oneOf(localeLanguages).isRequired,
       translations: PropTypes.object.isRequired,
     }),
-  };
-  I18nextProvider.childContextTypes = {
-    i18n: PropTypes.object.isRequired,
-  };
-  I18nextProvider.defaultProps = {
-    i18n: {
-      locale: 'ru',
-      translations: {},
-    },
   };
 
   return I18nextProvider;

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../../HoC/translate';
+
 import { getOptions } from './utils';
+
 import PropertyListItem from './PropertyListItem';
 
 const PropertyList = ({ goods, onChange, properties, t, values }) => {
@@ -12,6 +13,7 @@ const PropertyList = ({ goods, onChange, properties, t, values }) => {
         onChange={onChange.bind(this, property)}
         options={options[property.id] || []}
         property={property}
+        t={t}
         value={values[property.id] || null}
       />
     ));
@@ -26,4 +28,4 @@ const PropertyList = ({ goods, onChange, properties, t, values }) => {
   );
 };
 
-export default translate(PropertyList);
+export default PropertyList;

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import translate from '../HoC/translate';
 
 const ProductAddToCartButton = ({ disabled, t, text }) => (
   <button
@@ -18,4 +17,4 @@ ProductAddToCartButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default translate(ProductAddToCartButton);
+export default ProductAddToCartButton;

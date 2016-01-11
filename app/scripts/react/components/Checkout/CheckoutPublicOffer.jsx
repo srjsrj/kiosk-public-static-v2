@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../HoC/translate';
+
 import Checkbox from '../common/Checkbox';
 import HiddenInput from '../common/HiddenInput';
 
@@ -47,4 +47,4 @@ CheckoutPublicOffer.defaultProps = {
   url: '',
 };
 
-export default translate(CheckoutPublicOffer);
+export default CheckoutPublicOffer;

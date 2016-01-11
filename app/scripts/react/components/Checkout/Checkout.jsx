@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from '../../schemas';
 import { vendorOrder } from '../../../routes/app';
-import translate from '../HoC/translate';
+
 import Alert from '../common/Alert';
 import FormAuthenticity from '../common/FormAuthenticity';
 import CheckoutActions from './CheckoutActions';
@@ -56,6 +56,7 @@ class Checkout extends Component {
                 current={deliveryType}
                 items={deliveryTypes}
                 onChange={onDeliveryChange}
+                t={t}
               />
             </CheckoutStep>
             <CheckoutStep number={2} title={t('vendor.order.new.contacts_title')}>
@@ -64,7 +65,7 @@ class Checkout extends Component {
                 onChange={onFieldChange}
               />
               {coupon && coupon.show &&
-                <CheckoutCoupon code={coupon.value} />
+                <CheckoutCoupon code={coupon.value} t={t} />
               }
             </CheckoutStep>
             <CheckoutStep number={3} title={t('vendor.order.new.payment_title')}>
@@ -79,6 +80,7 @@ class Checkout extends Component {
             <CheckoutActions
               backUrl={backUrl}
               publicOffer={publicOffer}
+              t={t}
             />
           </div>
         </div>
@@ -108,4 +110,4 @@ Checkout.defaultProps = {
   submitOrderUrl: vendorOrder(),
 };
 
-export default translate(Checkout);
+export default Checkout;

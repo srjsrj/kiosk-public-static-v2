@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../../HoC/translate';
+
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { goodOrderTitle } from '../../../helpers/product';
+
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import ProductCartWishlist from '../ProductCart/ProductCartWishlist';
 
@@ -88,7 +89,10 @@ class ProductGoods extends Component {
               {this.renderSelect(product)}
             </div>
             <div className="b-item-full__form__submit">
-              <ProductAddToCartButton text={t('vendor.button.to_cart')} />
+              <ProductAddToCartButton
+                text={t('vendor.button.to_cart')}
+                t={t}
+              />
             </div>
           </div>
           <ProductCartWishlist
@@ -112,7 +116,10 @@ class ProductGoods extends Component {
             />
           </div>
           <div className="b-item-full__form__row b-item-full__form__submit">
-            <ProductAddToCartButton text={t('vendor.button.to_cart')} />
+            <ProductAddToCartButton
+              text={t('vendor.button.to_cart')}
+              t={t}
+            />
           </div>
         </span>
       );
@@ -120,4 +127,4 @@ class ProductGoods extends Component {
   }
 }
 
-export default translate(ProductGoods);
+export default ProductGoods;

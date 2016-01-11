@@ -2,12 +2,16 @@ import React from 'react';
 import { findDOMNode } from 'react-dom';
 import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
+
+import t from '../../../../mocks/t';
+
 import ProductCart from '../../../../../app/scripts/react/components/Product/ProductCart';
 
 describe('[Component] ProductCart', () => {
   it('should render when product is empty object', () => {
     const props = {
       product: {},
+      t,
     };
     const component = renderIntoDocument(
       <ProductCart {...props} />
@@ -22,6 +26,7 @@ describe('[Component] ProductCart', () => {
     const props = {
       formAuthenticity: { field, token },
       product: {},
+      t,
     };
     const component = renderIntoDocument(
       <ProductCart {...props} />
@@ -35,12 +40,13 @@ describe('[Component] ProductCart', () => {
     it('should render unavailable status', () => {
       const props = {
         product: { has_ordering_goods: false },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
       );
       const button = findDOMNode(component).querySelector('.b-btn_trans');
-      expect(button.textContent).is.equals('Не продаётся');
+      expect(button.textContent).is.equals('vendor.product.not_available');
     });
   });
 
@@ -79,6 +85,7 @@ describe('[Component] ProductCart', () => {
             },
           ],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -150,7 +157,8 @@ describe('[Component] ProductCart', () => {
             },
           }
         ],
-      }
+      },
+      t,
     };
 
     it('should render single select when properties = 0', () => {
@@ -160,6 +168,7 @@ describe('[Component] ProductCart', () => {
           ...baseProps.product,
           properties: [],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -179,6 +188,7 @@ describe('[Component] ProductCart', () => {
           ...baseProps.product,
           properties: [],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -223,6 +233,7 @@ describe('[Component] ProductCart', () => {
             }
           ],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -266,7 +277,8 @@ describe('[Component] ProductCart', () => {
               ]
             }
           ]
-        }
+        },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -314,6 +326,7 @@ describe('[Component] ProductCart', () => {
             }
           ],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />
@@ -347,6 +360,7 @@ describe('[Component] ProductCart', () => {
             },
           ],
         },
+        t,
       };
       const component = renderIntoDocument(
         <ProductCart {...props} />

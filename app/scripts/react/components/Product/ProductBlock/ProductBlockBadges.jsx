@@ -4,12 +4,12 @@ import ProductBadgeSale from '../ProductBadges/ProductBadgeSale';
 import ProductBadgeSoldOut from '../ProductBadges/ProductBadgeSoldOut';
 import ProductBadgeUnavailable from '../ProductBadges/ProductBadgeUnavailable';
 
-const ProductBlockBadges = ({ product }) => (
+const ProductBlockBadges = ({ product, t }) => (
   <div className="b-item__status">
-    <ProductBadgeNew product={product} />
-    <ProductBadgeSoldOut product={product} />
-    <ProductBadgeSale product={product} />
-    <ProductBadgeUnavailable product={product} />
+    <ProductBadgeNew product={product} t={t} />
+    <ProductBadgeSoldOut product={product} t={t} />
+    <ProductBadgeSale product={product} t={t} />
+    <ProductBadgeUnavailable product={product} t={t} />
   </div>
 );
 

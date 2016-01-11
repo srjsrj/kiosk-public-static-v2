@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import translate from '../HoC/translate';
+
 import * as apiRoutes from '../../../routes/api';
 import TextInput from '../common/TextInput';
 import CheckoutAlert from './CheckoutAlert';
@@ -99,4 +99,4 @@ CheckoutCoupon.defaultProps = {
   message: '',
 };
 
-export default translate(CheckoutCoupon);
+export default CheckoutCoupon;

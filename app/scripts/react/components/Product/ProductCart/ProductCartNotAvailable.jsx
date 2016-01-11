@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import translate from '../../HoC/translate';
+
 import ProductCartWishlist from './ProductCartWishlist';
 
 const ProductCartNotAvailable = (props) => (
@@ -17,4 +17,4 @@ const ProductCartNotAvailable = (props) => (
   </div>
 );
 
-export default translate(ProductCartNotAvailable);
+export default ProductCartNotAvailable;

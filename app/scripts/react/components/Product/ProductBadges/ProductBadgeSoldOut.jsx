@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import translate from '../../HoC/translate';
 import ProductBadge from './ProductBadge';
 
 const ProductBadgeSoldOut = ({ product, t }) => (
@@ -12,4 +11,4 @@ ProductBadgeSoldOut.propTypes = {
   product: PropTypes.object.isRequired,
 };
 
-export default translate(ProductBadgeSoldOut);
+export default ProductBadgeSoldOut;

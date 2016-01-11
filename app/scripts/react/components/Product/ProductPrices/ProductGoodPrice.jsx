@@ -1,20 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
+
 import ProductGoodActualPrice from './ProductGoodActualPrice';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
-export default class ProductGoodPrice extends Component {
+class ProductGoodPrice extends Component {
   static propTypes = {
     good: PropTypes.object.isRequired,
   }
   render() {
-    const { good } = this.props;
+    const { good, t } = this.props;
 
     if (good.is_sale) {
       return (
         <span>
           <div className="b-item__price b_item_price_sale">
-            <ProductGoodActualPrice good={good} />
+            <ProductGoodActualPrice good={good} t={t} />
           </div>
           <div className="b-item__price b-item__price_old">
             <HumanizedMoneyWithCurrency money={good.price} />
@@ -28,9 +29,11 @@ export default class ProductGoodPrice extends Component {
 
       return (
         <div className={priceClasses}>
-          <ProductGoodActualPrice good={good} />
+          <ProductGoodActualPrice good={good} t={t} />
         </div>
       );
     }
   }
 }
+
+export default ProductGoodPrice;

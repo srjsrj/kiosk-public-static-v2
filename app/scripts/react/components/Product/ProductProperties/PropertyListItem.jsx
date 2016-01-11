@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
 import * as propertyTypes from '../../../constants/propertyTypes';
-import translate from '../../HoC/translate';
+
 import PropertyListItemColor from './PropertyListItemColor';
 import PropertyListItemDictionary from './PropertyListItemDictionary';
 
@@ -43,4 +44,4 @@ class PropertyListItem extends Component {
   }
 }
 
-export default translate(PropertyListItem);
+export default PropertyListItem;

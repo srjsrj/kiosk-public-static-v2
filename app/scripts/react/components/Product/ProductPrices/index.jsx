@@ -3,11 +3,7 @@ import { diff } from 'deep-diff';
 import ProductGoodPrice from './ProductGoodPrice';
 import ProductGoodPrices from './ProductGoodPrices';
 
-export default class ProductPrices extends Component {
-  static propTypes = {
-    good: PropTypes.object,
-    product: PropTypes.object.isRequired,
-  }
+class ProductPrices extends Component {
   getMinPrice(goods) {
     let minPrice = goods[0].actual_price;
 
@@ -35,11 +31,11 @@ export default class ProductPrices extends Component {
     return maxPrice;
   }
   render() {
-    const { good, product } = this.props;
+    const { good, product, t } = this.props;
 
     if (good) {
       return (
-        <ProductGoodPrice good={good} />
+        <ProductGoodPrice good={good} t={t} />
       ); 
     } else if (product.has_ordering_goods) {
       const maxPrice = this.getMaxPrice(product.goods);
@@ -51,7 +47,7 @@ export default class ProductPrices extends Component {
         );
       } else {
         return (
-          <ProductGoodPrice good={product.goods[0]} />
+          <ProductGoodPrice good={product.goods[0]} t={t} />
         );
       }
     }
@@ -59,3 +55,10 @@ export default class ProductPrices extends Component {
     return null;
   }
 }
+
+ProductPrices.propTypes = {
+  good: PropTypes.object,
+  product: PropTypes.object.isRequired,
+};
+
+export default ProductPrices;
