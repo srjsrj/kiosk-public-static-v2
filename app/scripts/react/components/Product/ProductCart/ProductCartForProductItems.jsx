@@ -11,7 +11,7 @@ export default class ProductCartForProductItems extends Component {
     wishlistUrl: PropTypes.string,
   }
   render() {
-    const { product: { goods, properties } } = this.props;
+    const { product: { goods, properties }, t } = this.props;
 
     if (properties.length) {
       return (
@@ -19,11 +19,12 @@ export default class ProductCartForProductItems extends Component {
           {...this.props}
           goods={goods}
           properties={properties}
+          t={t}
         />
       );
     } else {
       return (
-        <ProductGoods {...this.props} />
+        <ProductGoods {...this.props} t={t} />
       );
     }
   }

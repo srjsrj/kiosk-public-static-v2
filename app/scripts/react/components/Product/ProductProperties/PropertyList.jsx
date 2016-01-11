@@ -1,37 +1,31 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+
 import { getOptions } from './utils';
+
 import PropertyListItem from './PropertyListItem';
 
-export default class PropertyList extends Component {
-  static propTypes = {
-    goods: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired,
-    properties: PropTypes.array.isRequired,
-    values: PropTypes.object.isRequired,
-  }
-  render() {
-    const { goods, values, properties, onChange } = this.props;
+const PropertyList = ({ goods, onChange, properties, t, values }) => {
+  if (properties.length) {
+    const options = getOptions(properties, goods, values);
+    const propertyList = properties.map((property) => (
+      <PropertyListItem
+        key={property.id}
+        onChange={onChange.bind(this, property)}
+        options={options[property.id] || []}
+        property={property}
+        t={t}
+        value={values[property.id] || null}
+      />
+    ));
 
-    if (properties.length) {
-      const options = getOptions(properties, goods, values);
-      const propertyList = properties.map((property) => (
-        <PropertyListItem
-          key={property.id}
-          onChange={onChange.bind(this, property)}
-          options={options[property.id] || []}
-          property={property}
-          value={values[property.id] || null}
-        />
-      ));
-
-      return <span>{propertyList}</span>;
-    } else {
-      return (
-        <div className="p-lg text-center">
-          <p>{t('vendor.properties.empty')}</p>
-        </div>
-      );
-    }
+    return <span>{propertyList}</span>;
   }
-}
+
+  return (
+    <div className="p-lg text-center">
+      <p>{t('vendor.properties.empty')}</p>
+    </div>
+  );
+};
+
+export default PropertyList;

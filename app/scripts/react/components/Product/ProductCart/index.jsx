@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
 import { vendorCartItems } from '../../../../routes/app';
 import CSRFToken from '../../common/CSRFToken';
 import HiddenInput from '../../common/HiddenInput';
@@ -21,25 +20,30 @@ export default class ProductCart extends Component {
   static defaultProps = {
     formAuthenticity: {},
   }
-  renderContent(product) {
+  renderContent(product, t) {
+
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
         return (
-          <ProductCartForProduct {...this.props} good={product.goods[0]} />
+          <ProductCartForProduct
+            {...this.props}
+            good={product.goods[0]}
+            t={t}
+          />
         );
       } else {
         return (
-          <ProductCartForProductItems {...this.props} />
+          <ProductCartForProductItems {...this.props} t={t} />
         );
       }
     } else {
       return (
-        <ProductCartNotAvailable {...this.props} />
+        <ProductCartNotAvailable {...this.props} t={t} />
       );
     }
   }
   render() {
-    const { onProductChange, product } = this.props;
+    const { onProductChange, product, t } = this.props;
 
     return (
       <form
@@ -52,7 +56,7 @@ export default class ProductCart extends Component {
           <HiddenInput name="utf8" value="✓" />
           <CSRFToken {...this.props.formAuthenticity} />
         </div>
-        {this.renderContent(product)}
+        {this.renderContent(product, t)}
       </form>
     );
   }

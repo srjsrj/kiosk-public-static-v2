@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+
 import * as schemas from '../../schemas';
 import CheckoutPublicOffer from './CheckoutPublicOffer';
 
@@ -17,12 +17,12 @@ class CheckoutActions extends Component {
     }
   }
   render() {
-    const { backUrl, publicOffer } = this.props;
+    const { backUrl, publicOffer, t } = this.props;
 
     return (
       <div className="b-cart__action">
         {publicOffer && publicOffer.show
-          ? <CheckoutPublicOffer {...publicOffer} />
+          ? <CheckoutPublicOffer {...publicOffer} t={t} />
           : null
         }
         <div className="b-cart__action__container">

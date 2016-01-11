@@ -1,7 +1,7 @@
+import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import $ from 'jquery';
-import { t } from 'i18next';
+
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartTitle extends Component {
@@ -19,7 +19,7 @@ class CartTitle extends Component {
     }, 1000);
   }
   render() {
-    const { totalCount, totalPrice } = this.props;
+    const { t, totalCount, totalPrice } = this.props;
 
     if (totalCount || totalPrice) {
       return (

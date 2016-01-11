@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
 import * as apiRoutes from '../../../routes/api';
-import makeTranslatable from '../HoC/makeTranslatable';
+
+import provideTranslations from '../HoC/provideTranslations';
+
 import CartAlert from './CartAlert';
 import TextInput from '../common/TextInput';
 
-@makeTranslatable
-export default class CartCoupon extends Component {
+export class CartCoupon extends Component {
   static propTypes = {
     code: PropTypes.string,
     message: PropTypes.string,
@@ -25,6 +25,7 @@ export default class CartCoupon extends Component {
     }
   }
   processCode(value) {
+    const { t } = this.props;
     const { code } = this.state;
 
     if (value === '') {
@@ -68,6 +69,7 @@ export default class CartCoupon extends Component {
     this.setState({ message });
   }
   render() {
+    const { t } = this.props;
     const { code, message } = this.state;
 
     return (
@@ -84,3 +86,5 @@ export default class CartCoupon extends Component {
     );
   }
 }
+
+export default provideTranslations(CartCoupon);

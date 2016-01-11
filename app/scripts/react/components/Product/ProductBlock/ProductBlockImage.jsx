@@ -5,12 +5,12 @@ class ProductBlockImage extends Component {
   constructor(props) {
     super(props);
 
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+
     this.state = {
       isHover: false,
     };
-
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
   getCurrentImage() {
     const { index_image, second_image } = this.props.product;
@@ -59,6 +59,7 @@ ProductBlockImage.propTypes = {
   product: PropTypes.object.isRequired,
   maxWidth: PropTypes.number,
 };
+
 ProductBlockImage.defaultProps = {
   maxWidth: 458,
 };

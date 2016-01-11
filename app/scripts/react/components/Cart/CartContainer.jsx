@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from '../../schemas';
-import makeTranslatable from '../HoC/makeTranslatable';
+
+import provideTranslations from '../HoC/provideTranslations';
+
 import Cart from './Cart';
 
-@makeTranslatable
 class CartContainer extends Component {
   constructor(props) {
     super(props);
@@ -127,6 +128,7 @@ class CartContainer extends Component {
       paymentTypes,
       publicOffer,
       submitOrderUrl,
+      t,
     } = this.props;
     const { deliveryType, fields, paymentType } = this.state;
 
@@ -146,6 +148,7 @@ class CartContainer extends Component {
         paymentTypes={this.getPaymentsForDelivery(deliveryType, paymentTypes)}
         publicOffer={publicOffer}
         submitOrderUrl={submitOrderUrl}
+        t={t}
         totalCount={cart.totalCount}
         totalPrice={this.getTotalPrice(deliveryType, cart)}
       />
@@ -174,4 +177,4 @@ CartContainer.defaultProps = {
   paymentTypes: [],
 };
 
-export default CartContainer;
+export default provideTranslations(CartContainer);

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import makeTranslatable from '../../HoC/makeTranslatable';
+import provideTranslations from '../../HoC/provideTranslations';
 import ProductCart from '../ProductCart';
 import ProductPrices from '../ProductPrices';
 import ProductCardBadges from './ProductCardBadges';
@@ -11,7 +11,6 @@ import ProductCardSimilarProducts from './ProductCardSimilarProducts';
 import ProductCardTitle from './ProductCardTitle';
 import ProductCardVideo from './ProductCardVideo';
 
-@makeTranslatable
 class ProductCard extends Component {
   state = {
     good: null,
@@ -30,7 +29,7 @@ class ProductCard extends Component {
     this.setState({ good, product });
   }
   render() {
-    const { similarProducts } = this.props;
+    const { similarProducts, t } = this.props;
     const { good, product } = this.state;
 
     return (
@@ -44,7 +43,7 @@ class ProductCard extends Component {
             <div className="b-item-full__header b-item-full__header_mobile">
               <ProductCardBreadcrumbs product={product} />
               <ProductCardTitle product={product} />
-              <ProductCardBadges product={product} />
+              <ProductCardBadges product={product} t={t} />
             </div>
 
             <div className="b-item-full__content">
@@ -58,7 +57,7 @@ class ProductCard extends Component {
                 <div className="b-item-full__header">
                   <ProductCardBreadcrumbs className="p-category" product={product} />
                   <ProductCardTitle className="p-name" product={product} />
-                  <ProductCardBadges product={product} />
+                  <ProductCardBadges product={product} t={t} />
                 </div>
                 <div className="b-item-full__price p-price">
                   <ProductPrices good={good} product={product} />
@@ -69,6 +68,7 @@ class ProductCard extends Component {
                     {...this.props}
                     {...this.state}
                     onGoodChange={this.handleGoodChange.bind(this)}
+                    t={t}
                   />
                 </div>
                 <ProductCardDetails product={product} />
@@ -76,7 +76,7 @@ class ProductCard extends Component {
               <ProductCardVideo product={product} />
             </div>
 
-            <ProductCardSimilarProducts products={similarProducts} />
+            <ProductCardSimilarProducts products={similarProducts} t={t} />
           </div>
         </div>
       </div>
@@ -99,4 +99,4 @@ ProductCard.defaultProps = {
   similarProducts: [],
 };
 
-export default ProductCard;
+export default provideTranslations(ProductCard);

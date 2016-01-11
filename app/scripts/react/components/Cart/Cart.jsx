@@ -20,6 +20,7 @@ class Cart extends Component {
       paymentTypes,
       publicOffer,
       submitOrderUrl,
+      t,
       totalCount,
       totalPrice,
     } = this.props;
@@ -27,7 +28,11 @@ class Cart extends Component {
     return (
       <section className="b-cart">
         <div className="b-cart__content">
-          <CartTitle totalCount={totalCount} totalPrice={totalPrice} />
+          <CartTitle
+            t={t}
+            totalCount={totalCount}
+            totalPrice={totalPrice}
+          />
           <Checkout
             backUrl={backUrl}
             coupon={coupon}
@@ -43,6 +48,7 @@ class Cart extends Component {
             paymentTypes={paymentTypes}
             publicOffer={publicOffer}
             submitOrderUrl={submitOrderUrl}
+            t={t}
           />
         </div>
       </section>

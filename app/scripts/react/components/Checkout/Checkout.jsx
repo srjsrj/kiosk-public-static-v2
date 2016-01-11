@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
 import * as schemas from '../../schemas';
 import { vendorOrder } from '../../../routes/app';
+
 import Alert from '../common/Alert';
 import FormAuthenticity from '../common/FormAuthenticity';
 import CheckoutActions from './CheckoutActions';
@@ -28,6 +28,7 @@ class Checkout extends Component {
       paymentTypes,
       publicOffer,
       submitOrderUrl,
+      t,
     } = this.props;
 
     return (
@@ -55,6 +56,7 @@ class Checkout extends Component {
                 current={deliveryType}
                 items={deliveryTypes}
                 onChange={onDeliveryChange}
+                t={t}
               />
             </CheckoutStep>
             <CheckoutStep number={2} title={t('vendor.order.new.contacts_title')}>
@@ -63,7 +65,7 @@ class Checkout extends Component {
                 onChange={onFieldChange}
               />
               {coupon && coupon.show &&
-                <CheckoutCoupon code={coupon.value} />
+                <CheckoutCoupon code={coupon.value} t={t} />
               }
             </CheckoutStep>
             <CheckoutStep number={3} title={t('vendor.order.new.payment_title')}>
@@ -78,6 +80,7 @@ class Checkout extends Component {
             <CheckoutActions
               backUrl={backUrl}
               publicOffer={publicOffer}
+              t={t}
             />
           </div>
         </div>

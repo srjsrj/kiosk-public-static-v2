@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { t } from 'i18next';
+
 import { PHOTO_CHANGE } from '../../../constants/globalEventKeys';
 import { goodOrderTitle } from '../../../helpers/product';
+
 import ProductAddToCartButton from '../ProductAddToCartButton';
 import ProductCartWishlist from '../ProductCart/ProductCartWishlist';
 
-export default class ProductGoods extends Component {
+class ProductGoods extends Component {
   static propTypes = {
     addWishlistUrl: PropTypes.string,
     isWishlisted: PropTypes.bool,
@@ -78,7 +79,7 @@ export default class ProductGoods extends Component {
     );
   }
   render() {
-    const { product, wishlistUrl } = this.props;
+    const { product, t, wishlistUrl } = this.props;
 
     if (this.isTitlesValid(product)) {
       return (
@@ -88,7 +89,10 @@ export default class ProductGoods extends Component {
               {this.renderSelect(product)}
             </div>
             <div className="b-item-full__form__submit">
-              <ProductAddToCartButton text={t('vendor.button.to_cart')} />
+              <ProductAddToCartButton
+                text={t('vendor.button.to_cart')}
+                t={t}
+              />
             </div>
           </div>
           <ProductCartWishlist
@@ -112,10 +116,15 @@ export default class ProductGoods extends Component {
             />
           </div>
           <div className="b-item-full__form__row b-item-full__form__submit">
-            <ProductAddToCartButton text={t('vendor.button.to_cart')} />
+            <ProductAddToCartButton
+              text={t('vendor.button.to_cart')}
+              t={t}
+            />
           </div>
         </span>
       );
     }
   }
 }
+
+export default ProductGoods;
