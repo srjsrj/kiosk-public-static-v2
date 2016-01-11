@@ -12,7 +12,7 @@ const ProductCardSimilarProducts = ({ products, t }) => (
         </h1>
         <div className="b-item-list__content">
           {products.map(product =>
-            <ProductBlock key={product.id} product={product} />)}
+            <ProductBlock key={product.id} product={product} t={t} />)}
         </div>
       </section>
     : <span />
