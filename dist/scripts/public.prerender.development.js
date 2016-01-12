@@ -2624,7 +2624,7 @@ var _ProductBadge2 = _interopRequireDefault(_ProductBadge);
 var ProductBadgeUnavailable = function ProductBadgeUnavailable(_ref) {
   var product = _ref.product;
   var t = _ref.t;
-  return product.has_ordering_goods && !product.is_run_out ? _react2['default'].createElement(_ProductBadge2['default'], { text: t('vendor.badges.not_available'), status: 'sold' }) : _react2['default'].createElement('span', null);
+  return !product.has_ordering_goods && !product.is_run_out ? _react2['default'].createElement(_ProductBadge2['default'], { text: t('vendor.badges.not_available'), status: 'sold' }) : _react2['default'].createElement('span', null);
 };
 
 ProductBadgeUnavailable.propTypes = {
