@@ -7126,6 +7126,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _lodashCollectionSize = require('lodash/collection/size');
+
+var _lodashCollectionSize2 = _interopRequireDefault(_lodashCollectionSize);
+
 var _schemas = require('../../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
@@ -7165,7 +7169,9 @@ var ImageSlider = (function (_Component) {
   }, {
     key: 'initSlider',
     value: function initSlider() {
-      var className = this.props.className;
+      var _props = this.props;
+      var className = _props.className;
+      var slides = _props.slides;
 
       var $elt = $((0, _reactDom.findDOMNode)(this.refs.slides));
       var options = SLIDER_OPTIONS;
@@ -7199,6 +7205,10 @@ var ImageSlider = (function (_Component) {
         }
       }
 
+      if ((0, _lodashCollectionSize2['default'])(slides) <= 1) {
+        options.autoPlay = false;
+      }
+
       $elt.owlCarousel(options);
     }
   }, {
@@ -7210,12 +7220,12 @@ var ImageSlider = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var hasThumbs = _props.hasThumbs;
-      var slides = _props.slides;
-      var thumbHeight = _props.thumbHeight;
-      var thumbWidth = _props.thumbWidth;
+      var _props2 = this.props;
+      var className = _props2.className;
+      var hasThumbs = _props2.hasThumbs;
+      var slides = _props2.slides;
+      var thumbHeight = _props2.thumbHeight;
+      var thumbWidth = _props2.thumbWidth;
 
       var sliderClasses = (0, _classnames2['default'])('b-slider', className);
       var filtered = slides.filter(function (slide) {
@@ -7260,7 +7270,7 @@ ImageSlider.defaultProps = {
 exports['default'] = ImageSlider;
 module.exports = exports['default'];
 
-},{"../../../schemas":117,"./ImageSliderSlides":87,"./ImageSliderThumbs":88,"classnames":"classnames","react":"react","react-dom":"react-dom"}],87:[function(require,module,exports){
+},{"../../../schemas":117,"./ImageSliderSlides":87,"./ImageSliderThumbs":88,"classnames":"classnames","lodash/collection/size":139,"react":"react","react-dom":"react-dom"}],87:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

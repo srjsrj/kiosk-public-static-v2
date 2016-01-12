@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
+
+import size from 'lodash/collection/size';
 import * as schemas from '../../../schemas';
+
 import ImageSliderSlides from './ImageSliderSlides';
 import ImageSliderThumbs from './ImageSliderThumbs';
 
@@ -23,7 +26,7 @@ class ImageSlider extends Component {
     setTimeout(this.initSlider, 0);
   }
   initSlider() {
-    const { className } = this.props;
+    const { className, slides } = this.props;
     const $elt = $(findDOMNode(this.refs.slides));
     let options = SLIDER_OPTIONS;
 
@@ -57,6 +60,10 @@ class ImageSlider extends Component {
           singleItem: false,
         };
       }
+    }
+
+    if (size(slides) <= 1) {
+      options.autoPlay = false;
     }
 
     $elt.owlCarousel(options);
