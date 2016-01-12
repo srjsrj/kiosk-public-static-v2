@@ -12,12 +12,16 @@
     @include grid-media-query("palm")
       margin: 5px 0
     &_soc
-      @extend %five-twelfths
+      @extend %six-twelfths
       text-align: right
       @include grid-media-query("palm")
         text-align: left
+      & > *
+        display: inline
+      .LocaleSwitcher
+        margin-right: 15px
     &_main
-      @extend %seven-twelfths
+      @extend %six-twelfths
 
   &__link
     font-size: 1.143em

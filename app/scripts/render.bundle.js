@@ -36,5 +36,6 @@ global.OrderContainer = require('./react/components/Cart').CartContainer;
 global.InstagramContainer = require('./react/components/Instagram').InstagramContainer;
 global.ScrollToTop = require('./react/components/ScrollToTop');
 global.ImageSlider = require('./react/components/common/ImageSlider');
+global.LocaleSwitcher = require('./react/components/LocaleSwitcher');
 
 import './react/application';
