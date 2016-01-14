@@ -19,7 +19,7 @@ class CatalogFilterRadio extends Component {
     }
   }
   handleChange(index) {
-    showFilteredCount(getFilter(this, this.props.params));
+    showFilteredCount(getFilter(this, this.props.params), this.props.t);
     this.setState({ currentIndex: index });
   }
   render() {

@@ -45,7 +45,7 @@ class CatalogFilterRange extends Component {
     });
   }
   handleChange() {
-    showFilteredCount(getFilter(this, this.props.params));
+    showFilteredCount(getFilter(this, this.props.params), this.props.t);
   }
   renderHiddenRange() {
     const { filterName, paramName, from: pFrom, to: pTo } = this.props;

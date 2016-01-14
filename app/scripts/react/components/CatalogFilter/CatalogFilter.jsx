@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
+import provideTranslations from '../HoC/provideTranslations';
+
 import Checkbox from '../common/Checkbox';
 import CatalogFilterOptions from './CatalogFilterOptions';
 
@@ -35,4 +38,4 @@ CatalogFilter.propTypes = {
   selectedOptions: PropTypes.array,
 };
 
-export default CatalogFilter;
+export default provideTranslations(CatalogFilter);

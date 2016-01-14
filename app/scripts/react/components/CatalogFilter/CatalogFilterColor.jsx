@@ -12,7 +12,7 @@ class CatalogFilterColor extends Component {
     }
   }
   handleChange() {
-    showFilteredCount(getFilter(this, this.props.params));
+    showFilteredCount(getFilter(this, this.props.params), this.props.t);
   }
   render() {
     const { items, title } = this.props;

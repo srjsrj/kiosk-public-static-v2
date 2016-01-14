@@ -1,8 +1,7 @@
-import { t } from 'i18next';
 import Api from '../api/api';
 import NoticeService from '../services/Notice';
 
-export function showFilteredCount(filter) {
+export function showFilteredCount(filter, t) {
   NoticeService.notifyInfo('Загрузка...');
 
   Api.catalogFilter.getFilteredCount(filter)

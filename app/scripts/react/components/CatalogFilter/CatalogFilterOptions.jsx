@@ -7,10 +7,10 @@ import CatalogFilterColor from './CatalogFilterColor';
 
 class CatalogFilterOptions extends Component {
   renderOptions() {
-    const { filterName, options, params } = this.props;
+    const { filterName, options, params, t } = this.props;
 
     return options.map((item, i) => {
-      const props = {...item, filterName, params, key: i};
+      const props = {...item, filterName, params, key: i, t};
 
       switch(item.type) {
         case 'checkbox':

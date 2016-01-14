@@ -30,7 +30,7 @@ class CatalogFilterCheckbox extends Component {
     this.setState({ expanded: true });
   }
   handleChange() {
-    showFilteredCount(getFilter(this, this.props.params));
+    showFilteredCount(getFilter(this, this.props.params), this.props.t);
   }
   renderOptions() {
     const checked = [];
