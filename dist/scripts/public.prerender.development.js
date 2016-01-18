@@ -43,9 +43,9 @@ Clientbar = require('./react/components/Clientbar');
 OrderContainer = require('./react/components/Cart').CartContainer;
 ScrollToTop = require('./react/components/ScrollToTop');
 ImageSlider = require('./react/components/common/ImageSlider');
-LocaleSwitcher = require('./react/components/LocaleSwitcher');
+CurrencySwitcher = require('./react/components/CurrencySwitcher');
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/Cart":10,"./react/components/Cart/CartCoupon":8,"./react/components/Checkout/CheckoutCoupon":14,"./react/components/Clientbar":21,"./react/components/LocaleSwitcher":25,"./react/components/Logo/LogoContainer":26,"./react/components/Product/ProductBlock":36,"./react/components/Product/ProductCard":50,"./react/components/ScrollToTop":68,"./react/components/TopBanner":69,"./react/components/common/ImageSlider":86,"./react/reducers/Design.prerender":107,"./react/reducers/Popup":108,"react":"react","react-dom":"react-dom","react-dom/server":237,"redux":"redux","redux/react":413}],3:[function(require,module,exports){
+},{"./locales/numeral/ru":1,"./react/components/Cart":10,"./react/components/Cart/CartCoupon":8,"./react/components/Checkout/CheckoutCoupon":14,"./react/components/Clientbar":21,"./react/components/CurrencySwitcher":23,"./react/components/Logo/LogoContainer":26,"./react/components/Product/ProductBlock":36,"./react/components/Product/ProductCard":50,"./react/components/ScrollToTop":68,"./react/components/TopBanner":69,"./react/components/common/ImageSlider":86,"./react/reducers/Design.prerender":107,"./react/reducers/Popup":108,"react":"react","react-dom":"react-dom","react-dom/server":237,"redux":"redux","redux/react":413}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -482,7 +482,7 @@ CartContainer.defaultProps = {
 exports['default'] = (0, _HoCProvideTranslations2['default'])(CartContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":117,"../HoC/provideTranslations":23,"./Cart":5,"react":"react"}],8:[function(require,module,exports){
+},{"../../schemas":117,"../HoC/provideTranslations":25,"./Cart":5,"react":"react"}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -636,7 +636,7 @@ CartCoupon.defaultProps = {
 
 exports['default'] = (0, _HoCProvideTranslations2['default'])(CartCoupon);
 
-},{"../../../routes/api":125,"../HoC/provideTranslations":23,"../common/TextInput":94,"./CartAlert":6,"react":"react"}],9:[function(require,module,exports){
+},{"../../../routes/api":125,"../HoC/provideTranslations":25,"../common/TextInput":94,"./CartAlert":6,"react":"react"}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1946,6 +1946,170 @@ exports.Clientbar = _interopRequire(_Clientbar);
 // export { default as ClientbarContainer } from './ClientbarContainer';
 
 },{"./Clientbar":20}],22:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _lodashCollectionMap = require('lodash/collection/map');
+
+var _lodashCollectionMap2 = _interopRequireDefault(_lodashCollectionMap);
+
+var _lodashCollectionSize = require('lodash/collection/size');
+
+var _lodashCollectionSize2 = _interopRequireDefault(_lodashCollectionSize);
+
+var _lodashObjectGet = require('lodash/object/get');
+
+var _lodashObjectGet2 = _interopRequireDefault(_lodashObjectGet);
+
+var _lodashFunctionBind = require('lodash/function/bind');
+
+var _lodashFunctionBind2 = _interopRequireDefault(_lodashFunctionBind);
+
+var _helpersMoney = require('../../helpers/money');
+
+var CurrencySwitcher = (function (_Component) {
+  _inherits(CurrencySwitcher, _Component);
+
+  function CurrencySwitcher(props) {
+    _classCallCheck(this, CurrencySwitcher);
+
+    _get(Object.getPrototypeOf(CurrencySwitcher.prototype), 'constructor', this).call(this, props);
+
+    this.handleChange = (0, _lodashFunctionBind2['default'])(this.handleChange, this);
+  }
+
+  _createClass(CurrencySwitcher, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.props.onChange((0, _lodashObjectGet2['default'])(event, 'target.value'));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var currenciesIsoCodes = _props.currenciesIsoCodes;
+      var current = _props.current;
+
+      if ((0, _lodashCollectionSize2['default'])(currenciesIsoCodes) < 2) {
+        return false;
+      }
+
+      return _react2['default'].createElement(
+        'select',
+        {
+          className: 'CurrencySwitcher',
+          defaultValue: current,
+          onChange: this.handleChange
+        },
+        (0, _lodashCollectionMap2['default'])(currenciesIsoCodes, function (isoCode) {
+          return _react2['default'].createElement(
+            'option',
+            { key: isoCode, value: isoCode },
+            (0, _helpersMoney.getHTMLName)(isoCode)
+          );
+        })
+      );
+    }
+  }]);
+
+  return CurrencySwitcher;
+})(_react.Component);
+
+CurrencySwitcher.propTypes = {
+  currenciesIsoCodes: _react.PropTypes.array.isRequired,
+  current: _react.PropTypes.string.isRequired
+};
+
+exports['default'] = CurrencySwitcher;
+module.exports = exports['default'];
+
+},{"../../helpers/money":100,"lodash/collection/map":138,"lodash/collection/size":139,"lodash/function/bind":141,"lodash/object/get":207,"react":"react"}],23:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _urijs = require('urijs');
+
+var _urijs2 = _interopRequireDefault(_urijs);
+
+var _CurrencySwitcher = require('./CurrencySwitcher');
+
+var _CurrencySwitcher2 = _interopRequireDefault(_CurrencySwitcher);
+
+var CurrencySwitcherContainer = (function (_Component) {
+  _inherits(CurrencySwitcherContainer, _Component);
+
+  function CurrencySwitcherContainer() {
+    _classCallCheck(this, CurrencySwitcherContainer);
+
+    _get(Object.getPrototypeOf(CurrencySwitcherContainer.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(CurrencySwitcherContainer, [{
+    key: 'handleChange',
+    value: function handleChange(value) {
+      ;
+      window.location = new _urijs2['default']().removeQuery('currency').addQuery('currency', value).toString();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(_CurrencySwitcher2['default'], _extends({}, this.props, { onChange: this.handleChange }));
+    }
+  }]);
+
+  return CurrencySwitcherContainer;
+})(_react.Component);
+
+CurrencySwitcherContainer.propTypes = {
+  currenciesIsoCodes: _react.PropTypes.array.isRequired,
+  current: _react.PropTypes.string
+};
+
+CurrencySwitcherContainer.defaultProps = {
+  currenciesIsoCodes: [],
+  current: 'RUB'
+};
+
+exports['default'] = CurrencySwitcherContainer;
+module.exports = exports['default'];
+
+},{"./CurrencySwitcher":22,"react":"react","urijs":"urijs"}],24:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2003,7 +2167,7 @@ exports['default'] = function (Component) {
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"react":"react","redux/react":413}],23:[function(require,module,exports){
+},{"react":"react","redux/react":413}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2117,168 +2281,7 @@ var provideTranslations = function provideTranslations(WrappedComponent) {
 exports['default'] = provideTranslations;
 module.exports = exports['default'];
 
-},{"../../constants/localeLanguages":97,"i18next":"i18next","react":"react"}],24:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _lodashCollectionMap = require('lodash/collection/map');
-
-var _lodashCollectionMap2 = _interopRequireDefault(_lodashCollectionMap);
-
-var _lodashCollectionSize = require('lodash/collection/size');
-
-var _lodashCollectionSize2 = _interopRequireDefault(_lodashCollectionSize);
-
-var _lodashObjectGet = require('lodash/object/get');
-
-var _lodashObjectGet2 = _interopRequireDefault(_lodashObjectGet);
-
-var _lodashFunctionBind = require('lodash/function/bind');
-
-var _lodashFunctionBind2 = _interopRequireDefault(_lodashFunctionBind);
-
-var LocaleSwitcher = (function (_Component) {
-  _inherits(LocaleSwitcher, _Component);
-
-  function LocaleSwitcher(props) {
-    _classCallCheck(this, LocaleSwitcher);
-
-    _get(Object.getPrototypeOf(LocaleSwitcher.prototype), 'constructor', this).call(this, props);
-    this.handleChange = (0, _lodashFunctionBind2['default'])(this.handleChange, this);
-  }
-
-  _createClass(LocaleSwitcher, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
-      this.props.onChange((0, _lodashObjectGet2['default'])(event, 'target.value'));
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var currencies = _props.currencies;
-      var current = _props.current;
-
-      if ((0, _lodashCollectionSize2['default'])(currencies) <= 1) {
-        return false;
-      }
-
-      return _react2['default'].createElement(
-        'select',
-        {
-          className: 'LocaleSwitcher',
-          defaultValue: current,
-          onChange: this.handleChange
-        },
-        (0, _lodashCollectionMap2['default'])(currencies, function (currency) {
-          return _react2['default'].createElement(
-            'option',
-            { value: currency.id, key: currency.id },
-            currency.title
-          );
-        })
-      );
-    }
-  }]);
-
-  return LocaleSwitcher;
-})(_react.Component);
-
-LocaleSwitcher.propTypes = {
-  currencies: _react.PropTypes.array.isRequired,
-  current: _react.PropTypes.string.isRequired
-};
-
-exports['default'] = LocaleSwitcher;
-module.exports = exports['default'];
-
-},{"lodash/collection/map":138,"lodash/collection/size":139,"lodash/function/bind":141,"lodash/object/get":207,"react":"react"}],25:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _urijs = require('urijs');
-
-var _urijs2 = _interopRequireDefault(_urijs);
-
-var _LocaleSwitcher = require('./LocaleSwitcher');
-
-var _LocaleSwitcher2 = _interopRequireDefault(_LocaleSwitcher);
-
-var LocaleSwitcherContainer = (function (_Component) {
-  _inherits(LocaleSwitcherContainer, _Component);
-
-  function LocaleSwitcherContainer() {
-    _classCallCheck(this, LocaleSwitcherContainer);
-
-    _get(Object.getPrototypeOf(LocaleSwitcherContainer.prototype), 'constructor', this).apply(this, arguments);
-  }
-
-  _createClass(LocaleSwitcherContainer, [{
-    key: 'handleChange',
-    value: function handleChange(value) {
-      var uri = new _urijs2['default']().addQuery('currency', value);
-      window.location = uri.toString();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2['default'].createElement(_LocaleSwitcher2['default'], _extends({}, this.props, { onChange: this.handleChange }));
-    }
-  }]);
-
-  return LocaleSwitcherContainer;
-})(_react.Component);
-
-LocaleSwitcherContainer.propTypes = {
-  currencies: _react.PropTypes.array.isRequired,
-  current: _react.PropTypes.string
-};
-
-LocaleSwitcherContainer.defaultProps = {
-  currencies: [],
-  current: 'ru'
-};
-
-exports['default'] = LocaleSwitcherContainer;
-module.exports = exports['default'];
-
-},{"./LocaleSwitcher":24,"react":"react","urijs":"urijs"}],26:[function(require,module,exports){
+},{"../../constants/localeLanguages":97,"i18next":"i18next","react":"react"}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -2359,7 +2362,7 @@ var LogoContainer = (function (_Component) {
 exports['default'] = (0, _HoCConnectToRedux2['default'])(LogoContainer);
 module.exports = exports['default'];
 
-},{"../HoC/connectToRedux":22,"./index":27,"react":"react","redux/react":413}],27:[function(require,module,exports){
+},{"../HoC/connectToRedux":24,"./index":27,"react":"react","redux/react":413}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2863,7 +2866,7 @@ ProductBlock.propTypes = {
 exports['default'] = (0, _HoCProvideTranslations2['default'])(ProductBlock);
 module.exports = exports['default'];
 
-},{"../../HoC/provideTranslations":23,"../ProductPrices":60,"./ProductBlockBadges":34,"./ProductBlockImage":35,"react":"react"}],37:[function(require,module,exports){
+},{"../../HoC/provideTranslations":25,"../ProductPrices":60,"./ProductBlockBadges":34,"./ProductBlockImage":35,"react":"react"}],37:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -3058,7 +3061,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])(ProductCard);
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../HoC/provideTranslations":23,"../ProductCart":55,"../ProductPrices":60,"./ProductCardBadges":38,"./ProductCardBreadcrumbs":39,"./ProductCardDetails":42,"./ProductCardGallery":43,"./ProductCardSchema":46,"./ProductCardSimilarProducts":47,"./ProductCardTitle":48,"./ProductCardVideo":49,"react":"react"}],38:[function(require,module,exports){
+},{"../../HoC/provideTranslations":25,"../ProductCart":55,"../ProductPrices":60,"./ProductCardBadges":38,"./ProductCardBreadcrumbs":39,"./ProductCardDetails":42,"./ProductCardGallery":43,"./ProductCardSchema":46,"./ProductCardSimilarProducts":47,"./ProductCardTitle":48,"./ProductCardVideo":49,"react":"react"}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -8081,7 +8084,7 @@ function getCurrency(money) {
 }
 
 function getCurrencyID(money) {
-  return money.currency_iso_code.toLowerCase();
+  return (typeof money === 'string' ? money : money.currency_iso_code).toLowerCase();
 }
 
 function getHTMLName(money) {
@@ -8090,7 +8093,7 @@ function getHTMLName(money) {
   if (currency && currency.alternate_symbols.length) {
     return currency.alternate_symbols[0];
   } else {
-    return currency.html_entity || currency.symbol;
+    return currency.symbol || currency.html_entity;
   }
 }
 
