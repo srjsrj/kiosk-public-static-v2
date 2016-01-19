@@ -6,30 +6,33 @@ import size from 'lodash/collection/size';
 import get from 'lodash/object/get';
 import bind from 'lodash/function/bind';
 
-class LocaleSwitcher extends Component {
+import { getHTMLName } from '../../helpers/money';
+
+class CurrencySwitcher extends Component {
   constructor(props) {
     super(props);
+
     this.handleChange = bind(this.handleChange, this);
   }
   handleChange(event) {
     this.props.onChange( get(event, 'target.value') );
   }
   render() {
-    const { currencies, current } = this.props;
+    const { currenciesIsoCodes, current } = this.props;
 
-    if (size(currencies) <= 1) {
+    if (size(currenciesIsoCodes) < 2) {
       return false;
     }
 
     return (
       <select
-        className="LocaleSwitcher"
+        className="CurrencySwitcher"
         defaultValue={current}
         onChange={this.handleChange}
       >
-        {map(currencies, (currency) =>
-          <option value={currency.id} key={currency.id}>
-            {currency.title}
+        {map(currenciesIsoCodes, (isoCode) =>
+          <option key={isoCode} value={isoCode}>
+            {getHTMLName(isoCode)}
           </option>
         )}
       </select>
@@ -37,9 +40,9 @@ class LocaleSwitcher extends Component {
   }
 }
 
-LocaleSwitcher.propTypes = {
-  currencies: PropTypes.array.isRequired,
+CurrencySwitcher.propTypes = {
+  currenciesIsoCodes: PropTypes.array.isRequired,
   current: PropTypes.string.isRequired,
 };
 
-export default LocaleSwitcher;
+export default CurrencySwitcher;

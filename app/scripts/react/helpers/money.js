@@ -8,7 +8,7 @@ function getCurrency(money) {
 }
 
 function getCurrencyID(money) {
-  return money.currency_iso_code.toLowerCase();
+  return (typeof money === 'string' ? money : money.currency_iso_code).toLowerCase();
 }
 
 export function getHTMLName(money) {
@@ -17,7 +17,7 @@ export function getHTMLName(money) {
   if (currency && currency.alternate_symbols.length) {
     return currency.alternate_symbols[0];
   } else {
-    return currency.html_entity || currency.symbol;
+    return currency.symbol || currency.html_entity;
   }
 }
 
