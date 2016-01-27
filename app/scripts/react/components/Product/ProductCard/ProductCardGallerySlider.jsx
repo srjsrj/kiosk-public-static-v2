@@ -88,6 +88,7 @@ class ProductCardGallerySlider extends Component {
     $(findDOMNode(this.refs.productThumbs)).data('owlCarousel').destroy();
   }
   initFancybox() {
+    const { t = () => {} } = this.props;
     const $productPhoto = $(findDOMNode(this.refs.productPhoto));
 
     $productPhoto
@@ -100,9 +101,9 @@ class ProductCardGallerySlider extends Component {
           thumbs: { width: 8, height: 8 }
         },
         tpl: {
-          closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
-          next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
-          prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>',
+          closeBtn: `<a title="${t('vendor.gallery.close')}" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>`,
+          next: `<a title="${t('vendor.gallery.next')}" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>`,
+          prev: `<a title="${t('vendor.gallery.prev')}" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>`,
         },
       });
   }

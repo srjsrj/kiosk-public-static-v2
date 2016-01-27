@@ -51,6 +51,7 @@ class ProductCard extends Component {
                 <ProductCardGallery
                   images={product.images}
                   isKioskEnvironment={this.isKioskEnvironment()}
+                  t={t}
                 />
               </div>
               <div className="b-item-full__description">
