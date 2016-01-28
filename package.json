@@ -1,6 +1,6 @@
 {
   "name": "KioskPublicStatic",
-  "version": "0.0.156",
+  "version": "0.0.157",
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "jss": "^2.3.5",
     "jss-nested": "^0.2.0",
     "lodash": "^3.8.0",
-    "nouislider": "leongersen/noUiSlider#d207954f",
+    "noUiSlider": "leongersen/noUiSlider#d207954f",
     "numeral": "^1.5.3",
     "perfect-scrollbar": "^0.6.2",
     "react": "^0.14.5",

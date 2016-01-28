@@ -69040,7 +69040,7 @@ module.exports = exports['default'];
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"nouislider":[function(require,module,exports){
+},{}],"noUiSlider":[function(require,module,exports){
 /*! noUiSlider - 8.0.1 - 2015-06-29 19:11:22 */
 
 /*jslint browser: true */

@@ -12,7 +12,7 @@ const baseDependencies = {
   'classnames': './node_modules/classnames',
   'immutable': './node_modules/immutable/dist/immutable',
   'jss': './node_modules/jss/lib',
-  'nouislider': './node_modules/noUiSlider/distribute/nouislider',
+  'noUiSlider': './node_modules/noUiSlider/distribute/nouislider',
   'perfect-scrollbar': './node_modules/perfect-scrollbar',
   'react': './node_modules/react',
   'react-dom': './node_modules/react-dom',
