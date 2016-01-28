@@ -18,7 +18,7 @@ require('bootstrapSass');
 require('owlCarousel');
 require('fancybox');
 require('fancybox.wannabe');
-require('nouislider');
+require('noUiSlider');
 
 window.accounting.settings = gon.accounting_settings || {
   currency: {
