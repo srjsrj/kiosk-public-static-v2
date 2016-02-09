@@ -18,10 +18,10 @@ class CatalogFilter extends Component {
           className="b-full-filter__trigger"
           htmlFor="filter-toggle"
         >
-          <span className="b-btn b-full-filter__trigger__action b-full-filter__trigger__action_open">
+          <span className="b-btn element--active-opacity b-full-filter__trigger__action b-full-filter__trigger__action_open">
             Показать фильтр
           </span>
-          <span className="b-btn b-full-filter__trigger__action b-full-filter__trigger__action_close">
+          <span className="b-btn element--active-opacity b-full-filter__trigger__action b-full-filter__trigger__action_close">
             Скрыть фильтр
           </span>
         </label>
