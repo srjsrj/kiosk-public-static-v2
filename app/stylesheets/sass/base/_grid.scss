@@ -216,14 +216,14 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     margin-left:-$gutter;           /* [3] */
     @if not $use-markup-fix {
         letter-spacing:-0.31em;
+        word-spacing:-0.43em;
     }
 }
 
 @if not $use-markup-fix {
     /* Opera hack */
-    .opera:-o-prefocus,
-    #{$class-type}grid {
-        word-spacing:-0.31em;
+    .opera:-o-prefocus {
+        word-spacing:-0.43em;
     }
 }
 
