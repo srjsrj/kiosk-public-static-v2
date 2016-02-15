@@ -16,8 +16,8 @@ class CatalogFilterSelectedOptions extends Component {
                 className="b-full-filter__value"
                 href={item.url}
                 key={i}
+                dangerouslySetInnerHTML={{__html: item.name}}
               >
-                {item.name}
               </a>
             ))
           }
