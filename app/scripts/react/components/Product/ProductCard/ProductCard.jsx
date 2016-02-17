@@ -10,6 +10,8 @@ import ProductCardSchema from './ProductCardSchema';
 import ProductCardSimilarProducts from './ProductCardSimilarProducts';
 import ProductCardTitle from './ProductCardTitle';
 import ProductCardVideo from './ProductCardVideo';
+import ReactDisqusThread from 'react-disqus-thread';
+import { DISQUS_IDENTIFIER, DISQUS_SHORTNAME } from './ProductCard.constants';
 
 class ProductCard extends Component {
   state = {
@@ -27,6 +29,17 @@ class ProductCard extends Component {
     };
 
     this.setState({ good, product });
+  }
+  renderDisqus(product) {
+    var disqus_identifier = DISQUS_IDENTIFIER + product.id;
+
+    if (this.props.hasComments) {
+      return (
+        <ReactDisqusThread shortname={DISQUS_SHORTNAME} identifier={disqus_identifier} />
+      );
+    }else{
+      return null;
+    }
   }
   render() {
     const { similarProducts, t } = this.props;
@@ -76,8 +89,8 @@ class ProductCard extends Component {
               </div>
               <ProductCardVideo product={product} />
             </div>
-
             <ProductCardSimilarProducts products={similarProducts} t={t} />
+            {this.renderDisqus(product)}
           </div>
         </div>
       </div>
@@ -89,6 +102,7 @@ ProductCard.propTypes = {
   addWishlistUrl: PropTypes.string,
   formAuthenticity: PropTypes.object,
   hasWishlist: PropTypes.bool,
+  hasComments: PropTypes.bool,
   isWishlisted: PropTypes.bool,
   product: PropTypes.object,
   similarProducts: PropTypes.array,
@@ -96,6 +110,7 @@ ProductCard.propTypes = {
 };
 ProductCard.defaultProps = {
   formAuthenticity: {},
+  hasComments: false,
   product: {},
   similarProducts: [],
 };
