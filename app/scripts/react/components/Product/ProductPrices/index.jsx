@@ -4,6 +4,20 @@ import ProductGoodPrice from './ProductGoodPrice';
 import ProductGoodPrices from './ProductGoodPrices';
 
 class ProductPrices extends Component {
+  constructor(props) {
+    super(props);
+    if (props.good){
+      this.good = props.good;
+    }else if (props.product.has_ordering_goods){
+      this.good = props.product.goods[0];
+    }
+    if (this.good){
+      this.good.final_actual_price = {
+        cents: this.good.actual_price.cents,
+        currency_iso_code: this.good.actual_price.currency_iso_code
+      }
+    }
+  }
   getMinPrice(goods) {
     let minPrice = goods[0].actual_price;
 
@@ -30,13 +44,17 @@ class ProductPrices extends Component {
 
     return maxPrice;
   }
+  onWeightChange(value) {
+    this.good.final_actual_price.cents = this.good.actual_price.cents * parseFloat(value);
+    this.forceUpdate();
+  }
   render() {
-    const { good, product, t } = this.props;
+    const { product, t } = this.props;
 
-    if (good) {
+    if (this.good) {
       return (
-        <ProductGoodPrice good={good} t={t} />
-      ); 
+        <ProductGoodPrice good={this.good} t={t} />
+      );
     } else if (product.has_ordering_goods) {
       const maxPrice = this.getMaxPrice(product.goods);
       const minPrice = this.getMinPrice(product.goods);
@@ -44,10 +62,6 @@ class ProductPrices extends Component {
       if (diff(minPrice, maxPrice)) {
         return (
           <ProductGoodPrices minPrice={minPrice} maxPrice={maxPrice} />
-        );
-      } else {
-        return (
-          <ProductGoodPrice good={product.goods[0]} t={t} />
         );
       }
     }
