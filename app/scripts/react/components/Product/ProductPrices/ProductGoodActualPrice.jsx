@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
 const ProductGoodActualPrice = ({ good, t }) => (
   good.actual_price
-    ? <HumanizedMoneyWithCurrency money={good.actual_price} />
+    ? <HumanizedMoneyWithCurrency money={good.final_actual_price} />
     : <span>{t('vendor.product.blank_price')}</span>
 );
 

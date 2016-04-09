@@ -5,6 +5,7 @@ import HiddenInput from '../../common/HiddenInput';
 import ProductCartForProduct from './ProductCartForProduct';
 import ProductCartForProductItems from './ProductCartForProductItems';
 import ProductCartNotAvailable from './ProductCartNotAvailable';
+import ProductBulk from '../ProductBulk'
 
 export default class ProductCart extends Component {
   static propTypes = {
@@ -20,8 +21,10 @@ export default class ProductCart extends Component {
   static defaultProps = {
     formAuthenticity: {},
   }
+  onWeightChange(value) {
+    this.props.onWeightChange(value);
+  }
   renderContent(product, t) {
-
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
         return (
@@ -42,9 +45,19 @@ export default class ProductCart extends Component {
       );
     }
   }
+  renderProductBulkInput(product, t){
+    if (product.is_bulk) {
+      return (
+        <div className="b-item-full__form__row b-item-full__form__row_fixed">
+          <div className="b-item-full__weight">
+            <ProductBulk t={t} onWeightChange={this.onWeightChange.bind(this)} product={product} />
+          </div>
+        </div>
+      );
+    }
+  }
   render() {
     const { onProductChange, product, t } = this.props;
-
     return (
       <form
         acceptCharset="UTF-8"
@@ -56,6 +69,7 @@ export default class ProductCart extends Component {
           <HiddenInput name="utf8" value="✓" />
           <CSRFToken {...this.props.formAuthenticity} />
         </div>
+        {this.renderProductBulkInput(product, t)}
         {this.renderContent(product, t)}
       </form>
     );

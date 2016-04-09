@@ -149,7 +149,8 @@ global.gon = {
           "nothing_found_by_criteria": "Сожалеем, ничего не найдено. Попробуйте изменить критерии поиска.",
           "category_title": "Категория",
           "show_other_products": "Посмотреть другие товары",
-          "show_all": "Показать все"
+          "show_all": "Показать все",
+          "weight": "Вес"
         },
         "properties": {
           "empty": "Нет характеристик для вывода"
