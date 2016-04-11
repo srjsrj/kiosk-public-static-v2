@@ -152,9 +152,7 @@
       font-size: 1.25em
       margin-top: -5px
 
-    &__quantity
-      // @include grid-media-query("palm")
-      //   margin-left: -6%
+    &__quantity, &__weight
       &__text
         display: inline-block
         vertical-align: middle
@@ -173,7 +171,17 @@
           width: 100%
           box-sizing: border-box
           font-size: .875em
-
+      &__input
+        max-width: 60px
+        display: inline-block
+        vertical-align: middle
+        @include grid-media-query((lap, palm))
+          max-width: 90%
+          display: block
+        input
+          width: 100%
+          box-sizing: border-box
+          font-size: .875em
     &__remove
       display: block
       border-radius: 17px
@@ -193,6 +201,7 @@
       &-img,
       &-content,
       &-quantity,
+      &-weight,
       &-price,
       &-remove
         @extend %grid__item
@@ -218,6 +227,10 @@
         @extend %palm--five-twelfths
 
       &-quantity
+        @extend %three-twelfths
+        @extend %push--palm--three-twelfths
+        @extend %palm--four-twelfths
+      &-weight
         @extend %three-twelfths
         @extend %push--palm--three-twelfths
         @extend %palm--four-twelfths
