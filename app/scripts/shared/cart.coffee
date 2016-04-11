@@ -1,17 +1,20 @@
 $ ->
   $cartTotal = $ '[cart-total]'
+  $('[cart-item-weight]').numeric({ negative: false })
 
-  setCartItemCount = ($el, count) ->
+  onCartItemChange = ($el, opts) ->
     price = + $el.data 'item-price'
-    total = price*count
+    total = 0
+    if opts.count
+      total = total + price * opts.count
+
+    if opts.weight
+      total = total + price * opts.weight
 
     $el.data 'item-total-price', total
 
     $price_el = $el.find '[cart-item-total-price]'
     $price_el.html accounting.formatMoney total
-
-    $selector = $el.find '[cart-item-selector]'
-    $selector.val count
 
     updateCartTotal()
 
@@ -67,4 +70,10 @@ $ ->
     $e = $ @
     $el = $e.closest '[cart-item]'
 
-    setCartItemCount $el, parseInt($e.val())
+    onCartItemChange $el, {count: parseInt($e.val())}
+
+  $('[cart-item-weight]').on 'keyup', ->
+    $e = $ @
+    $el = $e.closest '[cart-item]'
+
+    onCartItemChange $el, {weight: parseFloat($e.val())}
