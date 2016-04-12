@@ -2891,7 +2891,7 @@ var _commonTextInput = require('../../common/TextInput');
 
 var _commonTextInput2 = _interopRequireDefault(_commonTextInput);
 
-var MIN_WEIGHT = 0.01;
+var _reactDom = require('react-dom');
 
 var ProductBulk = (function (_Component) {
   _inherits(ProductBulk, _Component);
@@ -2900,22 +2900,18 @@ var ProductBulk = (function (_Component) {
     _classCallCheck(this, ProductBulk);
 
     _get(Object.getPrototypeOf(ProductBulk.prototype), 'constructor', this).call(this, props);
-    this.state = {
-      value: '1.00'
-    };
   }
 
   _createClass(ProductBulk, [{
     key: 'onWeightChange',
     value: function onWeightChange(e) {
       var value = parseFloat(e.target.value);
-      if (value < MIN_WEIGHT) {
-        value = MIN_WEIGHT;
-      }
-      this.setState({
-        value: value
-      });
       this.props.onWeightChange(value);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      $((0, _reactDom.findDOMNode)(this.refs.input)).numeric({ negative: false });
     }
   }, {
     key: 'render',
@@ -2930,10 +2926,10 @@ var ProductBulk = (function (_Component) {
           null,
           t('vendor.product.weight')
         ),
-        _react2['default'].createElement('input', { type: 'number',
+        _react2['default'].createElement('input', { ref: 'input', type: 'text',
           className: 'string form-control',
           name: 'cart_item[weight]',
-          value: this.state.value,
+          defaultValue: '1.00',
           onChange: this.onWeightChange.bind(this)
         })
       );
@@ -2950,7 +2946,7 @@ ProductBulk.propTypes = {
 exports['default'] = ProductBulk;
 module.exports = exports['default'];
 
-},{"../../common/TextInput":96,"react":"react"}],38:[function(require,module,exports){
+},{"../../common/TextInput":96,"react":"react","react-dom":"react-dom"}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4575,6 +4571,10 @@ var _ProductBulk = require('../ProductBulk');
 
 var _ProductBulk2 = _interopRequireDefault(_ProductBulk);
 
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var ProductCart = (function (_Component) {
   _inherits(ProductCart, _Component);
 
@@ -4608,7 +4608,7 @@ var ProductCart = (function (_Component) {
   }, {
     key: 'renderProductBulkInput',
     value: function renderProductBulkInput(product, t) {
-      if (product.is_bulk) {
+      if (product.selling_by_weight) {
         return _react2['default'].createElement(
           'div',
           { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
@@ -4673,7 +4673,7 @@ var ProductCart = (function (_Component) {
 exports['default'] = ProductCart;
 module.exports = exports['default'];
 
-},{"../../../../routes/app":128,"../../common/CSRFToken":80,"../../common/HiddenInput":83,"../ProductBulk":37,"./ProductCartForProduct":53,"./ProductCartForProductItems":54,"./ProductCartNotAvailable":55,"react":"react"}],58:[function(require,module,exports){
+},{"../../../../routes/app":128,"../../common/CSRFToken":80,"../../common/HiddenInput":83,"../ProductBulk":37,"./ProductCartForProduct":53,"./ProductCartForProductItems":54,"./ProductCartNotAvailable":55,"jquery":"jquery","react":"react"}],58:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

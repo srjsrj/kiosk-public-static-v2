@@ -6,6 +6,7 @@ import ProductCartForProduct from './ProductCartForProduct';
 import ProductCartForProductItems from './ProductCartForProductItems';
 import ProductCartNotAvailable from './ProductCartNotAvailable';
 import ProductBulk from '../ProductBulk'
+import $ from 'jquery';
 
 export default class ProductCart extends Component {
   static propTypes = {
@@ -46,7 +47,7 @@ export default class ProductCart extends Component {
     }
   }
   renderProductBulkInput(product, t){
-    if (product.is_bulk) {
+    if (product.selling_by_weight) {
       return (
         <div className="b-item-full__form__row b-item-full__form__row_fixed">
           <div className="b-item-full__weight">
