@@ -41,9 +41,6 @@ class ProductCard extends Component {
       return null;
     }
   }
-  onWeightChange(value){
-    this.refs.productPrices.onWeightChange(value);
-  }
   render() {
     const { similarProducts, t } = this.props;
     const { good, product } = this.state;
@@ -77,14 +74,13 @@ class ProductCard extends Component {
                   <ProductCardBadges product={product} t={t} />
                 </div>
                 <div className="b-item-full__price p-price">
-                  <ProductPrices ref="productPrices" good={good} product={product} />
+                  <ProductPrices good={good} product={product} t={t} />
                 </div>
                 <ProductCardSchema product={product} />
                 <div className="b-item-full__form">
                   <ProductCart
                     {...this.props}
                     {...this.state}
-                    onWeightChange={this.onWeightChange.bind(this)}
                     onGoodChange={this.handleGoodChange.bind(this)}
                     t={t}
                   />

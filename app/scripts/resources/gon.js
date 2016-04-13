@@ -150,7 +150,8 @@ global.gon = {
           "category_title": "Категория",
           "show_other_products": "Посмотреть другие товары",
           "show_all": "Показать все",
-          "weight": "Вес"
+          "weight": "Вес",
+          "kg": "кг."
         },
         "properties": {
           "empty": "Нет характеристик для вывода"

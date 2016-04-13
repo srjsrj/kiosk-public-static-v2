@@ -8,14 +8,26 @@ class ProductGoodPrice extends Component {
   static propTypes = {
     good: PropTypes.object.isRequired,
   }
+  renderWeightOfPrice(product, t){
+    if (product.weight_of_price){
+      return (
+        <span>
+          &nbsp;/&nbsp;{product.weight_of_price} {t('vendor.product.kg')}
+        </span>
+      );
+    }else{
+      return null;
+    }
+  }
   render() {
-    const { good, t } = this.props;
+    const { product, good, t } = this.props;
 
     if (good.is_sale) {
       return (
         <span>
           <div className="b-item__price b_item_price_sale">
             <ProductGoodActualPrice good={good} t={t} />
+            {this.renderWeightOfPrice(product, t)}
           </div>
           <div className="b-item__price b-item__price_old">
             <HumanizedMoneyWithCurrency money={good.price} />
@@ -24,12 +36,13 @@ class ProductGoodPrice extends Component {
       );
     } else {
       const priceClasses = classNames('b-item__price', {
-        'b-item__price_unknown': good.final_actual_price && good.final_actual_price.cents === 0,
+        'b-item__price_unknown': good.actual_price && good.actual_price.cents === 0,
       });
 
       return (
         <div className={priceClasses}>
-          <ProductGoodActualPrice good={good} t={t} />
+          <ProductGoodActualPrice good={good} product={product} t={t} />
+          {this.renderWeightOfPrice(product, t)}
         </div>
       );
     }

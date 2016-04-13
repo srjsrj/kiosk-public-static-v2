@@ -4,12 +4,14 @@ $ ->
 
   onCartItemChange = ($el, opts) ->
     price = + $el.data 'item-price'
+
     total = 0
     if opts.count
       total = total + price * opts.count
 
     if opts.weight
-      total = total + price * opts.weight
+      weight_of_price = parseFloat($el.data('item-weight-of-price'))
+      total = total + (price * opts.weight / weight_of_price)
 
     $el.data 'item-total-price', total
 
