@@ -2935,8 +2935,6 @@ var ProductBulk = (function (_Component) {
           currency_iso_code: this.good().actual_price.currency_iso_code
         }
       });
-
-      //this.props.onWeightChange(value);
     }
   }, {
     key: 'getPrice',
@@ -5002,7 +5000,7 @@ var ProductGoodPrice = (function (_Component) {
   _createClass(ProductGoodPrice, [{
     key: 'renderWeightOfPrice',
     value: function renderWeightOfPrice(product, t) {
-      if (product.weight_of_price) {
+      if (product.selling_by_weight && product.weight_of_price) {
         return _react2['default'].createElement(
           'span',
           null,

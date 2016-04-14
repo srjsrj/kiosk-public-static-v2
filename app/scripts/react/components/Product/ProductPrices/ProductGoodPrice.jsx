@@ -9,7 +9,7 @@ class ProductGoodPrice extends Component {
     good: PropTypes.object.isRequired,
   }
   renderWeightOfPrice(product, t){
-    if (product.weight_of_price){
+    if (product.selling_by_weight && product.weight_of_price){
       return (
         <span>
           &nbsp;/&nbsp;{product.weight_of_price} {t('vendor.product.kg')}
