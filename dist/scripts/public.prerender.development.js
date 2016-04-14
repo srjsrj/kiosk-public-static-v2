@@ -2893,6 +2893,10 @@ var _commonTextInput2 = _interopRequireDefault(_commonTextInput);
 
 var _reactDom = require('react-dom');
 
+var _commonMoneyHumanizedMoneyWithCurrency = require('../../common/Money/HumanizedMoneyWithCurrency');
+
+var _commonMoneyHumanizedMoneyWithCurrency2 = _interopRequireDefault(_commonMoneyHumanizedMoneyWithCurrency);
+
 var ProductBulk = (function (_Component) {
   _inherits(ProductBulk, _Component);
 
@@ -2900,13 +2904,44 @@ var ProductBulk = (function (_Component) {
     _classCallCheck(this, ProductBulk);
 
     _get(Object.getPrototypeOf(ProductBulk.prototype), 'constructor', this).call(this, props);
+
+    if (this.good()) {
+      this.state = {
+        price: {
+          cents: this.getPrice(props.product.weight_of_price),
+          currency_iso_code: this.good().actual_price.currency_iso_code
+        }
+      };
+    }
   }
 
   _createClass(ProductBulk, [{
+    key: 'good',
+    value: function good() {
+      if (this.props.good) {
+        return this.props.good;
+      } else if (this.props.product.has_ordering_goods) {
+        return this.props.product.goods[0];
+      }
+    }
+  }, {
     key: 'onWeightChange',
     value: function onWeightChange(e) {
       var value = parseFloat(e.target.value);
-      this.props.onWeightChange(value);
+
+      this.setState({
+        price: {
+          cents: this.getPrice(value),
+          currency_iso_code: this.good().actual_price.currency_iso_code
+        }
+      });
+
+      //this.props.onWeightChange(value);
+    }
+  }, {
+    key: 'getPrice',
+    value: function getPrice(weight) {
+      return this.good().actual_price.cents * weight / parseFloat(this.props.product.weight_of_price);
     }
   }, {
     key: 'componentDidMount',
@@ -2918,21 +2953,38 @@ var ProductBulk = (function (_Component) {
     value: function render() {
       var t = this.props.t;
 
-      return _react2['default'].createElement(
-        'span',
-        null,
-        _react2['default'].createElement(
-          'span',
+      if (this.good()) {
+        return _react2['default'].createElement(
+          'div',
           null,
-          t('vendor.product.weight')
-        ),
-        _react2['default'].createElement('input', { ref: 'input', type: 'text',
-          className: 'string form-control',
-          name: 'cart_item[weight]',
-          defaultValue: '1.00',
-          onChange: this.onWeightChange.bind(this)
-        })
-      );
+          _react2['default'].createElement(
+            'span',
+            null,
+            _react2['default'].createElement(
+              'span',
+              null,
+              t('vendor.product.weight')
+            ),
+            _react2['default'].createElement('input', { ref: 'input', type: 'text',
+              className: 'string form-control',
+              name: 'cart_item[weight]',
+              defaultValue: this.props.product.weight_of_price,
+              onChange: this.onWeightChange.bind(this)
+            })
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-item-full__price p-price' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'b-item__price' },
+              _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: this.state.price })
+            )
+          )
+        );
+      } else {
+        return null;
+      }
     }
   }]);
 
@@ -2946,7 +2998,7 @@ ProductBulk.propTypes = {
 exports['default'] = ProductBulk;
 module.exports = exports['default'];
 
-},{"../../common/TextInput":96,"react":"react","react-dom":"react-dom"}],38:[function(require,module,exports){
+},{"../../common/Money/HumanizedMoneyWithCurrency":93,"../../common/TextInput":96,"react":"react","react-dom":"react-dom"}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3070,11 +3122,6 @@ var ProductCard = (function (_Component) {
       }
     }
   }, {
-    key: 'onWeightChange',
-    value: function onWeightChange(value) {
-      this.refs.productPrices.onWeightChange(value);
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -3129,14 +3176,13 @@ var ProductCard = (function (_Component) {
                 _react2['default'].createElement(
                   'div',
                   { className: 'b-item-full__price p-price' },
-                  _react2['default'].createElement(_ProductPrices2['default'], { ref: 'productPrices', good: good, product: product })
+                  _react2['default'].createElement(_ProductPrices2['default'], { good: good, product: product, t: t })
                 ),
                 _react2['default'].createElement(_ProductCardSchema2['default'], { product: product }),
                 _react2['default'].createElement(
                   'div',
                   { className: 'b-item-full__form' },
                   _react2['default'].createElement(_ProductCart2['default'], _extends({}, this.props, this.state, {
-                    onWeightChange: this.onWeightChange.bind(this),
                     onGoodChange: this.handleGoodChange.bind(this),
                     t: t
                   }))
@@ -4585,11 +4631,6 @@ var ProductCart = (function (_Component) {
   }
 
   _createClass(ProductCart, [{
-    key: 'onWeightChange',
-    value: function onWeightChange(value) {
-      this.props.onWeightChange(value);
-    }
-  }, {
     key: 'renderContent',
     value: function renderContent(product, t) {
       if (product.has_ordering_goods) {
@@ -4607,15 +4648,15 @@ var ProductCart = (function (_Component) {
     }
   }, {
     key: 'renderProductBulkInput',
-    value: function renderProductBulkInput(product, t) {
-      if (product.selling_by_weight) {
+    value: function renderProductBulkInput(product, good, t) {
+      if (product.selling_by_weight && product.weight_of_price) {
         return _react2['default'].createElement(
           'div',
           { className: 'b-item-full__form__row b-item-full__form__row_fixed' },
           _react2['default'].createElement(
             'div',
             { className: 'b-item-full__weight' },
-            _react2['default'].createElement(_ProductBulk2['default'], { t: t, onWeightChange: this.onWeightChange.bind(this), product: product })
+            _react2['default'].createElement(_ProductBulk2['default'], { t: t, good: good, product: product })
           )
         );
       }
@@ -4627,6 +4668,7 @@ var ProductCart = (function (_Component) {
       var onProductChange = _props.onProductChange;
       var product = _props.product;
       var t = _props.t;
+      var good = _props.good;
 
       return _react2['default'].createElement(
         'form',
@@ -4642,7 +4684,7 @@ var ProductCart = (function (_Component) {
           _react2['default'].createElement(_commonHiddenInput2['default'], { name: 'utf8', value: '✓' }),
           _react2['default'].createElement(_commonCSRFToken2['default'], this.props.formAuthenticity)
         ),
-        this.renderProductBulkInput(product, t),
+        this.renderProductBulkInput(product, good, t),
         this.renderContent(product, t)
       );
     }
@@ -4901,7 +4943,7 @@ var _commonMoneyHumanizedMoneyWithCurrency2 = _interopRequireDefault(_commonMone
 var ProductGoodActualPrice = function ProductGoodActualPrice(_ref) {
   var good = _ref.good;
   var t = _ref.t;
-  return good.actual_price ? _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: good.final_actual_price }) : _react2['default'].createElement(
+  return good.actual_price ? _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: good.actual_price }) : _react2['default'].createElement(
     'span',
     null,
     t('vendor.product.blank_price')
@@ -4958,9 +5000,26 @@ var ProductGoodPrice = (function (_Component) {
   }
 
   _createClass(ProductGoodPrice, [{
+    key: 'renderWeightOfPrice',
+    value: function renderWeightOfPrice(product, t) {
+      if (product.weight_of_price) {
+        return _react2['default'].createElement(
+          'span',
+          null,
+          ' / ',
+          product.weight_of_price,
+          ' ',
+          t('vendor.product.kg')
+        );
+      } else {
+        return null;
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var product = _props.product;
       var good = _props.good;
       var t = _props.t;
 
@@ -4971,7 +5030,8 @@ var ProductGoodPrice = (function (_Component) {
           _react2['default'].createElement(
             'div',
             { className: 'b-item__price b_item_price_sale' },
-            _react2['default'].createElement(_ProductGoodActualPrice2['default'], { good: good, t: t })
+            _react2['default'].createElement(_ProductGoodActualPrice2['default'], { good: good, t: t }),
+            this.renderWeightOfPrice(product, t)
           ),
           _react2['default'].createElement(
             'div',
@@ -4981,13 +5041,14 @@ var ProductGoodPrice = (function (_Component) {
         );
       } else {
         var priceClasses = (0, _classnames2['default'])('b-item__price', {
-          'b-item__price_unknown': good.final_actual_price && good.final_actual_price.cents === 0
+          'b-item__price_unknown': good.actual_price && good.actual_price.cents === 0
         });
 
         return _react2['default'].createElement(
           'div',
           { className: priceClasses },
-          _react2['default'].createElement(_ProductGoodActualPrice2['default'], { good: good, t: t })
+          _react2['default'].createElement(_ProductGoodActualPrice2['default'], { good: good, product: product, t: t }),
+          this.renderWeightOfPrice(product, t)
         );
       }
     }
@@ -5107,21 +5168,10 @@ var _ProductGoodPrices2 = _interopRequireDefault(_ProductGoodPrices);
 var ProductPrices = (function (_Component) {
   _inherits(ProductPrices, _Component);
 
-  function ProductPrices(props) {
+  function ProductPrices() {
     _classCallCheck(this, ProductPrices);
 
-    _get(Object.getPrototypeOf(ProductPrices.prototype), 'constructor', this).call(this, props);
-    if (props.good) {
-      this.good = props.good;
-    } else if (props.product.has_ordering_goods) {
-      this.good = props.product.goods[0];
-    }
-    if (this.good) {
-      this.good.final_actual_price = {
-        cents: this.good.actual_price.cents,
-        currency_iso_code: this.good.actual_price.currency_iso_code
-      };
-    }
+    _get(Object.getPrototypeOf(ProductPrices.prototype), 'constructor', this).apply(this, arguments);
   }
 
   _createClass(ProductPrices, [{
@@ -5155,26 +5205,23 @@ var ProductPrices = (function (_Component) {
       return maxPrice;
     }
   }, {
-    key: 'onWeightChange',
-    value: function onWeightChange(value) {
-      this.good.final_actual_price.cents = this.good.actual_price.cents * parseFloat(value);
-      this.forceUpdate();
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var good = _props.good;
       var product = _props.product;
       var t = _props.t;
 
-      if (this.good) {
-        return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: this.good, t: t });
+      if (good) {
+        return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: good, product: product, t: t });
       } else if (product.has_ordering_goods) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
         if ((0, _deepDiff.diff)(minPrice, maxPrice)) {
           return _react2['default'].createElement(_ProductGoodPrices2['default'], { minPrice: minPrice, maxPrice: maxPrice });
+        } else {
+          return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: product.goods[0], product: product, t: t });
         }
       }
 

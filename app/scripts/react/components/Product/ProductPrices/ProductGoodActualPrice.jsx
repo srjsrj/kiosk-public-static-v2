@@ -4,7 +4,7 @@ import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCur
 
 const ProductGoodActualPrice = ({ good, t }) => (
   good.actual_price
-    ? <HumanizedMoneyWithCurrency money={good.final_actual_price} />
+    ? <HumanizedMoneyWithCurrency money={good.actual_price} />
     : <span>{t('vendor.product.blank_price')}</span>
 );
 

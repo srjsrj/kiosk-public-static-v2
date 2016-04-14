@@ -22,9 +22,6 @@ export default class ProductCart extends Component {
   static defaultProps = {
     formAuthenticity: {},
   }
-  onWeightChange(value) {
-    this.props.onWeightChange(value);
-  }
   renderContent(product, t) {
     if (product.has_ordering_goods) {
       if (product.goods.length === 1) {
@@ -46,19 +43,19 @@ export default class ProductCart extends Component {
       );
     }
   }
-  renderProductBulkInput(product, t){
-    if (product.selling_by_weight) {
+  renderProductBulkInput(product, good, t){
+    if (product.selling_by_weight && product.weight_of_price) {
       return (
         <div className="b-item-full__form__row b-item-full__form__row_fixed">
           <div className="b-item-full__weight">
-            <ProductBulk t={t} onWeightChange={this.onWeightChange.bind(this)} product={product} />
+            <ProductBulk t={t} good={good} product={product} />
           </div>
         </div>
       );
     }
   }
   render() {
-    const { onProductChange, product, t } = this.props;
+    const { onProductChange, product, t, good } = this.props;
     return (
       <form
         acceptCharset="UTF-8"
@@ -70,7 +67,7 @@ export default class ProductCart extends Component {
           <HiddenInput name="utf8" value="✓" />
           <CSRFToken {...this.props.formAuthenticity} />
         </div>
-        {this.renderProductBulkInput(product, t)}
+        {this.renderProductBulkInput(product, good, t)}
         {this.renderContent(product, t)}
       </form>
     );
