@@ -2887,10 +2887,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _commonTextInput = require('../../common/TextInput');
-
-var _commonTextInput2 = _interopRequireDefault(_commonTextInput);
-
 var _reactDom = require('react-dom');
 
 var _commonMoneyHumanizedMoneyWithCurrency = require('../../common/Money/HumanizedMoneyWithCurrency');
@@ -2927,7 +2923,10 @@ var ProductBulk = (function (_Component) {
   }, {
     key: 'onWeightChange',
     value: function onWeightChange(e) {
-      var value = parseFloat(e.target.value);
+      var value = parseFloat(e.target.value.replace(',', '.'));
+      if (isNaN(value)) {
+        value = 0;
+      }
 
       this.setState({
         price: {
@@ -2944,7 +2943,12 @@ var ProductBulk = (function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      $((0, _reactDom.findDOMNode)(this.refs.input)).numeric({ negative: false });
+      $((0, _reactDom.findDOMNode)(this.refs.input)).numeric({ negative: false, decimalPlaces: 2, decimal: "," });
+    }
+  }, {
+    key: 'formatPrice',
+    value: function formatPrice(price) {
+      return price.toString().replace('.', ',');
     }
   }, {
     key: 'render',
@@ -2966,7 +2970,7 @@ var ProductBulk = (function (_Component) {
             _react2['default'].createElement('input', { ref: 'input', type: 'text',
               className: 'string form-control',
               name: 'cart_item[weight]',
-              defaultValue: this.props.product.weight_of_price,
+              defaultValue: this.formatPrice(this.props.product.weight_of_price),
               onChange: this.onWeightChange.bind(this)
             })
           ),
@@ -2996,7 +3000,7 @@ ProductBulk.propTypes = {
 exports['default'] = ProductBulk;
 module.exports = exports['default'];
 
-},{"../../common/Money/HumanizedMoneyWithCurrency":93,"../../common/TextInput":96,"react":"react","react-dom":"react-dom"}],38:[function(require,module,exports){
+},{"../../common/Money/HumanizedMoneyWithCurrency":93,"react":"react","react-dom":"react-dom"}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
