@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import TextInput from '../../common/TextInput';
 import { findDOMNode } from 'react-dom';
 import HumanizedMoneyWithCurrency from '../../common/Money/HumanizedMoneyWithCurrency';
 
@@ -24,7 +23,10 @@ class ProductBulk extends Component {
     }
   }
   onWeightChange(e) {
-    var value = parseFloat(e.target.value)
+    var value = parseFloat(e.target.value.replace(',', '.'))
+    if (isNaN(value)){
+      value = 0;
+    }
 
     this.setState({
       price:{
@@ -37,7 +39,10 @@ class ProductBulk extends Component {
     return this.good().actual_price.cents * weight / parseFloat(this.props.product.weight_of_price);
   }
   componentDidMount(){
-    $(findDOMNode(this.refs.input)).numeric({ negative: false })
+    $(findDOMNode(this.refs.input)).numeric({ negative: false, decimalPlaces: 2, decimal: "," })
+  }
+  formatPrice(price){
+    return price.toString().replace('.', ',')
   }
   render() {
     const { t } = this.props;
@@ -49,7 +54,7 @@ class ProductBulk extends Component {
             <input ref="input" type="text"
               className="string form-control"
               name="cart_item[weight]"
-              defaultValue={this.props.product.weight_of_price}
+              defaultValue={this.formatPrice(this.props.product.weight_of_price)}
               onChange={this.onWeightChange.bind(this)}
             />
           </span>
