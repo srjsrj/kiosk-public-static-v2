@@ -211,7 +211,7 @@ global.gon = {
       format: '%v %s',
       decimal: ',',
       thousand: ' ',
-      precision: 0
+      precision: 2
     },
     number: {
       precision: 0,

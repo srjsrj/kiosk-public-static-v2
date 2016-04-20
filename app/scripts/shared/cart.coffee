@@ -1,6 +1,5 @@
 $ ->
   $cartTotal = $ '[cart-total]'
-  $('[cart-item-weight]').numeric({ negative: false })
 
   onCartItemChange = ($el, opts) ->
     price = + $el.data 'item-price'
@@ -74,7 +73,7 @@ $ ->
 
     onCartItemChange $el, {count: parseInt($e.val())}
 
-  $('[cart-item-weight]').on 'keyup', ->
+  $('[cart-item-weight]').on 'keyup mouseup', ->
     $e = $ @
     $el = $e.closest '[cart-item]'
 

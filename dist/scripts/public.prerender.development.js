@@ -2923,7 +2923,7 @@ var ProductBulk = (function (_Component) {
   }, {
     key: 'onWeightChange',
     value: function onWeightChange(e) {
-      var value = parseFloat(e.target.value.replace(',', '.'));
+      var value = parseFloat(e.target.value);
       if (isNaN(value)) {
         value = 0;
       }
@@ -2939,16 +2939,6 @@ var ProductBulk = (function (_Component) {
     key: 'getPrice',
     value: function getPrice(weight) {
       return this.good().actual_price.cents * weight / parseFloat(this.props.product.weight_of_price);
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      $((0, _reactDom.findDOMNode)(this.refs.input)).numeric({ negative: false, decimalPlaces: 2, decimal: "," });
-    }
-  }, {
-    key: 'formatPrice',
-    value: function formatPrice(price) {
-      return price.toString().replace('.', ',');
     }
   }, {
     key: 'render',
@@ -2967,10 +2957,11 @@ var ProductBulk = (function (_Component) {
               null,
               t('vendor.product.weight')
             ),
-            _react2['default'].createElement('input', { ref: 'input', type: 'text',
+            _react2['default'].createElement('input', { ref: 'input', type: 'number',
               className: 'string form-control',
+              step: '0.01',
               name: 'cart_item[weight]',
-              defaultValue: this.formatPrice(this.props.product.weight_of_price),
+              defaultValue: this.props.product.weight_of_price,
               onChange: this.onWeightChange.bind(this)
             })
           ),
@@ -10321,8 +10312,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 var _logger = require('./logger');
 
 var _logger2 = _interopRequireDefault(_logger);
@@ -10330,6 +10319,10 @@ var _logger2 = _interopRequireDefault(_logger);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 var LanguageUtil = function () {
   function LanguageUtil(options) {
@@ -10344,21 +10337,38 @@ var LanguageUtil = function () {
   LanguageUtil.prototype.getLanguagePartFromCode = function getLanguagePartFromCode(code) {
     if (code.indexOf('-') < 0) return code;
 
-    var specialCases = ['nb-NO', 'nn-NO', 'nb-no', 'nn-no'];
+    var specialCases = ['NB-NO', 'NN-NO', 'nb-NO', 'nn-NO', 'nb-no', 'nn-no'];
     var p = code.split('-');
     return this.formatLanguageCode(specialCases.indexOf(code) > -1 ? p[1].toLowerCase() : p[0]);
   };
 
   LanguageUtil.prototype.formatLanguageCode = function formatLanguageCode(code) {
+    // http://www.iana.org/assignments/language-tags/language-tags.xhtml
     if (typeof code === 'string' && code.indexOf('-') > -1) {
-      var _code$split = code.split('-');
+      var specialCases = ['hans', 'hant', 'latn', 'cyrl', 'cans', 'mong', 'arab'];
+      var p = code.split('-');
 
-      var _code$split2 = _slicedToArray(_code$split, 2);
+      if (this.options.lowerCaseLng) {
+        p = p.map(function (part) {
+          return part.toLowerCase();
+        });
+      } else if (p.length === 2) {
+        p[0] = p[0].toLowerCase();
+        p[1] = p[1].toUpperCase();
 
-      var head = _code$split2[0];
-      var tail = _code$split2[1];
+        if (specialCases.indexOf(p[1].toLowerCase()) > -1) p[1] = capitalize(p[1].toLowerCase());
+      } else if (p.length === 3) {
+        p[0] = p[0].toLowerCase();
 
-      return this.options.lowerCaseLng ? head.toLowerCase() + '-' + tail.toLowerCase() : head.toLowerCase() + '-' + tail.toUpperCase();
+        // if lenght 2 guess it's a country
+        if (p[1].length === 2) p[1] = p[1].toUpperCase();
+        if (p[0] !== 'sgn' && p[2].length === 2) p[2] = p[2].toUpperCase();
+
+        if (specialCases.indexOf(p[1].toLowerCase()) > -1) p[1] = capitalize(p[1].toLowerCase());
+        if (specialCases.indexOf(p[2].toLowerCase()) > -1) p[2] = capitalize(p[2].toLowerCase());
+      }
+
+      return p.join('-');
     } else {
       return this.options.cleanCode || this.options.lowerCaseLng ? code.toLowerCase() : code;
     }
@@ -10881,7 +10891,7 @@ var Translator = function (_EventEmitter) {
               usedKey = false;
 
           // fallback value
-          if (!this.isValidLookup(res) && options.defaultValue) {
+          if (!this.isValidLookup(res) && options.defaultValue !== undefined) {
             usedDefault = true;
             res = options.defaultValue;
           }
@@ -11202,6 +11212,7 @@ exports.transformOptions = transformOptions;
 function get() {
   return {
     debug: false,
+    initImmediate: true,
 
     ns: ['translation'],
     defaultNS: ['translation'],
@@ -11447,12 +11458,20 @@ var I18n = function (_EventEmitter) {
     // TODO: COMPATIBILITY remove this
     if (this.options.compatibilityAPI === 'v1') compat.appendBackwardsAPI(this);
 
-    this.changeLanguage(this.options.lng, function (err, t) {
-      _this2.emit('initialized', _this2.options);
-      _this2.logger.log('initialized', _this2.options);
+    var load = function load() {
+      _this2.changeLanguage(_this2.options.lng, function (err, t) {
+        _this2.emit('initialized', _this2.options);
+        _this2.logger.log('initialized', _this2.options);
 
-      callback(err, t);
-    });
+        callback(err, t);
+      });
+    };
+
+    if (this.options.resources || !this.options.initImmediate) {
+      load();
+    } else {
+      setTimeout(load, 0);
+    }
 
     return this;
   };
@@ -11595,17 +11614,24 @@ var I18n = function (_EventEmitter) {
 
   I18n.prototype.loadLanguages = function loadLanguages(lngs, callback) {
     if (typeof lngs === 'string') lngs = [lngs];
-    this.options.preload = this.options.preload ? this.options.preload.concat(lngs) : lngs;
+    var preloaded = this.options.preload || [];
 
+    var newLngs = lngs.filter(function (lng) {
+      return preloaded.indexOf(lng) < 0;
+    });
+    // Exit early if all given languages are already preloaded
+    if (!newLngs.length) return callback();
+
+    this.options.preload = preloaded.concat(newLngs);
     this.loadResources(callback);
   };
 
   I18n.prototype.dir = function dir(lng) {
     if (!lng) lng = this.language;
 
-    var ltrLngs = ['ar', 'shu', 'sqr', 'ssh', 'xaa', 'yhd', 'yud', 'aao', 'abh', 'abv', 'acm', 'acq', 'acw', 'acx', 'acy', 'adf', 'ads', 'aeb', 'aec', 'afb', 'ajp', 'apc', 'apd', 'arb', 'arq', 'ars', 'ary', 'arz', 'auz', 'avl', 'ayh', 'ayl', 'ayn', 'ayp', 'bbz', 'pga', 'he', 'iw', 'ps', 'pbt', 'pbu', 'pst', 'prp', 'prd', 'ur', 'ydd', 'yds', 'yih', 'ji', 'yi', 'hbo', 'men', 'xmn', 'fa', 'jpr', 'peo', 'pes', 'prs', 'dv', 'sam'];
+    var rtlLngs = ['ar', 'shu', 'sqr', 'ssh', 'xaa', 'yhd', 'yud', 'aao', 'abh', 'abv', 'acm', 'acq', 'acw', 'acx', 'acy', 'adf', 'ads', 'aeb', 'aec', 'afb', 'ajp', 'apc', 'apd', 'arb', 'arq', 'ars', 'ary', 'arz', 'auz', 'avl', 'ayh', 'ayl', 'ayn', 'ayp', 'bbz', 'pga', 'he', 'iw', 'ps', 'pbt', 'pbu', 'pst', 'prp', 'prd', 'ur', 'ydd', 'yds', 'yih', 'ji', 'yi', 'hbo', 'men', 'xmn', 'fa', 'jpr', 'peo', 'pes', 'prs', 'dv', 'sam'];
 
-    return ltrLngs.indexOf(this.services.languageUtils.getLanguagePartFromCode(lng)) ? 'ltr' : 'rtl';
+    return rtlLngs.indexOf(this.services.languageUtils.getLanguagePartFromCode(lng)) >= 0 ? 'rtl' : 'ltr';
   };
 
   I18n.prototype.createInstance = function createInstance() {
@@ -27706,6 +27732,10 @@ var ReactEmptyComponentInjection = {
   }
 };
 
+function registerNullComponentID() {
+  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+}
+
 var ReactEmptyComponent = function (instantiate) {
   this._currentElement = null;
   this._rootNodeID = null;
@@ -27714,7 +27744,7 @@ var ReactEmptyComponent = function (instantiate) {
 assign(ReactEmptyComponent.prototype, {
   construct: function (element) {},
   mountComponent: function (rootID, transaction, context) {
-    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
     this._rootNodeID = rootID;
     return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
   },
@@ -32020,7 +32050,7 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '0.14.7';
+module.exports = '0.14.8';
 },{}],341:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44019,7 +44049,7 @@ module.exports = require('./dist/commonjs/index.js').default;
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  global.Immutable = factory();
+  (global.Immutable = factory());
 }(this, function () { 'use strict';var SLICE$0 = Array.prototype.slice;
 
   function createClass(ctor, superClass) {
@@ -44914,7 +44944,7 @@ module.exports = require('./dist/commonjs/index.js').default;
       }
       return 'Range [ ' +
         this._start + '...' + this._end +
-        (this._step > 1 ? ' by ' + this._step : '') +
+        (this._step !== 1 ? ' by ' + this._step : '') +
       ' ]';
     };
 
@@ -45046,6 +45076,9 @@ module.exports = require('./dist/commonjs/index.js').default;
     }
     var type = typeof o;
     if (type === 'number') {
+      if (o !== o || o === Infinity) {
+        return 0;
+      }
       var h = o | 0;
       if (h !== o) {
         h ^= o * 0xFFFFFFFF;
@@ -45230,6 +45263,17 @@ module.exports = require('./dist/commonjs/index.js').default;
           iter.forEach(function(v, k)  {return map.set(k, v)});
         });
     }
+
+    Map.of = function() {var keyValues = SLICE$0.call(arguments, 0);
+      return emptyMap().withMutations(function(map ) {
+        for (var i = 0; i < keyValues.length; i += 2) {
+          if (i + 1 >= keyValues.length) {
+            throw new Error('Missing value for key: ' + keyValues[i]);
+          }
+          map.set(keyValues[i], keyValues[i + 1]);
+        }
+      });
+    };
 
     Map.prototype.toString = function() {
       return this.__toString('Map {', '}');
@@ -47143,7 +47187,11 @@ module.exports = require('./dist/commonjs/index.js').default;
       begin = begin | 0;
     }
     if (end !== undefined) {
-      end = end | 0;
+      if (end === Infinity) {
+        end = originalSize;
+      } else {
+        end = end | 0;
+      }
     }
 
     if (wholeSlice(begin, end, originalSize)) {
@@ -47679,6 +47727,12 @@ module.exports = require('./dist/commonjs/index.js').default;
     Record.prototype.set = function(k, v) {
       if (!this.has(k)) {
         throw new Error('Cannot set unknown key "' + k + '" on ' + recordName(this));
+      }
+      if (this._map && !this._map.has(k)) {
+        var defaultVal = this._defaultValues[k];
+        if (v === defaultVal) {
+          return this;
+        }
       }
       var newMap = this._map && this._map.set(k, v);
       if (this.__ownerID || newMap === this._map) {
@@ -48363,21 +48417,6 @@ module.exports = require('./dist/commonjs/index.js').default;
       return entry ? entry[1] : notSetValue;
     },
 
-    findEntry: function(predicate, context) {
-      var found;
-      this.__iterate(function(v, k, c)  {
-        if (predicate.call(context, v, k, c)) {
-          found = [k, v];
-          return false;
-        }
-      });
-      return found;
-    },
-
-    findLastEntry: function(predicate, context) {
-      return this.toSeq().reverse().findEntry(predicate, context);
-    },
-
     forEach: function(sideEffect, context) {
       assertNotInfinite(this.size);
       return this.__iterate(context ? sideEffect.bind(context) : sideEffect);
@@ -48488,8 +48527,32 @@ module.exports = require('./dist/commonjs/index.js').default;
       return this.filter(not(predicate), context);
     },
 
+    findEntry: function(predicate, context, notSetValue) {
+      var found = notSetValue;
+      this.__iterate(function(v, k, c)  {
+        if (predicate.call(context, v, k, c)) {
+          found = [k, v];
+          return false;
+        }
+      });
+      return found;
+    },
+
+    findKey: function(predicate, context) {
+      var entry = this.findEntry(predicate, context);
+      return entry && entry[0];
+    },
+
     findLast: function(predicate, context, notSetValue) {
       return this.toKeyedSeq().reverse().find(predicate, context, notSetValue);
+    },
+
+    findLastEntry: function(predicate, context, notSetValue) {
+      return this.toKeyedSeq().reverse().findEntry(predicate, context, notSetValue);
+    },
+
+    findLastKey: function(predicate, context) {
+      return this.toKeyedSeq().reverse().findKey(predicate, context);
     },
 
     first: function() {
@@ -48550,12 +48613,20 @@ module.exports = require('./dist/commonjs/index.js').default;
       return iter.isSubset(this);
     },
 
+    keyOf: function(searchValue) {
+      return this.findKey(function(value ) {return is(value, searchValue)});
+    },
+
     keySeq: function() {
       return this.toSeq().map(keyMapper).toIndexedSeq();
     },
 
     last: function() {
       return this.toSeq().reverse().first();
+    },
+
+    lastKeyOf: function(searchValue) {
+      return this.toKeyedSeq().reverse().keyOf(searchValue);
     },
 
     max: function(comparator) {
@@ -48648,58 +48719,12 @@ module.exports = require('./dist/commonjs/index.js').default;
   IterablePrototype.chain = IterablePrototype.flatMap;
   IterablePrototype.contains = IterablePrototype.includes;
 
-  // Temporary warning about using length
-  (function () {
-    try {
-      Object.defineProperty(IterablePrototype, 'length', {
-        get: function () {
-          if (!Iterable.noLengthWarning) {
-            var stack;
-            try {
-              throw new Error();
-            } catch (error) {
-              stack = error.stack;
-            }
-            if (stack.indexOf('_wrapObject') === -1) {
-              console && console.warn && console.warn(
-                'iterable.length has been deprecated, '+
-                'use iterable.size or iterable.count(). '+
-                'This warning will become a silent error in a future version. ' +
-                stack
-              );
-              return this.size;
-            }
-          }
-        }
-      });
-    } catch (e) {}
-  })();
-
-
-
   mixin(KeyedIterable, {
 
     // ### More sequential methods
 
     flip: function() {
       return reify(this, flipFactory(this));
-    },
-
-    findKey: function(predicate, context) {
-      var entry = this.findEntry(predicate, context);
-      return entry && entry[0];
-    },
-
-    findLastKey: function(predicate, context) {
-      return this.toSeq().reverse().findKey(predicate, context);
-    },
-
-    keyOf: function(searchValue) {
-      return this.findKey(function(value ) {return is(value, searchValue)});
-    },
-
-    lastKeyOf: function(searchValue) {
-      return this.findLastKey(function(value ) {return is(value, searchValue)});
     },
 
     mapEntries: function(mapper, context) {var this$0 = this;
@@ -48750,16 +48775,13 @@ module.exports = require('./dist/commonjs/index.js').default;
     },
 
     indexOf: function(searchValue) {
-      var key = this.toKeyedSeq().keyOf(searchValue);
+      var key = this.keyOf(searchValue);
       return key === undefined ? -1 : key;
     },
 
     lastIndexOf: function(searchValue) {
-      var key = this.toKeyedSeq().reverse().keyOf(searchValue);
+      var key = this.lastKeyOf(searchValue);
       return key === undefined ? -1 : key;
-
-      // var index =
-      // return this.toSeq().reverse().indexOf(searchValue);
     },
 
     reverse: function() {
@@ -48793,8 +48815,8 @@ module.exports = require('./dist/commonjs/index.js').default;
     // ### More collection methods
 
     findLastIndex: function(predicate, context) {
-      var key = this.toKeyedSeq().findLastKey(predicate, context);
-      return key === undefined ? -1 : key;
+      var entry = this.findLastEntry(predicate, context);
+      return entry ? entry[0] : -1;
     },
 
     first: function() {
@@ -48833,6 +48855,10 @@ module.exports = require('./dist/commonjs/index.js').default;
         interleaved.size = zipped.size * iterables.length;
       }
       return reify(this, interleaved);
+    },
+
+    keySeq: function() {
+      return Range(0, this.size);
     },
 
     last: function() {
@@ -48883,6 +48909,7 @@ module.exports = require('./dist/commonjs/index.js').default;
   });
 
   SetIterable.prototype.has = IterablePrototype.includes;
+  SetIterable.prototype.contains = SetIterable.prototype.includes;
 
 
   // Mixin subclasses
@@ -48919,7 +48946,7 @@ module.exports = require('./dist/commonjs/index.js').default;
   }
 
   function quoteString(value) {
-    return typeof value === 'string' ? JSON.stringify(value) : value;
+    return typeof value === 'string' ? JSON.stringify(value) : String(value);
   }
 
   function defaultZipper() {
@@ -48989,299 +49016,6 @@ module.exports = require('./dist/commonjs/index.js').default;
   return Immutable;
 
 }));
-},{}],"jquery-numeric":[function(require,module,exports){
-/*
- *
- * Copyright (c) 2006-2011 Sam Collett (http://www.texotela.co.uk)
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
- * 
- * Version 1.3.1
- * Demo: http://www.texotela.co.uk/code/jquery/numeric/
- *
- */
-(function($) {
-/*
- * Allows only valid characters to be entered into input boxes.
- * Note: fixes value when pasting via Ctrl+V, but not when using the mouse to paste
-  *      side-effect: Ctrl+A does not work, though you can still use the mouse to select (or double-click to select all)
- *
- * @name     numeric
- * @param    config      { decimal : "." , negative : true }
- * @param    callback     A function that runs if the number is not valid (fires onblur)
- * @author   Sam Collett (http://www.texotela.co.uk)
- * @example  $(".numeric").numeric();
- * @example  $(".numeric").numeric(","); // use , as separator
- * @example  $(".numeric").numeric({ decimal : "," }); // use , as separator
- * @example  $(".numeric").numeric({ negative : false }); // do not allow negative values
- * @example  $(".numeric").numeric(null, callback); // use default values, pass on the 'callback' function
- *
- */
-$.fn.numeric = function(config, callback)
-{
-	if(typeof config === 'boolean')
-	{
-		config = { decimal: config };
-	}
-	config = config || {};
-	// if config.negative undefined, set to true (default is to allow negative numbers)
-	if(typeof config.negative == "undefined") { config.negative = true; }
-	// set decimal point
-	var decimal = (config.decimal === false) ? "" : config.decimal || ".";
-	// allow negatives
-	var negative = (config.negative === true) ? true : false;
-	// callback function
-	callback = (typeof(callback) == "function" ? callback : function() {});
-	// set data and methods
-	return this.data("numeric.decimal", decimal).data("numeric.negative", negative).data("numeric.callback", callback).keypress($.fn.numeric.keypress).keyup($.fn.numeric.keyup).blur($.fn.numeric.blur);
-};
-
-$.fn.numeric.keypress = function(e)
-{
-	// get decimal character and determine if negatives are allowed
-	var decimal = $.data(this, "numeric.decimal");
-	var negative = $.data(this, "numeric.negative");
-	// get the key that was pressed
-	var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
-	// allow enter/return key (only when in an input box)
-	if(key == 13 && this.nodeName.toLowerCase() == "input")
-	{
-		return true;
-	}
-	else if(key == 13)
-	{
-		return false;
-	}
-	var allow = false;
-	// allow Ctrl+A
-	if((e.ctrlKey && key == 97 /* firefox */) || (e.ctrlKey && key == 65) /* opera */) { return true; }
-	// allow Ctrl+X (cut)
-	if((e.ctrlKey && key == 120 /* firefox */) || (e.ctrlKey && key == 88) /* opera */) { return true; }
-	// allow Ctrl+C (copy)
-	if((e.ctrlKey && key == 99 /* firefox */) || (e.ctrlKey && key == 67) /* opera */) { return true; }
-	// allow Ctrl+Z (undo)
-	if((e.ctrlKey && key == 122 /* firefox */) || (e.ctrlKey && key == 90) /* opera */) { return true; }
-	// allow or deny Ctrl+V (paste), Shift+Ins
-	if((e.ctrlKey && key == 118 /* firefox */) || (e.ctrlKey && key == 86) /* opera */ ||
-	  (e.shiftKey && key == 45)) { return true; }
-	// if a number was not pressed
-	if(key < 48 || key > 57)
-	{
-	  var value = $(this).val();
-		/* '-' only allowed at start and if negative numbers allowed */
-		if(value.indexOf("-") !== 0 && negative && key == 45 && (value.length === 0 || parseInt($.fn.getSelectionStart(this), 10) === 0)) { return true; }
-		/* only one decimal separator allowed */
-		if(decimal && key == decimal.charCodeAt(0) && value.indexOf(decimal) != -1)
-		{
-			allow = false;
-		}
-		// check for other keys that have special purposes
-		if(
-			key != 8 /* backspace */ &&
-			key != 9 /* tab */ &&
-			key != 13 /* enter */ &&
-			key != 35 /* end */ &&
-			key != 36 /* home */ &&
-			key != 37 /* left */ &&
-			key != 39 /* right */ &&
-			key != 46 /* del */
-		)
-		{
-			allow = false;
-		}
-		else
-		{
-			// for detecting special keys (listed above)
-			// IE does not support 'charCode' and ignores them in keypress anyway
-			if(typeof e.charCode != "undefined")
-			{
-				// special keys have 'keyCode' and 'which' the same (e.g. backspace)
-				if(e.keyCode == e.which && e.which !== 0)
-				{
-					allow = true;
-					// . and delete share the same code, don't allow . (will be set to true later if it is the decimal point)
-					if(e.which == 46) { allow = false; }
-				}
-				// or keyCode != 0 and 'charCode'/'which' = 0
-				else if(e.keyCode !== 0 && e.charCode === 0 && e.which === 0)
-				{
-					allow = true;
-				}
-			}
-		}
-		// if key pressed is the decimal and it is not already in the field
-		if(decimal && key == decimal.charCodeAt(0))
-		{
-			if(value.indexOf(decimal) == -1)
-			{
-				allow = true;
-			}
-			else
-			{
-				allow = false;
-			}
-		}
-	}
-	else
-	{
-		allow = true;
-	}
-	return allow;
-};
-
-$.fn.numeric.keyup = function(e)
-{
-	var val = $(this).val();
-	if(val && val.length > 0)
-	{
-		// get carat (cursor) position
-		var carat = $.fn.getSelectionStart(this);
-		var selectionEnd = $.fn.getSelectionEnd(this);
-		// get decimal character and determine if negatives are allowed
-		var decimal = $.data(this, "numeric.decimal");
-		var negative = $.data(this, "numeric.negative");
-		
-		// prepend a 0 if necessary
-		if(decimal !== "" && decimal !== null)
-		{
-			// find decimal point
-			var dot = val.indexOf(decimal);
-			// if dot at start, add 0 before
-			if(dot === 0)
-			{
-				this.value = "0" + val;
-			}
-			// if dot at position 1, check if there is a - symbol before it
-			if(dot == 1 && val.charAt(0) == "-")
-			{
-				this.value = "-0" + val.substring(1);
-			}
-			val = this.value;
-		}
-		
-		// if pasted in, only allow the following characters
-		var validChars = [0,1,2,3,4,5,6,7,8,9,'-',decimal];
-		// get length of the value (to loop through)
-		var length = val.length;
-		// loop backwards (to prevent going out of bounds)
-		for(var i = length - 1; i >= 0; i--)
-		{
-			var ch = val.charAt(i);
-			// remove '-' if it is in the wrong place
-			if(i !== 0 && ch == "-")
-			{
-				val = val.substring(0, i) + val.substring(i + 1);
-			}
-			// remove character if it is at the start, a '-' and negatives aren't allowed
-			else if(i === 0 && !negative && ch == "-")
-			{
-				val = val.substring(1);
-			}
-			var validChar = false;
-			// loop through validChars
-			for(var j = 0; j < validChars.length; j++)
-			{
-				// if it is valid, break out the loop
-				if(ch == validChars[j])
-				{
-					validChar = true;
-					break;
-				}
-			}
-			// if not a valid character, or a space, remove
-			if(!validChar || ch == " ")
-			{
-				val = val.substring(0, i) + val.substring(i + 1);
-			}
-		}
-		// remove extra decimal characters
-		var firstDecimal = val.indexOf(decimal);
-		if(firstDecimal > 0)
-		{
-			for(var k = length - 1; k > firstDecimal; k--)
-			{
-				var chch = val.charAt(k);
-				// remove decimal character
-				if(chch == decimal)
-				{
-					val = val.substring(0, k) + val.substring(k + 1);
-				}
-			}
-		}
-		// set the value and prevent the cursor moving to the end
-		this.value = val;
-		$.fn.setSelection(this, [carat, selectionEnd]);
-	}
-};
-
-$.fn.numeric.blur = function()
-{
-	var decimal = $.data(this, "numeric.decimal");
-	var callback = $.data(this, "numeric.callback");
-	var val = this.value;
-	if(val !== "")
-	{
-		var re = new RegExp("^\\d+$|^\\d*" + decimal + "\\d+$");
-		if(!re.exec(val))
-		{
-			callback.apply(this);
-		}
-	}
-};
-
-$.fn.removeNumeric = function()
-{
-	return this.data("numeric.decimal", null).data("numeric.negative", null).data("numeric.callback", null).unbind("keypress", $.fn.numeric.keypress).unbind("blur", $.fn.numeric.blur);
-};
-
-// Based on code from http://javascript.nwbox.com/cursor_position/ (Diego Perini <dperini@nwbox.com>)
-$.fn.getSelectionStart = function(o)
-{
-	if (o.createTextRange)
-	{
-		var r = document.selection.createRange().duplicate();
-		r.moveEnd('character', o.value.length);
-		if (r.text === '') { return o.value.length; }
-		return o.value.lastIndexOf(r.text);
-	} else { return o.selectionStart; }
-};
-
-// Based on code from http://javascript.nwbox.com/cursor_position/ (Diego Perini <dperini@nwbox.com>)
-$.fn.getSelectionEnd = function(o)
-{
-	if (o.createTextRange) {
-		var r = document.selection.createRange().duplicate()
-		r.moveStart('character', -o.value.length)
-		return r.text.length
-	} else return o.selectionEnd
-}
-
-// set the selection, o is the object (input), p is the position ([start, end] or just start)
-$.fn.setSelection = function(o, p)
-{
-	// if p is number, start and end are the same
-	if(typeof p == "number") { p = [p, p]; }
-	// only set if p is an array of length 2
-	if(p && p.constructor == Array && p.length == 2)
-	{
-		if (o.createTextRange)
-		{
-			var r = o.createTextRange();
-			r.collapse(true);
-			r.moveStart('character', p[0]);
-			r.moveEnd('character', p[1]);
-			r.select();
-		}
-		else if(o.setSelectionRange)
-		{
-			o.focus();
-			o.setSelectionRange(p[0], p[1]);
-		}
-	}
-};
-
-})(jQuery);
-
 },{}],"jquery.mmenu":[function(require,module,exports){
 /*	
  * jQuery mmenu v4.5.7
@@ -49690,7 +49424,7 @@ $.fn.setSelection = function(o, p)
 
 },{}],"jquery":[function(require,module,exports){
 /*!
- * jQuery JavaScript Library v2.2.1
+ * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -49700,7 +49434,7 @@ $.fn.setSelection = function(o, p)
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-02-22T19:11Z
+ * Date: 2016-04-05T19:26Z
  */
 
 (function( global, factory ) {
@@ -49756,7 +49490,7 @@ var support = {};
 
 
 var
-	version = "2.2.1",
+	version = "2.2.3",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -49967,6 +49701,7 @@ jQuery.extend( {
 	},
 
 	isPlainObject: function( obj ) {
+		var key;
 
 		// Not plain objects:
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
@@ -49976,14 +49711,18 @@ jQuery.extend( {
 			return false;
 		}
 
+		// Not own constructor property must be Object
 		if ( obj.constructor &&
-				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+				!hasOwn.call( obj, "constructor" ) &&
+				!hasOwn.call( obj.constructor.prototype || {}, "isPrototypeOf" ) ) {
 			return false;
 		}
 
-		// If the function hasn't returned already, we're confident that
-		// |obj| is a plain object, created by {} or constructed with new Object
-		return true;
+		// Own properties are enumerated firstly, so to speed up,
+		// if last one is own, then all properties are own
+		for ( key in obj ) {}
+
+		return key === undefined || hasOwn.call( obj, key );
 	},
 
 	isEmptyObject: function( obj ) {
@@ -57016,6 +56755,12 @@ jQuery.extend( {
 	}
 } );
 
+// Support: IE <=11 only
+// Accessing the selectedIndex property
+// forces the browser to respect setting selected
+// on the option
+// The getter ensures a default option is selected
+// when in an optgroup
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
@@ -57024,6 +56769,16 @@ if ( !support.optSelected ) {
 				parent.parentNode.selectedIndex;
 			}
 			return null;
+		},
+		set: function( elem ) {
+			var parent = elem.parentNode;
+			if ( parent ) {
+				parent.selectedIndex;
+
+				if ( parent.parentNode ) {
+					parent.parentNode.selectedIndex;
+				}
+			}
 		}
 	};
 }
@@ -57218,7 +56973,8 @@ jQuery.fn.extend( {
 
 
 
-var rreturn = /\r/g;
+var rreturn = /\r/g,
+	rspaces = /[\x20\t\r\n\f]+/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -57294,9 +57050,15 @@ jQuery.extend( {
 		option: {
 			get: function( elem ) {
 
-				// Support: IE<11
-				// option.value not trimmed (#14858)
-				return jQuery.trim( elem.value );
+				var val = jQuery.find.attr( elem, "value" );
+				return val != null ?
+					val :
+
+					// Support: IE10-11+
+					// option.text throws exceptions (#14686, #14858)
+					// Strip and collapse whitespace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
 			}
 		},
 		select: {
@@ -57349,7 +57111,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 					if ( option.selected =
-							jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
+						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
 					) {
 						optionSet = true;
 					}
@@ -59044,18 +58806,6 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// Support: Safari 8+
-// In Safari 8 documents created via document.implementation.createHTMLDocument
-// collapse sibling forms: the second one becomes a child of the first one.
-// Because of that, this security measure has to be disabled in Safari 8.
-// https://bugs.webkit.org/show_bug.cgi?id=137337
-support.createHTMLDocument = ( function() {
-	var body = document.implementation.createHTMLDocument( "" ).body;
-	body.innerHTML = "<form></form><form></form>";
-	return body.childNodes.length === 2;
-} )();
-
-
 // Argument "data" should be string of html
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
@@ -59068,12 +58818,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		keepScripts = context;
 		context = false;
 	}
-
-	// Stop scripts or inline event handlers from being executed immediately
-	// by using document.implementation
-	context = context || ( support.createHTMLDocument ?
-		document.implementation.createHTMLDocument( "" ) :
-		document );
+	context = context || document;
 
 	var parsed = rsingleTag.exec( data ),
 		scripts = !keepScripts && [];
@@ -59155,7 +58900,7 @@ jQuery.fn.load = function( url, params, callback ) {
 		// If it fails, this function gets "jqXHR", "status", "error"
 		} ).always( callback && function( jqXHR, status ) {
 			self.each( function() {
-				callback.apply( self, response || [ jqXHR.responseText, status, jqXHR ] );
+				callback.apply( this, response || [ jqXHR.responseText, status, jqXHR ] );
 			} );
 		} );
 	}

@@ -23,7 +23,7 @@ class ProductBulk extends Component {
     }
   }
   onWeightChange(e) {
-    var value = parseFloat(e.target.value.replace(',', '.'))
+    var value = parseFloat(e.target.value)
     if (isNaN(value)){
       value = 0;
     }
@@ -38,12 +38,6 @@ class ProductBulk extends Component {
   getPrice(weight){
     return this.good().actual_price.cents * weight / parseFloat(this.props.product.weight_of_price);
   }
-  componentDidMount(){
-    $(findDOMNode(this.refs.input)).numeric({ negative: false, decimalPlaces: 2, decimal: "," })
-  }
-  formatPrice(price){
-    return price.toString().replace('.', ',')
-  }
   render() {
     const { t } = this.props;
     if (this.good()){
@@ -51,10 +45,11 @@ class ProductBulk extends Component {
         <div>
           <span>
             <span>{t('vendor.product.weight')}</span>
-            <input ref="input" type="text"
+            <input ref="input" type="number"
               className="string form-control"
+              step="0.01"
               name="cart_item[weight]"
-              defaultValue={this.formatPrice(this.props.product.weight_of_price)}
+              defaultValue={this.props.product.weight_of_price}
               onChange={this.onWeightChange.bind(this)}
             />
           </span>
