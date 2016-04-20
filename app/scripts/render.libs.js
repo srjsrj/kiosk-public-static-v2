@@ -12,7 +12,6 @@ window.accounting = require('accounting');
 require('jquery.role');
 require('jquery.mmenu');
 require('jquery.sticky-kit');
-require('jquery-numeric')
 
 // Others
 require('bootstrapSass');

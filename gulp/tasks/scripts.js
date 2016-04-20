@@ -32,8 +32,7 @@ const baseDependencies = {
   'fancybox': './app/bower_components/fancybox/source/jquery.fancybox',
   'fancybox.wannabe': './app/bower_components/fancybox-wannabe-fix/index',
   'accounting': './app/bower_components/accounting.js/accounting',
-  'lodash': './node_modules/lodash',
-  'jquery-numeric': './app/bower_components/jquery-numeric/dist/jquery-numeric',
+  'lodash': './node_modules/lodash'
 };
 const staticDependencies = {
   'react-addons-test-utils': './node_modules/react-addons-test-utils',
