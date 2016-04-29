@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { h1 } from '../../../helpers/seo';
 import { attributeValue } from '../../../helpers/product';
+import classNames from 'classnames';
 
 export default class ProductCardDetails extends Component {
   static propTypes = {
@@ -12,7 +13,7 @@ export default class ProductCardDetails extends Component {
         <ul className="b-characteristics" ref="attributes">
           {
             product.attributes.map((attr, idx) =>
-              <li key={idx}>
+              <li className={'b-characteristics-li-property_' + attr.property_id} key={idx}>
                 {attributeValue(attr)}
               </li>
             )
