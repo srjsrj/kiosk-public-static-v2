@@ -3472,6 +3472,10 @@ var _helpersSeo = require('../../../helpers/seo');
 
 var _helpersProduct = require('../../../helpers/product');
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var ProductCardDetails = (function (_Component) {
   _inherits(ProductCardDetails, _Component);
 
@@ -3491,7 +3495,7 @@ var ProductCardDetails = (function (_Component) {
           product.attributes.map(function (attr, idx) {
             return _react2['default'].createElement(
               'li',
-              { key: idx },
+              { className: 'b-characteristics-li-property_' + attr.property_id, key: idx },
               (0, _helpersProduct.attributeValue)(attr)
             );
           })
@@ -3566,7 +3570,7 @@ var ProductCardDetails = (function (_Component) {
 exports['default'] = ProductCardDetails;
 module.exports = exports['default'];
 
-},{"../../../helpers/product":104,"../../../helpers/seo":105,"react":"react"}],45:[function(require,module,exports){
+},{"../../../helpers/product":104,"../../../helpers/seo":105,"classnames":"classnames","react":"react"}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
