@@ -1,14 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import Bubble from '../Bubble';
 
-export default class CartButton extends Component {
-  static propTypes = {
-    itemsCount: PropTypes.number,
-    text: PropTypes.string,
-    url: PropTypes.string.isRequired,
-  }
+class CartButton extends Component {
   render() {
-    const { itemsCount, text, url } = this.props;
+    const { cartItems, text, url } = this.props;
+    const itemsCount = cartItems.length;
 
     return (
       <Bubble
@@ -21,3 +17,5 @@ export default class CartButton extends Component {
     );
   }
 }
+
+export default CartButton;
