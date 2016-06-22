@@ -1,30 +1,34 @@
 import React, { Component, PropTypes } from 'react';
-
 import provideTranslations from '../../HoC/provideTranslations';
-
 import ProductBlockImage from './ProductBlockImage';
 import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
+import ProductBlockCartFormButton from '../ProductBlockCartForm/ProductBlockCartFormButton';
 
-const ProductBlock = ({ product, t }) => (
+const ProductBlock = ({ showCartButton, product, t }) => (
   <div className="b-item-list__item">
-    <a className="b-item" href={product.public_url}>
-      <div className="b-item__pic-wrap">
+    <div className="b-item">
+      <a className="b-item__pic-wrap" href={product.public_url}>
         <ProductBlockImage product={product} />
         <ProductBlockBadges product={product} t={t} />
-      </div>
-      <div className="b-item__info">
-        <h2 className="b-item__name">
+      </a>
+      <a className="b-item__info" href={product.public_url}>
+        <h3 className="b-item__name">
           {product.title}
-        </h2>
+        </h3>
         {Boolean(product.short_details) &&
           <div className="b-item__details">
             {product.short_details}
           </div>
         }
         <ProductPrices product={product} t={t} />
-      </div>
-    </a>
+      </a>
+      {showCartButton && product.has_ordering_goods && product.goods.length == 1 &&
+        <div className="b-item__cart-form">
+          <ProductBlockCartFormButton t={t} product={product}/>
+        </div>
+      }
+    </div>
   </div>
 );
 

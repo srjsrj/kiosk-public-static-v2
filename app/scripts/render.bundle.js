@@ -17,10 +17,10 @@ import './shared/theme_switcher';
 import './shared/mobile_navigation';
 
 // TODO: Refactor and cleaning legacy shit
-import './react/components/Product/add_to_basket_button';
-import './react/dispatchers/basket';
-import './react/actions/view/basket';
-import './react/stores/basket';
+//import './react/components/Product/add_to_basket_button';
+//import './react/dispatchers/basket';
+//import './react/actions/view/basket';
+//import './react/stores/basket';
 
 // Exposing neccessary resources outside
 global.CatalogFilter = require('./react/components/CatalogFilter').CatalogFilter;

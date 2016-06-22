@@ -1,3 +1,3 @@
-BaseDispatcher = require './_base'
+#BaseDispatcher = require './_base'
 
-window.BasketDispatcher = new BaseDispatcher()
+#window.BasketDispatcher = new BaseDispatcher()

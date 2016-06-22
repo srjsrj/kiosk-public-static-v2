@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { CabinetButton } from '../buttons/CabinetButton';
-import { CartButton } from '../buttons/CartButton';
 import { WishlistButton } from '../buttons/WishlistButton';
+import CartButtonController from '../buttons/CartButton/CartButtonController';
 
 class Clientbar extends Component {
   render() {
     const {
-      cabinetText, cabinetUrl, cartItemsCount, cartText, cartUrl,
+      cabinetText, cabinetUrl, cartText, cartUrl, cartItems,
       hasCabinet, hasCart, hasWishlist, wishlistText, wishlistUrl,
     } = this.props;
 
@@ -25,8 +25,8 @@ class Clientbar extends Component {
           />
         }
         {hasCart && cartUrl &&
-          <CartButton
-            itemsCount={cartItemsCount}
+          <CartButtonController
+            cartItems={cartItems}
             text={cartText}
             url={cartUrl}
           />
@@ -39,7 +39,7 @@ class Clientbar extends Component {
 Clientbar.propTypes = {
   cabinetText: PropTypes.string,
   cabinetUrl: PropTypes.string,
-  cartItemsCount: PropTypes.number,
+  cartItems: PropTypes.array,
   cartText: PropTypes.string,
   cartUrl: PropTypes.string,
   hasCabinet: PropTypes.bool,
