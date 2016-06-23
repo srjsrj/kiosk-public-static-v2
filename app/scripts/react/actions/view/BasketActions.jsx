@@ -1,4 +1,24 @@
 import BasketDispatcher from '../../stores/BasketDispatcher';
+import * as apiRoutes from '../../../routes/api';
+
+function startItemRequest(id) {
+  return BasketDispatcher.handleServerAction({
+    actionType: 'startItemRequest',
+    id
+  });
+}
+
+function stopItemRequest(id) {
+  return BasketDispatcher.handleServerAction({actionType: 'stopItemRequest', id});
+}
+
+function errorItemRequest(id, error) {
+  return BasketDispatcher.handleServerAction({
+    actionType: 'errorItemRequest',
+    id,
+    error
+  });
+}
 
 export function updateBasketState(cartItems) {
   return BasketDispatcher.handleViewAction({
@@ -8,6 +28,8 @@ export function updateBasketState(cartItems) {
 }
 
 export function addGood(good, count = 1) {
+  startItemRequest(good.id);
+
   return $.ajax({
     dataType: 'json',
     method: 'post',
@@ -15,14 +37,32 @@ export function addGood(good, count = 1) {
       'cart_item[good_id]': good.global_id,
       count
     },
-    url: Routes.vendor_cart_items_path(),
-    success(response) {
-      const cartItems = response;
+    url: apiRoutes.cartItems(),
+  }).done((response) => {
+    const basket = response;
 
-      return BasketDispatcher.handleServerAction({
-        actionType: 'updateBasketState',
-        cartItems
-      });
-    }
+    return BasketDispatcher.handleServerAction({
+      actionType: 'updateBasketState',
+      basket
+    });
+  }).fail((response) => {
+    errorItemRequest(good.id, response.responseJSON)
+  }).always(() => {
+    stopItemRequest(good.id);
+  });
+}
+
+export function initBasketState() {
+  return $.ajax({
+    dataType: 'json',
+    method: 'get',
+    url: apiRoutes.cartsShow(),
+  }).done((response) => {
+    const basket = response;
+
+    return BasketDispatcher.handleServerAction({
+      actionType: 'updateBasketState',
+      basket
+    });
   });
 }

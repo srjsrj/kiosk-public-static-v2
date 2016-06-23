@@ -6,7 +6,7 @@ import CartButtonController from '../buttons/CartButton/CartButtonController';
 class Clientbar extends Component {
   render() {
     const {
-      cabinetText, cabinetUrl, cartText, cartUrl, cartItems,
+      cabinetText, cabinetUrl, cartText, cartUrl, cartItems, showFullBasketCount,
       hasCabinet, hasCart, hasWishlist, wishlistText, wishlistUrl,
     } = this.props;
 
@@ -29,6 +29,7 @@ class Clientbar extends Component {
             cartItems={cartItems}
             text={cartText}
             url={cartUrl}
+            showFullBasketCount={showFullBasketCount}
           />
         }
       </div>
@@ -47,11 +48,13 @@ Clientbar.propTypes = {
   hasWishlist: PropTypes.bool,
   wishlistText: PropTypes.string,
   wishlistUrl: PropTypes.string,
+  showFullBasketCount: PropTypes.bool
 };
 Clientbar.defaultProps = {
   hasCabinet: false,
   hasCart: false,
   hasWishlist: false,
+  showFullBasketCount: false
 }
 
 export default Clientbar;
