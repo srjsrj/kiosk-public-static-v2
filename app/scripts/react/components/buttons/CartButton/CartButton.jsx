@@ -3,8 +3,7 @@ import Bubble from '../Bubble';
 
 class CartButton extends Component {
   render() {
-    const { cartItems, text, url } = this.props;
-    const itemsCount = cartItems.length;
+    const { itemsCount, text, url } = this.props;
 
     return (
       <Bubble

@@ -85,12 +85,38 @@ Object.defineProperty(exports, '__esModule', {
 });
 exports.updateBasketState = updateBasketState;
 exports.addGood = addGood;
+exports.initBasketState = initBasketState;
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _storesBasketDispatcher = require('../../stores/BasketDispatcher');
 
 var _storesBasketDispatcher2 = _interopRequireDefault(_storesBasketDispatcher);
+
+var _routesApi = require('../../../routes/api');
+
+var apiRoutes = _interopRequireWildcard(_routesApi);
+
+function startItemRequest(id) {
+  return _storesBasketDispatcher2['default'].handleServerAction({
+    actionType: 'startItemRequest',
+    id: id
+  });
+}
+
+function stopItemRequest(id) {
+  return _storesBasketDispatcher2['default'].handleServerAction({ actionType: 'stopItemRequest', id: id });
+}
+
+function errorItemRequest(id, error) {
+  return _storesBasketDispatcher2['default'].handleServerAction({
+    actionType: 'errorItemRequest',
+    id: id,
+    error: error
+  });
+}
 
 function updateBasketState(cartItems) {
   return _storesBasketDispatcher2['default'].handleViewAction({
@@ -102,6 +128,8 @@ function updateBasketState(cartItems) {
 function addGood(good) {
   var count = arguments.length <= 1 || arguments[1] === undefined ? 1 : arguments[1];
 
+  startItemRequest(good.id);
+
   return $.ajax({
     dataType: 'json',
     method: 'post',
@@ -109,19 +137,37 @@ function addGood(good) {
       'cart_item[good_id]': good.global_id,
       count: count
     },
-    url: Routes.vendor_cart_items_path(),
-    success: function success(response) {
-      var cartItems = response;
+    url: apiRoutes.cartItems()
+  }).done(function (response) {
+    var basket = response;
 
-      return _storesBasketDispatcher2['default'].handleServerAction({
-        actionType: 'updateBasketState',
-        cartItems: cartItems
-      });
-    }
+    return _storesBasketDispatcher2['default'].handleServerAction({
+      actionType: 'updateBasketState',
+      basket: basket
+    });
+  }).fail(function (response) {
+    errorItemRequest(good.id, response.responseJSON);
+  }).always(function () {
+    stopItemRequest(good.id);
   });
 }
 
-},{"../../stores/BasketDispatcher":130}],6:[function(require,module,exports){
+function initBasketState() {
+  return $.ajax({
+    dataType: 'json',
+    method: 'get',
+    url: apiRoutes.cartsShow()
+  }).done(function (response) {
+    var basket = response;
+
+    return _storesBasketDispatcher2['default'].handleServerAction({
+      actionType: 'updateBasketState',
+      basket: basket
+    });
+  });
+}
+
+},{"../../../routes/api":133,"../../stores/BasketDispatcher":130}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1926,6 +1972,7 @@ var Clientbar = (function (_Component) {
       var cartText = _props.cartText;
       var cartUrl = _props.cartUrl;
       var cartItems = _props.cartItems;
+      var showFullBasketCount = _props.showFullBasketCount;
       var hasCabinet = _props.hasCabinet;
       var hasCart = _props.hasCart;
       var hasWishlist = _props.hasWishlist;
@@ -1946,7 +1993,8 @@ var Clientbar = (function (_Component) {
         hasCart && cartUrl && _react2['default'].createElement(_buttonsCartButtonCartButtonController2['default'], {
           cartItems: cartItems,
           text: cartText,
-          url: cartUrl
+          url: cartUrl,
+          showFullBasketCount: showFullBasketCount
         })
       );
     }
@@ -1965,12 +2013,14 @@ Clientbar.propTypes = {
   hasCart: _react.PropTypes.bool,
   hasWishlist: _react.PropTypes.bool,
   wishlistText: _react.PropTypes.string,
-  wishlistUrl: _react.PropTypes.string
+  wishlistUrl: _react.PropTypes.string,
+  showFullBasketCount: _react.PropTypes.bool
 };
 Clientbar.defaultProps = {
   hasCabinet: false,
   hasCart: false,
-  hasWishlist: false
+  hasWishlist: false,
+  showFullBasketCount: false
 };
 
 exports['default'] = Clientbar;
@@ -2945,6 +2995,12 @@ var _react2 = _interopRequireDefault(_react);
 
 var _actionsViewBasketActions = require('../../../actions/view/BasketActions');
 
+var _storesBasketStore = require('../../../stores/BasketStore');
+
+var _storesBasketStore2 = _interopRequireDefault(_storesBasketStore);
+
+var _lodash = require('lodash');
+
 var ProductBlockCartFormButton = (function (_Component) {
   _inherits(ProductBlockCartFormButton, _Component);
 
@@ -2952,35 +3008,56 @@ var ProductBlockCartFormButton = (function (_Component) {
     _classCallCheck(this, ProductBlockCartFormButton);
 
     _get(Object.getPrototypeOf(ProductBlockCartFormButton.prototype), 'constructor', this).call(this, props);
-    this.state = {
-      disabled: false,
-      text: props.t('vendor.button.to_cart')
-    };
+
+    var t = this.props.t;
+
+    this.state = this.getStateFromStore();
   }
 
   _createClass(ProductBlockCartFormButton, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this = this;
+
+      this.syncWithStore = function () {
+        _this.setState(_this.getStateFromStore());
+      };
+
+      _storesBasketStore2['default'].addChangeListener(this.syncWithStore);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      _storesBasketStore2['default'].removeChangeListener(this.syncWithStore);
+    }
+  }, {
+    key: 'getStateFromStore',
+    value: function getStateFromStore() {
+      return {
+        itemState: _storesBasketStore2['default'].getCartItemState(this.props.product.goods[0].id)
+      };
+    }
+  }, {
     key: 'addToBasket',
     value: function addToBasket() {
-      var t = this.props.t;
-
-      this.setState({
-        disabled: true,
-        text: t('vendor.button.already')
-      });
-
       return (0, _actionsViewBasketActions.addGood)(this.props.product.goods[0]);
     }
   }, {
     key: 'render',
     value: function render() {
+      var t = this.props.t;
+      var itemState = this.state.itemState;
+
+      var text = itemState.isRequestProcessing ? t('vendor.button.disable_with.adding') : t('vendor.button.to_cart');
+
       return _react2['default'].createElement(
         'button',
         {
           className: 'b-btn element--active',
           onClick: this.addToBasket.bind(this),
-          disabled: this.state.disabled
+          disabled: itemState.isRequestProcessing
         },
-        this.state.text
+        text
       );
     }
   }]);
@@ -2995,7 +3072,7 @@ ProductBlockCartFormButton.propTypes = {
 exports['default'] = ProductBlockCartFormButton;
 module.exports = exports['default'];
 
-},{"../../../actions/view/BasketActions":5,"react":"react"}],39:[function(require,module,exports){
+},{"../../../actions/view/BasketActions":5,"../../../stores/BasketStore":131,"lodash":"lodash","react":"react"}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6618,11 +6695,9 @@ var CartButton = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var cartItems = _props.cartItems;
+      var itemsCount = _props.itemsCount;
       var text = _props.text;
       var url = _props.url;
-
-      var itemsCount = cartItems.length;
 
       return _react2['default'].createElement(_Bubble2['default'], {
         className: 'Bubble--cart element--active-opacity',
@@ -6646,8 +6721,6 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -6676,32 +6749,23 @@ var _actionsViewBasketActions = require('../../../actions/view/BasketActions');
 var CartButtonController = (function (_Component) {
   _inherits(CartButtonController, _Component);
 
-  _createClass(CartButtonController, null, [{
-    key: 'propTypes',
-    value: {
-      cartItems: _react.PropTypes.array,
-      text: _react.PropTypes.string,
-      url: _react.PropTypes.string.isRequired
-    },
-    enumerable: true
-  }]);
-
   function CartButtonController(props) {
     _classCallCheck(this, CartButtonController);
 
     _get(Object.getPrototypeOf(CartButtonController.prototype), 'constructor', this).call(this, props);
 
-    (0, _actionsViewBasketActions.updateBasketState)(this.props.cartItems);
     this.state = this.getStateFromStore();
   }
 
   _createClass(CartButtonController, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
       var _this = this;
 
+      (0, _actionsViewBasketActions.initBasketState)();
+
       this.syncWithStore = function () {
-        _this.setState(_this.getStateFromStore);
+        _this.setState(_this.getStateFromStore());
       };
 
       _storesBasketStore2['default'].addChangeListener(this.syncWithStore);
@@ -6715,20 +6779,61 @@ var CartButtonController = (function (_Component) {
     key: 'getStateFromStore',
     value: function getStateFromStore() {
       return {
-        cartItems: _storesBasketStore2['default'].getCartItems()
+        basket: _storesBasketStore2['default'].getBasket()
       };
+    }
+  }, {
+    key: 'getItemsCount',
+    value: function getItemsCount() {
+      var showFullBasketCount = this.props.showFullBasketCount;
+      var basket = this.state.basket;
+
+      if (!(basket && basket.items)) {
+        return 0;
+      }
+
+      if (showFullBasketCount) {
+        var total = 0;
+        this.state.basket.items.forEach(function (cartItem) {
+          total += cartItem['count'];
+        });
+        return total;
+      } else {
+        return this.state.basket.items.length;
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      return _react2['default'].createElement(_CartButton2['default'], _extends({}, this.props, {
-        cartItems: this.state.cartItems
-      }));
+      var _props = this.props;
+      var text = _props.text;
+      var url = _props.url;
+
+      var itemsCount = this.getItemsCount();
+
+      return _react2['default'].createElement(_CartButton2['default'], {
+        text: text,
+        url: url,
+        itemsCount: itemsCount
+      });
     }
   }]);
 
   return CartButtonController;
 })(_react.Component);
+
+CartButtonController.propTypes = {
+  cartItems: _react.PropTypes.array,
+  text: _react.PropTypes.string,
+  url: _react.PropTypes.string.isRequired,
+  showFullBasketCount: _react.PropTypes.bool
+};
+CartButtonController.defaultProps = {
+  cartItems: _react.PropTypes.array,
+  text: _react.PropTypes.string,
+  url: _react.PropTypes.string.isRequired,
+  showFullBasketCount: false
+};
 
 exports['default'] = CartButtonController;
 module.exports = exports['default'];
@@ -9566,7 +9671,19 @@ BasketDispatcher.register(function (payload) {
 
   switch (action.actionType) {
     case 'updateBasketState':
-      _BasketStore2['default'].updateBasketState(action.cartItems);
+      _BasketStore2['default'].updateBasketState(action.basket);
+      _BasketStore2['default'].emitChange();
+      break;
+    case 'startItemRequest':
+      _BasketStore2['default'].startItemRequest(action.id);
+      _BasketStore2['default'].emitChange();
+      break;
+    case 'stopItemRequest':
+      _BasketStore2['default'].stopItemRequest(action.id);
+      _BasketStore2['default'].emitChange();
+      break;
+    case 'errorItemRequest':
+      _BasketStore2['default'].errorItemRequest(action.id, action.error);
       _BasketStore2['default'].emitChange();
       break;
   }
@@ -9592,14 +9709,30 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _cartItems = [];
+var _basket = {};
+var _basketItemsState = {};
 
 var BasketStore = _lodash2['default'].extend(new _BaseStore2['default'](), {
-  updateBasketState: function updateBasketState(cartItems) {
-    _cartItems = cartItems;
+  getBasket: function getBasket() {
+    return _basket;
   },
-  getCartItems: function getCartItems() {
-    return _cartItems;
+  updateBasketState: function updateBasketState(basket) {
+    _basket = basket;
+  },
+  getCartItemState: function getCartItemState(cartItemId) {
+    return _basketItemsState[cartItemId] || {};
+  },
+  startItemRequest: function startItemRequest(cartItemId) {
+    _basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {});
+    _basketItemsState[cartItemId].isRequestProcessing = true;
+  },
+  stopItemRequest: function stopItemRequest(cartItemId) {
+    _basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {});
+    _basketItemsState[cartItemId].isRequestProcessing = false;
+  },
+  errorItemRequest: function errorItemRequest(cartItemId, error) {
+    _basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {});
+    _basketItemsState[cartItemId].requestError = error;
   }
 });
 
@@ -9658,6 +9791,8 @@ exports.productsFilteredCount = productsFilteredCount;
 exports.checkCouponCode = checkCouponCode;
 exports.productCards = productCards;
 exports.instagram = instagram;
+exports.cartItems = cartItems;
+exports.cartsShow = cartsShow;
 var pUrl = global.mrch ? global.mrch.config.public_api_url : global.gon.public_api_url;
 var oUrl = global.mrch ? global.mrch.config.operator_api_url : global.gon.operator_api_url;
 
@@ -9679,6 +9814,14 @@ function productCards(id) {
 
 function instagram() {
   return pUrl + '/v1/instagram/feed';
+}
+
+function cartItems() {
+  return pUrl + '/v1/cart_items';
+}
+
+function cartsShow() {
+  return pUrl + '/v1/carts/show';
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

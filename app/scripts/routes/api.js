@@ -20,3 +20,11 @@ export function productCards(id) {
 export function instagram() {
   return `${pUrl}/v1/instagram/feed`;
 }
+
+export function cartItems() {
+  return `${pUrl}/v1/cart_items`;
+}
+
+export function cartsShow() {
+  return `${pUrl}/v1/carts/show`;
+}

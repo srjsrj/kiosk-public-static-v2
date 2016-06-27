@@ -1,23 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import BasketStore from '../../../stores/BasketStore';
 import CartButton from './CartButton';
-import { updateBasketState } from '../../../actions/view/BasketActions';
+import { updateBasketState, initBasketState } from '../../../actions/view/BasketActions';
 
 class CartButtonController extends Component {
-  static propTypes = {
-    cartItems: PropTypes.array,
-    text: PropTypes.string,
-    url: PropTypes.string.isRequired,
-  }
   constructor(props) {
     super(props);
 
-    updateBasketState(this.props.cartItems);
     this.state = this.getStateFromStore();
   }
-  componentWillMount() {
+
+  componentDidMount() {
+    initBasketState();
+
     this.syncWithStore = () => {
-      this.setState(this.getStateFromStore);
+      this.setState(this.getStateFromStore());
     }
 
     BasketStore.addChangeListener(this.syncWithStore);
@@ -27,17 +24,52 @@ class CartButtonController extends Component {
   }
   getStateFromStore() {
     return {
-      cartItems: BasketStore.getCartItems()
+      basket: BasketStore.getBasket()
     };
   }
+  getItemsCount() {
+    const { showFullBasketCount } = this.props;
+    const { basket } = this.state;
+
+    if (!(basket && basket.items)) {
+      return 0;
+    }
+
+    if (showFullBasketCount) {
+      let total = 0;
+      this.state.basket.items.forEach((cartItem) => {
+        total += cartItem['count'];
+      });
+      return total;
+    }else{
+      return this.state.basket.items.length;
+    }
+  }
   render() {
+    const { text, url } = this.props;
+    const itemsCount = this.getItemsCount();
+
     return (
       <CartButton
-        {...this.props}
-        cartItems={this.state.cartItems}
+        text={text}
+        url={url}
+        itemsCount={itemsCount}
       />
     );
   }
+}
+
+CartButtonController.propTypes = {
+  cartItems: PropTypes.array,
+  text: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  showFullBasketCount: PropTypes.bool
+};
+CartButtonController.defaultProps = {
+  cartItems: PropTypes.array,
+  text: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  showFullBasketCount: false
 }
 
 export default CartButtonController;

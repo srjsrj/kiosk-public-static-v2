@@ -1,14 +1,30 @@
 import BaseStore from './BaseStore';
 import _ from 'lodash';
 
-let _cartItems = []
+let _basket = {}
+const _basketItemsState = {}
 
 const BasketStore = _.extend(new BaseStore(), {
-  updateBasketState(cartItems) {
-    _cartItems = cartItems;
+  getBasket() {
+    return _basket;
   },
-  getCartItems(){
-    return _cartItems;
+  updateBasketState(basket) {
+    _basket = basket;
+  },
+  getCartItemState(cartItemId) {
+    return _basketItemsState[cartItemId] || {};
+  },
+  startItemRequest(cartItemId) {
+    (_basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {}))
+    _basketItemsState[cartItemId].isRequestProcessing = true;
+  },
+  stopItemRequest(cartItemId) {
+    (_basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {}))
+    _basketItemsState[cartItemId].isRequestProcessing = false;
+  },
+  errorItemRequest(cartItemId, error) {
+    (_basketItemsState[cartItemId] || (_basketItemsState[cartItemId] = {}))
+    _basketItemsState[cartItemId].requestError = error;
   },
 });
 
