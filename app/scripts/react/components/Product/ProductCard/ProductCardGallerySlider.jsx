@@ -55,6 +55,7 @@ class ProductCardGallerySlider extends Component {
       afterAction: this.onAfterPhotoAction,
       autoHeight: true,
       singleItem: true,
+      navigation: true,
     });
 
     if ($productThumbs.length) {
@@ -62,6 +63,7 @@ class ProductCardGallerySlider extends Component {
         items: 4,
         pagination: false,
         itemsMobile: 2,
+        navigation: true,
       });
     }
   }
@@ -102,8 +104,8 @@ class ProductCardGallerySlider extends Component {
         },
         tpl: {
           closeBtn: `<a title="${t('vendor.gallery.close')}" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>`,
-          next: `<a title="${t('vendor.gallery.next')}" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>`,
-          prev: `<a title="${t('vendor.gallery.prev')}" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>`,
+          next: `<a title="${t('vendor.gallery.next')}" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>`,
+          prev: `<a title="${t('vendor.gallery.prev')}" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>`,
         },
       });
   }

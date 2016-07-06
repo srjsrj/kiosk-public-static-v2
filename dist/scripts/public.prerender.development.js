@@ -4044,14 +4044,16 @@ var ProductCardGallerySlider = (function (_Component) {
       $productPhoto.owlCarousel({
         afterAction: this.onAfterPhotoAction,
         autoHeight: true,
-        singleItem: true
+        singleItem: true,
+        navigation: true
       });
 
       if ($productThumbs.length) {
         $productThumbs.owlCarousel({
           items: 4,
           pagination: false,
-          itemsMobile: 2
+          itemsMobile: 2,
+          navigation: true
         });
       }
     }
@@ -4098,8 +4100,8 @@ var ProductCardGallerySlider = (function (_Component) {
         },
         tpl: {
           closeBtn: '<a title="' + t('vendor.gallery.close') + '" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>',
-          next: '<a title="' + t('vendor.gallery.next') + '" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>',
-          prev: '<a title="' + t('vendor.gallery.prev') + '" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
+          next: '<a title="' + t('vendor.gallery.next') + '" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
+          prev: '<a title="' + t('vendor.gallery.prev') + '" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>'
         }
       });
     }
