@@ -4528,7 +4528,7 @@ var ProductCartForProduct = function ProductCartForProduct(props) {
         'div',
         { className: 'b-item-full__form__submit' },
         _react2['default'].createElement(_ProductAddToCartButton2['default'], {
-          text: props.t('vendor.button.to_cart'),
+          text: props.t('vendor.button.to_cart', { title: props.good.title }),
           t: props.t
         })
       )

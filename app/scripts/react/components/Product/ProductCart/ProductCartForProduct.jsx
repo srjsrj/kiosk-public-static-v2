@@ -10,7 +10,7 @@ const ProductCartForProduct = (props) => (
     <div className="b-item-full__form__row b-item-full__form__row_fixed">
       <div className="b-item-full__form__submit">
         <ProductAddToCartButton
-          text={props.t('vendor.button.to_cart')}
+          text={props.t('vendor.button.to_cart', {title: props.good.title})}
           t={props.t}
         />
       </div>
