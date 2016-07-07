@@ -33,14 +33,19 @@ class InstagramContainer extends Component {
   }
   render() {
     const { currentState } = this.state;
+    const { isVisible } = this.props
 
-    return (
-      <Instagram
-        {...this.state}
-        isError={currentState === ERROR_STATE}
-        isLoading={currentState === LOADING_STATE}
-      />
-    );
+    if (isVisible) {
+      return (
+        <Instagram
+          {...this.state}
+          isError={currentState === ERROR_STATE}
+          isLoading={currentState === LOADING_STATE}
+        />
+      );
+    }
+
+    return null;
   }
 }
 
