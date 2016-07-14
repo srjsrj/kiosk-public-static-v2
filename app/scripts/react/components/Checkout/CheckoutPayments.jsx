@@ -20,6 +20,9 @@ class CheckoutPayments extends Component {
             />
             <div className="b-cart__form__payment-name">
               {item.title}
+              {item.show_icon &&
+                <img src={item.icon_url} />
+              }
             </div>
             <div
               className="b-cart__form__payment-description"
