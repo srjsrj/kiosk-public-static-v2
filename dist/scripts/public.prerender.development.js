@@ -1701,7 +1701,8 @@ var CheckoutPayments = (function (_Component) {
             _react2['default'].createElement(
               'div',
               { className: 'b-cart__form__payment-name' },
-              item.title
+              item.title,
+              item.show_icon && _react2['default'].createElement('img', { src: item.icon_url })
             ),
             _react2['default'].createElement('div', {
               className: 'b-cart__form__payment-description',
