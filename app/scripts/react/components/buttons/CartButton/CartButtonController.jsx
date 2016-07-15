@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import BasketStore from '../../../stores/BasketStore';
 import CartButton from './CartButton';
 import { updateBasketState, initBasketState } from '../../../actions/view/BasketActions';
+import { humanizedMoneyWithCurrency } from '../../../helpers/money';
 
 class CartButtonController extends Component {
   constructor(props) {
@@ -46,12 +47,14 @@ class CartButtonController extends Component {
     }
   }
   render() {
-    const { text, url } = this.props;
+    const { url, t } = this.props;
     const itemsCount = this.getItemsCount();
+
+    const total_price = humanizedMoneyWithCurrency(this.state.basket.total_with_delivery_price, '');
 
     return (
       <CartButton
-        text={text}
+        text={t('vendor.cart.basket_button', {total_price: total_price})}
         url={url}
         itemsCount={itemsCount}
       />
@@ -60,14 +63,10 @@ class CartButtonController extends Component {
 }
 
 CartButtonController.propTypes = {
-  cartItems: PropTypes.array,
-  text: PropTypes.string,
   url: PropTypes.string.isRequired,
   showFullBasketCount: PropTypes.bool
 };
 CartButtonController.defaultProps = {
-  cartItems: PropTypes.array,
-  text: PropTypes.string,
   url: PropTypes.string.isRequired,
   showFullBasketCount: false
 }
