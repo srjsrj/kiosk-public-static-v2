@@ -49,8 +49,8 @@ export function humanizedMoney(money) {
   return numeral(getUnit(money)).format('0,0[.]00');
 }
 
-export function humanizedMoneyWithCurrency(money) {
-  if (!money || money.cents === 0) return '-';
+export function humanizedMoneyWithCurrency(money, null_value = '-') {
+  if (!money || money.cents === 0) return null_value;
   if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
   return isSymbolFirst(money)

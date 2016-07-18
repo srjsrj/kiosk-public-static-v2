@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { CabinetButton } from '../buttons/CabinetButton';
 import { WishlistButton } from '../buttons/WishlistButton';
 import CartButtonController from '../buttons/CartButton/CartButtonController';
+import provideTranslations from '../HoC/provideTranslations';
 
 class Clientbar extends Component {
   render() {
     const {
-      cabinetText, cabinetUrl, cartText, cartUrl, cartItems, showFullBasketCount,
+      cabinetText, cabinetUrl, cartUrl, showFullBasketCount, t,
       hasCabinet, hasCart, hasWishlist, wishlistText, wishlistUrl,
     } = this.props;
 
@@ -26,9 +27,8 @@ class Clientbar extends Component {
         }
         {hasCart && cartUrl &&
           <CartButtonController
-            cartItems={cartItems}
-            text={cartText}
             url={cartUrl}
+            t={t}
             showFullBasketCount={showFullBasketCount}
           />
         }
@@ -40,8 +40,6 @@ class Clientbar extends Component {
 Clientbar.propTypes = {
   cabinetText: PropTypes.string,
   cabinetUrl: PropTypes.string,
-  cartItems: PropTypes.array,
-  cartText: PropTypes.string,
   cartUrl: PropTypes.string,
   hasCabinet: PropTypes.bool,
   hasCart: PropTypes.bool,
@@ -57,4 +55,4 @@ Clientbar.defaultProps = {
   showFullBasketCount: false
 }
 
-export default Clientbar;
+export default provideTranslations(Clientbar);

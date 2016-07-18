@@ -1955,6 +1955,10 @@ var _buttonsCartButtonCartButtonController = require('../buttons/CartButton/Cart
 
 var _buttonsCartButtonCartButtonController2 = _interopRequireDefault(_buttonsCartButtonCartButtonController);
 
+var _HoCProvideTranslations = require('../HoC/provideTranslations');
+
+var _HoCProvideTranslations2 = _interopRequireDefault(_HoCProvideTranslations);
+
 var Clientbar = (function (_Component) {
   _inherits(Clientbar, _Component);
 
@@ -1970,10 +1974,9 @@ var Clientbar = (function (_Component) {
       var _props = this.props;
       var cabinetText = _props.cabinetText;
       var cabinetUrl = _props.cabinetUrl;
-      var cartText = _props.cartText;
       var cartUrl = _props.cartUrl;
-      var cartItems = _props.cartItems;
       var showFullBasketCount = _props.showFullBasketCount;
+      var t = _props.t;
       var hasCabinet = _props.hasCabinet;
       var hasCart = _props.hasCart;
       var hasWishlist = _props.hasWishlist;
@@ -1992,9 +1995,8 @@ var Clientbar = (function (_Component) {
           url: wishlistUrl
         }),
         hasCart && cartUrl && _react2['default'].createElement(_buttonsCartButtonCartButtonController2['default'], {
-          cartItems: cartItems,
-          text: cartText,
           url: cartUrl,
+          t: t,
           showFullBasketCount: showFullBasketCount
         })
       );
@@ -2007,8 +2009,6 @@ var Clientbar = (function (_Component) {
 Clientbar.propTypes = {
   cabinetText: _react.PropTypes.string,
   cabinetUrl: _react.PropTypes.string,
-  cartItems: _react.PropTypes.array,
-  cartText: _react.PropTypes.string,
   cartUrl: _react.PropTypes.string,
   hasCabinet: _react.PropTypes.bool,
   hasCart: _react.PropTypes.bool,
@@ -2024,10 +2024,10 @@ Clientbar.defaultProps = {
   showFullBasketCount: false
 };
 
-exports['default'] = Clientbar;
+exports['default'] = (0, _HoCProvideTranslations2['default'])(Clientbar);
 module.exports = exports['default'];
 
-},{"../buttons/CabinetButton":76,"../buttons/CartButton/CartButtonController":78,"../buttons/WishlistButton":80,"react":"react"}],22:[function(require,module,exports){
+},{"../HoC/provideTranslations":26,"../buttons/CabinetButton":76,"../buttons/CartButton/CartButtonController":78,"../buttons/WishlistButton":80,"react":"react"}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -6749,6 +6749,8 @@ var _CartButton2 = _interopRequireDefault(_CartButton);
 
 var _actionsViewBasketActions = require('../../../actions/view/BasketActions');
 
+var _helpersMoney = require('../../../helpers/money');
+
 var CartButtonController = (function (_Component) {
   _inherits(CartButtonController, _Component);
 
@@ -6809,13 +6811,15 @@ var CartButtonController = (function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var text = _props.text;
       var url = _props.url;
+      var t = _props.t;
 
       var itemsCount = this.getItemsCount();
 
+      var total_price = (0, _helpersMoney.humanizedMoneyWithCurrency)(this.state.basket.total_with_delivery_price, '');
+
       return _react2['default'].createElement(_CartButton2['default'], {
-        text: text,
+        text: t('vendor.cart.basket_button', { total_price: total_price }),
         url: url,
         itemsCount: itemsCount
       });
@@ -6826,14 +6830,10 @@ var CartButtonController = (function (_Component) {
 })(_react.Component);
 
 CartButtonController.propTypes = {
-  cartItems: _react.PropTypes.array,
-  text: _react.PropTypes.string,
   url: _react.PropTypes.string.isRequired,
   showFullBasketCount: _react.PropTypes.bool
 };
 CartButtonController.defaultProps = {
-  cartItems: _react.PropTypes.array,
-  text: _react.PropTypes.string,
   url: _react.PropTypes.string.isRequired,
   showFullBasketCount: false
 };
@@ -6841,7 +6841,7 @@ CartButtonController.defaultProps = {
 exports['default'] = CartButtonController;
 module.exports = exports['default'];
 
-},{"../../../actions/view/BasketActions":5,"../../../stores/BasketStore":131,"./CartButton":77,"react":"react"}],79:[function(require,module,exports){
+},{"../../../actions/view/BasketActions":5,"../../../helpers/money":105,"../../../stores/BasketStore":131,"./CartButton":77,"react":"react"}],79:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -8690,7 +8690,9 @@ function humanizedMoney(money) {
 }
 
 function humanizedMoneyWithCurrency(money) {
-  if (!money || money.cents === 0) return '-';
+  var null_value = arguments.length <= 1 || arguments[1] === undefined ? '-' : arguments[1];
+
+  if (!money || money.cents === 0) return null_value;
   if (!isCurrencyExists(money)) return unknownIsoCodeMessage(money);
 
   return isSymbolFirst(money) ? getHTMLName(money) + ' ' + humanizedMoney(money) : humanizedMoney(money) + ' ' + getHTMLName(money);
