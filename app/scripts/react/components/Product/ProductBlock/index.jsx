@@ -5,7 +5,7 @@ import ProductBlockBadges from './ProductBlockBadges';
 import ProductPrices from '../ProductPrices';
 import ProductBlockCartFormButton from '../ProductBlockCartForm/ProductBlockCartFormButton';
 
-const ProductBlock = ({ showCartButton, product, t }) => (
+const ProductBlock = ({ showCartButton, showQuantity, product, t }) => (
   <div className="b-item-list__item">
     <div className="b-item">
       <a className="b-item__pic-wrap" href={product.public_url}>
@@ -25,7 +25,7 @@ const ProductBlock = ({ showCartButton, product, t }) => (
       </a>
       {showCartButton && product.has_ordering_goods && product.goods.length == 1 &&
         <div className="b-item__cart-form">
-          <ProductBlockCartFormButton t={t} product={product}/>
+          <ProductBlockCartFormButton t={t} product={product} showQuantity={showQuantity} />
         </div>
       }
     </div>
@@ -34,6 +34,12 @@ const ProductBlock = ({ showCartButton, product, t }) => (
 
 ProductBlock.propTypes = {
   product: PropTypes.object.isRequired,
+  showCartButton: PropTypes.bool,
+  showQuantity: PropTypes.bool
+};
+ProductBlock.defaultProps = {
+  showCartButton: false,
+  showQuantity: false
 };
 
 export default provideTranslations(ProductBlock);

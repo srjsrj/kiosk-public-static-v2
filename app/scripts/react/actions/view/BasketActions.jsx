@@ -27,7 +27,7 @@ export function updateBasketState(cartItems) {
   });
 }
 
-export function addGood(good, count = 1) {
+export function addGood(good, count = 1, weight = null) {
   startItemRequest(good.id);
 
   return $.ajax({
@@ -35,7 +35,8 @@ export function addGood(good, count = 1) {
     method: 'post',
     data: {
       'cart_item[good_id]': good.global_id,
-      count
+      count,
+      weight
     },
     url: apiRoutes.cartItems(),
   }).done((response) => {
