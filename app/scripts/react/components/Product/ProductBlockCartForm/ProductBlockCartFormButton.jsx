@@ -11,7 +11,7 @@ class ProductBlockCartFormButton extends Component {
     const { t } = this.props;
 
     this.state = this.getStateFromStore();
-    this.state = { ...this.getStateFromStore(), amount: 1 }
+    this.state = { ...this.getStateFromStore(), amount: props.product.selling_by_weight ? parseFloat(props.product.weight_of_price) : 1 }
   }
   componentDidMount() {
     this.syncWithStore = () => {
@@ -36,6 +36,30 @@ class ProductBlockCartFormButton extends Component {
 
     return product.selling_by_weight ? addGood(product.goods[0], 1, this.state.amount) : addGood(product.goods[0], this.state.amount);
   }
+  renderQuanity() {
+    const { product } = this.props;
+
+    var step, defaultValue, min;
+
+    if (product.selling_by_weight) {
+      step = 0.01;
+      min = step;
+      defaultValue = parseFloat(product.weight_of_price);
+    }else{
+      step = 1;
+      defaultValue = 1;
+      min = step;
+    }
+    return (
+      <InputNumberSpinner
+        value={this.state.amount}
+        onChange={this.onChangeAmount.bind(this)}
+        step={step}
+        min={min}
+        defaultValue={defaultValue}
+      />
+    );
+  }
   render() {
     const { t, showQuantity } = this.props;
     const { itemState } = this.state;
@@ -43,9 +67,7 @@ class ProductBlockCartFormButton extends Component {
 
     return (
       <div>
-        {showQuantity &&
-          <InputNumberSpinner value={this.state.amount} onChange={this.onChangeAmount.bind(this)} />
-        }
+        {showQuantity && this.renderQuanity()}
         <button
           className="b-btn element--active"
           onClick={this.addToBasket.bind(this)}

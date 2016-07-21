@@ -34,6 +34,11 @@ export default class InputNumberSpinner extends Component {
       value = max;
     }
 
+    value = parseFloat(value);
+    if (step != 1) {
+      value = +value.toFixed(2);
+    }
+
     this.props.onChange(value);
   }
 
