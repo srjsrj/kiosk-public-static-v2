@@ -3028,7 +3028,7 @@ var ProductBlockCartFormButton = (function (_Component) {
     var t = this.props.t;
 
     this.state = this.getStateFromStore();
-    this.state = _extends({}, this.getStateFromStore(), { amount: 1 });
+    this.state = _extends({}, this.getStateFromStore(), { amount: props.product.selling_by_weight ? parseFloat(props.product.weight_of_price) : 1 });
   }
 
   _createClass(ProductBlockCartFormButton, [{
@@ -3067,6 +3067,30 @@ var ProductBlockCartFormButton = (function (_Component) {
       return product.selling_by_weight ? (0, _actionsViewBasketActions.addGood)(product.goods[0], 1, this.state.amount) : (0, _actionsViewBasketActions.addGood)(product.goods[0], this.state.amount);
     }
   }, {
+    key: 'renderQuanity',
+    value: function renderQuanity() {
+      var product = this.props.product;
+
+      var step, defaultValue, min;
+
+      if (product.selling_by_weight) {
+        step = 0.01;
+        min = step;
+        defaultValue = parseFloat(product.weight_of_price);
+      } else {
+        step = 1;
+        defaultValue = 1;
+        min = step;
+      }
+      return _react2['default'].createElement(_commonInputNumberSpinner2['default'], {
+        value: this.state.amount,
+        onChange: this.onChangeAmount.bind(this),
+        step: step,
+        min: min,
+        defaultValue: defaultValue
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
@@ -3079,7 +3103,7 @@ var ProductBlockCartFormButton = (function (_Component) {
       return _react2['default'].createElement(
         'div',
         null,
-        showQuantity && _react2['default'].createElement(_commonInputNumberSpinner2['default'], { value: this.state.amount, onChange: this.onChangeAmount.bind(this) }),
+        showQuantity && this.renderQuanity(),
         _react2['default'].createElement(
           'button',
           {
@@ -8055,6 +8079,11 @@ var InputNumberSpinner = (function (_Component) {
         value = min;
       } else if (value > max) {
         value = max;
+      }
+
+      value = parseFloat(value);
+      if (step != 1) {
+        value = +value.toFixed(2);
       }
 
       this.props.onChange(value);
