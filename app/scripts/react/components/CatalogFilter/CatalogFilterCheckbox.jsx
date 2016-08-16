@@ -29,6 +29,9 @@ class CatalogFilterCheckbox extends Component {
   expandList() {
     this.setState({ expanded: true });
   }
+  turnList() {
+    this.setState({ expanded: false });
+  }
   handleChange() {
     showFilteredCount(getFilter(this, this.props.params), this.props.t);
   }
@@ -70,6 +73,23 @@ class CatalogFilterCheckbox extends Component {
       </div>
     );
   }
+  renderFilterExpandButton() {
+    const { expanded } = this.state;
+    const { t } = this.props;
+
+    if (this.isHugeList()) {
+      return (
+        <CatalogFilterExpandButton
+          expanded={expanded}
+          t={t}
+          onExpand={this.expandList.bind(this)}
+          onTurn={this.turnList.bind(this)}
+        />
+      );
+    }
+
+    return null;
+  }
   render() {
     const { title } = this.props;
     const { expanded } = this.state;
@@ -77,6 +97,7 @@ class CatalogFilterCheckbox extends Component {
       'b-full-filter__item': true,
       'b-full-filter__item--full': expanded,
       'b-full-filter__item--short': !expanded,
+      'b-full-filter__item--huge': this.isHugeList()
     });
 
     return (
@@ -85,10 +106,7 @@ class CatalogFilterCheckbox extends Component {
           {title}
         </div>
         {this.renderOptions()}
-        <CatalogFilterExpandButton
-          expanded={expanded}
-          onClick={this.expandList.bind(this)}
-        />
+        {this.renderFilterExpandButton()}
       </li>
     );
   }
