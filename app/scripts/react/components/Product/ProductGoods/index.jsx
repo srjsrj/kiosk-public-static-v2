@@ -90,7 +90,7 @@ class ProductGoods extends Component {
             </div>
             <div className="b-item-full__form__submit">
               <ProductAddToCartButton
-                text={t('vendor.button.to_cart')}
+                text={t('vendor.button.to_cart', {title: product.title})}
                 t={t}
               />
             </div>
@@ -117,7 +117,7 @@ class ProductGoods extends Component {
           </div>
           <div className="b-item-full__form__row b-item-full__form__submit">
             <ProductAddToCartButton
-              text={t('vendor.button.to_cart')}
+              text={t('vendor.button.to_cart', {title: product.title})}
               t={t}
             />
           </div>
