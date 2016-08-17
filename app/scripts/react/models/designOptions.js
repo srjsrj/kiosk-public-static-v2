@@ -15,7 +15,7 @@ export default {
     type: designTypes.DESIGN_SLIDER_TYPE,
     name: 'designoption-mainPageRows',
     from: 1,
-    to: 20,
+    to: 100,
     step: 1,
   },
   mainPageInstagram: {
@@ -52,7 +52,7 @@ export default {
     type: designTypes.DESIGN_SLIDER_TYPE,
     name: 'designoption-categoryPageRows',
     from: 1,
-    to: 20,
+    to: 100,
     step: 1,
   },
   categoryPageFilter: {
