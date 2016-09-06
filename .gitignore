@@ -18,3 +18,4 @@ www
 *tags
 /tags
 .publish
+/jsconfig.json

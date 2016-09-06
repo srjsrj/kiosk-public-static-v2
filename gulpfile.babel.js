@@ -7,10 +7,19 @@ requireDir('./gulp/tasks', { recurse: true });
 
 gulp.task('dist', ['[Shared] Test with build'], (cb) => {
   runSequence(
-    ['[Shared] Clean', '[Shared] Bump'],
-    ['[Production] Styles', '[Production] Fonts', '[Production] Images'],
-    ['[Production] Scripts', '[Production] Components scripts', '[Development] Components scripts'],
-  cb);
+    [
+      '[Shared] Clean',
+      '[Shared] Bump',
+    ], [
+      '[Production] Styles',
+      '[Production] Fonts',
+      '[Production] Images',
+    ], [
+      '[Production] Scripts',
+      '[Production] Components scripts',
+      '[Development] Components scripts',
+    ],
+    cb);
 });
 
 gulp.task('build', ['[Shared] Clean'], (cb) => {
@@ -22,7 +31,7 @@ gulp.task('build', ['[Shared] Clean'], (cb) => {
     '[Static] Html',
     '[Static] Styles',
     '[Static] Fonts',
-    '[Static] Images'
+    '[Static] Images',
   ], cb);
 });
 
