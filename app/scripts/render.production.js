@@ -2,6 +2,7 @@
 
 import 'es5-shim';
 import './lib/ReactRailsUJS';
+import Cookies from 'js-cookie';
 
 import './render.libs';
 import './render.bundle';
@@ -13,6 +14,10 @@ import './lib/eventsHelper';
 import './lib/bugsnagAjax';
 
 import './lib/pinAlert';
+
+if (typeof window !== 'undefined') {
+  window.Cookies = Cookies;
+}
 
 if (typeof Bugsnag !== 'undefined') {
   Bugsnag.releaseStage = gon.env;
