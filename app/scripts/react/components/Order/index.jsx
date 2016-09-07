@@ -3,9 +3,9 @@ import * as schemas from '../../schemas';
 
 import provideTranslations from '../HoC/provideTranslations';
 
-import Cart from './Cart';
+import Order from './Order';
 
-class CartContainer extends Component {
+class OrderContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -67,9 +67,10 @@ class CartContainer extends Component {
     );
   }
   getTotalPrice(delivery, cart) {
+    const { totalPrice } = cart;
+
     if (!delivery) return totalPrice;
 
-    const { totalPrice } = cart;
     const { freeDeliveryThreshold: threshold } = delivery;
 
     if (threshold.cents === 'undefined' || totalPrice.cents > threshold.cents) {
@@ -98,7 +99,7 @@ class CartContainer extends Component {
           ? delivery.reservedFieldValues[field.source.name]
           : null;
 
-        return {...field, reservedValue, value, isDisabled, isRequired};
+        return { ...field, reservedValue, value, isDisabled, isRequired };
       }),
     });
   }
@@ -133,7 +134,7 @@ class CartContainer extends Component {
     const { deliveryType, fields, paymentType } = this.state;
 
     return (
-      <Cart
+      <Order
         backUrl={backUrl}
         coupon={coupon}
         deliveryType={deliveryType}
@@ -156,7 +157,7 @@ class CartContainer extends Component {
   }
 }
 
-CartContainer.propTypes = {
+OrderContainer.propTypes = {
   backUrl: PropTypes.string,
   cart: schemas.cart,
   coupon: schemas.checkoutCoupon,
@@ -169,12 +170,13 @@ CartContainer.propTypes = {
   paymentTypes: PropTypes.arrayOf(schemas.paymentType),
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
+  t: PropTypes.func.isRequired,
 };
-CartContainer.defaultProps = {
+OrderContainer.defaultProps = {
   cart: {},
   deliveryTypes: [],
   fields: [],
   paymentTypes: [],
 };
 
-export default provideTranslations(CartContainer);
+export default provideTranslations(OrderContainer);

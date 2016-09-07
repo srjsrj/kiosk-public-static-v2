@@ -4,7 +4,7 @@ import { findDOMNode } from 'react-dom';
 
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
-class CartTitle extends Component {
+class OrderTitle extends Component {
   componentWillUpdate(nextProps) {
     if (this.props.totalPrice.cents !== nextProps.totalPrice.cents) {
       this.animatePriceChanges();
@@ -19,7 +19,11 @@ class CartTitle extends Component {
     }, 1000);
   }
   render() {
-    const { t, totalCount, totalPrice } = this.props;
+    const { 
+      t, 
+      totalCount, 
+      totalPrice,
+    } = this.props;
 
     if (totalCount || totalPrice) {
       return (
@@ -38,9 +42,10 @@ class CartTitle extends Component {
   }
 }
 
-CartTitle.propTypes = {
+OrderTitle.propTypes = {
+  t: PropTypes.func.isRequired,
   totalCount: PropTypes.number,
   totalPrice: PropTypes.object,
 };
 
-export default CartTitle;
+export default OrderTitle;

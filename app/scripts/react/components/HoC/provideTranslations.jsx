@@ -1,3 +1,4 @@
+/*global gon */
 import React, { Component, PropTypes } from 'react';
 import i18next from 'i18next';
 import localeLanguages from '../../constants/localeLanguages';
@@ -20,7 +21,7 @@ const provideTranslations = (WrappedComponent) => {
         resources: {
           [locale]: {
             translation: translations,
-          }
+          },
         },
       }, () => {});
     }
