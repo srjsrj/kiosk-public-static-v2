@@ -48,15 +48,15 @@ const prerenderDependencies = {
 };
 
 function getDependencies(env) {
-  switch(env) {
-    case 'static':
-      return {...baseDependencies, ...staticDependencies};
-    case 'test':
-      return {...baseDependencies, ...testDependencies};
-    case 'prerender':
-      return {...baseDependencies, ...prerenderDependencies};
-    default:
-      return baseDependencies;
+  switch (env) {
+  case 'static':
+    return {...baseDependencies, ...staticDependencies };
+  case 'test':
+    return {...baseDependencies, ...testDependencies };
+  case 'prerender':
+    return {...baseDependencies, ...prerenderDependencies };
+  default:
+    return baseDependencies;
   }
 }
 
@@ -78,7 +78,8 @@ function externalDependencies(env, bundler) {
 
 gulp.task('[Static] Client scripts', () => {
   let bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.static.client.entries,
     extensions: config.static.client.extensions
   });
@@ -92,7 +93,7 @@ gulp.task('[Static] Client scripts', () => {
       .on('error', handleErrors)
       .pipe(source(config.static.client.outputName))
       .pipe(gulp.dest(config.static.client.dest))
-      .on('end', function() {
+      .on('end', function () {
         bundleLogger.end(config.static.client.outputName);
       });
   };
@@ -120,7 +121,8 @@ gulp.task('[Static] Client scripts', () => {
 
 gulp.task('[Static] Vendor scripts', (cb) => {
   let bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.static.vendor.entries,
     extensions: config.static.vendor.extensions
   });
@@ -143,7 +145,8 @@ gulp.task('[Static] Vendor scripts', (cb) => {
 
 gulp.task('[Static] Test scripts', () => {
   let bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.static.test.entries,
     extensions: config.static.test.extensions
   });
@@ -157,7 +160,7 @@ gulp.task('[Static] Test scripts', () => {
       .on('error', handleErrors)
       .pipe(source(config.static.test.outputName))
       .pipe(gulp.dest(config.static.test.dest))
-      .on('end', function() {
+      .on('end', function () {
         bundleLogger.end(config.static.test.outputName);
       });
   };
@@ -185,7 +188,8 @@ gulp.task('[Static] Test scripts', () => {
 
 gulp.task('[Production] Scripts', () => {
   var bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.production.bundle.entries,
     extensions: config.production.bundle.extensions
   });
@@ -203,16 +207,17 @@ gulp.task('[Production] Scripts', () => {
     .bundle()
     .on('error', handleErrors)
     .pipe(source(config.production.bundle.outputName))
-    .pipe(streamify(uglify({ mangle: false })))
+    //.pipe(streamify(uglify({ mangle: false })))
     .pipe(gulp.dest(config.production.bundle.dest))
-    .on('end', function() {
+    .on('end', function () {
       bundleLogger.end(config.production.bundle.outputName);
     });
 });
 
 gulp.task('[Production] Components scripts', () => {
   let bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.production.components.entries,
     extensions: config.production.components.extensions,
   });
@@ -239,7 +244,8 @@ gulp.task('[Production] Components scripts', () => {
 
 gulp.task('[Development] Components scripts', () => {
   let bundler = browserify({
-    cache: {}, packageCache: {},
+    cache: {},
+    packageCache: {},
     entries: config.development.components.entries,
     extensions: config.development.components.extensions
   });

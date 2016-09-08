@@ -3,18 +3,18 @@ import { Image } from '../common/Image';
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
 
 class CartListPackages extends Component {
-  renderRadioButton({ value, title }) {
+  renderRadioButton({ value, title, checked, key }) {
     const id = `cart_package_good_global_id_${value}`;
 
     return (
-      <div className="b-form__radio">
+      <div className="b-form__radio" key={key}>
         <div className="form-group radio_buttons required">
           <span className="radio">
             <label htmlFor={id}>
               <input
                 className="radio_buttons required"
                 data-package="true"
-                data-price="150"
+                defaultChecked={checked}
                 id={id}
                 name="cart[package_good_global_id]"
                 type="radio"
@@ -32,7 +32,9 @@ class CartListPackages extends Component {
       <span>
         {item.title}
         {' - '}
-        {humanizedMoneyWithCurrency(item.price)}
+        <b>
+          {humanizedMoneyWithCurrency(item.price)}
+        </b>
       </span>
     );
   }
@@ -61,15 +63,19 @@ class CartListPackages extends Component {
             <h2 className="b-cart__item__title">
               {t('vendor.packaging.add_gift_package')}
             </h2>
-            <div className="b-form__radio">
-              {this.renderRadioButton({ value: '', title: t('vendor.packaging.no_package') })}
-              {packages.map((item) => (
-                this.renderRadioButton({
-                  title: this.renderTitle(item),
-                  value: item.global_id,
-                })
-              ))}
-            </div>
+            {this.renderRadioButton({
+              key: 'radio-button-default',
+              value: '',
+              title: t('vendor.packaging.no_package'),
+              checked: true,
+            })}
+            {packages.map((item, idx) => (
+              this.renderRadioButton({
+                key: `radio-button-${idx}`,
+                title: this.renderTitle(item),
+                value: item.global_id,
+              })
+            ))}
           </div>
         </div>
       </li>

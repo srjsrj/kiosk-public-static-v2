@@ -229,6 +229,10 @@ CartContainer.defaultProps = {
     'created_at': '2016-09-07T17:38:05.153+03:00',
     'session_id': '8f6d1be5a77168c4ee523632eac265b2',
   },
+  formAuthenticity: {
+    'method': 'patch',
+    'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',
+  },
 };
 
 export default provideTranslations(CartContainer);

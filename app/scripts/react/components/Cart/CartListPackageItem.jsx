@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import AssetImage from '../common/AssetImage';
-import { Image } from '../commen/Image';
-import HumanizedMoneyWithCurrency from '../../helpers/HumanizedMoneyWithCurrency';
+import { Image } from '../common/Image';
+import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartListPackageItem extends Component {
   render() {
@@ -33,7 +33,7 @@ class CartListPackageItem extends Component {
         <div className="b-cart__item__col-quantity" />
         <div className="b-cart__item__col-price">
           <div className="b-cart__item__price">
-            <HumanizedMoneyWithCurrency money={item.price} />
+            <HumanizedMoneyWithCurrency money={item.good.price} />
           </div>
         </div>
         <div className="b-cart__item__col-remove">

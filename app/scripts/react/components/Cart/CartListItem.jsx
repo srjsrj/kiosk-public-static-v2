@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Image } from '../common/Image';
 import AssetImage from '../common/AssetImage';
 import Select from '../common/Select';
-import HumanizedMoneyWithCurrency from '../../helpers/HumanizedMoneyWithCurrency';
+import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class CartListItem extends Component {
   renderGoodDetails() {
@@ -11,8 +11,8 @@ class CartListItem extends Component {
       custom_attributes,
     } = this.props.item.good;
 
-    return Object.keys(custom_attributes).map((key) => (
-      <div className="b-cart__item__option">
+    return Object.keys(custom_attributes).map((key, idx) => (
+      <div className="b-cart__item__option" key={`custom-attr-${idx}`}>
         {`${key}: ${custom_attributes[key]}`}
       </div>
     ));
@@ -25,8 +25,8 @@ class CartListItem extends Component {
     // TODO: implement actual error rendering
     return (
       <div className="b-alert b-alert_danger">
-        {Object.keys(errors).map((key) => (
-          <p>
+        {Object.keys(errors).map((key, idx) => (
+          <p key={`cart-list-item-error-${idx}`}>
             {errors.messages[key].join(', ')}
           </p>
         ))}
@@ -73,14 +73,11 @@ class CartListItem extends Component {
     } = this.props;
     const maxAvail = Math.min(gon.max_items_count, item.good.max_orderable_quantity);
     const options = [...Array(Math.max(item.count, maxAvail)).keys()] // fancy way to generate the range
-      .map((i) => (
-        <option
-          disabled={i + 1 > maxAvail}
-          value={i + 1}
-        >
-          {i + 1}
-        </option>
-      ));
+      .map((i) => ({
+        value: i + 1,
+        title: i + 1,
+        disabled: i + 1 > maxAvail,
+      }));
 
     return (
       <div className="b-cart__item__col-quantity">
@@ -93,7 +90,7 @@ class CartListItem extends Component {
               <div className="b-cart__item__quantity__select">
                 <Select
                   defaultValue={item.count}
-                  name={`cart[items][${item.id}][count]`}
+                  name={`cart[items][${item.good.id}][count]`}
                   options={options}
                 />
               </div>
@@ -113,7 +110,7 @@ class CartListItem extends Component {
       item,
     } = this.props;
     const totalCost = Object.assign({}, item.good.actual_price, {
-      cents: item.good.actual_price * item.count,
+      cents: item.good.actual_price.cents * item.count,
     });
 
     return (
@@ -121,7 +118,7 @@ class CartListItem extends Component {
         <div className="b-cart__item__col-img">
           <Image
             className="b-cart__item__img"
-            image={{ url: item.good.image }}
+            image={item.good.image}
             maxHeight={143}
             maxWidth={143}
           />
@@ -137,24 +134,24 @@ class CartListItem extends Component {
           </h2>
           {this.renderGoodDetails()}
           {(Object.keys(item.errors) > 0) && this.renderErrors()}
-          {item.selling_by_weight
-            ? this.renderWeight()
-            : this.renderQuantity()
-          }
-          <div className="b-cart__item__col-price">
-            <div className="b-cart__item-price">
-              <HumanizedMoneyWithCurrency money={totalCost} />
-            </div>
+        </div>
+        {item.selling_by_weight
+          ? this.renderWeight()
+          : this.renderQuantity()
+        }
+        <div className="b-cart__item__col-price">
+          <div className="b-cart__item__price">
+            <HumanizedMoneyWithCurrency money={totalCost} />
           </div>
-          <div className="b-cart__item__col-remove">
-            <a
-              className="b-cart__item__remove"
-              data-method="delete"
-              href={item.good.destroy_path}
-            >
-              <AssetImage src="images/cross_white.svg" />
-            </a>
-          </div>
+        </div>
+        <div className="b-cart__item__col-remove">
+          <a
+            className="b-cart__item__remove"
+            data-method="delete"
+            href={item.good.destroy_path}
+          >
+            <AssetImage src="images/cross_white.svg" />
+          </a>
         </div>
       </li>
     );

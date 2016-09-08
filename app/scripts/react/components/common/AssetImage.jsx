@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 function AssetImage(props) {
   return (
     <img {...props}
-      src={`${gon.asset_url}/${props.src}`}
+      src={`//${gon.asset_host}/${props.src}`}
     />
   );
 }

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { CartCoupon } from './CartCoupon';
 import CartList from './CartList';
 import FormAuthenticity from '../common/FormAuthenticity';
+import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class Cart extends Component {
   renderErrors() {
@@ -44,7 +45,7 @@ class Cart extends Component {
               action={cart.default_url}
               className="simple_form edit_cart"
               id="edit_cart"
-              method="POST"
+              method="post"
               noValidate
             >
               <FormAuthenticity {...formAuthenticity} />
@@ -57,8 +58,9 @@ class Cart extends Component {
               />
               <div className="b-cart__total-sum">
                 {t('vendor.cart.overall')}
+                {' '}
                 <span>
-                  {cart.total_price}
+                  <HumanizedMoneyWithCurrency money={cart.total_price} />
                 </span>
               </div>
               <div className="b-cart__action">

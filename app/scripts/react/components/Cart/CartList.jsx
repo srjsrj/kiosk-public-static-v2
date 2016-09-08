@@ -14,7 +14,13 @@ class CartList extends Component {
 
     return (
       <ul className="b-cart__list">
-        {items.map((item) => <CartListItem item={item} t={t} />)}
+        {items.map((item, idx) => (
+          <CartListItem
+            item={item}
+            key={`cart-item-${idx}`}
+            t={t}
+          />
+        ))}
         {packageItem != null
           ? <CartListPackageItem item={packageItem} t={t} />
           : <CartListPackages packages={availablePackageItems} t={t} />
