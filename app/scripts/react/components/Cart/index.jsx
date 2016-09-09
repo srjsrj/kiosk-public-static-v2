@@ -1,10 +1,34 @@
 import React, { Component, PropTypes } from 'react';
 import Cart from './Cart';
 import provideTranslations from '../HoC/provideTranslations';
+import connectToRedux from '../HoC/connectToRedux';
+import { connect } from 'redux/react';
+import {
+  fetchCart,
+} from '../../actions/CartActions';
+import {
+  fetchPackages,
+} from '../../actions/PackagesActions';
 
+@connect((state) => {
+
+},
+{
+  fetchCart,
+  fetchPackages,
+})
 class CartContainer extends Component {
   componentWillMount() {
+    const {
+      availablePackages,
+      cart,
+      fetchCart,
+      fetchPackages,
+    } = this.props;
 
+    if (!availablePackages) {
+      fetchPackages();
+    }
   }
   render() {
     const {
@@ -28,6 +52,8 @@ class CartContainer extends Component {
 CartContainer.propTypes = {
   availablePackages: PropTypes.array.isRequired,
   cart: PropTypes.object.isRequired,
+  fetchCart: PropTypes.func.isRequired,
+  fetchPackages: PropTypes.func.isRequired,
   formAuthenticity: PropTypes.object,
   t: PropTypes.func.isRequired,
 };
@@ -456,4 +482,4 @@ CartContainer.defaultProps = {
   },
 };
 
-export default provideTranslations(CartContainer);
+export default connectToRedux(provideTranslations(CartContainer));
