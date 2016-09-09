@@ -3,9 +3,12 @@ import Cart from './Cart';
 import provideTranslations from '../HoC/provideTranslations';
 
 class CartContainer extends Component {
+  componentWillMount() {
+
+  }
   render() {
     const {
-      availablePackageItems,
+      availablePackages,
       cart,
       formAuthenticity,
       t,
@@ -13,7 +16,7 @@ class CartContainer extends Component {
 
     return (
       <Cart
-        availablePackageItems={availablePackageItems}
+        availablePackages={availablePackages}
         cart={cart}
         formAuthenticity={formAuthenticity}
         t = {t}
@@ -23,14 +26,14 @@ class CartContainer extends Component {
 }
 
 CartContainer.propTypes = {
-  availablePackageItems: PropTypes.array.isRequired,
+  availablePackages: PropTypes.array.isRequired,
   cart: PropTypes.object.isRequired,
   formAuthenticity: PropTypes.object,
   t: PropTypes.func.isRequired,
 };
 
 CartContainer.defaultProps = {
-  availablePackageItems: [
+  availablePackages: [
     {
       'id': 43869,
       'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQzODY5',
@@ -90,19 +93,19 @@ CartContainer.defaultProps = {
   cart: {
     'id': 12888853,
     'total_price': {
-      'cents': 200000,
+      'cents': 1200000,
       'currency_iso_code': 'RUB',
     },
     'total_with_delivery_price': {
-      'cents': 223000,
+      'cents': 1223000,
       'currency_iso_code': 'RUB',
     },
     'products_with_package_price': {
-      'cents': 200000,
+      'cents': 1200000,
       'currency_iso_code': 'RUB',
     },
     'products_price': {
-      'cents': 200000,
+      'cents': 1200000,
       'currency_iso_code': 'RUB',
     },
     'delivery_price': {
@@ -114,6 +117,220 @@ CartContainer.defaultProps = {
       'currency_iso_code': 'RUB',
     },
     'items': [
+      {
+        'good': {
+          'id': 15369,
+          'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8xNTM2OQ',
+          'updated_at': '2016-09-09T09:09:54.517+03:00',
+          'created_at': '2015-02-22T00:02:42.493+03:00',
+          'article': '',
+          'type': 'ProductItem',
+          'title': 'Кольцо ANNA.M.OBJECTS (размер: 13,5)',
+          'image': {
+            'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/60815/d2efff73-55d4-4d8b-9221-df8c10c58d6c.jpg',
+            'product_id': 20943,
+            'vendor_id': 68,
+            'id': 60815,
+          },
+          'custom_attributes': {
+            'Бренд': 'ANNA.M.OBJECTS',
+            'Материал': 'Серебро',
+          },
+          'default_url': 'http://stage.kiiiosk.ru/products/20943-koltso-anna-m-objects',
+          'quantity_unit': {
+            'id': 'pcs',
+            'short': 'шт.',
+          },
+          'category': {
+            'id': 1587,
+            'name': 'Кольца',
+            'full_name': 'Украшения/Кольца',
+            'parent_id': 2926,
+            'updated_at': '2016-09-09T09:11:23.384+03:00',
+            'position': 22,
+            'has_children': false,
+            'is_root': {
+              'id': 1562,
+              'vendor_id': 68,
+              'created_at': '2015-02-12T17:25:35.641+03:00',
+              'updated_at': '2016-09-09T09:11:24.322+03:00',
+              'position': 814,
+              'ancestry': null,
+              'products_count': 512,
+              'published_products_count': 138,
+              'ms_uuid': null,
+              'stock_synced_at': null,
+              'stock_dump': null,
+              'externalcode': null,
+              'deleted_at': null,
+              'vk_album_id': 222612770,
+              'active_products_count': 301,
+              'deep_products_count': 2978,
+              'deep_published_products_count': 1290,
+              'deep_active_products_count': 2257,
+              'stock_description': null,
+              'meta_title': null,
+              'meta_keywords': null,
+              'meta_description': null,
+              'h1': null,
+              'image': {
+                'url': 'http://assets.stage.kiiiosk.ru/images/fallback/product-none.png',
+              },
+              'cached_default_slug': 'kornevaya-kategoriya',
+              'vk_synced_at': '2015-10-13T16:32:21.517+03:00',
+              'stock_title': null,
+              'show_children_products': false,
+              'custom_title_translations': {
+                'ru': 'Корневая категория',
+              },
+              'description_translations': {
+                'ru': null,
+              },
+              'bottom_text_translations': null,
+              'cached_title_translations': {
+                'ru': 'Корневая категория',
+              },
+            },
+            'products_count': 647,
+          },
+          'quantity': 4,
+          'count': 4,
+          'description': null,
+          'stock_synced_at': '2016-08-20T16:15:01.425+03:00',
+          'max_orderable_quantity': 4,
+          'has_ordering_goods': true,
+          'sku': 'product-20943-15369',
+          'ms_consignment_uuid': '8343dab0-ba05-11e4-90a2-8ecb0034af84',
+          'ms_uuid': '8343d80d-ba05-11e4-90a2-8ecb0034af81',
+          'is_archived': false,
+          'is_sale': false,
+          'actual_price': {
+            'cents': 100000,
+            'currency_iso_code': 'RUB',
+          },
+          'price': {
+            'cents': 100000,
+            'currency_iso_code': 'RUB',
+          },
+          'selling_by_weight': true,
+        },
+        'quantity': 1,
+        'selling_by_weight': true,
+        'weight': 1,
+        'count': 1,
+        'destroy_path': '/cart/items/74353',
+        'errors': {},
+      },
+      {
+        'good': {
+          'id': 32394,
+          'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8zMjM5NA',
+          'updated_at': '2016-09-09T09:11:22.928+03:00',
+          'created_at': '2015-10-11T18:27:07.366+03:00',
+          'article': '',
+          'type': 'ProductItem',
+          'title': 'Моносережка HIMÈRE',
+          'image': {
+            'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/33163/3aa3b03d-c4a5-4ac9-b78e-93443678e00d.jpg',
+            'product_id': 35836,
+            'vendor_id': 68,
+            'id': 33163,
+          },
+          'custom_attributes': {
+            'Бренд': 'HIMÈRE',
+            'Материал': 'Серебро',
+            'Высота': '4.5 см',
+            'Покрытие': 'Позолота',
+          },
+          'default_url': 'http://stage.kiiiosk.ru/products/35836-monoserezhka-him-re',
+          'quantity_unit': {
+            'id': 'pcs',
+            'short': 'шт.',
+          },
+          'category': {
+            'id': 1583,
+            'name': 'Серьги',
+            'full_name': 'Украшения/Серьги',
+            'parent_id': 2926,
+            'updated_at': '2016-09-09T09:11:24.173+03:00',
+            'position': 27,
+            'has_children': false,
+            'is_root': {
+              'id': 1562,
+              'vendor_id': 68,
+              'created_at': '2015-02-12T17:25:35.641+03:00',
+              'updated_at': '2016-09-09T09:11:24.322+03:00',
+              'position': 814,
+              'ancestry': null,
+              'products_count': 512,
+              'published_products_count': 138,
+              'ms_uuid': null,
+              'stock_synced_at': null,
+              'stock_dump': null,
+              'externalcode': null,
+              'deleted_at': null,
+              'vk_album_id': 222612770,
+              'active_products_count': 301,
+              'deep_products_count': 2978,
+              'deep_published_products_count': 1290,
+              'deep_active_products_count': 2257,
+              'stock_description': null,
+              'meta_title': null,
+              'meta_keywords': null,
+              'meta_description': null,
+              'h1': null,
+              'image': {
+                'url': 'http://assets.stage.kiiiosk.ru/images/fallback/product-none.png',
+              },
+              'cached_default_slug': 'kornevaya-kategoriya',
+              'vk_synced_at': '2015-10-13T16:32:21.517+03:00',
+              'stock_title': null,
+              'show_children_products': false,
+              'custom_title_translations': {
+                'ru': 'Корневая категория',
+              },
+              'description_translations': {
+                'ru': null,
+              },
+              'bottom_text_translations': null,
+              'cached_title_translations': {
+                'ru': 'Корневая категория',
+              },
+            },
+            'products_count': 453,
+          },
+          'quantity': 0,
+          'count': 0,
+          'description': null,
+          'stock_synced_at': '2016-08-20T16:15:01.425+03:00',
+          'max_orderable_quantity': 0,
+          'has_ordering_goods': false,
+          'sku': 'product-35836-32394',
+          'ms_consignment_uuid': 'd5864dfb-701a-11e5-7a40-e89700212367',
+          'ms_uuid': 'd5864bc1-701a-11e5-7a40-e89700212366',
+          'is_archived': false,
+          'is_sale': false,
+          'actual_price': {
+            'cents': 900000,
+            'currency_iso_code': 'RUB',
+          },
+          'price': {
+            'cents': 900000,
+            'currency_iso_code': 'RUB',
+          },
+          'selling_by_weight': false,
+        },
+        'quantity': 1,
+        'selling_by_weight': false,
+        'weight': null,
+        'count': 1,
+        'destroy_path': '/cart/items/74352',
+        'errors': {
+          'count': [
+            'Данный товар закончился',
+          ],
+        },
+      },
       {
         'good': {
           'id': 29992,
@@ -145,14 +362,14 @@ CartContainer.defaultProps = {
             'name': 'Браслеты-нитки',
             'full_name': 'Украшения/Браслеты-нитки',
             'parent_id': 2926,
-            'updated_at': '2016-08-24T01:51:14.514+03:00',
+            'updated_at': '2016-09-09T09:11:23.444+03:00',
             'position': 17,
             'has_children': false,
             'is_root': {
               'id': 1562,
               'vendor_id': 68,
               'created_at': '2015-02-12T17:25:35.641+03:00',
-              'updated_at': '2016-08-24T01:51:20.519+03:00',
+              'updated_at': '2016-09-09T09:11:24.322+03:00',
               'position': 814,
               'ancestry': null,
               'products_count': 512,
@@ -217,15 +434,19 @@ CartContainer.defaultProps = {
         'selling_by_weight': false,
         'weight': null,
         'count': 1,
-        'destroy_path': '/cart/items/74350',
+        'destroy_path': '/cart/items/74351',
         'errors': {},
       },
     ],
     'package_item': null,
-    'items_amount': 1,
+    'items_amount': 3,
     'default_url': '/cart',
-    'errors': {},
-    'updated_at': '2016-09-07T17:59:53.324+03:00',
+    'errors': {
+      'all_ordering?': [
+        'В корзине лежат товары не доступные к заказу',
+      ],
+    },
+    'updated_at': '2016-09-08T17:25:40.853+03:00',
     'created_at': '2016-09-07T17:38:05.153+03:00',
     'session_id': '8f6d1be5a77168c4ee523632eac265b2',
   },

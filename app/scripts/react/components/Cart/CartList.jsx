@@ -6,7 +6,7 @@ import CartListPackages from './CartListPackages';
 class CartList extends Component {
   render() {
     const {
-      availablePackageItems,
+      availablePackages,
       items,
       packageItem,
       t,
@@ -23,7 +23,7 @@ class CartList extends Component {
         ))}
         {packageItem != null
           ? <CartListPackageItem item={packageItem} t={t} />
-          : <CartListPackages packages={availablePackageItems} t={t} />
+          : <CartListPackages packages={availablePackages} t={t} />
         }
       </ul>
     );
@@ -31,7 +31,7 @@ class CartList extends Component {
 }
 
 CartList.propTypes = {
-  availablePackageItems: PropTypes.array,
+  availablePackages: PropTypes.array,
   items: PropTypes.array.isRequired,
   packageItem: PropTypes.object,
   t: PropTypes.func.isRequired,

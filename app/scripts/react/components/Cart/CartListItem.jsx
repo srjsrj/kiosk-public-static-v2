@@ -22,12 +22,11 @@ class CartListItem extends Component {
       errors,
     } = this.props.item;
 
-    // TODO: implement actual error rendering
     return (
       <div className="b-alert b-alert_danger">
-        {Object.keys(errors).map((key, idx) => (
-          <p key={`cart-list-item-error-${idx}`}>
-            {errors.messages[key].join(', ')}
+        {Object.keys(errors).map((key) => (
+          <p key={`cart-list-item-error-${key}`}>
+            {errors[key].join(', ')}
           </p>
         ))}
       </div>
@@ -133,7 +132,7 @@ class CartListItem extends Component {
             </a>
           </h2>
           {this.renderGoodDetails()}
-          {(Object.keys(item.errors) > 0) && this.renderErrors()}
+          {(Object.keys(item.errors).length > 0) && this.renderErrors()}
         </div>
         {item.selling_by_weight
           ? this.renderWeight()

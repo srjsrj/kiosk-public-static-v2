@@ -10,16 +10,21 @@ class Cart extends Component {
       errors,
     } = this.props.cart;
 
-    // TODO: implement actual error rendering
-    return errors.map((error, idx) => (
-      <span className="help-block" key={`form-error-${idx}`}>
-        {error}
+    return (
+      <span className="help-block">
+        {Object.keys(errors).map((key) => (
+          errors[key].map((err, idx) => (
+            <div key={`cart-error-${key}-${idx}`}>
+              {err}
+            </div>
+          ))
+        ))}
       </span>
-    ));
+    );
   }
   render() {
     const {
-      availablePackageItems,
+      availablePackages,
       cart,
       formAuthenticity,
       t,
@@ -51,7 +56,7 @@ class Cart extends Component {
               <FormAuthenticity {...formAuthenticity} />
               {Object.keys(cart.errors).length > 0 && this.renderErrors()}
               <CartList
-                availablePackageItems={availablePackageItems}
+                availablePackages={availablePackages}
                 items={cart.items}
                 packageItem={cart.package_item}
                 t={t}
@@ -99,7 +104,7 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  availablePackageItems: PropTypes.array.isRequired,
+  availablePackages: PropTypes.array.isRequired,
   cart: PropTypes.object.isRequired,
   formAuthenticity: PropTypes.object,
   t: PropTypes.func.isRequired,
