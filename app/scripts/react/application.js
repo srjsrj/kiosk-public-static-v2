@@ -1,6 +1,13 @@
-import { createRedux } from 'redux';
-import { Provider } from 'redux/react';
+import {
+  applyMiddleware,
+  createStore,
+  combineReducers,
+  compose,
+} from 'redux';
+import { Provider } from 'react-redux';
 import * as reducers from './reducers';
+import apiMiddleware from './middleware/api';
+import thunkMiddleware from 'redux-thunk';
 
 // Bootstraping serverside data
 let data = {};
@@ -23,4 +30,10 @@ global.Kiosk = {
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
 // instance
-global.redux = createRedux(reducers, data);
+global.redux = compose(
+  applyMiddleware(
+    thunkMiddleware,
+    apiMiddleware,
+  ),
+  global.devToolsExtension ? global.devToolsExtension : (f) => f
+)(createStore)(combineReducers(reducers), data);

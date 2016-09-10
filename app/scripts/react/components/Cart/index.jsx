@@ -2,16 +2,24 @@ import React, { Component, PropTypes } from 'react';
 import Cart from './Cart';
 import provideTranslations from '../HoC/provideTranslations';
 import connectToRedux from '../HoC/connectToRedux';
-import { connect } from 'redux/react';
+import { connect } from 'react-redux';
 import {
+  initCart,
   fetchCart,
 } from '../../actions/CartActions';
 import {
+  initPackages,
   fetchPackages,
 } from '../../actions/PackagesActions';
 
 @connect((state) => {
+  const {
 
+  } = state;
+
+  return {
+
+  };
 },
 {
   fetchCart,
@@ -20,29 +28,42 @@ import {
 class CartContainer extends Component {
   componentWillMount() {
     const {
-      availablePackages,
-      cart,
+      initialCart,
+      initialPackages,
+      initCart,
+      initPackages,
       fetchCart,
       fetchPackages,
     } = this.props;
 
-    if (!availablePackages) {
+    if (!initialPackages) {
       fetchPackages();
+    } else {
+      initPackages(initialPackages);
+    }
+
+    if (!initialCart) {
+      fetchCart();
+    } else {
+      initCart(initialCart);
     }
   }
   render() {
     const {
-      availablePackages,
-      cart,
       formAuthenticity,
+      amounts,
+      cartItems,
+      packageItem,
+      packages,
       t,
     } = this.props;
 
     return (
       <Cart
-        availablePackages={availablePackages}
-        cart={cart}
+        cartItems={cartItems}
         formAuthenticity={formAuthenticity}
+        packageItem={packageItem}
+        packages={packages}
         t = {t}
       />
     );
@@ -50,73 +71,18 @@ class CartContainer extends Component {
 }
 
 CartContainer.propTypes = {
-  availablePackages: PropTypes.array.isRequired,
-  cart: PropTypes.object.isRequired,
+  initialCart: PropTypes.object.isRequired,
+  initialPackages: PropTypes.array.isRequired,
   fetchCart: PropTypes.func.isRequired,
   fetchPackages: PropTypes.func.isRequired,
   formAuthenticity: PropTypes.object,
+  initCart: PropTypes.func.isRequired,
+  initPackages: PropTypes.func.isRequired,
   t: PropTypes.func.isRequired,
 };
 
 CartContainer.defaultProps = {
-  availablePackages: [
-    {
-      'id': 43869,
-      'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQzODY5',
-      'category_ids': [
-        4763,
-        1562,
-      ],
-      'title': 'Подарочная упаковка САХАРОК',
-      'updated_at': '2016-08-20T17:21:19.084+03:00',
-      'union_position': 670,
-      'price': {
-        'cents': 15000,
-        'currency_iso_code': 'RUB',
-      },
-      'is_published': true,
-      'is_manual_published': true,
-      'is_sold': false,
-      'has_ordering_goods': true,
-      'total_items_quantity': 17,
-      'quantity_unit': {
-        'id': 'pcs',
-        'short': 'шт.',
-      },
-      'operator_state': {
-        'css_class': '__published',
-        'visible': true,
-        'title': 'OK',
-      },
-      'article': null,
-      'ident': '#43869',
-      'ms_code': null,
-      'description': 'Упаковка из плотной фактурной бумаги, приятной на ощупь, перевязанная атласной лентой.',
-      'is_archived': false,
-      'edit_path': '/operator/products/43869/edit',
-      'image': {
-        'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/51342/ad08f5f9-f0dd-4ad9-93bf-ad016c810974.jpg',
-        'product_id': 43869,
-        'vendor_id': 68,
-        'id': 51342,
-      },
-      'images': [
-        {
-          'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/51342/ad08f5f9-f0dd-4ad9-93bf-ad016c810974.jpg',
-          'product_id': 43869,
-          'vendor_id': 68,
-          'id': 51342,
-        },
-        {
-          'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/61777/26849fea-2d79-4fa3-bb47-1fdc4d18751f.jpg',
-          'product_id': 43869,
-          'vendor_id': 68,
-          'id': 61777,
-        },
-      ],
-    },
-  ] ,
-  cart: {
+  initialCart: {
     'id': 12888853,
     'total_price': {
       'cents': 1200000,
@@ -476,6 +442,63 @@ CartContainer.defaultProps = {
     'created_at': '2016-09-07T17:38:05.153+03:00',
     'session_id': '8f6d1be5a77168c4ee523632eac265b2',
   },
+  initialPackages: [
+    {
+      'id': 43869,
+      'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0LzQzODY5',
+      'category_ids': [
+        4763,
+        1562,
+      ],
+      'title': 'Подарочная упаковка САХАРОК',
+      'updated_at': '2016-08-20T17:21:19.084+03:00',
+      'union_position': 670,
+      'price': {
+        'cents': 15000,
+        'currency_iso_code': 'RUB',
+      },
+      'is_published': true,
+      'is_manual_published': true,
+      'is_sold': false,
+      'has_ordering_goods': true,
+      'total_items_quantity': 17,
+      'quantity_unit': {
+        'id': 'pcs',
+        'short': 'шт.',
+      },
+      'operator_state': {
+        'css_class': '__published',
+        'visible': true,
+        'title': 'OK',
+      },
+      'article': null,
+      'ident': '#43869',
+      'ms_code': null,
+      'description': 'Упаковка из плотной фактурной бумаги, приятной на ощупь, перевязанная атласной лентой.',
+      'is_archived': false,
+      'edit_path': '/operator/products/43869/edit',
+      'image': {
+        'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/51342/ad08f5f9-f0dd-4ad9-93bf-ad016c810974.jpg',
+        'product_id': 43869,
+        'vendor_id': 68,
+        'id': 51342,
+      },
+      'images': [
+        {
+          'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/51342/ad08f5f9-f0dd-4ad9-93bf-ad016c810974.jpg',
+          'product_id': 43869,
+          'vendor_id': 68,
+          'id': 51342,
+        },
+        {
+          'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/61777/26849fea-2d79-4fa3-bb47-1fdc4d18751f.jpg',
+          'product_id': 43869,
+          'vendor_id': 68,
+          'id': 61777,
+        },
+      ],
+    },
+  ] ,
   formAuthenticity: {
     'method': 'patch',
     'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',

@@ -2,18 +2,19 @@ window = undefined; // React-rails set window to this, it's unexpected behavior
 React = require('react');
 ReactDOM = require('react-dom');
 ReactDOMServer = require('react-dom/server');
-createRedux = require('redux').createRedux;
-Provider = require('redux/react').Provider;
+createStore = require('redux').createStore;
+combineReducers = require('redux').combineReducers;
+Provider = require('react-redux').Provider;
 DesignReducer = require('./react/reducers/Design.prerender');
 PopupReducer = require('./react/reducers/Popup');
 require('./locales/numeral/ru');
 
-var prerenderReducers = {
+var prerenderReducers = combineReducers({
   design: DesignReducer,
   popup: PopupReducer,
-};
+});
 
-global.redux = createRedux(prerenderReducers, {});
+global.redux = createStore(prerenderReducers, {});
 
 Logo = require('./react/components/Logo/LogoContainer');
 ProductBlock = require('./react/components/Product/ProductBlock');

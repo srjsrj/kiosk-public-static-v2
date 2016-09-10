@@ -26,5 +26,9 @@ export function cartItems() {
 }
 
 export function cartsShow() {
-  return `${pUrl}/v1/carts/show`;
+  return `${pUrl}/v1/carts/show.json`;
+}
+
+export function packages() {
+  return `${pUrl}/v1/packages.json`;
 }
