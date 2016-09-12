@@ -4,6 +4,7 @@ import provideTranslations from '../HoC/provideTranslations';
 import connectToRedux from '../HoC/connectToRedux';
 import { connect } from 'react-redux';
 import {
+  setAmount as changeAmount,
   initCart,
   fetchCart,
 } from '../../actions/CartActions';
@@ -11,31 +12,14 @@ import {
   initPackages,
   fetchPackages,
 } from '../../actions/PackagesActions';
+import { Map, List } from 'immutable';
 
-@connect((state) => {
-  const {
+const emptyErrors = Map();
+const emptyAmounts = Map();
+const emptyItems = List();
+const emptyItem = Map();
+const emptyPrice = Map();
 
-  } = state;
-
-  return {
-    cartDefaultUrl,
-    cartErrors,
-    cartIsFetching,
-    cartItems,
-    couponCode,
-    packageItem,
-    packages,
-    packagesIsFetching,
-    prices,
-    totalSum,
-  };
-},
-{
-  initCart,
-  fetchCart,
-  initPackages,
-  fetchPackages,
-})
 class CartContainer extends Component {
   componentWillMount() {
     const {
@@ -61,26 +45,30 @@ class CartContainer extends Component {
   }
   render() {
     const {
+      amounts,
       formAuthenticity,
       cartDefaultUrl,
       cartErrors,
       cartIsFetching,
       cartItems,
+      changeAmount,
       couponCode,
       packageItem,
       packages,
       packagesIsFetching,
       prices,
       t,
-      totalSum,
+      totalPrice,
     } = this.props;
 
     return (
       <Cart
+        amounts={amounts}
         cartDefaultUrl={cartDefaultUrl}
         cartErrors={cartErrors}
         cartIsFetching={cartIsFetching}
         cartItems={cartItems}
+        changeAmount={changeAmount}
         couponCode={couponCode}
         formAuthenticity={formAuthenticity}
         packageItem={packageItem}
@@ -88,17 +76,19 @@ class CartContainer extends Component {
         packagesIsFetching={packagesIsFetching}
         prices={prices}
         t = {t}
-        totalSum={totalSum}
+        totalPrice={totalPrice}
       />
     );
   }
 }
 
 CartContainer.propTypes = {
+  amounts: PropTypes.object.isRequired,
   cartDefaultUrl: PropTypes.string.isRequired,
   cartErrors: PropTypes.object.isRequired,
   cartIsFetching: PropTypes.bool.isRequired,
   cartItems: PropTypes.object.isRequired,
+  changeAmount: PropTypes.func.isRequired,
   couponCode: PropTypes.string,
   initialCart: PropTypes.object,
   initialPackages: PropTypes.array,
@@ -107,31 +97,32 @@ CartContainer.propTypes = {
   formAuthenticity: PropTypes.object,
   initCart: PropTypes.func.isRequired,
   initPackages: PropTypes.func.isRequired,
-  packageItem: PropTypes.object.isRequired,
+  packageItem: PropTypes.object,
   packages: PropTypes.object.isRequired,
   packagesIsFetching: PropTypes.bool.isRequired,
   prices: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
-  totalSum: PropTypes.number.isRequired,
+  totalPrice: PropTypes.object.isRequired,
 };
 
 CartContainer.defaultProps = {
+  /*
   initialCart: {
     'id': 12888853,
     'total_price': {
-      'cents': 1200000,
+      'cents': 1210000,
       'currency_iso_code': 'RUB',
     },
     'total_with_delivery_price': {
-      'cents': 1223000,
+      'cents': 1233000,
       'currency_iso_code': 'RUB',
     },
     'products_with_package_price': {
-      'cents': 1200000,
+      'cents': 1210000,
       'currency_iso_code': 'RUB',
     },
     'products_price': {
-      'cents': 1200000,
+      'cents': 1210000,
       'currency_iso_code': 'RUB',
     },
     'delivery_price': {
@@ -144,6 +135,7 @@ CartContainer.defaultProps = {
     },
     'items': [
       {
+        'id': 74353,
         'good': {
           'id': 15369,
           'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8xNTM2OQ',
@@ -242,12 +234,13 @@ CartContainer.defaultProps = {
         },
         'quantity': 1,
         'selling_by_weight': true,
-        'weight': 1,
+        'weight': 1.1,
         'count': 1,
         'destroy_path': '/cart/items/74353',
         'errors': {},
       },
       {
+        'id': 74352,
         'good': {
           'id': 32394,
           'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8zMjM5NA',
@@ -358,6 +351,7 @@ CartContainer.defaultProps = {
         },
       },
       {
+        'id': 74351,
         'good': {
           'id': 29992,
           'global_id': 'Z2lkOi8vbWVyY2hhbnRseS9Qcm9kdWN0SXRlbS8yOTk5Mg',
@@ -533,10 +527,59 @@ CartContainer.defaultProps = {
       ],
     },
   ] ,
+  */
   formAuthenticity: {
     'method': 'patch',
     'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',
   },
 };
 
-export default connectToRedux(provideTranslations(CartContainer));
+export default provideTranslations(connectToRedux(connect(
+  (state) => {
+    const {
+      cart,
+      packages: packagesStore,
+    } = state;
+
+    const cartDefaultUrl = cart.getIn(['cart', 'defaultUrl'], '');
+    const cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
+    const cartItems = cart.getIn(['cart', 'items'], emptyItems);
+    const cartIsFetching = cart.get('isFetching', false);
+    const couponCode = cart.getIn(['cart', 'couponCode'], '');
+    const packageItem = cart.getIn(['cart', 'packageItem'], emptyItem);
+    const packagesIsFetching = packagesStore.get('isFetching', false);
+    const packages = packagesStore.get('packages', emptyItems);
+    const amounts = cart.get('amounts', emptyAmounts);
+    const prices = amounts
+      .map((amount, itemId) => {
+        const item = cartItems.find(((i) => i.get('id') === itemId), Map());
+        const actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
+
+        return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
+      });
+    const totalPrice = cart
+      .getIn(['cart', 'totalPrice'], emptyPrice)
+      .set('cents', prices.reduce(((acc, price) => acc + price.get('cents', 0)), 0));
+
+    return {
+      amounts,
+      cartDefaultUrl,
+      cartErrors,
+      cartIsFetching,
+      cartItems,
+      couponCode,
+      packageItem,
+      packages,
+      packagesIsFetching,
+      prices,
+      totalPrice,
+    };
+  },
+  {
+    changeAmount,
+    initCart,
+    fetchCart,
+    initPackages,
+    fetchPackages,
+  }
+)(CartContainer)));

@@ -24,15 +24,15 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.415',
+  version: '0.0.452',
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
 // instance
-global.redux = compose(
+global.redux = (compose(
   applyMiddleware(
     thunkMiddleware,
     apiMiddleware,
   ),
-  global.devToolsExtension ? global.devToolsExtension : (f) => f
-)(createStore)(combineReducers(reducers), data);
+  global.devToolsExtension ? global.devToolsExtension() : (f) => f
+)(createStore))(combineReducers(reducers), data);

@@ -9,8 +9,7 @@ import {
 } from '../actions/CartActions';
 
 const initialState = fromJS({
-  cartItems: [],
-  packageItem: {},
+  cart: {},
   amounts: {},
   selectedPackage: null,
   isFetching: false,
@@ -29,15 +28,14 @@ const actionMap = {
     const amounts = fromJS(response.items)
       .toMap()
       .mapKeys((key, val) => val.get('id'))
-      .map((item) => ({
-        count: item.get('count', 0),
-        weight: item.get('weight', 0),
-      }));
+      .map((item) => item.get('sellingByWeight') ?
+        item.get('weight', 0) :
+        item.get('count', 0)
+      );
 
     return state.merge({
       amounts,
-      cartItems: response.items,
-      packageItem: response.packageItem,
+      cart: response,
       isFetching: false,
       error: null,
     });

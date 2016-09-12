@@ -8,7 +8,7 @@ import Logo from './index';
 }))
 class LogoContainer extends Component {
   static propTypes = {
-    globalLogoUrl: PropTypes.string.isRequired,
+    globalLogoUrl: PropTypes.string,
     linkUrl: PropTypes.string.isRequired,
     logoText: PropTypes.string.isRequired,
     logoUrl: PropTypes.string,

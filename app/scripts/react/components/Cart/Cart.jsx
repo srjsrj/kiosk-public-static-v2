@@ -3,6 +3,7 @@ import { CartCoupon } from './CartCoupon';
 import CartList from './CartList';
 import FormAuthenticity from '../common/FormAuthenticity';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
+import { decamelizeKeys } from 'humps';
 
 class Cart extends Component {
   renderErrors() {
@@ -12,27 +13,28 @@ class Cart extends Component {
 
     return (
       <span className="help-block">
-        {Object.keys(cartErrors).map((key) => (
-          cartErrors[key].map((err, idx) => (
-            <div key={`cart-error-${key}-${idx}`}>
-              {err}
-            </div>
-          ))
-        ))}
+        {cartErrors.flatten(false).map((err, key) => (
+          <div key={`cart-error-${key}`}>
+            {err}
+          </div>
+        )).valueSeq()}
       </span>
     );
   }
   render() {
     const {
+      amounts,
       cartDefaultUrl,
       cartErrors,
       cartItems,
+      changeAmount,
       couponCode,
       formAuthenticity,
       packageItem,
       packages,
+      prices,
       t,
-      totalSum,
+      totalPrice,
     } = this.props;
 
     return (
@@ -41,7 +43,7 @@ class Cart extends Component {
           <h1 className="b-cart__title" title={t('vendor.cart.title')}>
             {t('vendor.cart.title')}
           </h1>
-          {cartItems.length === 0
+          {cartItems.count() === 0
             ? (
               <div className="b-text b-text_center">
                 <p>
@@ -59,18 +61,23 @@ class Cart extends Component {
               noValidate
             >
               <FormAuthenticity {...formAuthenticity} />
-              {Object.keys(cartErrors).length > 0 && this.renderErrors()}
+              {cartErrors.count() > 0 && this.renderErrors()}
               <CartList
+                amounts={amounts}
+                changeAmount={changeAmount}
                 items={cartItems}
                 packageItem={packageItem}
                 packages={packages}
+                prices={prices}
                 t={t}
               />
               <div className="b-cart__total-sum">
                 {t('vendor.cart.overall')}
                 {' '}
                 <span>
-                  <HumanizedMoneyWithCurrency money={totalSum} />
+                  <HumanizedMoneyWithCurrency
+                    money={decamelizeKeys(totalPrice.toJS())}
+                  />
                 </span>
               </div>
               <div className="b-cart__action">
@@ -109,16 +116,19 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
+  amounts: PropTypes.object.isRequired,
   cartDefaultUrl: PropTypes.string.isRequired,
   cartErrors: PropTypes.object.isRequired,
   cartIsFetching: PropTypes.bool.isRequired,
   cartItems: PropTypes.object.isRequired,
+  changeAmount: PropTypes.func.isRequired,
   couponCode: PropTypes.string,
   formAuthenticity: PropTypes.object,
-  packages: PropTypes.array.isRequired,
-  packageItem: PropTypes.object.isRequired,
+  packages: PropTypes.object.isRequired,
+  packageItem: PropTypes.object,
+  prices: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
-  totalSum: PropTypes.number.isRequired,
+  totalPrice: PropTypes.object.isRequired,
 };
 
 export default Cart;

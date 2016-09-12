@@ -1,5 +1,6 @@
 import { cartsShow } from '../../routes/api';
-import { CALL_API } from '../actions/CartActions';
+import { CALL_API } from '../middleware/api';
+import { camelizeKeys } from 'humps';
 
 export const CART_REQUEST = 'CART_REQUEST';
 export const CART_SUCCESS = 'CART_SUCCESS';
@@ -12,6 +13,13 @@ export function setAmount(id, amount) {
     type: CART_SET_AMOUNT,
     id,
     amount,
+  };
+}
+
+export function initCart(initialCart) {
+  return {
+    type: CART_SUCCESS,
+    response: camelizeKeys(initialCart),
   };
 }
 

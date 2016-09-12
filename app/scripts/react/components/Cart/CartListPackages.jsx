@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Image } from '../common/Image';
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
+import { Map } from 'immutable';
+import { decamelizeKeys } from 'humps';
 
 class CartListPackages extends Component {
   renderRadioButton({ value, title, checked, key }) {
@@ -30,10 +32,10 @@ class CartListPackages extends Component {
   renderTitle(item) {
     return (
       <span>
-        {item.title}
+        {item.get('title', '')}
         {' - '}
         <b>
-          {humanizedMoneyWithCurrency(item.price)}
+          {humanizedMoneyWithCurrency(decamelizeKeys(item.get('price', Map()).toJS()))}
         </b>
       </span>
     );
@@ -44,7 +46,7 @@ class CartListPackages extends Component {
       t,
     } = this.props;
 
-    if (!packages || packages.length === 0) {
+    if (packages.count() === 0) {
       return <noscript />;
     }
 
@@ -54,7 +56,7 @@ class CartListPackages extends Component {
           <div className="b-cart__item__col-img">
             <Image
               className="b-cart__item__img"
-              image={packages[0].image}
+              image={packages.first().get('image').toJS()}
               maxHeight={184}
               maxWidth={184}
             />
@@ -73,9 +75,9 @@ class CartListPackages extends Component {
               this.renderRadioButton({
                 key: `radio-button-${idx}`,
                 title: this.renderTitle(item),
-                value: item.global_id,
+                value: item.get('globalId', ''),
               })
-            ))}
+            )).valueSeq()}
           </div>
         </div>
       </li>
@@ -84,7 +86,7 @@ class CartListPackages extends Component {
 }
 
 CartListPackages.propTypes = {
-  packages: PropTypes.array.isRequired,
+  packages: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
 };
 
