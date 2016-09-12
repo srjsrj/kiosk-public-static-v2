@@ -7,13 +7,13 @@ import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurren
 class Cart extends Component {
   renderErrors() {
     const {
-      errors,
-    } = this.props.cart;
+      cartErrors,
+    } = this.props;
 
     return (
       <span className="help-block">
-        {Object.keys(errors).map((key) => (
-          errors[key].map((err, idx) => (
+        {Object.keys(cartErrors).map((key) => (
+          cartErrors[key].map((err, idx) => (
             <div key={`cart-error-${key}-${idx}`}>
               {err}
             </div>
@@ -24,10 +24,15 @@ class Cart extends Component {
   }
   render() {
     const {
-      availablePackages,
-      cart,
+      cartDefaultUrl,
+      cartErrors,
+      cartItems,
+      couponCode,
       formAuthenticity,
+      packageItem,
+      packages,
       t,
+      totalSum,
     } = this.props;
 
     return (
@@ -36,7 +41,7 @@ class Cart extends Component {
           <h1 className="b-cart__title" title={t('vendor.cart.title')}>
             {t('vendor.cart.title')}
           </h1>
-          {cart.items.length === 0
+          {cartItems.length === 0
             ? (
               <div className="b-text b-text_center">
                 <p>
@@ -47,25 +52,25 @@ class Cart extends Component {
             : (
             <form
               acceptCharset="UTF-8"
-              action={cart.default_url}
+              action={cartDefaultUrl}
               className="simple_form edit_cart"
               id="edit_cart"
               method="post"
               noValidate
             >
               <FormAuthenticity {...formAuthenticity} />
-              {Object.keys(cart.errors).length > 0 && this.renderErrors()}
+              {Object.keys(cartErrors).length > 0 && this.renderErrors()}
               <CartList
-                availablePackages={availablePackages}
-                items={cart.items}
-                packageItem={cart.package_item}
+                items={cartItems}
+                packageItem={packageItem}
+                packages={packages}
                 t={t}
               />
               <div className="b-cart__total-sum">
                 {t('vendor.cart.overall')}
                 {' '}
                 <span>
-                  <HumanizedMoneyWithCurrency money={cart.total_price} />
+                  <HumanizedMoneyWithCurrency money={totalSum} />
                 </span>
               </div>
               <div className="b-cart__action">
@@ -75,13 +80,13 @@ class Cart extends Component {
                       className="b-cart__action__clear b-btn b-btn_trans"
                       data-confirm={t('vendor.alerts.confirm')}
                       data-method="delete"
-                      href={cart.default_url}
+                      href={cartDefaultUrl}
                     >
                       {t('vendor.cart.clear')}
                     </a>
                   </div>
                   <div className="b-cart__action__col-right">
-                    <CartCoupon code={cart.coupon_code} t={t} />
+                    <CartCoupon code={couponCode} t={t} />
                     <div className="b-cart__action__col-submit">
                       <input
                         className="b-cart__action__submit b-btn"
@@ -95,19 +100,25 @@ class Cart extends Component {
                 </div>
               </div>
             </form>
-          )
-        }
-      </div>
+            )
+          }
+        </div>
       </section>
     );
   }
 }
 
 Cart.propTypes = {
-  availablePackages: PropTypes.array.isRequired,
-  cart: PropTypes.object.isRequired,
+  cartDefaultUrl: PropTypes.string.isRequired,
+  cartErrors: PropTypes.object.isRequired,
+  cartIsFetching: PropTypes.bool.isRequired,
+  cartItems: PropTypes.object.isRequired,
+  couponCode: PropTypes.string,
   formAuthenticity: PropTypes.object,
+  packages: PropTypes.array.isRequired,
+  packageItem: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
+  totalSum: PropTypes.number.isRequired,
 };
 
 export default Cart;

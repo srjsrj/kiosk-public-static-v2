@@ -18,11 +18,22 @@ import {
   } = state;
 
   return {
-
+    cartDefaultUrl,
+    cartErrors,
+    cartIsFetching,
+    cartItems,
+    couponCode,
+    packageItem,
+    packages,
+    packagesIsFetching,
+    prices,
+    totalSum,
   };
 },
 {
+  initCart,
   fetchCart,
+  initPackages,
   fetchPackages,
 })
 class CartContainer extends Component {
@@ -51,34 +62,57 @@ class CartContainer extends Component {
   render() {
     const {
       formAuthenticity,
-      amounts,
+      cartDefaultUrl,
+      cartErrors,
+      cartIsFetching,
       cartItems,
+      couponCode,
       packageItem,
       packages,
+      packagesIsFetching,
+      prices,
       t,
+      totalSum,
     } = this.props;
 
     return (
       <Cart
+        cartDefaultUrl={cartDefaultUrl}
+        cartErrors={cartErrors}
+        cartIsFetching={cartIsFetching}
         cartItems={cartItems}
+        couponCode={couponCode}
         formAuthenticity={formAuthenticity}
         packageItem={packageItem}
         packages={packages}
+        packagesIsFetching={packagesIsFetching}
+        prices={prices}
         t = {t}
+        totalSum={totalSum}
       />
     );
   }
 }
 
 CartContainer.propTypes = {
-  initialCart: PropTypes.object.isRequired,
-  initialPackages: PropTypes.array.isRequired,
+  cartDefaultUrl: PropTypes.string.isRequired,
+  cartErrors: PropTypes.object.isRequired,
+  cartIsFetching: PropTypes.bool.isRequired,
+  cartItems: PropTypes.object.isRequired,
+  couponCode: PropTypes.string,
+  initialCart: PropTypes.object,
+  initialPackages: PropTypes.array,
   fetchCart: PropTypes.func.isRequired,
   fetchPackages: PropTypes.func.isRequired,
   formAuthenticity: PropTypes.object,
   initCart: PropTypes.func.isRequired,
   initPackages: PropTypes.func.isRequired,
+  packageItem: PropTypes.object.isRequired,
+  packages: PropTypes.object.isRequired,
+  packagesIsFetching: PropTypes.bool.isRequired,
+  prices: PropTypes.object.isRequired,
   t: PropTypes.func.isRequired,
+  totalSum: PropTypes.number.isRequired,
 };
 
 CartContainer.defaultProps = {

@@ -1,8 +1,9 @@
+/*global $ */
 import React, { Component, PropTypes } from 'react';
 import Cookies from 'cookies-js';
 import store from 'store';
 import { bindActionCreators } from 'redux';
-import { connect } from 'redux/react';
+import { connect } from 'react-redux';
 import connectToRedux from '../HoC/connectToRedux';
 import * as designActions from '../../actions/designActions';
 import * as popupActions from '../../actions/popupActions';
@@ -13,7 +14,7 @@ import DesignSettings from '.';
 
 @connect((state) => ({
   design: state.design,
-  popups: state.popup.get('popups')
+  popups: state.popup.get('popups'),
 }))
 class DesignSettingsContainer extends Component {
   static propTypes = {
@@ -56,7 +57,12 @@ class DesignSettingsContainer extends Component {
   }
   render() {
     const {
-      authUrl, categoryPageUrl, design, dispatch, pageType, productPageUrl
+      authUrl,
+      categoryPageUrl,
+      design,
+      dispatch,
+      pageType,
+      productPageUrl,
     } = this.props;
 
     if (this.isOpened(this.props)) {

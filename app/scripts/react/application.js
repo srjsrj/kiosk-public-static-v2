@@ -4,7 +4,6 @@ import {
   combineReducers,
   compose,
 } from 'redux';
-import { Provider } from 'react-redux';
 import * as reducers from './reducers';
 import apiMiddleware from './middleware/api';
 import thunkMiddleware from 'redux-thunk';
@@ -19,8 +18,8 @@ if (global.gon.__data) {
       current: design,
       currentSaved: design,
       unsavedFields: {},
-      isSaving: false
-    }
+      isSaving: false,
+    },
   };
 }
 
