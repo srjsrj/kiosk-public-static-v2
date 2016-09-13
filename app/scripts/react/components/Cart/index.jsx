@@ -22,6 +22,12 @@ const emptyItem = Map();
 const emptyPrice = Map();
 
 class CartContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.changeAmount = this.changeAmount.bind(this);
+    this.selectPackage = this.selectPackage.bind(this);
+  }
   componentWillMount() {
     const {
       initialCart,
@@ -44,8 +50,19 @@ class CartContainer extends Component {
       initCart(initialCart);
     }
   }
+  changeAmount(id, amount) {
+    this.props.changeAmount(id, amount);
+  }
+  selectPackage(id) {
+    this.props.selectedPackage(id);
+  }
   render() {
-    return <Cart {...this.props} />;
+    return (
+      <Cart {...this.props}
+        changeAmount={this.changeAmount}
+        selectPackage={this.selectPackage}
+      />
+    );
   }
 }
 
@@ -514,12 +531,12 @@ export default provideTranslations(connectToRedux(connect(
     const cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
     const cartItems = cart.getIn(['cart', 'items'], emptyItems);
     const cartIsFetching = cart.get('isFetching', false);
-    const couponCode = cart.getIn(['cart', 'couponCode'], '');
     const packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
     const packagesIsFetching = packagesStore.get('isFetching', false);
     const packages = packagesStore.get('packages', emptyItems);
     const selectedPackage = cart.get('selectedPackage', null);
     const amounts = cart.get('amounts', emptyAmounts);
+    const couponCode = cart.getIn(['coupon', 'value'], '');
     const prices = amounts
       .map((amount, itemId) => {
         const item = cartItems.find(((i) => i.get('id') === itemId), Map());

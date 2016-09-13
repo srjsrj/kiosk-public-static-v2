@@ -38,7 +38,7 @@ class Checkout extends Component {
         className="simple_form new_vendor_order"
         id="new_vendor_order"
         method="POST"
-        noValidate="novalidate"
+        noValidate
       >
         <FormAuthenticity {...formAuthenticity} />
         <div className="b-cart__form b-form">
@@ -61,11 +61,12 @@ class Checkout extends Component {
             </CheckoutStep>
             <CheckoutStep number={2} title={t('vendor.order.new.contacts_title')}>
               <CheckoutFields
+                deliveryType={deliveryType}
                 items={fields}
                 onChange={onFieldChange}
               />
-              {coupon && coupon.show &&
-                <CheckoutCoupon code={coupon.value} t={t} />
+              {coupon.get('show') &&
+                <CheckoutCoupon code={coupon.get('value')} t={t} />
               }
             </CheckoutStep>
             <CheckoutStep number={3} title={t('vendor.order.new.payment_title')}>
@@ -91,19 +92,20 @@ class Checkout extends Component {
 
 Checkout.propTypes = {
   backUrl: PropTypes.string,
-  coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
-  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  coupon: PropTypes.object.isRequired,
+  deliveryType: PropTypes.object.isRequired,
+  deliveryTypes: PropTypes.object.isRequired,
   errorMessage: PropTypes.string,
-  fields: PropTypes.array.isRequired,
+  fields: PropTypes.object.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentType: schemas.paymentType,
-  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
+  paymentType: PropTypes.object.isRequired,
+  paymentTypes: PropTypes.object.isRequired,
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
+  t: PropTypes.func.isRequired,
 };
 Checkout.defaultProps = {
   formAuthenticity: {},

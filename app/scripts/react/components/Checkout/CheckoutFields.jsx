@@ -5,7 +5,65 @@ const TEXTAREA_TYPE = 'textarea';
 
 class CheckoutFields extends Component {
   renderItem(item) {
-    const { onChange } = this.props;
+    const {
+      deliveryType,
+      item,
+      onChange,
+    } = this.props;
+    const errorMessage = item.get('errorMessage', '');
+    const name = item.get('name', '');
+    const type = item.get('type', STRING_TYPE);
+    const placeholder = item.get('placeholder', '');
+    const title = item.get('title', '');
+    const isRequired = deliveryType.get('requiredFields', emptyList).includes(name);
+    const isDisabled =
+
+/*
+changeDelivery(delivery) {
+  const { fields } = this.state;
+
+  this.setState({
+    deliveryType: delivery,
+    fields: fields.map((field) => {
+      const isRequired = delivery
+        ? delivery.requiredFields.indexOf(field.source.name) > -1
+        : false;
+      const isDisabled = delivery
+        ? !!delivery.reservedFieldValues[field.source.name]
+        : false;
+      const value = field.value;
+      const reservedValue = delivery && delivery.reservedFieldValues[field.source.name]
+        ? delivery.reservedFieldValues[field.source.name]
+        : null;
+
+      return { ...field, reservedValue, value, isDisabled, isRequired };
+    }),
+  });
+}
+
+
+  this.state = {
+    deliveryType,
+    paymentType,
+    fields: fields.map((field) => {
+      const isRequired = deliveryType
+        ? deliveryType.requiredFields.indexOf(field.name) > -1
+        : false;
+      const isReserved = deliveryType
+        ? !!deliveryType.reservedFieldValues[field.name]
+        : false;
+      const isDisabled = isReserved || false;
+      const value = isReserved
+        ? deliveryType.reservedFieldValues[field.name]
+        : field.value;
+
+      return {isDisabled, isRequired, value, source: field};
+    }),
+  };
+*/
+
+
+    const isDisabled
     const {
       isDisabled,
       reservedValue,
@@ -69,18 +127,17 @@ class CheckoutFields extends Component {
     );
   }
   render() {
-    const { currentDelivery, items } = this.props;
-
     return (
       <span>
-        {items.map(item => this.renderItem(item))}
+        {this.props.items.map(item => this.renderItem(item)).valueSeq()}
       </span>
     );
   }
 }
 
 CheckoutFields.propTypes = {
-  items: PropTypes.array,
+  deliveryType: PropTypes.object.isRequired,
+  items: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 CheckoutFields.defaultProps = {

@@ -8,12 +8,22 @@ import {
   CART_FAILURE,
   CART_SET_AMOUNT,
   CART_SET_PACKAGE,
+  CART_INIT_CHECKOUT,
 } from '../actions/CartActions';
 
 const initialState = fromJS({
   cart: {},
+  coupon: {
+    show: true,
+    value: '',
+  },
   amounts: {},
   selectedPackage: '',
+  deliveryTypes: [],
+  selectedDeliveryType: null,
+  paymentTypes: [],
+  selectedPaymentType: null,
+  checkoutFields: [],
   isFetching: false,
   error: null,
 });
@@ -37,6 +47,10 @@ const actionMap = {
 
     return state.merge({
       amounts,
+      coupon: {
+        show: true,
+        value: response.couponCode,
+      },
       cart: response,
       isFetching: false,
       error: null,
@@ -56,6 +70,10 @@ const actionMap = {
 
   [CART_SET_PACKAGE](state, { id }) {
     return state.set('selectedPackage', id);
+  },
+
+  [CART_INIT_CHECKOUT](state, data) {
+    return state.merge(data);
   },
 };
 

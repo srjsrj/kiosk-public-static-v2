@@ -1,39 +1,46 @@
 import React, { Component, PropTypes } from 'react';
-
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
 import { simpleFormat } from '../../helpers/text';
-import * as schemas from '../../schemas';
-
+import { decamelizeKeys } from 'humps';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
+import { Map } from 'immutable';
 
 class CheckoutDeliveries extends Component {
   renderItem(item) {
-    const { current, itemFieldName, onChange, t } = this.props;
+    const {
+      current,
+      itemFieldName,
+      onChange,
+      t,
+    } = this.props;
+    const itemId = item.get('id');
+    const price = item.get('price', Map());
+    const threshold = item.get('freeDeliveryThreshold', Map());
 
     return (
-      <div className="b-form__row__widget" key={item.id}>
+      <div className="b-form__row__widget" key={itemId}>
         <span className="b-form__radio">
           <label>
             <input
-              checked={current && item.id === current.id}
+              checked={current && itemId === current.get('id')}
               className="form-control radio_buttons"
               name={`vendor_order[${itemFieldName}]`}
               onChange={() => onChange(item)}
               type="radio"
-              value={item.id}
+              value={itemId}
             />
             <div className="b-cart__form__delivery-name">
-              {item.title}
+              {item.get('title','')}
             </div>
             <div className="b-cart__form__delivery-price">
-              <HumanizedMoneyWithCurrency money={item.price} />
+              <HumanizedMoneyWithCurrency money={decamelizeKeys(price)} />
             </div>
-            {item.freeDeliveryThreshold.cents
+            {threshold.get('cents')
               ? <div
                   className="cart__form__delivery-address"
                   dangerouslySetInnerHTML={{
                     __html: t('vendor.order.checkout_free_delivery_text_html', {
-                      free_delivery_threshold: humanizedMoneyWithCurrency(item.freeDeliveryThreshold),
+                      free_delivery_threshold: humanizedMoneyWithCurrency(decamelizeKeys(threshold.toJS())),
                     }),
                   }}
                 />
@@ -41,7 +48,7 @@ class CheckoutDeliveries extends Component {
             }
             <div
               className="cart__form__delivery-address"
-              dangerouslySetInnerHTML={{ __html: simpleFormat(item.description) }}
+              dangerouslySetInnerHTML={{ __html: simpleFormat(item.get('description')) }}
             />
           </label>
         </span>
@@ -54,17 +61,18 @@ class CheckoutDeliveries extends Component {
 
     return (
       <span>
-        {items.map(item => this.renderItem(item))}
+        {items.map(item => this.renderItem(item)).valueSeq()}
       </span>
     );
   }
 }
 
 CheckoutDeliveries.propTypes = {
-  current: schemas.deliveryType,
+  current: PropTypes.object.isRequired,
   itemFieldName: PropTypes.string,
-  items: PropTypes.arrayOf(schemas.deliveryType),
+  items: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 CheckoutDeliveries.defaultProps = {
   itemFieldName: 'delivery_type_id',

@@ -1,87 +1,172 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from '../../schemas';
-
+import connectToRedux from '../../HoC/connectToRedux';
 import provideTranslations from '../HoC/provideTranslations';
-
+import { connect } from 'react-redux';
+import { Map, List } from 'immutable';
 import Order from './Order';
+import {
+  changeFieldValue,
+  initCheckout,
+  selectDelivery,
+  selectPayment,
+} from '../../actions/CartActions';
+
+const emptyList = List();
+const emptyCoupon = Map();
+const emptyFields = List();
+const emptyDeliveryType = Map();
+const emptyPaymentType = Map();
+const emptyPrice = Map();
 
 class OrderContainer extends Component {
   constructor(props) {
     super(props);
 
+    this.selectDelivery = this.selectDelivery.bind(this);
+    this.selectPayment = this.selectPayment.bind(this);
+    this.changeFieldValue = this.changeFieldValue.bind(this);
+  }
+  componentWillMount () {
     const {
-      deliveryTypeId,
+      initialProps,
+      initCheckout,
       deliveryTypes,
-      fields,
-      paymentTypeId,
       paymentTypes,
-    } = props;
-    const deliveryType = this.matchEntity(deliveryTypes, deliveryTypeId);
-    const paymentType = this.matchEntity(paymentTypes, paymentTypeId);
+    } = this.props;
 
-    this.state = {
-      deliveryType,
-      paymentType,
-      fields: fields.map((field) => {
-        const isRequired = deliveryType
-          ? deliveryType.requiredFields.indexOf(field.name) > -1
-          : false;
-        const isReserved = deliveryType
-          ? !!deliveryType.reservedFieldValues[field.name]
-          : false;
-        const isDisabled = isReserved || false;
-        const value = isReserved
-          ? deliveryType.reservedFieldValues[field.name]
-          : field.value;
-
-        return {isDisabled, isRequired, value, source: field};
-      }),
-    };
-
-    this.changeDelivery = this.changeDelivery.bind(this);
-    this.changeField = this.changeField.bind(this);
-    this.changePayment = this.changePayment.bind(this);
-  }
-  matchEntity(items, itemId) {
-    if (!items.length) return null;
-
-    if (itemId) {
-      const matched = items.filter((item) => item.id === itemId)[0];
-      if (matched) return matched;
+    if (deliveryTypes.isEmpty() || paymentTypes.isEmpty()) {
+      initCheckout(initialProps);
     }
-
-    return items[0];
   }
-  getFieldsForDelivery(delivery, fields) {
-    if (!delivery) return fields;
+  selectDelivery(delivery) {
+    this.props.selectDelivery(delivery.get('id'));
+  }
+  selectPayment(payment) {
+    this.props.selectPayment(payment.get('id'));
+  }
+  changeFieldValue(name, value) {
+    this.props.changeFieldValue(name, value);
+  }
+  render() {
+    const {
+      coupon,
+      fields,
+      deliveryTypes,
+      selectedDeliveryType,
+      paymentTypes,
+      selectedPaymentType,
+      initialProps: {
+        backUrl,
+        errorMessage,
+        formAuthenticity,
+        publicOffer,
+        submitOrderUrl,
+      },
+      t,
+      totalCount,
+      totalPrice,
+    } = this.props;
 
-    return fields.filter((field) =>
-      delivery.fields.indexOf(field.source.name) > -1
+    return (
+      <Order
+        backUrl={backUrl}
+        coupon={coupon}
+        deliveryType={selectedDeliveryType}
+        deliveryTypes={deliveryTypes}
+        errorMessage={errorMessage}
+        fields={fields}
+        formAuthenticity={formAuthenticity}
+        onDeliveryChange={this.selectDelivery}
+        onFieldChange={this.changeFieldValue}
+        onPaymentChange={this.selectPayment}
+        paymentType={selectedPaymentType}
+        paymentTypes={paymentTypes}
+        publicOffer={publicOffer}
+        submitOrderUrl={submitOrderUrl}
+        t={t}
+        totalCount={totalCount}
+        totalPrice={totalPrice}
+      />
     );
   }
-  getPaymentsForDelivery(delivery, payments) {
-    if (!delivery) return payments;
+}
 
-    return payments.filter((payment) =>
-      delivery.availablePayments.indexOf(payment.id) > -1
-    );
-  }
-  getTotalPrice(delivery, cart) {
-    const { totalPrice } = cart;
+OrderContainer.propTypes = {
+  coupon: PropTypes.object.isRequired,
+  deliveryTypes: PropTypes.object.isRequired,
+  selectedDeliveryType: PropTypes.number,
+  fields: PropTypes.object.isRequired,
+  paymentTypes: PropTypes.object.isRequired,
+  initCheckout: PropTypes.func.isRequired,
+  selectedPaymentType: PropTypes.number,
+  selectDelivery: PropTypes.func.isRequired,
+  selectPayment: PropTypes.func.isRequired,
+  changeFieldValue: PropTypes.func.isRequired,
+  initialProps: PropTypes.shape({
+    backUrl: PropTypes.string,
+    deliveryTypeId: PropTypes.number,
+    deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+    errorMessage: PropTypes.string,
+    fields: PropTypes.arrayOf(schemas.checkoutField),
+    formAuthenticity: schemas.formAuthenticity,
+    paymentTypeId: PropTypes.number,
+    paymentTypes: PropTypes.arrayOf(schemas.paymentType),
+    publicOffer: schemas.checkoutPublicOffer,
+    submitOrderUrl: PropTypes.string,
+  }),
+  t: PropTypes.func.isRequired,
+  totalCount: PropTypes.number.isRequired,
+  totalPrice: PropTypes.object.isRequired,
+};
 
-    if (!delivery) return totalPrice;
+OrderContainer.defaultProps = {
+};
 
-    const { freeDeliveryThreshold: threshold } = delivery;
+export default provideTranslations(connectToRedux(connect(
+  (state) => {
+    const { cart } = state;
+    const coupon = cart.get('coupon', emptyCoupon);
+    const deliveryTypes = cart.get('deliveryTypes', emptyList);
+    const selectedDeliveryType = deliveryTypes
+      .find(
+        (t) => t.get('id') === cart.get('selectedDeliveryType'),
+        null,
+        deliveryTypes.first() || emptyDeliveryType
+      );
+    const availablePayments = selectedDeliveryType.get('availablePayments', emptyList);
+    const availableFields = selectedDeliveryType.get('fields', emptyList);
+    const paymentTypes = cart.get('paymentTypes', emptyList)
+      .filter((p) => availablePayments.includes(p.get('id')));
+    const selectedPaymentType = paymentTypes
+      .find(
+        (p) => p.get('id') === cart.get('selectedPaymentType'),
+        null,
+        paymentTypes.first() || emptyPaymentType
+      );
+    const totalCount = cart.getIn(['cart', 'totalCount'], 0);
+    const totalPrice = cart.getIn(['cart', 'totalPrice'], emptyPrice)
+      .update('cents', (val) => {
+        const threshold = selectedDeliveryType.getIn(['freeDeliveryThreshold', 'cents'], null);
+        const deliveryPrice = selectedDeliveryType.getIn(['price', 'cents'], 0);
 
-    if (threshold.cents === 'undefined' || totalPrice.cents > threshold.cents) {
-      return totalPrice;
-    }
+        return val + (threshold == null || threshold <= val) ? deliveryPrice : 0;
+      });
+    const fields = cart.get('checkoutFields', emptyFields)
+      .filter((f) => availableFields.includes(f.get('name')));
 
     return {
-      ...totalPrice,
-      cents: totalPrice.cents + delivery.price.cents,
+      coupon,
+      fields,
+      deliveryTypes,
+      selectedDeliveryType,
+      paymentTypes,
+      selectedPaymentType,
+      totalCount,
+      totalPrice,
     };
-  }
+
+/*
   changeDelivery(delivery) {
     const { fields } = this.state;
 
@@ -103,80 +188,36 @@ class OrderContainer extends Component {
       }),
     });
   }
-  changeField(name, value) {
-    const { fields } = this.state;
 
-    this.setState({
+
+    this.state = {
+      deliveryType,
+      paymentType,
       fields: fields.map((field) => {
-        if (field.source.name === name) {
-          return {...field, value};
-        }
-        return field;
+        const isRequired = deliveryType
+          ? deliveryType.requiredFields.indexOf(field.name) > -1
+          : false;
+        const isReserved = deliveryType
+          ? !!deliveryType.reservedFieldValues[field.name]
+          : false;
+        const isDisabled = isReserved || false;
+        const value = isReserved
+          ? deliveryType.reservedFieldValues[field.name]
+          : field.value;
+
+        return {isDisabled, isRequired, value, source: field};
       }),
-    });
-  }
-  changePayment(payment) {
-    this.setState({ paymentType: payment });
-  }
-  render() {
-    const {
-      backUrl,
-      cart,
-      coupon,
-      deliveryTypes,
-      errorMessage,
-      formAuthenticity,
-      paymentTypes,
-      publicOffer,
-      submitOrderUrl,
-      t,
-    } = this.props;
-    const { deliveryType, fields, paymentType } = this.state;
+    };
+*/
 
-    return (
-      <Order
-        backUrl={backUrl}
-        coupon={coupon}
-        deliveryType={deliveryType}
-        deliveryTypes={deliveryTypes}
-        errorMessage={errorMessage}
-        fields={this.getFieldsForDelivery(deliveryType, fields)}
-        formAuthenticity={formAuthenticity}
-        onDeliveryChange={this.changeDelivery}
-        onFieldChange={this.changeField}
-        onPaymentChange={this.changePayment}
-        paymentType={paymentType}
-        paymentTypes={this.getPaymentsForDelivery(deliveryType, paymentTypes)}
-        publicOffer={publicOffer}
-        submitOrderUrl={submitOrderUrl}
-        t={t}
-        totalCount={cart.totalCount}
-        totalPrice={this.getTotalPrice(deliveryType, cart)}
-      />
-    );
-  }
-}
-
-OrderContainer.propTypes = {
-  backUrl: PropTypes.string,
-  cart: schemas.cart,
-  coupon: schemas.checkoutCoupon,
-  deliveryTypeId: PropTypes.number,
-  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
-  errorMessage: PropTypes.string,
-  fields: PropTypes.arrayOf(schemas.checkoutField),
-  formAuthenticity: schemas.formAuthenticity,
-  paymentTypeId: PropTypes.number,
-  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
-  publicOffer: schemas.checkoutPublicOffer,
-  submitOrderUrl: PropTypes.string,
-  t: PropTypes.func.isRequired,
-};
-OrderContainer.defaultProps = {
-  cart: {},
-  deliveryTypes: [],
-  fields: [],
-  paymentTypes: [],
-};
-
-export default provideTranslations(OrderContainer);
+  },
+  {
+    changeFieldValue,
+    initCheckout,
+    selectDelivery,
+    selectPayment,
+  },
+  (stateProps, dispatchProps, ownProps) => Object.assign({}, {
+    initialProps: ownProps,
+  }, stateProps, dispatchProps)
+)(OrderContainer)));

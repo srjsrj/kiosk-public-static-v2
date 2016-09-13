@@ -1,21 +1,22 @@
-import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
+import { decamelizeKeys } from 'humps';
 
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 
 class OrderTitle extends Component {
   componentWillUpdate(nextProps) {
-    if (this.props.totalPrice.cents !== nextProps.totalPrice.cents) {
+    if (this.props.totalPrice.get('cents') !== nextProps.totalPrice.get('cents')) {
       this.animatePriceChanges();
     }
   }
   animatePriceChanges() {
-    const $priceNode = $(findDOMNode(this.refs.price));
+    const priceNode = this.refs.price;
 
-    $priceNode.addClass('animated bounce');
+    priceNode.classList.add('animated');
+    priceNode.classList.add('bounce');
     setTimeout(() => {
-      $priceNode.removeClass('animated bounce');
+      priceNode.classList.remove('animated');
+      priceNode.classList.remove('bounce');
     }, 1000);
   }
   render() {
@@ -25,14 +26,16 @@ class OrderTitle extends Component {
       totalPrice,
     } = this.props;
 
-    if (totalCount || totalPrice) {
+    if (totalCount || !totalPrice.isEmpty()) {
       return (
         <h1 className="b-cart__title">
           {`${t('vendor.pages.titles.order')} `}
-          <strong>{t('vendor.entities.product', {count: totalCount})}</strong>
+          <strong>
+            {t('vendor.entities.product', {count: totalCount})}
+          </strong>
           {` ${t('vendor.order.new.sum')} `}
-          <strong ref="price">
-            <HumanizedMoneyWithCurrency money={totalPrice} />
+          <strong className="b-cart__title-price" ref="price">
+            <HumanizedMoneyWithCurrency money={decamelizeKeys(totalPrice.toJS())} />
           </strong>
         </h1>
       );
@@ -44,8 +47,8 @@ class OrderTitle extends Component {
 
 OrderTitle.propTypes = {
   t: PropTypes.func.isRequired,
-  totalCount: PropTypes.number,
-  totalPrice: PropTypes.object,
+  totalCount: PropTypes.number.isRequired,
+  totalPrice: PropTypes.object.isRequired,
 };
 
 export default OrderTitle;

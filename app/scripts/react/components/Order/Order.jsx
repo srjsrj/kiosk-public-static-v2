@@ -58,21 +58,22 @@ class Order extends Component {
 
 Order.propTypes = {
   backUrl: PropTypes.string,
-  coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
-  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
+  coupon: PropTypes.object.isRequired,
+  deliveryType: PropTypes.object.isRequired,
+  deliveryTypes: PropTypes.object.isRequired,
   errorMessage: PropTypes.string,
-  fields: PropTypes.array.isRequired,
+  fields: PropTypes.object.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,
   onFieldChange: PropTypes.func.isRequired,
   onPaymentChange: PropTypes.func.isRequired,
-  paymentType: schemas.paymentType,
-  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
+  paymentType: PropTypes.object.isRequired,
+  paymentTypes: PropTypes.object.isRequired,
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: PropTypes.string,
+  t: PropTypes.func.isRequired,
   totalCount: PropTypes.number,
-  totalPrice: schemas.money,
+  totalPrice: PropTypes.object.isRequired,
 };
 
 export default Order;

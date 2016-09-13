@@ -14,6 +14,7 @@ export const CART_FAILURE = 'CART_FAILURE';
 
 export const CART_SET_AMOUNT = 'CART_SET_AMOUNT';
 export const CART_SET_PACKAGE = 'CART_SET_PACKAGE';
+export const CART_INIT_CHECKOUT = 'CART_INIT_CHECKOUT';
 
 export function setAmount(id, amount) {
   return {
@@ -34,6 +35,29 @@ export function initCart(initialCart) {
   return {
     type: CART_SUCCESS,
     response: camelizeKeys(initialCart),
+  };
+}
+
+export function initCheckout(params) {
+  const {
+    deliveryTypes,
+    deliveryTypeId,
+    paymentTypes,
+    paymentTypeId,
+    cart,
+    coupon,
+    fields,
+  } = camelizeKeys(params);
+
+  return {
+    type: CART_INIT_CHECKOUT,
+    deliveryTypes,
+    paymentTypes,
+    cart,
+    coupon,
+    checkoutFields: fields,
+    selectedDeliveryType: deliveryTypeId,
+    selectedPaymentType: paymentTypeId,
   };
 }
 
