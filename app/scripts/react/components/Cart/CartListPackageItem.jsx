@@ -6,6 +6,15 @@ import { Map } from 'immutable';
 import { decamelizeKeys } from 'humps';
 
 class CartListPackageItem extends Component {
+  renderGoodDetails() {
+    const customAttributes = this.props.item.getIn(['good', 'customAttributes'], Map());
+
+    return customAttributes.map((val, key) => (
+      <div className="b-cart__item__option" key={`custom-attr-${key}`}>
+        {`${key}: ${val}`}
+      </div>
+    )).valueSeq();
+  }
   render() {
     const {
       item,
@@ -27,16 +36,16 @@ class CartListPackageItem extends Component {
               href={item.get('defaultUrl', '')}
               target="_blank"
             >
-              {item.get('title', '')}
+              {item.getIn(['good', 'title'], '')}
             </a>
           </h2>
-          {item.get('description', '')}
+          {this.renderGoodDetails()}
         </div>
         <div className="b-cart__item__col-quantity" />
         <div className="b-cart__item__col-price">
           <div className="b-cart__item__price">
             <HumanizedMoneyWithCurrency
-              money={decamelizeKeys(item.getIn(['good', 'price'], Map()).toJS())} 
+              money={decamelizeKeys(item.getIn(['good', 'actualPrice'], Map()).toJS())} 
             />
           </div>
         </div>
@@ -44,7 +53,7 @@ class CartListPackageItem extends Component {
           <a
             className="b-cart__item__remove"
             data-method="delete"
-            href={item.get('destroyPath')}
+            href={item.get('destroyUrl')}
           >
             <AssetImage src="images/cross_white.svg" />
           </a>

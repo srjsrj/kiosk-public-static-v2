@@ -12,6 +12,8 @@ class CartList extends Component {
       packageItem,
       packages,
       prices,
+      selectPackage,
+      selectedPackage,
       t,
     } = this.props;
 
@@ -31,14 +33,21 @@ class CartList extends Component {
             />
           );
         }).valueSeq()}
-        {packageItem && !packageItem.isEmpty()
+        {!packageItem.isEmpty()
           ? (
             <CartListPackageItem
               item={packageItem}
               t={t}
             />
           )
-          : <CartListPackages packages={packages} t={t} />
+          : (
+            <CartListPackages 
+              packages={packages}
+              selectPackage={selectPackage}
+              selectedPackage={selectedPackage} 
+              t={t} 
+            />
+          )
         }
       </ul>
     );
@@ -49,9 +58,11 @@ CartList.propTypes = {
   amounts: PropTypes.object.isRequired,
   changeAmount: PropTypes.func.isRequired,
   items: PropTypes.object.isRequired,
-  packageItem: PropTypes.object,
+  packageItem: PropTypes.object.isRequired,
   packages: PropTypes.object.isRequired,
   prices: PropTypes.object.isRequired,
+  selectPackage: PropTypes.func.isRequired,
+  selectedPackage: PropTypes.string,
   t: PropTypes.func.isRequired,
 };
 

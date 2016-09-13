@@ -5,6 +5,7 @@ import connectToRedux from '../HoC/connectToRedux';
 import { connect } from 'react-redux';
 import {
   setAmount as changeAmount,
+  selectPackage,
   initCart,
   fetchCart,
 } from '../../actions/CartActions';
@@ -44,41 +45,7 @@ class CartContainer extends Component {
     }
   }
   render() {
-    const {
-      amounts,
-      formAuthenticity,
-      cartDefaultUrl,
-      cartErrors,
-      cartIsFetching,
-      cartItems,
-      changeAmount,
-      couponCode,
-      packageItem,
-      packages,
-      packagesIsFetching,
-      prices,
-      t,
-      totalPrice,
-    } = this.props;
-
-    return (
-      <Cart
-        amounts={amounts}
-        cartDefaultUrl={cartDefaultUrl}
-        cartErrors={cartErrors}
-        cartIsFetching={cartIsFetching}
-        cartItems={cartItems}
-        changeAmount={changeAmount}
-        couponCode={couponCode}
-        formAuthenticity={formAuthenticity}
-        packageItem={packageItem}
-        packages={packages}
-        packagesIsFetching={packagesIsFetching}
-        prices={prices}
-        t = {t}
-        totalPrice={totalPrice}
-      />
-    );
+    return <Cart {...this.props} />;
   }
 }
 
@@ -97,10 +64,12 @@ CartContainer.propTypes = {
   formAuthenticity: PropTypes.object,
   initCart: PropTypes.func.isRequired,
   initPackages: PropTypes.func.isRequired,
-  packageItem: PropTypes.object,
+  packageItem: PropTypes.object.isRequired,
   packages: PropTypes.object.isRequired,
   packagesIsFetching: PropTypes.bool.isRequired,
   prices: PropTypes.object.isRequired,
+  selectPackage: PropTypes.func.isRequired,
+  selectedPackage: PropTypes.string,
   t: PropTypes.func.isRequired,
   totalPrice: PropTypes.object.isRequired,
 };
@@ -546,9 +515,10 @@ export default provideTranslations(connectToRedux(connect(
     const cartItems = cart.getIn(['cart', 'items'], emptyItems);
     const cartIsFetching = cart.get('isFetching', false);
     const couponCode = cart.getIn(['cart', 'couponCode'], '');
-    const packageItem = cart.getIn(['cart', 'packageItem'], emptyItem);
+    const packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
     const packagesIsFetching = packagesStore.get('isFetching', false);
     const packages = packagesStore.get('packages', emptyItems);
+    const selectedPackage = cart.get('selectedPackage', null);
     const amounts = cart.get('amounts', emptyAmounts);
     const prices = amounts
       .map((amount, itemId) => {
@@ -557,9 +527,15 @@ export default provideTranslations(connectToRedux(connect(
 
         return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
       });
+    const selectedPackagePrice = selectedPackage 
+      ? packages.find((p) => p.get('globalId') === selectedPackage, Map()).getIn(['price', 'cents'], 0)
+      : 0;
+    const packagePrice = !packageItem.isEmpty()
+      ? packageItem.getIn(['good', 'actualPrice', 'cents'])
+      : selectedPackagePrice;
     const totalPrice = cart
       .getIn(['cart', 'totalPrice'], emptyPrice)
-      .set('cents', prices.reduce(((acc, price) => acc + price.get('cents', 0)), 0));
+      .set('cents', prices.reduce(((acc, price) => acc + price.get('cents', 0)), packagePrice));
 
     return {
       amounts,
@@ -572,11 +548,13 @@ export default provideTranslations(connectToRedux(connect(
       packages,
       packagesIsFetching,
       prices,
+      selectedPackage,
       totalPrice,
     };
   },
   {
     changeAmount,
+    selectPackage,
     initCart,
     fetchCart,
     initPackages,

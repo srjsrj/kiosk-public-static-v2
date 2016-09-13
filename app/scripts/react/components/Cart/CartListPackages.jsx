@@ -14,11 +14,12 @@ class CartListPackages extends Component {
           <span className="radio">
             <label htmlFor={id}>
               <input
+                checked={checked}
                 className="radio_buttons required"
                 data-package="true"
-                defaultChecked={checked}
                 id={id}
                 name="cart[package_good_global_id]"
+                onChange={this.props.selectPackage.bind(this, value)}
                 type="radio"
                 value={value}
               />
@@ -43,6 +44,7 @@ class CartListPackages extends Component {
   render() {
     const {
       packages,
+      selectedPackage,
       t,
     } = this.props;
 
@@ -69,13 +71,14 @@ class CartListPackages extends Component {
               key: 'radio-button-default',
               value: '',
               title: t('vendor.packaging.no_package'),
-              checked: true,
+              checked: !selectedPackage,
             })}
             {packages.map((item, idx) => (
               this.renderRadioButton({
                 key: `radio-button-${idx}`,
                 title: this.renderTitle(item),
                 value: item.get('globalId', ''),
+                checked: selectedPackage === item.get('globalId'),
               })
             )).valueSeq()}
           </div>
@@ -87,6 +90,8 @@ class CartListPackages extends Component {
 
 CartListPackages.propTypes = {
   packages: PropTypes.object.isRequired,
+  selectPackage: PropTypes.func.isRequired,
+  selectedPackage: PropTypes.string,
   t: PropTypes.func.isRequired,
 };
 

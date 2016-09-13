@@ -33,6 +33,8 @@ class Cart extends Component {
       packageItem,
       packages,
       prices,
+      selectPackage,
+      selectedPackage,
       t,
       totalPrice,
     } = this.props;
@@ -69,6 +71,8 @@ class Cart extends Component {
                 packageItem={packageItem}
                 packages={packages}
                 prices={prices}
+                selectPackage={selectPackage}
+                selectedPackage={selectedPackage}
                 t={t}
               />
               <div className="b-cart__total-sum">
@@ -125,8 +129,10 @@ Cart.propTypes = {
   couponCode: PropTypes.string,
   formAuthenticity: PropTypes.object,
   packages: PropTypes.object.isRequired,
-  packageItem: PropTypes.object,
+  packageItem: PropTypes.object.isRequired,
   prices: PropTypes.object.isRequired,
+  selectPackage: PropTypes.func.isRequired,
+  selectedPackage: PropTypes.string,
   t: PropTypes.func.isRequired,
   totalPrice: PropTypes.object.isRequired,
 };

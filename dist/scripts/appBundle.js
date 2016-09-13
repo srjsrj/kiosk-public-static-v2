@@ -289,6 +289,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.setAmount = setAmount;
+exports.selectPackage = selectPackage;
 exports.initCart = initCart;
 exports.fetchCart = fetchCart;
 
@@ -308,14 +309,23 @@ var CART_FAILURE = 'CART_FAILURE';
 
 exports.CART_FAILURE = CART_FAILURE;
 var CART_SET_AMOUNT = 'CART_SET_AMOUNT';
-
 exports.CART_SET_AMOUNT = CART_SET_AMOUNT;
+var CART_SET_PACKAGE = 'CART_SET_PACKAGE';
+
+exports.CART_SET_PACKAGE = CART_SET_PACKAGE;
 
 function setAmount(id, amount) {
   return {
     type: CART_SET_AMOUNT,
     id: id,
     amount: amount
+  };
+}
+
+function selectPackage(id) {
+  return {
+    type: CART_SET_PACKAGE,
+    id: id
   };
 }
 
@@ -810,7 +820,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.452'
+  version: '0.0.457'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -897,6 +907,8 @@ var Cart = (function (_Component) {
       var packageItem = _props.packageItem;
       var packages = _props.packages;
       var prices = _props.prices;
+      var selectPackage = _props.selectPackage;
+      var selectedPackage = _props.selectedPackage;
       var t = _props.t;
       var totalPrice = _props.totalPrice;
 
@@ -938,6 +950,8 @@ var Cart = (function (_Component) {
               packageItem: packageItem,
               packages: packages,
               prices: prices,
+              selectPackage: selectPackage,
+              selectedPackage: selectedPackage,
               t: t
             }),
             _react2['default'].createElement(
@@ -1010,8 +1024,10 @@ Cart.propTypes = {
   couponCode: _react.PropTypes.string,
   formAuthenticity: _react.PropTypes.object,
   packages: _react.PropTypes.object.isRequired,
-  packageItem: _react.PropTypes.object,
+  packageItem: _react.PropTypes.object.isRequired,
   prices: _react.PropTypes.object.isRequired,
+  selectPackage: _react.PropTypes.func.isRequired,
+  selectedPackage: _react.PropTypes.string,
   t: _react.PropTypes.func.isRequired,
   totalPrice: _react.PropTypes.object.isRequired
 };
@@ -1282,6 +1298,8 @@ var CartList = (function (_Component) {
       var packageItem = _props.packageItem;
       var packages = _props.packages;
       var prices = _props.prices;
+      var selectPackage = _props.selectPackage;
+      var selectedPackage = _props.selectedPackage;
       var t = _props.t;
 
       return _react2['default'].createElement(
@@ -1299,10 +1317,15 @@ var CartList = (function (_Component) {
             t: t
           });
         }).valueSeq(),
-        packageItem && !packageItem.isEmpty() ? _react2['default'].createElement(_CartListPackageItem2['default'], {
+        !packageItem.isEmpty() ? _react2['default'].createElement(_CartListPackageItem2['default'], {
           item: packageItem,
           t: t
-        }) : _react2['default'].createElement(_CartListPackages2['default'], { packages: packages, t: t })
+        }) : _react2['default'].createElement(_CartListPackages2['default'], {
+          packages: packages,
+          selectPackage: selectPackage,
+          selectedPackage: selectedPackage,
+          t: t
+        })
       );
     }
   }]);
@@ -1314,9 +1337,11 @@ CartList.propTypes = {
   amounts: _react.PropTypes.object.isRequired,
   changeAmount: _react.PropTypes.func.isRequired,
   items: _react.PropTypes.object.isRequired,
-  packageItem: _react.PropTypes.object,
+  packageItem: _react.PropTypes.object.isRequired,
   packages: _react.PropTypes.object.isRequired,
   prices: _react.PropTypes.object.isRequired,
+  selectPackage: _react.PropTypes.func.isRequired,
+  selectedPackage: _react.PropTypes.string,
   t: _react.PropTypes.func.isRequired
 };
 
@@ -1636,6 +1661,19 @@ var CartListPackageItem = (function (_Component) {
   }
 
   _createClass(CartListPackageItem, [{
+    key: 'renderGoodDetails',
+    value: function renderGoodDetails() {
+      var customAttributes = this.props.item.getIn(['good', 'customAttributes'], (0, _immutable.Map)());
+
+      return customAttributes.map(function (val, key) {
+        return _react2['default'].createElement(
+          'div',
+          { className: 'b-cart__item__option', key: 'custom-attr-' + key },
+          key + ': ' + val
+        );
+      }).valueSeq();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var item = this.props.item;
@@ -1665,10 +1703,10 @@ var CartListPackageItem = (function (_Component) {
                 href: item.get('defaultUrl', ''),
                 target: '_blank'
               },
-              item.get('title', '')
+              item.getIn(['good', 'title'], '')
             )
           ),
-          item.get('description', '')
+          this.renderGoodDetails()
         ),
         _react2['default'].createElement('div', { className: 'b-cart__item__col-quantity' }),
         _react2['default'].createElement(
@@ -1678,7 +1716,7 @@ var CartListPackageItem = (function (_Component) {
             'div',
             { className: 'b-cart__item__price' },
             _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], {
-              money: (0, _humps.decamelizeKeys)(item.getIn(['good', 'price'], (0, _immutable.Map)()).toJS())
+              money: (0, _humps.decamelizeKeys)(item.getIn(['good', 'actualPrice'], (0, _immutable.Map)()).toJS())
             })
           )
         ),
@@ -1690,7 +1728,7 @@ var CartListPackageItem = (function (_Component) {
             {
               className: 'b-cart__item__remove',
               'data-method': 'delete',
-              href: item.get('destroyPath')
+              href: item.get('destroyUrl')
             },
             _react2['default'].createElement(_commonAssetImage2['default'], { src: 'images/cross_white.svg' })
           )
@@ -1770,11 +1808,12 @@ var CartListPackages = (function (_Component) {
               'label',
               { htmlFor: id },
               _react2['default'].createElement('input', {
+                checked: checked,
                 className: 'radio_buttons required',
                 'data-package': 'true',
-                defaultChecked: checked,
                 id: id,
                 name: 'cart[package_good_global_id]',
+                onChange: this.props.selectPackage.bind(this, value),
                 type: 'radio',
                 value: value
               }),
@@ -1806,6 +1845,7 @@ var CartListPackages = (function (_Component) {
 
       var _props = this.props;
       var packages = _props.packages;
+      var selectedPackage = _props.selectedPackage;
       var t = _props.t;
 
       if (packages.count() === 0) {
@@ -1840,13 +1880,14 @@ var CartListPackages = (function (_Component) {
               key: 'radio-button-default',
               value: '',
               title: t('vendor.packaging.no_package'),
-              checked: true
+              checked: !selectedPackage
             }),
             packages.map(function (item, idx) {
               return _this.renderRadioButton({
                 key: 'radio-button-' + idx,
                 title: _this.renderTitle(item),
-                value: item.get('globalId', '')
+                value: item.get('globalId', ''),
+                checked: selectedPackage === item.get('globalId')
               });
             }).valueSeq()
           )
@@ -1860,6 +1901,8 @@ var CartListPackages = (function (_Component) {
 
 CartListPackages.propTypes = {
   packages: _react.PropTypes.object.isRequired,
+  selectPackage: _react.PropTypes.func.isRequired,
+  selectedPackage: _react.PropTypes.string,
   t: _react.PropTypes.func.isRequired
 };
 
@@ -1948,38 +1991,7 @@ var CartContainer = (function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var amounts = _props2.amounts;
-      var formAuthenticity = _props2.formAuthenticity;
-      var cartDefaultUrl = _props2.cartDefaultUrl;
-      var cartErrors = _props2.cartErrors;
-      var cartIsFetching = _props2.cartIsFetching;
-      var cartItems = _props2.cartItems;
-      var changeAmount = _props2.changeAmount;
-      var couponCode = _props2.couponCode;
-      var packageItem = _props2.packageItem;
-      var packages = _props2.packages;
-      var packagesIsFetching = _props2.packagesIsFetching;
-      var prices = _props2.prices;
-      var t = _props2.t;
-      var totalPrice = _props2.totalPrice;
-
-      return _react2['default'].createElement(_Cart2['default'], {
-        amounts: amounts,
-        cartDefaultUrl: cartDefaultUrl,
-        cartErrors: cartErrors,
-        cartIsFetching: cartIsFetching,
-        cartItems: cartItems,
-        changeAmount: changeAmount,
-        couponCode: couponCode,
-        formAuthenticity: formAuthenticity,
-        packageItem: packageItem,
-        packages: packages,
-        packagesIsFetching: packagesIsFetching,
-        prices: prices,
-        t: t,
-        totalPrice: totalPrice
-      });
+      return _react2['default'].createElement(_Cart2['default'], this.props);
     }
   }]);
 
@@ -2001,10 +2013,12 @@ CartContainer.propTypes = {
   formAuthenticity: _react.PropTypes.object,
   initCart: _react.PropTypes.func.isRequired,
   initPackages: _react.PropTypes.func.isRequired,
-  packageItem: _react.PropTypes.object,
+  packageItem: _react.PropTypes.object.isRequired,
   packages: _react.PropTypes.object.isRequired,
   packagesIsFetching: _react.PropTypes.bool.isRequired,
   prices: _react.PropTypes.object.isRequired,
+  selectPackage: _react.PropTypes.func.isRequired,
+  selectedPackage: _react.PropTypes.string,
   t: _react.PropTypes.func.isRequired,
   totalPrice: _react.PropTypes.object.isRequired
 };
@@ -2447,9 +2461,10 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
   var cartItems = cart.getIn(['cart', 'items'], emptyItems);
   var cartIsFetching = cart.get('isFetching', false);
   var couponCode = cart.getIn(['cart', 'couponCode'], '');
-  var packageItem = cart.getIn(['cart', 'packageItem'], emptyItem);
+  var packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
   var packagesIsFetching = packagesStore.get('isFetching', false);
   var packages = packagesStore.get('packages', emptyItems);
+  var selectedPackage = cart.get('selectedPackage', null);
   var amounts = cart.get('amounts', emptyAmounts);
   var prices = amounts.map(function (amount, itemId) {
     var item = cartItems.find(function (i) {
@@ -2459,9 +2474,13 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
 
     return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
   });
+  var selectedPackagePrice = selectedPackage ? packages.find(function (p) {
+    return p.get('globalId') === selectedPackage;
+  }, (0, _immutable.Map)()).getIn(['price', 'cents'], 0) : 0;
+  var packagePrice = !packageItem.isEmpty() ? packageItem.getIn(['good', 'actualPrice', 'cents']) : selectedPackagePrice;
   var totalPrice = cart.getIn(['cart', 'totalPrice'], emptyPrice).set('cents', prices.reduce(function (acc, price) {
     return acc + price.get('cents', 0);
-  }, 0));
+  }, packagePrice));
 
   return {
     amounts: amounts,
@@ -2474,10 +2493,12 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
     packages: packages,
     packagesIsFetching: packagesIsFetching,
     prices: prices,
+    selectedPackage: selectedPackage,
     totalPrice: totalPrice
   };
 }, {
   changeAmount: _actionsCartActions.setAmount,
+  selectPackage: _actionsCartActions.selectPackage,
   initCart: _actionsCartActions.initCart,
   fetchCart: _actionsCartActions.fetchCart,
   initPackages: _actionsPackagesActions.initPackages,
@@ -16399,7 +16420,7 @@ var _actionsCartActions = require('../actions/CartActions');
 var initialState = (0, _immutable.fromJS)({
   cart: {},
   amounts: {},
-  selectedPackage: null,
+  selectedPackage: '',
   isFetching: false,
   error: null
 });
@@ -16439,7 +16460,7 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartAction
 }), _defineProperty(_actionMap, _actionsCartActions.CART_SET_PACKAGE, function (state, _ref4) {
   var id = _ref4.id;
 
-  return state.setIn('selectedPackage', id);
+  return state.set('selectedPackage', id);
 }), _actionMap);
 
 exports['default'] = (0, _utilsCreateReducer2['default'])(initialState, actionMap);

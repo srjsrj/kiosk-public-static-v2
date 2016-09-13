@@ -1,5 +1,7 @@
 import createReducer from '../utils/createReducer';
-import { fromJS } from 'immutable';
+import {
+  fromJS,
+} from 'immutable';
 import {
   CART_REQUEST,
   CART_SUCCESS,
@@ -11,7 +13,7 @@ import {
 const initialState = fromJS({
   cart: {},
   amounts: {},
-  selectedPackage: null,
+  selectedPackage: '',
   isFetching: false,
   error: null,
 });
@@ -53,7 +55,7 @@ const actionMap = {
   },
 
   [CART_SET_PACKAGE](state, { id }) {
-    return state.setIn('selectedPackage', id);
+    return state.set('selectedPackage', id);
   },
 };
 
