@@ -879,7 +879,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.471'
+  version: '0.0.472'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -2060,7 +2060,7 @@ var CartContainer = (function (_Component) {
   }, {
     key: 'selectPackage',
     value: function selectPackage(id) {
-      this.props.selectedPackage(id);
+      this.props.selectPackage(id);
     }
   }, {
     key: 'render',

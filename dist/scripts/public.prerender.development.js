@@ -1519,7 +1519,7 @@ var CartContainer = (function (_Component) {
   }, {
     key: 'selectPackage',
     value: function selectPackage(id) {
-      this.props.selectedPackage(id);
+      this.props.selectPackage(id);
     }
   }, {
     key: 'render',

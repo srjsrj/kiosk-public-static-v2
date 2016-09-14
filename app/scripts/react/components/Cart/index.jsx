@@ -54,7 +54,7 @@ class CartContainer extends Component {
     this.props.changeAmount(id, amount);
   }
   selectPackage(id) {
-    this.props.selectedPackage(id);
+    this.props.selectPackage(id);
   }
   render() {
     return (
@@ -544,7 +544,7 @@ export default provideTranslations(connectToRedux(connect(
 
         return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
       });
-    const selectedPackagePrice = selectedPackage 
+    const selectedPackagePrice = selectedPackage
       ? packages.find((p) => p.get('globalId') === selectedPackage, Map()).getIn(['price', 'cents'], 0)
       : 0;
     const packagePrice = !packageItem.isEmpty()
