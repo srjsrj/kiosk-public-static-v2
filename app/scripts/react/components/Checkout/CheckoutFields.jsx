@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import { camelize } from 'humps';
+// import { Map, List } from 'immutable';
 
 const STRING_TYPE = 'string';
 const TEXTAREA_TYPE = 'textarea';
 
+// const emptyList = List();
+
 class CheckoutFields extends Component {
-  renderItem(item) {
+  renderItem(item, value) {
     const {
       deliveryType,
-      item,
       onChange,
     } = this.props;
     const errorMessage = item.get('errorMessage', '');
@@ -15,61 +18,9 @@ class CheckoutFields extends Component {
     const type = item.get('type', STRING_TYPE);
     const placeholder = item.get('placeholder', '');
     const title = item.get('title', '');
-    const isRequired = deliveryType.get('requiredFields', emptyList).includes(name);
-    const isDisabled =
-
-/*
-changeDelivery(delivery) {
-  const { fields } = this.state;
-
-  this.setState({
-    deliveryType: delivery,
-    fields: fields.map((field) => {
-      const isRequired = delivery
-        ? delivery.requiredFields.indexOf(field.source.name) > -1
-        : false;
-      const isDisabled = delivery
-        ? !!delivery.reservedFieldValues[field.source.name]
-        : false;
-      const value = field.value;
-      const reservedValue = delivery && delivery.reservedFieldValues[field.source.name]
-        ? delivery.reservedFieldValues[field.source.name]
-        : null;
-
-      return { ...field, reservedValue, value, isDisabled, isRequired };
-    }),
-  });
-}
-
-
-  this.state = {
-    deliveryType,
-    paymentType,
-    fields: fields.map((field) => {
-      const isRequired = deliveryType
-        ? deliveryType.requiredFields.indexOf(field.name) > -1
-        : false;
-      const isReserved = deliveryType
-        ? !!deliveryType.reservedFieldValues[field.name]
-        : false;
-      const isDisabled = isReserved || false;
-      const value = isReserved
-        ? deliveryType.reservedFieldValues[field.name]
-        : field.value;
-
-      return {isDisabled, isRequired, value, source: field};
-    }),
-  };
-*/
-
-
-    const isDisabled
-    const {
-      isDisabled,
-      reservedValue,
-      value,
-      source: { errorMessage, name, type, placeholder, title },
-    } = item;
+    // const isRequired = deliveryType.get('requiredFields', emptyList).includes(name);
+    const reservedValue = deliveryType.getIn(['reservedFieldValues', camelize(name)]);
+    const isDisabled = !!reservedValue;
     const itemId = `vendor_order_${name}`;
     const itemName = `vendor_order[${name}]`;
 
@@ -127,9 +78,18 @@ changeDelivery(delivery) {
     );
   }
   render() {
+    const {
+      items,
+      itemValues,
+    } = this.props;
+
     return (
       <span>
-        {this.props.items.map(item => this.renderItem(item)).valueSeq()}
+        {items.map((item) => {
+          const value = itemValues.getIn([item.get('name'), 'value'], null);
+
+          return this.renderItem(item, value);
+        }).valueSeq()}
       </span>
     );
   }
@@ -138,10 +98,11 @@ changeDelivery(delivery) {
 CheckoutFields.propTypes = {
   deliveryType: PropTypes.object.isRequired,
   items: PropTypes.object.isRequired,
+  itemValues: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
 };
+
 CheckoutFields.defaultProps = {
-  items: [],
 };
 
 export default CheckoutFields;

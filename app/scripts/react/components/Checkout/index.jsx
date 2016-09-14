@@ -20,6 +20,7 @@ class Checkout extends Component {
       deliveryTypes,
       errorMessage,
       fields,
+      fieldValues,
       formAuthenticity,
       onDeliveryChange,
       onFieldChange,
@@ -43,11 +44,13 @@ class Checkout extends Component {
         <FormAuthenticity {...formAuthenticity} />
         <div className="b-cart__form b-form">
           {errorMessage
-            ? <Alert
+            ? (
+              <Alert
                 className="cart-info"
                 danger
                 text={errorMessage}
               />
+            )
             : null
           }
           <div className="b-cart__form__inner">
@@ -62,10 +65,11 @@ class Checkout extends Component {
             <CheckoutStep number={2} title={t('vendor.order.new.contacts_title')}>
               <CheckoutFields
                 deliveryType={deliveryType}
+                itemValues={fieldValues}
                 items={fields}
                 onChange={onFieldChange}
               />
-              {coupon.get('show') &&
+              {!!coupon.get('show') &&
                 <CheckoutCoupon code={coupon.get('value')} t={t} />
               }
             </CheckoutStep>
@@ -96,6 +100,7 @@ Checkout.propTypes = {
   deliveryType: PropTypes.object.isRequired,
   deliveryTypes: PropTypes.object.isRequired,
   errorMessage: PropTypes.string,
+  fieldValues: PropTypes.object.isRequired,
   fields: PropTypes.object.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,

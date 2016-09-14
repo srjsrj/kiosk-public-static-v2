@@ -15,7 +15,7 @@ class CheckoutDeliveries extends Component {
     } = this.props;
     const itemId = item.get('id');
     const price = item.get('price', Map());
-    const threshold = item.get('freeDeliveryThreshold', Map());
+    const threshold = item.get('freeDeliveryThreshold') || Map();
 
     return (
       <div className="b-form__row__widget" key={itemId}>
@@ -33,16 +33,16 @@ class CheckoutDeliveries extends Component {
               {item.get('title','')}
             </div>
             <div className="b-cart__form__delivery-price">
-              <HumanizedMoneyWithCurrency money={decamelizeKeys(price)} />
+              <HumanizedMoneyWithCurrency money={decamelizeKeys(price.toJS())} />
             </div>
             {threshold.get('cents')
               ? <div
-                  className="cart__form__delivery-address"
-                  dangerouslySetInnerHTML={{
-                    __html: t('vendor.order.checkout_free_delivery_text_html', {
-                      free_delivery_threshold: humanizedMoneyWithCurrency(decamelizeKeys(threshold.toJS())),
-                    }),
-                  }}
+                className="cart__form__delivery-address"
+                dangerouslySetInnerHTML={{
+                  __html: t('vendor.order.checkout_free_delivery_text_html', {
+                    free_delivery_threshold: humanizedMoneyWithCurrency(decamelizeKeys(threshold.toJS())),
+                  }),
+                }}
                 />
               : null
             }

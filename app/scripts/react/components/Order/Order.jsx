@@ -11,6 +11,7 @@ class Order extends Component {
       deliveryType,
       deliveryTypes,
       errorMessage,
+      fieldValues,
       fields,
       formAuthenticity,
       onDeliveryChange,
@@ -39,6 +40,7 @@ class Order extends Component {
             deliveryType={deliveryType}
             deliveryTypes={deliveryTypes}
             errorMessage={errorMessage}
+            fieldValues={fieldValues}
             fields={fields}
             formAuthenticity={formAuthenticity}
             onDeliveryChange={onDeliveryChange}
@@ -62,6 +64,7 @@ Order.propTypes = {
   deliveryType: PropTypes.object.isRequired,
   deliveryTypes: PropTypes.object.isRequired,
   errorMessage: PropTypes.string,
+  fieldValues: PropTypes.object.isRequired,
   fields: PropTypes.object.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: PropTypes.func.isRequired,

@@ -290,7 +290,11 @@ Object.defineProperty(exports, '__esModule', {
 });
 exports.setAmount = setAmount;
 exports.selectPackage = selectPackage;
+exports.selectDelivery = selectDelivery;
+exports.selectPayment = selectPayment;
 exports.initCart = initCart;
+exports.changeFieldValue = changeFieldValue;
+exports.initCheckout = initCheckout;
 exports.fetchCart = fetchCart;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -311,8 +315,16 @@ exports.CART_FAILURE = CART_FAILURE;
 var CART_SET_AMOUNT = 'CART_SET_AMOUNT';
 exports.CART_SET_AMOUNT = CART_SET_AMOUNT;
 var CART_SET_PACKAGE = 'CART_SET_PACKAGE';
-
 exports.CART_SET_PACKAGE = CART_SET_PACKAGE;
+var CART_INIT_CHECKOUT = 'CART_INIT_CHECKOUT';
+exports.CART_INIT_CHECKOUT = CART_INIT_CHECKOUT;
+var CART_SET_FIELD_VALUE = 'CART_SET_FIELD_VALUE';
+exports.CART_SET_FIELD_VALUE = CART_SET_FIELD_VALUE;
+var CART_SELECT_DELIVERY = 'CART_SELECT_DELIVERY';
+exports.CART_SELECT_DELIVERY = CART_SELECT_DELIVERY;
+var CART_SELECT_PAYMENT = 'CART_SELECT_PAYMENT';
+
+exports.CART_SELECT_PAYMENT = CART_SELECT_PAYMENT;
 
 function setAmount(id, amount) {
   return {
@@ -329,10 +341,57 @@ function selectPackage(id) {
   };
 }
 
+function selectDelivery(id) {
+  return {
+    type: CART_SELECT_DELIVERY,
+    id: id
+  };
+}
+
+function selectPayment(id) {
+  return {
+    type: CART_SELECT_PAYMENT,
+    id: id
+  };
+}
+
 function initCart(initialCart) {
   return {
     type: CART_SUCCESS,
     response: (0, _humps.camelizeKeys)(initialCart)
+  };
+}
+
+function changeFieldValue(name, value) {
+  return {
+    type: CART_SET_FIELD_VALUE,
+    name: name,
+    value: value
+  };
+}
+
+function initCheckout(params) {
+  var _camelizeKeys = (0, _humps.camelizeKeys)(params);
+
+  var deliveryTypes = _camelizeKeys.deliveryTypes;
+  var deliveryTypeId = _camelizeKeys.deliveryTypeId;
+  var paymentTypes = _camelizeKeys.paymentTypes;
+  var paymentTypeId = _camelizeKeys.paymentTypeId;
+  var cart = _camelizeKeys.cart;
+  var coupon = _camelizeKeys.coupon;
+  var fields = _camelizeKeys.fields;
+
+  return {
+    type: CART_INIT_CHECKOUT,
+    data: {
+      deliveryTypes: deliveryTypes,
+      paymentTypes: paymentTypes,
+      cart: cart,
+      coupon: coupon,
+      checkoutFields: fields,
+      selectedDeliveryType: deliveryTypeId,
+      selectedPaymentType: paymentTypeId
+    }
   };
 }
 
@@ -820,7 +879,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.457'
+  version: '0.0.471'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -1916,6 +1975,8 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -1959,10 +2020,13 @@ var emptyPrice = (0, _immutable.Map)();
 var CartContainer = (function (_Component) {
   _inherits(CartContainer, _Component);
 
-  function CartContainer() {
+  function CartContainer(props) {
     _classCallCheck(this, CartContainer);
 
-    _get(Object.getPrototypeOf(CartContainer.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(CartContainer.prototype), 'constructor', this).call(this, props);
+
+    this.changeAmount = this.changeAmount.bind(this);
+    this.selectPackage = this.selectPackage.bind(this);
   }
 
   _createClass(CartContainer, [{
@@ -1989,9 +2053,22 @@ var CartContainer = (function (_Component) {
       }
     }
   }, {
+    key: 'changeAmount',
+    value: function changeAmount(id, amount) {
+      this.props.changeAmount(id, amount);
+    }
+  }, {
+    key: 'selectPackage',
+    value: function selectPackage(id) {
+      this.props.selectedPackage(id);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2['default'].createElement(_Cart2['default'], this.props);
+      return _react2['default'].createElement(_Cart2['default'], _extends({}, this.props, {
+        changeAmount: this.changeAmount,
+        selectPackage: this.selectPackage
+      }));
     }
   }]);
 
@@ -2460,12 +2537,12 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
   var cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
   var cartItems = cart.getIn(['cart', 'items'], emptyItems);
   var cartIsFetching = cart.get('isFetching', false);
-  var couponCode = cart.getIn(['cart', 'couponCode'], '');
   var packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
   var packagesIsFetching = packagesStore.get('isFetching', false);
   var packages = packagesStore.get('packages', emptyItems);
   var selectedPackage = cart.get('selectedPackage', null);
   var amounts = cart.get('amounts', emptyAmounts);
+  var couponCode = cart.getIn(['coupon', 'value'], '');
   var prices = amounts.map(function (amount, itemId) {
     var item = cartItems.find(function (i) {
       return i.get('id') === itemId;
@@ -3542,188 +3619,6 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _schemas = require('../../schemas');
-
-var schemas = _interopRequireWildcard(_schemas);
-
-var _routesApp = require('../../../routes/app');
-
-var _commonAlert = require('../common/Alert');
-
-var _commonAlert2 = _interopRequireDefault(_commonAlert);
-
-var _commonFormAuthenticity = require('../common/FormAuthenticity');
-
-var _commonFormAuthenticity2 = _interopRequireDefault(_commonFormAuthenticity);
-
-var _CheckoutActions = require('./CheckoutActions');
-
-var _CheckoutActions2 = _interopRequireDefault(_CheckoutActions);
-
-var _CheckoutStep = require('./CheckoutStep');
-
-var _CheckoutStep2 = _interopRequireDefault(_CheckoutStep);
-
-var _CheckoutDeliveries = require('./CheckoutDeliveries');
-
-var _CheckoutDeliveries2 = _interopRequireDefault(_CheckoutDeliveries);
-
-var _CheckoutFields = require('./CheckoutFields');
-
-var _CheckoutFields2 = _interopRequireDefault(_CheckoutFields);
-
-var _CheckoutPayments = require('./CheckoutPayments');
-
-var _CheckoutPayments2 = _interopRequireDefault(_CheckoutPayments);
-
-var _CheckoutCoupon = require('./CheckoutCoupon');
-
-var _CheckoutCoupon2 = _interopRequireDefault(_CheckoutCoupon);
-
-var Checkout = (function (_Component) {
-  _inherits(Checkout, _Component);
-
-  function Checkout() {
-    _classCallCheck(this, Checkout);
-
-    _get(Object.getPrototypeOf(Checkout.prototype), 'constructor', this).apply(this, arguments);
-  }
-
-  _createClass(Checkout, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var backUrl = _props.backUrl;
-      var coupon = _props.coupon;
-      var deliveryType = _props.deliveryType;
-      var deliveryTypes = _props.deliveryTypes;
-      var errorMessage = _props.errorMessage;
-      var fields = _props.fields;
-      var formAuthenticity = _props.formAuthenticity;
-      var onDeliveryChange = _props.onDeliveryChange;
-      var onFieldChange = _props.onFieldChange;
-      var onPaymentChange = _props.onPaymentChange;
-      var paymentType = _props.paymentType;
-      var paymentTypes = _props.paymentTypes;
-      var publicOffer = _props.publicOffer;
-      var submitOrderUrl = _props.submitOrderUrl;
-      var t = _props.t;
-
-      return _react2['default'].createElement(
-        'form',
-        {
-          acceptCharset: 'UTF-8',
-          action: submitOrderUrl,
-          className: 'simple_form new_vendor_order',
-          id: 'new_vendor_order',
-          method: 'POST',
-          noValidate: 'novalidate'
-        },
-        _react2['default'].createElement(_commonFormAuthenticity2['default'], formAuthenticity),
-        _react2['default'].createElement(
-          'div',
-          { className: 'b-cart__form b-form' },
-          errorMessage ? _react2['default'].createElement(_commonAlert2['default'], {
-            className: 'cart-info',
-            danger: true,
-            text: errorMessage
-          }) : null,
-          _react2['default'].createElement(
-            'div',
-            { className: 'b-cart__form__inner' },
-            _react2['default'].createElement(
-              _CheckoutStep2['default'],
-              { number: 1, title: t('vendor.order.new.delivery_title') },
-              _react2['default'].createElement(_CheckoutDeliveries2['default'], {
-                current: deliveryType,
-                items: deliveryTypes,
-                onChange: onDeliveryChange,
-                t: t
-              })
-            ),
-            _react2['default'].createElement(
-              _CheckoutStep2['default'],
-              { number: 2, title: t('vendor.order.new.contacts_title') },
-              _react2['default'].createElement(_CheckoutFields2['default'], {
-                items: fields,
-                onChange: onFieldChange
-              }),
-              coupon && coupon.show && _react2['default'].createElement(_CheckoutCoupon2['default'], { code: coupon.value, t: t })
-            ),
-            _react2['default'].createElement(
-              _CheckoutStep2['default'],
-              { number: 3, title: t('vendor.order.new.payment_title') },
-              _react2['default'].createElement(_CheckoutPayments2['default'], {
-                current: paymentType,
-                items: paymentTypes,
-                onChange: onPaymentChange
-              })
-            )
-          ),
-          _react2['default'].createElement(
-            'div',
-            { className: 'b-form__row' },
-            _react2['default'].createElement(_CheckoutActions2['default'], {
-              backUrl: backUrl,
-              publicOffer: publicOffer,
-              t: t
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Checkout;
-})(_react.Component);
-
-Checkout.propTypes = {
-  backUrl: _react.PropTypes.string,
-  coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
-  deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
-  errorMessage: _react.PropTypes.string,
-  fields: _react.PropTypes.array.isRequired,
-  formAuthenticity: schemas.formAuthenticity,
-  onDeliveryChange: _react.PropTypes.func.isRequired,
-  onFieldChange: _react.PropTypes.func.isRequired,
-  onPaymentChange: _react.PropTypes.func.isRequired,
-  paymentType: schemas.paymentType,
-  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
-  publicOffer: schemas.checkoutPublicOffer,
-  submitOrderUrl: _react.PropTypes.string
-};
-Checkout.defaultProps = {
-  formAuthenticity: {},
-  submitOrderUrl: (0, _routesApp.vendorOrder)()
-};
-
-exports['default'] = Checkout;
-module.exports = exports['default'];
-
-},{"../../../routes/app":212,"../../schemas":194,"../common/Alert":139,"../common/FormAuthenticity":143,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"react":"react"}],39:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -3823,7 +3718,7 @@ CheckoutActions.propTypes = {
 exports['default'] = CheckoutActions;
 module.exports = exports['default'];
 
-},{"../../schemas":194,"./CheckoutPublicOffer":45,"react":"react"}],40:[function(require,module,exports){
+},{"../../schemas":194,"./CheckoutPublicOffer":44,"react":"react"}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -3878,7 +3773,7 @@ CheckoutAlert.propTypes = {
 exports['default'] = CheckoutAlert;
 module.exports = exports['default'];
 
-},{"../common/Alert":139,"react":"react"}],41:[function(require,module,exports){
+},{"../common/Alert":139,"react":"react"}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4046,7 +3941,7 @@ CheckoutCoupon.defaultProps = {
 exports['default'] = CheckoutCoupon;
 module.exports = exports['default'];
 
-},{"../../../routes/api":211,"../common/TextInput":160,"./CheckoutAlert":40,"react":"react"}],42:[function(require,module,exports){
+},{"../../../routes/api":211,"../common/TextInput":160,"./CheckoutAlert":39,"react":"react"}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4056,8 +3951,6 @@ Object.defineProperty(exports, '__esModule', {
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -4073,13 +3966,13 @@ var _helpersMoney = require('../../helpers/money');
 
 var _helpersText = require('../../helpers/text');
 
-var _schemas = require('../../schemas');
-
-var schemas = _interopRequireWildcard(_schemas);
+var _humps = require('humps');
 
 var _commonMoneyHumanizedMoneyWithCurrency = require('../common/Money/HumanizedMoneyWithCurrency');
 
 var _commonMoneyHumanizedMoneyWithCurrency2 = _interopRequireDefault(_commonMoneyHumanizedMoneyWithCurrency);
+
+var _immutable = require('immutable');
 
 var CheckoutDeliveries = (function (_Component) {
   _inherits(CheckoutDeliveries, _Component);
@@ -4099,9 +3992,13 @@ var CheckoutDeliveries = (function (_Component) {
       var onChange = _props.onChange;
       var t = _props.t;
 
+      var itemId = item.get('id');
+      var price = item.get('price', (0, _immutable.Map)());
+      var threshold = item.get('freeDeliveryThreshold') || (0, _immutable.Map)();
+
       return _react2['default'].createElement(
         'div',
-        { className: 'b-form__row__widget', key: item.id },
+        { className: 'b-form__row__widget', key: itemId },
         _react2['default'].createElement(
           'span',
           { className: 'b-form__radio' },
@@ -4109,36 +4006,36 @@ var CheckoutDeliveries = (function (_Component) {
             'label',
             null,
             _react2['default'].createElement('input', {
-              checked: current && item.id === current.id,
+              checked: current && itemId === current.get('id'),
               className: 'form-control radio_buttons',
               name: 'vendor_order[' + itemFieldName + ']',
               onChange: function () {
                 return onChange(item);
               },
               type: 'radio',
-              value: item.id
+              value: itemId
             }),
             _react2['default'].createElement(
               'div',
               { className: 'b-cart__form__delivery-name' },
-              item.title
+              item.get('title', '')
             ),
             _react2['default'].createElement(
               'div',
               { className: 'b-cart__form__delivery-price' },
-              _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: item.price })
+              _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: (0, _humps.decamelizeKeys)(price.toJS()) })
             ),
-            item.freeDeliveryThreshold.cents ? _react2['default'].createElement('div', {
+            threshold.get('cents') ? _react2['default'].createElement('div', {
               className: 'cart__form__delivery-address',
               dangerouslySetInnerHTML: {
                 __html: t('vendor.order.checkout_free_delivery_text_html', {
-                  free_delivery_threshold: (0, _helpersMoney.humanizedMoneyWithCurrency)(item.freeDeliveryThreshold)
+                  free_delivery_threshold: (0, _helpersMoney.humanizedMoneyWithCurrency)((0, _humps.decamelizeKeys)(threshold.toJS()))
                 })
               }
             }) : null,
             _react2['default'].createElement('div', {
               className: 'cart__form__delivery-address',
-              dangerouslySetInnerHTML: { __html: (0, _helpersText.simpleFormat)(item.description) }
+              dangerouslySetInnerHTML: { __html: (0, _helpersText.simpleFormat)(item.get('description')) }
             })
           )
         )
@@ -4156,7 +4053,7 @@ var CheckoutDeliveries = (function (_Component) {
         null,
         items.map(function (item) {
           return _this.renderItem(item);
-        })
+        }).valueSeq()
       );
     }
   }]);
@@ -4165,10 +4062,11 @@ var CheckoutDeliveries = (function (_Component) {
 })(_react.Component);
 
 CheckoutDeliveries.propTypes = {
-  current: schemas.deliveryType,
+  current: _react.PropTypes.object.isRequired,
   itemFieldName: _react.PropTypes.string,
-  items: _react.PropTypes.arrayOf(schemas.deliveryType),
-  onChange: _react.PropTypes.func.isRequired
+  items: _react.PropTypes.object.isRequired,
+  onChange: _react.PropTypes.func.isRequired,
+  t: _react.PropTypes.func.isRequired
 };
 CheckoutDeliveries.defaultProps = {
   itemFieldName: 'delivery_type_id',
@@ -4178,7 +4076,7 @@ CheckoutDeliveries.defaultProps = {
 exports['default'] = CheckoutDeliveries;
 module.exports = exports['default'];
 
-},{"../../helpers/money":171,"../../helpers/text":175,"../../schemas":194,"../common/Money/HumanizedMoneyWithCurrency":155,"react":"react"}],43:[function(require,module,exports){
+},{"../../helpers/money":171,"../../helpers/text":175,"../common/Money/HumanizedMoneyWithCurrency":155,"humps":228,"immutable":"immutable","react":"react"}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4199,8 +4097,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _humps = require('humps');
+
+// import { Map, List } from 'immutable';
+
 var STRING_TYPE = 'string';
 var TEXTAREA_TYPE = 'textarea';
+
+// const emptyList = List();
 
 var CheckoutFields = (function (_Component) {
   _inherits(CheckoutFields, _Component);
@@ -4213,18 +4117,19 @@ var CheckoutFields = (function (_Component) {
 
   _createClass(CheckoutFields, [{
     key: 'renderItem',
-    value: function renderItem(item) {
-      var onChange = this.props.onChange;
-      var isDisabled = item.isDisabled;
-      var reservedValue = item.reservedValue;
-      var value = item.value;
-      var _item$source = item.source;
-      var errorMessage = _item$source.errorMessage;
-      var name = _item$source.name;
-      var type = _item$source.type;
-      var placeholder = _item$source.placeholder;
-      var title = _item$source.title;
+    value: function renderItem(item, value) {
+      var _props = this.props;
+      var deliveryType = _props.deliveryType;
+      var onChange = _props.onChange;
 
+      var errorMessage = item.get('errorMessage', '');
+      var name = item.get('name', '');
+      var type = item.get('type', STRING_TYPE);
+      var placeholder = item.get('placeholder', '');
+      var title = item.get('title', '');
+      // const isRequired = deliveryType.get('requiredFields', emptyList).includes(name);
+      var reservedValue = deliveryType.getIn(['reservedFieldValues', (0, _humps.camelize)(name)]);
+      var isDisabled = !!reservedValue;
       var itemId = 'vendor_order_' + name;
       var itemName = 'vendor_order[' + name + ']';
 
@@ -4298,16 +4203,18 @@ var CheckoutFields = (function (_Component) {
     value: function render() {
       var _this = this;
 
-      var _props = this.props;
-      var currentDelivery = _props.currentDelivery;
-      var items = _props.items;
+      var _props2 = this.props;
+      var items = _props2.items;
+      var itemValues = _props2.itemValues;
 
       return _react2['default'].createElement(
         'span',
         null,
         items.map(function (item) {
-          return _this.renderItem(item);
-        })
+          var value = itemValues.getIn([item.get('name'), 'value'], null);
+
+          return _this.renderItem(item, value);
+        }).valueSeq()
       );
     }
   }]);
@@ -4316,17 +4223,18 @@ var CheckoutFields = (function (_Component) {
 })(_react.Component);
 
 CheckoutFields.propTypes = {
-  items: _react.PropTypes.array,
+  deliveryType: _react.PropTypes.object.isRequired,
+  items: _react.PropTypes.object.isRequired,
+  itemValues: _react.PropTypes.object.isRequired,
   onChange: _react.PropTypes.func.isRequired
 };
-CheckoutFields.defaultProps = {
-  items: []
-};
+
+CheckoutFields.defaultProps = {};
 
 exports['default'] = CheckoutFields;
 module.exports = exports['default'];
 
-},{"react":"react"}],44:[function(require,module,exports){
+},{"humps":228,"react":"react"}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4336,8 +4244,6 @@ Object.defineProperty(exports, '__esModule', {
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -4350,10 +4256,6 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _helpersText = require('../../helpers/text');
-
-var _schemas = require('../../schemas');
-
-var schemas = _interopRequireWildcard(_schemas);
 
 var CheckoutPayments = (function (_Component) {
   _inherits(CheckoutPayments, _Component);
@@ -4372,9 +4274,12 @@ var CheckoutPayments = (function (_Component) {
       var itemFieldName = _props.itemFieldName;
       var onChange = _props.onChange;
 
+      var itemId = item.get('id');
+      var currentId = current.get('id');
+
       return _react2['default'].createElement(
         'div',
-        { className: 'b-form__row__widget', key: item.id },
+        { className: 'b-form__row__widget', key: itemId },
         _react2['default'].createElement(
           'span',
           { className: 'b-form__radio' },
@@ -4382,24 +4287,24 @@ var CheckoutPayments = (function (_Component) {
             'label',
             null,
             _react2['default'].createElement('input', {
-              checked: current && item.id === current.id,
+              checked: !current.isEmpty() && itemId === currentId,
               className: 'form-control radio_buttons',
               name: 'vendor_order[' + itemFieldName + ']',
               onChange: function () {
                 return onChange(item);
               },
               type: 'radio',
-              value: item.id
+              value: itemId
             }),
             _react2['default'].createElement(
               'div',
               { className: 'b-cart__form__payment-name' },
-              item.title,
-              item.show_icon && _react2['default'].createElement('img', { src: item.icon_url })
+              item.get('title'),
+              !!item.get('showIcon') && _react2['default'].createElement('img', { src: item.get('iconUrl', '') })
             ),
             _react2['default'].createElement('div', {
               className: 'b-cart__form__payment-description',
-              dangerouslySetInnerHTML: { __html: (0, _helpersText.simpleFormat)(item.description) }
+              dangerouslySetInnerHTML: { __html: (0, _helpersText.simpleFormat)(item.get('description')) }
             })
           )
         )
@@ -4410,16 +4315,14 @@ var CheckoutPayments = (function (_Component) {
     value: function render() {
       var _this = this;
 
-      var _props2 = this.props;
-      var current = _props2.current;
-      var items = _props2.items;
+      var items = this.props.items;
 
       return _react2['default'].createElement(
         'span',
         null,
         items.map(function (item) {
           return _this.renderItem(item);
-        })
+        }).valueSeq()
       );
     }
   }]);
@@ -4428,20 +4331,20 @@ var CheckoutPayments = (function (_Component) {
 })(_react.Component);
 
 CheckoutPayments.propTypes = {
-  current: schemas.paymentType,
+  current: _react.PropTypes.object.isRequired,
   itemFieldName: _react.PropTypes.string,
-  items: _react.PropTypes.arrayOf(schemas.paymentType),
+  items: _react.PropTypes.object.isRequired,
   onChange: _react.PropTypes.func.isRequired
 };
+
 CheckoutPayments.defaultProps = {
-  itemFieldName: 'payment_type_id',
-  items: []
+  itemFieldName: 'payment_type_id'
 };
 
 exports['default'] = CheckoutPayments;
 module.exports = exports['default'];
 
-},{"../../helpers/text":175,"../../schemas":194,"react":"react"}],45:[function(require,module,exports){
+},{"../../helpers/text":175,"react":"react"}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4543,7 +4446,7 @@ CheckoutPublicOffer.defaultProps = {
 exports['default'] = CheckoutPublicOffer;
 module.exports = exports['default'];
 
-},{"../common/Checkbox":142,"../common/HiddenInput":144,"react":"react"}],46:[function(require,module,exports){
+},{"../common/Checkbox":142,"../common/HiddenInput":144,"react":"react"}],45:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4619,7 +4522,194 @@ CheckoutStep.propTypes = {
 exports["default"] = CheckoutStep;
 module.exports = exports["default"];
 
-},{"react":"react"}],47:[function(require,module,exports){
+},{"react":"react"}],46:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _schemas = require('../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
+
+var _routesApp = require('../../../routes/app');
+
+var _commonAlert = require('../common/Alert');
+
+var _commonAlert2 = _interopRequireDefault(_commonAlert);
+
+var _commonFormAuthenticity = require('../common/FormAuthenticity');
+
+var _commonFormAuthenticity2 = _interopRequireDefault(_commonFormAuthenticity);
+
+var _CheckoutActions = require('./CheckoutActions');
+
+var _CheckoutActions2 = _interopRequireDefault(_CheckoutActions);
+
+var _CheckoutStep = require('./CheckoutStep');
+
+var _CheckoutStep2 = _interopRequireDefault(_CheckoutStep);
+
+var _CheckoutDeliveries = require('./CheckoutDeliveries');
+
+var _CheckoutDeliveries2 = _interopRequireDefault(_CheckoutDeliveries);
+
+var _CheckoutFields = require('./CheckoutFields');
+
+var _CheckoutFields2 = _interopRequireDefault(_CheckoutFields);
+
+var _CheckoutPayments = require('./CheckoutPayments');
+
+var _CheckoutPayments2 = _interopRequireDefault(_CheckoutPayments);
+
+var _CheckoutCoupon = require('./CheckoutCoupon');
+
+var _CheckoutCoupon2 = _interopRequireDefault(_CheckoutCoupon);
+
+var Checkout = (function (_Component) {
+  _inherits(Checkout, _Component);
+
+  function Checkout() {
+    _classCallCheck(this, Checkout);
+
+    _get(Object.getPrototypeOf(Checkout.prototype), 'constructor', this).apply(this, arguments);
+  }
+
+  _createClass(Checkout, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var backUrl = _props.backUrl;
+      var coupon = _props.coupon;
+      var deliveryType = _props.deliveryType;
+      var deliveryTypes = _props.deliveryTypes;
+      var errorMessage = _props.errorMessage;
+      var fields = _props.fields;
+      var fieldValues = _props.fieldValues;
+      var formAuthenticity = _props.formAuthenticity;
+      var onDeliveryChange = _props.onDeliveryChange;
+      var onFieldChange = _props.onFieldChange;
+      var onPaymentChange = _props.onPaymentChange;
+      var paymentType = _props.paymentType;
+      var paymentTypes = _props.paymentTypes;
+      var publicOffer = _props.publicOffer;
+      var submitOrderUrl = _props.submitOrderUrl;
+      var t = _props.t;
+
+      return _react2['default'].createElement(
+        'form',
+        {
+          acceptCharset: 'UTF-8',
+          action: submitOrderUrl,
+          className: 'simple_form new_vendor_order',
+          id: 'new_vendor_order',
+          method: 'POST',
+          noValidate: true
+        },
+        _react2['default'].createElement(_commonFormAuthenticity2['default'], formAuthenticity),
+        _react2['default'].createElement(
+          'div',
+          { className: 'b-cart__form b-form' },
+          errorMessage ? _react2['default'].createElement(_commonAlert2['default'], {
+            className: 'cart-info',
+            danger: true,
+            text: errorMessage
+          }) : null,
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-cart__form__inner' },
+            _react2['default'].createElement(
+              _CheckoutStep2['default'],
+              { number: 1, title: t('vendor.order.new.delivery_title') },
+              _react2['default'].createElement(_CheckoutDeliveries2['default'], {
+                current: deliveryType,
+                items: deliveryTypes,
+                onChange: onDeliveryChange,
+                t: t
+              })
+            ),
+            _react2['default'].createElement(
+              _CheckoutStep2['default'],
+              { number: 2, title: t('vendor.order.new.contacts_title') },
+              _react2['default'].createElement(_CheckoutFields2['default'], {
+                deliveryType: deliveryType,
+                itemValues: fieldValues,
+                items: fields,
+                onChange: onFieldChange
+              }),
+              !!coupon.get('show') && _react2['default'].createElement(_CheckoutCoupon2['default'], { code: coupon.get('value'), t: t })
+            ),
+            _react2['default'].createElement(
+              _CheckoutStep2['default'],
+              { number: 3, title: t('vendor.order.new.payment_title') },
+              _react2['default'].createElement(_CheckoutPayments2['default'], {
+                current: paymentType,
+                items: paymentTypes,
+                onChange: onPaymentChange
+              })
+            )
+          ),
+          _react2['default'].createElement(
+            'div',
+            { className: 'b-form__row' },
+            _react2['default'].createElement(_CheckoutActions2['default'], {
+              backUrl: backUrl,
+              publicOffer: publicOffer,
+              t: t
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Checkout;
+})(_react.Component);
+
+Checkout.propTypes = {
+  backUrl: _react.PropTypes.string,
+  coupon: _react.PropTypes.object.isRequired,
+  deliveryType: _react.PropTypes.object.isRequired,
+  deliveryTypes: _react.PropTypes.object.isRequired,
+  errorMessage: _react.PropTypes.string,
+  fieldValues: _react.PropTypes.object.isRequired,
+  fields: _react.PropTypes.object.isRequired,
+  formAuthenticity: schemas.formAuthenticity,
+  onDeliveryChange: _react.PropTypes.func.isRequired,
+  onFieldChange: _react.PropTypes.func.isRequired,
+  onPaymentChange: _react.PropTypes.func.isRequired,
+  paymentType: _react.PropTypes.object.isRequired,
+  paymentTypes: _react.PropTypes.object.isRequired,
+  publicOffer: schemas.checkoutPublicOffer,
+  submitOrderUrl: _react.PropTypes.string,
+  t: _react.PropTypes.func.isRequired
+};
+Checkout.defaultProps = {
+  formAuthenticity: {},
+  submitOrderUrl: (0, _routesApp.vendorOrder)()
+};
+
+exports['default'] = Checkout;
+module.exports = exports['default'];
+
+},{"../../../routes/app":212,"../../schemas":194,"../common/Alert":139,"../common/FormAuthenticity":143,"./CheckoutActions":38,"./CheckoutCoupon":40,"./CheckoutDeliveries":41,"./CheckoutFields":42,"./CheckoutPayments":43,"./CheckoutStep":45,"react":"react"}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -7386,6 +7476,7 @@ var Order = (function (_Component) {
       var deliveryType = _props.deliveryType;
       var deliveryTypes = _props.deliveryTypes;
       var errorMessage = _props.errorMessage;
+      var fieldValues = _props.fieldValues;
       var fields = _props.fields;
       var formAuthenticity = _props.formAuthenticity;
       var onDeliveryChange = _props.onDeliveryChange;
@@ -7416,6 +7507,7 @@ var Order = (function (_Component) {
             deliveryType: deliveryType,
             deliveryTypes: deliveryTypes,
             errorMessage: errorMessage,
+            fieldValues: fieldValues,
             fields: fields,
             formAuthenticity: formAuthenticity,
             onDeliveryChange: onDeliveryChange,
@@ -7437,27 +7529,29 @@ var Order = (function (_Component) {
 
 Order.propTypes = {
   backUrl: _react.PropTypes.string,
-  coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
-  deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
+  coupon: _react.PropTypes.object.isRequired,
+  deliveryType: _react.PropTypes.object.isRequired,
+  deliveryTypes: _react.PropTypes.object.isRequired,
   errorMessage: _react.PropTypes.string,
-  fields: _react.PropTypes.array.isRequired,
+  fieldValues: _react.PropTypes.object.isRequired,
+  fields: _react.PropTypes.object.isRequired,
   formAuthenticity: schemas.formAuthenticity,
   onDeliveryChange: _react.PropTypes.func.isRequired,
   onFieldChange: _react.PropTypes.func.isRequired,
   onPaymentChange: _react.PropTypes.func.isRequired,
-  paymentType: schemas.paymentType,
-  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
+  paymentType: _react.PropTypes.object.isRequired,
+  paymentTypes: _react.PropTypes.object.isRequired,
   publicOffer: schemas.checkoutPublicOffer,
   submitOrderUrl: _react.PropTypes.string,
+  t: _react.PropTypes.func.isRequired,
   totalCount: _react.PropTypes.number,
-  totalPrice: schemas.money
+  totalPrice: _react.PropTypes.object.isRequired
 };
 
 exports['default'] = Order;
 module.exports = exports['default'];
 
-},{"../../schemas":194,"../Checkout":38,"./OrderTitle":74,"react":"react"}],74:[function(require,module,exports){
+},{"../../schemas":194,"../Checkout":46,"./OrderTitle":74,"react":"react"}],74:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -7474,15 +7568,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
+var _humps = require('humps');
 
 var _commonMoneyHumanizedMoneyWithCurrency = require('../common/Money/HumanizedMoneyWithCurrency');
 
@@ -7500,18 +7590,24 @@ var OrderTitle = (function (_Component) {
   _createClass(OrderTitle, [{
     key: 'componentWillUpdate',
     value: function componentWillUpdate(nextProps) {
-      if (this.props.totalPrice.cents !== nextProps.totalPrice.cents) {
+      if (this.props.totalPrice.get('cents') !== nextProps.totalPrice.get('cents')) {
         this.animatePriceChanges();
       }
     }
   }, {
     key: 'animatePriceChanges',
     value: function animatePriceChanges() {
-      var $priceNode = (0, _jquery2['default'])((0, _reactDom.findDOMNode)(this.refs.price));
+      var priceNode = this.refs.price;
 
-      $priceNode.addClass('animated bounce');
+      if (!priceNode) {
+        return;
+      }
+
+      priceNode.classList.add('animated');
+      priceNode.classList.add('bounce');
       setTimeout(function () {
-        $priceNode.removeClass('animated bounce');
+        priceNode.classList.remove('animated');
+        priceNode.classList.remove('bounce');
       }, 1000);
     }
   }, {
@@ -7522,7 +7618,7 @@ var OrderTitle = (function (_Component) {
       var totalCount = _props.totalCount;
       var totalPrice = _props.totalPrice;
 
-      if (totalCount || totalPrice) {
+      if (totalCount || !totalPrice.isEmpty()) {
         return _react2['default'].createElement(
           'h1',
           { className: 'b-cart__title' },
@@ -7535,8 +7631,8 @@ var OrderTitle = (function (_Component) {
           ' ' + t('vendor.order.new.sum') + ' ',
           _react2['default'].createElement(
             'strong',
-            { ref: 'price' },
-            _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: totalPrice })
+            { className: 'b-cart__title-price', ref: 'price' },
+            _react2['default'].createElement(_commonMoneyHumanizedMoneyWithCurrency2['default'], { money: (0, _humps.decamelizeKeys)(totalPrice.toJS()) })
           )
         );
       }
@@ -7550,21 +7646,19 @@ var OrderTitle = (function (_Component) {
 
 OrderTitle.propTypes = {
   t: _react.PropTypes.func.isRequired,
-  totalCount: _react.PropTypes.number,
-  totalPrice: _react.PropTypes.object
+  totalCount: _react.PropTypes.number.isRequired,
+  totalPrice: _react.PropTypes.object.isRequired
 };
 
 exports['default'] = OrderTitle;
 module.exports = exports['default'];
 
-},{"../common/Money/HumanizedMoneyWithCurrency":155,"jquery":"jquery","react":"react","react-dom":"react-dom"}],75:[function(require,module,exports){
+},{"../common/Money/HumanizedMoneyWithCurrency":155,"humps":228,"react":"react"}],75:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -7586,13 +7680,31 @@ var _schemas = require('../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
 
+var _HoCConnectToRedux = require('../HoC/connectToRedux');
+
+var _HoCConnectToRedux2 = _interopRequireDefault(_HoCConnectToRedux);
+
 var _HoCProvideTranslations = require('../HoC/provideTranslations');
 
 var _HoCProvideTranslations2 = _interopRequireDefault(_HoCProvideTranslations);
 
+var _reactRedux = require('react-redux');
+
+var _immutable = require('immutable');
+
 var _Order = require('./Order');
 
 var _Order2 = _interopRequireDefault(_Order);
+
+var _actionsCartActions = require('../../actions/CartActions');
+
+var emptyList = (0, _immutable.List)();
+var emptyCoupon = (0, _immutable.Map)();
+var emptyFields = (0, _immutable.List)();
+var emptyValues = (0, _immutable.Map)();
+var emptyDeliveryType = (0, _immutable.Map)();
+var emptyPaymentType = (0, _immutable.Map)();
+var emptyPrice = (0, _immutable.Map)();
 
 var OrderContainer = (function (_Component) {
   _inherits(OrderContainer, _Component);
@@ -7602,155 +7714,79 @@ var OrderContainer = (function (_Component) {
 
     _get(Object.getPrototypeOf(OrderContainer.prototype), 'constructor', this).call(this, props);
 
-    var deliveryTypeId = props.deliveryTypeId;
-    var deliveryTypes = props.deliveryTypes;
-    var fields = props.fields;
-    var paymentTypeId = props.paymentTypeId;
-    var paymentTypes = props.paymentTypes;
-
-    var deliveryType = this.matchEntity(deliveryTypes, deliveryTypeId);
-    var paymentType = this.matchEntity(paymentTypes, paymentTypeId);
-
-    this.state = {
-      deliveryType: deliveryType,
-      paymentType: paymentType,
-      fields: fields.map(function (field) {
-        var isRequired = deliveryType ? deliveryType.requiredFields.indexOf(field.name) > -1 : false;
-        var isReserved = deliveryType ? !!deliveryType.reservedFieldValues[field.name] : false;
-        var isDisabled = isReserved || false;
-        var value = isReserved ? deliveryType.reservedFieldValues[field.name] : field.value;
-
-        return { isDisabled: isDisabled, isRequired: isRequired, value: value, source: field };
-      })
-    };
-
-    this.changeDelivery = this.changeDelivery.bind(this);
-    this.changeField = this.changeField.bind(this);
-    this.changePayment = this.changePayment.bind(this);
+    this.selectDelivery = this.selectDelivery.bind(this);
+    this.selectPayment = this.selectPayment.bind(this);
+    this.changeFieldValue = this.changeFieldValue.bind(this);
   }
 
   _createClass(OrderContainer, [{
-    key: 'matchEntity',
-    value: function matchEntity(items, itemId) {
-      if (!items.length) return null;
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _props = this.props;
+      var initialProps = _props.initialProps;
+      var initCheckout = _props.initCheckout;
+      var deliveryTypes = _props.deliveryTypes;
+      var paymentTypes = _props.paymentTypes;
 
-      if (itemId) {
-        var matched = items.filter(function (item) {
-          return item.id === itemId;
-        })[0];
-        if (matched) return matched;
+      if (deliveryTypes.isEmpty() || paymentTypes.isEmpty()) {
+        initCheckout(initialProps);
       }
-
-      return items[0];
     }
   }, {
-    key: 'getFieldsForDelivery',
-    value: function getFieldsForDelivery(delivery, fields) {
-      if (!delivery) return fields;
-
-      return fields.filter(function (field) {
-        return delivery.fields.indexOf(field.source.name) > -1;
-      });
+    key: 'selectDelivery',
+    value: function selectDelivery(delivery) {
+      this.props.selectDelivery(delivery.get('id'));
     }
   }, {
-    key: 'getPaymentsForDelivery',
-    value: function getPaymentsForDelivery(delivery, payments) {
-      if (!delivery) return payments;
-
-      return payments.filter(function (payment) {
-        return delivery.availablePayments.indexOf(payment.id) > -1;
-      });
+    key: 'selectPayment',
+    value: function selectPayment(payment) {
+      this.props.selectPayment(payment.get('id'));
     }
   }, {
-    key: 'getTotalPrice',
-    value: function getTotalPrice(delivery, cart) {
-      var totalPrice = cart.totalPrice;
-
-      if (!delivery) return totalPrice;
-
-      var threshold = delivery.freeDeliveryThreshold;
-
-      if (threshold.cents === 'undefined' || totalPrice.cents > threshold.cents) {
-        return totalPrice;
-      }
-
-      return _extends({}, totalPrice, {
-        cents: totalPrice.cents + delivery.price.cents
-      });
-    }
-  }, {
-    key: 'changeDelivery',
-    value: function changeDelivery(delivery) {
-      var fields = this.state.fields;
-
-      this.setState({
-        deliveryType: delivery,
-        fields: fields.map(function (field) {
-          var isRequired = delivery ? delivery.requiredFields.indexOf(field.source.name) > -1 : false;
-          var isDisabled = delivery ? !!delivery.reservedFieldValues[field.source.name] : false;
-          var value = field.value;
-          var reservedValue = delivery && delivery.reservedFieldValues[field.source.name] ? delivery.reservedFieldValues[field.source.name] : null;
-
-          return _extends({}, field, { reservedValue: reservedValue, value: value, isDisabled: isDisabled, isRequired: isRequired });
-        })
-      });
-    }
-  }, {
-    key: 'changeField',
-    value: function changeField(name, value) {
-      var fields = this.state.fields;
-
-      this.setState({
-        fields: fields.map(function (field) {
-          if (field.source.name === name) {
-            return _extends({}, field, { value: value });
-          }
-          return field;
-        })
-      });
-    }
-  }, {
-    key: 'changePayment',
-    value: function changePayment(payment) {
-      this.setState({ paymentType: payment });
+    key: 'changeFieldValue',
+    value: function changeFieldValue(name, value) {
+      this.props.changeFieldValue(name, value);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var backUrl = _props.backUrl;
-      var cart = _props.cart;
-      var coupon = _props.coupon;
-      var deliveryTypes = _props.deliveryTypes;
-      var errorMessage = _props.errorMessage;
-      var formAuthenticity = _props.formAuthenticity;
-      var paymentTypes = _props.paymentTypes;
-      var publicOffer = _props.publicOffer;
-      var submitOrderUrl = _props.submitOrderUrl;
-      var t = _props.t;
-      var _state = this.state;
-      var deliveryType = _state.deliveryType;
-      var fields = _state.fields;
-      var paymentType = _state.paymentType;
+      var _props2 = this.props;
+      var coupon = _props2.coupon;
+      var fields = _props2.fields;
+      var fieldValues = _props2.fieldValues;
+      var deliveryTypes = _props2.deliveryTypes;
+      var selectedDeliveryType = _props2.selectedDeliveryType;
+      var paymentTypes = _props2.paymentTypes;
+      var selectedPaymentType = _props2.selectedPaymentType;
+      var _props2$initialProps = _props2.initialProps;
+      var backUrl = _props2$initialProps.backUrl;
+      var errorMessage = _props2$initialProps.errorMessage;
+      var formAuthenticity = _props2$initialProps.formAuthenticity;
+      var publicOffer = _props2$initialProps.publicOffer;
+      var submitOrderUrl = _props2$initialProps.submitOrderUrl;
+      var t = _props2$initialProps.t;
+      var totalCount = _props2.totalCount;
+      var totalPrice = _props2.totalPrice;
 
       return _react2['default'].createElement(_Order2['default'], {
         backUrl: backUrl,
         coupon: coupon,
-        deliveryType: deliveryType,
+        deliveryType: selectedDeliveryType,
         deliveryTypes: deliveryTypes,
         errorMessage: errorMessage,
-        fields: this.getFieldsForDelivery(deliveryType, fields),
+        fieldValues: fieldValues,
+        fields: fields,
         formAuthenticity: formAuthenticity,
-        onDeliveryChange: this.changeDelivery,
-        onFieldChange: this.changeField,
-        onPaymentChange: this.changePayment,
-        paymentType: paymentType,
-        paymentTypes: this.getPaymentsForDelivery(deliveryType, paymentTypes),
+        onDeliveryChange: this.selectDelivery,
+        onFieldChange: this.changeFieldValue,
+        onPaymentChange: this.selectPayment,
+        paymentType: selectedPaymentType,
+        paymentTypes: paymentTypes,
         publicOffer: publicOffer,
         submitOrderUrl: submitOrderUrl,
         t: t,
-        totalCount: cart.totalCount,
-        totalPrice: this.getTotalPrice(deliveryType, cart)
+        totalCount: totalCount,
+        totalPrice: totalPrice
       });
     }
   }]);
@@ -7759,31 +7795,680 @@ var OrderContainer = (function (_Component) {
 })(_react.Component);
 
 OrderContainer.propTypes = {
-  backUrl: _react.PropTypes.string,
-  cart: schemas.cart,
-  coupon: schemas.checkoutCoupon,
-  deliveryTypeId: _react.PropTypes.number,
-  deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
-  errorMessage: _react.PropTypes.string,
-  fields: _react.PropTypes.arrayOf(schemas.checkoutField),
-  formAuthenticity: schemas.formAuthenticity,
-  paymentTypeId: _react.PropTypes.number,
-  paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
-  publicOffer: schemas.checkoutPublicOffer,
-  submitOrderUrl: _react.PropTypes.string,
-  t: _react.PropTypes.func.isRequired
-};
-OrderContainer.defaultProps = {
-  cart: {},
-  deliveryTypes: [],
-  fields: [],
-  paymentTypes: []
+  coupon: _react.PropTypes.object.isRequired,
+  deliveryTypes: _react.PropTypes.object.isRequired,
+  selectedDeliveryType: _react.PropTypes.object.isRequired,
+  fieldValues: _react.PropTypes.object.isRequired,
+  fields: _react.PropTypes.object.isRequired,
+  paymentTypes: _react.PropTypes.object.isRequired,
+  initCheckout: _react.PropTypes.func.isRequired,
+  selectedPaymentType: _react.PropTypes.object.isRequired,
+  selectDelivery: _react.PropTypes.func.isRequired,
+  selectPayment: _react.PropTypes.func.isRequired,
+  changeFieldValue: _react.PropTypes.func.isRequired,
+  initialProps: _react.PropTypes.shape({
+    backUrl: _react.PropTypes.string,
+    deliveryTypeId: _react.PropTypes.number,
+    deliveryTypes: _react.PropTypes.arrayOf(schemas.deliveryType),
+    errorMessage: _react.PropTypes.string,
+    fields: _react.PropTypes.arrayOf(schemas.checkoutField),
+    formAuthenticity: schemas.formAuthenticity,
+    paymentTypeId: _react.PropTypes.number,
+    paymentTypes: _react.PropTypes.arrayOf(schemas.paymentType),
+    publicOffer: schemas.checkoutPublicOffer,
+    submitOrderUrl: _react.PropTypes.string,
+    t: _react.PropTypes.func.isRequired
+  }),
+  totalCount: _react.PropTypes.number.isRequired,
+  totalPrice: _react.PropTypes.object.isRequired
 };
 
-exports['default'] = (0, _HoCProvideTranslations2['default'])(OrderContainer);
+OrderContainer.defaultProps = {};
+
+exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state) {
+  var cart = state.cart;
+
+  var coupon = cart.get('coupon', emptyCoupon);
+  var deliveryTypes = cart.get('deliveryTypes', emptyList);
+  var selectedDeliveryType = deliveryTypes.find(function (t) {
+    return t.get('id') === cart.get('selectedDeliveryType');
+  }, null, deliveryTypes.first() || emptyDeliveryType);
+  var availablePayments = selectedDeliveryType.get('availablePayments', emptyList);
+  var availableFields = selectedDeliveryType.get('fields', emptyList);
+  var paymentTypes = cart.get('paymentTypes', emptyList).filter(function (p) {
+    return availablePayments.includes(p.get('id'));
+  });
+  var selectedPaymentType = paymentTypes.find(function (p) {
+    return p.get('id') === cart.get('selectedPaymentType');
+  }, null, paymentTypes.first() || emptyPaymentType);
+  var totalCount = cart.getIn(['cart', 'totalCount'], 0);
+  var totalPrice = cart.getIn(['cart', 'totalPrice'], emptyPrice).update(function (price) {
+
+    if (price.isEmpty()) {
+      return price;
+    }
+
+    var cents = price.get('cents', 0);
+    var threshold = selectedDeliveryType.getIn(['freeDeliveryThreshold', 'cents'], null);
+    var deliveryPrice = selectedDeliveryType.getIn(['price', 'cents'], 0);
+
+    return price.set('cents', cents + (threshold == null || threshold > cents ? deliveryPrice : 0));
+  });
+  var fields = cart.get('checkoutFields', emptyFields).filter(function (f) {
+    return availableFields.includes(f.get('name'));
+  });
+  var fieldValues = cart.get('checkoutFieldValues', emptyValues);
+
+  return {
+    coupon: coupon,
+    fields: fields,
+    fieldValues: fieldValues,
+    deliveryTypes: deliveryTypes,
+    selectedDeliveryType: selectedDeliveryType,
+    paymentTypes: paymentTypes,
+    selectedPaymentType: selectedPaymentType,
+    totalCount: totalCount,
+    totalPrice: totalPrice
+  };
+}, {
+  changeFieldValue: _actionsCartActions.changeFieldValue,
+  initCheckout: _actionsCartActions.initCheckout,
+  selectDelivery: _actionsCartActions.selectDelivery,
+  selectPayment: _actionsCartActions.selectPayment
+}, function (stateProps, dispatchProps, ownProps) {
+  return Object.assign({}, {
+    initialProps: ownProps
+  }, stateProps, dispatchProps);
+})(OrderContainer)));
+
+/*
+// test data
+{
+  'deliveryTypeId': 110,
+  'paymentTypeId': 105,
+  'i18n': {
+    'locale': 'ru',
+    'translations': {
+      'vendor': {
+        'not_published': 'Магазин временно не работает',
+        'made_in_kiiiosk': 'Сделано на «Киоске»',
+        'tasty_product_button_text': 'Купить',
+        'entities': {
+          'product': '%{count} товар',
+          'product_2': '%{count} товара',
+          'product_5': '%{count} товаров',
+        },
+        'badges': {
+          'new': 'Новинка',
+          'sale_percent': 'SALE - %{percent}%',
+          'not_available': 'Не продается',
+          'sale': 'SALE',
+          'sold': 'Продано',
+        },
+        'gallery': {
+          'close': 'Закрыть',
+          'next': 'Вперёд',
+          'prev': 'Назад',
+        },
+        'search': {
+          'results_title': 'Результаты поиска (%{count})',
+          'nothing_found': 'К сожалению, ничего не найдено.',
+        },
+        'seconds_count': '%{count} секунду',
+        'seconds_count_2': '%{count} секунды',
+        'seconds_count_5': '%{count} секунд',
+        'activemodel': {
+          'errors': {
+            'models': {
+              'vendor_order_form': {
+                'invalid_phone': 'Неверный формат телефона. Прим.: +7 913 123 32 10',
+                'attributes': {
+                  'address': {
+                    'blank': 'не может быть пустым',
+                  },
+                  'email': {
+                    'email': 'не является email адресом',
+                  },
+                  'city_title': {
+                    'blank': 'не может быть пустым',
+                  },
+                  'phone': {
+                    'blank': 'не может быть пустым',
+                  },
+                  'name': {
+                    'blank': 'не может быть пустым',
+                  },
+                  'public_offer_accepted': {
+                    'blank': 'Необходимо принять условия публичной оферты',
+                  },
+                },
+              },
+            },
+          },
+        },
+        'errors': {
+          'cart': {
+            'empty': 'В корзине нет товаров',
+          },
+          'coupon': {
+            'not_found': 'Несуществующий промокод %{code}',
+            'expired': 'Промокод просрочен %{code}',
+          },
+          'order': {
+            'invalid_form': 'Заказ еще не принят, исправьте ошибки в форме',
+            'has_unorderable_goods': 'В заказе лежат недоступные товары',
+            'no_items': 'В заказе нет товаров',
+            'unavailable_currency': 'Невозможно сделать заказ в выбранной валюте',
+          },
+        },
+        'placeholders': {
+          'coupon': 'Промо-код (если есть)',
+          'search': 'Поиск',
+        },
+        'alerts': {
+          'confirm': 'Точно очистить?',
+        },
+        'flashes': {
+          'good_added_to_basket': 'Украшение "%{title}" добавлено в корзину',
+        },
+        'mails': {
+          'signature': 'С уважением, интернет-магазин "%{name}"',
+        },
+        'auto_menu_items': {
+          'blog': 'Блог',
+        },
+        'top_banner': {
+          'default_content': 'Мы открылись!',
+        },
+        'order': {
+          'fields': {
+            'phone': 'Телефон',
+            'name': 'Полное имя',
+            'email': 'Email',
+            'city_title': 'Город доставки',
+            'address': 'Адрес доставки',
+            'comment': 'Оставьте свой телефон и имя, наш сотрудник свяжется с вами для уточнения информации о заказе',
+            'coupon_code': 'Промокод',
+          },
+          'placeholders': {
+            'city_title': 'Москва',
+            'phone': 'Например, +7 913 123 32 10',
+            'name': 'Имя',
+            'address': 'Например, Академика Вавилова 12-10',
+            'comment': 'О чем нам нужно знать',
+            'email': 'Email',
+          },
+          'submit': 'Оформить заказ',
+          'pickup_address': 'Адрес самовывоза:',
+          'title': 'Заказ №%{number}',
+          'payment_type': 'Способ оплаты: %{title}',
+          'delivery_type': 'Способ доставки: %{title}',
+          'free_delivery_text_html': 'Бесплатная доставка при заказе свыше \u003cnobr\u003e%{free_delivery_threshold}\u003c/nobr\u003e',
+          'checkout_free_delivery_text_html': 'Бесплатно при заказе свыше \u003cnobr\u003e%{free_delivery_threshold}\u003c/nobr\u003e',
+          'go_back': 'Вернуться назад',
+          'next': 'Продолжить',
+          'delivery_tracking_id': 'Трекинг-номер доставки: %{number}',
+          'check_state': 'Проверить статус доставки',
+          'public_offer_accepted_html': 'Согласен с условиями \u003cu\u003e\u003ca href="%{url}" target="_blank"\u003eпубличной оферты\u003c/a\u003e\u003c/u\u003e',
+          'created': {
+            'title': 'Спасибо за заказ',
+            'desc_html': 'В ближайшее время менеджер свяжется с вами для подтверждения заказа. \u003cbr\u003e Ваш телефон %{phone} \u003cbr\u003e Ваш заказ %{link} на сумму %{price}\n',
+          },
+          'new': {
+            'delivery_title': 'Выберите тип доставки.',
+            'payment_title': 'Способы оплаты',
+            'contacts_title': 'Введите данные',
+            'sum': 'на сумму',
+          },
+          'redirect': 'В течение 5-и секунд вы будете переправлены на страницу оплаты.',
+          'redirecting': 'Переправляю на сайт оплаты',
+          'go_to_payment': 'Перейти к оплате',
+          'continue_shopping': 'Продолжить покупки',
+          'contents': 'Состав заказа:',
+          'delivery_price': 'Стоимость доставки',
+          'pay': 'Оплатить',
+        },
+        'blog': {
+          'read_more': 'Читать далее..',
+        },
+        'notice': {
+          'catalog_filter': {
+            'selected_products': 'Выбрано вариантов',
+            'show_products': 'Показать',
+          },
+        },
+        'coupon': {
+          'discount': 'Скидка - %{discount}',
+          'invalid': 'Купон "%{value}" НЕ действующий',
+          'checking': 'Проверяю купон..',
+          'error': 'Ошибка при проверке купона. Попробуйте еще раз',
+        },
+        'cart': {
+          'basket_button': 'Корзина',
+          'amount': 'Количество',
+          'weight': 'Вес',
+          'overall': 'Итого:',
+          'title': 'Корзина',
+          'clear': 'Очистить корзину',
+          'not_available': 'Больше не продается',
+          'empty': 'Пока тут ничего нет',
+        },
+        'wishlist': {
+          'add_item': 'Добавить в список желаний',
+          'wishlist_button': 'Список желаний',
+          'private_title': 'Ваш список желаний',
+          'foreign_title': 'Чей-то список желаний',
+          'empty': 'Пока тут ничего нет',
+          'no_price': 'Не продается',
+        },
+        'packaging': {
+          'add': 'Добавить',
+          'add_gift_package': 'Добавить фактурную подарочную упаковку, перевязанную шелковой лентой',
+          'no_package': 'Не добавлять',
+        },
+        'payment': {
+          'w1': {
+            'failure': {
+              'title': 'Оплата не прошла',
+              'desc': 'Оплата заказа не была произведена',
+            },
+            'success': {
+              'title': 'Спасибо за заказ',
+              'desc': 'Оплата заказа была произведена',
+            },
+          },
+        },
+        'category': {
+          'continue_shopping': 'Продолжить покупки',
+          'empty': 'Ой, а здесь ничего нет. Пока.',
+        },
+        'dictionary_entity': {
+          'continue_shopping': 'Продолжить покупки',
+          'empty': 'Ой, а здесь ничего нет. Пока.',
+        },
+        'similar_product': {
+          'title': 'С этим украшением покупают также',
+        },
+        'product': {
+          'title': 'Товар',
+          'blank_price': 'Цена неизвестна',
+          'run_out': 'Нет в наличии',
+          'not_available': 'Не продается',
+          'available': 'Можно купить',
+          'sold_out_message_html': '\u0026laquo;%{title}\u0026raquo; сейчас не продается',
+          'nothing_found_by_criteria': 'Сожалеем, ничего не найдено. Попробуйте изменить критерии поиска.',
+          'category_title': 'Категория',
+          'show_other_products': 'Посмотреть другие товары',
+          'show_all': 'Показать все',
+          'weight': 'Вес',
+          'kg': 'кг.',
+        },
+        'properties': {
+          'empty': 'Нет характеристик для вывода',
+        },
+        'property': {
+          'unknown_type': 'Неизвестный тип характеристики',
+          'defaults': {
+            'size': 'Размер',
+            'color': 'Цвет',
+          },
+        },
+        'pages': {
+          'titles': {
+            'cart': 'Корзина',
+            'order': 'Оформление заказа',
+            'payment': 'Оплата',
+            'payment_success': 'Успешная оплата',
+            'payment_error': 'Ошибка оплаты',
+          },
+        },
+        'filter': {
+          'availability': 'Доступность',
+          'price_range': 'Ценовой диапазон',
+          'expand_button': {
+            'expand': 'Развернуть список',
+            'turn': 'Свернуть список',
+          },
+          'selected_options': {
+            'availability': 'Доступность',
+            'price_range': 'Цена от %{from} до %{to} %{currency}',
+          },
+          'selected_availability': {
+            'all': 'Все',
+            'available': 'В наличии',
+            'run_out': 'Под заказ',
+            'sale': 'Распродажа',
+            'unknown': 'unknown',
+          },
+        },
+        'button': {
+          'to_cart': 'Добавить в корзину %{title}',
+          'select_good': 'Выберите характеристику',
+          'go_wishlist': 'Перейти в "Список желаний"',
+          'to_wishlist': 'Добавить в "Список желаний"',
+          'already': 'Уже в корзине',
+          'disable_with': {
+            'sending': 'Отправляем...',
+            'saving': 'Сохраняем...',
+            'waiting': 'Подождите...',
+            'adding': 'Добавляем...',
+          },
+        },
+        'products': {
+          'others': 'Остальные',
+          'nothing_found_by_criteria': 'По данным критериям ничего не найдено',
+        },
+        'client': {
+          'auth': 'Личный кабинет',
+          'no_account': 'Нет аккаунта?',
+          'logged_in_with':
+          'Вы уже авторизованы под именем\u003cbr /\u003e \u003cb\u003e%{name}\u003c/b\u003e.',
+          'continue_logged': 'Продолжить под этим именем..',
+          'create_account': 'Создать',
+          'logout': 'Выйти',
+          'cabinet': {
+            'title': 'Личный кабинет',
+            'button': 'Кабинет',
+            'create': 'Создаем личный кабинет',
+            'send_pin_code': 'Выслать пин-код',
+            'disable_with': 'Высылаем...',
+          },
+        },
+        'money': {
+          'unknown_iso_code': 'Неизвестный тип валюты %{isoCode}',
+        },
+      },
+    },
+  },
+  'formAuthenticity': {
+    'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',
+    'field': 'authenticity_token',
+  },
+  'cart': {
+    'totalCount': 1,
+    'totalPrice': {
+      'cents': 415000,
+      'currency_iso_code': 'RUB',
+    },
+  },
+  'deliveryTypes': [
+    {
+      'id': 110,
+      'title': 'Москва – доставка курьером (2-3 дня)',
+      'description': '',
+      'price': {
+        'cents': 23000,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+        69,
+      ],
+      'freeDeliveryThreshold': {
+        'cents': 1000000,
+        'currency_iso_code': 'RUB',
+      },
+      'reservedFieldValues': {
+        'city_title': 'Москва',
+      },
+    },
+    {
+      'id': 910,
+      'title': 'Срочная доставка',
+      'description': 'Доставка в течение 3 часов с момента подтверждения заказа оператором магазина. \r\nВ будние дни, в пределах МКАД. \r\nПредоплата или наличные курьеру при получении.\r\nАкция " От 10000 р. доставка бесплатно"  на срочную не распространяется.',
+      'price': {
+        'cents': 35000,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+        69,
+      ],
+      'freeDeliveryThreshold': null,
+      'reservedFieldValues': {
+        'city_title': 'Москва',
+      },
+    },
+    {
+      'id': 177,
+      'title': 'Санкт-Петербург - доставка курьером (2-3 дня)',
+      'description': '',
+      'price': {
+        'cents': 28000,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+      ],
+      'freeDeliveryThreshold': {
+        'cents': 1000000,
+        'currency_iso_code': 'RUB',
+      },
+      'reservedFieldValues': {
+        'city_title': 'Санкт-Петербург',
+      },
+    },
+    {
+      'id': 111,
+      'title': 'Регионы – доставка курьером (3-10 рабочих дней. Возможен больший срок для отдаленных пунктов)',
+      'description': '',
+      'price': {
+        'cents': 50000,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'city_title',
+        'address',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+      ],
+      'freeDeliveryThreshold': {
+        'cents': 1000000,
+        'currency_iso_code': 'RUB',
+      },
+      'reservedFieldValues': {},
+    },
+    {
+      'id': 1754,
+      'title': 'Самовывоз на Никитской',
+      'description': 'Москва, ул. Б. Никитская, 35, кв.1, код подъезда #423.\r\nВремя работы: пн-вс, с 11 до 21.\r\n\r\nСрок бронирования украшения - 3 дня.\r\n\r\nОбратите внимание, что обмен и возврат купленных украшений осуществляется в течение 14 дней с момента покупки.',
+      'price': {
+        'cents': 0,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+        69,
+      ],
+      'freeDeliveryThreshold': null,
+      'reservedFieldValues': {
+        'city_title': 'Москва',
+      },
+    },
+    {
+      'id': 1755,
+      'title': 'Самовывоз в ARTPLAY',
+      'description': 'Москва, Центр дизайна ARTPLAY, ул. Нижняя Сыромятническая, 10, стр.9, подъезд D, 3-й этаж.\r\nВремя работы: пн-вс, с 11 до 21.\r\n\r\nСрок бронирования украшения - 3 дня.\r\n\r\nОбратите внимание, что обмен и возврат купленных украшений осуществляется в течение 14 дней с момента покупки.',
+      'price': {
+        'cents': 0,
+        'currency_iso_code': 'RUB',
+      },
+      'fields': [
+        'name',
+        'phone',
+        'email',
+        'comment',
+      ],
+      'requiredFields': [
+        'name',
+        'phone',
+        'email',
+        'comment',
+      ],
+      'availablePayments': [
+        105,
+        69,
+      ],
+      'freeDeliveryThreshold': null,
+      'reservedFieldValues': {
+        'city_title': 'Москва',
+      },
+    },
+  ],
+  'paymentTypes': [
+    {
+      'id': 105,
+      'title': 'Оплата банковской картой, через терминал или салон связи',
+      'description': 'Безопасная оплата любым удобным способом',
+      'icon_url': '/images/payment_icons/order_payment_w1.png',
+      'show_icon': false,
+    },
+    {
+      'id': 69,
+      'title': 'Наличные при получении',
+      'description': '',
+      'icon_url': '/images/payment_icons/order_payment_w1.png',
+      'show_icon': false,
+    },
+  ],
+  'fields': [
+    {
+      'name': 'name',
+      'type': 'string',
+      'value': null,
+      'title': 'Полное имя',
+      'placeholder': 'Имя',
+      'errorMessage': '',
+    },
+    {
+      'name': 'phone',
+      'type': 'string',
+      'value': null,
+      'title': 'Телефон',
+      'placeholder': 'Например, +7 913 123 32 10',
+      'errorMessage': '',
+    },
+    {
+      'name': 'email',
+      'type': 'string',
+      'value': null,
+      'title': 'Email',
+      'placeholder': 'Email',
+      'errorMessage': '',
+    },
+    {
+      'name': 'city_title',
+      'type': 'string',
+      'value': 'Москва',
+      'title': 'Город доставки',
+      'placeholder': 'Москва',
+      'errorMessage': '',
+    },
+    {
+      'name': 'address',
+      'type': 'string',
+      'value': null,
+      'title': 'Адрес доставки',
+      'placeholder': 'Например, Академика Вавилова 12-10',
+      'errorMessage': '',
+    },
+    {
+      'name': 'comment',
+      'type': 'textarea',
+      'value': null,
+      'title': 'Оставьте свой телефон и имя, наш сотрудник свяжется с вами для уточнения информации о заказе',
+      'placeholder': 'О чем нам нужно знать',
+      'errorMessage': '',
+    },
+  ],
+  'coupon': {
+    'show': true,
+    'value': '',
+  },
+  'publicOffer': {
+    'show': false,
+  },
+  'errorMessage': '',
+  'submitOrderUrl': '/orders',
+}
+
+*/
 module.exports = exports['default'];
 
-},{"../../schemas":194,"../HoC/provideTranslations":62,"./Order":73,"react":"react"}],76:[function(require,module,exports){
+},{"../../actions/CartActions":8,"../../schemas":194,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Order":73,"immutable":"immutable","react":"react","react-redux":359}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -16419,8 +17104,18 @@ var _actionsCartActions = require('../actions/CartActions');
 
 var initialState = (0, _immutable.fromJS)({
   cart: {},
+  coupon: {
+    show: true,
+    value: ''
+  },
   amounts: {},
   selectedPackage: '',
+  deliveryTypes: [],
+  selectedDeliveryType: null,
+  paymentTypes: [],
+  selectedPaymentType: null,
+  checkoutFields: [],
+  checkoutFieldValues: {},
   isFetching: false,
   error: null
 });
@@ -16441,6 +17136,10 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartAction
 
   return state.merge({
     amounts: amounts,
+    coupon: {
+      show: true,
+      value: response.couponCode
+    },
     cart: response,
     isFetching: false,
     error: null
@@ -16461,6 +17160,23 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartAction
   var id = _ref4.id;
 
   return state.set('selectedPackage', id);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_INIT_CHECKOUT, function (state, _ref5) {
+  var data = _ref5.data;
+
+  return state.merge(data);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SET_FIELD_VALUE, function (state, _ref6) {
+  var name = _ref6.name;
+  var value = _ref6.value;
+
+  return state.setIn(['checkoutFieldValues', name, 'value'], value);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SELECT_DELIVERY, function (state, _ref7) {
+  var id = _ref7.id;
+
+  return state.set('selectedDeliveryType', id);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SELECT_PAYMENT, function (state, _ref8) {
+  var id = _ref8.id;
+
+  return state.set('selectedPaymentType', id);
 }), _actionMap);
 
 exports['default'] = (0, _utilsCreateReducer2['default'])(initialState, actionMap);
@@ -17378,7 +18094,7 @@ global.CurrencySwitcher = require('./react/components/CurrencySwitcher');
 global.LocaleSwitcher = require('./react/components/LocaleSwitcher');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/console-polyfill":3,"./locales/numeral/ru":7,"./react/application":17,"./react/components/Cart":25,"./react/components/Cart/CartCoupon":20,"./react/components/CatalogFilter":35,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/Clientbar":48,"./react/components/CurrencySwitcher":50,"./react/components/Instagram":67,"./react/components/LocaleSwitcher":69,"./react/components/Logo/LogoContainer":70,"./react/components/Order":75,"./react/components/Product/ProductBlock":84,"./react/components/Product/ProductCard":101,"./react/components/ScrollToTop":119,"./react/components/TopBanner":120,"./react/components/Userbar":123,"./react/components/common/ImageSlider":149,"./react/libsConfigs":177,"./shared/app":213,"./shared/application_slider":214,"./shared/cart":215,"./shared/jump":216,"./shared/load_more":217,"./shared/mobile_navigation":218,"./shared/theme_switcher":219}],209:[function(require,module,exports){
+},{"./lib/console-polyfill":3,"./locales/numeral/ru":7,"./react/application":17,"./react/components/Cart":25,"./react/components/Cart/CartCoupon":20,"./react/components/CatalogFilter":35,"./react/components/Checkout/CheckoutCoupon":40,"./react/components/Clientbar":48,"./react/components/CurrencySwitcher":50,"./react/components/Instagram":67,"./react/components/LocaleSwitcher":69,"./react/components/Logo/LogoContainer":70,"./react/components/Order":75,"./react/components/Product/ProductBlock":84,"./react/components/Product/ProductCard":101,"./react/components/ScrollToTop":119,"./react/components/TopBanner":120,"./react/components/Userbar":123,"./react/components/common/ImageSlider":149,"./react/libsConfigs":177,"./shared/app":213,"./shared/application_slider":214,"./shared/cart":215,"./shared/jump":216,"./shared/load_more":217,"./shared/mobile_navigation":218,"./shared/theme_switcher":219}],209:[function(require,module,exports){
 'use strict';
 
 window._ = require('lodash');

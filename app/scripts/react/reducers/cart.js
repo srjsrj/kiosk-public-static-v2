@@ -9,6 +9,9 @@ import {
   CART_SET_AMOUNT,
   CART_SET_PACKAGE,
   CART_INIT_CHECKOUT,
+  CART_SET_FIELD_VALUE,
+  CART_SELECT_DELIVERY,
+  CART_SELECT_PAYMENT,
 } from '../actions/CartActions';
 
 const initialState = fromJS({
@@ -24,6 +27,7 @@ const initialState = fromJS({
   paymentTypes: [],
   selectedPaymentType: null,
   checkoutFields: [],
+  checkoutFieldValues: {},
   isFetching: false,
   error: null,
 });
@@ -72,8 +76,20 @@ const actionMap = {
     return state.set('selectedPackage', id);
   },
 
-  [CART_INIT_CHECKOUT](state, data) {
+  [CART_INIT_CHECKOUT](state, { data }) {
     return state.merge(data);
+  },
+
+  [CART_SET_FIELD_VALUE](state, { name, value }) {
+    return state.setIn(['checkoutFieldValues', name, 'value'], value);
+  },
+
+  [CART_SELECT_DELIVERY](state, { id }) {
+    return state.set('selectedDeliveryType', id);
+  },
+
+  [CART_SELECT_PAYMENT](state, { id }) {
+    return state.set('selectedPaymentType', id);
   },
 };
 

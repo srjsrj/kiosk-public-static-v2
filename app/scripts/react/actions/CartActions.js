@@ -15,6 +15,9 @@ export const CART_FAILURE = 'CART_FAILURE';
 export const CART_SET_AMOUNT = 'CART_SET_AMOUNT';
 export const CART_SET_PACKAGE = 'CART_SET_PACKAGE';
 export const CART_INIT_CHECKOUT = 'CART_INIT_CHECKOUT';
+export const CART_SET_FIELD_VALUE = 'CART_SET_FIELD_VALUE';
+export const CART_SELECT_DELIVERY = 'CART_SELECT_DELIVERY';
+export const CART_SELECT_PAYMENT = 'CART_SELECT_PAYMENT';
 
 export function setAmount(id, amount) {
   return {
@@ -31,10 +34,32 @@ export function selectPackage(id) {
   };
 }
 
+export function selectDelivery(id) {
+  return {
+    type: CART_SELECT_DELIVERY,
+    id,
+  };
+}
+
+export function selectPayment(id) {
+  return {
+    type: CART_SELECT_PAYMENT,
+    id,
+  };
+}
+
 export function initCart(initialCart) {
   return {
     type: CART_SUCCESS,
     response: camelizeKeys(initialCart),
+  };
+}
+
+export function changeFieldValue(name, value) {
+  return {
+    type: CART_SET_FIELD_VALUE,
+    name,
+    value,
   };
 }
 
@@ -51,13 +76,15 @@ export function initCheckout(params) {
 
   return {
     type: CART_INIT_CHECKOUT,
-    deliveryTypes,
-    paymentTypes,
-    cart,
-    coupon,
-    checkoutFields: fields,
-    selectedDeliveryType: deliveryTypeId,
-    selectedPaymentType: paymentTypeId,
+    data: {
+      deliveryTypes,
+      paymentTypes,
+      cart,
+      coupon,
+      checkoutFields: fields,
+      selectedDeliveryType: deliveryTypeId,
+      selectedPaymentType: paymentTypeId,
+    },
   };
 }
 

@@ -12,6 +12,10 @@ class OrderTitle extends Component {
   animatePriceChanges() {
     const priceNode = this.refs.price;
 
+    if (!priceNode) {
+      return;
+    }
+
     priceNode.classList.add('animated');
     priceNode.classList.add('bounce');
     setTimeout(() => {
@@ -20,9 +24,9 @@ class OrderTitle extends Component {
     }, 1000);
   }
   render() {
-    const { 
-      t, 
-      totalCount, 
+    const {
+      t,
+      totalCount,
       totalPrice,
     } = this.props;
 
