@@ -1073,7 +1073,7 @@ var CartListItem = (function (_Component) {
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2['default'].createElement(_commonImage.Image, {
+          _react2['default'].createElement(_commonImage.RelativeImage, {
             className: 'b-cart__item__img',
             image: item.getIn(['good', 'image'], (0, _immutable.Map)()).toJS(),
             maxHeight: 143,
@@ -1207,7 +1207,7 @@ var CartListPackageItem = (function (_Component) {
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2['default'].createElement(_commonImage.Image, {
+          _react2['default'].createElement(_commonImage.RelativeImage, {
             className: 'b-cart__item__img',
             image: item.getIn(['good', 'image'], (0, _immutable.Map)()).toJS(),
             maxHeight: 92,
@@ -1384,7 +1384,7 @@ var CartListPackages = (function (_Component) {
           _react2['default'].createElement(
             'div',
             { className: 'b-cart__item__col-img' },
-            _react2['default'].createElement(_commonImage.Image, {
+            _react2['default'].createElement(_commonImage.RelativeImage, {
               className: 'b-cart__item__img',
               image: packages.first().get('image').toJS(),
               maxHeight: 184,

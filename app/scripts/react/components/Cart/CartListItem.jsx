@@ -1,6 +1,6 @@
 /*global gon */
 import React, { Component, PropTypes } from 'react';
-import { Image } from '../common/Image';
+import { RelativeImage } from '../common/Image';
 import AssetImage from '../common/AssetImage';
 import Select from '../common/Select';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
@@ -139,7 +139,7 @@ class CartListItem extends Component {
     return (
       <li className="b-cart__item">
         <div className="b-cart__item__col-img">
-          <Image
+          <RelativeImage
             className="b-cart__item__img"
             image={item.getIn(['good', 'image'], Map()).toJS()}
             maxHeight={143}

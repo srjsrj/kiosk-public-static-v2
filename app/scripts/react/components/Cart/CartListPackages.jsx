@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Image } from '../common/Image';
+import { RelativeImage } from '../common/Image';
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
 import { Map } from 'immutable';
 import { decamelizeKeys } from 'humps';
@@ -56,7 +56,7 @@ class CartListPackages extends Component {
       <li className="b-cart__item_spec">
         <div className="b-cart__item">
           <div className="b-cart__item__col-img">
-            <Image
+            <RelativeImage
               className="b-cart__item__img"
               image={packages.first().get('image').toJS()}
               maxHeight={184}
