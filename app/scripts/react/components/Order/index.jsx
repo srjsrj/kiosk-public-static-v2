@@ -11,6 +11,12 @@ import {
   selectDelivery,
   selectPayment,
 } from '../../actions/CartActions';
+import {
+  initCheckoutCartStore,
+} from '../../reducers/cart';
+import {
+  canUseDOM,
+} from '../../helpers/dom';
 
 const emptyList = List();
 const emptyCoupon = Map();
@@ -128,8 +134,12 @@ OrderContainer.defaultProps = {
 };
 
 export default provideTranslations(connectToRedux(connect(
-  (state) => {
-    const { cart } = state;
+  (state, ownProps) => {
+    const { cart } = canUseDOM()
+      ? state
+      : ({
+        cart: initCheckoutCartStore(state.cart, initCheckout(ownProps)),
+      });
     const coupon = cart.get('coupon', emptyCoupon);
     const deliveryTypes = cart.get('deliveryTypes', emptyList);
     const selectedDeliveryType = deliveryTypes

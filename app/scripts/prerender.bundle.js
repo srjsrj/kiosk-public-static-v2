@@ -7,8 +7,8 @@ combineReducers = require('redux').combineReducers;
 Provider = require('react-redux').Provider;
 DesignReducer = require('./react/reducers/Design.prerender');
 PopupReducer = require('./react/reducers/Popup');
-CartReducer = require('./react/reducers/cart');
-PackagesReducer = require('./react/reducers/packages');
+CartReducer = require('./react/reducers/cart').default;
+PackagesReducer = require('./react/reducers/packages').default;
 require('./locales/numeral/ru');
 
 var prerenderReducers = combineReducers({

@@ -32,6 +32,31 @@ const initialState = fromJS({
   error: null,
 });
 
+export function initCartStore(state, { response }) {
+  const amounts = fromJS(response.items)
+    .toMap()
+    .mapKeys((key, val) => val.get('id'))
+    .map((item) => item.get('sellingByWeight') ?
+      item.get('weight', 0) :
+      item.get('count', 0)
+    );
+
+  return state.merge({
+    amounts,
+    coupon: {
+      show: true,
+      value: response.couponCode,
+    },
+    cart: response,
+    isFetching: false,
+    error: null,
+  });
+}
+
+export function initCheckoutCartStore(state, { data }) {
+  return state.merge(data);
+}
+
 const actionMap = {
   [CART_REQUEST](state) {
     return state.merge({
@@ -40,25 +65,8 @@ const actionMap = {
     });
   },
 
-  [CART_SUCCESS](state, { response }) {
-    const amounts = fromJS(response.items)
-      .toMap()
-      .mapKeys((key, val) => val.get('id'))
-      .map((item) => item.get('sellingByWeight') ?
-        item.get('weight', 0) :
-        item.get('count', 0)
-      );
-
-    return state.merge({
-      amounts,
-      coupon: {
-        show: true,
-        value: response.couponCode,
-      },
-      cart: response,
-      isFetching: false,
-      error: null,
-    });
+  [CART_SUCCESS](state, action) {
+    return initCartStore(state, action);
   },
 
   [CART_FAILURE](state, { error }) {
@@ -76,8 +84,8 @@ const actionMap = {
     return state.set('selectedPackage', id);
   },
 
-  [CART_INIT_CHECKOUT](state, { data }) {
-    return state.merge(data);
+  [CART_INIT_CHECKOUT](state, action) {
+    return initCheckoutCartStore(state, action);
   },
 
   [CART_SET_FIELD_VALUE](state, { name, value }) {

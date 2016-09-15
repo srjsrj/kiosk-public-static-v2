@@ -25,8 +25,8 @@ combineReducers = require('redux').combineReducers;
 Provider = require('react-redux').Provider;
 DesignReducer = require('./react/reducers/Design.prerender');
 PopupReducer = require('./react/reducers/Popup');
-CartReducer = require('./react/reducers/cart');
-PackagesReducer = require('./react/reducers/packages');
+CartReducer = require('./react/reducers/cart').default;
+PackagesReducer = require('./react/reducers/packages').default;
 require('./locales/numeral/ru');
 
 var prerenderReducers = combineReducers({
@@ -62,7 +62,8 @@ global.gon = {
   operator_api_url: 'http://wannabe.vagrant.dev:3000/operator/api',
   public_api_url: 'http://wannabe.vagrant.dev:3000/api',
   thumbor_url: 'http://thumbor.kiiiosk.ru',
-  kiiiosk: true
+  kiiiosk: true,
+  max_items_count: 100
 };
 
 require('./prerender.bundle');
@@ -1472,7 +1473,13 @@ var _actionsCartActions = require('../../actions/CartActions');
 
 var _actionsPackagesActions = require('../../actions/PackagesActions');
 
+var _reducersCart = require('../../reducers/cart');
+
+var _reducersPackages = require('../../reducers/packages');
+
 var _immutable = require('immutable');
+
+var _helpersDom = require('../../helpers/dom');
 
 var emptyErrors = (0, _immutable.Map)();
 var emptyAmounts = (0, _immutable.Map)();
@@ -1569,9 +1576,17 @@ CartContainer.defaultProps = {
   }
 };
 
-exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state) {
-  var cart = state.cart;
-  var packagesStore = state.packages;
+exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state, ownProps) {
+  var initialCart = ownProps.initialCart;
+  var initialPackages = ownProps.initialPackages;
+
+  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+    cart: (0, _reducersCart.initCartStore)(state.cart, (0, _actionsCartActions.initCart)(initialCart)),
+    packages: (0, _reducersPackages.initPackageStore)(state.packages, (0, _actionsPackagesActions.initPackages)(initialPackages))
+  };
+
+  var cart = _ref.cart;
+  var packagesStore = _ref.packages;
 
   var cartDefaultUrl = cart.getIn(['cart', 'defaultUrl'], '');
   var cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
@@ -2052,7 +2067,7 @@ export const testProps = {
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Cart":8,"immutable":"immutable","react":"react","react-redux":288}],16:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":117,"../../reducers/cart":128,"../../reducers/packages":129,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Cart":8,"immutable":"immutable","react":"react","react-redux":288}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4283,6 +4298,10 @@ var _Order2 = _interopRequireDefault(_Order);
 
 var _actionsCartActions = require('../../actions/CartActions');
 
+var _reducersCart = require('../../reducers/cart');
+
+var _helpersDom = require('../../helpers/dom');
+
 var emptyList = (0, _immutable.List)();
 var emptyCoupon = (0, _immutable.Map)();
 var emptyFields = (0, _immutable.List)();
@@ -4410,8 +4429,12 @@ OrderContainer.propTypes = {
 
 OrderContainer.defaultProps = {};
 
-exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state) {
-  var cart = state.cart;
+exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state, ownProps) {
+  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+    cart: (0, _reducersCart.initCheckoutCartStore)(state.cart, (0, _actionsCartActions.initCheckout)(ownProps))
+  };
+
+  var cart = _ref.cart;
 
   var coupon = cart.get('coupon', emptyCoupon);
   var deliveryTypes = cart.get('deliveryTypes', emptyList);
@@ -5053,7 +5076,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../schemas":138,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Order":36,"immutable":"immutable","react":"react","react-redux":288}],39:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../helpers/dom":117,"../../reducers/cart":128,"../../schemas":138,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Order":36,"immutable":"immutable","react":"react","react-redux":288}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -11386,6 +11409,7 @@ module.exports = exports["default"];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+exports.canUseDOM = canUseDOM;
 var getScrollTop = function getScrollTop(elt) {
   return elt.scrollY != null ? elt.scrollY : elt.scrollTop;
 };
@@ -11403,7 +11427,12 @@ exports.setScrollTop = setScrollTop;
 var getElt = function getElt(selector) {
   return selector === 'window' ? window : document.querySelector(selector);
 };
+
 exports.getElt = getElt;
+
+function canUseDOM() {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+}
 
 },{}],118:[function(require,module,exports){
 'use strict';
@@ -12094,6 +12123,9 @@ Object.defineProperty(exports, '__esModule', {
 
 var _actionMap;
 
+exports.initCartStore = initCartStore;
+exports.initCheckoutCartStore = initCheckoutCartStore;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -12124,12 +12156,7 @@ var initialState = (0, _immutable.fromJS)({
   error: null
 });
 
-var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartActions.CART_REQUEST, function (state) {
-  return state.merge({
-    isFetching: true,
-    error: null
-  });
-}), _defineProperty(_actionMap, _actionsCartActions.CART_SUCCESS, function (state, _ref) {
+function initCartStore(state, _ref) {
   var response = _ref.response;
 
   var amounts = (0, _immutable.fromJS)(response.items).toMap().mapKeys(function (key, val) {
@@ -12148,26 +12175,39 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartAction
     isFetching: false,
     error: null
   });
-}), _defineProperty(_actionMap, _actionsCartActions.CART_FAILURE, function (state, _ref2) {
-  var error = _ref2.error;
+}
+
+function initCheckoutCartStore(state, _ref2) {
+  var data = _ref2.data;
+
+  return state.merge(data);
+}
+
+var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartActions.CART_REQUEST, function (state) {
+  return state.merge({
+    isFetching: true,
+    error: null
+  });
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SUCCESS, function (state, action) {
+  return initCartStore(state, action);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_FAILURE, function (state, _ref3) {
+  var error = _ref3.error;
 
   return state.merge({
     isFetching: false,
     error: error
   });
-}), _defineProperty(_actionMap, _actionsCartActions.CART_SET_AMOUNT, function (state, _ref3) {
-  var id = _ref3.id;
-  var amount = _ref3.amount;
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SET_AMOUNT, function (state, _ref4) {
+  var id = _ref4.id;
+  var amount = _ref4.amount;
 
   return state.setIn(['amounts', id], amount);
-}), _defineProperty(_actionMap, _actionsCartActions.CART_SET_PACKAGE, function (state, _ref4) {
-  var id = _ref4.id;
+}), _defineProperty(_actionMap, _actionsCartActions.CART_SET_PACKAGE, function (state, _ref5) {
+  var id = _ref5.id;
 
   return state.set('selectedPackage', id);
-}), _defineProperty(_actionMap, _actionsCartActions.CART_INIT_CHECKOUT, function (state, _ref5) {
-  var data = _ref5.data;
-
-  return state.merge(data);
+}), _defineProperty(_actionMap, _actionsCartActions.CART_INIT_CHECKOUT, function (state, action) {
+  return initCheckoutCartStore(state, action);
 }), _defineProperty(_actionMap, _actionsCartActions.CART_SET_FIELD_VALUE, function (state, _ref6) {
   var name = _ref6.name;
   var value = _ref6.value;
@@ -12184,7 +12224,6 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartAction
 }), _actionMap);
 
 exports['default'] = (0, _utilsCreateReducer2['default'])(initialState, actionMap);
-module.exports = exports['default'];
 
 },{"../actions/CartActions":4,"../utils/createReducer":149,"immutable":"immutable"}],129:[function(require,module,exports){
 'use strict';
@@ -12194,6 +12233,8 @@ Object.defineProperty(exports, '__esModule', {
 });
 
 var _actionMap;
+
+exports.initPackageStore = initPackageStore;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -12213,12 +12254,7 @@ var initialState = (0, _immutable.fromJS)({
   error: null
 });
 
-var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsPackagesActions.PACKAGES_REQUEST, function (state) {
-  return state.merge({
-    isFetching: true,
-    error: null
-  });
-}), _defineProperty(_actionMap, _actionsPackagesActions.PACKAGES_SUCCESS, function (state, _ref) {
+function initPackageStore(state, _ref) {
   var response = _ref.response;
 
   return state.merge({
@@ -12226,6 +12262,15 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsPackagesAc
     isFetching: false,
     error: null
   });
+}
+
+var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsPackagesActions.PACKAGES_REQUEST, function (state) {
+  return state.merge({
+    isFetching: true,
+    error: null
+  });
+}), _defineProperty(_actionMap, _actionsPackagesActions.PACKAGES_SUCCESS, function (state, action) {
+  return initPackageStore(state, action);
 }), _defineProperty(_actionMap, _actionsPackagesActions.PACKAGES_FAILURE, function (state, _ref2) {
   var error = _ref2.error;
 
@@ -12236,7 +12281,6 @@ var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsPackagesAc
 }), _actionMap);
 
 exports['default'] = (0, _utilsCreateReducer2['default'])(initialState, actionMap);
-module.exports = exports['default'];
 
 },{"../actions/PackagesActions":5,"../utils/createReducer":149,"immutable":"immutable"}],130:[function(require,module,exports){
 'use strict';

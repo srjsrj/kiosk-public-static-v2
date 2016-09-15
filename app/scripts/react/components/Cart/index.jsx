@@ -13,7 +13,14 @@ import {
   initPackages,
   fetchPackages,
 } from '../../actions/PackagesActions';
+import {
+  initCartStore,
+} from '../../reducers/cart';
+import {
+  initPackageStore,
+} from '../../reducers/packages';
 import { Map, List } from 'immutable';
+import { canUseDOM } from '../../helpers/dom';
 
 const emptyErrors = Map();
 const emptyAmounts = Map();
@@ -98,11 +105,20 @@ CartContainer.defaultProps = {
 };
 
 export default provideTranslations(connectToRedux(connect(
-  (state) => {
+  (state, ownProps) => {
+    const {
+      initialCart,
+      initialPackages,
+    } = ownProps;
     const {
       cart,
       packages: packagesStore,
-    } = state;
+    } = canUseDOM()
+      ? state
+      : ({
+        cart: initCartStore(state.cart, initCart(initialCart)),
+        packages: initPackageStore(state.packages, initPackages(initialPackages)),
+      });
 
     const cartDefaultUrl = cart.getIn(['cart', 'defaultUrl'], '');
     const cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
