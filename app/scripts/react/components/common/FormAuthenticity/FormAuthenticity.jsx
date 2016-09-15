@@ -4,11 +4,16 @@ import CSRFToken from '../CSRFToken';
 
 class FormAuthenticity extends Component {
   render() {
-    const { field, token } = this.props;
+    const {
+      field,
+      token,
+      method,
+     } = this.props;
 
     return (
       <div style={{ display: 'none!important'}}>
         <HiddenInput name="utf8" value="✓" />
+        {method && <HiddenInput name="_method" value={method} />}
         <CSRFToken field={field} token={token} />
       </div>
     );
@@ -18,6 +23,7 @@ class FormAuthenticity extends Component {
 FormAuthenticity.propTypes = {
   token: PropTypes.string,
   field: PropTypes.string,
+  method: PropTypes.string,
 };
 FormAuthenticity.defaultProps = {
   token: null,

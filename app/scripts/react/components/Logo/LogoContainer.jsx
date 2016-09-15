@@ -1,28 +1,33 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'redux/react';
+import { connect } from 'react-redux';
 import connectToRedux from '../HoC/connectToRedux';
 import Logo from './index';
 
 @connect((state) => ({
-  globalLogoUrl: state.design.getIn(['current', 'logoUrl'])
+  globalLogoUrl: state.design.getIn(['current', 'logoUrl']),
 }))
 class LogoContainer extends Component {
   static propTypes = {
+    globalLogoUrl: PropTypes.string,
     linkUrl: PropTypes.string.isRequired,
     logoText: PropTypes.string.isRequired,
     logoUrl: PropTypes.string,
     imageAlt: PropTypes.string,
-  }
+  };
   state = {
-    logoUrl: this.props.logoUrl || this.props.globalLogoUrl
-  }
+    logoUrl: this.props.logoUrl || this.props.globalLogoUrl,
+  };
   componentWillReceiveProps(nextProps) {
     if (this.state.logoUrl !== nextProps.globalLogoUrl) {
       this.setState({ logoUrl: nextProps.globalLogoUrl });
     }
   }
   render() {
-    return <Logo {...this.props} logoUrl={this.state.logoUrl} />;
+    return (
+      <Logo {...this.props}
+        logoUrl={this.state.logoUrl}
+      />
+    );
   }
 }
 

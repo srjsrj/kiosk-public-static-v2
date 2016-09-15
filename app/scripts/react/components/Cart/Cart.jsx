@@ -1,55 +1,118 @@
 import React, { Component, PropTypes } from 'react';
-import * as schemas from '../../schemas';
-import Checkout from '../Checkout';
-import CartTitle from './CartTitle';
+import { CartCoupon } from './CartCoupon';
+import CartList from './CartList';
+import FormAuthenticity from '../common/FormAuthenticity';
+import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
+import { decamelizeKeys } from 'humps';
 
 class Cart extends Component {
+  renderErrors() {
+    const {
+      cartErrors,
+    } = this.props;
+
+    return (
+      <span className="help-block">
+        {cartErrors.flatten(false).map((err, key) => (
+          <div key={`cart-error-${key}`}>
+            {err}
+          </div>
+        )).valueSeq()}
+      </span>
+    );
+  }
   render() {
     const {
-      backUrl,
-      coupon,
-      deliveryType,
-      deliveryTypes,
-      errorMessage,
-      fields,
+      amounts,
+      cartDefaultUrl,
+      cartErrors,
+      cartItems,
+      changeAmount,
+      couponCode,
       formAuthenticity,
-      onDeliveryChange,
-      onFieldChange,
-      onPaymentChange,
-      paymentType,
-      paymentTypes,
-      publicOffer,
-      submitOrderUrl,
+      packageItem,
+      packages,
+      prices,
+      selectPackage,
+      selectedPackage,
       t,
-      totalCount,
       totalPrice,
     } = this.props;
 
     return (
       <section className="b-cart">
         <div className="b-cart__content">
-          <CartTitle
-            t={t}
-            totalCount={totalCount}
-            totalPrice={totalPrice}
-          />
-          <Checkout
-            backUrl={backUrl}
-            coupon={coupon}
-            deliveryType={deliveryType}
-            deliveryTypes={deliveryTypes}
-            errorMessage={errorMessage}
-            fields={fields}
-            formAuthenticity={formAuthenticity}
-            onDeliveryChange={onDeliveryChange}
-            onFieldChange={onFieldChange}
-            onPaymentChange={onPaymentChange}
-            paymentType={paymentType}
-            paymentTypes={paymentTypes}
-            publicOffer={publicOffer}
-            submitOrderUrl={submitOrderUrl}
-            t={t}
-          />
+          <h1 className="b-cart__title" title={t('vendor.cart.title')}>
+            {t('vendor.cart.title')}
+          </h1>
+          {cartItems.count() === 0
+            ? (
+              <div className="b-text b-text_center">
+                <p>
+                  {t('vendor.cart.empty')}
+                </p>
+              </div>
+            )
+            : (
+            <form
+              acceptCharset="UTF-8"
+              action={cartDefaultUrl}
+              className="simple_form edit_cart"
+              id="edit_cart"
+              method="post"
+              noValidate
+            >
+              <FormAuthenticity {...formAuthenticity} />
+              {cartErrors.count() > 0 && this.renderErrors()}
+              <CartList
+                amounts={amounts}
+                changeAmount={changeAmount}
+                items={cartItems}
+                packageItem={packageItem}
+                packages={packages}
+                prices={prices}
+                selectPackage={selectPackage}
+                selectedPackage={selectedPackage}
+                t={t}
+              />
+              <div className="b-cart__total-sum">
+                {t('vendor.cart.overall')}
+                {' '}
+                <span>
+                  <HumanizedMoneyWithCurrency
+                    money={decamelizeKeys(totalPrice.toJS())}
+                  />
+                </span>
+              </div>
+              <div className="b-cart__action">
+                <div className="b-cart__action__container">
+                  <div className="b-cart__action__col-clear">
+                    <a
+                      className="b-cart__action__clear b-btn b-btn_trans"
+                      data-confirm={t('vendor.alerts.confirm')}
+                      data-method="delete"
+                      href={cartDefaultUrl}
+                    >
+                      {t('vendor.cart.clear')}
+                    </a>
+                  </div>
+                  <div className="b-cart__action__col-right">
+                    <CartCoupon code={couponCode} t={t} />
+                    <div className="b-cart__action__col-submit">
+                      <input
+                        className="b-cart__action__submit b-btn"
+                        data-cart-submit
+                        name="commit"
+                        type="submit"
+                        value={t('vendor.order.submit')}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            )
+          }
         </div>
       </section>
     );
@@ -57,22 +120,21 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  backUrl: PropTypes.string,
-  coupon: schemas.checkoutCoupon,
-  deliveryType: schemas.deliveryType,
-  deliveryTypes: PropTypes.arrayOf(schemas.deliveryType),
-  errorMessage: PropTypes.string,
-  fields: PropTypes.array.isRequired,
-  formAuthenticity: schemas.formAuthenticity,
-  onDeliveryChange: PropTypes.func.isRequired,
-  onFieldChange: PropTypes.func.isRequired,
-  onPaymentChange: PropTypes.func.isRequired,
-  paymentType: schemas.paymentType,
-  paymentTypes: PropTypes.arrayOf(schemas.paymentType),
-  publicOffer: schemas.checkoutPublicOffer,
-  submitOrderUrl: PropTypes.string,
-  totalCount: PropTypes.number,
-  totalPrice: schemas.money,
+  amounts: PropTypes.object.isRequired,
+  cartDefaultUrl: PropTypes.string.isRequired,
+  cartErrors: PropTypes.object.isRequired,
+  cartIsFetching: PropTypes.bool.isRequired,
+  cartItems: PropTypes.object.isRequired,
+  changeAmount: PropTypes.func.isRequired,
+  couponCode: PropTypes.string,
+  formAuthenticity: PropTypes.object,
+  packages: PropTypes.object.isRequired,
+  packageItem: PropTypes.object.isRequired,
+  prices: PropTypes.object.isRequired,
+  selectPackage: PropTypes.func.isRequired,
+  selectedPackage: PropTypes.string,
+  t: PropTypes.func.isRequired,
+  totalPrice: PropTypes.object.isRequired,
 };
 
 export default Cart;
