@@ -222,6 +222,8 @@ global.gon = {
   root_url: 'http://wannabe.3001.vkontraste.ru',
   public_api_url: 'http://wanna-be.ru/api',
   operator_api_url: 'http://wannabe.3001.vkontraste.ru/operator/api',
+  max_items_count: 100,
+  asset_host: 'assets.stage.kiiiosk.ru',
   __data: {
     design: {
       activeElementsColor: '#000000',

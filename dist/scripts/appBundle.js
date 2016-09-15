@@ -879,7 +879,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.489'
+  version: '0.0.493'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -2015,13 +2015,13 @@ var _reducersPackages = require('../../reducers/packages');
 
 var _immutable = require('immutable');
 
-var _helpersDom = require('../../helpers/dom');
-
 var emptyErrors = (0, _immutable.Map)();
 var emptyAmounts = (0, _immutable.Map)();
 var emptyItems = (0, _immutable.List)();
 var emptyItem = (0, _immutable.Map)();
 var emptyPrice = (0, _immutable.Map)();
+
+var storeInitialized = false;
 
 var CartContainer = (function (_Component) {
   _inherits(CartContainer, _Component);
@@ -2039,23 +2039,15 @@ var CartContainer = (function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props;
-      var initialCart = _props.initialCart;
-      var initialPackages = _props.initialPackages;
       var initCart = _props.initCart;
+      var initialCart = _props.initialCart;
       var initPackages = _props.initPackages;
-      var fetchCart = _props.fetchCart;
-      var fetchPackages = _props.fetchPackages;
+      var initialPackages = _props.initialPackages;
 
-      if (!initialPackages) {
-        fetchPackages();
-      } else {
-        initPackages(initialPackages);
-      }
-
-      if (!initialCart) {
-        fetchCart();
-      } else {
+      if (!storeInitialized) {
         initCart(initialCart);
+        initPackages(initialPackages);
+        storeInitialized = true;
       }
     }
   }, {
@@ -2116,7 +2108,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
   var initialCart = ownProps.initialCart;
   var initialPackages = ownProps.initialPackages;
 
-  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+  var _ref = storeInitialized ? state : {
     cart: (0, _reducersCart.initCartStore)(state.cart, (0, _actionsCartActions.initCart)(initialCart)),
     packages: (0, _reducersPackages.initPackageStore)(state.packages, (0, _actionsPackagesActions.initPackages)(initialPackages))
   };
@@ -2603,7 +2595,7 @@ export const testProps = {
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":8,"../../actions/PackagesActions":9,"../../helpers/dom":170,"../../reducers/cart":183,"../../reducers/packages":185,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Cart":18,"immutable":"immutable","react":"react","react-redux":359}],26:[function(require,module,exports){
+},{"../../actions/CartActions":8,"../../actions/PackagesActions":9,"../../reducers/cart":183,"../../reducers/packages":185,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Cart":18,"immutable":"immutable","react":"react","react-redux":359}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -7720,8 +7712,6 @@ var _actionsCartActions = require('../../actions/CartActions');
 
 var _reducersCart = require('../../reducers/cart');
 
-var _helpersDom = require('../../helpers/dom');
-
 var emptyList = (0, _immutable.List)();
 var emptyCoupon = (0, _immutable.Map)();
 var emptyFields = (0, _immutable.List)();
@@ -7729,6 +7719,8 @@ var emptyValues = (0, _immutable.Map)();
 var emptyDeliveryType = (0, _immutable.Map)();
 var emptyPaymentType = (0, _immutable.Map)();
 var emptyPrice = (0, _immutable.Map)();
+
+var storeInitialized = false;
 
 var OrderContainer = (function (_Component) {
   _inherits(OrderContainer, _Component);
@@ -7747,13 +7739,12 @@ var OrderContainer = (function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props;
-      var initialProps = _props.initialProps;
       var initCheckout = _props.initCheckout;
-      var deliveryTypes = _props.deliveryTypes;
-      var paymentTypes = _props.paymentTypes;
+      var initialProps = _props.initialProps;
 
-      if (deliveryTypes.isEmpty() || paymentTypes.isEmpty()) {
+      if (!storeInitialized) {
         initCheckout(initialProps);
+        storeInitialized = true;
       }
     }
   }, {
@@ -7850,7 +7841,7 @@ OrderContainer.propTypes = {
 OrderContainer.defaultProps = {};
 
 exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state, ownProps) {
-  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+  var _ref = storeInitialized ? state : { // TODO: move to store initialization when/if root component created
     cart: (0, _reducersCart.initCheckoutCartStore)(state.cart, (0, _actionsCartActions.initCheckout)(ownProps))
   };
 
@@ -8496,7 +8487,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":8,"../../helpers/dom":170,"../../reducers/cart":183,"../../schemas":194,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Order":73,"immutable":"immutable","react":"react","react-redux":359}],76:[function(require,module,exports){
+},{"../../actions/CartActions":8,"../../reducers/cart":183,"../../schemas":194,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Order":73,"immutable":"immutable","react":"react","react-redux":359}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

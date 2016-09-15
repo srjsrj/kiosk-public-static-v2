@@ -14,9 +14,6 @@ import {
 import {
   initCheckoutCartStore,
 } from '../../reducers/cart';
-import {
-  canUseDOM,
-} from '../../helpers/dom';
 
 const emptyList = List();
 const emptyCoupon = Map();
@@ -26,6 +23,8 @@ const emptyDeliveryType = Map();
 const emptyPaymentType = Map();
 const emptyPrice = Map();
 
+let storeInitialized = false;
+
 class OrderContainer extends Component {
   constructor(props) {
     super(props);
@@ -34,16 +33,15 @@ class OrderContainer extends Component {
     this.selectPayment = this.selectPayment.bind(this);
     this.changeFieldValue = this.changeFieldValue.bind(this);
   }
-  componentWillMount () {
+  componentWillMount() {
     const {
-      initialProps,
       initCheckout,
-      deliveryTypes,
-      paymentTypes,
+      initialProps,
     } = this.props;
 
-    if (deliveryTypes.isEmpty() || paymentTypes.isEmpty()) {
+    if (!storeInitialized) {
       initCheckout(initialProps);
+      storeInitialized = true;
     }
   }
   selectDelivery(delivery) {
@@ -135,9 +133,9 @@ OrderContainer.defaultProps = {
 
 export default provideTranslations(connectToRedux(connect(
   (state, ownProps) => {
-    const { cart } = canUseDOM()
+    const { cart } = storeInitialized
       ? state
-      : ({
+      : ({ // TODO: move to store initialization when/if root component created
         cart: initCheckoutCartStore(state.cart, initCheckout(ownProps)),
       });
     const coupon = cart.get('coupon', emptyCoupon);
