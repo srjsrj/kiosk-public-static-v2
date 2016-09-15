@@ -58,12 +58,13 @@ LocaleSwitcher = require('./react/components/LocaleSwitcher');
 'use strict';
 
 global.gon = {
-  env: 'production',
+  env: 'development',
   operator_api_url: 'http://wannabe.vagrant.dev:3000/operator/api',
   public_api_url: 'http://wannabe.vagrant.dev:3000/api',
-  thumbor_url: 'http://thumbor.kiiiosk.ru',
+  thumbor_url: 'http://thumball.brandydev.ru',
   kiiiosk: true,
-  max_items_count: 100
+  max_items_count: 100,
+  asset_host: 'assets.kiiiosk.ru'
 };
 
 require('./prerender.bundle');
@@ -1073,7 +1074,7 @@ var CartListItem = (function (_Component) {
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2['default'].createElement(_commonImage.Image, {
+          _react2['default'].createElement(_commonImage.RelativeImage, {
             className: 'b-cart__item__img',
             image: item.getIn(['good', 'image'], (0, _immutable.Map)()).toJS(),
             maxHeight: 143,
@@ -1207,7 +1208,7 @@ var CartListPackageItem = (function (_Component) {
         _react2['default'].createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2['default'].createElement(_commonImage.Image, {
+          _react2['default'].createElement(_commonImage.RelativeImage, {
             className: 'b-cart__item__img',
             image: item.getIn(['good', 'image'], (0, _immutable.Map)()).toJS(),
             maxHeight: 92,
@@ -1384,7 +1385,7 @@ var CartListPackages = (function (_Component) {
           _react2['default'].createElement(
             'div',
             { className: 'b-cart__item__col-img' },
-            _react2['default'].createElement(_commonImage.Image, {
+            _react2['default'].createElement(_commonImage.RelativeImage, {
               className: 'b-cart__item__img',
               image: packages.first().get('image').toJS(),
               maxHeight: 184,
@@ -1479,13 +1480,13 @@ var _reducersPackages = require('../../reducers/packages');
 
 var _immutable = require('immutable');
 
-var _helpersDom = require('../../helpers/dom');
-
 var emptyErrors = (0, _immutable.Map)();
 var emptyAmounts = (0, _immutable.Map)();
 var emptyItems = (0, _immutable.List)();
 var emptyItem = (0, _immutable.Map)();
 var emptyPrice = (0, _immutable.Map)();
+
+var storeInitialized = false;
 
 var CartContainer = (function (_Component) {
   _inherits(CartContainer, _Component);
@@ -1503,23 +1504,15 @@ var CartContainer = (function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props;
-      var initialCart = _props.initialCart;
-      var initialPackages = _props.initialPackages;
       var initCart = _props.initCart;
+      var initialCart = _props.initialCart;
       var initPackages = _props.initPackages;
-      var fetchCart = _props.fetchCart;
-      var fetchPackages = _props.fetchPackages;
+      var initialPackages = _props.initialPackages;
 
-      if (!initialPackages) {
-        fetchPackages();
-      } else {
-        initPackages(initialPackages);
-      }
-
-      if (!initialCart) {
-        fetchCart();
-      } else {
+      if (!storeInitialized) {
         initCart(initialCart);
+        initPackages(initialPackages);
+        storeInitialized = true;
       }
     }
   }, {
@@ -1580,7 +1573,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
   var initialCart = ownProps.initialCart;
   var initialPackages = ownProps.initialPackages;
 
-  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+  var _ref = storeInitialized ? state : {
     cart: (0, _reducersCart.initCartStore)(state.cart, (0, _actionsCartActions.initCart)(initialCart)),
     packages: (0, _reducersPackages.initPackageStore)(state.packages, (0, _actionsPackagesActions.initPackages)(initialPackages))
   };
@@ -2067,7 +2060,7 @@ export const testProps = {
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":117,"../../reducers/cart":128,"../../reducers/packages":129,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Cart":8,"immutable":"immutable","react":"react","react-redux":288}],16:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../reducers/cart":128,"../../reducers/packages":129,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Cart":8,"immutable":"immutable","react":"react","react-redux":288}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -4300,8 +4293,6 @@ var _actionsCartActions = require('../../actions/CartActions');
 
 var _reducersCart = require('../../reducers/cart');
 
-var _helpersDom = require('../../helpers/dom');
-
 var emptyList = (0, _immutable.List)();
 var emptyCoupon = (0, _immutable.Map)();
 var emptyFields = (0, _immutable.List)();
@@ -4309,6 +4300,8 @@ var emptyValues = (0, _immutable.Map)();
 var emptyDeliveryType = (0, _immutable.Map)();
 var emptyPaymentType = (0, _immutable.Map)();
 var emptyPrice = (0, _immutable.Map)();
+
+var storeInitialized = false;
 
 var OrderContainer = (function (_Component) {
   _inherits(OrderContainer, _Component);
@@ -4327,13 +4320,12 @@ var OrderContainer = (function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {
       var _props = this.props;
-      var initialProps = _props.initialProps;
       var initCheckout = _props.initCheckout;
-      var deliveryTypes = _props.deliveryTypes;
-      var paymentTypes = _props.paymentTypes;
+      var initialProps = _props.initialProps;
 
-      if (deliveryTypes.isEmpty() || paymentTypes.isEmpty()) {
+      if (!storeInitialized) {
         initCheckout(initialProps);
+        storeInitialized = true;
       }
     }
   }, {
@@ -4430,7 +4422,7 @@ OrderContainer.propTypes = {
 OrderContainer.defaultProps = {};
 
 exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state, ownProps) {
-  var _ref = (0, _helpersDom.canUseDOM)() ? state : {
+  var _ref = storeInitialized ? state : { // TODO: move to store initialization when/if root component created
     cart: (0, _reducersCart.initCheckoutCartStore)(state.cart, (0, _actionsCartActions.initCheckout)(ownProps))
   };
 
@@ -5076,7 +5068,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../helpers/dom":117,"../../reducers/cart":128,"../../schemas":138,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Order":36,"immutable":"immutable","react":"react","react-redux":288}],39:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../reducers/cart":128,"../../schemas":138,"../HoC/connectToRedux":29,"../HoC/provideTranslations":30,"./Order":36,"immutable":"immutable","react":"react","react-redux":288}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

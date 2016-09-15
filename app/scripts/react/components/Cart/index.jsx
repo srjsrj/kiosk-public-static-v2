@@ -20,13 +20,14 @@ import {
   initPackageStore,
 } from '../../reducers/packages';
 import { Map, List } from 'immutable';
-import { canUseDOM } from '../../helpers/dom';
 
 const emptyErrors = Map();
 const emptyAmounts = Map();
 const emptyItems = List();
 const emptyItem = Map();
 const emptyPrice = Map();
+
+let storeInitialized = false;
 
 class CartContainer extends Component {
   constructor(props) {
@@ -37,24 +38,16 @@ class CartContainer extends Component {
   }
   componentWillMount() {
     const {
-      initialCart,
-      initialPackages,
       initCart,
+      initialCart,
       initPackages,
-      fetchCart,
-      fetchPackages,
+      initialPackages,
     } = this.props;
 
-    if (!initialPackages) {
-      fetchPackages();
-    } else {
-      initPackages(initialPackages);
-    }
-
-    if (!initialCart) {
-      fetchCart();
-    } else {
+    if (!storeInitialized) {
       initCart(initialCart);
+      initPackages(initialPackages);
+      storeInitialized = true;
     }
   }
   changeAmount(id, amount) {
@@ -113,7 +106,7 @@ export default provideTranslations(connectToRedux(connect(
     const {
       cart,
       packages: packagesStore,
-    } = canUseDOM()
+    } = storeInitialized
       ? state
       : ({
         cart: initCartStore(state.cart, initCart(initialCart)),

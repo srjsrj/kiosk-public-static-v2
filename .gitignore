@@ -21,3 +21,4 @@ www
 /jsconfig.json
 /.jsbeautifyrc
 /.vscode
+/testPrerender.js
