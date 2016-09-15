@@ -5,6 +5,7 @@ global.gon = {
   thumbor_url: 'http://thumball.brandydev.ru',
   kiiiosk: true,
   max_items_count: 100,
+  asset_host: 'assets.kiiiosk.ru',
 };
 
 require('./prerender.bundle');
