@@ -13,3 +13,11 @@ export const setScrollTop = (elt, nextStep) => {
 export const getElt = (selector) => (
   selector === 'window' ? window : document.querySelector(selector)
 );
+
+export function canUseDOM() {
+  return !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+  );
+}

@@ -12,6 +12,14 @@ const initialState = fromJS({
   error: null,
 });
 
+export function initPackageStore(state, { response }) {
+  return state.merge({
+    packages: response,
+    isFetching: false,
+    error: null,
+  });
+}
+
 const actionMap = {
   [PACKAGES_REQUEST](state) {
     return state.merge({
@@ -20,12 +28,8 @@ const actionMap = {
     });
   },
 
-  [PACKAGES_SUCCESS](state, { response }) {
-    return state.merge({
-      packages: response,
-      isFetching: false,
-      error: null,
-    });
+  [PACKAGES_SUCCESS](state, action) {
+    return initPackageStore(state, action);
   },
 
   [PACKAGES_FAILURE](state, { error }) {
