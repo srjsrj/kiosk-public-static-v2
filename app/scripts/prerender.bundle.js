@@ -7,9 +7,13 @@ combineReducers = require('redux').combineReducers;
 Provider = require('react-redux').Provider;
 DesignReducer = require('./react/reducers/Design.prerender');
 PopupReducer = require('./react/reducers/Popup');
+CartReducer = require('./react/reducers/cart');
+PackagesReducer = require('./react/reducers/packages');
 require('./locales/numeral/ru');
 
 var prerenderReducers = combineReducers({
+  cart: CartReducer,
+  packages: PackagesReducer,
   design: DesignReducer,
   popup: PopupReducer,
 });
@@ -20,7 +24,8 @@ Logo = require('./react/components/Logo/LogoContainer');
 ProductBlock = require('./react/components/Product/ProductBlock');
 ProductCard = require('./react/components/Product/ProductCard').ProductCard;
 TopBanner = require('./react/components/TopBanner');
-CartContainer = require('./react/components/Cart');
+CartContainer = require('./react/components/Cart').default;
+CartContainerProps = require('./react/components/Cart').testProps;
 CartCoupon = require('./react/components/Cart/CartCoupon').default;
 OrderCoupon = require('./react/components/Checkout/CheckoutCoupon');
 Clientbar = require('./react/components/Clientbar');

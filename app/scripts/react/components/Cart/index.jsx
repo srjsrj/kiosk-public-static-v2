@@ -92,7 +92,71 @@ CartContainer.propTypes = {
 };
 
 CartContainer.defaultProps = {
-  /*
+  formAuthenticity: {
+    method: 'patch',
+  },
+};
+
+export default provideTranslations(connectToRedux(connect(
+  (state) => {
+    const {
+      cart,
+      packages: packagesStore,
+    } = state;
+
+    const cartDefaultUrl = cart.getIn(['cart', 'defaultUrl'], '');
+    const cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
+    const cartItems = cart.getIn(['cart', 'items'], emptyItems);
+    const cartIsFetching = cart.get('isFetching', false);
+    const packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
+    const packagesIsFetching = packagesStore.get('isFetching', false);
+    const packages = packagesStore.get('packages', emptyItems);
+    const selectedPackage = cart.get('selectedPackage', null);
+    const amounts = cart.get('amounts', emptyAmounts);
+    const couponCode = cart.getIn(['coupon', 'value'], '');
+    const prices = amounts
+      .map((amount, itemId) => {
+        const item = cartItems.find(((i) => i.get('id') === itemId), Map());
+        const actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
+
+        return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
+      });
+    const selectedPackagePrice = selectedPackage
+      ? packages.find((p) => p.get('globalId') === selectedPackage, Map()).getIn(['price', 'cents'], 0)
+      : 0;
+    const packagePrice = !packageItem.isEmpty()
+      ? packageItem.getIn(['good', 'actualPrice', 'cents'])
+      : selectedPackagePrice;
+    const totalPrice = cart
+      .getIn(['cart', 'totalPrice'], emptyPrice)
+      .set('cents', prices.reduce(((acc, price) => acc + price.get('cents', 0)), packagePrice));
+
+    return {
+      amounts,
+      cartDefaultUrl,
+      cartErrors,
+      cartIsFetching,
+      cartItems,
+      couponCode,
+      packageItem,
+      packages,
+      packagesIsFetching,
+      prices,
+      selectedPackage,
+      totalPrice,
+    };
+  },
+  {
+    changeAmount,
+    selectPackage,
+    initCart,
+    fetchCart,
+    initPackages,
+    fetchPackages,
+  }
+)(CartContainer)));
+
+export const testProps = {
   initialCart: {
     'id': 12888853,
     'total_price': {
@@ -513,68 +577,8 @@ CartContainer.defaultProps = {
       ],
     },
   ] ,
-  */
   formAuthenticity: {
     'method': 'patch',
     'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',
   },
 };
-
-export default provideTranslations(connectToRedux(connect(
-  (state) => {
-    const {
-      cart,
-      packages: packagesStore,
-    } = state;
-
-    const cartDefaultUrl = cart.getIn(['cart', 'defaultUrl'], '');
-    const cartErrors = cart.getIn(['cart', 'errors'], emptyErrors);
-    const cartItems = cart.getIn(['cart', 'items'], emptyItems);
-    const cartIsFetching = cart.get('isFetching', false);
-    const packageItem = cart.getIn(['cart', 'packageItem']) || emptyItem;
-    const packagesIsFetching = packagesStore.get('isFetching', false);
-    const packages = packagesStore.get('packages', emptyItems);
-    const selectedPackage = cart.get('selectedPackage', null);
-    const amounts = cart.get('amounts', emptyAmounts);
-    const couponCode = cart.getIn(['coupon', 'value'], '');
-    const prices = amounts
-      .map((amount, itemId) => {
-        const item = cartItems.find(((i) => i.get('id') === itemId), Map());
-        const actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
-
-        return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
-      });
-    const selectedPackagePrice = selectedPackage
-      ? packages.find((p) => p.get('globalId') === selectedPackage, Map()).getIn(['price', 'cents'], 0)
-      : 0;
-    const packagePrice = !packageItem.isEmpty()
-      ? packageItem.getIn(['good', 'actualPrice', 'cents'])
-      : selectedPackagePrice;
-    const totalPrice = cart
-      .getIn(['cart', 'totalPrice'], emptyPrice)
-      .set('cents', prices.reduce(((acc, price) => acc + price.get('cents', 0)), packagePrice));
-
-    return {
-      amounts,
-      cartDefaultUrl,
-      cartErrors,
-      cartIsFetching,
-      cartItems,
-      couponCode,
-      packageItem,
-      packages,
-      packagesIsFetching,
-      prices,
-      selectedPackage,
-      totalPrice,
-    };
-  },
-  {
-    changeAmount,
-    selectPackage,
-    initCart,
-    fetchCart,
-    initPackages,
-    fetchPackages,
-  }
-)(CartContainer)));
