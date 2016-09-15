@@ -156,6 +156,8 @@ export default provideTranslations(connectToRedux(connect(
   }
 )(CartContainer)));
 
+
+/*
 export const testProps = {
   initialCart: {
     'id': 12888853,
@@ -582,3 +584,4 @@ export const testProps = {
     'token': 'REFKvsEf/pWfNDoRM3LPVHNgTIY5d32YR4P/xACndXk=',
   },
 };
+*/
