@@ -879,7 +879,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.496'
+  version: '0.0.500'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -1652,7 +1652,7 @@ var CartListItem = (function (_Component) {
             {
               className: 'b-cart__item__remove',
               'data-method': 'delete',
-              href: item.getIn(['good', 'destroyPath'], '')
+              href: item.get('destroyPath', '')
             },
             _react2['default'].createElement(_commonAssetImage2['default'], { src: 'images/cross_white.svg' })
           )
@@ -17176,7 +17176,13 @@ function initCartStore(state, _ref) {
 function initCheckoutCartStore(state, _ref2) {
   var data = _ref2.data;
 
-  return state.merge(data);
+  var checkoutFieldValues = (0, _immutable.fromJS)(data.checkoutFields).toMap().mapKeys(function (_, f) {
+    return f.get('name');
+  }).map(function (f) {
+    return (0, _immutable.Map)({ value: f.get('value', null) });
+  });
+
+  return state.merge(data).set('checkoutFieldValues', checkoutFieldValues);
 }
 
 var actionMap = (_actionMap = {}, _defineProperty(_actionMap, _actionsCartActions.CART_REQUEST, function (state) {

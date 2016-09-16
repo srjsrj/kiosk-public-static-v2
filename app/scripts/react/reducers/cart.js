@@ -1,5 +1,6 @@
 import createReducer from '../utils/createReducer';
 import {
+  Map,
   fromJS,
 } from 'immutable';
 import {
@@ -54,7 +55,12 @@ export function initCartStore(state, { response }) {
 }
 
 export function initCheckoutCartStore(state, { data }) {
-  return state.merge(data);
+  const checkoutFieldValues = fromJS(data.checkoutFields)
+    .toMap()
+    .mapKeys((_, f) => f.get('name'))
+    .map((f) => Map({ value: f.get('value', null) }));
+
+  return state.merge(data).set('checkoutFieldValues', checkoutFieldValues);
 }
 
 const actionMap = {
