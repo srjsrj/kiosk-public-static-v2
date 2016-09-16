@@ -67,5 +67,5 @@ https://github.com/blueimp/jQuery-File-Upload/wiki/Browser-support
 * Opera Mobile 12.0+
 
 ## HTML5 FileReader
-
+ 
 * Firefox 3.6+, IE10+, and Opera 12+.# react-i18next-support
