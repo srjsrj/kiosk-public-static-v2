@@ -1,25 +1,50 @@
 import React, { Component, PropTypes } from 'react';
+import WishlistList from './WishlistList';
+import schemas from '../../schemas';
 
 class Wishlist extends Component {
   render() {
-    /*
-    %section.b-cart
-      .b-cart__content
-        - if is_private
-          %h1.b-cart__title= vt('wishlist.private_title')
-        - else
-          %h1.b-cart__title= vt('wishlist.foreign_title')
+    const {
+      wishlistItems,
+      initialCart,
+      isPrivate,
+      t,
+    } = this.props;
 
-        - if wishlist_items.any?
-          %ul.b-cart__list
-            = render partial: 'item', collection: wishlist_items, locals: { is_private: is_private }
-
-        - else
-          .b-text.b-text_center
-            %p
-              = vt('wishlist.empty')
-  */
+    return (
+      <section className="b-cart">
+        <div className="b-cart__content">
+          <h1 className="b-cart__title">
+            {t(isPrivate ? 'vendor.wishlist.private_title' : 'vendor.wishlist.foreign_title')}
+          </h1>
+          {wishlistItems.length > 0
+            ? (
+              <WishlistList
+                initialCart={initialCart}
+                isPrivate={isPrivate}
+                t={t}
+                wishlistItems={wishlistItems}
+              />
+            )
+            : (
+            <div className="b-text b-text_center">
+              <p>
+                {t('vendor.wishlist.empty')}
+              </p>
+            </div>
+            )
+          }
+        </div>
+      </section>
+    );
   }
 }
+
+Wishlist.propTypes = {
+  wishlistItems: PropTypes.arrayOf(schemas.wishlistItem).isRequired,
+  initialCart: schemas.cartApi.isRequired,
+  isPrivate: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
+};
 
 export default Wishlist;

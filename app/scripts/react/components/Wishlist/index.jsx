@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-//import { connect } from 'react-redux';
-//import connectToRedux from '../HoC/HoC/connectToRedux';
 import provideTranslations from '../HoC/provideTranslations';
 import Wishlist from './Wishlist';
+import schemas from '../../schemas';
 
 class WishlistContainer extends Component {
   render() {
@@ -11,17 +10,10 @@ class WishlistContainer extends Component {
 }
 
 WishlistContainer.propTypes = {
-  wishlistItems: PropTypes.object.isRequired,
-  initialCart: PropTypes.object.isRequired,
+  wishlistItems: PropTypes.arrayOf(schemas.wishlistItem).isRequired,
+  initialCart: schemas.cartApi.isRequired,
+  isPrivate: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
 };
-
-/*
-export default provideTranslations(connectToRedux(connect(
-  (state, ownProps) => {
-
-  }
-)(WishlistContainer)));
-*/
 
 export default provideTranslations(WishlistContainer);

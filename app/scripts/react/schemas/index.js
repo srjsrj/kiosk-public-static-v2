@@ -10,3 +10,6 @@ export { default as money } from './money';
 export { default as paymentType } from './paymentType';
 export { default as product } from './product';
 export { default as slide } from './slide';
+export cartApi from './cartApi';
+export packagesApi from './packagesApi';
+export wishlistItem from './wishlistItem';

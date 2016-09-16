@@ -2,7 +2,8 @@ import { PropTypes } from 'react';
 import money from './money';
 
 export default PropTypes.shape({
+  custom_attributes: PropTypes.object.isRequired,
   is_sale: PropTypes.bool.isRequired,
-  price: PropTypes.money,
-  actual_price: PropTypes.money,
+  price: money,
+  actual_price: money,
 });
