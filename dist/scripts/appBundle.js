@@ -2013,6 +2013,8 @@ var _reducersCart = require('../../reducers/cart');
 
 var _reducersPackages = require('../../reducers/packages');
 
+var _helpersDom = require('../../helpers/dom');
+
 var _immutable = require('immutable');
 
 var emptyErrors = (0, _immutable.Map)();
@@ -2044,7 +2046,7 @@ var CartContainer = (function (_Component) {
       var initPackages = _props.initPackages;
       var initialPackages = _props.initialPackages;
 
-      if (!storeInitialized) {
+      if (!storeInitialized && (0, _helpersDom.canUseDOM)()) {
         initCart(initialCart);
         initPackages(initialPackages);
         storeInitialized = true;
@@ -2595,7 +2597,7 @@ export const testProps = {
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":8,"../../actions/PackagesActions":9,"../../reducers/cart":183,"../../reducers/packages":185,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Cart":18,"immutable":"immutable","react":"react","react-redux":359}],26:[function(require,module,exports){
+},{"../../actions/CartActions":8,"../../actions/PackagesActions":9,"../../helpers/dom":170,"../../reducers/cart":183,"../../reducers/packages":185,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Cart":18,"immutable":"immutable","react":"react","react-redux":359}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -7712,6 +7714,8 @@ var _actionsCartActions = require('../../actions/CartActions');
 
 var _reducersCart = require('../../reducers/cart');
 
+var _helpersDom = require('../../helpers/dom');
+
 var emptyList = (0, _immutable.List)();
 var emptyCoupon = (0, _immutable.Map)();
 var emptyFields = (0, _immutable.List)();
@@ -7742,7 +7746,7 @@ var OrderContainer = (function (_Component) {
       var initCheckout = _props.initCheckout;
       var initialProps = _props.initialProps;
 
-      if (!storeInitialized) {
+      if (!storeInitialized && (0, _helpersDom.canUseDOM)()) {
         initCheckout(initialProps);
         storeInitialized = true;
       }
@@ -8487,7 +8491,7 @@ exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToR
 */
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":8,"../../reducers/cart":183,"../../schemas":194,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Order":73,"immutable":"immutable","react":"react","react-redux":359}],76:[function(require,module,exports){
+},{"../../actions/CartActions":8,"../../helpers/dom":170,"../../reducers/cart":183,"../../schemas":194,"../HoC/connectToRedux":61,"../HoC/provideTranslations":62,"./Order":73,"immutable":"immutable","react":"react","react-redux":359}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

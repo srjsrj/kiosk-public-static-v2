@@ -19,6 +19,9 @@ import {
 import {
   initPackageStore,
 } from '../../reducers/packages';
+import {
+  canUseDOM,
+} from '../../helpers/dom';
 import { Map, List } from 'immutable';
 
 const emptyErrors = Map();
@@ -44,7 +47,7 @@ class CartContainer extends Component {
       initialPackages,
     } = this.props;
 
-    if (!storeInitialized) {
+    if (!storeInitialized && canUseDOM()) {
       initCart(initialCart);
       initPackages(initialPackages);
       storeInitialized = true;
