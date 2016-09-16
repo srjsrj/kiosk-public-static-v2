@@ -14,6 +14,9 @@ import {
 import {
   initCheckoutCartStore,
 } from '../../reducers/cart';
+import {
+  canUseDOM,
+} from '../../helpers/dom';
 
 const emptyList = List();
 const emptyCoupon = Map();
@@ -39,7 +42,7 @@ class OrderContainer extends Component {
       initialProps,
     } = this.props;
 
-    if (!storeInitialized) {
+    if (!storeInitialized && canUseDOM()) {
       initCheckout(initialProps);
       storeInitialized = true;
     }

@@ -33,7 +33,7 @@ class CartListPackageItem extends Component {
         <div className="b-cart__item__col-content">
           <h2 className="b-cart__item__title">
             <a
-              href={item.get('defaultUrl', '')}
+              href={item.getIn(['good', 'defaultUrl'], '')}
               target="_blank"
             >
               {item.getIn(['good', 'title'], '')}

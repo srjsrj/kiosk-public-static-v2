@@ -171,7 +171,7 @@ class CartListItem extends Component {
           <a
             className="b-cart__item__remove"
             data-method="delete"
-            href={item.getIn(['good', 'destroyPath'], '')}
+            href={item.get('destroyPath', '')}
           >
             <AssetImage src="images/cross_white.svg" />
           </a>
