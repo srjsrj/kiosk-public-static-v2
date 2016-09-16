@@ -1224,7 +1224,7 @@ var CartListPackageItem = (function (_Component) {
             _react2['default'].createElement(
               'a',
               {
-                href: item.get('defaultUrl', ''),
+                href: item.getIn(['good', 'defaultUrl'], ''),
                 target: '_blank'
               },
               item.getIn(['good', 'title'], '')

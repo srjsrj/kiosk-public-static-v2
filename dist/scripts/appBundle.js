@@ -879,7 +879,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.500'
+  version: '0.0.501'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -1759,7 +1759,7 @@ var CartListPackageItem = (function (_Component) {
             _react2['default'].createElement(
               'a',
               {
-                href: item.get('defaultUrl', ''),
+                href: item.getIn(['good', 'defaultUrl'], ''),
                 target: '_blank'
               },
               item.getIn(['good', 'title'], '')
