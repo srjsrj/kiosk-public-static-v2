@@ -1,0 +1,22 @@
+import React, { Component, PropTypes } from 'react';
+import { map } from 'lodash';
+
+class GoodDetails extends Component {
+  render() {
+    const {
+      details,
+    } = this.props;
+
+    return map(details, (val, key) => (
+      <div className="b-cart__item__option" key={`custom-attr-${key}`}>
+        {`${key}: ${val}`}
+      </div>
+    ));
+  }
+}
+
+GoodDetails.propTypes = {
+  details: PropTypes.object.isRequired,
+};
+
+export default GoodDetails;

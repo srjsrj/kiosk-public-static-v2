@@ -2,7 +2,7 @@ import { PropTypes } from 'react';
 import money from './money';
 import image from './image';
 
-export PropTypes.arrayOf(PropTypes.shape({
+export default PropTypes.arrayOf(PropTypes.shape({
   id: PropTypes.number.isRequired,
   global_id: PropTypes.string.isRequired,
   has_ordering_goods: PropTypes.bool.isRequired,

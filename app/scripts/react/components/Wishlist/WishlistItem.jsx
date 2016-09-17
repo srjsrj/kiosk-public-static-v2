@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import schemas from '../../schemas';
 import AssetImage from '../common/AssetImage';
+import { humanizedMoneyWithCurrency } from '../../helpers/money';
+import GoodDetails from '../common/GoodDetails';
+import WishlistAddToCartButton from './WishlistAddToCartButton';
 
 class WishlistItem extends Component {
   render() {
@@ -8,6 +11,7 @@ class WishlistItem extends Component {
       item,
       isInCart,
       isPrivate,
+      t,
     } = this.props;
 
     return (
@@ -24,11 +28,25 @@ class WishlistItem extends Component {
               {item.product.title}
             </a>
           </h2>
-          {this.renderGoodDetails()}
+          <GoodDetails details={item.good.custom_attributes} />
         </div>
         <div className="b-cart__item__col-quantity" />
         <div className="b-cart__item__col-price">
-          
+          <div className="b-cart__item__price">
+            {item.good.price != null
+              ? humanizedMoneyWithCurrency(item.good.price)
+              : t('vendor.wishlist.no_price')
+            }
+          </div>
+          {item.good.has_ordering_goods && (
+            <WishlistAddToCartButton
+              href={item.good.add_to_cart_url}
+              id={item.good.id}
+              isInCart={isInCart}
+              t={t}
+              title={item.good.long_title}
+            />
+          )}
         </div>
         {isPrivate && (
           <div className="b-cart__item__col-remove">
@@ -42,30 +60,7 @@ class WishlistItem extends Component {
           </div>
         )}
       </li>
-    )
-    /*
-    %li.b-cart__item
-      .b-cart__item__col-img
-        = image_tag item.good.mandatory_index_image.adjusted_url(width: 143, height: 143), class: 'b-cart__item__img'
-      .b-cart__item__col-content
-        %h2.b-cart__item__title
-          = link_to item.product.title, vendor_product_path(item.product), :target => '_blank'
-        = good_details item.good
-
-      .b-cart__item__col-quantity
-
-      .b-cart__item__col-price
-        .b-wishlist__item__price
-          = wishlist_item_price item
-
-        = wishlist_item_to_cart_button item
-
-      - if is_private
-        .b-cart__item__col-remove
-          = link_to vendor_wishlist_item_path(item.id, good_id: item.good.global_id), class: 'b-cart__item__remove', method: :delete do
-            %img{src: asset_url('images/cross_white.svg'), alt: ''}
-
-    */
+    );
   }
 }
 
@@ -73,6 +68,7 @@ WishlistItem.propTypes = {
   isInCart: PropTypes.bool.isRequired,
   isPrivate: PropTypes.bool.isRequired,
   item: schemas.wishlistItem,
+  t: PropTypes.func.isRequired,
 };
 
 export default WishlistItem;

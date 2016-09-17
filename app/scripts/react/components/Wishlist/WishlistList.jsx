@@ -1,30 +1,33 @@
 import React, { Component, PropTypes } from 'react';
 import WishlistItem from './WishlistItem';
-import schemas from '../../schemas';
+import * as schemas from '../../schemas';
 
 class WishlistList extends Component {
+  isInCart(item) {
+    const {
+      initialCart,
+    } = this.props;
+
+    return !!initialCart.items.filter((i) => i.good.id === item.good.id).length;
+  }
   render() {
     const {
       wishlistItems,
-      initialCart,
       isPrivate,
       t,
     } = this.props;
 
     return (
       <ul className="b-cart__list">
-        {wishlistItems.map((item) => {
-          const isInCart = true;
-
-          return (
-            <WishlistItem
-              isInCart={isInCart}
-              isPrivate={isPrivate}
-              item={item}
-              t={t}
-            />
-          );
-        })}
+        {wishlistItems.map((item, idx) => (
+          <WishlistItem
+            isInCart={this.isInCart(item)}
+            isPrivate={isPrivate}
+            item={item}
+            key={`wishlist-item-${idx}`}
+            t={t}
+          />
+        ))}
       </ul>
     );
   }

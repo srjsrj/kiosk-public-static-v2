@@ -6,4 +6,5 @@ export default PropTypes.shape({
   is_sale: PropTypes.bool.isRequired,
   price: money,
   actual_price: money,
+  add_to_cart_url: PropTypes.string,
 });
