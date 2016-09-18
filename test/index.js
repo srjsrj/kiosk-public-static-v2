@@ -19,3 +19,4 @@ import './react/components/Product/ProductCard/ProductCardDetails.test';
 import './react/components/Product/ProductCard/ProductCardGallerySlider.test';
 import './react/components/Product/ProductProperties/index.test';
 import './react/components/Cart/CartCoupon.test';
+import './react/components/Wishlist/index.test';
