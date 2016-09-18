@@ -7,11 +7,16 @@ class GoodDetails extends Component {
       details,
     } = this.props;
 
-    return map(details, (val, key) => (
-      <div className="b-cart__item__option" key={`custom-attr-${key}`}>
-        {`${key}: ${val}`}
+    return (
+      <div>
+        {map(details, (val, key) => (
+          <div className="b-cart__item__option" key={`custom-attr-${key}`}>
+            {`${key}: ${val}`}
+          </div>
+          ))
+        }
       </div>
-    ));
+    );
   }
 }
 

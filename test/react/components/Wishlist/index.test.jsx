@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import then from '../../../utils/then';
 import t from '../../../mocks/t';
 
-import { Wishlist } from '../../../../app/scripts/react/components/Wishlist';
+import Wishlist from '../../../../app/scripts/react/components/Wishlist';
 
 describe('[Component] Wishlist', () => {
   it('should render without errors when there aren\'t any props', () => {

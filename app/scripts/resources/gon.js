@@ -20,6 +20,19 @@ global.gon = {
           results_title: "Результаты поиска (%{count})",
           nothing_found: "К сожалению, ничего не найдено."
         },
+        button: {
+          "to_cart": "Добавить в корзину %{title}",
+          "select_good": "Выберите характеристику",
+          "go_wishlist": "Перейти в \"Список желаний\"",
+          "to_wishlist": "Добавить в \"Список желаний\"",
+          "already": "Уже в корзине",
+          "disable_with": {
+            "sending":"Отправляем...",
+            "saving":"Сохраняем...",
+            "waiting":"Подождите...",
+            "adding":"Добавляем...",
+          },
+        },
         errors: {
           cart: {
             empty: "В корзине нет товаров"
@@ -52,6 +65,14 @@ global.gon = {
           product: '%{count} товар',
           product_plural_2: '%{count} товара',
           product_plural_5: '%{count} товаров'
+        },
+        wishlist: {
+          add_item: "Добавить в список желаний",
+          empty: "Пока тут ничего нет",
+          foreign_title: "Чей-то список желаний",
+          no_price: "Не продается",
+          private_title: "Ваш список желаний",
+          wishlist_button: "Список желаний",
         },
         order: {
           fields: {
@@ -185,18 +206,6 @@ global.gon = {
             "run_out": "Под заказ",
             "sale": "Распродажа",
             "unknown": "unknown"
-          }
-        },
-        "button": {
-          "go_wishlist": 'Перейти в "Список желаний"',
-          "to_cart": "В корзину",
-          "to_wishlist": 'Добавить в "Список желаний"',
-          "select_good": "Выберите характеристику",
-          "disable_with": {
-            "sending": "Отправляем...",
-            "saving": "Сохраняем...",
-            "waiting": "Подождите...",
-            "adding": "Добавляем..."
           }
         },
         "money": {

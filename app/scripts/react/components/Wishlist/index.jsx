@@ -22,7 +22,10 @@ WishlistContainer.defaultProps = {
       good: {
         id: 1,
         add_to_cart_url: '/good/add_to_cart/1',
+        default_url: '/good/1',
         long_title: 'good 1 long title',
+        has_ordering_goods: true,
+        is_sale: false,
         price: {
           cents: 1000,
           currency_iso_code: 'RUB',
@@ -31,9 +34,14 @@ WishlistContainer.defaultProps = {
           'attr 1.1': 'value 1.1',
           'attr 1.2': 'value 1.2',
         },
+        image: {
+          url: '',
+        },
       },
       product: {
+        id: 1,
         title: 'product 1',
+        has_ordering_goods: true,
       },
       destroy_url: '/destroy/1',
     },
@@ -41,10 +49,16 @@ WishlistContainer.defaultProps = {
       good: {
         id: 2,
         add_to_cart_url: '/good/add_to_cart/2',
+        default_url: '/good/2',
         long_title: 'good 2 long title',
+        has_ordering_goods: true,
+        is_sale: false,
         price: {
           cents: 2000,
           currency_iso_code: 'RUB',
+        },
+        image: {
+          url: '',
         },
         custom_attributes: {
           'attr 2.1': 'value 2.1',
@@ -52,8 +66,11 @@ WishlistContainer.defaultProps = {
         },
       },
       product: {
+        id: 2,
         title: 'product 2',
+        has_ordering_goods: true,
       },
+      destroy_url: '/destroy/2',
     },
   ],
   initialCart: {
@@ -69,8 +86,12 @@ WishlistContainer.defaultProps = {
         },
       },
     ],
+    totalPrice: {
+      cents: 5000,
+      currency_iso_code: 'RUB',
+    },
   },
-  isPrivate: false,
+  isPrivate: true,
 };
 
 export default provideTranslations(WishlistContainer);

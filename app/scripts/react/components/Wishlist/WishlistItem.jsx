@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import schemas from '../../schemas';
+import * as schemas from '../../schemas';
 import AssetImage from '../common/AssetImage';
+import Image from '../common/Image/Image';
 import { humanizedMoneyWithCurrency } from '../../helpers/money';
 import GoodDetails from '../common/GoodDetails';
 import WishlistAddToCartButton from './WishlistAddToCartButton';
@@ -17,12 +18,17 @@ class WishlistItem extends Component {
     return (
       <li className="b-cart__item">
         <div className="b-cart__item__col-img">
-          <Image />
+          <Image
+            className="b-cart__item_img"
+            image={item.good.image}
+            maxHeight={143}
+            maxWidth={143}
+          />
         </div>
         <div className="b-cart__item__col-content">
           <h2 className="b-cart__item__title">
             <a
-              href=""
+              href={item.good.default_url}
               target="_blank"
             >
               {item.product.title}
