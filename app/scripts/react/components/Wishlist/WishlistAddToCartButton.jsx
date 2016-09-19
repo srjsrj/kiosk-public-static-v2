@@ -22,7 +22,7 @@ class WishlistAddToCartButton extends Component {
           <a
             className="b-btn element--active-opacity"
             data-method="post"
-            data-disable-with={t('vendov.button.disable_with.adding')}
+            data-disable-with={t('vendor.button.disable_with.adding')}
             href={href}
           >
             {t('vendor.button.to_cart', { title })}

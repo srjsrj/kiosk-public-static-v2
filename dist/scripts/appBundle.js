@@ -885,7 +885,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.508'
+  version: '0.0.511'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -13147,7 +13147,7 @@ var WishlistAddToCartButton = (function (_Component) {
           {
             className: "b-btn element--active-opacity",
             "data-method": "post",
-            "data-disable-with": t('vendov.button.disable_with.adding'),
+            "data-disable-with": t('vendor.button.disable_with.adding'),
             href: href
           },
           t('vendor.button.to_cart', { title: title })
@@ -13277,7 +13277,7 @@ var WishlistItem = (function (_Component) {
             id: item.good.id,
             isInCart: isInCart,
             t: t,
-            title: item.good.long_title
+            title: item.good.title
           })
         ),
         isPrivate && _react2['default'].createElement(
@@ -13463,7 +13463,7 @@ WishlistContainer.defaultProps = {
   wishlistItems: [],
   initialCart: {
     items: [],
-    totalPrice: {},
+    total_price: {},
     errors: {},
     default_url: ''
   },
@@ -18144,8 +18144,8 @@ var _good2 = _interopRequireDefault(_good);
  */
 
 exports['default'] = _react.PropTypes.shape({
-  totalCount: _react.PropTypes.number,
-  totalPrice: _money2['default'].isRequired,
+  total_count: _react.PropTypes.number,
+  total_price: _money2['default'].isRequired,
   items: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     good: _good2['default'].isRequired,
     destroy_path: _react.PropTypes.string.isRequired,
