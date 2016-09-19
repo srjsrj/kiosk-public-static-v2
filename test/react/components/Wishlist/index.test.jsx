@@ -1,20 +1,52 @@
 /*global describe, it */
 import React from 'react';
-import { renderIntoDocument } from 'react-addons-test-utils';
 import { expect } from 'chai';
+import { render } from 'enzyme';
+
+import synteticData from '../../../fixtures/wishlist/synteticData';
 
 import then from '../../../utils/then';
 import t from '../../../mocks/t';
 
-import Wishlist from '../../../../app/scripts/react/components/Wishlist';
+import WishlistContainer from '../../../../app/scripts/react/components/Wishlist';
 
-describe('[Component] Wishlist', () => {
+describe('[Component] WishlistContainer', () => {
   it('should render without errors when there aren\'t any props', () => {
     const props = { t };
-    const component = renderIntoDocument(
-      <Wishlist {...props} />
-    );
 
-    expect(component).to.be.an('object');
+    expect(render(<WishlistContainer {...props} />)).to.be.an('object');
   });
+
+  it('should render properly when right props provided', () => {
+    const props = {
+      ...synteticData,
+      t,
+    };
+
+    expect(render(<WishlistContainer {...props} />)).to.be.an('object');
+  });
+
+  it('should have `already` button for goods already in the cart', () => {
+    const props = {
+      ...synteticData,
+      t,
+    };
+
+    expect(render(<WishlistContainer {...props} />)
+      .find('li.b-cart__item .b-add-cart-button-text')
+      .eq(0)
+      .text()
+    ).to.equal('vendor.button.already');
+  });
+
+  it('should have `add to cart` button when good is not in the cart', () => {
+    const props = { ...synteticData, t };
+
+    expect(render(<WishlistContainer {...props} />)
+      .find('li.b-cart__item .b-add-cart-button')
+      .eq(1)
+      .find('a')
+      .attr('href')
+    ).to.equal(props.wishlistItems[1].good.add_to_cart_url);
+  });  
 });

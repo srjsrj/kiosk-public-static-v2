@@ -24,4 +24,8 @@ GoodDetails.propTypes = {
   details: PropTypes.object.isRequired,
 };
 
+GoodDetails.defaultProps = {
+  details: {},
+};
+
 export default GoodDetails;

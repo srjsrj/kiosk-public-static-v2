@@ -61,6 +61,7 @@
     "css-loader": "^0.23.0",
     "del": "^1.2.0",
     "envify": "^3.4.0",
+    "enzyme": "^2.4.1",
     "eslint": "^3.4.0",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-react": "^6.2.0",

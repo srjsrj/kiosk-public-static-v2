@@ -49,14 +49,14 @@ const prerenderDependencies = {
 
 function getDependencies(env) {
   switch (env) {
-  case 'static':
-    return {...baseDependencies, ...staticDependencies };
-  case 'test':
-    return {...baseDependencies, ...testDependencies };
-  case 'prerender':
-    return {...baseDependencies, ...prerenderDependencies };
-  default:
-    return baseDependencies;
+    case 'static':
+      return {...baseDependencies, ...staticDependencies };
+    case 'test':
+      return {...baseDependencies, ...testDependencies };
+    case 'prerender':
+      return {...baseDependencies, ...prerenderDependencies };
+    default:
+      return baseDependencies;
   }
 }
 
@@ -93,7 +93,7 @@ gulp.task('[Static] Client scripts', () => {
       .on('error', handleErrors)
       .pipe(source(config.static.client.outputName))
       .pipe(gulp.dest(config.static.client.dest))
-      .on('end', function () {
+      .on('end', function() {
         bundleLogger.end(config.static.client.outputName);
       });
   };
@@ -148,10 +148,13 @@ gulp.task('[Static] Test scripts', () => {
     cache: {},
     packageCache: {},
     entries: config.static.test.entries,
-    extensions: config.static.test.extensions
+    extensions: config.static.test.extensions,
   });
 
   externalDependencies('static', bundler);
+  bundler
+    .external('react/lib/ReactContext')
+    .external('react/lib/ExecutionEnvironment');
 
   function rebundle() {
     bundleLogger.start(config.static.test.outputName);
@@ -160,7 +163,7 @@ gulp.task('[Static] Test scripts', () => {
       .on('error', handleErrors)
       .pipe(source(config.static.test.outputName))
       .pipe(gulp.dest(config.static.test.dest))
-      .on('end', function () {
+      .on('end', function() {
         bundleLogger.end(config.static.test.outputName);
       });
   };
@@ -209,7 +212,7 @@ gulp.task('[Production] Scripts', () => {
     .pipe(source(config.production.bundle.outputName))
     //.pipe(streamify(uglify({ mangle: false })))
     .pipe(gulp.dest(config.production.bundle.dest))
-    .on('end', function () {
+    .on('end', function() {
       bundleLogger.end(config.production.bundle.outputName);
     });
 });
