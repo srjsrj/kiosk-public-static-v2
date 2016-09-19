@@ -18,4 +18,10 @@ $(() => {
 
     Bugsnag.notify(name, message, metaData, severity);
   });
+
+  Bugsnag.print = (error, message) => {
+    console.warn(error, message);
+
+    Bugsnag.notify(error, message);
+  };
 });

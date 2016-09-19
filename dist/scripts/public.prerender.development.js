@@ -8168,6 +8168,7 @@ exports['default'] = ProductGoodPrices;
 module.exports = exports['default'];
 
 },{"../../common/Money/HumanizedMoney":114,"../../common/Money/HumanizedMoneyWithCurrency":115,"react":"react"}],76:[function(require,module,exports){
+/*global Bugsnag */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -8251,7 +8252,7 @@ var ProductPrices = (function (_Component) {
           product: product,
           t: t
         });
-      } else if (product.has_ordering_goods) {
+      } else if (Array.isArray(product.goods) && product.goods.length > 0) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
@@ -8264,9 +8265,13 @@ var ProductPrices = (function (_Component) {
             t: t
           });
         }
-      }
+      } else {
+        if (typeof Bugsnag === 'object' && typeof Bugsnag.print === 'function') {
+          Bugsnag.print('Ошибка ProductPrices', 'Product:id[' + product.id + '] не имеет ни одного элемента goods');
+        }
 
-      return null;
+        return null;
+      }
     }
   }]);
 

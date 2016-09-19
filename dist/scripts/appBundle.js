@@ -145,6 +145,12 @@ $(function () {
 
     Bugsnag.notify(name, message, metaData, severity);
   });
+
+  Bugsnag.print = function (error, message) {
+    console.warn(error, message);
+
+    Bugsnag.notify(error, message);
+  };
 });
 
 },{}],3:[function(require,module,exports){
@@ -879,7 +885,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.507'
+  version: '0.0.508'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -11585,6 +11591,7 @@ exports['default'] = ProductGoodPrices;
 module.exports = exports['default'];
 
 },{"../../common/Money/HumanizedMoney":162,"../../common/Money/HumanizedMoneyWithCurrency":163,"react":"react"}],113:[function(require,module,exports){
+/*global Bugsnag */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -11668,7 +11675,7 @@ var ProductPrices = (function (_Component) {
           product: product,
           t: t
         });
-      } else if (product.has_ordering_goods) {
+      } else if (Array.isArray(product.goods) && product.goods.length > 0) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
@@ -11681,9 +11688,13 @@ var ProductPrices = (function (_Component) {
             t: t
           });
         }
-      }
+      } else {
+        if (typeof Bugsnag === 'object' && typeof Bugsnag.print === 'function') {
+          Bugsnag.print('Ошибка ProductPrices', 'Product:id[' + product.id + '] не имеет ни одного элемента goods');
+        }
 
-      return null;
+        return null;
+      }
     }
   }]);
 

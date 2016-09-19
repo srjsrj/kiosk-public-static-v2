@@ -1,3 +1,4 @@
+/*global Bugsnag */
 import React, { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
 import ProductGoodPrice from './ProductGoodPrice';
@@ -41,7 +42,7 @@ class ProductPrices extends Component {
           t={t} 
         />
       );
-    } else if (product.has_ordering_goods) {
+    } else if (Array.isArray(product.goods) && product.goods.length > 0) {
       const maxPrice = this.getMaxPrice(product.goods);
       const minPrice = this.getMinPrice(product.goods);
 
@@ -58,9 +59,13 @@ class ProductPrices extends Component {
           />
         );
       }
-    }
+    } else {
+      if (typeof Bugsnag === 'object' && typeof Bugsnag.print === 'function') {
+        Bugsnag.print('Ошибка ProductPrices', `Product:id[${product.id}] не имеет ни одного элемента goods`);
+      }
 
-    return null;
+      return null;
+    }
   }
 }
 
