@@ -13,8 +13,8 @@ import good from './good';
  */
 
 export default PropTypes.shape({
-  totalCount: PropTypes.number,
-  totalPrice: money.isRequired,
+  total_count: PropTypes.number,
+  total_price: money.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     good: good.isRequired,
     destroy_path: PropTypes.string.isRequired,

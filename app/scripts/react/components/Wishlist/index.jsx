@@ -20,7 +20,7 @@ WishlistContainer.defaultProps = {
   wishlistItems: [],
   initialCart: {
     items: [],
-    totalPrice: {},
+    total_price: {},
     errors: {},
     default_url: '',
   },

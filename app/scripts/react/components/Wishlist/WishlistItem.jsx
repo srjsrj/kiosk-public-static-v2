@@ -50,7 +50,7 @@ class WishlistItem extends Component {
               id={item.good.id}
               isInCart={isInCart}
               t={t}
-              title={item.good.long_title}
+              title={item.good.title}
             />
           )}
         </div>

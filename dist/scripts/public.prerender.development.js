@@ -8168,6 +8168,7 @@ exports['default'] = ProductGoodPrices;
 module.exports = exports['default'];
 
 },{"../../common/Money/HumanizedMoney":114,"../../common/Money/HumanizedMoneyWithCurrency":115,"react":"react"}],76:[function(require,module,exports){
+/*global Bugsnag */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -8210,30 +8211,34 @@ var ProductPrices = (function (_Component) {
   _createClass(ProductPrices, [{
     key: 'getMinPrice',
     value: function getMinPrice(goods) {
-      var minPrice = goods[0].actual_price;
+      var minPrice = { cents: +Infinity };
 
-      for (var i = 1; i < goods.length; i++) {
+      for (var i = 0; i < goods.length; i++) {
         var good = goods[i];
 
-        if (good.actual_price.cents < minPrice.cents) {
-          minPrice = good.actual_price;
+        if (good.actual_price != null && typeof good.actual_price === 'object') {
+          if (good.actual_price.cents < minPrice.cents) {
+            minPrice = good.actual_price;
+          }
         }
-      };
+      }
 
       return minPrice;
     }
   }, {
     key: 'getMaxPrice',
     value: function getMaxPrice(goods) {
-      var maxPrice = goods[0].actual_price;
+      var maxPrice = { cents: -Infinity };
 
-      for (var i = 1; i < goods.length; i++) {
+      for (var i = 0; i < goods.length; i++) {
         var good = goods[i];
 
-        if (good.actual_price.cents > maxPrice.cents) {
-          maxPrice = good.actual_price;
+        if (good.actual_price != null && typeof good.actual_price === 'object') {
+          if (good.actual_price.cents > maxPrice.cents) {
+            maxPrice = good.actual_price;
+          }
         }
-      };
+      }
 
       return maxPrice;
     }
@@ -8246,19 +8251,35 @@ var ProductPrices = (function (_Component) {
       var t = _props.t;
 
       if (good) {
-        return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: good, product: product, t: t });
-      } else if (product.has_ordering_goods) {
+        return _react2['default'].createElement(_ProductGoodPrice2['default'], {
+          good: good,
+          product: product,
+          t: t
+        });
+      } else if (Array.isArray(product.goods) && product.goods.length > 0) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
-        if ((0, _deepDiff.diff)(minPrice, maxPrice)) {
-          return _react2['default'].createElement(_ProductGoodPrices2['default'], { minPrice: minPrice, maxPrice: maxPrice });
-        } else {
-          return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: product.goods[0], product: product, t: t });
+        if (!isFinite(maxPrice.cents)) {
+          return null;
         }
-      }
 
-      return null;
+        if ((0, _deepDiff.diff)(minPrice, maxPrice)) {
+          return _react2['default'].createElement(_ProductGoodPrices2['default'], { maxPrice: maxPrice, minPrice: minPrice });
+        } else {
+          return _react2['default'].createElement(_ProductGoodPrice2['default'], {
+            good: product.goods[0],
+            product: product,
+            t: t
+          });
+        }
+      } else {
+        if (typeof Bugsnag === 'object' && typeof Bugsnag.warn === 'function') {
+          Bugsnag.warn('Ошибка ProductPrices', 'Product:id[' + product.id + '] не имеет ни одного элемента goods');
+        }
+
+        return null;
+      }
     }
   }]);
 
@@ -8267,7 +8288,8 @@ var ProductPrices = (function (_Component) {
 
 ProductPrices.propTypes = {
   good: _react.PropTypes.object,
-  product: _react.PropTypes.object.isRequired
+  product: _react.PropTypes.object.isRequired,
+  t: _react.PropTypes.func.isRequired
 };
 
 exports['default'] = ProductPrices;
@@ -9452,7 +9474,7 @@ var WishlistAddToCartButton = (function (_Component) {
           {
             className: "b-btn element--active-opacity",
             "data-method": "post",
-            "data-disable-with": t('vendov.button.disable_with.adding'),
+            "data-disable-with": t('vendor.button.disable_with.adding'),
             href: href
           },
           t('vendor.button.to_cart', { title: title })
@@ -9582,7 +9604,7 @@ var WishlistItem = (function (_Component) {
             id: item.good.id,
             isInCart: isInCart,
             t: t,
-            title: item.good.long_title
+            title: item.good.title
           })
         ),
         isPrivate && _react2['default'].createElement(
@@ -9768,7 +9790,7 @@ WishlistContainer.defaultProps = {
   wishlistItems: [],
   initialCart: {
     items: [],
-    totalPrice: {},
+    total_price: {},
     errors: {},
     default_url: ''
   },
@@ -13093,8 +13115,8 @@ var _good2 = _interopRequireDefault(_good);
  */
 
 exports['default'] = _react.PropTypes.shape({
-  totalCount: _react.PropTypes.number,
-  totalPrice: _money2['default'].isRequired,
+  total_count: _react.PropTypes.number,
+  total_price: _money2['default'].isRequired,
   items: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     good: _good2['default'].isRequired,
     destroy_path: _react.PropTypes.string.isRequired,
