@@ -2,6 +2,16 @@ import { PropTypes } from 'react';
 import money from './money';
 import good from './good';
 
+/**
+ * Схема которую возвращает бэкенд /v1/carts/show.json
+ * 
+ * Используется в компонентах: WishlistContainer, CartContainer
+ * 
+ * totalCount - кол-во позиций в корзине (WishlistContainer)
+ * totalPrice - полная цена корзины без учета доставки (WishlistContainer)
+ * default_url - урл для сабмита/очистки корзины (CartContainer)
+ */
+
 export default PropTypes.shape({
   totalCount: PropTypes.number,
   totalPrice: money.isRequired,

@@ -52,10 +52,10 @@ ImageSlider = require('./react/components/common/ImageSlider');
 CurrencySwitcher = require('./react/components/CurrencySwitcher');
 LocaleSwitcher = require('./react/components/LocaleSwitcher');
 Pagination = require('./react/components/Pagination').default;
-WishlistContainer = require('./react/components/WishList');
+WishlistContainer = require('./react/components/Wishlist');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/Cart":15,"./react/components/Cart/CartCoupon":10,"./react/components/Checkout/CheckoutCoupon":18,"./react/components/Clientbar":26,"./react/components/CurrencySwitcher":28,"./react/components/LocaleSwitcher":32,"./react/components/Logo/LogoContainer":33,"./react/components/Order":38,"./react/components/Pagination":40,"./react/components/Product/ProductBlock":49,"./react/components/Product/ProductCard":66,"./react/components/ScrollToTop":84,"./react/components/TopBanner":85,"./react/components/WishList":90,"./react/components/common/ImageSlider":109,"./react/reducers/Design.prerender":134,"./react/reducers/Popup":135,"./react/reducers/cart":136,"./react/reducers/packages":137,"react":"react","react-dom":"react-dom","react-dom/server":296,"react-redux":299,"redux":"redux"}],3:[function(require,module,exports){
+},{"./locales/numeral/ru":1,"./react/components/Cart":15,"./react/components/Cart/CartCoupon":10,"./react/components/Checkout/CheckoutCoupon":18,"./react/components/Clientbar":26,"./react/components/CurrencySwitcher":28,"./react/components/LocaleSwitcher":32,"./react/components/Logo/LogoContainer":33,"./react/components/Order":38,"./react/components/Pagination":40,"./react/components/Product/ProductBlock":49,"./react/components/Product/ProductCard":66,"./react/components/ScrollToTop":84,"./react/components/TopBanner":85,"./react/components/Wishlist":90,"./react/components/common/ImageSlider":109,"./react/reducers/Design.prerender":134,"./react/reducers/Popup":135,"./react/reducers/cart":136,"./react/reducers/packages":137,"react":"react","react-dom":"react-dom","react-dom/server":296,"react-redux":299,"redux":"redux"}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -13082,6 +13082,16 @@ var _good = require('./good');
 
 var _good2 = _interopRequireDefault(_good);
 
+/**
+ * Схема которую возвращает бэкенд /v1/carts/show.json
+ * 
+ * Используется в компонентах: WishlistContainer, CartContainer
+ * 
+ * totalCount - кол-во позиций в корзине (WishlistContainer)
+ * totalPrice - полная цена корзины без учета доставки (WishlistContainer)
+ * default_url - урл для сабмита/очистки корзины (CartContainer)
+ */
+
 exports['default'] = _react.PropTypes.shape({
   totalCount: _react.PropTypes.number,
   totalPrice: _money2['default'].isRequired,
@@ -13214,6 +13224,12 @@ var _money2 = _interopRequireDefault(_money);
 var _image = require('./image');
 
 var _image2 = _interopRequireDefault(_image);
+
+/**
+ * add_to_cart_url - урл для добавления товара в корзину. используется в WishlistAddToCartButton
+ * default_url - урл для перехода на страницу товара
+ * custom_attributes - описание товара в виде {'имя характеристики': 'характеристика'}
+ */
 
 exports['default'] = _react.PropTypes.shape({
   custom_attributes: _react.PropTypes.object,
@@ -13353,6 +13369,12 @@ var _image = require('./image');
 
 var _image2 = _interopRequireDefault(_image);
 
+/**
+ * Схему возвращает бэкенд /v1/packages.json
+ * 
+ * Используется в компоненте CartContainer
+ */
+
 exports['default'] = _react.PropTypes.arrayOf(_react.PropTypes.shape({
   id: _react.PropTypes.number.isRequired,
   global_id: _react.PropTypes.string.isRequired,
@@ -13462,6 +13484,12 @@ var _good2 = _interopRequireDefault(_good);
 var _product = require('./product');
 
 var _product2 = _interopRequireDefault(_product);
+
+/**
+ * Схема используется в компоненте WishlistContainer
+ * 
+ * destroy_url: урл для удаления товара из "списка желаний"
+ */
 
 exports['default'] = _react.PropTypes.shape({
   good: _good2['default'].isRequired,

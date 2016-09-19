@@ -2,6 +2,12 @@ import { PropTypes } from 'react';
 import money from './money';
 import image from './image';
 
+/**
+ * Схему возвращает бэкенд /v1/packages.json
+ * 
+ * Используется в компоненте CartContainer
+ */
+
 export default PropTypes.arrayOf(PropTypes.shape({
   id: PropTypes.number.isRequired,
   global_id: PropTypes.string.isRequired,
