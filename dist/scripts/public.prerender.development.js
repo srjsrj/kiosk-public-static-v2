@@ -4425,7 +4425,11 @@ OrderContainer.propTypes = {
   totalPrice: _react.PropTypes.object.isRequired
 };
 
-OrderContainer.defaultProps = {};
+OrderContainer.defaultProps = {
+  deliveryTypes: [],
+  paymentTypes: [],
+  fields: []
+};
 
 exports['default'] = (0, _HoCProvideTranslations2['default'])((0, _HoCConnectToRedux2['default'])((0, _reactRedux.connect)(function (state, ownProps) {
   var _ref = storeInitialized ? state : { // TODO: move to store initialization when/if root component created
