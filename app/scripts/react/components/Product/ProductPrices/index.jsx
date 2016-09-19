@@ -13,7 +13,7 @@ class ProductPrices extends Component {
       if (good.actual_price.cents < minPrice.cents) {
         minPrice = good.actual_price;
       }
-    };
+    }
 
     return minPrice;
   }
@@ -26,7 +26,7 @@ class ProductPrices extends Component {
       if (good.actual_price.cents > maxPrice.cents) {
         maxPrice = good.actual_price;
       }
-    };
+    }
 
     return maxPrice;
   }
@@ -35,7 +35,11 @@ class ProductPrices extends Component {
 
     if (good) {
       return (
-        <ProductGoodPrice good={good} product={product} t={t} />
+        <ProductGoodPrice 
+          good={good} 
+          product={product} 
+          t={t} 
+        />
       );
     } else if (product.has_ordering_goods) {
       const maxPrice = this.getMaxPrice(product.goods);
@@ -43,11 +47,15 @@ class ProductPrices extends Component {
 
       if (diff(minPrice, maxPrice)) {
         return (
-          <ProductGoodPrices minPrice={minPrice} maxPrice={maxPrice} />
+          <ProductGoodPrices maxPrice={maxPrice} minPrice={minPrice} />
         );
       }else {
         return (
-          <ProductGoodPrice good={product.goods[0]} product={product} t={t} />
+          <ProductGoodPrice 
+            good={product.goods[0]} 
+            product={product} 
+            t={t} 
+          />
         );
       }
     }
@@ -59,6 +67,7 @@ class ProductPrices extends Component {
 ProductPrices.propTypes = {
   good: PropTypes.object,
   product: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 export default ProductPrices;

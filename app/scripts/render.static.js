@@ -14,6 +14,9 @@ import wishlistSample from '../../test/fixtures/wishlist/synteticData';
 
 import productSample from '../../test/fixtures/products/22983';
 import productMultiSelect from '../../test/fixtures/products/multi-select';
+import productWeight from '../../test/fixtures/products/weight';
+import productDoesntSell from '../../test/fixtures/products/3917';
+import productNoGoods from '../../test/fixtures/products/no-goods';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -23,5 +26,8 @@ global.OrderContainerNoCoupon = () => React.createElement(global.OrderContainer,
 global.WishlistContainerSample = () => React.createElement(global.WishlistContainer, wishlistSample);
 global.ProductCardSample = () => React.createElement(global.ProductCard, productSample);
 global.ProductCardMultiSelect = () => React.createElement(global.ProductCard, productMultiSelect);
+global.ProductCardDoesntSell = () => React.createElement(global.ProductCard, productDoesntSell);
+global.ProductCardWeight = () => React.createElement(global.ProductCard, productWeight);
+global.ProductCardNoGoods = () => React.createElement(global.ProductCard, productNoGoods);
 
 import './lib/ReactRailsUJS';

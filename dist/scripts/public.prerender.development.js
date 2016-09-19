@@ -8218,7 +8218,7 @@ var ProductPrices = (function (_Component) {
         if (good.actual_price.cents < minPrice.cents) {
           minPrice = good.actual_price;
         }
-      };
+      }
 
       return minPrice;
     }
@@ -8233,7 +8233,7 @@ var ProductPrices = (function (_Component) {
         if (good.actual_price.cents > maxPrice.cents) {
           maxPrice = good.actual_price;
         }
-      };
+      }
 
       return maxPrice;
     }
@@ -8246,15 +8246,23 @@ var ProductPrices = (function (_Component) {
       var t = _props.t;
 
       if (good) {
-        return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: good, product: product, t: t });
+        return _react2['default'].createElement(_ProductGoodPrice2['default'], {
+          good: good,
+          product: product,
+          t: t
+        });
       } else if (product.has_ordering_goods) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
 
         if ((0, _deepDiff.diff)(minPrice, maxPrice)) {
-          return _react2['default'].createElement(_ProductGoodPrices2['default'], { minPrice: minPrice, maxPrice: maxPrice });
+          return _react2['default'].createElement(_ProductGoodPrices2['default'], { maxPrice: maxPrice, minPrice: minPrice });
         } else {
-          return _react2['default'].createElement(_ProductGoodPrice2['default'], { good: product.goods[0], product: product, t: t });
+          return _react2['default'].createElement(_ProductGoodPrice2['default'], {
+            good: product.goods[0],
+            product: product,
+            t: t
+          });
         }
       }
 
@@ -8267,7 +8275,8 @@ var ProductPrices = (function (_Component) {
 
 ProductPrices.propTypes = {
   good: _react.PropTypes.object,
-  product: _react.PropTypes.object.isRequired
+  product: _react.PropTypes.object.isRequired,
+  t: _react.PropTypes.func.isRequired
 };
 
 exports['default'] = ProductPrices;
