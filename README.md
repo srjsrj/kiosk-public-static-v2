@@ -8,31 +8,41 @@
 
 * Установка нужной версии node/npm
 
-  > nvm install 5.4
-  > nvm use 5.4
+  ```sh
+  nvm install 5.4
+  nvm use 5.4
+  ```
 
 * Установка зависимостей
 
-  > npm install -g gulp, bower
-  > npm install
-  > bower install
+  ```sh
+  npm install -g gulp, bower
+  npm install
+  bower install
+  ```
 
 
 Запуск
 ------
 
-  > npm run start
+  ```sh
+  npm run start
+  ```
 
 Публикация
 ----------
 
-  > npm run deploy
+  ```sh
+  npm run deploy
+  ```
 
 
 Сборка бандла
 -------------
 
-  > gulp dist
+  ```sh
+  gulp dist
+  ```
 
 Процесс gulp
 ------------
@@ -57,7 +67,9 @@
 
 Предварительно на сайте собираем необходимое состояние компонента (пока вручную). Затем переходим на страницу содержащую компонент. В девелоперской консоли браузера выполняем код:
 
-  > JSON.stringify(JSON.parse(document.querySelector('[data-react-props=<Имя компонента>]').getAttribute('data-react-props')), null, 2)
+  ```sh
+  JSON.stringify(JSON.parse(document.querySelector('[data-react-props=<Имя компонента>]').getAttribute('data-react-props')), null, 2)
+  ```
 
 Ограничение по браузерам:
 ------------------------
