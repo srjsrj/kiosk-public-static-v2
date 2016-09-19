@@ -60,8 +60,8 @@ class ProductPrices extends Component {
         );
       }
     } else {
-      if (typeof Bugsnag === 'object' && typeof Bugsnag.print === 'function') {
-        Bugsnag.print('Ошибка ProductPrices', `Product:id[${product.id}] не имеет ни одного элемента goods`);
+      if (typeof Bugsnag === 'object' && typeof Bugsnag.warn === 'function') {
+        Bugsnag.warn('Ошибка ProductPrices', `Product:id[${product.id}] не имеет ни одного элемента goods`);
       }
 
       return null;

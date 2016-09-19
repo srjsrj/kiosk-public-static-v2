@@ -146,10 +146,10 @@ $(function () {
     Bugsnag.notify(name, message, metaData, severity);
   });
 
-  Bugsnag.print = function (error, message) {
+  Bugsnag.warn = function (error, message) {
     console.warn(error, message);
 
-    Bugsnag.notify(error, message);
+    Bugsnag.notify(error, message, null, 'warning');
   };
 });
 
@@ -885,7 +885,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.513'
+  version: '0.0.514'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -11689,8 +11689,8 @@ var ProductPrices = (function (_Component) {
           });
         }
       } else {
-        if (typeof Bugsnag === 'object' && typeof Bugsnag.print === 'function') {
-          Bugsnag.print('Ошибка ProductPrices', 'Product:id[' + product.id + '] не имеет ни одного элемента goods');
+        if (typeof Bugsnag === 'object' && typeof Bugsnag.warn === 'function') {
+          Bugsnag.warn('Ошибка ProductPrices', 'Product:id[' + product.id + '] не имеет ни одного элемента goods');
         }
 
         return null;
