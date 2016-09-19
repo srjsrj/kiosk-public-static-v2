@@ -8,6 +8,7 @@ export default {
       sold: 'Продано',
     },
     button: {
+      already: 'Уже в корзине',
       to_cart: 'В корзину',
       select_good: 'Выберите характеристику',
       disable_with: {

@@ -40,5 +40,6 @@ global.ImageSlider = require('./react/components/common/ImageSlider');
 global.CurrencySwitcher = require('./react/components/CurrencySwitcher');
 global.LocaleSwitcher = require('./react/components/LocaleSwitcher');
 global.Pagination = require('./react/components/Pagination');
+global.WishlistContainer = require('./react/components/Wishlist');
 
 import './react/application';

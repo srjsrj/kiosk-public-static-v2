@@ -34,3 +34,4 @@ ImageSlider = require('./react/components/common/ImageSlider');
 CurrencySwitcher = require('./react/components/CurrencySwitcher');
 LocaleSwitcher = require('./react/components/LocaleSwitcher');
 Pagination = require('./react/components/Pagination').default;
+WishlistContainer = require('./react/components/Wishlist');

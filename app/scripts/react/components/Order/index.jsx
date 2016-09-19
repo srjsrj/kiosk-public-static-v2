@@ -132,6 +132,9 @@ OrderContainer.propTypes = {
 };
 
 OrderContainer.defaultProps = {
+  deliveryTypes: [],
+  paymentTypes: [],
+  fields: [], 
 };
 
 export default provideTranslations(connectToRedux(connect(

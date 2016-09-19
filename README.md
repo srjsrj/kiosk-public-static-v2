@@ -1,14 +1,48 @@
 [![Build Status](https://travis-ci.org/BrandyMint/kiosk-public-static-v2.svg?branch=master)](https://travis-ci.org/BrandyMint/kiosk-public-static-v2)
+Развертывание проекта
+---------------------
+
+* Установка nvm (пропустить если уже установлен)
+
+  [nvm installation](https://github.com/creationix/nvm#installation)
+
+* Установка нужной версии node/npm
+
+  ```sh
+  nvm install 5.4
+  nvm use 5.4
+  ```
+
+* Установка зависимостей
+
+  ```sh
+  npm install -g gulp, bower
+  npm install
+  bower install
+  ```
+
 
 Запуск
 ------
 
-  > npm run start
+  ```sh
+  npm run start
+  ```
 
 Публикация
 ----------
 
-  > npm run deploy
+  ```sh
+  npm run deploy
+  ```
+
+
+Сборка бандла
+-------------
+
+  ```sh
+  gulp dist
+  ```
 
 Процесс gulp
 ------------
@@ -27,6 +61,15 @@
 4. Если иконка уже есть в шрифте и мы хотим заменить её новой, то перед генерацией шрифта в icomoon перетаскиваем новую иконку вместо старой, а старую удаляем. Даём ей такое же название, код и сохраняем шрифт.
 5. Распаковываем архив со шрифтом. Файлы eot, svg, ttf, woff кладём в `./app/fonts`, если появилась новая иконка, добавляем её в конец `./app/stylesheets/fonts/KioskPublicIcons.sass`
 6. Заменяем `./app/stylesheets/fonts/selection.json` новым из архива.
+
+Сбор фикстур для тестов и примеров компонентов
+----------------------------------------------
+
+Предварительно на сайте собираем необходимое состояние компонента (пока вручную). Затем переходим на страницу содержащую компонент. В девелоперской консоли браузера выполняем код:
+
+  ```sh
+  JSON.stringify(JSON.parse(document.querySelector('[data-react-props=<Имя компонента>]').getAttribute('data-react-props')), null, 2)
+  ```
 
 Ограничение по браузерам:
 ------------------------
