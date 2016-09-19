@@ -6,26 +6,30 @@ import ProductGoodPrices from './ProductGoodPrices';
 
 class ProductPrices extends Component {
   getMinPrice(goods) {
-    let minPrice = goods[0].actual_price;
+    let minPrice = { cents: +Infinity };
 
-    for (let i = 1; i < goods.length; i++) {
+    for (let i = 0; i < goods.length; i++) {
       const good = goods[i];
 
-      if (good.actual_price.cents < minPrice.cents) {
-        minPrice = good.actual_price;
+      if (good.actual_price != null && typeof good.actual_price === 'object') {
+        if (good.actual_price.cents < minPrice.cents) {
+          minPrice = good.actual_price;
+        }
       }
     }
 
     return minPrice;
   }
   getMaxPrice(goods) {
-    let maxPrice = goods[0].actual_price;
+    let maxPrice = { cents: -Infinity };
 
-    for (let i = 1; i < goods.length; i++) {
+    for (let i = 0; i < goods.length; i++) {
       const good = goods[i];
 
-      if (good.actual_price.cents > maxPrice.cents) {
-        maxPrice = good.actual_price;
+      if (good.actual_price != null && typeof good.actual_price === 'object') {
+        if (good.actual_price.cents > maxPrice.cents) {
+          maxPrice = good.actual_price;
+        }
       }
     }
 
@@ -45,6 +49,10 @@ class ProductPrices extends Component {
     } else if (Array.isArray(product.goods) && product.goods.length > 0) {
       const maxPrice = this.getMaxPrice(product.goods);
       const minPrice = this.getMinPrice(product.goods);
+
+      if (!isFinite(maxPrice.cents)) {
+        return null;
+      }
 
       if (diff(minPrice, maxPrice)) {
         return (

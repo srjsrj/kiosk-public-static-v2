@@ -885,7 +885,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.514'
+  version: '0.0.515'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -11634,13 +11634,15 @@ var ProductPrices = (function (_Component) {
   _createClass(ProductPrices, [{
     key: 'getMinPrice',
     value: function getMinPrice(goods) {
-      var minPrice = goods[0].actual_price;
+      var minPrice = { cents: +Infinity };
 
-      for (var i = 1; i < goods.length; i++) {
+      for (var i = 0; i < goods.length; i++) {
         var good = goods[i];
 
-        if (good.actual_price.cents < minPrice.cents) {
-          minPrice = good.actual_price;
+        if (good.actual_price != null && typeof good.actual_price === 'object') {
+          if (good.actual_price.cents < minPrice.cents) {
+            minPrice = good.actual_price;
+          }
         }
       }
 
@@ -11649,13 +11651,15 @@ var ProductPrices = (function (_Component) {
   }, {
     key: 'getMaxPrice',
     value: function getMaxPrice(goods) {
-      var maxPrice = goods[0].actual_price;
+      var maxPrice = { cents: -Infinity };
 
-      for (var i = 1; i < goods.length; i++) {
+      for (var i = 0; i < goods.length; i++) {
         var good = goods[i];
 
-        if (good.actual_price.cents > maxPrice.cents) {
-          maxPrice = good.actual_price;
+        if (good.actual_price != null && typeof good.actual_price === 'object') {
+          if (good.actual_price.cents > maxPrice.cents) {
+            maxPrice = good.actual_price;
+          }
         }
       }
 
@@ -11678,6 +11682,10 @@ var ProductPrices = (function (_Component) {
       } else if (Array.isArray(product.goods) && product.goods.length > 0) {
         var maxPrice = this.getMaxPrice(product.goods);
         var minPrice = this.getMinPrice(product.goods);
+
+        if (!isFinite(maxPrice.cents)) {
+          return null;
+        }
 
         if ((0, _deepDiff.diff)(minPrice, maxPrice)) {
           return _react2['default'].createElement(_ProductGoodPrices2['default'], { maxPrice: maxPrice, minPrice: minPrice });
