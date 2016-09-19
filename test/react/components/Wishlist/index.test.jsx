@@ -2,10 +2,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { render } from 'enzyme';
-
 import synteticData from '../../../fixtures/wishlist/synteticData';
-
-import then from '../../../utils/then';
 import t from '../../../mocks/t';
 
 import WishlistContainer from '../../../../app/scripts/react/components/Wishlist';
