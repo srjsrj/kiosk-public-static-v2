@@ -16,4 +16,6 @@ export default PropTypes.shape({
   actual_price: money,
   add_to_cart_url: PropTypes.string,
   default_url: PropTypes.string,
+  selling_by_weight: PropTypes.bool,
+  weight_of_price: PropTypes.number,
 });

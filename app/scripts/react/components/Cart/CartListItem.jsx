@@ -16,9 +16,9 @@ class CartListItem extends Component {
       changeAmount,
       item,
     } = this.props;
-    const val = ev.target.value;
+    const floatVal = parseFloat(ev.target.value) || 0;
 
-    changeAmount(item.get('id'), parseFloat(val));
+    changeAmount(item.get('id'), floatVal);
   }
   changeCount(count) {
     const {
@@ -67,11 +67,11 @@ class CartListItem extends Component {
               </span>
               <div className="b-cart__item__quantity__input">
                 <input
+                  defaultValue={amount}
                   name={`cart[items][${item.get('id')}][weight]`}
                   onChange={this.changeWeight.bind(this)}
                   step={(WEIGHT_STEP).toString()}
                   type="number"
-                  value={amount}
                 />
               </div>
             </span>
@@ -158,7 +158,7 @@ class CartListItem extends Component {
           {this.renderGoodDetails()}
           {(item.get('errors', Map()).count() > 0) && this.renderErrors()}
         </div>
-        {item.get('sellingByWeight', false)
+        {item.getIn(['good', 'sellingByWeight'], false)
           ? this.renderWeight()
           : this.renderQuantity()
         }

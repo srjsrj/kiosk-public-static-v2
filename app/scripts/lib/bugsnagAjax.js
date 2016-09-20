@@ -19,9 +19,11 @@ $(() => {
     Bugsnag.notify(name, message, metaData, severity);
   });
 
-  Bugsnag.warn = (error, message) => {
-    console.warn(error, message);
+  if (typeof Bugsnag === 'object') {
+    Bugsnag.warn = (error, message) => {
+      console.warn(error, message); //eslint-disable-line
 
-    Bugsnag.notify(error, message, null, 'warning');
+      Bugsnag.notify(error, message, null, 'warning');
+    };
   };
 });

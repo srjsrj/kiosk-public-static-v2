@@ -31,15 +31,16 @@ const initialState = fromJS({
   checkoutFieldValues: {},
   isFetching: false,
   error: null,
+  isInitialized: false,
 });
 
 export function initCartStore(state, { response }) {
   const amounts = fromJS(response.items)
     .toMap()
     .mapKeys((key, val) => val.get('id'))
-    .map((item) => item.get('sellingByWeight') ?
-      item.get('weight', 0) :
-      item.get('count', 0)
+    .map((item) => item.getIn(['good', 'sellingByWeight']) ?
+      parseFloat(item.get('weight', 0)) :
+      parseInt(item.get('count', 0), 10)
     );
 
   return state.merge({
@@ -51,6 +52,7 @@ export function initCartStore(state, { response }) {
     cart: response,
     isFetching: false,
     error: null,
+    isInitialized: true,
   });
 }
 

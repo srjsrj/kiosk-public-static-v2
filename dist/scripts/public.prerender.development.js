@@ -996,9 +996,9 @@ var CartListItem = function (_Component) {
       var changeAmount = _props.changeAmount;
       var item = _props.item;
 
-      var val = ev.target.value;
+      var floatVal = parseFloat(ev.target.value) || 0;
 
-      changeAmount(item.get('id'), parseFloat(val));
+      changeAmount(item.get('id'), floatVal);
     }
   }, {
     key: 'changeCount',
@@ -1064,11 +1064,11 @@ var CartListItem = function (_Component) {
             'div',
             { className: 'b-cart__item__quantity__input' },
             _react2.default.createElement('input', {
+              defaultValue: amount,
               name: 'cart[items][' + item.get('id') + '][weight]',
               onChange: this.changeWeight.bind(this),
               step: WEIGHT_STEP.toString(),
-              type: 'number',
-              value: amount
+              type: 'number'
             })
           )
         ) : _react2.default.createElement(
@@ -1164,7 +1164,7 @@ var CartListItem = function (_Component) {
           this.renderGoodDetails(),
           item.get('errors', (0, _immutable.Map)()).count() > 0 && this.renderErrors()
         ),
-        item.get('sellingByWeight', false) ? this.renderWeight() : this.renderQuantity(),
+        item.getIn(['good', 'sellingByWeight'], false) ? this.renderWeight() : this.renderQuantity(),
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-price' },
@@ -1656,6 +1656,7 @@ CartContainer.propTypes = {
   formAuthenticity: _react.PropTypes.object,
   initCart: _react.PropTypes.func.isRequired,
   initPackages: _react.PropTypes.func.isRequired,
+  isTesting: _react.PropTypes.bool,
   packageItem: _react.PropTypes.object.isRequired,
   packages: _react.PropTypes.object.isRequired,
   packagesIsFetching: _react.PropTypes.bool.isRequired,
@@ -1675,8 +1676,9 @@ CartContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.default)((0, _reactRedux.connect)(function (state, ownProps) {
   var initialCart = ownProps.initialCart;
   var initialPackages = ownProps.initialPackages;
+  var isTesting = ownProps.isTesting;
 
-  var _ref = storeInitialized ? state : {
+  var _ref = storeInitialized && !isTesting ? state : {
     cart: (0, _cart.initCartStore)(state.cart, (0, _CartActions.initCart)(initialCart)),
     packages: (0, _packages.initPackageStore)(state.packages, (0, _PackagesActions.initPackages)(initialPackages))
   };
@@ -1700,8 +1702,10 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
       return i.get('id') === itemId;
     }, (0, _immutable.Map)());
     var actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
+    var isWeighted = item.getIn(['good', 'sellingByWeight'], false);
+    var koeff = isWeighted ? 1 / item.getIn(['good', 'weightOfPrice'], 1) : 1;
 
-    return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
+    return actualPrice.set('cents', amount * koeff * actualPrice.get('cents', 0));
   });
   var selectedPackagePrice = selectedPackage ? packages.find(function (p) {
     return p.get('globalId') === selectedPackage;
@@ -13996,7 +14000,8 @@ var initialState = (0, _immutable.fromJS)({
   checkoutFields: [],
   checkoutFieldValues: {},
   isFetching: false,
-  error: null
+  error: null,
+  isInitialized: false
 });
 
 function initCartStore(state, _ref) {
@@ -14005,7 +14010,7 @@ function initCartStore(state, _ref) {
   var amounts = (0, _immutable.fromJS)(response.items).toMap().mapKeys(function (key, val) {
     return val.get('id');
   }).map(function (item) {
-    return item.get('sellingByWeight') ? item.get('weight', 0) : item.get('count', 0);
+    return item.getIn(['good', 'sellingByWeight']) ? parseFloat(item.get('weight', 0)) : parseInt(item.get('count', 0), 10);
   });
 
   return state.merge({
@@ -14016,7 +14021,8 @@ function initCartStore(state, _ref) {
     },
     cart: response,
     isFetching: false,
-    error: null
+    error: null,
+    isInitialized: true
   });
 }
 
@@ -14189,7 +14195,6 @@ exports.default = _react.PropTypes.shape({
   items: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     good: _good2.default.isRequired,
     destroy_path: _react.PropTypes.string.isRequired,
-    selling_by_weight: _react.PropTypes.bool.isRequired,
     count: _react.PropTypes.number,
     weight: _react.PropTypes.number
   })).isRequired,
@@ -14329,7 +14334,9 @@ exports.default = _react.PropTypes.shape({
   price: _money2.default,
   actual_price: _money2.default,
   add_to_cart_url: _react.PropTypes.string,
-  default_url: _react.PropTypes.string
+  default_url: _react.PropTypes.string,
+  selling_by_weight: _react.PropTypes.bool,
+  weight_of_price: _react.PropTypes.number
 });
 module.exports = exports['default'];
 
