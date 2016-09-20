@@ -15,7 +15,7 @@ export default class DesignSettingsSaveButton extends Component {
     return (
       <button
         className={buttonClasses}
-        onClick={::this.handleClick}
+        onClick={this.handleClick.bind(this)}
       >
         {this.getTitle()}
       </button>

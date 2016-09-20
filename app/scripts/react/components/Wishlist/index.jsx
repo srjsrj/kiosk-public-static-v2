@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import provideTranslations from '../HoC/provideTranslations';
+import provideTranslations from 'rc/HoC/provideTranslations';
 import Wishlist from './Wishlist';
-import * as schemas from '../../schemas';
+import * as schemas from 'r/schemas';
 
 class WishlistContainer extends Component {
   render() {

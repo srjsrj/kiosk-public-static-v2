@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import * as schemas from '../../schemas';
+import * as schemas from 'r/schemas';
 import CheckoutPublicOffer from './CheckoutPublicOffer';
 
 class CheckoutActions extends Component {

@@ -2,29 +2,25 @@ var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var widgetsPath = './app/scripts/embeddable/widgets';
-var preLoaders = [
-  {
-    test: /\.(sass|scss)$/,
-    loader: 'string-replace',
-    query: {
-      multiple: [
-        {
-          search: 'IMAGES_PATH',
-          replace: process.env.ENV === 'production' ? "'/shop/images'" : "'../images'",
-        },
-        {
-          search: 'FONTS_PATH',
-          replace: process.env.ENV === 'production' ? "'/shop/fonts'" : "'../fonts'",
-        },
-      ]
-    },
+var preLoaders = [{
+  test: /\.(sass|scss)$/,
+  loader: 'string-replace',
+  query: {
+    multiple: [{
+        search: 'IMAGES_PATH',
+        replace: process.env.ENV === 'production' ? "'/shop/images'" : "'../images'",
+      },
+      {
+        search: 'FONTS_PATH',
+        replace: process.env.ENV === 'production' ? "'/shop/fonts'" : "'../fonts'",
+      },
+    ]
   },
-];
-var loaders = [
-  {
+}, ];
+var loaders = [{
     test: /\.jsx?$/,
-    loader: 'babel-loader?stage=0',
-    exclude: /(node_modules|bower_components)/
+    loader: 'babel',
+    exclude: /(node_modules|bower_components)/,
   },
   {
     test: /\.(sass|scss)$/,

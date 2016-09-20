@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import * as schemas from '../../schemas';
-import AssetImage from '../common/AssetImage';
-import Image from '../common/Image/Image';
-import { humanizedMoneyWithCurrency } from '../../helpers/money';
-import GoodDetails from '../common/GoodDetails';
+import * as schemas from 'r/schemas';
+import AssetImage from 'rc/common/AssetImage';
+import Image from 'rc/common/Image/Image';
+import { humanizedMoneyWithCurrency } from 'r/helpers/money';
+import GoodDetails from 'rc/common/GoodDetails';
 import WishlistAddToCartButton from './WishlistAddToCartButton';
 
 class WishlistItem extends Component {
