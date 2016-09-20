@@ -996,9 +996,9 @@ var CartListItem = function (_Component) {
       var changeAmount = _props.changeAmount;
       var item = _props.item;
 
-      var val = ev.target.value;
+      var floatVal = parseFloat(ev.target.value) || 0;
 
-      changeAmount(item.get('id'), parseFloat(val));
+      changeAmount(item.get('id'), floatVal);
     }
   }, {
     key: 'changeCount',
@@ -1064,11 +1064,11 @@ var CartListItem = function (_Component) {
             'div',
             { className: 'b-cart__item__quantity__input' },
             _react2.default.createElement('input', {
+              defaultValue: amount,
               name: 'cart[items][' + item.get('id') + '][weight]',
               onChange: this.changeWeight.bind(this),
               step: WEIGHT_STEP.toString(),
-              type: 'number',
-              value: amount
+              type: 'number'
             })
           )
         ) : _react2.default.createElement(
@@ -14010,7 +14010,7 @@ function initCartStore(state, _ref) {
   var amounts = (0, _immutable.fromJS)(response.items).toMap().mapKeys(function (key, val) {
     return val.get('id');
   }).map(function (item) {
-    return item.getIn(['good', 'sellingByWeight']) ? item.get('weight', 0) : item.get('count', 0);
+    return item.getIn(['good', 'sellingByWeight']) ? parseFloat(item.get('weight', 0)) : parseInt(item.get('count', 0), 10);
   });
 
   return state.merge({
@@ -14195,7 +14195,6 @@ exports.default = _react.PropTypes.shape({
   items: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     good: _good2.default.isRequired,
     destroy_path: _react.PropTypes.string.isRequired,
-    selling_by_weight: _react.PropTypes.bool.isRequired,
     count: _react.PropTypes.number,
     weight: _react.PropTypes.number
   })).isRequired,
@@ -14335,7 +14334,9 @@ exports.default = _react.PropTypes.shape({
   price: _money2.default,
   actual_price: _money2.default,
   add_to_cart_url: _react.PropTypes.string,
-  default_url: _react.PropTypes.string
+  default_url: _react.PropTypes.string,
+  selling_by_weight: _react.PropTypes.bool,
+  weight_of_price: _react.PropTypes.number
 });
 module.exports = exports['default'];
 

@@ -24,7 +24,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.524',
+  version: '0.0.525',
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux

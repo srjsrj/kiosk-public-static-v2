@@ -39,8 +39,8 @@ export function initCartStore(state, { response }) {
     .toMap()
     .mapKeys((key, val) => val.get('id'))
     .map((item) => item.getIn(['good', 'sellingByWeight']) ?
-      item.get('weight', 0) :
-      item.get('count', 0)
+      parseFloat(item.get('weight', 0)) :
+      parseInt(item.get('count', 0), 10)
     );
 
   return state.merge({

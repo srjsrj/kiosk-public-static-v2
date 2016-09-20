@@ -18,7 +18,6 @@ export default PropTypes.shape({
   items: PropTypes.arrayOf(PropTypes.shape({
     good: good.isRequired,
     destroy_path: PropTypes.string.isRequired,
-    selling_by_weight: PropTypes.bool.isRequired,
     count: PropTypes.number,
     weight: PropTypes.number,
   })).isRequired,
