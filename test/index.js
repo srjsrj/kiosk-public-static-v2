@@ -8,11 +8,11 @@ import '../app/scripts/render.libs';
 import './libsConfigs';
 
 // Components
-import './react/components/Logo/Logo.test';
+import './react/components/CatalogFilter/CatalogFilter.test';
 import './react/components/Userbar/Userbar.test';
+import './react/components/Logo/Logo.test';
 import './react/components/Notice/Notice.test';
 import './react/components/DesignSettings/DesignSettings.test';
-import './react/components/CatalogFilter/CatalogFilter.test';
 import './react/components/Product/ProductCart/ProductCart.test';
 import './react/components/Product/ProductCard/ProductCardContainer.test';
 import './react/components/Product/ProductCard/ProductCard.test';
@@ -23,3 +23,13 @@ import './react/components/Cart/CartCoupon.test';
 import './react/components/Cart/index.test';
 import './react/components/Order/index.test';
 import './react/components/Wishlist/index.test';
+
+import './react/components/Clientbar/index.test';
+import './react/components/Product/ProductBlock/index.test';
+import './react/components/TopBanner/index.test';
+import './react/components/Order/OrderCoupon.test';
+import './react/components/InstagramContainer/index.test';
+import './react/components/ScrollToTop/index.test';
+import './react/components/ImageSlider/index.test';
+import './react/components/CurrencySwitcher/index.test';
+import './react/components/LocaleSwitcher/index.test';
