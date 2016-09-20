@@ -1164,7 +1164,7 @@ var CartListItem = function (_Component) {
           this.renderGoodDetails(),
           item.get('errors', (0, _immutable.Map)()).count() > 0 && this.renderErrors()
         ),
-        item.get('sellingByWeight', false) ? this.renderWeight() : this.renderQuantity(),
+        item.getIn(['good', 'sellingByWeight'], false) ? this.renderWeight() : this.renderQuantity(),
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-price' },

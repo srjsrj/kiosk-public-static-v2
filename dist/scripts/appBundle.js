@@ -130,6 +130,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 },{"babel-runtime/helpers/typeof":251}],2:[function(require,module,exports){
 'use strict';
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /*global $, Bugsnag */
 
 $(function () {
@@ -152,14 +158,16 @@ $(function () {
     Bugsnag.notify(name, message, metaData, severity);
   });
 
-  Bugsnag.warn = function (error, message) {
-    console.warn(error, message);
+  if ((typeof Bugsnag === 'undefined' ? 'undefined' : (0, _typeof3.default)(Bugsnag)) === 'object') {
+    Bugsnag.warn = function (error, message) {
+      console.warn(error, message); //eslint-disable-line
 
-    Bugsnag.notify(error, message, null, 'warning');
+      Bugsnag.notify(error, message, null, 'warning');
+    };
   };
 });
 
-},{}],3:[function(require,module,exports){
+},{"babel-runtime/helpers/typeof":251}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -896,7 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.522'
+  version: '0.0.524'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -1715,7 +1723,7 @@ var CartListItem = function (_Component) {
           this.renderGoodDetails(),
           item.get('errors', (0, _immutable.Map)()).count() > 0 && this.renderErrors()
         ),
-        item.get('sellingByWeight', false) ? this.renderWeight() : this.renderQuantity(),
+        item.getIn(['good', 'sellingByWeight'], false) ? this.renderWeight() : this.renderQuantity(),
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-price' },

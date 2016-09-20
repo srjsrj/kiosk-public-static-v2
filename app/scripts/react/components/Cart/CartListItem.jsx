@@ -158,7 +158,7 @@ class CartListItem extends Component {
           {this.renderGoodDetails()}
           {(item.get('errors', Map()).count() > 0) && this.renderErrors()}
         </div>
-        {item.get('sellingByWeight', false)
+        {item.getIn(['good', 'sellingByWeight'], false)
           ? this.renderWeight()
           : this.renderQuantity()
         }
