@@ -33,8 +33,8 @@ export default class Slider extends Component {
       step: this.props.step
     });
 
-    slider.noUiSlider.on('slide', ::this.handleSlide);
-    slider.noUiSlider.on('change', ::this.handleChange);
+    slider.noUiSlider.on('slide', this.handleSlide.bind(this));
+    slider.noUiSlider.on('change', this.handleChange.bind(this));
   }
   componentWillUnmount() {
     const slider = findDOMNode(this);

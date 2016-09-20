@@ -12,7 +12,7 @@ export default class DesignSettingsRadioList extends Component {
     onChange: PropTypes.func.isRequired
   }
   render() {
-    const listItems = this.props.items.map(::this.renderItem);
+    const listItems = this.props.items.map(this.renderItem.bind(this));
     return <span>{listItems}</span>;
   }
   renderItem(item) {

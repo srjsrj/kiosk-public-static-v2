@@ -12,7 +12,7 @@ export default class DesignSettingsCheckbox extends Component {
           type="checkbox"
           checked={this.props.value}
           className="switcher__input"
-          onChange={::this.handleChange} />
+          onChange={this.handleChange.bind(this)} />
         <span className="switcher__box">
           <span className="switcher__knob" />
         </span>

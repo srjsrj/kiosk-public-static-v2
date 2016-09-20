@@ -44,7 +44,7 @@ export default class DesignSettingsAttach extends Component {
     return (
       <div className={classNames('design-settings__attach', this.props.className)}>
         {this.renderBox()}
-        {children && children(selectFile(name, selectText, ::this.handleChange))}
+        {children && children(selectFile(name, selectText, this.handleChange.bind(this)))}
       </div>
     );
   }
@@ -52,7 +52,7 @@ export default class DesignSettingsAttach extends Component {
     if (this.props.value) {
       return (
         <div className="design-settings__attach-box">
-          <span onClick={::this.handleDelete}>
+          <span onClick={this.handleDelete.bind(this)}>
             <i className="design-settings__attach-delete" />
           </span>
           <img

@@ -21,8 +21,8 @@ export default class DesignSettingsSlider extends Component {
       <span className={sliderClasses}>
         <Slider
           {...this.props}
-          onSlide={::this.handleSlide}
-          onChange={::this.handleSlide}
+          onSlide={this.handleSlide.bind(this)}
+          onChange={this.handleSlide.bind(this)}
         />
         {displayValue &&
           <span className="design-settings__slider-value">

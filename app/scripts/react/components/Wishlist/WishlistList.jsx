@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import WishlistItem from './WishlistItem';
-import * as schemas from '../../schemas';
+import * as schemas from 'r/schemas';
 
 class WishlistList extends Component {
   isInCart(item) {

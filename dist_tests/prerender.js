@@ -1092,4 +1092,9 @@ const logoProps = {
 global.ReactDOMServer.renderToString(global.React.createElement(global.Logo, logoProps));
 global.ReactDOMServer.renderToString(global.React.createElement(global.ProductBlock, blockProps));
 global.ReactDOMServer.renderToString(global.React.createElement(global.ProductCard, cardProps));
+global.ReactDOMServer.renderToString(global.React.createElement(global.CartContainer, require('../test/fixtures/cart/with-package')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.CartContainer, require('../test/fixtures/cart/select-package')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.OrderContainer, require('../test/fixtures/order/with-coupon')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.WishlistContainer, require('../test/fixtures/wishlist/synteticData')));
+
 console.log('Prerendering public components test finished successfully');

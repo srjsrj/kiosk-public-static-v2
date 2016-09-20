@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import WishlistList from './WishlistList';
-import * as schemas from '../../schemas';
+import * as schemas from 'r/schemas';
 
 class Wishlist extends Component {
   render() {

@@ -102,7 +102,6 @@ gulp.task('[Static] Client scripts', () => {
     bundler = watchify(bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       })
     );
@@ -111,7 +110,6 @@ gulp.task('[Static] Client scripts', () => {
     bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       });
   }
@@ -172,7 +170,6 @@ gulp.task('[Static] Test scripts', () => {
     bundler = watchify(bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       })
     );
@@ -181,7 +178,6 @@ gulp.task('[Static] Test scripts', () => {
     bundler
       .transform('coffee-reactify')
       .transform('babelify', {
-        stage: 0,
         ignore: /(node_modules|bower_components)/
       });
   }
@@ -203,7 +199,6 @@ gulp.task('[Production] Scripts', () => {
 
   return bundler
     .transform('babelify', {
-      stage: 0,
       ignore: /(node_modules|bower_components)/
     })
     .transform('coffee-reactify')
@@ -231,7 +226,6 @@ gulp.task('[Production] Components scripts', () => {
 
   return bundler
     .transform('babelify', {
-      stage: 0,
       ignore: /(node_modules|bower_components|prerender.bundle\.js)/
     })
     .transform('coffee-reactify')
@@ -259,7 +253,6 @@ gulp.task('[Development] Components scripts', () => {
 
   return bundler
     .transform('babelify', {
-      stage: 0,
       ignore: /(node_modules|bower_components|prerender.bundle\.js)/
     })
     .transform('coffee-reactify')
