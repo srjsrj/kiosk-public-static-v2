@@ -896,7 +896,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.521'
+  version: '0.0.522'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -2207,6 +2207,7 @@ CartContainer.propTypes = {
   formAuthenticity: _react.PropTypes.object,
   initCart: _react.PropTypes.func.isRequired,
   initPackages: _react.PropTypes.func.isRequired,
+  isTesting: _react.PropTypes.bool,
   packageItem: _react.PropTypes.object.isRequired,
   packages: _react.PropTypes.object.isRequired,
   packagesIsFetching: _react.PropTypes.bool.isRequired,
@@ -2226,8 +2227,9 @@ CartContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.default)((0, _reactRedux.connect)(function (state, ownProps) {
   var initialCart = ownProps.initialCart;
   var initialPackages = ownProps.initialPackages;
+  var isTesting = ownProps.isTesting;
 
-  var _ref = storeInitialized ? state : {
+  var _ref = storeInitialized && !isTesting ? state : {
     cart: (0, _cart.initCartStore)(state.cart, (0, _CartActions.initCart)(initialCart)),
     packages: (0, _packages.initPackageStore)(state.packages, (0, _PackagesActions.initPackages)(initialPackages))
   };
@@ -2251,8 +2253,10 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
       return i.get('id') === itemId;
     }, (0, _immutable.Map)());
     var actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
+    var isWeighted = item.getIn(['good', 'sellingByWeight'], false);
+    var koeff = isWeighted ? 1 / item.getIn(['good', 'weightOfPrice'], 1) : 1;
 
-    return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
+    return actualPrice.set('cents', amount * koeff * actualPrice.get('cents', 0));
   });
   var selectedPackagePrice = selectedPackage ? packages.find(function (p) {
     return p.get('globalId') === selectedPackage;
@@ -19370,7 +19374,8 @@ var initialState = (0, _immutable.fromJS)({
   checkoutFields: [],
   checkoutFieldValues: {},
   isFetching: false,
-  error: null
+  error: null,
+  isInitialized: false
 });
 
 function initCartStore(state, _ref) {
@@ -19379,7 +19384,7 @@ function initCartStore(state, _ref) {
   var amounts = (0, _immutable.fromJS)(response.items).toMap().mapKeys(function (key, val) {
     return val.get('id');
   }).map(function (item) {
-    return item.get('sellingByWeight') ? item.get('weight', 0) : item.get('count', 0);
+    return item.getIn(['good', 'sellingByWeight']) ? item.get('weight', 0) : item.get('count', 0);
   });
 
   return state.merge({
@@ -19390,7 +19395,8 @@ function initCartStore(state, _ref) {
     },
     cart: response,
     isFetching: false,
-    error: null
+    error: null,
+    isInitialized: true
   });
 }
 

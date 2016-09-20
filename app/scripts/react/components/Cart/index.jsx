@@ -84,6 +84,7 @@ CartContainer.propTypes = {
   formAuthenticity: PropTypes.object,
   initCart: PropTypes.func.isRequired,
   initPackages: PropTypes.func.isRequired,
+  isTesting: PropTypes.bool,
   packageItem: PropTypes.object.isRequired,
   packages: PropTypes.object.isRequired,
   packagesIsFetching: PropTypes.bool.isRequired,
@@ -105,11 +106,12 @@ export default provideTranslations(connectToRedux(connect(
     const {
       initialCart,
       initialPackages,
+      isTesting,
     } = ownProps;
     const {
       cart,
       packages: packagesStore,
-    } = storeInitialized
+    } = storeInitialized && !isTesting 
       ? state
       : ({
         cart: initCartStore(state.cart, initCart(initialCart)),
@@ -130,8 +132,10 @@ export default provideTranslations(connectToRedux(connect(
       .map((amount, itemId) => {
         const item = cartItems.find(((i) => i.get('id') === itemId), Map());
         const actualPrice = item.getIn(['good', 'actualPrice'], emptyPrice);
+        const isWeighted = item.getIn(['good', 'sellingByWeight'], false);
+        const koeff = isWeighted ? (1 / item.getIn(['good', 'weightOfPrice'], 1)) : 1;
 
-        return actualPrice.set('cents', amount * actualPrice.get('cents', 0));
+        return actualPrice.set('cents', amount * koeff * actualPrice.get('cents', 0));
       });
     const selectedPackagePrice = selectedPackage
       ? packages.find((p) => p.get('globalId') === selectedPackage, Map()).getIn(['price', 'cents'], 0)
