@@ -33,3 +33,4 @@ import './react/components/ScrollToTop/index.test';
 import './react/components/ImageSlider/index.test';
 import './react/components/CurrencySwitcher/index.test';
 import './react/components/LocaleSwitcher/index.test';
+import './react/components/MenuTop/index.test';

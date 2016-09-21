@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import * as schemas from 'r/schemas';
 import MenuTopDesktop from './MenuTopDesktop';
 import MenuTopMobile from './MenuTopMobile';
-import MenuTopToggleButton from './MenuTopToggleButton';
+import provideTranslations from 'rc/HoC/provideTranslations';
 
 class MenuTop extends Component {
   render() {
@@ -20,7 +20,6 @@ class MenuTop extends Component {
           activeItems={activeItems}
           items={items}
         />
-        <MenuTopToggleButton />
         <MenuTopMobile
           hasClientCabinet={hasClientCabinet}
           items={items}
@@ -39,3 +38,5 @@ MenuTop.propTypes = {
   t: PropTypes.func.isRequired,
   vendorCabinetPath: PropTypes.string,
 };
+
+export default provideTranslations(MenuTop);

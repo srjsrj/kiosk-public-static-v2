@@ -12,6 +12,7 @@ class MenuTopDeskTopWithChildren extends Component {
             <MenuTopDesktopChild
               checkIfActive={this.props.checkIfActive}
               child={child}
+              key={`child-${child.id}`}
             />
           ))}
         </ul>
@@ -36,6 +37,7 @@ class MenuTopDeskTopWithChildren extends Component {
             <MenuTopDesktopChild
               checkIfActive={this.props.checkIfActive}
               child={child}
+              key={`child-${child.id}`}
             />
           ))}
         </ul>

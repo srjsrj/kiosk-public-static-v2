@@ -2,7 +2,10 @@ import { PropTypes } from 'react';
 
 const menuItem = PropTypes.shape({
   children: PropTypes.arrayOf(lazyMenuItem).isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   type: PropTypes.string.isRequired,
   title: PropTypes.string,
   url: PropTypes.string,

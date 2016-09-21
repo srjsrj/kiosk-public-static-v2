@@ -1,8 +1,36 @@
+/*global $ */
 import React, { Component, PropTypes } from 'react';
 import * as schemas from 'r/schemas';
-import provideTranslations from 'r/HoC/provideTranslations';
+import MenuTopToggleButton from './MenuTopToggleButton';
 
 class MenuTopMobile extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { isActive: false };
+  }
+  componentDidMount () {
+    this.$node = $(this.refs.container);
+
+    if (!this.$node.length) {
+      return;
+    }
+
+    this.$node.mmenu({
+      classes: false,
+      counters: false,
+    });
+
+    this.$node.on('opened.mm', () => this.setState({ isActive: true }));
+    this.$node.on('closed.mm', () => this.setState({ isActive: false }));
+  }
+  componentWillUnmount () {
+    if (!this.$node) {
+      return;
+    }
+
+    this.$node.off();
+  }
   renderSingle(item) {
     const {
       id,
@@ -52,23 +80,40 @@ class MenuTopMobile extends Component {
       t,
       vendorCabinetPath,
     } = this.props;
+    const {
+      isActive,
+    } = this.state;
 
     return (
-      <div id="nav">
-        <ul>
-          {hasClientCabinet && (
-            <li id="mob_menu_item_li_cabinet">
-              <a href={vendorCabinetPath}>
-                {t('vendor.client.cabinet.title')}
-              </a>
+      <div>
+        <MenuTopToggleButton isActive={isActive} />
+        <div id="nav" ref="container">
+          <ul>
+            <li className="b-search">
+              <form action="/products/search">
+                <input 
+                  className="b-search__field" 
+                  name="query" 
+                  placeholder={t('vendor.placeholders.search')} 
+                  type="text"
+                />
+                <button className="b-search__submit" type="submit" />
+              </form>
             </li>
-          )}
-          {items.length > 0 && items.map((item) => (
-            item.children.length > 0 ?
-              this.renderWithChildren(item) :
-              this.renderSingle(item)
-          ))}
-        </ul>
+            {hasClientCabinet && (
+              <li id="mob_menu_item_li_cabinet">
+                <a href={vendorCabinetPath}>
+                  {t('vendor.client.cabinet.title')}
+                </a>
+              </li>
+            )}
+            {items.length > 0 && items.map((item) => (
+              item.children.length > 0 ?
+                this.renderWithChildren(item) :
+                this.renderSingle(item)
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
@@ -81,4 +126,4 @@ MenuTopMobile.propTypes = {
   vendorCabinetPath: PropTypes.string,
 };
 
-export default provideTranslations(MenuTopMobile);
+export default MenuTopMobile;

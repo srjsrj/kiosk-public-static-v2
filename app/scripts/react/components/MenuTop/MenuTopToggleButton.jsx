@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 class MenuTopToggleButton extends Component {
   render() {
+    const {
+      isActive,
+    } = this.props;
+    const aClasses = classNames({
+      'mmenu-open': true,
+      'element--active-opacity': true,
+      'mmenu-open_active': isActive,
+    });
+
     return (
       <a 
-        className="mmenu-open element--active-opacity"
+        className={aClasses}
         href="#nav"
         id="navopen"
       >
@@ -15,5 +25,9 @@ class MenuTopToggleButton extends Component {
     );
   }
 }
+
+MenuTopToggleButton.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+};
 
 export default MenuTopToggleButton;

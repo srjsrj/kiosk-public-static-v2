@@ -1,0 +1,22 @@
+%header.b-header{'itemscope': '', 'itemtype': 'http://schema.org/Organization'}
+  .b-header__container
+    .b-header__content
+      .b-header__desc
+        .b-site-description
+          Магазин мебели ручной работы
+          %ul
+            %li
+              ="+7 903 595 1737"
+            %li
+              ="+7 903 595 1737"
+
+      .b-header__logo
+        %div{data: {react-class: 'Logo', react-props: '{"logoUrl": "http://assets.kiiiosk.ru/uploads/vendor/logo/5/logo.svg", "linkUrl": "http://google.ru", "logoText": "Test", "imageAlt": "Test2"}'}}
+
+      .b-header__search
+        .b-search(ks-search)
+          %form
+            %input.b-search__field{type: 'text', placeholder: 'Поиск'}
+            %button.b-search__submit{type: 'submit'}
+
+%div{data: { 'react-class': 'MenuTopSample1' } }
