@@ -1096,5 +1096,6 @@ global.ReactDOMServer.renderToString(global.React.createElement(global.CartConta
 global.ReactDOMServer.renderToString(global.React.createElement(global.CartContainer, require('../test/fixtures/cart/select-package')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.OrderContainer, require('../test/fixtures/order/with-coupon')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.WishlistContainer, require('../test/fixtures/wishlist/synteticData')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.MenuTop, require('../test/fixtures/menuTop/sample1')));
 
 console.log('Prerendering public components test finished successfully');

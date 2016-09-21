@@ -14,7 +14,6 @@ import './shared/load_more';
 import './shared/jump';
 import './shared/application_slider';
 import './shared/theme_switcher';
-import './shared/mobile_navigation';
 
 // TODO: Refactor and cleaning legacy shit
 //import './react/components/Product/add_to_basket_button';
@@ -41,5 +40,6 @@ global.CurrencySwitcher = require('./react/components/CurrencySwitcher');
 global.LocaleSwitcher = require('./react/components/LocaleSwitcher');
 global.Pagination = require('./react/components/Pagination');
 global.WishlistContainer = require('./react/components/Wishlist');
+global.MenuTop = require('rc/MenuTop');
 
 import './react/application';

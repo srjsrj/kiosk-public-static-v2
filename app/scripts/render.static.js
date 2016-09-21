@@ -18,6 +18,9 @@ import productWeight from '../../test/fixtures/products/weight';
 import productDoesntSell from '../../test/fixtures/products/3917';
 import productNoGoods from '../../test/fixtures/products/no-goods';
 
+import menuTopSample1 from 'test/fixtures/menuTop/sample1';
+import menuTopSample2 from 'test/fixtures/menuTop/sample2';
+
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
 global.CartContainerWithPackage = () => React.createElement(global.CartContainer, cartWithPackage);
@@ -29,5 +32,7 @@ global.ProductCardMultiSelect = () => React.createElement(global.ProductCard, pr
 global.ProductCardDoesntSell = () => React.createElement(global.ProductCard, productDoesntSell);
 global.ProductCardWeight = () => React.createElement(global.ProductCard, productWeight);
 global.ProductCardNoGoods = () => React.createElement(global.ProductCard, productNoGoods);
+global.MenuTopSample1 = () => React.createElement(global.MenuTop, menuTopSample1);
+global.MenuTopSample2 = () => React.createElement(global.MenuTop, menuTopSample2);
 
 import './lib/ReactRailsUJS';
