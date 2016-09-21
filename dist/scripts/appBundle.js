@@ -167,7 +167,7 @@ $(function () {
   };
 });
 
-},{"babel-runtime/helpers/typeof":251}],3:[function(require,module,exports){
+},{"babel-runtime/helpers/typeof":258}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -904,15 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  version: '0.0.525'
-=======
-  version: '0.0.522'
->>>>>>> add menu fixtures, split into lesser components
-=======
-  version: '0.0.524'
->>>>>>> menu fixtures, tests, mobile switcher
+  version: '0.0.526'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
