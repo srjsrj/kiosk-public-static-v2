@@ -81,8 +81,4 @@ MenuTopMobile.propTypes = {
   vendorCabinetPath: PropTypes.string,
 };
 
-MenuTopMobile.defaultProps = {
-
-};
-
 export default provideTranslations(MenuTopMobile);
