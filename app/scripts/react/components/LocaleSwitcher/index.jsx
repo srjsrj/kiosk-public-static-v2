@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import LocaleSwitcher from './LocaleSwitcher';
+import * as schemas from 'r/schemas';
 
 class LocaleSwitcherContainer extends Component {
-  handleChange(value) {;
-    window.location = value
+  handleChange(value) {
+    window.location = value;
   }
   render() {
     return (
@@ -13,12 +14,7 @@ class LocaleSwitcherContainer extends Component {
 }
 
 LocaleSwitcherContainer.propTypes = {
-  locales: PropTypes.arrayOf(
-    PropTypes.shape({
-      lang: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ),
+  locales: PropTypes.arrayOf(schemas.locale),
   current: PropTypes.string,
 };
 

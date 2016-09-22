@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from 'r/schemas';
-import classNames from 'classnames';
+import MenuBottomLink from './MenuBottomLink';
 import provideTranslations from 'rc/HoC/provideTranslations';
+import CurrencySwitcher from 'rc/CurrencySwitcher';
+import LocaleSwitcher from 'rc/LocaleSwitcher';
 
 class MenuBottom extends Component {
   isActive(item, activeItems) {
@@ -9,44 +11,28 @@ class MenuBottom extends Component {
       item.id === activeItem.id && item.type === activeItem.type
     )).length;
   }
-  renderLink(item, isActive=false) {
-    const {
-      id,
-      title,
-      url,
-      link_target,
-      products_count,
-    } = item;
-    const aClasses = classNames({
-      'b-footer__link': true,
-      'b-footer__link__active': isActive,
-    });
-
-    return (
-      <a
-        className={aClasses}
-        data-count={products_count}
-        href={url}
-        id={`menu_item_link_${id}`}
-        key={`bottom-menu-${id}`}
-        target={link_target}
-      >
-        {title}
-      </a>
-    );
-  }
   renderList(items, activeItems) {
-    return items.map((item) => this.renderLink(item, this.isActive(item, activeItems)));
+    return items.map((item) => (
+      <MenuBottomLink
+        isActive={this.isActive(item, activeItems)}
+        item={item}
+        key={`menu-bottom-link-${item.id}`}
+      />
+    ));
   }
   render() {
     const {
-      isExternalLinkDisabled,
+      currenciesIsoCodes,
+      currentCurrency,
+      currentLocale,
+      locales,
+      isVendorLandingLinkDisabled,
       leftActiveItems,
       leftItems,
       rightActiveItems,
       rightItems,
       t,
-      vendorActiveDomain,
+      vendorLandingLink,
     } = this.props;
 
     return (
@@ -56,10 +42,10 @@ class MenuBottom extends Component {
         </div>
         <div className="b-footer__nav b-footer__nav_soc">
           {this.renderList(rightItems, rightActiveItems)}
-          {!isExternalLinkDisabled && (
+          {!isVendorLandingLinkDisabled && (
             <noindex>
               <a
-                href={`http://kiiiosk.ru/lp1?utm_source=kiosk_shop&utm_campaign=${vendorActiveDomain}`}
+                href={vendorLandingLink}
                 id="made_in_kiiiosk"
                 rel="nofollow"
                 target="_blank"
@@ -68,6 +54,14 @@ class MenuBottom extends Component {
               </a>
             </noindex>
           )}
+          <CurrencySwitcher
+            currenciesIsoCodes={currenciesIsoCodes}
+            current={currentCurrency}
+          />
+          <LocaleSwitcher
+            current={currentLocale}
+            locales={locales}
+          />
         </div>
       </div>
     );
@@ -75,17 +69,21 @@ class MenuBottom extends Component {
 }
 
 MenuBottom.propTypes = {
-  isExternalLinkDisabled: PropTypes.bool.isRequired,
+  currenciesIsoCodes: PropTypes.array,
+  currentCurrency: PropTypes.string,
+  currentLocale: PropTypes.string,
+  isVendorLandingLinkDisabled: PropTypes.bool.isRequired,
   leftActiveItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
   leftItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
+  locales: PropTypes.arrayOf(schemas.locale),
   rightActiveItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
   rightItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
   t: PropTypes.func.isRequired,
-  vendorActiveDomain: PropTypes.string,
+  vendorLandingLink: PropTypes.string,
 };
 
 MenuBottom.defaultProps = {
-  isExternalLinkDisabled: true,
+  isVendorLandingLinkDisabled: true,
 };
 
 export default provideTranslations(MenuBottom);

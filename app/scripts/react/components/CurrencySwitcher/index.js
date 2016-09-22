@@ -5,7 +5,7 @@ import URI from 'urijs';
 import CurrencySwitcher from './CurrencySwitcher';
 
 class CurrencySwitcherContainer extends Component {
-  handleChange(value) {;
+  handleChange(value) {
     window.location = new URI()
       .removeQuery('currency')
       .addQuery('currency', value)

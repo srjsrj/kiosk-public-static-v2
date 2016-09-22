@@ -36,3 +36,4 @@ LocaleSwitcher = require('./react/components/LocaleSwitcher');
 Pagination = require('./react/components/Pagination').default;
 WishlistContainer = require('./react/components/Wishlist');
 MenuTop = require('./react/components/MenuTop');
+MenuBottom = require('./react/components/MenuBottom');
