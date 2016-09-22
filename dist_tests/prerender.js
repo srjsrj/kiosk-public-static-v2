@@ -14,12 +14,12 @@ const blockProps = {
     'index_image': {
       'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/53578/a6e3499c-9252-46e0-8c59-b1615d1e9315.jpg',
       'width': 600,
-      'height': 600
+      'height': 600,
     },
     'second_image': {
       'url': 'http://assets.stage.kiiiosk.ru/uploads/shop/68/uploads/product_image/image/70608/f1f2c7b9-a65e-4d90-984a-43eacfde3542.jpg',
       'width': 640,
-      'height': 672
+      'height': 672,
     },
     'public_url': 'http://saharok.stage.kiiiosk.ru/products/36109-koltso-na-vtoruyu-falangu-mmkxss-jewelry',
     'short_details': 'Серебро',
@@ -30,12 +30,12 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
+          'currency_iso_code': 'RUB',
+        },
       },
       {
         'id': 42608,
@@ -44,12 +44,12 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
+          'currency_iso_code': 'RUB',
+        },
       },
       {
         'id': 32725,
@@ -58,12 +58,12 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
+          'currency_iso_code': 'RUB',
+        },
       },
       {
         'id': 42609,
@@ -72,12 +72,12 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
+          'currency_iso_code': 'RUB',
+        },
       },
       {
         'id': 43421,
@@ -86,12 +86,12 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
+          'currency_iso_code': 'RUB',
+        },
       },
       {
         'id': 43422,
@@ -100,14 +100,14 @@ const blockProps = {
         'is_sale': false,
         'price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
+          'currency_iso_code': 'RUB',
         },
         'actual_price': {
           'cents': 140000,
-          'currency_iso_code': 'RUB'
-        }
-      }
-    ]
+          'currency_iso_code': 'RUB',
+        },
+      },
+    ],
   },
   'showCartButton': false,
   'showQuantity': false,
@@ -121,23 +121,23 @@ const blockProps = {
         'entities': {
           'product': '%{count} товар',
           'product_2': '%{count} товара',
-          'product_5': '%{count} товаров'
+          'product_5': '%{count} товаров',
         },
         'badges': {
           'new': 'Новинка',
           'sale_percent': 'SALE - %{percent}%',
           'not_available': 'Не продается',
           'sale': 'SALE',
-          'sold': 'Продано'
+          'sold': 'Продано',
         },
         'gallery': {
           'close': 'Закрыть',
           'next': 'Вперёд',
-          'prev': 'Назад'
+          'prev': 'Назад',
         },
         'search': {
           'results_title': 'Результаты поиска (%{count})',
-          'nothing_found': 'К сожалению, ничего не найдено.'
+          'nothing_found': 'К сожалению, ничего не найдено.',
         },
         'seconds_count': '%{count} секунду',
         'seconds_count_2': '%{count} секунды',
@@ -149,42 +149,42 @@ const blockProps = {
                 'invalid_phone': 'Неверный формат телефона. Прим.: +7 913 123 32 10',
                 'attributes': {
                   'address': {
-                    'blank': 'не может быть пустым'
+                    'blank': 'не может быть пустым',
                   },
                   'email': {
-                    'email': 'не является email адресом'
+                    'email': 'не является email адресом',
                   },
                   'city_title': {
-                    'blank': 'не может быть пустым'
+                    'blank': 'не может быть пустым',
                   },
                   'phone': {
-                    'blank': 'не может быть пустым'
+                    'blank': 'не может быть пустым',
                   },
                   'name': {
-                    'blank': 'не может быть пустым'
+                    'blank': 'не может быть пустым',
                   },
                   'public_offer_accepted': {
-                    'blank': 'Необходимо принять условия публичной оферты'
-                  }
-                }
-              }
-            }
-          }
+                    'blank': 'Необходимо принять условия публичной оферты',
+                  },
+                },
+              },
+            },
+          },
         },
         'errors': {
           'cart': {
-            'empty': 'В корзине нет товаров'
+            'empty': 'В корзине нет товаров',
           },
           'coupon': {
             'not_found': 'Несуществующий промокод %{code}',
-            'expired': 'Промокод просрочен %{code}'
+            'expired': 'Промокод просрочен %{code}',
           },
           'order': {
             'invalid_form': 'Заказ еще не принят, исправьте ошибки в форме',
             'has_unorderable_goods': 'В заказе лежат недоступные товары',
             'no_items': 'В заказе нет товаров',
-            'unavailable_currency': 'Невозможно сделать заказ в выбранной валюте'
-          }
+            'unavailable_currency': 'Невозможно сделать заказ в выбранной валюте',
+          },
         },
         'placeholders': {
           'coupon': 'Промо-код (если есть)',
@@ -1097,5 +1097,6 @@ global.ReactDOMServer.renderToString(global.React.createElement(global.CartConta
 global.ReactDOMServer.renderToString(global.React.createElement(global.OrderContainer, require('../test/fixtures/order/with-coupon')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.WishlistContainer, require('../test/fixtures/wishlist/synteticData')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.MenuTop, require('../test/fixtures/menuTop/sample1')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.MenuBottom, require('../test/fixtures/menuBottom/sample')));
 
 console.log('Prerendering public components test finished successfully');

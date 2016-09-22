@@ -41,5 +41,6 @@ global.LocaleSwitcher = require('./react/components/LocaleSwitcher');
 global.Pagination = require('./react/components/Pagination');
 global.WishlistContainer = require('./react/components/Wishlist');
 global.MenuTop = require('rc/MenuTop');
+global.MenuBottom = require('rc/MenuBottom');
 
 import './react/application';

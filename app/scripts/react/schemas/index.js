@@ -14,3 +14,4 @@ export { default as cartApi } from './cartApi';
 export { default as packagesApi } from './packagesApi';
 export { default as wishlistItem } from './wishlistItem';
 export { default as menuItem } from './menuItem';
+export { default as locale } from './locale';
