@@ -3,7 +3,6 @@ import ProductList from './ProductList';
 import ProductBlock from 'rc/Product/ProductBlock';
 import provideTranslations from 'rc/HoC/provideTranslations';
 import * as schemas from 'r/schemas';
-import { camelizeKeys } from 'humps';
 
 class ProductListContainer extends Component {
   render() {

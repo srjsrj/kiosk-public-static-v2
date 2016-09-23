@@ -36,3 +36,4 @@ import './react/components/LocaleSwitcher/index.test';
 import './react/components/MenuTop/index.test';
 import './react/components/MenuBottom/index.test';
 import './react/components/NavBar/index.test';
+import './react/components/ProductList/index.test';

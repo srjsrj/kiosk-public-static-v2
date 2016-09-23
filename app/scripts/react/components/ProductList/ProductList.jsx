@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import ProductBlock from 'rc/ProductBlock';
+import ProductBlock from 'rc/Product/ProductBlock';
 import Pagination from 'rc/Pagination';
 
 class ProductList extends Component {
@@ -31,7 +31,9 @@ class ProductList extends Component {
           </div>
         )}
         {(showPagination && pagination.total_pages > 1) && (
-          <Pagination {...pagination} />
+          <div className="b-item-list__paginator">
+            <Pagination {...pagination} />
+          </div>
         )}
       </div>
     );

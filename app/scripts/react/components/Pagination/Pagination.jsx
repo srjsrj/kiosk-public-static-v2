@@ -46,7 +46,7 @@ class Pagination extends Component {
         {' '}
         {(currentPage > WINDOW_SIZE + 1) && (
           <span className="page gap">
-            {'&hellip;'}
+            {'\u2026'}
           </span>
         )}
         {' '}
@@ -58,7 +58,7 @@ class Pagination extends Component {
         {' '}
         {(currentPage + WINDOW_SIZE < totalPages) && (
           <span className="page gap">
-            {'&hellip;'}
+            {'\u2026'}
           </span>
         )}
         {' '}
