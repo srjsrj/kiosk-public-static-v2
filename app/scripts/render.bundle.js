@@ -42,5 +42,6 @@ global.Pagination = require('./react/components/Pagination');
 global.WishlistContainer = require('./react/components/Wishlist');
 global.MenuTop = require('rc/MenuTop');
 global.MenuBottom = require('rc/MenuBottom');
+global.NavBar = require('rc/NavBar');
 
 import './react/application';
