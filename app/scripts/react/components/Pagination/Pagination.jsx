@@ -1,122 +1,78 @@
 import React, { Component, PropTypes } from 'react';
+import PaginationFirstPage from './PaginationFirstPage';
+import PaginationPreviousPage from './PaginationPreviousPage';
+import PaginationNextPage from './PaginationNextPage';
+import PaginationLastPage from './PaginationLastPage';
+import PaginationCurrentWindow from './PaginationCurrentWindow';
+import uri from 'urijs';
 
-export default class Pagination extends Component {
+export const WINDOW_SIZE = 4;
+
+class Pagination extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleFirstPageClick = this.handleFirstPageClick.bind(this);
+    this.handlePreviousPageClick = this.handlePreviousPageClick.bind(this);
+    this.handleNextPageClick = this.handleNextPageClick.bind(this);
+    this.handleLastPageClick = this.handleLastPageClick.bind(this);
+  }
+  onPaginationClick(page) {
+    window.location.href = uri(window.location.href).setSearch('page', page);
+  }
+  handleFirstPageClick() {
+    this.onPaginationClick(1);
+  }
+  handlePreviousPageClick() {
+    this.onPaginationClick(this.props.currentPage - 1);
+  }
+  handleNextPageClick() {
+    this.onPaginationClick(this.props.currentPage + 1);
+  }
+  handleLastPageClick() {
+    this.onPaginationClick(this.props.totalPages);
+  }
   render() {
-    const { current_page, total_count, count_per_page } = this.props;
-
-    const total_pages = Math.ceil(total_count / count_per_page);
-
-    let firstPage = '';
-    let previousPage = '';
-    let leftEllipsis = '';
-    let nextPage = '';
-    let lastPage = '';
-    let rightEllipsis = ''
-
-    if (current_page > 1) {
-      firstPage = (
-        <span className="first">
-          <a href='#' rel='first' onClick={() => this.onPaginationClick(1)}>&laquo;</a>
-        </span>
-      )
-    } 
-
-    if (!(current_page - 1) <= 0) {
-      previousPage = (
-        <span className="prev">
-          <a href='#' rel='previous' onClick={() => this.onPaginationClick(current_page - 1)}>‹</a>
-        </span>
-      )
-    }
-
-    if (current_page > windowSize + 1) {
-      leftEllipsis = <span className="page gap">&hellip;</span>
-    }
-
-    if (current_page + 1 <= total_pages) {
-      nextPage = (
-        <span className="next">
-          <a href='#' rel='next' onClick={() => this.onPaginationClick(current_page + 1)}>›</a>
-        </span>
-      )
-    }
-
-    if (current_page != total_pages) {
-      lastPage = (
-        <span className="last">
-          <a href='#' rel='last' onClick={() => this.onPaginationClick(total_pages)}>Last &raquo;</a>
-        </span>
-      )
-    }
-
-    if (current_page + windowSize < total_pages) {
-      rightEllipsis = <span className="page gap">&hellip;</span>
-    }
-
-    const windowSize = 4;
-
-    let currentWindow = [];
-
-    let page = current_page - windowSize;
-    if (page < 1) {
-      page = 1;
-    }
-
-    while((page <= (current_page + windowSize)) && (page <= total_pages)) {
-      if (current_page == page) {
-        var link = page;
-        var className = "page current";
-      } else {
-        let handleClick = this.onPaginationClick.bind(this, page);
-        var link = <a href='#' onClick={handleClick}>{page}</a>
-        var className = "page";
-      }
-
-      currentWindow.push(
-        <span className={className}>
-          {link}{' '}
-        </span>
-      )
-
-      page++;
-    };
+    const {
+      currentPage,
+      totalPages,
+    } = this.props;
 
     return (
       <nav className="pagination">
-        {firstPage}
+        {currentPage > 1 && <PaginationFirstPage onClick={this.handleFirstPageClick} />}
         {' '}
-        {previousPage}
+        {currentPage - 1 > 0 && <PaginationPreviousPage onClick={this.handlePreviousPageClick} />}
         {' '}
-        {leftEllipsis}
+        {(currentPage > WINDOW_SIZE + 1) && (
+          <span className="page gap">
+            {'&hellip;'}
+          </span>
+        )}
         {' '}
-        {currentWindow}
+        <PaginationCurrentWindow
+          currentPage={currentPage}
+          onClick={this.onPaginationClick}
+          totalPages={totalPages}
+        />
         {' '}
-        {rightEllipsis}
+        {(currentPage + WINDOW_SIZE < totalPages) && (
+          <span className="page gap">
+            {'&hellip;'}
+          </span>
+        )}
         {' '}
-        {nextPage}
+        {currentPage + 1 <= totalPages && <PaginationNextPage onClick={this.handleNextPageClick} />}
         {' '}
-        {lastPage}
+        {currentPage != totalPages && <PaginationLastPage onClick={this.handleLastPageClick} />}
       </nav>
     );
-  }
-
-  onPaginationClick(page) {
-    let url = window.location.href;
-
-    let pattern = new RegExp('\\b(page=).*?(&|$)');
-
-    if(url.search(pattern)>=0) {
-      url = url.replace(pattern,'$1' + page + '$2');
-    } else {
-      url = url + (url.indexOf('?')>0 ? '&' : '?') + 'page=' + page;
-    }
-
-    window.location.href = url;
   }
 }
 
 Pagination.propTypes = {
-  current_page: PropTypes.number.isRequired,
-  count_per_page:  PropTypes.number.isRequired,
-  total_count:  PropTypes.number.isRequired
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
 };
+
+export default Pagination;

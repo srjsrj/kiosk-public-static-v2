@@ -14,11 +14,12 @@
     "contacts": [
       {
         "type": "email",
-        "value": "saharokstore@gmail.com"
+        "value": "saharokstore@gmail.com",
+        "link": "mailto:saharokstore@gmail.com"
       }, {
         "type": "phone",
         "value": "+7 666 555 44 33",
-        "link": "+76665554433"
+        "link": "tel:+76665554433"
       }, {
         "type": "text",
         "value": "plain text contact"
