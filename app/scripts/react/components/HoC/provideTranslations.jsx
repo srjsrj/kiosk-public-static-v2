@@ -56,6 +56,8 @@ const provideTranslations = (WrappedComponent) => {
     }
   }
 
+  I18nextProvider.wrapped = WrappedComponent;
+
   I18nextProvider.propTypes = {
     i18n: PropTypes.shape({
       locale: PropTypes.oneOf(localeLanguages).isRequired,

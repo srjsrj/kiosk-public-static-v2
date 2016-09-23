@@ -15,3 +15,5 @@ export { default as packagesApi } from './packagesApi';
 export { default as wishlistItem } from './wishlistItem';
 export { default as menuItem } from './menuItem';
 export { default as locale } from './locale';
+export { default as vendor } from './vendor';
+export { default as vendorContact } from './vendorContact';
