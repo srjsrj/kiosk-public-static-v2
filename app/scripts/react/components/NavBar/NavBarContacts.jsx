@@ -25,7 +25,7 @@ class NavBarContacts extends Component {
         <li key={`navbar-contact-${idx}`}>
           <a
             className="tel-link"
-            href={`mailto:${value}`}
+            href={link}
           >
             {value}
           </a>
@@ -36,7 +36,7 @@ class NavBarContacts extends Component {
         <li key={`navbar-contact-${idx}`}>
           <a
             className="tel-link text-nowrap"
-            href={`tel:${link}`}
+            href={link}
           >
             {value}
           </a>

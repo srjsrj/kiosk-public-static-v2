@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import provideTranslations from '../../HoC/provideTranslations';
 import ProductBlockImage from './ProductBlockImage';
 import ProductBlockBadges from './ProductBlockBadges';
@@ -25,7 +25,11 @@ const ProductBlock = ({ showCartButton, showQuantity, product, t }) => (
       </a>
       {showCartButton && product.has_ordering_goods && product.goods.length == 1 &&
         <div className="b-item__cart-form">
-          <ProductBlockCartFormButton t={t} product={product} showQuantity={showQuantity} />
+          <ProductBlockCartFormButton
+            product={product}
+            showQuantity={showQuantity}
+            t={t}
+          />
         </div>
       }
     </div>
@@ -35,11 +39,13 @@ const ProductBlock = ({ showCartButton, showQuantity, product, t }) => (
 ProductBlock.propTypes = {
   product: PropTypes.object.isRequired,
   showCartButton: PropTypes.bool,
-  showQuantity: PropTypes.bool
+  showQuantity: PropTypes.bool,
+  t: PropTypes.func.isRequired,
 };
+
 ProductBlock.defaultProps = {
   showCartButton: false,
-  showQuantity: false
+  showQuantity: false,
 };
 
 export default provideTranslations(ProductBlock);
