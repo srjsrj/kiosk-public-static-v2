@@ -21,6 +21,7 @@ import menuBottomSample from 'test/fixtures/menuBottom/sample';
 import navBarSample from 'test/fixtures/navBar/sample';
 import productListSample from 'test/fixtures/productList/sample';
 import productGroupSample from 'test/fixtures/productGroup/sample.json';
+import childrenProductsSample from 'test/fixtures/childrenProducts/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -39,5 +40,6 @@ global.MenuBottomSample = () => React.createElement(global.MenuBottom, menuBotto
 global.NavBarSample = () => React.createElement(global.NavBar, navBarSample);
 global.ProductListSample = () => React.createElement(global.ProductList, productListSample);
 global.ProductGroupSample = () => React.createElement(global.ProductGroup, productGroupSample);
+global.ChildrenProductsSample = () => React.createElement(global.ChildrenProducts, childrenProductsSample);
 
 import './lib/ReactRailsUJS';

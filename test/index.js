@@ -38,3 +38,4 @@ import './react/components/MenuBottom/index.test';
 import './react/components/NavBar/index.test';
 import './react/components/ProductList/index.test';
 import './react/components/ProductGroup/index.test';
+import './react/components/ChildrenProducts/index.test';

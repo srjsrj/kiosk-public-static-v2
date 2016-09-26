@@ -45,5 +45,6 @@ global.MenuBottom = require('rc/MenuBottom');
 global.NavBar = require('rc/NavBar');
 global.ProductList = require('rc/ProductList');
 global.ProductGroup = require('rc/ProductGroup');
+global.ChildrenProducts = require('rc/ChildrenProducts');
 
 import './react/application';

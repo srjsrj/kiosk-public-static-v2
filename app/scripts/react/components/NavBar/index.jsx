@@ -13,6 +13,7 @@ class NavBar extends Component {
       logoProps,
       vendor,
       searchQuery,
+      showClientBar,
       t,
     } = this.props;
 
@@ -36,7 +37,7 @@ class NavBar extends Component {
                 t={t}
               />
             </div>
-            <Clientbar {...clientBarProps} />
+            {showClientBar && <Clientbar {...clientBarProps} />}
           </div>
         </div>
       </header>
@@ -48,6 +49,7 @@ NavBar.propTypes = {
   clientBarProps: PropTypes.shape(Clientbar.wrapped.propTypes).isRequired,
   logoProps: PropTypes.shape(Logo.propTypes).isRequired,
   searchQuery: PropTypes.string,
+  showClientBar: PropTypes.bool,
   vendor: schemas.vendor.isRequired,
   t: PropTypes.func.isRequired,
 };
@@ -61,6 +63,7 @@ NavBar.defaultProps = {
     search_products_path: '',
   },
   searchQuery: '',
+  showClientBar: false,
 };
 
 export default provideTranslations(NavBar);
