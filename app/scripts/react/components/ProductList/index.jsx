@@ -11,6 +11,11 @@ class ProductListContainer extends Component {
 }
 
 ProductListContainer.propTypes = {
+  container: {
+    image: schemas.image,
+    description: PropTypes.string,
+    bottom_text: PropTypes.string,
+  },
   products: PropTypes.shape({
     items: PropTypes.arrayOf(ProductBlock.wrapped.propTypes).isRequired,
     pagination: schemas.pagination.isRequired,
@@ -19,9 +24,11 @@ ProductListContainer.propTypes = {
   showPagination: PropTypes.bool,
   showQuantity: PropTypes.bool,
   t: PropTypes.func.isRequired,
+  title: PropTypes.string,
 };
 
 ProductListContainer.defaultProps = {
+  container: {},
   products: [],
 };
 
