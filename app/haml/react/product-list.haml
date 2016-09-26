@@ -2,7 +2,7 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.b-page
+  %body.b-page.b-page_layout-filter
     .b-page__content
       %div{data: {react-class: 'TopBanner', react-props: '{"content": "Мы открылись!", "url": ""}'}}
 
@@ -10,15 +10,7 @@
         +include 'app/haml/react/_navbar1.haml'
 
       .b-page__content__inner.b-page__content__inner_content
-        %section.b-item-list.b-item-list_catalog
-          .b-item-list__filter
-            %form{method: 'POST'}
-              / %div{data: {react-class: 'CatalogFilter', react-props: ''}}
-
-          .b-item-list__description
-            %p Открытые, или, как их еще называют, разомкнутые кольца отличаются от обычных тем, что их размер можно регулировать, чуть сжав или раздвинув. Изменения - от пары миллиметров, для более удобной посадки, до 1-2 размеров.
-            %p Это делает открытые кольца хорошим выбором для подарка: вы не ошибетесь, даже если не знаете точного размера. Кроме того, их можно носить на разных фалангах пальцев и удачно сочетать между собой.
-          %div{data: {react-class: 'ProductListSample'}}
+        %div{data: {react-class: 'ProductListSample'}}
 
       .b-page__content__inner.b-page__content__inner_footer
         +include 'app/haml/shared/_footer.haml'

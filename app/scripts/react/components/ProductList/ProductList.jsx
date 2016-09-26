@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import ProductBlock from 'rc/Product/ProductBlock';
 import Pagination from 'rc/Pagination';
-import CategoryFilterForm from 'rc/CategoryFilterForm';
+import CatalogFilterContainer from 'rc/CatalogFilter';
+import { Image } from 'rc/common/Image';
 import * as schemas from 'r/schemas';
 
 class ProductList extends Component {
   render() {
     const {
+      catalogFilterProps,
+      showCatalogFilter,
       container,
       products: {
         items,
@@ -21,7 +24,7 @@ class ProductList extends Component {
 
     return (
       <section className="b-item-list b-item-list_catalog">
-        <CategoryFilterForm />
+        {showCatalogFilter && <CatalogFilterContainer {...catalogFilterProps} />}
         {title && (
           <h1 className="b-item-list__title">
             {title}
@@ -40,15 +43,17 @@ class ProductList extends Component {
         )}
         {(container && container.description) && (
           <div className="b-item-list__description">
-            <div className="b-page__content__inner_content">
-              {container.description}
-            </div>
+            <div
+              className="b-page__content__inner_content"
+              dangerouslySetInnerHTML={{ __html: container.description }}
+            />
           </div>
         )}
         <div className="b-item-list__content">
           {items.length > 0
-            ? items.map((item) => (
+            ? items.map((item, idx) => (
               <ProductBlock
+                key={`product-block-${idx}`}
                 product={item}
                 showCartButton={showCartButton}
                 showQuantity={showQuantity}
@@ -67,38 +72,30 @@ class ProductList extends Component {
         </div>
         {(container && container.bottom_text) && (
           <div className="b-item-list__description">
-            <div className="b-page__content__inner_content">
-              {container.bottom_text}
-            </div>
+            <div
+              className="b-page__content__inner_content"
+              dangerouslySetInnerHTML={{ __html: container.bottom_text }}
+            />
           </div>
         )}
       </section>
     );
-
-    /*
-    def container_image(container)
-      return unless container.image.present?
-      content_tag :div, class: 'b-slider b-slider_promo' do
-        content_tag :div, class: 'b-slider__item' do
-          image_tag container.image.adjusted_url(width: 1000, filters: ['no_upscale()']), class: 'b-container-image'
-        end
-      end
-    end
-    */
   }
 }
 
 ProductList.propTypes = {
-  container: {
+  catalogFilterProps: PropTypes.shape(...CatalogFilterContainer.propTypes),
+  container: PropTypes.shape({
     image: schemas.image,
     description: PropTypes.string,
     bottom_text: PropTypes.string,
-  },
+  }),
   products: PropTypes.shape({
     items: PropTypes.array.isRequired,
     pagination: PropTypes.object.isRequired,
   }).isRequired,
   showCartButton: PropTypes.bool,
+  showCatalogFilter: PropTypes.bool,
   showPagination: PropTypes.bool,
   showQuantity: PropTypes.bool,
   t: PropTypes.func.isRequired,

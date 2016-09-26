@@ -904,7 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.532'
+  version: '0.0.533'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -3801,19 +3801,82 @@ module.exports = exports["default"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.CatalogFilter = undefined;
 
-var _CatalogFilter = require('./CatalogFilter');
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
-Object.defineProperty(exports, 'CatalogFilter', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_CatalogFilter).default;
-  }
-});
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _CatalogFilter = require('./CatalogFilter.jsx');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./CatalogFilter":26}],36:[function(require,module,exports){
+var CatalogFilterContainer = function (_Component) {
+  (0, _inherits3.default)(CatalogFilterContainer, _Component);
+
+  function CatalogFilterContainer() {
+    (0, _classCallCheck3.default)(this, CatalogFilterContainer);
+    return (0, _possibleConstructorReturn3.default)(this, (CatalogFilterContainer.__proto__ || (0, _getPrototypeOf2.default)(CatalogFilterContainer)).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(CatalogFilterContainer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'b-item-list__filter' },
+        _react2.default.createElement(
+          'form',
+          { action: this.props.filterUrl, method: 'get' },
+          _react2.default.createElement(_CatalogFilter2.default, this.props)
+        )
+      );
+    }
+  }]);
+  return CatalogFilterContainer;
+}(_react.Component);
+
+CatalogFilterContainer.propTypes = {
+  filterName: _react.PropTypes.string,
+  filterUrl: _react.PropTypes.string.isRequired,
+  options: _react.PropTypes.array.isRequired,
+  params: _react.PropTypes.object,
+  selectedOptions: _react.PropTypes.array
+};
+
+CatalogFilterContainer.defaultProps = {
+  filterUrl: '',
+  options: [],
+  params: {},
+  selectedOptions: []
+};
+
+exports.default = CatalogFilterContainer;
+exports.CatalogFilter = _CatalogFilter2.default;
+
+},{"./CatalogFilter.jsx":26,"babel-runtime/core-js/object/get-prototype-of":261,"babel-runtime/helpers/classCallCheck":267,"babel-runtime/helpers/createClass":268,"babel-runtime/helpers/inherits":271,"babel-runtime/helpers/possibleConstructorReturn":272,"react":"react"}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15146,6 +15209,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -15178,6 +15245,18 @@ var _Pagination = require('../Pagination');
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
+var _Image = require('../common/Image');
+
+var _schemas = require('../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProductList = function (_Component) {
@@ -15192,6 +15271,9 @@ var ProductList = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var catalogFilterProps = _props.catalogFilterProps;
+      var showCatalogFilter = _props.showCatalogFilter;
+      var container = _props.container;
       var _props$products = _props.products;
       var items = _props$products.items;
       var pagination = _props$products.pagination;
@@ -15199,26 +15281,67 @@ var ProductList = function (_Component) {
       var showPagination = _props.showPagination;
       var showQuantity = _props.showQuantity;
       var t = _props.t;
+      var title = _props.title;
 
 
       return _react2.default.createElement(
-        'div',
-        { className: 'b-item-list__content' },
-        items.length > 0 ? items.map(function (item) {
-          return _react2.default.createElement(_ProductBlock2.default, {
-            product: item,
-            showCartButton: showCartButton,
-            showQuantity: showQuantity
-          });
-        }) : _react2.default.createElement(
-          'div',
-          { className: 'b-text b-text_center' },
-          t('vendor.products.nothing_found_by_criteria')
+        'section',
+        { className: 'b-item-list b-item-list_catalog' },
+        showCatalogFilter && _react2.default.createElement(_CatalogFilter2.default, catalogFilterProps),
+        title && _react2.default.createElement(
+          'h1',
+          { className: 'b-item-list__title' },
+          title
         ),
-        showPagination && pagination.total_pages > 1 && _react2.default.createElement(
+        container && container.image && _react2.default.createElement(
           'div',
-          { className: 'b-item-list__paginator' },
-          _react2.default.createElement(_Pagination2.default, pagination)
+          { className: 'b-slider b-slider_promo' },
+          _react2.default.createElement(
+            'div',
+            { className: 'b-slider__item' },
+            _react2.default.createElement(_Image.Image, {
+              className: 'b-container-image',
+              image: container.image,
+              maxWidth: 1000
+            })
+          )
+        ),
+        container && container.description && _react2.default.createElement(
+          'div',
+          { className: 'b-item-list__description' },
+          _react2.default.createElement('div', {
+            className: 'b-page__content__inner_content',
+            dangerouslySetInnerHTML: { __html: container.description }
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'b-item-list__content' },
+          items.length > 0 ? items.map(function (item, idx) {
+            return _react2.default.createElement(_ProductBlock2.default, {
+              key: 'product-block-' + idx,
+              product: item,
+              showCartButton: showCartButton,
+              showQuantity: showQuantity
+            });
+          }) : _react2.default.createElement(
+            'div',
+            { className: 'b-text b-text_center' },
+            t('vendor.products.nothing_found_by_criteria')
+          ),
+          showPagination && pagination.total_pages > 1 && _react2.default.createElement(
+            'div',
+            { className: 'b-item-list__paginator' },
+            _react2.default.createElement(_Pagination2.default, pagination)
+          )
+        ),
+        container && container.bottom_text && _react2.default.createElement(
+          'div',
+          { className: 'b-item-list__description' },
+          _react2.default.createElement('div', {
+            className: 'b-page__content__inner_content',
+            dangerouslySetInnerHTML: { __html: container.bottom_text }
+          })
         )
       );
     }
@@ -15227,25 +15350,37 @@ var ProductList = function (_Component) {
 }(_react.Component);
 
 ProductList.propTypes = {
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
+  container: _react.PropTypes.shape({
+    image: schemas.image,
+    description: _react.PropTypes.string,
+    bottom_text: _react.PropTypes.string
+  }),
   products: _react.PropTypes.shape({
     items: _react.PropTypes.array.isRequired,
     pagination: _react.PropTypes.object.isRequired
   }).isRequired,
   showCartButton: _react.PropTypes.bool,
+  showCatalogFilter: _react.PropTypes.bool,
   showPagination: _react.PropTypes.bool,
   showQuantity: _react.PropTypes.bool,
-  t: _react.PropTypes.func.isRequired
+  t: _react.PropTypes.func.isRequired,
+  title: _react.PropTypes.string
 };
 
 exports.default = ProductList;
 module.exports = exports['default'];
 
-},{"../Pagination":94,"../Product/ProductBlock":103,"babel-runtime/core-js/object/get-prototype-of":261,"babel-runtime/helpers/classCallCheck":267,"babel-runtime/helpers/createClass":268,"babel-runtime/helpers/inherits":271,"babel-runtime/helpers/possibleConstructorReturn":272,"react":"react"}],139:[function(require,module,exports){
+},{"../../schemas":222,"../CatalogFilter":35,"../Pagination":94,"../Product/ProductBlock":103,"../common/Image":175,"babel-runtime/core-js/object/get-prototype-of":261,"babel-runtime/helpers/classCallCheck":267,"babel-runtime/helpers/createClass":268,"babel-runtime/helpers/inherits":271,"babel-runtime/helpers/possibleConstructorReturn":272,"babel-runtime/helpers/toConsumableArray":274,"react":"react"}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -15287,6 +15422,10 @@ var _schemas = require('../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -15309,24 +15448,37 @@ var ProductListContainer = function (_Component) {
 }(_react.Component);
 
 ProductListContainer.propTypes = {
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
+  container: _react.PropTypes.shape({
+    image: schemas.image,
+    description: _react.PropTypes.string,
+    bottom_text: _react.PropTypes.string
+  }),
   products: _react.PropTypes.shape({
-    items: _react.PropTypes.arrayOf(_ProductBlock2.default.wrapped.propTypes).isRequired,
+    items: _react.PropTypes.arrayOf(_react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_ProductBlock2.default.wrapped.propTypes))).isRequired,
     pagination: schemas.pagination.isRequired
   }).isRequired,
   showCartButton: _react.PropTypes.bool,
+  showCatalogFilter: _react.PropTypes.bool,
   showPagination: _react.PropTypes.bool,
   showQuantity: _react.PropTypes.bool,
-  t: _react.PropTypes.func.isRequired
+  t: _react.PropTypes.func.isRequired,
+  title: _react.PropTypes.string
 };
 
 ProductListContainer.defaultProps = {
-  products: []
+  container: {},
+  products: [],
+  showCartButton: false,
+  showCatalogFilter: false,
+  showPagination: false,
+  showQuantity: false
 };
 
 exports.default = (0, _provideTranslations2.default)(ProductListContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":222,"../HoC/provideTranslations":62,"../Product/ProductBlock":103,"./ProductList":138,"babel-runtime/core-js/object/get-prototype-of":261,"babel-runtime/helpers/classCallCheck":267,"babel-runtime/helpers/createClass":268,"babel-runtime/helpers/inherits":271,"babel-runtime/helpers/possibleConstructorReturn":272,"react":"react"}],140:[function(require,module,exports){
+},{"../../schemas":222,"../CatalogFilter":35,"../HoC/provideTranslations":62,"../Product/ProductBlock":103,"./ProductList":138,"babel-runtime/core-js/object/get-prototype-of":261,"babel-runtime/helpers/classCallCheck":267,"babel-runtime/helpers/createClass":268,"babel-runtime/helpers/inherits":271,"babel-runtime/helpers/possibleConstructorReturn":272,"babel-runtime/helpers/toConsumableArray":274,"react":"react"}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
