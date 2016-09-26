@@ -22,7 +22,10 @@ CatalogFilterContainer.propTypes = {
     PropTypes.number,
     PropTypes.string,
   ])),
-  selectedOptions: PropTypes.arrayOf(schemas.catalogFilterOption).isRequired,
+  selectedOptions: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 CatalogFilterContainer.defaultProps = {

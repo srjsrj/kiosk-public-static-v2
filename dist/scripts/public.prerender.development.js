@@ -3436,7 +3436,10 @@ CatalogFilterContainer.propTypes = {
   filterUrl: _react.PropTypes.string.isRequired,
   options: _react.PropTypes.arrayOf(schemas.catalogFilterOption).isRequired,
   params: _react.PropTypes.objectOf(_react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])),
-  selectedOptions: _react.PropTypes.arrayOf(schemas.catalogFilterOption).isRequired
+  selectedOptions: _react.PropTypes.arrayOf(_react.PropTypes.shape({
+    name: _react.PropTypes.string.isRequired,
+    url: _react.PropTypes.string.isRequired
+  })).isRequired
 };
 
 CatalogFilterContainer.defaultProps = {
@@ -17732,15 +17735,24 @@ var checkboxOption = shape((0, _extends3.default)({}, baseFields, {
     name: string.isRequired,
     paramValue: string.isRequired,
     checked: bool.isRequired
-  }))
+  })).isRequired
 }));
 
 var radioOption = shape((0, _extends3.default)({}, baseFields, {
-  type: oneOf(['radio']).isRequired
+  type: oneOf(['radio']).isRequired,
+  items: arrayOf(shape({
+    paramValue: string.isRequired,
+    name: string.isRequired
+  })).isRequired
 }));
 
 var colorOption = shape((0, _extends3.default)({}, baseFields, {
-  type: oneOf(['color']).isRequired
+  type: oneOf(['color']).isRequired,
+  items: arrayOf(shape({
+    name: string.isRequired,
+    hexCode: string.isRequired,
+    checked: bool.isRequired
+  })).isRequired
 }));
 
 exports.default = oneOfType([rangeOption, checkboxOption, radioOption, colorOption]);

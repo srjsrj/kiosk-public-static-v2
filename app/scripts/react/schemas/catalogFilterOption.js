@@ -33,17 +33,26 @@ const checkboxOption = shape({
     name: string.isRequired,
     paramValue: string.isRequired,
     checked: bool.isRequired,
-  })),
+  })).isRequired,
 });
 
 const radioOption = shape({
   ...baseFields,
   type: oneOf(['radio']).isRequired,
+  items: arrayOf(shape({
+    paramValue: string.isRequired,
+    name: string.isRequired,
+  })).isRequired,
 });
 
 const colorOption = shape({
   ...baseFields,
   type: oneOf(['color']).isRequired,
+  items: arrayOf(shape({
+    name: string.isRequired,
+    hexCode: string.isRequired,
+    checked: bool.isRequired,
+  })).isRequired,
 });
 
 export default oneOfType([
