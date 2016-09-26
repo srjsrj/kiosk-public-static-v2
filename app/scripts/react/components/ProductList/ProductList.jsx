@@ -51,9 +51,9 @@ class ProductList extends Component {
         )}
         <div className="b-item-list__content">
           {items.length > 0
-            ? items.map((item, idx) => (
+            ? items.map((item) => (
               <ProductBlock
-                key={`product-block-${idx}`}
+                key={`product-block-${item.id}`}
                 product={item}
                 showCartButton={showCartButton}
                 showQuantity={showQuantity}

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as schemas from 'r/schemas';
 import CatalogFilter from './CatalogFilter.jsx';
 
 class CatalogFilterContainer extends Component {
@@ -16,9 +17,12 @@ class CatalogFilterContainer extends Component {
 CatalogFilterContainer.propTypes = {
   filterName: PropTypes.string,
   filterUrl: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
-  params: PropTypes.object,
-  selectedOptions: PropTypes.array,
+  options: PropTypes.arrayOf(schemas.catalogFilterOption).isRequired,
+  params: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ])),
+  selectedOptions: PropTypes.arrayOf(schemas.catalogFilterOption).isRequired,
 };
 
 CatalogFilterContainer.defaultProps = {

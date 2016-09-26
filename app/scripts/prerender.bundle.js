@@ -39,3 +39,4 @@ MenuTop = require('./react/components/MenuTop');
 MenuBottom = require('./react/components/MenuBottom');
 NavBar = require('./react/components/NavBar');
 ProductList = require('./react/components/ProductList');
+ProductGroup = require('./react/components/ProductGroup');
