@@ -10,6 +10,7 @@ class NavBar extends Component {
   render() {
     const {
       clientBarProps,
+      i18n,
       logoProps,
       vendor,
       searchQuery,
@@ -37,7 +38,7 @@ class NavBar extends Component {
                 t={t}
               />
             </div>
-            {showClientBar && <Clientbar {...clientBarProps} />}
+            {showClientBar && <Clientbar {...clientBarProps} i18n={i18n} />}
           </div>
         </div>
       </header>
@@ -47,6 +48,7 @@ class NavBar extends Component {
 
 NavBar.propTypes = {
   clientBarProps: PropTypes.shape(Clientbar.wrapped.propTypes).isRequired,
+  i18n: PropTypes.object,
   logoProps: PropTypes.shape(Logo.propTypes).isRequired,
   searchQuery: PropTypes.string,
   showClientBar: PropTypes.bool,

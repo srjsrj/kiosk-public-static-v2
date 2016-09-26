@@ -27,9 +27,9 @@ class Clientbar extends Component {
         }
         {hasCart && cartUrl &&
           <CartButtonController
-            url={cartUrl}
-            t={t}
             showFullBasketCount={showFullBasketCount}
+            t={t}
+            url={cartUrl}
           />
         }
       </div>
@@ -46,13 +46,15 @@ Clientbar.propTypes = {
   hasWishlist: PropTypes.bool,
   wishlistText: PropTypes.string,
   wishlistUrl: PropTypes.string,
-  showFullBasketCount: PropTypes.bool
+  showFullBasketCount: PropTypes.bool,
+  t: PropTypes.func.isRequired,
 };
+
 Clientbar.defaultProps = {
   hasCabinet: false,
   hasCart: false,
   hasWishlist: false,
-  showFullBasketCount: false
-}
+  showFullBasketCount: false,
+};
 
 export default provideTranslations(Clientbar);

@@ -904,7 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.540'
+  version: '0.0.541'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -5393,9 +5393,9 @@ var Clientbar = function (_Component) {
           url: wishlistUrl
         }),
         hasCart && cartUrl && _react2.default.createElement(_CartButtonController2.default, {
-          url: cartUrl,
+          showFullBasketCount: showFullBasketCount,
           t: t,
-          showFullBasketCount: showFullBasketCount
+          url: cartUrl
         })
       );
     }
@@ -5412,8 +5412,10 @@ Clientbar.propTypes = {
   hasWishlist: _react.PropTypes.bool,
   wishlistText: _react.PropTypes.string,
   wishlistUrl: _react.PropTypes.string,
-  showFullBasketCount: _react.PropTypes.bool
+  showFullBasketCount: _react.PropTypes.bool,
+  t: _react.PropTypes.func.isRequired
 };
+
 Clientbar.defaultProps = {
   hasCabinet: false,
   hasCart: false,
@@ -8360,6 +8362,7 @@ var MenuBottom = function (_Component) {
       var currenciesIsoCodes = _props.currenciesIsoCodes;
       var currentCurrency = _props.currentCurrency;
       var currentLocale = _props.currentLocale;
+      var i18n = _props.i18n;
       var locales = _props.locales;
       var isVendorLandingLinkDisabled = _props.isVendorLandingLinkDisabled;
       var leftActiveItems = _props.leftActiveItems;
@@ -8398,10 +8401,12 @@ var MenuBottom = function (_Component) {
           ),
           _react2.default.createElement(_CurrencySwitcher2.default, {
             currenciesIsoCodes: currenciesIsoCodes,
-            current: currentCurrency
+            current: currentCurrency,
+            i18n: i18n
           }),
           _react2.default.createElement(_LocaleSwitcher2.default, {
             current: currentLocale,
+            i18n: i18n,
             locales: locales
           })
         )
@@ -8415,6 +8420,7 @@ MenuBottom.propTypes = {
   currenciesIsoCodes: _react.PropTypes.array,
   currentCurrency: _react.PropTypes.string,
   currentLocale: _react.PropTypes.string,
+  i18n: _react.PropTypes.object,
   isVendorLandingLinkDisabled: _react.PropTypes.bool.isRequired,
   leftActiveItems: _react.PropTypes.arrayOf(schemas.menuItem).isRequired,
   leftItems: _react.PropTypes.arrayOf(schemas.menuItem).isRequired,
@@ -9525,6 +9531,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -9588,6 +9598,7 @@ var NavBar = function (_Component) {
     value: function render() {
       var _props = this.props;
       var clientBarProps = _props.clientBarProps;
+      var i18n = _props.i18n;
       var logoProps = _props.logoProps;
       var vendor = _props.vendor;
       var searchQuery = _props.searchQuery;
@@ -9626,7 +9637,7 @@ var NavBar = function (_Component) {
                 t: t
               })
             ),
-            showClientBar && _react2.default.createElement(_Clientbar.Clientbar, clientBarProps)
+            showClientBar && _react2.default.createElement(_Clientbar.Clientbar, (0, _extends3.default)({}, clientBarProps, { i18n: i18n }))
           )
         )
       );
@@ -9637,6 +9648,7 @@ var NavBar = function (_Component) {
 
 NavBar.propTypes = {
   clientBarProps: _react.PropTypes.shape(_Clientbar.Clientbar.wrapped.propTypes).isRequired,
+  i18n: _react.PropTypes.object,
   logoProps: _react.PropTypes.shape(_Logo2.default.propTypes).isRequired,
   searchQuery: _react.PropTypes.string,
   showClientBar: _react.PropTypes.bool,
@@ -9659,7 +9671,7 @@ NavBar.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(NavBar);
 module.exports = exports['default'];
 
-},{"../../schemas":227,"../Clientbar":50,"../HoC/provideTranslations":64,"../Logo":73,"./NavBarContacts":83,"./NavBarSearch":84,"babel-runtime/core-js/object/get-prototype-of":266,"babel-runtime/helpers/classCallCheck":272,"babel-runtime/helpers/createClass":273,"babel-runtime/helpers/inherits":276,"babel-runtime/helpers/possibleConstructorReturn":277,"react":"react"}],86:[function(require,module,exports){
+},{"../../schemas":227,"../Clientbar":50,"../HoC/provideTranslations":64,"../Logo":73,"./NavBarContacts":83,"./NavBarSearch":84,"babel-runtime/core-js/object/get-prototype-of":266,"babel-runtime/helpers/classCallCheck":272,"babel-runtime/helpers/createClass":273,"babel-runtime/helpers/extends":275,"babel-runtime/helpers/inherits":276,"babel-runtime/helpers/possibleConstructorReturn":277,"react":"react"}],86:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

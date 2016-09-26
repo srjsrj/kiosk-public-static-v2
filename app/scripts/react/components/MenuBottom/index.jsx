@@ -25,6 +25,7 @@ class MenuBottom extends Component {
       currenciesIsoCodes,
       currentCurrency,
       currentLocale,
+      i18n,
       locales,
       isVendorLandingLinkDisabled,
       leftActiveItems,
@@ -57,9 +58,11 @@ class MenuBottom extends Component {
           <CurrencySwitcher
             currenciesIsoCodes={currenciesIsoCodes}
             current={currentCurrency}
+            i18n={i18n}
           />
           <LocaleSwitcher
             current={currentLocale}
+            i18n={i18n}
             locales={locales}
           />
         </div>
@@ -72,6 +75,7 @@ MenuBottom.propTypes = {
   currenciesIsoCodes: PropTypes.array,
   currentCurrency: PropTypes.string,
   currentLocale: PropTypes.string,
+  i18n: PropTypes.object,
   isVendorLandingLinkDisabled: PropTypes.bool.isRequired,
   leftActiveItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
   leftItems: PropTypes.arrayOf(schemas.menuItem).isRequired,
