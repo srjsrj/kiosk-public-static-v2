@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { findDOMNode } from 'react-dom';
 import numeral from 'numeral';
-import noUiSlider from 'noUiSlider';
+import NoUiSlider from 'react-nouislider';
 import { getFilter } from './utils';
 import { showFilteredCount } from '../../actions/catalogFilterActions';
 
@@ -15,28 +14,6 @@ class CatalogFilterRange extends Component {
   state = {
     from: this.props.valueFrom || this.props.from,
     to: this.props.valueTo || this.props.to
-  }
-  componentDidMount() {
-    const slider = findDOMNode(this.refs.slider);
-
-    noUiSlider.create(slider, {
-      step: this.props.step,
-      start: [this.state.from, this.state.to],
-      range: {
-        min: this.props.from,
-        max: this.props.to
-      },
-      connect: true,
-    });
-
-    slider.noUiSlider.on('slide', this.handleSlide);
-    slider.noUiSlider.on('change', this.handleChange);
-  }
-  componentWillUnmount() {
-    const slider = findDOMNode(this.refs.slider);
-
-    slider.noUiSlider.off('slide', this.handleSlide);
-    slider.noUiSlider.off('change', this.handleChange);
   }
   handleSlide([from, to]) {
     this.setState({
@@ -55,15 +32,32 @@ class CatalogFilterRange extends Component {
     if (sFrom !== pFrom || sTo !== pTo) {
       return (
         <span>
-          <input name={parName + '[from]'} type="hidden" value={sFrom} />
-          <input name={parName + '[to]'} type="hidden" value={sTo} />
+          <input
+            name={parName + '[from]'}
+            type="hidden"
+            value={sFrom}
+          />
+          <input
+            name={parName + '[to]'}
+            type="hidden"
+            value={sTo}
+          />
         </span>
       );
     }
   }
   render() {
-    const { title, units } = this.props;
-    const { from , to } = this.state;
+    const {
+      from: initFrom,
+      to: initTo,
+      step,
+      title,
+      units,
+    } = this.props;
+    const {
+      from,
+      to,
+     } = this.state;
 
     return (
       <li className="b-full-filter__item b-full-filter__item_price">
@@ -77,7 +71,16 @@ class CatalogFilterRange extends Component {
               <span className="slider-divider"> – </span>
               {numeral(to).format('0,0[.]00')} <span dangerouslySetInnerHTML={{__html: units}} />
             </div>
-            <div className="b-full-filter__slider__embed" ref="slider" />
+            <div className="b-full-filter__slider__embed">
+              <NoUiSlider
+                connect
+                onChange={this.handleChange}
+                onSlide={this.handleSlide}
+                range={{ min: initFrom, max: initTo }}
+                start={[from, to]}
+                step={step}
+              />
+            </div>
           </div>
         </div>
         {this.renderHiddenRange()}
@@ -92,12 +95,14 @@ CatalogFilterRange.propTypes = {
   paramName: PropTypes.string.isRequired,
   step: PropTypes.number,
   stepRules: PropTypes.array,
+  t: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   to: PropTypes.number.isRequired,
   units: PropTypes.string,
   valueFrom: PropTypes.number,
   valueTo: PropTypes.number,
 };
+
 CatalogFilterRange.defaultProps = {
   step: 1,
   stepRules: [],
