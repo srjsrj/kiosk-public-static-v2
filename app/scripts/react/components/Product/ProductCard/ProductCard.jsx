@@ -42,7 +42,7 @@ class ProductCard extends Component {
     }
   }
   render() {
-    const { similarProducts, t } = this.props;
+    const { similarProducts, otherProducts, t } = this.props;
     const { good, product } = this.state;
 
     return (
@@ -85,7 +85,7 @@ class ProductCard extends Component {
                     t={t}
                   />
                 </div>
-                <ProductCardDetails product={product} />
+                <ProductCardDetails t={t} product={product} otherProducts={otherProducts} />
               </div>
               <ProductCardVideo product={product} />
             </div>
@@ -107,6 +107,7 @@ ProductCard.propTypes = {
   isWishlisted: PropTypes.bool,
   product: PropTypes.object,
   similarProducts: PropTypes.array,
+  otherProducts: PropTypes.array,
   wishlistUrl: PropTypes.string,
 };
 ProductCard.defaultProps = {
@@ -115,6 +116,7 @@ ProductCard.defaultProps = {
   disqusUrl: "",
   product: {},
   similarProducts: [],
+  otherProducts: []
 };
 
 export default provideTranslations(ProductCard);

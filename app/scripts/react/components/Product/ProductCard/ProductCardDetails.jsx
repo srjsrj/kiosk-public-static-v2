@@ -2,10 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import { h1 } from '../../../helpers/seo';
 import { attributeValue } from '../../../helpers/product';
 import classNames from 'classnames';
+import ProductBlockImage from '../ProductBlock/ProductBlockImage';
 
 export default class ProductCardDetails extends Component {
   static propTypes = {
     product: PropTypes.object.isRequired,
+    otherProducts: PropTypes.array
+  }
+  static defaultProps = {
+    otherProducts: []
   }
   renderAttributes(product) {
     if (product.attributes && product.attributes.length) {
@@ -41,16 +46,41 @@ export default class ProductCardDetails extends Component {
       return (
         <span ref="textBlocks">
           {
-            product.text_blocks.map((block, idx) => (
+            product.text_blocks.map((block, idx) =>
               <div className="b-item-full__text" key={idx}>
                 <h4>{block.title}</h4>
                 <span dangerouslySetInnerHTML={{ __html: block.content }} />
               </div>
-            ))
+            )
           }
         </span>
       );
     }
+  }
+
+  renderOtherProducts() {
+    const { otherProducts, t } = this.props;
+
+    if (otherProducts.length > 0) {
+      return (
+        <span>
+          <h3>{t('vendor.other_product.title')}</h3>
+          <ul className="b-item-full__other-products">
+            {
+              otherProducts.map((product, _idx) => (
+                <li key={product.id}>
+                  <a href={product.public_url} title={product.title} alt={product.title}>
+                    <ProductBlockImage product={product} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </span>
+      );
+    }
+
+    return null;
   }
   render() {
     const { product } = this.props;
@@ -62,6 +92,7 @@ export default class ProductCardDetails extends Component {
           {this.renderDescription(product)}
           {this.renderAttributes(product)}
           {this.renderTextBlocks(product)}
+          {this.renderOtherProducts()}
         </span>
       );
     } else {
