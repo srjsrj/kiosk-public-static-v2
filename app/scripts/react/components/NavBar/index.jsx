@@ -1,52 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import * as schemas from 'r/schemas';
 import provideTranslations from 'rc/HoC/provideTranslations';
-import NavBarContacts from './NavBarContacts';
-import NavBarSearch from './NavBarSearch';
+import NavBar from './NavBar';
 import Logo from 'rc/Logo';
 import { Clientbar } from 'rc/Clientbar';
 
-class NavBar extends Component {
+class NavBarContainer extends Component {
   render() {
-    const {
-      clientBarProps,
-      i18n,
-      logoProps,
-      vendor,
-      searchQuery,
-      showClientBar,
-      t,
-    } = this.props;
-
-    return (
-      <header className="b-header">
-        <div className="b-header__container">
-          <div className="b-header__content">
-            <div className="b-header__desc">
-              <NavBarContacts
-                vendorContacts={vendor.contacts}
-                vendorTitle={vendor.title}
-              />
-            </div>
-            <div className="b-header__logo">
-              <Logo {...logoProps} />
-            </div>
-            <div className="b-header__search">
-              <NavBarSearch
-                searchProductsPath={vendor.search_products_path}
-                searchQuery={searchQuery}
-                t={t}
-              />
-            </div>
-            {showClientBar && <Clientbar {...clientBarProps} i18n={i18n} />}
-          </div>
-        </div>
-      </header>
-    );
+    return <NavBar {...this.props} />;
   }
 }
 
-NavBar.propTypes = {
+NavBarContainer.propTypes = {
   clientBarProps: PropTypes.shape(Clientbar.wrapped.propTypes).isRequired,
   i18n: PropTypes.object,
   logoProps: PropTypes.shape(Logo.propTypes).isRequired,
@@ -56,7 +21,7 @@ NavBar.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-NavBar.defaultProps = {
+NavBarContainer.defaultProps = {
   clientBarProps: {},
   logoProps: {},
   vendor: {
@@ -68,4 +33,4 @@ NavBar.defaultProps = {
   showClientBar: false,
 };
 
-export default provideTranslations(NavBar);
+export default provideTranslations(NavBarContainer);

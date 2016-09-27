@@ -1,0 +1,58 @@
+import React, { Component, PropTypes } from 'react';
+import * as schemas from 'r/schemas';
+import NavBarContacts from './NavBarContacts';
+import NavBarSearch from './NavBarSearch';
+import Logo from 'rc/Logo';
+import { Clientbar } from 'rc/Clientbar';
+
+class NavBar extends Component {
+  render() {
+    const {
+      clientBarProps,
+      i18n,
+      logoProps,
+      vendor,
+      searchQuery,
+      showClientBar,
+      t,
+    } = this.props;
+
+    return (
+      <header className="b-header">
+        <div className="b-header__container">
+          <div className="b-header__content">
+            <div className="b-header__desc">
+              <NavBarContacts
+                vendorContacts={vendor.contacts}
+                vendorTitle={vendor.title}
+              />
+            </div>
+            <div className="b-header__logo">
+              <Logo {...logoProps} />
+            </div>
+            <div className="b-header__search">
+              <NavBarSearch
+                searchProductsPath={vendor.search_products_path}
+                searchQuery={searchQuery}
+                t={t}
+              />
+            </div>
+            {showClientBar && <Clientbar {...clientBarProps} i18n={i18n} />}
+          </div>
+        </div>
+      </header>
+    );
+  }
+}
+
+NavBar.propTypes = {
+  clientBarProps: PropTypes.shape(Clientbar.wrapped.propTypes).isRequired,
+  i18n: PropTypes.object,
+  logoProps: PropTypes.shape(Logo.propTypes).isRequired,
+  searchQuery: PropTypes.string,
+  showClientBar: PropTypes.bool,
+  vendor: schemas.vendor.isRequired,
+  t: PropTypes.func.isRequired,
+};
+
+export default NavBar;
