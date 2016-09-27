@@ -12,7 +12,7 @@ class NavBarContainer extends Component {
 }
 
 NavBarContainer.propTypes = {
-  clientBarProps: PropTypes.shape(Clientbar.wrapped.propTypes).isRequired,
+  clientBarProps: PropTypes.shape(Clientbar.propTypes).isRequired,
   i18n: PropTypes.object,
   logoProps: PropTypes.shape(Logo.propTypes).isRequired,
   searchQuery: PropTypes.string,

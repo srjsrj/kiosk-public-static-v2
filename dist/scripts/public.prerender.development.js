@@ -4923,10 +4923,6 @@ var _CartButtonController = require('../buttons/CartButton/CartButtonController'
 
 var _CartButtonController2 = _interopRequireDefault(_CartButtonController);
 
-var _provideTranslations = require('../HoC/provideTranslations');
-
-var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Clientbar = function (_Component) {
@@ -4985,7 +4981,7 @@ Clientbar.propTypes = {
   wishlistText: _react.PropTypes.string,
   wishlistUrl: _react.PropTypes.string,
   showFullBasketCount: _react.PropTypes.bool,
-  t: _react.PropTypes.func.isRequired
+  t: _react.PropTypes.func
 };
 
 Clientbar.defaultProps = {
@@ -4995,10 +4991,10 @@ Clientbar.defaultProps = {
   showFullBasketCount: false
 };
 
-exports.default = (0, _provideTranslations2.default)(Clientbar);
+exports.default = Clientbar;
 module.exports = exports['default'];
 
-},{"../HoC/provideTranslations":46,"../buttons/CabinetButton":131,"../buttons/CartButton/CartButtonController":133,"../buttons/WishlistButton":135,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react"}],42:[function(require,module,exports){
+},{"../buttons/CabinetButton":131,"../buttons/CartButton/CartButtonController":133,"../buttons/WishlistButton":135,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react"}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6953,7 +6949,6 @@ var NavBar = function (_Component) {
     value: function render() {
       var _props = this.props;
       var clientBarProps = _props.clientBarProps;
-      var i18n = _props.i18n;
       var logoProps = _props.logoProps;
       var vendor = _props.vendor;
       var searchQuery = _props.searchQuery;
@@ -6992,7 +6987,7 @@ var NavBar = function (_Component) {
                 t: t
               })
             ),
-            showClientBar && _react2.default.createElement(_Clientbar.Clientbar, (0, _extends3.default)({}, clientBarProps, { i18n: i18n }))
+            showClientBar && _react2.default.createElement(_Clientbar.Clientbar, (0, _extends3.default)({}, clientBarProps, { t: t }))
           )
         )
       );
@@ -7002,8 +6997,7 @@ var NavBar = function (_Component) {
 }(_react.Component);
 
 NavBar.propTypes = {
-  clientBarProps: _react.PropTypes.shape(_Clientbar.Clientbar.wrapped.propTypes).isRequired,
-  i18n: _react.PropTypes.object,
+  clientBarProps: _react.PropTypes.shape(_Clientbar.Clientbar.propTypes).isRequired,
   logoProps: _react.PropTypes.shape(_Logo2.default.propTypes).isRequired,
   searchQuery: _react.PropTypes.string,
   showClientBar: _react.PropTypes.bool,
@@ -7312,7 +7306,7 @@ var NavBarContainer = function (_Component) {
 }(_react.Component);
 
 NavBarContainer.propTypes = {
-  clientBarProps: _react.PropTypes.shape(_Clientbar.Clientbar.wrapped.propTypes).isRequired,
+  clientBarProps: _react.PropTypes.shape(_Clientbar.Clientbar.propTypes).isRequired,
   i18n: _react.PropTypes.object,
   logoProps: _react.PropTypes.shape(_Logo2.default.propTypes).isRequired,
   searchQuery: _react.PropTypes.string,
