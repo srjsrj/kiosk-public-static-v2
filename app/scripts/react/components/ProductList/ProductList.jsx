@@ -11,6 +11,7 @@ class ProductList extends Component {
       catalogFilterProps,
       showCatalogFilter,
       container,
+      i18n,
       products: {
         items,
         pagination,
@@ -53,6 +54,7 @@ class ProductList extends Component {
           {items.length > 0
             ? items.map((item) => (
               <ProductBlock
+                i18n={i18n}
                 key={`product-block-${item.id}`}
                 product={item}
                 showCartButton={showCartButton}
@@ -90,6 +92,7 @@ ProductList.propTypes = {
     description: PropTypes.string,
     bottom_text: PropTypes.string,
   }),
+  i18n: PropTypes.object,
   products: PropTypes.shape({
     items: PropTypes.array.isRequired,
     pagination: PropTypes.object.isRequired,

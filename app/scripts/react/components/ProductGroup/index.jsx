@@ -10,6 +10,7 @@ class ProductGroupContainer extends Component {
 }
 
 ProductGroupContainer.propTypes = {
+  i18n: PropTypes.object,
   products: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape(
       ...ProductBlock.wrapped.propTypes,

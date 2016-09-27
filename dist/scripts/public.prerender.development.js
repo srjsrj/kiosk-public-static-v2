@@ -13100,6 +13100,7 @@ var ProductGroup = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var i18n = _props.i18n;
       var items = _props.products.items;
       var showCartButton = _props.showCartButton;
       var showQuantity = _props.showQuantity;
@@ -13125,6 +13126,7 @@ var ProductGroup = function (_Component) {
           { className: 'b-item-list__content' },
           items.map(function (item) {
             return _react2.default.createElement(_ProductBlock2.default, {
+              i18n: i18n,
               key: 'product-block-' + item.id,
               product: item,
               showCartButton: showCartButton,
@@ -13148,6 +13150,7 @@ var ProductGroup = function (_Component) {
 }(_react.Component);
 
 ProductGroup.propTypes = {
+  i18n: _react.PropTypes.object,
   products: _react.PropTypes.object.isRequired,
   showCartButton: _react.PropTypes.bool.isRequired,
   showQuantity: _react.PropTypes.bool.isRequired,
@@ -13226,6 +13229,7 @@ var ProductGroupContainer = function (_Component) {
 }(_react.Component);
 
 ProductGroupContainer.propTypes = {
+  i18n: _react.PropTypes.object,
   products: _react.PropTypes.shape({
     items: _react.PropTypes.arrayOf(_react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_ProductBlock2.default.wrapped.propTypes))).isRequired
   }).isRequired,
@@ -13320,6 +13324,7 @@ var ProductList = function (_Component) {
       var catalogFilterProps = _props.catalogFilterProps;
       var showCatalogFilter = _props.showCatalogFilter;
       var container = _props.container;
+      var i18n = _props.i18n;
       var _props$products = _props.products;
       var items = _props$products.items;
       var pagination = _props$products.pagination;
@@ -13365,6 +13370,7 @@ var ProductList = function (_Component) {
           { className: 'b-item-list__content' },
           items.length > 0 ? items.map(function (item) {
             return _react2.default.createElement(_ProductBlock2.default, {
+              i18n: i18n,
               key: 'product-block-' + item.id,
               product: item,
               showCartButton: showCartButton,
@@ -13402,6 +13408,7 @@ ProductList.propTypes = {
     description: _react.PropTypes.string,
     bottom_text: _react.PropTypes.string
   }),
+  i18n: _react.PropTypes.object,
   products: _react.PropTypes.shape({
     items: _react.PropTypes.array.isRequired,
     pagination: _react.PropTypes.object.isRequired
@@ -13500,6 +13507,7 @@ ProductListContainer.propTypes = {
     description: _react.PropTypes.string,
     bottom_text: _react.PropTypes.string
   }),
+  i18n: _react.PropTypes.object,
   products: _react.PropTypes.shape({
     items: _react.PropTypes.arrayOf(_react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_ProductBlock2.default.wrapped.propTypes))).isRequired,
     pagination: schemas.pagination.isRequired

@@ -18,6 +18,7 @@ ProductListContainer.propTypes = {
     description: PropTypes.string,
     bottom_text: PropTypes.string,
   }),
+  i18n: PropTypes.object,
   products: PropTypes.shape({
     items: PropTypes.arrayOf(
       PropTypes.shape(...ProductBlock.wrapped.propTypes)

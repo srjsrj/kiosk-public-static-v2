@@ -4,6 +4,7 @@ import ProductBlock from 'rc/Product/ProductBlock';
 class ProductGroup extends Component {
   render() {
     const {
+      i18n,
       products: {
         items,
       },
@@ -26,6 +27,7 @@ class ProductGroup extends Component {
         <div className="b-item-list__content">
           {items.map((item) => (
             <ProductBlock
+              i18n={i18n}
               key={`product-block-${item.id}`}
               product={item}
               showCartButton={showCartButton}
@@ -44,6 +46,7 @@ class ProductGroup extends Component {
 }
 
 ProductGroup.propTypes = {
+  i18n: PropTypes.object,
   products: PropTypes.object.isRequired,
   showCartButton: PropTypes.bool.isRequired,
   showQuantity: PropTypes.bool.isRequired,
