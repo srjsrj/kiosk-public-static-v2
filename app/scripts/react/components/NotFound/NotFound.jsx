@@ -5,6 +5,8 @@ class NotFound extends Component {
     const {
       subject,
       content,
+      phone,
+      email,
     } = this.props;
 
     return (
@@ -18,9 +20,9 @@ class NotFound extends Component {
             { content }
             <br />
             <br />
-            <a href='tel:8(800)77-55-661'> 8 (800) 77-55-661 </a>
+            <a href='tel:{ phone }'>{ phone }</a>
             <span className="middot">&sdot;</span>
-            <a href='mailto:support@kiiiosk.ru'> support@kiiiosk.ru </a>
+            <a href='mailto: { email }'>{ email }</a>
           </p>
         </div>
       </div>
@@ -31,6 +33,13 @@ class NotFound extends Component {
 NotFound.propTypes = {
   subject: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired
+};
+
+NotFound.defaultProps = {
+  phone: '8(800)77-55-661',
+  email: 'support@kiiiosk.ru'
 };
 
 export default NotFound;
