@@ -47,5 +47,6 @@ global.ProductList = require('rc/ProductList');
 global.ProductGroup = require('rc/ProductGroup');
 global.ChildrenProducts = require('rc/ChildrenProducts');
 global.CategoriesShow = require('rc/CategoriesShow');
+global.NotFound = require('./react/components/NotFound');
 
 import './react/application';
