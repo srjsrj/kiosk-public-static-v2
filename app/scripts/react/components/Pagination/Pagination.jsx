@@ -1,36 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import PaginationFirstPage from './PaginationFirstPage';
-import PaginationPreviousPage from './PaginationPreviousPage';
-import PaginationNextPage from './PaginationNextPage';
-import PaginationLastPage from './PaginationLastPage';
 import PaginationCurrentWindow from './PaginationCurrentWindow';
 import uri from 'urijs';
 
 export const WINDOW_SIZE = 4;
 
 class Pagination extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleFirstPageClick = this.handleFirstPageClick.bind(this);
-    this.handlePreviousPageClick = this.handlePreviousPageClick.bind(this);
-    this.handleNextPageClick = this.handleNextPageClick.bind(this);
-    this.handleLastPageClick = this.handleLastPageClick.bind(this);
-  }
-  onPaginationClick(page) {
-    window.location.href = uri(window.location.href).setSearch('page', page);
-  }
-  handleFirstPageClick() {
-    this.onPaginationClick(1);
-  }
-  handlePreviousPageClick() {
-    this.onPaginationClick(this.props.currentPage - 1);
-  }
-  handleNextPageClick() {
-    this.onPaginationClick(this.props.currentPage + 1);
-  }
-  handleLastPageClick() {
-    this.onPaginationClick(this.props.totalPages);
+  getPageHref(page) {
+    return uri(window.location.href).setSearch('page', page);
   }
   render() {
     const {
@@ -40,9 +16,21 @@ class Pagination extends Component {
 
     return (
       <nav className="pagination">
-        {currentPage > 1 && <PaginationFirstPage onClick={this.handleFirstPageClick} />}
+        {currentPage > 1 && (
+          <span className="first">
+            <a href={this.getPageHref(1)}>
+              {'&laquo;'}
+            </a>
+          </span>
+        )}
         {' '}
-        {currentPage - 1 > 0 && <PaginationPreviousPage onClick={this.handlePreviousPageClick} />}
+        {currentPage - 1 > 0 && (
+          <span className="prev">
+            <a href={this.getPageHref(currentPage - 1)}>
+              {'‹'}
+            </a>
+          </span>
+        )}
         {' '}
         {(currentPage > WINDOW_SIZE + 1) && (
           <span className="page gap">
@@ -52,7 +40,7 @@ class Pagination extends Component {
         {' '}
         <PaginationCurrentWindow
           currentPage={currentPage}
-          onClick={this.onPaginationClick}
+          getPageHref={this.getPageHref}
           totalPages={totalPages}
         />
         {' '}
@@ -62,9 +50,21 @@ class Pagination extends Component {
           </span>
         )}
         {' '}
-        {currentPage + 1 <= totalPages && <PaginationNextPage onClick={this.handleNextPageClick} />}
+        {currentPage + 1 <= totalPages && (
+          <span className="next">
+            <a href={this.getPageHref(currentPage + 1)}>
+              {'›'}
+            </a>
+          </span>
+        )}
         {' '}
-        {currentPage != totalPages && <PaginationLastPage onClick={this.handleLastPageClick} />}
+        {currentPage != totalPages && (
+          <span className="last">
+            <a href={this.getPageHref(totalPages)}>
+              {'&raquo;'}
+            </a>
+          </span>
+        )}
       </nav>
     );
   }
