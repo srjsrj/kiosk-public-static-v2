@@ -5,8 +5,17 @@ import uri from 'urijs';
 export const WINDOW_SIZE = 4;
 
 class Pagination extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getPageHref = this.getPageHref.bind(this);
+  }
   getPageHref(page) {
-    return uri(window.location.href).setSearch('page', page);
+    const href = typeof window === 'object' && typeof window.location === 'object'
+      ? window.location.href
+      : this.props.currentHref;
+
+    return uri(href).setSearch('page', page);
   }
   render() {
     const {
@@ -71,8 +80,13 @@ class Pagination extends Component {
 }
 
 Pagination.propTypes = {
+  currentHref: PropTypes.string,
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
+};
+
+Pagination.defaultProps = {
+  currentHref: '',
 };
 
 export default Pagination;
