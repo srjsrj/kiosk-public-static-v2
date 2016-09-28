@@ -174,6 +174,9 @@ global.gon = {
           'weight': 'Вес',
           'kg': 'кг.',
         },
+        'products': {
+          'others': 'Остальные',
+        },
         'properties': {
           'empty': 'Нет характеристик для вывода',
         },

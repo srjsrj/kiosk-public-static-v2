@@ -9,14 +9,6 @@ $ ->
 
   if $("[range_slider]").length
     true
-    # $("[range_slider]").noUiSlider(
-    #   start: [20, 80]
-    #   connect: true
-    #   range: {
-    #     'min': 0
-    #     'max': 100
-    #   }
-    # )
 
   bPage = $('.b-page')
 
@@ -26,15 +18,6 @@ $ ->
     return false
 
   if $("[ks-opacity_slider]").length
-    # $("[ks-opacity_slider]").noUiSlider(
-    #   start: 0
-    #   step: .1
-    #   range: {
-    #     'min': 0
-    #     'max': 1
-    #   }
-    # )
-
     lenta = $('.b-page__content__inner')
 
     $("[ks-opacity_slider]").on
@@ -43,15 +26,6 @@ $ ->
         lenta.css 'background-color', 'rgba(236, 208, 120,'+opacity+')'
 
   if $("[ks-fontsize_slider]").length
-    # $("[ks-fontsize_slider]").noUiSlider(
-    #   start: 14
-    #   step: 2
-    #   range: {
-    #     'min': 12
-    #     'max': 16
-    #   }
-    # )
-
     page = $('html')
 
     $("[ks-fontsize_slider]").on
@@ -63,15 +37,6 @@ $ ->
   thisPage = $('.b-page')
 
   if $("[ks-row_slider]").length
-    # $("[ks-row_slider]").noUiSlider(
-    #   start: 3
-    #   step: 1
-    #   range: {
-    #     'min': 2
-    #     'max': 4
-    #   }
-    # )
-
     $("[ks-row_slider]").on
       slide: ->
         inRow = $("[ks-row_slider]").val()
