@@ -35,7 +35,10 @@ ProductListContainer.propTypes = {
 
 ProductListContainer.defaultProps = {
   container: {},
-  products: [],
+  products: {
+    items: [],
+    pagination: {},
+  },
   showCartButton: false,
   showCatalogFilter: false,
   showPagination: false,
