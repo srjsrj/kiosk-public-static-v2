@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _numeral2.default.language('ru', _ru2.default);
 _numeral2.default.language('ru');
 
-},{"numeral":441,"numeral/languages/ru":440}],2:[function(require,module,exports){
+},{"numeral":442,"numeral/languages/ru":441}],2:[function(require,module,exports){
 (function (global){
 window = undefined; // React-rails set window to this, it's unexpected behavior
 React = require('react');
@@ -61,7 +61,7 @@ ProductGroup = require('./react/components/ProductGroup');
 ChildrenProducts = require('./react/components/ChildrenProducts');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/Cart":17,"./react/components/Cart/CartCoupon":12,"./react/components/Checkout/CheckoutCoupon":32,"./react/components/ChildrenProducts":40,"./react/components/Clientbar":42,"./react/components/CurrencySwitcher":44,"./react/components/LocaleSwitcher":48,"./react/components/Logo/LogoContainer":49,"./react/components/MenuBottom":52,"./react/components/MenuTop":59,"./react/components/NavBar":63,"./react/components/Order":67,"./react/components/Pagination":74,"./react/components/Product/ProductBlock":83,"./react/components/Product/ProductCard":100,"./react/components/ProductGroup":119,"./react/components/ProductList":121,"./react/components/ScrollToTop":122,"./react/components/TopBanner":123,"./react/components/Wishlist":128,"./react/components/common/ImageSlider":147,"./react/reducers/Design.prerender":172,"./react/reducers/Popup":173,"./react/reducers/cart":174,"./react/reducers/packages":175,"react":"react","react-dom":"react-dom","react-dom/server":465,"react-redux":469,"redux":"redux"}],3:[function(require,module,exports){
+},{"./locales/numeral/ru":1,"./react/components/Cart":17,"./react/components/Cart/CartCoupon":12,"./react/components/Checkout/CheckoutCoupon":32,"./react/components/ChildrenProducts":40,"./react/components/Clientbar":42,"./react/components/CurrencySwitcher":44,"./react/components/LocaleSwitcher":48,"./react/components/Logo/LogoContainer":49,"./react/components/MenuBottom":52,"./react/components/MenuTop":59,"./react/components/NavBar":63,"./react/components/Order":67,"./react/components/Pagination":74,"./react/components/Product/ProductBlock":83,"./react/components/Product/ProductCard":100,"./react/components/ProductGroup":119,"./react/components/ProductList":121,"./react/components/ScrollToTop":122,"./react/components/TopBanner":123,"./react/components/Wishlist":128,"./react/components/common/ImageSlider":147,"./react/reducers/Design.prerender":172,"./react/reducers/Popup":173,"./react/reducers/cart":174,"./react/reducers/packages":175,"react":"react","react-dom":"react-dom","react-dom/server":466,"react-redux":470,"redux":"redux"}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2300,7 +2300,7 @@ export const testProps = {
 
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":163,"../../reducers/cart":174,"../../reducers/packages":175,"../HoC/connectToRedux":45,"../HoC/provideTranslations":46,"./Cart":10,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"immutable":"immutable","react":"react","react-redux":469}],18:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":163,"../../reducers/cart":174,"../../reducers/packages":175,"../HoC/connectToRedux":45,"../HoC/provideTranslations":46,"./Cart":10,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"immutable":"immutable","react":"react","react-redux":470}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3283,7 +3283,7 @@ CatalogFilterRange.defaultProps = {
 exports.default = CatalogFilterRange;
 module.exports = exports['default'];
 
-},{"../../actions/catalogFilterActions":6,"./utils":29,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"babel-runtime/helpers/slicedToArray":226,"numeral":441,"react":"react","react-nouislider":466}],26:[function(require,module,exports){
+},{"../../actions/catalogFilterActions":6,"./utils":29,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"babel-runtime/helpers/slicedToArray":226,"numeral":442,"react":"react","react-nouislider":467}],26:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5264,7 +5264,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-redux":469}],46:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-redux":470}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5685,7 +5685,7 @@ var LogoContainer = (_dec = (0, _reactRedux.connect)(function (state) {
 exports.default = (0, _connectToRedux2.default)(LogoContainer);
 module.exports = exports['default'];
 
-},{"../HoC/connectToRedux":45,"./index":50,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-redux":469}],50:[function(require,module,exports){
+},{"../HoC/connectToRedux":45,"./index":50,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-redux":470}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8533,7 +8533,7 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
 
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../helpers/dom":163,"../../reducers/cart":174,"../../schemas":186,"../HoC/connectToRedux":45,"../HoC/provideTranslations":46,"./Order":65,"babel-runtime/core-js/object/assign":211,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"immutable":"immutable","react":"react","react-redux":469}],68:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../helpers/dom":163,"../../reducers/cart":174,"../../schemas":186,"../HoC/connectToRedux":45,"../HoC/provideTranslations":46,"./Order":65,"babel-runtime/core-js/object/assign":211,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"immutable":"immutable","react":"react","react-redux":470}],68:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9863,6 +9863,7 @@ var ProductCard = function (_Component) {
     value: function render() {
       var _props = this.props;
       var similarProducts = _props.similarProducts;
+      var otherProducts = _props.otherProducts;
       var t = _props.t;
       var _state = this.state;
       var good = _state.good;
@@ -9925,7 +9926,7 @@ var ProductCard = function (_Component) {
                     t: t
                   }))
                 ),
-                _react2.default.createElement(_ProductCardDetails2.default, { product: product })
+                _react2.default.createElement(_ProductCardDetails2.default, { t: t, product: product, otherProducts: otherProducts })
               ),
               _react2.default.createElement(_ProductCardVideo2.default, { product: product })
             ),
@@ -9948,6 +9949,7 @@ ProductCard.propTypes = {
   isWishlisted: _react.PropTypes.bool,
   product: _react.PropTypes.object,
   similarProducts: _react.PropTypes.array,
+  otherProducts: _react.PropTypes.array,
   wishlistUrl: _react.PropTypes.string
 };
 ProductCard.defaultProps = {
@@ -9955,14 +9957,15 @@ ProductCard.defaultProps = {
   hasComments: false,
   disqusUrl: "",
   product: {},
-  similarProducts: []
+  similarProducts: [],
+  otherProducts: []
 };
 
 exports.default = (0, _provideTranslations2.default)(ProductCard);
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../HoC/provideTranslations":46,"../ProductCart":105,"../ProductPrices":110,"./ProductCard.constants":86,"./ProductCardBadges":88,"./ProductCardBreadcrumbs":89,"./ProductCardDetails":92,"./ProductCardGallery":93,"./ProductCardSchema":96,"./ProductCardSimilarProducts":97,"./ProductCardTitle":98,"./ProductCardVideo":99,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-disqus-thread":464}],88:[function(require,module,exports){
+},{"../../HoC/provideTranslations":46,"../ProductCart":105,"../ProductPrices":110,"./ProductCard.constants":86,"./ProductCardBadges":88,"./ProductCardBreadcrumbs":89,"./ProductCardDetails":92,"./ProductCardGallery":93,"./ProductCardSchema":96,"./ProductCardSimilarProducts":97,"./ProductCardTitle":98,"./ProductCardVideo":99,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/extends":223,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"react":"react","react-disqus-thread":465}],88:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10258,6 +10261,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _ProductBlockImage = require('../ProductBlock/ProductBlockImage');
+
+var _ProductBlockImage2 = _interopRequireDefault(_ProductBlockImage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProductCardDetails = (_temp = _class = function (_Component) {
@@ -10322,6 +10329,43 @@ var ProductCardDetails = (_temp = _class = function (_Component) {
       }
     }
   }, {
+    key: 'renderOtherProducts',
+    value: function renderOtherProducts() {
+      var _props = this.props;
+      var otherProducts = _props.otherProducts;
+      var t = _props.t;
+
+
+      if (otherProducts.length > 0) {
+        return _react2.default.createElement(
+          'span',
+          null,
+          _react2.default.createElement(
+            'h3',
+            null,
+            t('vendor.other_product.title')
+          ),
+          _react2.default.createElement(
+            'ul',
+            { className: 'b-item-full__other-products' },
+            otherProducts.map(function (product, _idx) {
+              return _react2.default.createElement(
+                'li',
+                { key: product.id },
+                _react2.default.createElement(
+                  'a',
+                  { href: product.public_url, title: product.title, alt: product.title },
+                  _react2.default.createElement(_ProductBlockImage2.default, { product: product })
+                )
+              );
+            })
+          )
+        );
+      }
+
+      return null;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var product = this.props.product;
@@ -10334,7 +10378,8 @@ var ProductCardDetails = (_temp = _class = function (_Component) {
           _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: product.custom_product_html } }),
           this.renderDescription(product),
           this.renderAttributes(product),
-          this.renderTextBlocks(product)
+          this.renderTextBlocks(product),
+          this.renderOtherProducts()
         );
       } else {
         return null;
@@ -10343,12 +10388,15 @@ var ProductCardDetails = (_temp = _class = function (_Component) {
   }]);
   return ProductCardDetails;
 }(_react.Component), _class.propTypes = {
-  product: _react.PropTypes.object.isRequired
+  product: _react.PropTypes.object.isRequired,
+  otherProducts: _react.PropTypes.array
+}, _class.defaultProps = {
+  otherProducts: []
 }, _temp);
 exports.default = ProductCardDetails;
 module.exports = exports['default'];
 
-},{"../../../helpers/product":166,"../../../helpers/seo":167,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"classnames":"classnames","react":"react"}],93:[function(require,module,exports){
+},{"../../../helpers/product":166,"../../../helpers/seo":167,"../ProductBlock/ProductBlockImage":82,"babel-runtime/core-js/object/get-prototype-of":214,"babel-runtime/helpers/classCallCheck":220,"babel-runtime/helpers/createClass":221,"babel-runtime/helpers/inherits":224,"babel-runtime/helpers/possibleConstructorReturn":225,"classnames":"classnames","react":"react"}],93:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17090,7 +17138,7 @@ function unknownIsoCodeMessage(money) {
   });
 }
 
-},{"../models/currencies":171,"i18next":"i18next","numeral":441}],165:[function(require,module,exports){
+},{"../models/currencies":171,"i18next":"i18next","numeral":442}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17108,7 +17156,7 @@ function numberToHumanSize(number) {
   return (0, _numeral2.default)(number).format('0.00 b');
 }
 
-},{"numeral":441}],166:[function(require,module,exports){
+},{"numeral":442}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22146,7 +22194,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":336}],336:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":336}],336:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -22198,7 +22246,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":462}],337:[function(require,module,exports){
+},{"_process":463}],337:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -24614,7 +24662,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":462}],355:[function(require,module,exports){
+},{"_process":463}],355:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -28236,6 +28284,1966 @@ function property(path) {
 module.exports = property;
 
 },{"../internal/baseProperty":387,"../internal/basePropertyDeep":388,"../internal/isKey":412}],440:[function(require,module,exports){
+/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+
+(function (factory) {
+
+    if ( typeof define === 'function' && define.amd ) {
+
+        // AMD. Register as an anonymous module.
+        define([], factory);
+
+    } else if ( typeof exports === 'object' ) {
+
+        // Node/CommonJS
+        module.exports = factory();
+
+    } else {
+
+        // Browser globals
+        window.noUiSlider = factory();
+    }
+
+}(function( ){
+
+	'use strict';
+
+
+	// Removes duplicates from an array.
+	function unique(array) {
+		return array.filter(function(a){
+			return !this[a] ? this[a] = true : false;
+		}, {});
+	}
+
+	// Round a value to the closest 'to'.
+	function closest ( value, to ) {
+		return Math.round(value / to) * to;
+	}
+
+	// Current position of an element relative to the document.
+	function offset ( elem ) {
+
+	var rect = elem.getBoundingClientRect(),
+		doc = elem.ownerDocument,
+		docElem = doc.documentElement,
+		pageOffset = getPageOffset();
+
+		// getBoundingClientRect contains left scroll in Chrome on Android.
+		// I haven't found a feature detection that proves this. Worst case
+		// scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
+		if ( /webkit.*Chrome.*Mobile/i.test(navigator.userAgent) ) {
+			pageOffset.x = 0;
+		}
+
+		return {
+			top: rect.top + pageOffset.y - docElem.clientTop,
+			left: rect.left + pageOffset.x - docElem.clientLeft
+		};
+	}
+
+	// Checks whether a value is numerical.
+	function isNumeric ( a ) {
+		return typeof a === 'number' && !isNaN( a ) && isFinite( a );
+	}
+
+	// Sets a class and removes it after [duration] ms.
+	function addClassFor ( element, className, duration ) {
+		addClass(element, className);
+		setTimeout(function(){
+			removeClass(element, className);
+		}, duration);
+	}
+
+	// Limits a value to 0 - 100
+	function limit ( a ) {
+		return Math.max(Math.min(a, 100), 0);
+	}
+
+	// Wraps a variable as an array, if it isn't one yet.
+	function asArray ( a ) {
+		return Array.isArray(a) ? a : [a];
+	}
+
+	// Counts decimals
+	function countDecimals ( numStr ) {
+		var pieces = numStr.split(".");
+		return pieces.length > 1 ? pieces[1].length : 0;
+	}
+
+	// http://youmightnotneedjquery.com/#add_class
+	function addClass ( el, className ) {
+		if ( el.classList ) {
+			el.classList.add(className);
+		} else {
+			el.className += ' ' + className;
+		}
+	}
+
+	// http://youmightnotneedjquery.com/#remove_class
+	function removeClass ( el, className ) {
+		if ( el.classList ) {
+			el.classList.remove(className);
+		} else {
+			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+	}
+
+	// https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+	function hasClass ( el, className ) {
+		return el.classList ? el.classList.contains(className) : new RegExp('\\b' + className + '\\b').test(el.className);
+	}
+
+	// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
+	function getPageOffset ( ) {
+
+		var supportPageOffset = window.pageXOffset !== undefined,
+			isCSS1Compat = ((document.compatMode || "") === "CSS1Compat"),
+			x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
+			y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+
+		return {
+			x: x,
+			y: y
+		};
+	}
+
+	// we provide a function to compute constants instead
+	// of accessing window.* as soon as the module needs it
+	// so that we do not compute anything if not needed
+	function getActions ( ) {
+
+		// Determine the events to bind. IE11 implements pointerEvents without
+		// a prefix, which breaks compatibility with the IE10 implementation.
+		return window.navigator.pointerEnabled ? {
+			start: 'pointerdown',
+			move: 'pointermove',
+			end: 'pointerup'
+		} : window.navigator.msPointerEnabled ? {
+			start: 'MSPointerDown',
+			move: 'MSPointerMove',
+			end: 'MSPointerUp'
+		} : {
+			start: 'mousedown touchstart',
+			move: 'mousemove touchmove',
+			end: 'mouseup touchend'
+		};
+	}
+
+
+// Value calculation
+
+	// Determine the size of a sub-range in relation to a full range.
+	function subRangeRatio ( pa, pb ) {
+		return (100 / (pb - pa));
+	}
+
+	// (percentage) How many percent is this value of this range?
+	function fromPercentage ( range, value ) {
+		return (value * 100) / ( range[1] - range[0] );
+	}
+
+	// (percentage) Where is this value on this range?
+	function toPercentage ( range, value ) {
+		return fromPercentage( range, range[0] < 0 ?
+			value + Math.abs(range[0]) :
+				value - range[0] );
+	}
+
+	// (value) How much is this percentage on this range?
+	function isPercentage ( range, value ) {
+		return ((value * ( range[1] - range[0] )) / 100) + range[0];
+	}
+
+
+// Range conversion
+
+	function getJ ( value, arr ) {
+
+		var j = 1;
+
+		while ( value >= arr[j] ){
+			j += 1;
+		}
+
+		return j;
+	}
+
+	// (percentage) Input a value, find where, on a scale of 0-100, it applies.
+	function toStepping ( xVal, xPct, value ) {
+
+		if ( value >= xVal.slice(-1)[0] ){
+			return 100;
+		}
+
+		var j = getJ( value, xVal ), va, vb, pa, pb;
+
+		va = xVal[j-1];
+		vb = xVal[j];
+		pa = xPct[j-1];
+		pb = xPct[j];
+
+		return pa + (toPercentage([va, vb], value) / subRangeRatio (pa, pb));
+	}
+
+	// (value) Input a percentage, find where it is on the specified range.
+	function fromStepping ( xVal, xPct, value ) {
+
+		// There is no range group that fits 100
+		if ( value >= 100 ){
+			return xVal.slice(-1)[0];
+		}
+
+		var j = getJ( value, xPct ), va, vb, pa, pb;
+
+		va = xVal[j-1];
+		vb = xVal[j];
+		pa = xPct[j-1];
+		pb = xPct[j];
+
+		return isPercentage([va, vb], (value - pa) * subRangeRatio (pa, pb));
+	}
+
+	// (percentage) Get the step that applies at a certain value.
+	function getStep ( xPct, xSteps, snap, value ) {
+
+		if ( value === 100 ) {
+			return value;
+		}
+
+		var j = getJ( value, xPct ), a, b;
+
+		// If 'snap' is set, steps are used as fixed points on the slider.
+		if ( snap ) {
+
+			a = xPct[j-1];
+			b = xPct[j];
+
+			// Find the closest position, a or b.
+			if ((value - a) > ((b-a)/2)){
+				return b;
+			}
+
+			return a;
+		}
+
+		if ( !xSteps[j-1] ){
+			return value;
+		}
+
+		return xPct[j-1] + closest(
+			value - xPct[j-1],
+			xSteps[j-1]
+		);
+	}
+
+
+// Entry parsing
+
+	function handleEntryPoint ( index, value, that ) {
+
+		var percentage;
+
+		// Wrap numerical input in an array.
+		if ( typeof value === "number" ) {
+			value = [value];
+		}
+
+		// Reject any invalid input, by testing whether value is an array.
+		if ( Object.prototype.toString.call( value ) !== '[object Array]' ){
+			throw new Error("noUiSlider: 'range' contains invalid value.");
+		}
+
+		// Covert min/max syntax to 0 and 100.
+		if ( index === 'min' ) {
+			percentage = 0;
+		} else if ( index === 'max' ) {
+			percentage = 100;
+		} else {
+			percentage = parseFloat( index );
+		}
+
+		// Check for correct input.
+		if ( !isNumeric( percentage ) || !isNumeric( value[0] ) ) {
+			throw new Error("noUiSlider: 'range' value isn't numeric.");
+		}
+
+		// Store values.
+		that.xPct.push( percentage );
+		that.xVal.push( value[0] );
+
+		// NaN will evaluate to false too, but to keep
+		// logging clear, set step explicitly. Make sure
+		// not to override the 'step' setting with false.
+		if ( !percentage ) {
+			if ( !isNaN( value[1] ) ) {
+				that.xSteps[0] = value[1];
+			}
+		} else {
+			that.xSteps.push( isNaN(value[1]) ? false : value[1] );
+		}
+	}
+
+	function handleStepPoint ( i, n, that ) {
+
+		// Ignore 'false' stepping.
+		if ( !n ) {
+			return true;
+		}
+
+		// Factor to range ratio
+		that.xSteps[i] = fromPercentage([
+			 that.xVal[i]
+			,that.xVal[i+1]
+		], n) / subRangeRatio (
+			that.xPct[i],
+			that.xPct[i+1] );
+	}
+
+
+// Interface
+
+	// The interface to Spectrum handles all direction-based
+	// conversions, so the above values are unaware.
+
+	function Spectrum ( entry, snap, direction, singleStep ) {
+
+		this.xPct = [];
+		this.xVal = [];
+		this.xSteps = [ singleStep || false ];
+		this.xNumSteps = [ false ];
+
+		this.snap = snap;
+		this.direction = direction;
+
+		var index, ordered = [ /* [0, 'min'], [1, '50%'], [2, 'max'] */ ];
+
+		// Map the object keys to an array.
+		for ( index in entry ) {
+			if ( entry.hasOwnProperty(index) ) {
+				ordered.push([entry[index], index]);
+			}
+		}
+
+		// Sort all entries by value (numeric sort).
+		if ( ordered.length && typeof ordered[0][0] === "object" ) {
+			ordered.sort(function(a, b) { return a[0][0] - b[0][0]; });
+		} else {
+			ordered.sort(function(a, b) { return a[0] - b[0]; });
+		}
+
+
+		// Convert all entries to subranges.
+		for ( index = 0; index < ordered.length; index++ ) {
+			handleEntryPoint(ordered[index][1], ordered[index][0], this);
+		}
+
+		// Store the actual step values.
+		// xSteps is sorted in the same order as xPct and xVal.
+		this.xNumSteps = this.xSteps.slice(0);
+
+		// Convert all numeric steps to the percentage of the subrange they represent.
+		for ( index = 0; index < this.xNumSteps.length; index++ ) {
+			handleStepPoint(index, this.xNumSteps[index], this);
+		}
+	}
+
+	Spectrum.prototype.getMargin = function ( value ) {
+		return this.xPct.length === 2 ? fromPercentage(this.xVal, value) : false;
+	};
+
+	Spectrum.prototype.toStepping = function ( value ) {
+
+		value = toStepping( this.xVal, this.xPct, value );
+
+		// Invert the value if this is a right-to-left slider.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return value;
+	};
+
+	Spectrum.prototype.fromStepping = function ( value ) {
+
+		// Invert the value if this is a right-to-left slider.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return fromStepping( this.xVal, this.xPct, value );
+	};
+
+	Spectrum.prototype.getStep = function ( value ) {
+
+		// Find the proper step for rtl sliders by search in inverse direction.
+		// Fixes issue #262.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		value = getStep(this.xPct, this.xSteps, this.snap, value );
+
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return value;
+	};
+
+	Spectrum.prototype.getApplicableStep = function ( value ) {
+
+		// If the value is 100%, return the negative step twice.
+		var j = getJ(value, this.xPct), offset = value === 100 ? 2 : 1;
+		return [this.xNumSteps[j-2], this.xVal[j-offset], this.xNumSteps[j-offset]];
+	};
+
+	// Outside testing
+	Spectrum.prototype.convert = function ( value ) {
+		return this.getStep(this.toStepping(value));
+	};
+
+/*	Every input option is tested and parsed. This'll prevent
+	endless validation in internal methods. These tests are
+	structured with an item for every option available. An
+	option can be marked as required by setting the 'r' flag.
+	The testing function is provided with three arguments:
+		- The provided value for the option;
+		- A reference to the options object;
+		- The name for the option;
+
+	The testing function returns false when an error is detected,
+	or true when everything is OK. It can also modify the option
+	object, to make sure all values can be correctly looped elsewhere. */
+
+	var defaultFormatter = { 'to': function( value ){
+		return value !== undefined && value.toFixed(2);
+	}, 'from': Number };
+
+	function testStep ( parsed, entry ) {
+
+		if ( !isNumeric( entry ) ) {
+			throw new Error("noUiSlider: 'step' is not numeric.");
+		}
+
+		// The step option can still be used to set stepping
+		// for linear sliders. Overwritten if set in 'range'.
+		parsed.singleStep = entry;
+	}
+
+	function testRange ( parsed, entry ) {
+
+		// Filter incorrect input.
+		if ( typeof entry !== 'object' || Array.isArray(entry) ) {
+			throw new Error("noUiSlider: 'range' is not an object.");
+		}
+
+		// Catch missing start or end.
+		if ( entry.min === undefined || entry.max === undefined ) {
+			throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
+		}
+
+		// Catch equal start or end.
+		if ( entry.min === entry.max ) {
+			throw new Error("noUiSlider: 'range' 'min' and 'max' cannot be equal.");
+		}
+
+		parsed.spectrum = new Spectrum(entry, parsed.snap, parsed.dir, parsed.singleStep);
+	}
+
+	function testStart ( parsed, entry ) {
+
+		entry = asArray(entry);
+
+		// Validate input. Values aren't tested, as the public .val method
+		// will always provide a valid location.
+		if ( !Array.isArray( entry ) || !entry.length || entry.length > 2 ) {
+			throw new Error("noUiSlider: 'start' option is incorrect.");
+		}
+
+		// Store the number of handles.
+		parsed.handles = entry.length;
+
+		// When the slider is initialized, the .val method will
+		// be called with the start options.
+		parsed.start = entry;
+	}
+
+	function testSnap ( parsed, entry ) {
+
+		// Enforce 100% stepping within subranges.
+		parsed.snap = entry;
+
+		if ( typeof entry !== 'boolean' ){
+			throw new Error("noUiSlider: 'snap' option must be a boolean.");
+		}
+	}
+
+	function testAnimate ( parsed, entry ) {
+
+		// Enforce 100% stepping within subranges.
+		parsed.animate = entry;
+
+		if ( typeof entry !== 'boolean' ){
+			throw new Error("noUiSlider: 'animate' option must be a boolean.");
+		}
+	}
+
+	function testAnimationDuration ( parsed, entry ) {
+
+		parsed.animationDuration = entry;
+
+		if ( typeof entry !== 'number' ){
+			throw new Error("noUiSlider: 'animationDuration' option must be a number.");
+		}
+	}
+
+	function testConnect ( parsed, entry ) {
+
+		if ( entry === 'lower' && parsed.handles === 1 ) {
+			parsed.connect = 1;
+		} else if ( entry === 'upper' && parsed.handles === 1 ) {
+			parsed.connect = 2;
+		} else if ( entry === true && parsed.handles === 2 ) {
+			parsed.connect = 3;
+		} else if ( entry === false ) {
+			parsed.connect = 0;
+		} else {
+			throw new Error("noUiSlider: 'connect' option doesn't match handle count.");
+		}
+	}
+
+	function testOrientation ( parsed, entry ) {
+
+		// Set orientation to an a numerical value for easy
+		// array selection.
+		switch ( entry ){
+		  case 'horizontal':
+			parsed.ort = 0;
+			break;
+		  case 'vertical':
+			parsed.ort = 1;
+			break;
+		  default:
+			throw new Error("noUiSlider: 'orientation' option is invalid.");
+		}
+	}
+
+	function testMargin ( parsed, entry ) {
+
+		if ( !isNumeric(entry) ){
+			throw new Error("noUiSlider: 'margin' option must be numeric.");
+		}
+
+		// Issue #582
+		if ( entry === 0 ) {
+			return;
+		}
+
+		parsed.margin = parsed.spectrum.getMargin(entry);
+
+		if ( !parsed.margin ) {
+			throw new Error("noUiSlider: 'margin' option is only supported on linear sliders.");
+		}
+	}
+
+	function testLimit ( parsed, entry ) {
+
+		if ( !isNumeric(entry) ){
+			throw new Error("noUiSlider: 'limit' option must be numeric.");
+		}
+
+		parsed.limit = parsed.spectrum.getMargin(entry);
+
+		if ( !parsed.limit ) {
+			throw new Error("noUiSlider: 'limit' option is only supported on linear sliders.");
+		}
+	}
+
+	function testDirection ( parsed, entry ) {
+
+		// Set direction as a numerical value for easy parsing.
+		// Invert connection for RTL sliders, so that the proper
+		// handles get the connect/background classes.
+		switch ( entry ) {
+		  case 'ltr':
+			parsed.dir = 0;
+			break;
+		  case 'rtl':
+			parsed.dir = 1;
+			parsed.connect = [0,2,1,3][parsed.connect];
+			break;
+		  default:
+			throw new Error("noUiSlider: 'direction' option was not recognized.");
+		}
+	}
+
+	function testBehaviour ( parsed, entry ) {
+
+		// Make sure the input is a string.
+		if ( typeof entry !== 'string' ) {
+			throw new Error("noUiSlider: 'behaviour' must be a string containing options.");
+		}
+
+		// Check if the string contains any keywords.
+		// None are required.
+		var tap = entry.indexOf('tap') >= 0,
+			drag = entry.indexOf('drag') >= 0,
+			fixed = entry.indexOf('fixed') >= 0,
+			snap = entry.indexOf('snap') >= 0,
+			hover = entry.indexOf('hover') >= 0;
+
+		// Fix #472
+		if ( drag && !parsed.connect ) {
+			throw new Error("noUiSlider: 'drag' behaviour must be used with 'connect': true.");
+		}
+
+		parsed.events = {
+			tap: tap || snap,
+			drag: drag,
+			fixed: fixed,
+			snap: snap,
+			hover: hover
+		};
+	}
+
+	function testTooltips ( parsed, entry ) {
+
+		var i;
+
+		if ( entry === false ) {
+			return;
+		} else if ( entry === true ) {
+
+			parsed.tooltips = [];
+
+			for ( i = 0; i < parsed.handles; i++ ) {
+				parsed.tooltips.push(true);
+			}
+
+		} else {
+
+			parsed.tooltips = asArray(entry);
+
+			if ( parsed.tooltips.length !== parsed.handles ) {
+				throw new Error("noUiSlider: must pass a formatter for all handles.");
+			}
+
+			parsed.tooltips.forEach(function(formatter){
+				if ( typeof formatter !== 'boolean' && (typeof formatter !== 'object' || typeof formatter.to !== 'function') ) {
+					throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
+				}
+			});
+		}
+	}
+
+	function testFormat ( parsed, entry ) {
+
+		parsed.format = entry;
+
+		// Any object with a to and from method is supported.
+		if ( typeof entry.to === 'function' && typeof entry.from === 'function' ) {
+			return true;
+		}
+
+		throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
+	}
+
+	function testCssPrefix ( parsed, entry ) {
+
+		if ( entry !== undefined && typeof entry !== 'string' && entry !== false ) {
+			throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
+		}
+
+		parsed.cssPrefix = entry;
+	}
+
+	function testCssClasses ( parsed, entry ) {
+
+		if ( entry !== undefined && typeof entry !== 'object' ) {
+			throw new Error("noUiSlider: 'cssClasses' must be an object.");
+		}
+
+		if ( typeof parsed.cssPrefix === 'string' ) {
+			parsed.cssClasses = {};
+
+			for ( var key in entry ) {
+				if ( !entry.hasOwnProperty(key) ) { continue; }
+
+				parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
+			}
+		} else {
+			parsed.cssClasses = entry;
+		}
+	}
+
+	// Test all developer settings and parse to assumption-safe values.
+	function testOptions ( options ) {
+
+		// To prove a fix for #537, freeze options here.
+		// If the object is modified, an error will be thrown.
+		// Object.freeze(options);
+
+		var parsed = {
+			margin: 0,
+			limit: 0,
+			animate: true,
+			animationDuration: 300,
+			format: defaultFormatter
+		}, tests;
+
+		// Tests are executed in the order they are presented here.
+		tests = {
+			'step': { r: false, t: testStep },
+			'start': { r: true, t: testStart },
+			'connect': { r: true, t: testConnect },
+			'direction': { r: true, t: testDirection },
+			'snap': { r: false, t: testSnap },
+			'animate': { r: false, t: testAnimate },
+			'animationDuration': { r: false, t: testAnimationDuration },
+			'range': { r: true, t: testRange },
+			'orientation': { r: false, t: testOrientation },
+			'margin': { r: false, t: testMargin },
+			'limit': { r: false, t: testLimit },
+			'behaviour': { r: true, t: testBehaviour },
+			'format': { r: false, t: testFormat },
+			'tooltips': { r: false, t: testTooltips },
+			'cssPrefix': { r: false, t: testCssPrefix },
+			'cssClasses': { r: false, t: testCssClasses }
+		};
+
+		var defaults = {
+			'connect': false,
+			'direction': 'ltr',
+			'behaviour': 'tap',
+			'orientation': 'horizontal',
+			'cssPrefix' : 'noUi-',
+			'cssClasses': {
+				target: 'target',
+				base: 'base',
+				origin: 'origin',
+				handle: 'handle',
+				handleLower: 'handle-lower',
+				handleUpper: 'handle-upper',
+				horizontal: 'horizontal',
+				vertical: 'vertical',
+				background: 'background',
+				connect: 'connect',
+				ltr: 'ltr',
+				rtl: 'rtl',
+				draggable: 'draggable',
+				drag: 'state-drag',
+				tap: 'state-tap',
+				active: 'active',
+				stacking: 'stacking',
+				tooltip: 'tooltip',
+				pips: 'pips',
+				pipsHorizontal: 'pips-horizontal',
+				pipsVertical: 'pips-vertical',
+				marker: 'marker',
+				markerHorizontal: 'marker-horizontal',
+				markerVertical: 'marker-vertical',
+				markerNormal: 'marker-normal',
+				markerLarge: 'marker-large',
+				markerSub: 'marker-sub',
+				value: 'value',
+				valueHorizontal: 'value-horizontal',
+				valueVertical: 'value-vertical',
+				valueNormal: 'value-normal',
+				valueLarge: 'value-large',
+				valueSub: 'value-sub'
+			}
+		};
+
+		// Run all options through a testing mechanism to ensure correct
+		// input. It should be noted that options might get modified to
+		// be handled properly. E.g. wrapping integers in arrays.
+		Object.keys(tests).forEach(function( name ){
+
+			// If the option isn't set, but it is required, throw an error.
+			if ( options[name] === undefined && defaults[name] === undefined ) {
+
+				if ( tests[name].r ) {
+					throw new Error("noUiSlider: '" + name + "' is required.");
+				}
+
+				return true;
+			}
+
+			tests[name].t( parsed, options[name] === undefined ? defaults[name] : options[name] );
+		});
+
+		// Forward pips options
+		parsed.pips = options.pips;
+
+		// Pre-define the styles.
+		parsed.style = parsed.ort ? 'top' : 'left';
+
+		return parsed;
+	}
+
+
+function closure ( target, options, originalOptions ){
+	var
+		actions = getActions( ),
+		// All variables local to 'closure' are prefixed with 'scope_'
+		scope_Target = target,
+		scope_Locations = [-1, -1],
+		scope_Base,
+		scope_Handles,
+		scope_Spectrum = options.spectrum,
+		scope_Values = [],
+		scope_Events = {},
+		scope_Self;
+
+
+	// Delimit proposed values for handle positions.
+	function getPositions ( a, b, delimit ) {
+
+		// Add movement to current position.
+		var c = a + b[0], d = a + b[1];
+
+		// Only alter the other position on drag,
+		// not on standard sliding.
+		if ( delimit ) {
+			if ( c < 0 ) {
+				d += Math.abs(c);
+			}
+			if ( d > 100 ) {
+				c -= ( d - 100 );
+			}
+
+			// Limit values to 0 and 100.
+			return [limit(c), limit(d)];
+		}
+
+		return [c,d];
+	}
+
+	// Provide a clean event with standardized offset values.
+	function fixEvent ( e, pageOffset ) {
+
+		// Prevent scrolling and panning on touch events, while
+		// attempting to slide. The tap event also depends on this.
+		e.preventDefault();
+
+		// Filter the event to register the type, which can be
+		// touch, mouse or pointer. Offset changes need to be
+		// made on an event specific basis.
+		var touch = e.type.indexOf('touch') === 0,
+			mouse = e.type.indexOf('mouse') === 0,
+			pointer = e.type.indexOf('pointer') === 0,
+			x,y, event = e;
+
+		// IE10 implemented pointer events with a prefix;
+		if ( e.type.indexOf('MSPointer') === 0 ) {
+			pointer = true;
+		}
+
+		if ( touch ) {
+			// noUiSlider supports one movement at a time,
+			// so we can select the first 'changedTouch'.
+			x = e.changedTouches[0].pageX;
+			y = e.changedTouches[0].pageY;
+		}
+
+		pageOffset = pageOffset || getPageOffset();
+
+		if ( mouse || pointer ) {
+			x = e.clientX + pageOffset.x;
+			y = e.clientY + pageOffset.y;
+		}
+
+		event.pageOffset = pageOffset;
+		event.points = [x, y];
+		event.cursor = mouse || pointer; // Fix #435
+
+		return event;
+	}
+
+	// Append a handle to the base.
+	function addHandle ( direction, index ) {
+
+		var origin = document.createElement('div'),
+			handle = document.createElement('div'),
+			classModifier = [options.cssClasses.handleLower, options.cssClasses.handleUpper];
+
+		if ( direction ) {
+			classModifier.reverse();
+		}
+
+		addClass(handle, options.cssClasses.handle);
+		addClass(handle, classModifier[index]);
+
+		addClass(origin, options.cssClasses.origin);
+		origin.appendChild(handle);
+
+		return origin;
+	}
+
+	// Add the proper connection classes.
+	function addConnection ( connect, target, handles ) {
+
+		// Apply the required connection classes to the elements
+		// that need them. Some classes are made up for several
+		// segments listed in the class list, to allow easy
+		// renaming and provide a minor compression benefit.
+		switch ( connect ) {
+			case 1:	addClass(target, options.cssClasses.connect);
+					addClass(handles[0], options.cssClasses.background);
+					break;
+			case 3: addClass(handles[1], options.cssClasses.background);
+					/* falls through */
+			case 2: addClass(handles[0], options.cssClasses.connect);
+					/* falls through */
+			case 0: addClass(target, options.cssClasses.background);
+					break;
+		}
+	}
+
+	// Add handles to the slider base.
+	function addHandles ( nrHandles, direction, base ) {
+
+		var index, handles = [];
+
+		// Append handles.
+		for ( index = 0; index < nrHandles; index += 1 ) {
+
+			// Keep a list of all added handles.
+			handles.push( base.appendChild(addHandle( direction, index )) );
+		}
+
+		return handles;
+	}
+
+	// Initialize a single slider.
+	function addSlider ( direction, orientation, target ) {
+
+		// Apply classes and data to the target.
+		addClass(target, options.cssClasses.target);
+
+		if ( direction === 0 ) {
+			addClass(target, options.cssClasses.ltr);
+		} else {
+			addClass(target, options.cssClasses.rtl);
+		}
+
+		if ( orientation === 0 ) {
+			addClass(target, options.cssClasses.horizontal);
+		} else {
+			addClass(target, options.cssClasses.vertical);
+		}
+
+		var div = document.createElement('div');
+		addClass(div, options.cssClasses.base);
+		target.appendChild(div);
+		return div;
+	}
+
+
+	function addTooltip ( handle, index ) {
+
+		if ( !options.tooltips[index] ) {
+			return false;
+		}
+
+		var element = document.createElement('div');
+		element.className = options.cssClasses.tooltip;
+		return handle.firstChild.appendChild(element);
+	}
+
+	// The tooltips option is a shorthand for using the 'update' event.
+	function tooltips ( ) {
+
+		if ( options.dir ) {
+			options.tooltips.reverse();
+		}
+
+		// Tooltips are added with options.tooltips in original order.
+		var tips = scope_Handles.map(addTooltip);
+
+		if ( options.dir ) {
+			tips.reverse();
+			options.tooltips.reverse();
+		}
+
+		bindEvent('update', function(f, o, r) {
+			if ( tips[o] ) {
+				tips[o].innerHTML = options.tooltips[o] === true ? f[o] : options.tooltips[o].to(r[o]);
+			}
+		});
+	}
+
+
+	function getGroup ( mode, values, stepped ) {
+
+		// Use the range.
+		if ( mode === 'range' || mode === 'steps' ) {
+			return scope_Spectrum.xVal;
+		}
+
+		if ( mode === 'count' ) {
+
+			// Divide 0 - 100 in 'count' parts.
+			var spread = ( 100 / (values-1) ), v, i = 0;
+			values = [];
+
+			// List these parts and have them handled as 'positions'.
+			while ((v=i++*spread) <= 100 ) {
+				values.push(v);
+			}
+
+			mode = 'positions';
+		}
+
+		if ( mode === 'positions' ) {
+
+			// Map all percentages to on-range values.
+			return values.map(function( value ){
+				return scope_Spectrum.fromStepping( stepped ? scope_Spectrum.getStep( value ) : value );
+			});
+		}
+
+		if ( mode === 'values' ) {
+
+			// If the value must be stepped, it needs to be converted to a percentage first.
+			if ( stepped ) {
+
+				return values.map(function( value ){
+
+					// Convert to percentage, apply step, return to value.
+					return scope_Spectrum.fromStepping( scope_Spectrum.getStep( scope_Spectrum.toStepping( value ) ) );
+				});
+
+			}
+
+			// Otherwise, we can simply use the values.
+			return values;
+		}
+	}
+
+	function generateSpread ( density, mode, group ) {
+
+		function safeIncrement(value, increment) {
+			// Avoid floating point variance by dropping the smallest decimal places.
+			return (value + increment).toFixed(7) / 1;
+		}
+
+		var originalSpectrumDirection = scope_Spectrum.direction,
+			indexes = {},
+			firstInRange = scope_Spectrum.xVal[0],
+			lastInRange = scope_Spectrum.xVal[scope_Spectrum.xVal.length-1],
+			ignoreFirst = false,
+			ignoreLast = false,
+			prevPct = 0;
+
+		// This function loops the spectrum in an ltr linear fashion,
+		// while the toStepping method is direction aware. Trick it into
+		// believing it is ltr.
+		scope_Spectrum.direction = 0;
+
+		// Create a copy of the group, sort it and filter away all duplicates.
+		group = unique(group.slice().sort(function(a, b){ return a - b; }));
+
+		// Make sure the range starts with the first element.
+		if ( group[0] !== firstInRange ) {
+			group.unshift(firstInRange);
+			ignoreFirst = true;
+		}
+
+		// Likewise for the last one.
+		if ( group[group.length - 1] !== lastInRange ) {
+			group.push(lastInRange);
+			ignoreLast = true;
+		}
+
+		group.forEach(function ( current, index ) {
+
+			// Get the current step and the lower + upper positions.
+			var step, i, q,
+				low = current,
+				high = group[index+1],
+				newPct, pctDifference, pctPos, type,
+				steps, realSteps, stepsize;
+
+			// When using 'steps' mode, use the provided steps.
+			// Otherwise, we'll step on to the next subrange.
+			if ( mode === 'steps' ) {
+				step = scope_Spectrum.xNumSteps[ index ];
+			}
+
+			// Default to a 'full' step.
+			if ( !step ) {
+				step = high-low;
+			}
+
+			// Low can be 0, so test for false. If high is undefined,
+			// we are at the last subrange. Index 0 is already handled.
+			if ( low === false || high === undefined ) {
+				return;
+			}
+
+			// Find all steps in the subrange.
+			for ( i = low; i <= high; i = safeIncrement(i, step) ) {
+
+				// Get the percentage value for the current step,
+				// calculate the size for the subrange.
+				newPct = scope_Spectrum.toStepping( i );
+				pctDifference = newPct - prevPct;
+
+				steps = pctDifference / density;
+				realSteps = Math.round(steps);
+
+				// This ratio represents the ammount of percentage-space a point indicates.
+				// For a density 1 the points/percentage = 1. For density 2, that percentage needs to be re-devided.
+				// Round the percentage offset to an even number, then divide by two
+				// to spread the offset on both sides of the range.
+				stepsize = pctDifference/realSteps;
+
+				// Divide all points evenly, adding the correct number to this subrange.
+				// Run up to <= so that 100% gets a point, event if ignoreLast is set.
+				for ( q = 1; q <= realSteps; q += 1 ) {
+
+					// The ratio between the rounded value and the actual size might be ~1% off.
+					// Correct the percentage offset by the number of points
+					// per subrange. density = 1 will result in 100 points on the
+					// full range, 2 for 50, 4 for 25, etc.
+					pctPos = prevPct + ( q * stepsize );
+					indexes[pctPos.toFixed(5)] = ['x', 0];
+				}
+
+				// Determine the point type.
+				type = (group.indexOf(i) > -1) ? 1 : ( mode === 'steps' ? 2 : 0 );
+
+				// Enforce the 'ignoreFirst' option by overwriting the type for 0.
+				if ( !index && ignoreFirst ) {
+					type = 0;
+				}
+
+				if ( !(i === high && ignoreLast)) {
+					// Mark the 'type' of this point. 0 = plain, 1 = real value, 2 = step value.
+					indexes[newPct.toFixed(5)] = [i, type];
+				}
+
+				// Update the percentage count.
+				prevPct = newPct;
+			}
+		});
+
+		// Reset the spectrum.
+		scope_Spectrum.direction = originalSpectrumDirection;
+
+		return indexes;
+	}
+
+	function addMarking ( spread, filterFunc, formatter ) {
+
+		var element = document.createElement('div'),
+			out = '',
+			valueSizeClasses = [
+				options.cssClasses.valueNormal,
+				options.cssClasses.valueLarge,
+				options.cssClasses.valueSub
+			],
+			markerSizeClasses = [
+				options.cssClasses.markerNormal,
+				options.cssClasses.markerLarge,
+				options.cssClasses.markerSub
+			],
+			valueOrientationClasses = [
+				options.cssClasses.valueHorizontal,
+				options.cssClasses.valueVertical
+			],
+			markerOrientationClasses = [
+				options.cssClasses.markerHorizontal,
+				options.cssClasses.markerVertical
+			];
+
+		addClass(element, options.cssClasses.pips);
+		addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+
+		function getClasses( type, source ){
+			var a = source === options.cssClasses.value,
+				orientationClasses = a ? valueOrientationClasses : markerOrientationClasses,
+				sizeClasses = a ? valueSizeClasses : markerSizeClasses;
+
+			return source + ' ' + orientationClasses[options.ort] + ' ' + sizeClasses[type];
+		}
+
+		function getTags( offset, source, values ) {
+			return 'class="' + getClasses(values[1], source) + '" style="' + options.style + ': ' + offset + '%"';
+		}
+
+		function addSpread ( offset, values ){
+
+			if ( scope_Spectrum.direction ) {
+				offset = 100 - offset;
+			}
+
+			// Apply the filter function, if it is set.
+			values[1] = (values[1] && filterFunc) ? filterFunc(values[0], values[1]) : values[1];
+
+			// Add a marker for every point
+			out += '<div ' + getTags(offset, options.cssClasses.marker, values) + '></div>';
+
+			// Values are only appended for points marked '1' or '2'.
+			if ( values[1] ) {
+				out += '<div ' + getTags(offset, options.cssClasses.value, values) + '>' + formatter.to(values[0]) + '</div>';
+			}
+		}
+
+		// Append all points.
+		Object.keys(spread).forEach(function(a){
+			addSpread(a, spread[a]);
+		});
+
+		element.innerHTML = out;
+
+		return element;
+	}
+
+	function pips ( grid ) {
+
+	var mode = grid.mode,
+		density = grid.density || 1,
+		filter = grid.filter || false,
+		values = grid.values || false,
+		stepped = grid.stepped || false,
+		group = getGroup( mode, values, stepped ),
+		spread = generateSpread( density, mode, group ),
+		format = grid.format || {
+			to: Math.round
+		};
+
+		return scope_Target.appendChild(addMarking(
+			spread,
+			filter,
+			format
+		));
+	}
+
+
+	// Shorthand for base dimensions.
+	function baseSize ( ) {
+		var rect = scope_Base.getBoundingClientRect(), alt = 'offset' + ['Width', 'Height'][options.ort];
+		return options.ort === 0 ? (rect.width||scope_Base[alt]) : (rect.height||scope_Base[alt]);
+	}
+
+	// External event handling
+	function fireEvent ( event, handleNumber, tap ) {
+
+		var i;
+
+		// During initialization, do not fire events.
+		for ( i = 0; i < options.handles; i++ ) {
+			if ( scope_Locations[i] === -1 ) {
+				return;
+			}
+		}
+
+		if ( handleNumber !== undefined && options.handles !== 1 ) {
+			handleNumber = Math.abs(handleNumber - options.dir);
+		}
+
+		Object.keys(scope_Events).forEach(function( targetEvent ) {
+
+			var eventType = targetEvent.split('.')[0];
+
+			if ( event === eventType ) {
+				scope_Events[targetEvent].forEach(function( callback ) {
+
+					callback.call(
+						// Use the slider public API as the scope ('this')
+						scope_Self,
+						// Return values as array, so arg_1[arg_2] is always valid.
+						asArray(valueGet()),
+						// Handle index, 0 or 1
+						handleNumber,
+						// Unformatted slider values
+						asArray(inSliderOrder(Array.prototype.slice.call(scope_Values))),
+						// Event is fired by tap, true or false
+						tap || false,
+						// Left offset of the handle, in relation to the slider
+						scope_Locations
+					);
+				});
+			}
+		});
+	}
+
+	// Returns the input array, respecting the slider direction configuration.
+	function inSliderOrder ( values ) {
+
+		// If only one handle is used, return a single value.
+		if ( values.length === 1 ){
+			return values[0];
+		}
+
+		if ( options.dir ) {
+			return values.reverse();
+		}
+
+		return values;
+	}
+
+
+	// Handler for attaching events trough a proxy.
+	function attach ( events, element, callback, data ) {
+
+		// This function can be used to 'filter' events to the slider.
+		// element is a node, not a nodeList
+
+		var method = function ( e ){
+
+			if ( scope_Target.hasAttribute('disabled') ) {
+				return false;
+			}
+
+			// Stop if an active 'tap' transition is taking place.
+			if ( hasClass(scope_Target, options.cssClasses.tap) ) {
+				return false;
+			}
+
+			e = fixEvent(e, data.pageOffset);
+
+			// Ignore right or middle clicks on start #454
+			if ( events === actions.start && e.buttons !== undefined && e.buttons > 1 ) {
+				return false;
+			}
+
+			// Ignore right or middle clicks on start #454
+			if ( data.hover && e.buttons ) {
+				return false;
+			}
+
+			e.calcPoint = e.points[ options.ort ];
+
+			// Call the event handler with the event [ and additional data ].
+			callback ( e, data );
+
+		}, methods = [];
+
+		// Bind a closure on the target for every event type.
+		events.split(' ').forEach(function( eventName ){
+			element.addEventListener(eventName, method, false);
+			methods.push([eventName, method]);
+		});
+
+		return methods;
+	}
+
+	// Handle movement on document for handle and range drag.
+	function move ( event, data ) {
+
+		// Fix #498
+		// Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
+		// https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
+		// IE9 has .buttons and .which zero on mousemove.
+		// Firefox breaks the spec MDN defines.
+		if ( navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0 ) {
+			return end(event, data);
+		}
+
+		var handles = data.handles || scope_Handles, positions, state = false,
+			proposal = ((event.calcPoint - data.start) * 100) / data.baseSize,
+			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1, i;
+
+		// Calculate relative positions for the handles.
+		positions = getPositions( proposal, data.positions, handles.length > 1);
+
+		state = setHandle ( handles[0], positions[handleNumber], handles.length === 1 );
+
+		if ( handles.length > 1 ) {
+
+			state = setHandle ( handles[1], positions[handleNumber?0:1], false ) || state;
+
+			if ( state ) {
+				// fire for both handles
+				for ( i = 0; i < data.handles.length; i++ ) {
+					fireEvent('slide', i);
+				}
+			}
+		} else if ( state ) {
+			// Fire for a single handle
+			fireEvent('slide', handleNumber);
+		}
+	}
+
+	// Unbind move events on document, call callbacks.
+	function end ( event, data ) {
+
+		// The handle is no longer active, so remove the class.
+		var active = scope_Base.querySelector( '.' + options.cssClasses.active ),
+			handleNumber = data.handles[0] === scope_Handles[0] ? 0 : 1;
+
+		if ( active !== null ) {
+			removeClass(active, options.cssClasses.active);
+		}
+
+		// Remove cursor styles and text-selection events bound to the body.
+		if ( event.cursor ) {
+			document.body.style.cursor = '';
+			document.body.removeEventListener('selectstart', document.body.noUiListener);
+		}
+
+		var d = document.documentElement;
+
+		// Unbind the move and end events, which are added on 'start'.
+		d.noUiListeners.forEach(function( c ) {
+			d.removeEventListener(c[0], c[1]);
+		});
+
+		// Remove dragging class.
+		removeClass(scope_Target, options.cssClasses.drag);
+
+		// Fire the change and set events.
+		fireEvent('set', handleNumber);
+		fireEvent('change', handleNumber);
+
+		// If this is a standard handle movement, fire the end event.
+		if ( data.handleNumber !== undefined ) {
+			fireEvent('end', data.handleNumber);
+		}
+	}
+
+	// Fire 'end' when a mouse or pen leaves the document.
+	function documentLeave ( event, data ) {
+		if ( event.type === "mouseout" && event.target.nodeName === "HTML" && event.relatedTarget === null ){
+			end ( event, data );
+		}
+	}
+
+	// Bind move events on document.
+	function start ( event, data ) {
+
+		var d = document.documentElement;
+
+		// Mark the handle as 'active' so it can be styled.
+		if ( data.handles.length === 1 ) {
+			// Support 'disabled' handles
+			if ( data.handles[0].hasAttribute('disabled') ) {
+				return false;
+			}
+
+			addClass(data.handles[0].children[0], options.cssClasses.active);
+		}
+
+		// Fix #551, where a handle gets selected instead of dragged.
+		event.preventDefault();
+
+		// A drag should never propagate up to the 'tap' event.
+		event.stopPropagation();
+
+		// Attach the move and end events.
+		var moveEvent = attach(actions.move, d, move, {
+			start: event.calcPoint,
+			baseSize: baseSize(),
+			pageOffset: event.pageOffset,
+			handles: data.handles,
+			handleNumber: data.handleNumber,
+			buttonsProperty: event.buttons,
+			positions: [
+				scope_Locations[0],
+				scope_Locations[scope_Handles.length - 1]
+			]
+		}), endEvent = attach(actions.end, d, end, {
+			handles: data.handles,
+			handleNumber: data.handleNumber
+		});
+
+		var outEvent = attach("mouseout", d, documentLeave, {
+			handles: data.handles,
+			handleNumber: data.handleNumber
+		});
+
+		d.noUiListeners = moveEvent.concat(endEvent, outEvent);
+
+		// Text selection isn't an issue on touch devices,
+		// so adding cursor styles can be skipped.
+		if ( event.cursor ) {
+
+			// Prevent the 'I' cursor and extend the range-drag cursor.
+			document.body.style.cursor = getComputedStyle(event.target).cursor;
+
+			// Mark the target with a dragging state.
+			if ( scope_Handles.length > 1 ) {
+				addClass(scope_Target, options.cssClasses.drag);
+			}
+
+			var f = function(){
+				return false;
+			};
+
+			document.body.noUiListener = f;
+
+			// Prevent text selection when dragging the handles.
+			document.body.addEventListener('selectstart', f, false);
+		}
+
+		if ( data.handleNumber !== undefined ) {
+			fireEvent('start', data.handleNumber);
+		}
+	}
+
+	// Move closest handle to tapped location.
+	function tap ( event ) {
+
+		var location = event.calcPoint, total = 0, handleNumber, to;
+
+		// The tap event shouldn't propagate up and cause 'edge' to run.
+		event.stopPropagation();
+
+		// Add up the handle offsets.
+		scope_Handles.forEach(function(a){
+			total += offset(a)[ options.style ];
+		});
+
+		// Find the handle closest to the tapped position.
+		handleNumber = ( location < total/2 || scope_Handles.length === 1 ) ? 0 : 1;
+
+		// Check if handler is not disablet if yes set number to the next handler
+		if (scope_Handles[handleNumber].hasAttribute('disabled')) {
+			handleNumber = handleNumber ? 0 : 1;
+		}
+
+		location -= offset(scope_Base)[ options.style ];
+
+		// Calculate the new position.
+		to = ( location * 100 ) / baseSize();
+
+		if ( !options.events.snap ) {
+			// Flag the slider as it is now in a transitional state.
+			// Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
+			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+		}
+
+		// Support 'disabled' handles
+		if ( scope_Handles[handleNumber].hasAttribute('disabled') ) {
+			return false;
+		}
+
+		// Find the closest handle and calculate the tapped point.
+		// The set handle to the new position.
+		setHandle( scope_Handles[handleNumber], to );
+
+		fireEvent('slide', handleNumber, true);
+		fireEvent('set', handleNumber, true);
+		fireEvent('change', handleNumber, true);
+
+		if ( options.events.snap ) {
+			start(event, { handles: [scope_Handles[handleNumber]] });
+		}
+	}
+
+	// Fires a 'hover' event for a hovered mouse/pen position.
+	function hover ( event ) {
+
+		var location = event.calcPoint - offset(scope_Base)[ options.style ],
+			to = scope_Spectrum.getStep(( location * 100 ) / baseSize()),
+			value = scope_Spectrum.fromStepping( to );
+
+		Object.keys(scope_Events).forEach(function( targetEvent ) {
+			if ( 'hover' === targetEvent.split('.')[0] ) {
+				scope_Events[targetEvent].forEach(function( callback ) {
+					callback.call( scope_Self, value );
+				});
+			}
+		});
+	}
+
+	// Attach events to several slider parts.
+	function events ( behaviour ) {
+
+		// Attach the standard drag event to the handles.
+		if ( !behaviour.fixed ) {
+
+			scope_Handles.forEach(function( handle, index ){
+
+				// These events are only bound to the visual handle
+				// element, not the 'real' origin element.
+				attach ( actions.start, handle.children[0], start, {
+					handles: [ handle ],
+					handleNumber: index
+				});
+			});
+		}
+
+		// Attach the tap event to the slider base.
+		if ( behaviour.tap ) {
+
+			attach ( actions.start, scope_Base, tap, {
+				handles: scope_Handles
+			});
+		}
+
+		// Fire hover events
+		if ( behaviour.hover ) {
+			attach ( actions.move, scope_Base, hover, { hover: true } );
+		}
+
+		// Make the range draggable.
+		if ( behaviour.drag ){
+
+			var drag = [scope_Base.querySelector( '.' + options.cssClasses.connect )];
+			addClass(drag[0], options.cssClasses.draggable);
+
+			// When the range is fixed, the entire range can
+			// be dragged by the handles. The handle in the first
+			// origin will propagate the start event upward,
+			// but it needs to be bound manually on the other.
+			if ( behaviour.fixed ) {
+				drag.push(scope_Handles[(drag[0] === scope_Handles[0] ? 1 : 0)].children[0]);
+			}
+
+			drag.forEach(function( element ) {
+				attach ( actions.start, element, start, {
+					handles: scope_Handles
+				});
+			});
+		}
+	}
+
+
+	// Test suggested values and apply margin, step.
+	function setHandle ( handle, to, noLimitOption ) {
+
+		var trigger = handle !== scope_Handles[0] ? 1 : 0,
+			lowerMargin = scope_Locations[0] + options.margin,
+			upperMargin = scope_Locations[1] - options.margin,
+			lowerLimit = scope_Locations[0] + options.limit,
+			upperLimit = scope_Locations[1] - options.limit;
+
+		// For sliders with multiple handles,
+		// limit movement to the other handle.
+		// Apply the margin option by adding it to the handle positions.
+		if ( scope_Handles.length > 1 ) {
+			to = trigger ? Math.max( to, lowerMargin ) : Math.min( to, upperMargin );
+		}
+
+		// The limit option has the opposite effect, limiting handles to a
+		// maximum distance from another. Limit must be > 0, as otherwise
+		// handles would be unmoveable. 'noLimitOption' is set to 'false'
+		// for the .val() method, except for pass 4/4.
+		if ( noLimitOption !== false && options.limit && scope_Handles.length > 1 ) {
+			to = trigger ? Math.min ( to, lowerLimit ) : Math.max( to, upperLimit );
+		}
+
+		// Handle the step option.
+		to = scope_Spectrum.getStep( to );
+
+		// Limit percentage to the 0 - 100 range
+		to = limit(to);
+
+		// Return false if handle can't move
+		if ( to === scope_Locations[trigger] ) {
+			return false;
+		}
+
+		// Set the handle to the new position.
+		// Use requestAnimationFrame for efficient painting.
+		// No significant effect in Chrome, Edge sees dramatic
+		// performace improvements.
+		if ( window.requestAnimationFrame ) {
+			window.requestAnimationFrame(function(){
+				handle.style[options.style] = to + '%';
+			});
+		} else {
+			handle.style[options.style] = to + '%';
+		}
+
+		// Force proper handle stacking
+		if ( !handle.previousSibling ) {
+			removeClass(handle, options.cssClasses.stacking);
+			if ( to > 50 ) {
+				addClass(handle, options.cssClasses.stacking);
+			}
+		}
+
+		// Update locations.
+		scope_Locations[trigger] = to;
+
+		// Convert the value to the slider stepping/range.
+		scope_Values[trigger] = scope_Spectrum.fromStepping( to );
+
+		fireEvent('update', trigger);
+
+		return true;
+	}
+
+	// Loop values from value method and apply them.
+	function setValues ( count, values ) {
+
+		var i, trigger, to;
+
+		// With the limit option, we'll need another limiting pass.
+		if ( options.limit ) {
+			count += 1;
+		}
+
+		// If there are multiple handles to be set run the setting
+		// mechanism twice for the first handle, to make sure it
+		// can be bounced of the second one properly.
+		for ( i = 0; i < count; i += 1 ) {
+
+			trigger = i%2;
+
+			// Get the current argument from the array.
+			to = values[trigger];
+
+			// Setting with null indicates an 'ignore'.
+			// Inputting 'false' is invalid.
+			if ( to !== null && to !== false ) {
+
+				// If a formatted number was passed, attemt to decode it.
+				if ( typeof to === 'number' ) {
+					to = String(to);
+				}
+
+				to = options.format.from( to );
+
+				// Request an update for all links if the value was invalid.
+				// Do so too if setting the handle fails.
+				if ( to === false || isNaN(to) || setHandle( scope_Handles[trigger], scope_Spectrum.toStepping( to ), i === (3 - options.dir) ) === false ) {
+					fireEvent('update', trigger);
+				}
+			}
+		}
+	}
+
+	// Set the slider value.
+	function valueSet ( input, fireSetEvent ) {
+
+		var count, values = asArray( input ), i;
+
+		// Event fires by default
+		fireSetEvent = (fireSetEvent === undefined ? true : !!fireSetEvent);
+
+		// The RTL settings is implemented by reversing the front-end,
+		// internal mechanisms are the same.
+		if ( options.dir && options.handles > 1 ) {
+			values.reverse();
+		}
+
+		// Animation is optional.
+		// Make sure the initial values where set before using animated placement.
+		if ( options.animate && scope_Locations[0] !== -1 ) {
+			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+		}
+
+		// Determine how often to set the handles.
+		count = scope_Handles.length > 1 ? 3 : 1;
+
+		if ( values.length === 1 ) {
+			count = 1;
+		}
+
+		setValues ( count, values );
+
+		// Fire the 'set' event for both handles.
+		for ( i = 0; i < scope_Handles.length; i++ ) {
+
+			// Fire the event only for handles that received a new value, as per #579
+			if ( values[i] !== null && fireSetEvent ) {
+				fireEvent('set', i);
+			}
+		}
+	}
+
+	// Get the slider value.
+	function valueGet ( ) {
+
+		var i, retour = [];
+
+		// Get the value from all handles.
+		for ( i = 0; i < options.handles; i += 1 ){
+			retour[i] = options.format.to( scope_Values[i] );
+		}
+
+		return inSliderOrder( retour );
+	}
+
+	// Removes classes from the root and empties it.
+	function destroy ( ) {
+
+		for ( var key in options.cssClasses ) {
+			if ( !options.cssClasses.hasOwnProperty(key) ) { continue; }
+			removeClass(scope_Target, options.cssClasses[key]);
+		}
+
+		while (scope_Target.firstChild) {
+			scope_Target.removeChild(scope_Target.firstChild);
+		}
+
+		delete scope_Target.noUiSlider;
+	}
+
+	// Get the current step size for the slider.
+	function getCurrentStep ( ) {
+
+		// Check all locations, map them to their stepping point.
+		// Get the step point, then find it in the input list.
+		var retour = scope_Locations.map(function( location, index ){
+
+			var step = scope_Spectrum.getApplicableStep( location ),
+
+				// As per #391, the comparison for the decrement step can have some rounding issues.
+				// Round the value to the precision used in the step.
+				stepDecimals = countDecimals(String(step[2])),
+
+				// Get the current numeric value
+				value = scope_Values[index],
+
+				// To move the slider 'one step up', the current step value needs to be added.
+				// Use null if we are at the maximum slider value.
+				increment = location === 100 ? null : step[2],
+
+				// Going 'one step down' might put the slider in a different sub-range, so we
+				// need to switch between the current or the previous step.
+				prev = Number((value - step[2]).toFixed(stepDecimals)),
+
+				// If the value fits the step, return the current step value. Otherwise, use the
+				// previous step. Return null if the slider is at its minimum value.
+				decrement = location === 0 ? null : (prev >= step[1]) ? step[2] : (step[0] || false);
+
+			return [decrement, increment];
+		});
+
+		// Return values in the proper order.
+		return inSliderOrder( retour );
+	}
+
+	// Attach an event to this slider, possibly including a namespace
+	function bindEvent ( namespacedEvent, callback ) {
+		scope_Events[namespacedEvent] = scope_Events[namespacedEvent] || [];
+		scope_Events[namespacedEvent].push(callback);
+
+		// If the event bound is 'update,' fire it immediately for all handles.
+		if ( namespacedEvent.split('.')[0] === 'update' ) {
+			scope_Handles.forEach(function(a, index){
+				fireEvent('update', index);
+			});
+		}
+	}
+
+	// Undo attachment of event
+	function removeEvent ( namespacedEvent ) {
+
+		var event = namespacedEvent && namespacedEvent.split('.')[0],
+			namespace = event && namespacedEvent.substring(event.length);
+
+		Object.keys(scope_Events).forEach(function( bind ){
+
+			var tEvent = bind.split('.')[0],
+				tNamespace = bind.substring(tEvent.length);
+
+			if ( (!event || event === tEvent) && (!namespace || namespace === tNamespace) ) {
+				delete scope_Events[bind];
+			}
+		});
+	}
+
+	// Updateable: margin, limit, step, range, animate, snap
+	function updateOptions ( optionsToUpdate, fireSetEvent ) {
+
+		// Spectrum is created using the range, snap, direction and step options.
+		// 'snap' and 'step' can be updated, 'direction' cannot, due to event binding.
+		// If 'snap' and 'step' are not passed, they should remain unchanged.
+		var v = valueGet(), newOptions = testOptions({
+			start: [0, 0],
+			margin: optionsToUpdate.margin,
+			limit: optionsToUpdate.limit,
+			step: optionsToUpdate.step === undefined ? options.singleStep : optionsToUpdate.step,
+			range: optionsToUpdate.range,
+			animate: optionsToUpdate.animate,
+			snap: optionsToUpdate.snap === undefined ? options.snap : optionsToUpdate.snap
+		});
+
+		['margin', 'limit', 'range', 'animate'].forEach(function(name){
+
+			// Only change options that we're actually passed to update.
+			if ( optionsToUpdate[name] !== undefined ) {
+				options[name] = optionsToUpdate[name];
+			}
+		});
+
+		// Save current spectrum direction as testOptions in testRange call
+		// doesn't rely on current direction
+		newOptions.spectrum.direction = scope_Spectrum.direction;
+		scope_Spectrum = newOptions.spectrum;
+
+		// Invalidate the current positioning so valueSet forces an update.
+		scope_Locations = [-1, -1];
+		valueSet(optionsToUpdate.start || v, fireSetEvent);
+	}
+
+
+	// Throw an error if the slider was already initialized.
+	if ( scope_Target.noUiSlider ) {
+		throw new Error('Slider was already initialized.');
+	}
+
+	// Create the base element, initialise HTML and set classes.
+	// Add handles and links.
+	scope_Base = addSlider( options.dir, options.ort, scope_Target );
+	scope_Handles = addHandles( options.handles, options.dir, scope_Base );
+
+	// Set the connect classes.
+	addConnection ( options.connect, scope_Target, scope_Handles );
+
+	if ( options.pips ) {
+		pips(options.pips);
+	}
+
+	if ( options.tooltips ) {
+		tooltips();
+	}
+
+	scope_Self = {
+		destroy: destroy,
+		steps: getCurrentStep,
+		on: bindEvent,
+		off: removeEvent,
+		get: valueGet,
+		set: valueSet,
+		updateOptions: updateOptions,
+		options: originalOptions, // Issue #600
+		target: scope_Target, // Issue #597
+		pips: pips // Issue #594
+	};
+
+	// Attach user events.
+	events( options.events );
+
+	return scope_Self;
+
+}
+
+
+	// Run the standard initializer
+	function initialize ( target, originalOptions ) {
+
+		if ( !target.nodeName ) {
+			throw new Error('noUiSlider.create requires a single element.');
+		}
+
+		// Test the options and create the slider environment;
+		var options = testOptions( originalOptions, target ),
+			slider = closure( target, options, originalOptions );
+
+		// Use the public value method to set the start values.
+		slider.set(options.start);
+
+		target.noUiSlider = slider;
+		return slider;
+	}
+
+	// Use an object instead of a function for future expansibility;
+	return {
+		create: initialize
+	};
+
+}));
+},{}],441:[function(require,module,exports){
 /*! 
  * numeral.js language configuration
  * language : russian (ru)
@@ -28274,7 +30282,7 @@ module.exports = property;
     }
 }());
 
-},{}],441:[function(require,module,exports){
+},{}],442:[function(require,module,exports){
 /*!
  * numeral.js
  * version : 1.5.3
@@ -28955,7 +30963,7 @@ module.exports = property;
     }
 }).call(this);
 
-},{}],442:[function(require,module,exports){
+},{}],443:[function(require,module,exports){
 'use strict';
 
 function oldAdd(element, className) {
@@ -28999,7 +31007,7 @@ exports.list = function (element) {
   }
 };
 
-},{}],443:[function(require,module,exports){
+},{}],444:[function(require,module,exports){
 'use strict';
 
 var DOM = {};
@@ -29085,7 +31093,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-},{}],444:[function(require,module,exports){
+},{}],445:[function(require,module,exports){
 'use strict';
 
 var EventElement = function (element) {
@@ -29158,7 +31166,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-},{}],445:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 'use strict';
 
 module.exports = (function () {
@@ -29173,7 +31181,7 @@ module.exports = (function () {
   };
 })();
 
-},{}],446:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 'use strict';
 
 var cls = require('./class');
@@ -29258,7 +31266,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-},{"./class":442,"./dom":443}],447:[function(require,module,exports){
+},{"./class":443,"./dom":444}],448:[function(require,module,exports){
 'use strict';
 
 var destroy = require('./plugin/destroy');
@@ -29271,7 +31279,7 @@ module.exports = {
   destroy: destroy
 };
 
-},{"./plugin/destroy":449,"./plugin/initialize":457,"./plugin/update":461}],448:[function(require,module,exports){
+},{"./plugin/destroy":450,"./plugin/initialize":458,"./plugin/update":462}],449:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -29290,7 +31298,7 @@ module.exports = {
   theme: 'default'
 };
 
-},{}],449:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -29314,7 +31322,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-},{"../lib/dom":443,"../lib/helper":446,"./instances":458}],450:[function(require,module,exports){
+},{"../lib/dom":444,"../lib/helper":447,"./instances":459}],451:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29376,7 +31384,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-},{"../../lib/helper":446,"../instances":458,"../update-geometry":459,"../update-scroll":460}],451:[function(require,module,exports){
+},{"../../lib/helper":447,"../instances":459,"../update-geometry":460,"../update-scroll":461}],452:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29481,7 +31489,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-},{"../../lib/dom":443,"../../lib/helper":446,"../instances":458,"../update-geometry":459,"../update-scroll":460}],452:[function(require,module,exports){
+},{"../../lib/dom":444,"../../lib/helper":447,"../instances":459,"../update-geometry":460,"../update-scroll":461}],453:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29613,7 +31621,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-},{"../../lib/dom":443,"../../lib/helper":446,"../instances":458,"../update-geometry":459,"../update-scroll":460}],453:[function(require,module,exports){
+},{"../../lib/dom":444,"../../lib/helper":447,"../instances":459,"../update-geometry":460,"../update-scroll":461}],454:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -29751,7 +31759,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-},{"../instances":458,"../update-geometry":459,"../update-scroll":460}],454:[function(require,module,exports){
+},{"../instances":459,"../update-geometry":460,"../update-scroll":461}],455:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -29768,7 +31776,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-},{"../instances":458,"../update-geometry":459}],455:[function(require,module,exports){
+},{"../instances":459,"../update-geometry":460}],456:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29879,7 +31887,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-},{"../../lib/helper":446,"../instances":458,"../update-geometry":459,"../update-scroll":460}],456:[function(require,module,exports){
+},{"../../lib/helper":447,"../instances":459,"../update-geometry":460,"../update-scroll":461}],457:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -30057,7 +32065,7 @@ module.exports = function (element) {
   bindTouchHandler(element, i, _.env.supportsTouch, _.env.supportsIePointer);
 };
 
-},{"../../lib/helper":446,"../instances":458,"../update-geometry":459,"../update-scroll":460}],457:[function(require,module,exports){
+},{"../../lib/helper":447,"../instances":459,"../update-geometry":460,"../update-scroll":461}],458:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -30096,7 +32104,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-},{"../lib/class":442,"../lib/helper":446,"./handler/click-rail":450,"./handler/drag-scrollbar":451,"./handler/keyboard":452,"./handler/mouse-wheel":453,"./handler/native-scroll":454,"./handler/selection":455,"./handler/touch":456,"./instances":458,"./update-geometry":459}],458:[function(require,module,exports){
+},{"../lib/class":443,"../lib/helper":447,"./handler/click-rail":451,"./handler/drag-scrollbar":452,"./handler/keyboard":453,"./handler/mouse-wheel":454,"./handler/native-scroll":455,"./handler/selection":456,"./handler/touch":457,"./instances":459,"./update-geometry":460}],459:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -30205,7 +32213,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-},{"../lib/class":442,"../lib/dom":443,"../lib/event-manager":444,"../lib/guid":445,"../lib/helper":446,"./default-setting":448}],459:[function(require,module,exports){
+},{"../lib/class":443,"../lib/dom":444,"../lib/event-manager":445,"../lib/guid":446,"../lib/helper":447,"./default-setting":449}],460:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -30333,7 +32341,7 @@ module.exports = function (element) {
   }
 };
 
-},{"../lib/class":442,"../lib/dom":443,"../lib/helper":446,"./instances":458,"./update-scroll":460}],460:[function(require,module,exports){
+},{"../lib/class":443,"../lib/dom":444,"../lib/helper":447,"./instances":459,"./update-scroll":461}],461:[function(require,module,exports){
 'use strict';
 
 var instances = require('./instances');
@@ -30447,7 +32455,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-},{"./instances":458}],461:[function(require,module,exports){
+},{"./instances":459}],462:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -30486,7 +32494,7 @@ module.exports = function (element) {
   dom.css(i.scrollbarYRail, 'display', '');
 };
 
-},{"../lib/dom":443,"../lib/helper":446,"./instances":458,"./update-geometry":459,"./update-scroll":460}],462:[function(require,module,exports){
+},{"../lib/dom":444,"../lib/helper":447,"./instances":459,"./update-geometry":460,"./update-scroll":461}],463:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -30668,7 +32676,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],463:[function(require,module,exports){
+},{}],464:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -30858,16 +32866,16 @@ module.exports = _react2['default'].createClass({
     }
   }
 });
-},{"react":"react"}],464:[function(require,module,exports){
+},{"react":"react"}],465:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":463}],465:[function(require,module,exports){
+},{"./components/DisqusThread":464}],466:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOMServer');
 
-},{"react/lib/ReactDOMServer":522}],466:[function(require,module,exports){
+},{"react/lib/ReactDOMServer":523}],467:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -31007,7 +33015,7 @@ Nouislider.propTypes = {
 
 module.exports = Nouislider;
 
-},{"nouislider":"noUiSlider","react":"react"}],467:[function(require,module,exports){
+},{"nouislider":440,"react":"react"}],468:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31088,7 +33096,7 @@ Provider.childContextTypes = {
   store: _storeShape2["default"].isRequired
 };
 }).call(this,require('_process'))
-},{"../utils/storeShape":471,"../utils/warning":472,"_process":462,"react":"react"}],468:[function(require,module,exports){
+},{"../utils/storeShape":472,"../utils/warning":473,"_process":463,"react":"react"}],469:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -31484,7 +33492,7 @@ function connect(mapStateToProps, mapDispatchToProps, mergeProps) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/shallowEqual":470,"../utils/storeShape":471,"../utils/warning":472,"../utils/wrapActionCreators":473,"_process":462,"hoist-non-react-statics":337,"invariant":354,"lodash/isPlainObject":477,"react":"react"}],469:[function(require,module,exports){
+},{"../utils/shallowEqual":471,"../utils/storeShape":472,"../utils/warning":473,"../utils/wrapActionCreators":474,"_process":463,"hoist-non-react-statics":337,"invariant":354,"lodash/isPlainObject":478,"react":"react"}],470:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -31502,7 +33510,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 exports.Provider = _Provider2["default"];
 exports.connect = _connect2["default"];
-},{"./components/Provider":467,"./components/connect":468}],470:[function(require,module,exports){
+},{"./components/Provider":468,"./components/connect":469}],471:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -31529,7 +33537,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],471:[function(require,module,exports){
+},{}],472:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -31541,7 +33549,7 @@ exports["default"] = _react.PropTypes.shape({
   dispatch: _react.PropTypes.func.isRequired,
   getState: _react.PropTypes.func.isRequired
 });
-},{"react":"react"}],472:[function(require,module,exports){
+},{"react":"react"}],473:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -31566,7 +33574,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],473:[function(require,module,exports){
+},{}],474:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -31579,7 +33587,7 @@ function wrapActionCreators(actionCreators) {
     return (0, _redux.bindActionCreators)(actionCreators, dispatch);
   };
 }
-},{"redux":"redux"}],474:[function(require,module,exports){
+},{"redux":"redux"}],475:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -31587,7 +33595,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-},{"./_overArg":475}],475:[function(require,module,exports){
+},{"./_overArg":476}],476:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -31604,7 +33612,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],476:[function(require,module,exports){
+},{}],477:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -31635,7 +33643,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],477:[function(require,module,exports){
+},{}],478:[function(require,module,exports){
 var getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
 
@@ -31705,7 +33713,7 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-},{"./_getPrototype":474,"./isObjectLike":476}],478:[function(require,module,exports){
+},{"./_getPrototype":475,"./isObjectLike":477}],479:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31742,7 +33750,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactMount":542,"./findDOMNode":585,"fbjs/lib/focusNode":615}],479:[function(require,module,exports){
+},{"./ReactMount":543,"./findDOMNode":586,"fbjs/lib/focusNode":616}],480:[function(require,module,exports){
 /**
  * Copyright 2013-2015 Facebook, Inc.
  * All rights reserved.
@@ -32148,7 +34156,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":491,"./EventPropagators":495,"./FallbackCompositionState":496,"./SyntheticCompositionEvent":567,"./SyntheticInputEvent":571,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/keyOf":625}],480:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPropagators":496,"./FallbackCompositionState":497,"./SyntheticCompositionEvent":568,"./SyntheticInputEvent":572,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/keyOf":626}],481:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32288,7 +34296,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],481:[function(require,module,exports){
+},{}],482:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32466,7 +34474,7 @@ ReactPerf.measureMethods(CSSPropertyOperations, 'CSSPropertyOperations', {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":480,"./ReactPerf":548,"./dangerousStyleValue":582,"_process":462,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/camelizeStyleName":609,"fbjs/lib/hyphenateStyleName":620,"fbjs/lib/memoizeStringOnly":627,"fbjs/lib/warning":632}],482:[function(require,module,exports){
+},{"./CSSProperty":481,"./ReactPerf":549,"./dangerousStyleValue":583,"_process":463,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/camelizeStyleName":610,"fbjs/lib/hyphenateStyleName":621,"fbjs/lib/memoizeStringOnly":628,"fbjs/lib/warning":633}],483:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32562,7 +34570,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./PooledClass":500,"_process":462,"fbjs/lib/invariant":621}],483:[function(require,module,exports){
+},{"./Object.assign":500,"./PooledClass":501,"_process":463,"fbjs/lib/invariant":622}],484:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32884,7 +34892,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":491,"./EventPluginHub":492,"./EventPropagators":495,"./ReactUpdates":560,"./SyntheticEvent":569,"./getEventTarget":591,"./isEventSupported":596,"./isTextInputElement":597,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/keyOf":625}],484:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPluginHub":493,"./EventPropagators":496,"./ReactUpdates":561,"./SyntheticEvent":570,"./getEventTarget":592,"./isEventSupported":597,"./isTextInputElement":598,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/keyOf":626}],485:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32908,7 +34916,7 @@ var ClientReactRootIndex = {
 };
 
 module.exports = ClientReactRootIndex;
-},{}],485:[function(require,module,exports){
+},{}],486:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33040,7 +35048,7 @@ ReactPerf.measureMethods(DOMChildrenOperations, 'DOMChildrenOperations', {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./Danger":488,"./ReactMultiChildUpdateTypes":544,"./ReactPerf":548,"./setInnerHTML":601,"./setTextContent":602,"_process":462,"fbjs/lib/invariant":621}],486:[function(require,module,exports){
+},{"./Danger":489,"./ReactMultiChildUpdateTypes":545,"./ReactPerf":549,"./setInnerHTML":602,"./setTextContent":603,"_process":463,"fbjs/lib/invariant":622}],487:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33277,7 +35285,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],487:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],488:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33505,7 +35513,7 @@ ReactPerf.measureMethods(DOMPropertyOperations, 'DOMPropertyOperations', {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":486,"./ReactPerf":548,"./quoteAttributeValueForBrowser":599,"_process":462,"fbjs/lib/warning":632}],488:[function(require,module,exports){
+},{"./DOMProperty":487,"./ReactPerf":549,"./quoteAttributeValueForBrowser":600,"_process":463,"fbjs/lib/warning":633}],489:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33653,7 +35661,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/createNodesFromMarkup":612,"fbjs/lib/emptyFunction":613,"fbjs/lib/getMarkupWrap":617,"fbjs/lib/invariant":621}],489:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/createNodesFromMarkup":613,"fbjs/lib/emptyFunction":614,"fbjs/lib/getMarkupWrap":618,"fbjs/lib/invariant":622}],490:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33681,7 +35689,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":625}],490:[function(require,module,exports){
+},{"fbjs/lib/keyOf":626}],491:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33806,7 +35814,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":491,"./EventPropagators":495,"./ReactMount":542,"./SyntheticMouseEvent":573,"fbjs/lib/keyOf":625}],491:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPropagators":496,"./ReactMount":543,"./SyntheticMouseEvent":574,"fbjs/lib/keyOf":626}],492:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33899,7 +35907,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":624}],492:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":625}],493:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34181,7 +36189,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":493,"./EventPluginUtils":494,"./ReactErrorUtils":533,"./accumulateInto":579,"./forEachAccumulated":587,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],493:[function(require,module,exports){
+},{"./EventPluginRegistry":494,"./EventPluginUtils":495,"./ReactErrorUtils":534,"./accumulateInto":580,"./forEachAccumulated":588,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],494:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34404,7 +36412,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],494:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],495:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34609,7 +36617,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":491,"./ReactErrorUtils":533,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],495:[function(require,module,exports){
+},{"./EventConstants":492,"./ReactErrorUtils":534,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],496:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34747,7 +36755,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":491,"./EventPluginHub":492,"./accumulateInto":579,"./forEachAccumulated":587,"_process":462,"fbjs/lib/warning":632}],496:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPluginHub":493,"./accumulateInto":580,"./forEachAccumulated":588,"_process":463,"fbjs/lib/warning":633}],497:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -34843,7 +36851,7 @@ assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./Object.assign":499,"./PooledClass":500,"./getTextContentAccessor":594}],497:[function(require,module,exports){
+},{"./Object.assign":500,"./PooledClass":501,"./getTextContentAccessor":595}],498:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35074,7 +37082,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":486,"fbjs/lib/ExecutionEnvironment":607}],498:[function(require,module,exports){
+},{"./DOMProperty":487,"fbjs/lib/ExecutionEnvironment":608}],499:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -35211,7 +37219,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":550,"./ReactPropTypes":551,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],499:[function(require,module,exports){
+},{"./ReactPropTypeLocations":551,"./ReactPropTypes":552,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],500:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -35259,7 +37267,7 @@ function assign(target, sources) {
 }
 
 module.exports = assign;
-},{}],500:[function(require,module,exports){
+},{}],501:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -35381,7 +37389,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],501:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],502:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35422,7 +37430,7 @@ React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
 React.__SECRET_DOM_SERVER_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOMServer;
 
 module.exports = React;
-},{"./Object.assign":499,"./ReactDOM":512,"./ReactDOMServer":522,"./ReactIsomorphic":540,"./deprecated":583}],502:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactDOM":513,"./ReactDOMServer":523,"./ReactIsomorphic":541,"./deprecated":584}],503:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -35461,7 +37469,7 @@ var ReactBrowserComponentMixin = {
 
 module.exports = ReactBrowserComponentMixin;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":539,"./findDOMNode":585,"_process":462,"fbjs/lib/warning":632}],503:[function(require,module,exports){
+},{"./ReactInstanceMap":540,"./findDOMNode":586,"_process":463,"fbjs/lib/warning":633}],504:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35786,7 +37794,7 @@ ReactPerf.measureMethods(ReactBrowserEventEmitter, 'ReactBrowserEventEmitter', {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":491,"./EventPluginHub":492,"./EventPluginRegistry":493,"./Object.assign":499,"./ReactEventEmitterMixin":534,"./ReactPerf":548,"./ViewportMetrics":578,"./isEventSupported":596}],504:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPluginHub":493,"./EventPluginRegistry":494,"./Object.assign":500,"./ReactEventEmitterMixin":535,"./ReactPerf":549,"./ViewportMetrics":579,"./isEventSupported":597}],505:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -35911,7 +37919,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./ReactReconciler":553,"./instantiateReactComponent":595,"./shouldUpdateReactComponent":603,"./traverseAllChildren":604,"_process":462,"fbjs/lib/warning":632}],505:[function(require,module,exports){
+},{"./ReactReconciler":554,"./instantiateReactComponent":596,"./shouldUpdateReactComponent":604,"./traverseAllChildren":605,"_process":463,"fbjs/lib/warning":633}],506:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -36094,7 +38102,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":500,"./ReactElement":529,"./traverseAllChildren":604,"fbjs/lib/emptyFunction":613}],506:[function(require,module,exports){
+},{"./PooledClass":501,"./ReactElement":530,"./traverseAllChildren":605,"fbjs/lib/emptyFunction":614}],507:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36868,7 +38876,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactComponent":507,"./ReactElement":529,"./ReactNoopUpdateQueue":546,"./ReactPropTypeLocationNames":549,"./ReactPropTypeLocations":550,"_process":462,"fbjs/lib/emptyObject":614,"fbjs/lib/invariant":621,"fbjs/lib/keyMirror":624,"fbjs/lib/keyOf":625,"fbjs/lib/warning":632}],507:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactComponent":508,"./ReactElement":530,"./ReactNoopUpdateQueue":547,"./ReactPropTypeLocationNames":550,"./ReactPropTypeLocations":551,"_process":463,"fbjs/lib/emptyObject":615,"fbjs/lib/invariant":622,"fbjs/lib/keyMirror":625,"fbjs/lib/keyOf":626,"fbjs/lib/warning":633}],508:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36993,7 +39001,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":546,"./canDefineProperty":581,"_process":462,"fbjs/lib/emptyObject":614,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],508:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":547,"./canDefineProperty":582,"_process":463,"fbjs/lib/emptyObject":615,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],509:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37035,7 +39043,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./ReactDOMIDOperations":517,"./ReactMount":542}],509:[function(require,module,exports){
+},{"./ReactDOMIDOperations":518,"./ReactMount":543}],510:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -37089,7 +39097,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],510:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],511:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37786,7 +39794,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactComponentEnvironment":509,"./ReactCurrentOwner":511,"./ReactElement":529,"./ReactInstanceMap":539,"./ReactPerf":548,"./ReactPropTypeLocationNames":549,"./ReactPropTypeLocations":550,"./ReactReconciler":553,"./ReactUpdateQueue":559,"./shouldUpdateReactComponent":603,"_process":462,"fbjs/lib/emptyObject":614,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],511:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactComponentEnvironment":510,"./ReactCurrentOwner":512,"./ReactElement":530,"./ReactInstanceMap":540,"./ReactPerf":549,"./ReactPropTypeLocationNames":550,"./ReactPropTypeLocations":551,"./ReactReconciler":554,"./ReactUpdateQueue":560,"./shouldUpdateReactComponent":604,"_process":463,"fbjs/lib/emptyObject":615,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],512:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37817,7 +39825,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],512:[function(require,module,exports){
+},{}],513:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37912,7 +39920,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":511,"./ReactDOMTextComponent":523,"./ReactDefaultInjection":526,"./ReactInstanceHandles":538,"./ReactMount":542,"./ReactPerf":548,"./ReactReconciler":553,"./ReactUpdates":560,"./ReactVersion":561,"./findDOMNode":585,"./renderSubtreeIntoContainer":600,"_process":462,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/warning":632}],513:[function(require,module,exports){
+},{"./ReactCurrentOwner":512,"./ReactDOMTextComponent":524,"./ReactDefaultInjection":527,"./ReactInstanceHandles":539,"./ReactMount":543,"./ReactPerf":549,"./ReactReconciler":554,"./ReactUpdates":561,"./ReactVersion":562,"./findDOMNode":586,"./renderSubtreeIntoContainer":601,"_process":463,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/warning":633}],514:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37963,7 +39971,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{}],514:[function(require,module,exports){
+},{}],515:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38928,7 +40936,7 @@ assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mix
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":478,"./CSSPropertyOperations":481,"./DOMProperty":486,"./DOMPropertyOperations":487,"./EventConstants":491,"./Object.assign":499,"./ReactBrowserEventEmitter":503,"./ReactComponentBrowserEnvironment":508,"./ReactDOMButton":513,"./ReactDOMInput":518,"./ReactDOMOption":519,"./ReactDOMSelect":520,"./ReactDOMTextarea":524,"./ReactMount":542,"./ReactMultiChild":543,"./ReactPerf":548,"./ReactUpdateQueue":559,"./canDefineProperty":581,"./escapeTextContentForBrowser":584,"./isEventSupported":596,"./setInnerHTML":601,"./setTextContent":602,"./validateDOMNesting":605,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/keyOf":625,"fbjs/lib/shallowEqual":630,"fbjs/lib/warning":632}],515:[function(require,module,exports){
+},{"./AutoFocusUtils":479,"./CSSPropertyOperations":482,"./DOMProperty":487,"./DOMPropertyOperations":488,"./EventConstants":492,"./Object.assign":500,"./ReactBrowserEventEmitter":504,"./ReactComponentBrowserEnvironment":509,"./ReactDOMButton":514,"./ReactDOMInput":519,"./ReactDOMOption":520,"./ReactDOMSelect":521,"./ReactDOMTextarea":525,"./ReactMount":543,"./ReactMultiChild":544,"./ReactPerf":549,"./ReactUpdateQueue":560,"./canDefineProperty":582,"./escapeTextContentForBrowser":585,"./isEventSupported":597,"./setInnerHTML":602,"./setTextContent":603,"./validateDOMNesting":606,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/keyOf":626,"fbjs/lib/shallowEqual":631,"fbjs/lib/warning":633}],516:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39108,7 +41116,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":529,"./ReactElementValidator":530,"_process":462,"fbjs/lib/mapObject":626}],516:[function(require,module,exports){
+},{"./ReactElement":530,"./ReactElementValidator":531,"_process":463,"fbjs/lib/mapObject":627}],517:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39127,7 +41135,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],517:[function(require,module,exports){
+},{}],518:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39224,7 +41232,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 
 module.exports = ReactDOMIDOperations;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":485,"./DOMPropertyOperations":487,"./ReactMount":542,"./ReactPerf":548,"_process":462,"fbjs/lib/invariant":621}],518:[function(require,module,exports){
+},{"./DOMChildrenOperations":486,"./DOMPropertyOperations":488,"./ReactMount":543,"./ReactPerf":549,"_process":463,"fbjs/lib/invariant":622}],519:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39380,7 +41388,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":498,"./Object.assign":499,"./ReactDOMIDOperations":517,"./ReactMount":542,"./ReactUpdates":560,"_process":462,"fbjs/lib/invariant":621}],519:[function(require,module,exports){
+},{"./LinkedValueUtils":499,"./Object.assign":500,"./ReactDOMIDOperations":518,"./ReactMount":543,"./ReactUpdates":561,"_process":463,"fbjs/lib/invariant":622}],520:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39472,7 +41480,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactChildren":505,"./ReactDOMSelect":520,"_process":462,"fbjs/lib/warning":632}],520:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactChildren":506,"./ReactDOMSelect":521,"_process":463,"fbjs/lib/warning":633}],521:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39663,7 +41671,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":498,"./Object.assign":499,"./ReactMount":542,"./ReactUpdates":560,"_process":462,"fbjs/lib/warning":632}],521:[function(require,module,exports){
+},{"./LinkedValueUtils":499,"./Object.assign":500,"./ReactMount":543,"./ReactUpdates":561,"_process":463,"fbjs/lib/warning":633}],522:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39876,7 +41884,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":593,"./getTextContentAccessor":594,"fbjs/lib/ExecutionEnvironment":607}],522:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":594,"./getTextContentAccessor":595,"fbjs/lib/ExecutionEnvironment":608}],523:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39903,7 +41911,7 @@ var ReactDOMServer = {
 };
 
 module.exports = ReactDOMServer;
-},{"./ReactDefaultInjection":526,"./ReactServerRendering":557,"./ReactVersion":561}],523:[function(require,module,exports){
+},{"./ReactDefaultInjection":527,"./ReactServerRendering":558,"./ReactVersion":562}],524:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -40033,7 +42041,7 @@ assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":485,"./DOMPropertyOperations":487,"./Object.assign":499,"./ReactComponentBrowserEnvironment":508,"./ReactMount":542,"./escapeTextContentForBrowser":584,"./setTextContent":602,"./validateDOMNesting":605,"_process":462}],524:[function(require,module,exports){
+},{"./DOMChildrenOperations":486,"./DOMPropertyOperations":488,"./Object.assign":500,"./ReactComponentBrowserEnvironment":509,"./ReactMount":543,"./escapeTextContentForBrowser":585,"./setTextContent":603,"./validateDOMNesting":606,"_process":463}],525:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -40149,7 +42157,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":498,"./Object.assign":499,"./ReactDOMIDOperations":517,"./ReactUpdates":560,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],525:[function(require,module,exports){
+},{"./LinkedValueUtils":499,"./Object.assign":500,"./ReactDOMIDOperations":518,"./ReactUpdates":561,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],526:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40217,7 +42225,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./Object.assign":499,"./ReactUpdates":560,"./Transaction":577,"fbjs/lib/emptyFunction":613}],526:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactUpdates":561,"./Transaction":578,"fbjs/lib/emptyFunction":614}],527:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -40317,7 +42325,7 @@ module.exports = {
   inject: inject
 };
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":479,"./ChangeEventPlugin":483,"./ClientReactRootIndex":484,"./DefaultEventPluginOrder":489,"./EnterLeaveEventPlugin":490,"./HTMLDOMPropertyConfig":497,"./ReactBrowserComponentMixin":502,"./ReactComponentBrowserEnvironment":508,"./ReactDOMComponent":514,"./ReactDOMTextComponent":523,"./ReactDefaultBatchingStrategy":525,"./ReactDefaultPerf":527,"./ReactEventListener":535,"./ReactInjection":536,"./ReactInstanceHandles":538,"./ReactMount":542,"./ReactReconcileTransaction":552,"./SVGDOMPropertyConfig":562,"./SelectEventPlugin":563,"./ServerReactRootIndex":564,"./SimpleEventPlugin":565,"_process":462,"fbjs/lib/ExecutionEnvironment":607}],527:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":480,"./ChangeEventPlugin":484,"./ClientReactRootIndex":485,"./DefaultEventPluginOrder":490,"./EnterLeaveEventPlugin":491,"./HTMLDOMPropertyConfig":498,"./ReactBrowserComponentMixin":503,"./ReactComponentBrowserEnvironment":509,"./ReactDOMComponent":515,"./ReactDOMTextComponent":524,"./ReactDefaultBatchingStrategy":526,"./ReactDefaultPerf":528,"./ReactEventListener":536,"./ReactInjection":537,"./ReactInstanceHandles":539,"./ReactMount":543,"./ReactReconcileTransaction":553,"./SVGDOMPropertyConfig":563,"./SelectEventPlugin":564,"./ServerReactRootIndex":565,"./SimpleEventPlugin":566,"_process":463,"fbjs/lib/ExecutionEnvironment":608}],528:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40555,7 +42563,7 @@ var ReactDefaultPerf = {
 };
 
 module.exports = ReactDefaultPerf;
-},{"./DOMProperty":486,"./ReactDefaultPerfAnalysis":528,"./ReactMount":542,"./ReactPerf":548,"fbjs/lib/performanceNow":629}],528:[function(require,module,exports){
+},{"./DOMProperty":487,"./ReactDefaultPerfAnalysis":529,"./ReactMount":543,"./ReactPerf":549,"fbjs/lib/performanceNow":630}],529:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40757,7 +42765,7 @@ var ReactDefaultPerfAnalysis = {
 };
 
 module.exports = ReactDefaultPerfAnalysis;
-},{"./Object.assign":499}],529:[function(require,module,exports){
+},{"./Object.assign":500}],530:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -41007,7 +43015,7 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactCurrentOwner":511,"./canDefineProperty":581,"_process":462}],530:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactCurrentOwner":512,"./canDefineProperty":582,"_process":463}],531:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -41291,7 +43299,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":511,"./ReactElement":529,"./ReactPropTypeLocationNames":549,"./ReactPropTypeLocations":550,"./canDefineProperty":581,"./getIteratorFn":592,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],531:[function(require,module,exports){
+},{"./ReactCurrentOwner":512,"./ReactElement":530,"./ReactPropTypeLocationNames":550,"./ReactPropTypeLocations":551,"./canDefineProperty":582,"./getIteratorFn":593,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],532:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -41347,7 +43355,7 @@ assign(ReactEmptyComponent.prototype, {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{"./Object.assign":499,"./ReactElement":529,"./ReactEmptyComponentRegistry":532,"./ReactReconciler":553}],532:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactElement":530,"./ReactEmptyComponentRegistry":533,"./ReactReconciler":554}],533:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -41396,7 +43404,7 @@ var ReactEmptyComponentRegistry = {
 };
 
 module.exports = ReactEmptyComponentRegistry;
-},{}],533:[function(require,module,exports){
+},{}],534:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -41476,7 +43484,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":462}],534:[function(require,module,exports){
+},{"_process":463}],535:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41515,7 +43523,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":492}],535:[function(require,module,exports){
+},{"./EventPluginHub":493}],536:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41727,7 +43735,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./Object.assign":499,"./PooledClass":500,"./ReactInstanceHandles":538,"./ReactMount":542,"./ReactUpdates":560,"./getEventTarget":591,"fbjs/lib/EventListener":606,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/getUnboundedScrollPosition":618}],536:[function(require,module,exports){
+},{"./Object.assign":500,"./PooledClass":501,"./ReactInstanceHandles":539,"./ReactMount":543,"./ReactUpdates":561,"./getEventTarget":592,"fbjs/lib/EventListener":607,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/getUnboundedScrollPosition":619}],537:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41766,7 +43774,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":486,"./EventPluginHub":492,"./ReactBrowserEventEmitter":503,"./ReactClass":506,"./ReactComponentEnvironment":509,"./ReactEmptyComponent":531,"./ReactNativeComponent":545,"./ReactPerf":548,"./ReactRootIndex":555,"./ReactUpdates":560}],537:[function(require,module,exports){
+},{"./DOMProperty":487,"./EventPluginHub":493,"./ReactBrowserEventEmitter":504,"./ReactClass":507,"./ReactComponentEnvironment":510,"./ReactEmptyComponent":532,"./ReactNativeComponent":546,"./ReactPerf":549,"./ReactRootIndex":556,"./ReactUpdates":561}],538:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41891,7 +43899,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":521,"fbjs/lib/containsNode":610,"fbjs/lib/focusNode":615,"fbjs/lib/getActiveElement":616}],538:[function(require,module,exports){
+},{"./ReactDOMSelection":522,"fbjs/lib/containsNode":611,"fbjs/lib/focusNode":616,"fbjs/lib/getActiveElement":617}],539:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42196,7 +44204,7 @@ var ReactInstanceHandles = {
 
 module.exports = ReactInstanceHandles;
 }).call(this,require('_process'))
-},{"./ReactRootIndex":555,"_process":462,"fbjs/lib/invariant":621}],539:[function(require,module,exports){
+},{"./ReactRootIndex":556,"_process":463,"fbjs/lib/invariant":622}],540:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42244,7 +44252,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],540:[function(require,module,exports){
+},{}],541:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42321,7 +44329,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactChildren":505,"./ReactClass":506,"./ReactComponent":507,"./ReactDOMFactories":515,"./ReactElement":529,"./ReactElementValidator":530,"./ReactPropTypes":551,"./ReactVersion":561,"./onlyChild":598,"_process":462}],541:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactChildren":506,"./ReactClass":507,"./ReactComponent":508,"./ReactDOMFactories":516,"./ReactElement":530,"./ReactElementValidator":531,"./ReactPropTypes":552,"./ReactVersion":562,"./onlyChild":599,"_process":463}],542:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42367,7 +44375,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":580}],542:[function(require,module,exports){
+},{"./adler32":581}],543:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43220,7 +45228,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMProperty":486,"./Object.assign":499,"./ReactBrowserEventEmitter":503,"./ReactCurrentOwner":511,"./ReactDOMFeatureFlags":516,"./ReactElement":529,"./ReactEmptyComponentRegistry":532,"./ReactInstanceHandles":538,"./ReactInstanceMap":539,"./ReactMarkupChecksum":541,"./ReactPerf":548,"./ReactReconciler":553,"./ReactUpdateQueue":559,"./ReactUpdates":560,"./instantiateReactComponent":595,"./setInnerHTML":601,"./shouldUpdateReactComponent":603,"./validateDOMNesting":605,"_process":462,"fbjs/lib/containsNode":610,"fbjs/lib/emptyObject":614,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],543:[function(require,module,exports){
+},{"./DOMProperty":487,"./Object.assign":500,"./ReactBrowserEventEmitter":504,"./ReactCurrentOwner":512,"./ReactDOMFeatureFlags":517,"./ReactElement":530,"./ReactEmptyComponentRegistry":533,"./ReactInstanceHandles":539,"./ReactInstanceMap":540,"./ReactMarkupChecksum":542,"./ReactPerf":549,"./ReactReconciler":554,"./ReactUpdateQueue":560,"./ReactUpdates":561,"./instantiateReactComponent":596,"./setInnerHTML":602,"./shouldUpdateReactComponent":604,"./validateDOMNesting":606,"_process":463,"fbjs/lib/containsNode":611,"fbjs/lib/emptyObject":615,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],544:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43719,7 +45727,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":504,"./ReactComponentEnvironment":509,"./ReactCurrentOwner":511,"./ReactMultiChildUpdateTypes":544,"./ReactReconciler":553,"./flattenChildren":586,"_process":462}],544:[function(require,module,exports){
+},{"./ReactChildReconciler":505,"./ReactComponentEnvironment":510,"./ReactCurrentOwner":512,"./ReactMultiChildUpdateTypes":545,"./ReactReconciler":554,"./flattenChildren":587,"_process":463}],545:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43752,7 +45760,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":624}],545:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":625}],546:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -43849,7 +45857,7 @@ var ReactNativeComponent = {
 
 module.exports = ReactNativeComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"_process":462,"fbjs/lib/invariant":621}],546:[function(require,module,exports){
+},{"./Object.assign":500,"_process":463,"fbjs/lib/invariant":622}],547:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -43970,7 +45978,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/warning":632}],547:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/warning":633}],548:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44064,7 +46072,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],548:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],549:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44163,7 +46171,7 @@ function _noMeasure(objName, fnName, func) {
 
 module.exports = ReactPerf;
 }).call(this,require('_process'))
-},{"_process":462}],549:[function(require,module,exports){
+},{"_process":463}],550:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44190,7 +46198,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":462}],550:[function(require,module,exports){
+},{"_process":463}],551:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44213,7 +46221,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":624}],551:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":625}],552:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44570,7 +46578,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":529,"./ReactPropTypeLocationNames":549,"./getIteratorFn":592,"fbjs/lib/emptyFunction":613}],552:[function(require,module,exports){
+},{"./ReactElement":530,"./ReactPropTypeLocationNames":550,"./getIteratorFn":593,"fbjs/lib/emptyFunction":614}],553:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44722,7 +46730,7 @@ assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":482,"./Object.assign":499,"./PooledClass":500,"./ReactBrowserEventEmitter":503,"./ReactDOMFeatureFlags":516,"./ReactInputSelection":537,"./Transaction":577}],553:[function(require,module,exports){
+},{"./CallbackQueue":483,"./Object.assign":500,"./PooledClass":501,"./ReactBrowserEventEmitter":504,"./ReactDOMFeatureFlags":517,"./ReactInputSelection":538,"./Transaction":578}],554:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44830,7 +46838,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-},{"./ReactRef":554}],554:[function(require,module,exports){
+},{"./ReactRef":555}],555:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44909,7 +46917,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":547}],555:[function(require,module,exports){
+},{"./ReactOwner":548}],556:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44939,7 +46947,7 @@ var ReactRootIndex = {
 };
 
 module.exports = ReactRootIndex;
-},{}],556:[function(require,module,exports){
+},{}],557:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -44963,7 +46971,7 @@ var ReactServerBatchingStrategy = {
 };
 
 module.exports = ReactServerBatchingStrategy;
-},{}],557:[function(require,module,exports){
+},{}],558:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45049,7 +47057,7 @@ module.exports = {
   renderToStaticMarkup: renderToStaticMarkup
 };
 }).call(this,require('_process'))
-},{"./ReactDefaultBatchingStrategy":525,"./ReactElement":529,"./ReactInstanceHandles":538,"./ReactMarkupChecksum":541,"./ReactServerBatchingStrategy":556,"./ReactServerRenderingTransaction":558,"./ReactUpdates":560,"./instantiateReactComponent":595,"_process":462,"fbjs/lib/emptyObject":614,"fbjs/lib/invariant":621}],558:[function(require,module,exports){
+},{"./ReactDefaultBatchingStrategy":526,"./ReactElement":530,"./ReactInstanceHandles":539,"./ReactMarkupChecksum":542,"./ReactServerBatchingStrategy":557,"./ReactServerRenderingTransaction":559,"./ReactUpdates":561,"./instantiateReactComponent":596,"_process":463,"fbjs/lib/emptyObject":615,"fbjs/lib/invariant":622}],559:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -45137,7 +47145,7 @@ assign(ReactServerRenderingTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"./CallbackQueue":482,"./Object.assign":499,"./PooledClass":500,"./Transaction":577,"fbjs/lib/emptyFunction":613}],559:[function(require,module,exports){
+},{"./CallbackQueue":483,"./Object.assign":500,"./PooledClass":501,"./Transaction":578,"fbjs/lib/emptyFunction":614}],560:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -45397,7 +47405,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactCurrentOwner":511,"./ReactElement":529,"./ReactInstanceMap":539,"./ReactUpdates":560,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],560:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactCurrentOwner":512,"./ReactElement":530,"./ReactInstanceMap":540,"./ReactUpdates":561,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],561:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45623,7 +47631,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":482,"./Object.assign":499,"./PooledClass":500,"./ReactPerf":548,"./ReactReconciler":553,"./Transaction":577,"_process":462,"fbjs/lib/invariant":621}],561:[function(require,module,exports){
+},{"./CallbackQueue":483,"./Object.assign":500,"./PooledClass":501,"./ReactPerf":549,"./ReactReconciler":554,"./Transaction":578,"_process":463,"fbjs/lib/invariant":622}],562:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45638,7 +47646,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '0.14.8';
-},{}],562:[function(require,module,exports){
+},{}],563:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45766,7 +47774,7 @@ var SVGDOMPropertyConfig = {
 };
 
 module.exports = SVGDOMPropertyConfig;
-},{"./DOMProperty":486}],563:[function(require,module,exports){
+},{"./DOMProperty":487}],564:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45968,7 +47976,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":491,"./EventPropagators":495,"./ReactInputSelection":537,"./SyntheticEvent":569,"./isTextInputElement":597,"fbjs/lib/ExecutionEnvironment":607,"fbjs/lib/getActiveElement":616,"fbjs/lib/keyOf":625,"fbjs/lib/shallowEqual":630}],564:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPropagators":496,"./ReactInputSelection":538,"./SyntheticEvent":570,"./isTextInputElement":598,"fbjs/lib/ExecutionEnvironment":608,"fbjs/lib/getActiveElement":617,"fbjs/lib/keyOf":626,"fbjs/lib/shallowEqual":631}],565:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45998,7 +48006,7 @@ var ServerReactRootIndex = {
 };
 
 module.exports = ServerReactRootIndex;
-},{}],565:[function(require,module,exports){
+},{}],566:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46588,7 +48596,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":491,"./EventPropagators":495,"./ReactMount":542,"./SyntheticClipboardEvent":566,"./SyntheticDragEvent":568,"./SyntheticEvent":569,"./SyntheticFocusEvent":570,"./SyntheticKeyboardEvent":572,"./SyntheticMouseEvent":573,"./SyntheticTouchEvent":574,"./SyntheticUIEvent":575,"./SyntheticWheelEvent":576,"./getEventCharCode":588,"_process":462,"fbjs/lib/EventListener":606,"fbjs/lib/emptyFunction":613,"fbjs/lib/invariant":621,"fbjs/lib/keyOf":625}],566:[function(require,module,exports){
+},{"./EventConstants":492,"./EventPropagators":496,"./ReactMount":543,"./SyntheticClipboardEvent":567,"./SyntheticDragEvent":569,"./SyntheticEvent":570,"./SyntheticFocusEvent":571,"./SyntheticKeyboardEvent":573,"./SyntheticMouseEvent":574,"./SyntheticTouchEvent":575,"./SyntheticUIEvent":576,"./SyntheticWheelEvent":577,"./getEventCharCode":589,"_process":463,"fbjs/lib/EventListener":607,"fbjs/lib/emptyFunction":614,"fbjs/lib/invariant":622,"fbjs/lib/keyOf":626}],567:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46628,7 +48636,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":569}],567:[function(require,module,exports){
+},{"./SyntheticEvent":570}],568:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46666,7 +48674,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":569}],568:[function(require,module,exports){
+},{"./SyntheticEvent":570}],569:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46704,7 +48712,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":573}],569:[function(require,module,exports){
+},{"./SyntheticMouseEvent":574}],570:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46887,7 +48895,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.fourArgumentPooler);
 
 module.exports = SyntheticEvent;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./PooledClass":500,"_process":462,"fbjs/lib/emptyFunction":613,"fbjs/lib/warning":632}],570:[function(require,module,exports){
+},{"./Object.assign":500,"./PooledClass":501,"_process":463,"fbjs/lib/emptyFunction":614,"fbjs/lib/warning":633}],571:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46925,7 +48933,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":575}],571:[function(require,module,exports){
+},{"./SyntheticUIEvent":576}],572:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46964,7 +48972,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":569}],572:[function(require,module,exports){
+},{"./SyntheticEvent":570}],573:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47050,7 +49058,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":575,"./getEventCharCode":588,"./getEventKey":589,"./getEventModifierState":590}],573:[function(require,module,exports){
+},{"./SyntheticUIEvent":576,"./getEventCharCode":589,"./getEventKey":590,"./getEventModifierState":591}],574:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47124,7 +49132,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":575,"./ViewportMetrics":578,"./getEventModifierState":590}],574:[function(require,module,exports){
+},{"./SyntheticUIEvent":576,"./ViewportMetrics":579,"./getEventModifierState":591}],575:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47171,7 +49179,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":575,"./getEventModifierState":590}],575:[function(require,module,exports){
+},{"./SyntheticUIEvent":576,"./getEventModifierState":591}],576:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47232,7 +49240,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":569,"./getEventTarget":591}],576:[function(require,module,exports){
+},{"./SyntheticEvent":570,"./getEventTarget":592}],577:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47288,7 +49296,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":573}],577:[function(require,module,exports){
+},{"./SyntheticMouseEvent":574}],578:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47522,7 +49530,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],578:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],579:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47550,7 +49558,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],579:[function(require,module,exports){
+},{}],580:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -47612,7 +49620,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"_process":462,"fbjs/lib/invariant":621}],580:[function(require,module,exports){
+},{"_process":463,"fbjs/lib/invariant":622}],581:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47655,7 +49663,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],581:[function(require,module,exports){
+},{}],582:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47682,7 +49690,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":462}],582:[function(require,module,exports){
+},{"_process":463}],583:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47738,7 +49746,7 @@ function dangerousStyleValue(name, value) {
 }
 
 module.exports = dangerousStyleValue;
-},{"./CSSProperty":480}],583:[function(require,module,exports){
+},{"./CSSProperty":481}],584:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47789,7 +49797,7 @@ function deprecated(fnName, newModule, newPackage, ctx, fn) {
 
 module.exports = deprecated;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"_process":462,"fbjs/lib/warning":632}],584:[function(require,module,exports){
+},{"./Object.assign":500,"_process":463,"fbjs/lib/warning":633}],585:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47828,7 +49836,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],585:[function(require,module,exports){
+},{}],586:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47880,7 +49888,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":511,"./ReactInstanceMap":539,"./ReactMount":542,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],586:[function(require,module,exports){
+},{"./ReactCurrentOwner":512,"./ReactInstanceMap":540,"./ReactMount":543,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],587:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47931,7 +49939,7 @@ function flattenChildren(children) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./traverseAllChildren":604,"_process":462,"fbjs/lib/warning":632}],587:[function(require,module,exports){
+},{"./traverseAllChildren":605,"_process":463,"fbjs/lib/warning":633}],588:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47961,7 +49969,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-},{}],588:[function(require,module,exports){
+},{}],589:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48012,7 +50020,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],589:[function(require,module,exports){
+},{}],590:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48116,7 +50124,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":588}],590:[function(require,module,exports){
+},{"./getEventCharCode":589}],591:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48161,7 +50169,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],591:[function(require,module,exports){
+},{}],592:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48191,7 +50199,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],592:[function(require,module,exports){
+},{}],593:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48232,7 +50240,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],593:[function(require,module,exports){
+},{}],594:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48306,7 +50314,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],594:[function(require,module,exports){
+},{}],595:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48340,7 +50348,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":607}],595:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":608}],596:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48455,7 +50463,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"./ReactCompositeComponent":510,"./ReactEmptyComponent":531,"./ReactNativeComponent":545,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],596:[function(require,module,exports){
+},{"./Object.assign":500,"./ReactCompositeComponent":511,"./ReactEmptyComponent":532,"./ReactNativeComponent":546,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],597:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48516,7 +50524,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":607}],597:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":608}],598:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48557,7 +50565,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],598:[function(require,module,exports){
+},{}],599:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48593,7 +50601,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":529,"_process":462,"fbjs/lib/invariant":621}],599:[function(require,module,exports){
+},{"./ReactElement":530,"_process":463,"fbjs/lib/invariant":622}],600:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48620,7 +50628,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":584}],600:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":585}],601:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48637,7 +50645,7 @@ module.exports = quoteAttributeValueForBrowser;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":542}],601:[function(require,module,exports){
+},{"./ReactMount":543}],602:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48728,7 +50736,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"fbjs/lib/ExecutionEnvironment":607}],602:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":608}],603:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48769,7 +50777,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":584,"./setInnerHTML":601,"fbjs/lib/ExecutionEnvironment":607}],603:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":585,"./setInnerHTML":602,"fbjs/lib/ExecutionEnvironment":608}],604:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48813,7 +50821,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],604:[function(require,module,exports){
+},{}],605:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49005,7 +51013,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":511,"./ReactElement":529,"./ReactInstanceHandles":538,"./getIteratorFn":592,"_process":462,"fbjs/lib/invariant":621,"fbjs/lib/warning":632}],605:[function(require,module,exports){
+},{"./ReactCurrentOwner":512,"./ReactElement":530,"./ReactInstanceHandles":539,"./getIteratorFn":593,"_process":463,"fbjs/lib/invariant":622,"fbjs/lib/warning":633}],606:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -49371,7 +51379,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"./Object.assign":499,"_process":462,"fbjs/lib/emptyFunction":613,"fbjs/lib/warning":632}],606:[function(require,module,exports){
+},{"./Object.assign":500,"_process":463,"fbjs/lib/emptyFunction":614,"fbjs/lib/warning":633}],607:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49458,7 +51466,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":613,"_process":462}],607:[function(require,module,exports){
+},{"./emptyFunction":614,"_process":463}],608:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49495,7 +51503,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],608:[function(require,module,exports){
+},{}],609:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49528,7 +51536,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],609:[function(require,module,exports){
+},{}],610:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49569,7 +51577,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":608}],610:[function(require,module,exports){
+},{"./camelize":609}],611:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49625,7 +51633,7 @@ function containsNode(_x, _x2) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":623}],611:[function(require,module,exports){
+},{"./isTextNode":624}],612:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49711,7 +51719,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-},{"./toArray":631}],612:[function(require,module,exports){
+},{"./toArray":632}],613:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49798,7 +51806,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":607,"./createArrayFromMixed":611,"./getMarkupWrap":617,"./invariant":621,"_process":462}],613:[function(require,module,exports){
+},{"./ExecutionEnvironment":608,"./createArrayFromMixed":612,"./getMarkupWrap":618,"./invariant":622,"_process":463}],614:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49837,7 +51845,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],614:[function(require,module,exports){
+},{}],615:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49860,7 +51868,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":462}],615:[function(require,module,exports){
+},{"_process":463}],616:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49887,7 +51895,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],616:[function(require,module,exports){
+},{}],617:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49923,7 +51931,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],617:[function(require,module,exports){
+},{}],618:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50021,7 +52029,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":607,"./invariant":621,"_process":462}],618:[function(require,module,exports){
+},{"./ExecutionEnvironment":608,"./invariant":622,"_process":463}],619:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50060,7 +52068,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],619:[function(require,module,exports){
+},{}],620:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50094,7 +52102,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],620:[function(require,module,exports){
+},{}],621:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50134,7 +52142,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":619}],621:[function(require,module,exports){
+},{"./hyphenate":620}],622:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50187,7 +52195,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":462}],622:[function(require,module,exports){
+},{"_process":463}],623:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50211,7 +52219,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],623:[function(require,module,exports){
+},{}],624:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50237,7 +52245,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":622}],624:[function(require,module,exports){
+},{"./isNode":623}],625:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50288,7 +52296,7 @@ var keyMirror = function (obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":621,"_process":462}],625:[function(require,module,exports){
+},{"./invariant":622,"_process":463}],626:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50324,7 +52332,7 @@ var keyOf = function (oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],626:[function(require,module,exports){
+},{}],627:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50376,7 +52384,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],627:[function(require,module,exports){
+},{}],628:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50408,7 +52416,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],628:[function(require,module,exports){
+},{}],629:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50432,7 +52440,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":607}],629:[function(require,module,exports){
+},{"./ExecutionEnvironment":608}],630:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50467,7 +52475,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":628}],630:[function(require,module,exports){
+},{"./performance":629}],631:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50518,7 +52526,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],631:[function(require,module,exports){
+},{}],632:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50578,7 +52586,7 @@ function toArray(obj) {
 
 module.exports = toArray;
 }).call(this,require('_process'))
-},{"./invariant":621,"_process":462}],632:[function(require,module,exports){
+},{"./invariant":622,"_process":463}],633:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -50638,7 +52646,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":613,"_process":462}],633:[function(require,module,exports){
+},{"./emptyFunction":614,"_process":463}],634:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50697,7 +52705,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":636}],634:[function(require,module,exports){
+},{"./compose":637}],635:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50749,7 +52757,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-},{}],635:[function(require,module,exports){
+},{}],636:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50894,7 +52902,7 @@ function combineReducers(reducers) {
   };
 }
 }).call(this,require('_process'))
-},{"./createStore":637,"./utils/warning":638,"_process":462,"lodash/isPlainObject":642}],636:[function(require,module,exports){
+},{"./createStore":638,"./utils/warning":639,"_process":463,"lodash/isPlainObject":643}],637:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -50933,7 +52941,7 @@ function compose() {
     }, last.apply(undefined, arguments));
   };
 }
-},{}],637:[function(require,module,exports){
+},{}],638:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51195,7 +53203,7 @@ function createStore(reducer, preloadedState, enhancer) {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2['default']] = observable, _ref2;
 }
-},{"lodash/isPlainObject":642,"symbol-observable":643}],638:[function(require,module,exports){
+},{"lodash/isPlainObject":643,"symbol-observable":644}],639:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51221,18 +53229,18 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],639:[function(require,module,exports){
-arguments[4][474][0].apply(exports,arguments)
-},{"./_overArg":640,"dup":474}],640:[function(require,module,exports){
+},{}],640:[function(require,module,exports){
 arguments[4][475][0].apply(exports,arguments)
-},{"dup":475}],641:[function(require,module,exports){
+},{"./_overArg":641,"dup":475}],641:[function(require,module,exports){
 arguments[4][476][0].apply(exports,arguments)
 },{"dup":476}],642:[function(require,module,exports){
 arguments[4][477][0].apply(exports,arguments)
-},{"./_getPrototype":639,"./isObjectLike":641,"dup":477}],643:[function(require,module,exports){
+},{"dup":477}],643:[function(require,module,exports){
+arguments[4][478][0].apply(exports,arguments)
+},{"./_getPrototype":640,"./isObjectLike":642,"dup":478}],644:[function(require,module,exports){
 module.exports = require('./lib/index');
 
-},{"./lib/index":644}],644:[function(require,module,exports){
+},{"./lib/index":645}],645:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -51257,7 +53265,7 @@ if (typeof global !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill":645}],645:[function(require,module,exports){
+},{"./ponyfill":646}],646:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -51281,7 +53289,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],646:[function(require,module,exports){
+},{}],647:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * IPv6 Support
@@ -51468,7 +53476,7 @@ function symbolObservablePonyfill(root) {
   };
 }));
 
-},{}],647:[function(require,module,exports){
+},{}],648:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * Second Level Domain (SLD) Support
@@ -51710,7 +53718,7 @@ function symbolObservablePonyfill(root) {
   return SLD;
 }));
 
-},{}],648:[function(require,module,exports){
+},{}],649:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {
@@ -85062,7 +87070,10 @@ module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"noUiSlider":[function(require,module,exports){
-/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+/*! noUiSlider - 8.0.1 - 2015-06-29 19:11:22 */
+
+/*jslint browser: true */
+/*jslint white: true */
 
 (function (factory) {
 
@@ -85074,7 +87085,7 @@ module.exports = exports['default'];
     } else if ( typeof exports === 'object' ) {
 
         // Node/CommonJS
-        module.exports = factory();
+        module.exports = factory(require('jquery'));
 
     } else {
 
@@ -85104,25 +87115,32 @@ module.exports = exports['default'];
 
 	var rect = elem.getBoundingClientRect(),
 		doc = elem.ownerDocument,
+		win = doc.defaultView || doc.parentWindow,
 		docElem = doc.documentElement,
-		pageOffset = getPageOffset();
+		xOff = win.pageXOffset;
 
 		// getBoundingClientRect contains left scroll in Chrome on Android.
 		// I haven't found a feature detection that proves this. Worst case
 		// scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
 		if ( /webkit.*Chrome.*Mobile/i.test(navigator.userAgent) ) {
-			pageOffset.x = 0;
+			xOff = 0;
 		}
 
 		return {
-			top: rect.top + pageOffset.y - docElem.clientTop,
-			left: rect.left + pageOffset.x - docElem.clientLeft
+			top: rect.top + win.pageYOffset - docElem.clientTop,
+			left: rect.left + xOff - docElem.clientLeft
 		};
 	}
 
 	// Checks whether a value is numerical.
 	function isNumeric ( a ) {
 		return typeof a === 'number' && !isNaN( a ) && isFinite( a );
+	}
+
+	// Rounds a number to 7 supported decimals.
+	function accurateNumber( number ) {
+		var p = Math.pow(10, 7);
+		return Number((Math.round(number*p)/p).toFixed(7));
 	}
 
 	// Sets a class and removes it after [duration] ms.
@@ -85167,46 +87185,55 @@ module.exports = exports['default'];
 		}
 	}
 
-	// https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+	// http://youmightnotneedjquery.com/#has_class
 	function hasClass ( el, className ) {
-		return el.classList ? el.classList.contains(className) : new RegExp('\\b' + className + '\\b').test(el.className);
+		if ( el.classList ) {
+			el.classList.contains(className);
+		} else {
+			new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+		}
 	}
 
-	// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
-	function getPageOffset ( ) {
 
-		var supportPageOffset = window.pageXOffset !== undefined,
-			isCSS1Compat = ((document.compatMode || "") === "CSS1Compat"),
-			x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
-			y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-
-		return {
-			x: x,
-			y: y
-		};
-	}
-
-	// we provide a function to compute constants instead
-	// of accessing window.* as soon as the module needs it
-	// so that we do not compute anything if not needed
-	function getActions ( ) {
-
-		// Determine the events to bind. IE11 implements pointerEvents without
-		// a prefix, which breaks compatibility with the IE10 implementation.
-		return window.navigator.pointerEnabled ? {
-			start: 'pointerdown',
-			move: 'pointermove',
-			end: 'pointerup'
-		} : window.navigator.msPointerEnabled ? {
-			start: 'MSPointerDown',
-			move: 'MSPointerMove',
-			end: 'MSPointerUp'
-		} : {
-			start: 'mousedown touchstart',
-			move: 'mousemove touchmove',
-			end: 'mouseup touchend'
-		};
-	}
+	var
+	// Determine the events to bind. IE11 implements pointerEvents without
+	// a prefix, which breaks compatibility with the IE10 implementation.
+	/** @const */
+	actions = window.navigator.pointerEnabled ? {
+		start: 'pointerdown',
+		move: 'pointermove',
+		end: 'pointerup'
+	} : window.navigator.msPointerEnabled ? {
+		start: 'MSPointerDown',
+		move: 'MSPointerMove',
+		end: 'MSPointerUp'
+	} : {
+		start: 'mousedown touchstart',
+		move: 'mousemove touchmove',
+		end: 'mouseup touchend'
+	},
+	// Re-usable list of classes;
+	/** @const */
+	Classes = [
+/*  0 */  'noUi-target'
+/*  1 */ ,'noUi-base'
+/*  2 */ ,'noUi-origin'
+/*  3 */ ,'noUi-handle'
+/*  4 */ ,'noUi-horizontal'
+/*  5 */ ,'noUi-vertical'
+/*  6 */ ,'noUi-background'
+/*  7 */ ,'noUi-connect'
+/*  8 */ ,'noUi-ltr'
+/*  9 */ ,'noUi-rtl'
+/* 10 */ ,'noUi-dragable'
+/* 11 */ ,''
+/* 12 */ ,'noUi-state-drag'
+/* 13 */ ,''
+/* 14 */ ,'noUi-state-tap'
+/* 15 */ ,'noUi-active'
+/* 16 */ ,''
+/* 17 */ ,'noUi-stacking'
+	];
 
 
 // Value calculation
@@ -85404,12 +87431,7 @@ module.exports = exports['default'];
 		}
 
 		// Sort all entries by value (numeric sort).
-		if ( ordered.length && typeof ordered[0][0] === "object" ) {
-			ordered.sort(function(a, b) { return a[0][0] - b[0][0]; });
-		} else {
-			ordered.sort(function(a, b) { return a[0] - b[0]; });
-		}
-
+		ordered.sort(function(a, b) { return a[0] - b[0]; });
 
 		// Convert all entries to subranges.
 		for ( index = 0; index < ordered.length; index++ ) {
@@ -85449,7 +87471,7 @@ module.exports = exports['default'];
 			value = 100 - value;
 		}
 
-		return fromStepping( this.xVal, this.xPct, value );
+		return accurateNumber(fromStepping( this.xVal, this.xPct, value ));
 	};
 
 	Spectrum.prototype.getStep = function ( value ) {
@@ -85495,7 +87517,7 @@ module.exports = exports['default'];
 	object, to make sure all values can be correctly looped elsewhere. */
 
 	var defaultFormatter = { 'to': function( value ){
-		return value !== undefined && value.toFixed(2);
+		return value.toFixed(2);
 	}, 'from': Number };
 
 	function testStep ( parsed, entry ) {
@@ -85519,11 +87541,6 @@ module.exports = exports['default'];
 		// Catch missing start or end.
 		if ( entry.min === undefined || entry.max === undefined ) {
 			throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
-		}
-
-		// Catch equal start or end.
-		if ( entry.min === entry.max ) {
-			throw new Error("noUiSlider: 'range' 'min' and 'max' cannot be equal.");
 		}
 
 		parsed.spectrum = new Spectrum(entry, parsed.snap, parsed.dir, parsed.singleStep);
@@ -85567,15 +87584,6 @@ module.exports = exports['default'];
 		}
 	}
 
-	function testAnimationDuration ( parsed, entry ) {
-
-		parsed.animationDuration = entry;
-
-		if ( typeof entry !== 'number' ){
-			throw new Error("noUiSlider: 'animationDuration' option must be a number.");
-		}
-	}
-
 	function testConnect ( parsed, entry ) {
 
 		if ( entry === 'lower' && parsed.handles === 1 ) {
@@ -85611,11 +87619,6 @@ module.exports = exports['default'];
 
 		if ( !isNumeric(entry) ){
 			throw new Error("noUiSlider: 'margin' option must be numeric.");
-		}
-
-		// Issue #582
-		if ( entry === 0 ) {
-			return;
 		}
 
 		parsed.margin = parsed.spectrum.getMargin(entry);
@@ -85668,51 +87671,14 @@ module.exports = exports['default'];
 		var tap = entry.indexOf('tap') >= 0,
 			drag = entry.indexOf('drag') >= 0,
 			fixed = entry.indexOf('fixed') >= 0,
-			snap = entry.indexOf('snap') >= 0,
-			hover = entry.indexOf('hover') >= 0;
-
-		// Fix #472
-		if ( drag && !parsed.connect ) {
-			throw new Error("noUiSlider: 'drag' behaviour must be used with 'connect': true.");
-		}
+			snap = entry.indexOf('snap') >= 0;
 
 		parsed.events = {
 			tap: tap || snap,
 			drag: drag,
 			fixed: fixed,
-			snap: snap,
-			hover: hover
+			snap: snap
 		};
-	}
-
-	function testTooltips ( parsed, entry ) {
-
-		var i;
-
-		if ( entry === false ) {
-			return;
-		} else if ( entry === true ) {
-
-			parsed.tooltips = [];
-
-			for ( i = 0; i < parsed.handles; i++ ) {
-				parsed.tooltips.push(true);
-			}
-
-		} else {
-
-			parsed.tooltips = asArray(entry);
-
-			if ( parsed.tooltips.length !== parsed.handles ) {
-				throw new Error("noUiSlider: must pass a formatter for all handles.");
-			}
-
-			parsed.tooltips.forEach(function(formatter){
-				if ( typeof formatter !== 'boolean' && (typeof formatter !== 'object' || typeof formatter.to !== 'function') ) {
-					throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
-				}
-			});
-		}
 	}
 
 	function testFormat ( parsed, entry ) {
@@ -85724,49 +87690,16 @@ module.exports = exports['default'];
 			return true;
 		}
 
-		throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
-	}
-
-	function testCssPrefix ( parsed, entry ) {
-
-		if ( entry !== undefined && typeof entry !== 'string' && entry !== false ) {
-			throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
-		}
-
-		parsed.cssPrefix = entry;
-	}
-
-	function testCssClasses ( parsed, entry ) {
-
-		if ( entry !== undefined && typeof entry !== 'object' ) {
-			throw new Error("noUiSlider: 'cssClasses' must be an object.");
-		}
-
-		if ( typeof parsed.cssPrefix === 'string' ) {
-			parsed.cssClasses = {};
-
-			for ( var key in entry ) {
-				if ( !entry.hasOwnProperty(key) ) { continue; }
-
-				parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
-			}
-		} else {
-			parsed.cssClasses = entry;
-		}
+		throw new Error( "noUiSlider: 'format' requires 'to' and 'from' methods.");
 	}
 
 	// Test all developer settings and parse to assumption-safe values.
 	function testOptions ( options ) {
 
-		// To prove a fix for #537, freeze options here.
-		// If the object is modified, an error will be thrown.
-		// Object.freeze(options);
-
 		var parsed = {
 			margin: 0,
 			limit: 0,
 			animate: true,
-			animationDuration: 300,
 			format: defaultFormatter
 		}, tests;
 
@@ -85778,77 +87711,46 @@ module.exports = exports['default'];
 			'direction': { r: true, t: testDirection },
 			'snap': { r: false, t: testSnap },
 			'animate': { r: false, t: testAnimate },
-			'animationDuration': { r: false, t: testAnimationDuration },
 			'range': { r: true, t: testRange },
 			'orientation': { r: false, t: testOrientation },
 			'margin': { r: false, t: testMargin },
 			'limit': { r: false, t: testLimit },
 			'behaviour': { r: true, t: testBehaviour },
-			'format': { r: false, t: testFormat },
-			'tooltips': { r: false, t: testTooltips },
-			'cssPrefix': { r: false, t: testCssPrefix },
-			'cssClasses': { r: false, t: testCssClasses }
+			'format': { r: false, t: testFormat }
 		};
 
 		var defaults = {
 			'connect': false,
 			'direction': 'ltr',
 			'behaviour': 'tap',
-			'orientation': 'horizontal',
-			'cssPrefix' : 'noUi-',
-			'cssClasses': {
-				target: 'target',
-				base: 'base',
-				origin: 'origin',
-				handle: 'handle',
-				handleLower: 'handle-lower',
-				handleUpper: 'handle-upper',
-				horizontal: 'horizontal',
-				vertical: 'vertical',
-				background: 'background',
-				connect: 'connect',
-				ltr: 'ltr',
-				rtl: 'rtl',
-				draggable: 'draggable',
-				drag: 'state-drag',
-				tap: 'state-tap',
-				active: 'active',
-				stacking: 'stacking',
-				tooltip: 'tooltip',
-				pips: 'pips',
-				pipsHorizontal: 'pips-horizontal',
-				pipsVertical: 'pips-vertical',
-				marker: 'marker',
-				markerHorizontal: 'marker-horizontal',
-				markerVertical: 'marker-vertical',
-				markerNormal: 'marker-normal',
-				markerLarge: 'marker-large',
-				markerSub: 'marker-sub',
-				value: 'value',
-				valueHorizontal: 'value-horizontal',
-				valueVertical: 'value-vertical',
-				valueNormal: 'value-normal',
-				valueLarge: 'value-large',
-				valueSub: 'value-sub'
-			}
+			'orientation': 'horizontal'
 		};
+
+		// Set defaults where applicable.
+		Object.keys(defaults).forEach(function ( name ) {
+			if ( options[name] === undefined ) {
+				options[name] = defaults[name];
+			}
+		});
 
 		// Run all options through a testing mechanism to ensure correct
 		// input. It should be noted that options might get modified to
 		// be handled properly. E.g. wrapping integers in arrays.
 		Object.keys(tests).forEach(function( name ){
 
-			// If the option isn't set, but it is required, throw an error.
-			if ( options[name] === undefined && defaults[name] === undefined ) {
+			var test = tests[name];
 
-				if ( tests[name].r ) {
+			// If the option isn't set, but it is required, throw an error.
+			if ( options[name] === undefined ) {
+
+				if ( test.r ) {
 					throw new Error("noUiSlider: '" + name + "' is required.");
 				}
 
 				return true;
 			}
 
-			tests[name].t( parsed, options[name] === undefined ? defaults[name] : options[name] );
+			test.t( parsed, options[name] );
 		});
 
 		// Forward pips options
@@ -85859,20 +87761,6 @@ module.exports = exports['default'];
 
 		return parsed;
 	}
-
-
-function closure ( target, options, originalOptions ){
-	var
-		actions = getActions( ),
-		// All variables local to 'closure' are prefixed with 'scope_'
-		scope_Target = target,
-		scope_Locations = [-1, -1],
-		scope_Base,
-		scope_Handles,
-		scope_Spectrum = options.spectrum,
-		scope_Values = [],
-		scope_Events = {},
-		scope_Self;
 
 
 	// Delimit proposed values for handle positions.
@@ -85899,7 +87787,7 @@ function closure ( target, options, originalOptions ){
 	}
 
 	// Provide a clean event with standardized offset values.
-	function fixEvent ( e, pageOffset ) {
+	function fixEvent ( e ) {
 
 		// Prevent scrolling and panning on touch events, while
 		// attempting to slide. The tap event also depends on this.
@@ -85925,14 +87813,11 @@ function closure ( target, options, originalOptions ){
 			y = e.changedTouches[0].pageY;
 		}
 
-		pageOffset = pageOffset || getPageOffset();
-
 		if ( mouse || pointer ) {
-			x = e.clientX + pageOffset.x;
-			y = e.clientY + pageOffset.y;
+			x = e.clientX + window.pageXOffset;
+			y = e.clientY + window.pageYOffset;
 		}
 
-		event.pageOffset = pageOffset;
 		event.points = [x, y];
 		event.cursor = mouse || pointer; // Fix #435
 
@@ -85944,16 +87829,16 @@ function closure ( target, options, originalOptions ){
 
 		var origin = document.createElement('div'),
 			handle = document.createElement('div'),
-			classModifier = [options.cssClasses.handleLower, options.cssClasses.handleUpper];
+			additions = [ '-lower', '-upper' ];
 
 		if ( direction ) {
-			classModifier.reverse();
+			additions.reverse();
 		}
 
-		addClass(handle, options.cssClasses.handle);
-		addClass(handle, classModifier[index]);
+		addClass(handle, Classes[3]);
+		addClass(handle, Classes[3] + additions[index]);
 
-		addClass(origin, options.cssClasses.origin);
+		addClass(origin, Classes[2]);
 		origin.appendChild(handle);
 
 		return origin;
@@ -85967,14 +87852,14 @@ function closure ( target, options, originalOptions ){
 		// segments listed in the class list, to allow easy
 		// renaming and provide a minor compression benefit.
 		switch ( connect ) {
-			case 1:	addClass(target, options.cssClasses.connect);
-					addClass(handles[0], options.cssClasses.background);
+			case 1:	addClass(target, Classes[7]);
+					addClass(handles[0], Classes[6]);
 					break;
-			case 3: addClass(handles[1], options.cssClasses.background);
+			case 3: addClass(handles[1], Classes[6]);
 					/* falls through */
-			case 2: addClass(handles[0], options.cssClasses.connect);
+			case 2: addClass(handles[0], Classes[7]);
 					/* falls through */
-			case 0: addClass(target, options.cssClasses.background);
+			case 0: addClass(target, Classes[6]);
 					break;
 		}
 	}
@@ -85998,59 +87883,27 @@ function closure ( target, options, originalOptions ){
 	function addSlider ( direction, orientation, target ) {
 
 		// Apply classes and data to the target.
-		addClass(target, options.cssClasses.target);
-
-		if ( direction === 0 ) {
-			addClass(target, options.cssClasses.ltr);
-		} else {
-			addClass(target, options.cssClasses.rtl);
-		}
-
-		if ( orientation === 0 ) {
-			addClass(target, options.cssClasses.horizontal);
-		} else {
-			addClass(target, options.cssClasses.vertical);
-		}
+		addClass(target, Classes[0]);
+		addClass(target, Classes[8 + direction]);
+		addClass(target, Classes[4 + orientation]);
 
 		var div = document.createElement('div');
-		addClass(div, options.cssClasses.base);
+		addClass(div, Classes[1]);
 		target.appendChild(div);
 		return div;
 	}
 
 
-	function addTooltip ( handle, index ) {
+function closure ( target, options ){
 
-		if ( !options.tooltips[index] ) {
-			return false;
-		}
-
-		var element = document.createElement('div');
-		element.className = options.cssClasses.tooltip;
-		return handle.firstChild.appendChild(element);
-	}
-
-	// The tooltips option is a shorthand for using the 'update' event.
-	function tooltips ( ) {
-
-		if ( options.dir ) {
-			options.tooltips.reverse();
-		}
-
-		// Tooltips are added with options.tooltips in original order.
-		var tips = scope_Handles.map(addTooltip);
-
-		if ( options.dir ) {
-			tips.reverse();
-			options.tooltips.reverse();
-		}
-
-		bindEvent('update', function(f, o, r) {
-			if ( tips[o] ) {
-				tips[o].innerHTML = options.tooltips[o] === true ? f[o] : options.tooltips[o].to(r[o]);
-			}
-		});
-	}
+	// All variables local to 'closure' are prefixed with 'scope_'
+	var scope_Target = target,
+		scope_Locations = [-1, -1],
+		scope_Base,
+		scope_Handles,
+		scope_Spectrum = options.spectrum,
+		scope_Values = [],
+		scope_Events = {};
 
 
 	function getGroup ( mode, values, stepped ) {
@@ -86101,11 +87954,6 @@ function closure ( target, options, originalOptions ){
 	}
 
 	function generateSpread ( density, mode, group ) {
-
-		function safeIncrement(value, increment) {
-			// Avoid floating point variance by dropping the smallest decimal places.
-			return (value + increment).toFixed(7) / 1;
-		}
 
 		var originalSpectrumDirection = scope_Spectrum.direction,
 			indexes = {},
@@ -86162,7 +88010,7 @@ function closure ( target, options, originalOptions ){
 			}
 
 			// Find all steps in the subrange.
-			for ( i = low; i <= high; i = safeIncrement(i, step) ) {
+			for ( i = low; i <= high; i += step ) {
 
 				// Get the percentage value for the current step,
 				// calculate the size for the subrange.
@@ -86216,40 +88064,21 @@ function closure ( target, options, originalOptions ){
 
 	function addMarking ( spread, filterFunc, formatter ) {
 
-		var element = document.createElement('div'),
-			out = '',
-			valueSizeClasses = [
-				options.cssClasses.valueNormal,
-				options.cssClasses.valueLarge,
-				options.cssClasses.valueSub
-			],
-			markerSizeClasses = [
-				options.cssClasses.markerNormal,
-				options.cssClasses.markerLarge,
-				options.cssClasses.markerSub
-			],
-			valueOrientationClasses = [
-				options.cssClasses.valueHorizontal,
-				options.cssClasses.valueVertical
-			],
-			markerOrientationClasses = [
-				options.cssClasses.markerHorizontal,
-				options.cssClasses.markerVertical
-			];
+		var style = ['horizontal', 'vertical'][options.ort],
+			element = document.createElement('div');
 
-		addClass(element, options.cssClasses.pips);
-		addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+		addClass(element, 'noUi-pips');
+		addClass(element, 'noUi-pips-' + style);
 
-		function getClasses( type, source ){
-			var a = source === options.cssClasses.value,
-				orientationClasses = a ? valueOrientationClasses : markerOrientationClasses,
-				sizeClasses = a ? valueSizeClasses : markerSizeClasses;
-
-			return source + ' ' + orientationClasses[options.ort] + ' ' + sizeClasses[type];
+		function getSize( type, value ){
+			return [ '-normal', '-large', '-sub' ][type];
 		}
 
 		function getTags( offset, source, values ) {
-			return 'class="' + getClasses(values[1], source) + '" style="' + options.style + ': ' + offset + '%"';
+			return 'class="' + source + ' ' +
+				source + '-' + style + ' ' +
+				source + getSize(values[1], values[0]) +
+				'" style="' + options.style + ': ' + offset + '%"';
 		}
 
 		function addSpread ( offset, values ){
@@ -86262,11 +88091,11 @@ function closure ( target, options, originalOptions ){
 			values[1] = (values[1] && filterFunc) ? filterFunc(values[0], values[1]) : values[1];
 
 			// Add a marker for every point
-			out += '<div ' + getTags(offset, options.cssClasses.marker, values) + '></div>';
+			element.innerHTML += '<div ' + getTags(offset, 'noUi-marker', values) + '></div>';
 
 			// Values are only appended for points marked '1' or '2'.
 			if ( values[1] ) {
-				out += '<div ' + getTags(offset, options.cssClasses.value, values) + '>' + formatter.to(values[0]) + '</div>';
+				element.innerHTML += '<div '+getTags(offset, 'noUi-value', values)+'>' + formatter.to(values[0]) + '</div>';
 			}
 		}
 
@@ -86274,8 +88103,6 @@ function closure ( target, options, originalOptions ){
 		Object.keys(spread).forEach(function(a){
 			addSpread(a, spread[a]);
 		});
-
-		element.innerHTML = out;
 
 		return element;
 	}
@@ -86303,23 +88130,13 @@ function closure ( target, options, originalOptions ){
 
 	// Shorthand for base dimensions.
 	function baseSize ( ) {
-		var rect = scope_Base.getBoundingClientRect(), alt = 'offset' + ['Width', 'Height'][options.ort];
-		return options.ort === 0 ? (rect.width||scope_Base[alt]) : (rect.height||scope_Base[alt]);
+		return scope_Base['offset' + ['Width', 'Height'][options.ort]];
 	}
 
 	// External event handling
-	function fireEvent ( event, handleNumber, tap ) {
+	function fireEvent ( event, handleNumber ) {
 
-		var i;
-
-		// During initialization, do not fire events.
-		for ( i = 0; i < options.handles; i++ ) {
-			if ( scope_Locations[i] === -1 ) {
-				return;
-			}
-		}
-
-		if ( handleNumber !== undefined && options.handles !== 1 ) {
+		if ( handleNumber !== undefined ) {
 			handleNumber = Math.abs(handleNumber - options.dir);
 		}
 
@@ -86329,21 +88146,9 @@ function closure ( target, options, originalOptions ){
 
 			if ( event === eventType ) {
 				scope_Events[targetEvent].forEach(function( callback ) {
-
-					callback.call(
-						// Use the slider public API as the scope ('this')
-						scope_Self,
-						// Return values as array, so arg_1[arg_2] is always valid.
-						asArray(valueGet()),
-						// Handle index, 0 or 1
-						handleNumber,
-						// Unformatted slider values
-						asArray(inSliderOrder(Array.prototype.slice.call(scope_Values))),
-						// Event is fired by tap, true or false
-						tap || false,
-						// Left offset of the handle, in relation to the slider
-						scope_Locations
-					);
+					// .reverse is in place
+					// Return values as array, so arg_1[arg_2] is always valid.
+					callback( asArray(valueGet()), handleNumber, inSliderOrder(Array.prototype.slice.call(scope_Values)) );
 				});
 			}
 		});
@@ -86378,19 +88183,14 @@ function closure ( target, options, originalOptions ){
 			}
 
 			// Stop if an active 'tap' transition is taking place.
-			if ( hasClass(scope_Target, options.cssClasses.tap) ) {
+			if ( hasClass(scope_Target, Classes[14]) ) {
 				return false;
 			}
 
-			e = fixEvent(e, data.pageOffset);
+			e = fixEvent(e);
 
 			// Ignore right or middle clicks on start #454
 			if ( events === actions.start && e.buttons !== undefined && e.buttons > 1 ) {
-				return false;
-			}
-
-			// Ignore right or middle clicks on start #454
-			if ( data.hover && e.buttons ) {
 				return false;
 			}
 
@@ -86413,18 +88213,9 @@ function closure ( target, options, originalOptions ){
 	// Handle movement on document for handle and range drag.
 	function move ( event, data ) {
 
-		// Fix #498
-		// Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
-		// https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
-		// IE9 has .buttons and .which zero on mousemove.
-		// Firefox breaks the spec MDN defines.
-		if ( navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0 ) {
-			return end(event, data);
-		}
-
 		var handles = data.handles || scope_Handles, positions, state = false,
-			proposal = ((event.calcPoint - data.start) * 100) / data.baseSize,
-			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1, i;
+			proposal = ((event.calcPoint - data.start) * 100) / baseSize(),
+			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1;
 
 		// Calculate relative positions for the handles.
 		positions = getPositions( proposal, data.positions, handles.length > 1);
@@ -86451,11 +88242,11 @@ function closure ( target, options, originalOptions ){
 	function end ( event, data ) {
 
 		// The handle is no longer active, so remove the class.
-		var active = scope_Base.querySelector( '.' + options.cssClasses.active ),
+		var active = scope_Base.getElementsByClassName(Classes[15]),
 			handleNumber = data.handles[0] === scope_Handles[0] ? 0 : 1;
 
-		if ( active !== null ) {
-			removeClass(active, options.cssClasses.active);
+		if ( active.length ) {
+			removeClass(active[0], Classes[15]);
 		}
 
 		// Remove cursor styles and text-selection events bound to the body.
@@ -86472,23 +88263,11 @@ function closure ( target, options, originalOptions ){
 		});
 
 		// Remove dragging class.
-		removeClass(scope_Target, options.cssClasses.drag);
+		removeClass(scope_Target, Classes[12]);
 
 		// Fire the change and set events.
 		fireEvent('set', handleNumber);
 		fireEvent('change', handleNumber);
-
-		// If this is a standard handle movement, fire the end event.
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('end', data.handleNumber);
-		}
-	}
-
-	// Fire 'end' when a mouse or pen leaves the document.
-	function documentLeave ( event, data ) {
-		if ( event.type === "mouseout" && event.target.nodeName === "HTML" && event.relatedTarget === null ){
-			end ( event, data );
-		}
 	}
 
 	// Bind move events on document.
@@ -86498,16 +88277,13 @@ function closure ( target, options, originalOptions ){
 
 		// Mark the handle as 'active' so it can be styled.
 		if ( data.handles.length === 1 ) {
+			addClass(data.handles[0].children[0], Classes[15]);
+
 			// Support 'disabled' handles
 			if ( data.handles[0].hasAttribute('disabled') ) {
 				return false;
 			}
-
-			addClass(data.handles[0].children[0], options.cssClasses.active);
 		}
-
-		// Fix #551, where a handle gets selected instead of dragged.
-		event.preventDefault();
 
 		// A drag should never propagate up to the 'tap' event.
 		event.stopPropagation();
@@ -86515,26 +88291,16 @@ function closure ( target, options, originalOptions ){
 		// Attach the move and end events.
 		var moveEvent = attach(actions.move, d, move, {
 			start: event.calcPoint,
-			baseSize: baseSize(),
-			pageOffset: event.pageOffset,
 			handles: data.handles,
-			handleNumber: data.handleNumber,
-			buttonsProperty: event.buttons,
 			positions: [
 				scope_Locations[0],
 				scope_Locations[scope_Handles.length - 1]
 			]
 		}), endEvent = attach(actions.end, d, end, {
-			handles: data.handles,
-			handleNumber: data.handleNumber
+			handles: data.handles
 		});
 
-		var outEvent = attach("mouseout", d, documentLeave, {
-			handles: data.handles,
-			handleNumber: data.handleNumber
-		});
-
-		d.noUiListeners = moveEvent.concat(endEvent, outEvent);
+		d.noUiListeners = moveEvent.concat(endEvent);
 
 		// Text selection isn't an issue on touch devices,
 		// so adding cursor styles can be skipped.
@@ -86545,7 +88311,7 @@ function closure ( target, options, originalOptions ){
 
 			// Mark the target with a dragging state.
 			if ( scope_Handles.length > 1 ) {
-				addClass(scope_Target, options.cssClasses.drag);
+				addClass(scope_Target, Classes[12]);
 			}
 
 			var f = function(){
@@ -86556,10 +88322,6 @@ function closure ( target, options, originalOptions ){
 
 			// Prevent text selection when dragging the handles.
 			document.body.addEventListener('selectstart', f, false);
-		}
-
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('start', data.handleNumber);
 		}
 	}
 
@@ -86579,11 +88341,6 @@ function closure ( target, options, originalOptions ){
 		// Find the handle closest to the tapped position.
 		handleNumber = ( location < total/2 || scope_Handles.length === 1 ) ? 0 : 1;
 
-		// Check if handler is not disablet if yes set number to the next handler
-		if (scope_Handles[handleNumber].hasAttribute('disabled')) {
-			handleNumber = handleNumber ? 0 : 1;
-		}
-
 		location -= offset(scope_Base)[ options.style ];
 
 		// Calculate the new position.
@@ -86591,8 +88348,8 @@ function closure ( target, options, originalOptions ){
 
 		if ( !options.events.snap ) {
 			// Flag the slider as it is now in a transitional state.
-			// Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
-			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+			// Transition takes 300 ms, so re-enable the slider afterwards.
+			addClassFor( scope_Target, Classes[14], 300 );
 		}
 
 		// Support 'disabled' handles
@@ -86604,46 +88361,31 @@ function closure ( target, options, originalOptions ){
 		// The set handle to the new position.
 		setHandle( scope_Handles[handleNumber], to );
 
-		fireEvent('slide', handleNumber, true);
-		fireEvent('set', handleNumber, true);
-		fireEvent('change', handleNumber, true);
+		fireEvent('slide', handleNumber);
+		fireEvent('set', handleNumber);
+		fireEvent('change', handleNumber);
 
 		if ( options.events.snap ) {
-			start(event, { handles: [scope_Handles[handleNumber]] });
+			start(event, { handles: [scope_Handles[total]] });
 		}
-	}
-
-	// Fires a 'hover' event for a hovered mouse/pen position.
-	function hover ( event ) {
-
-		var location = event.calcPoint - offset(scope_Base)[ options.style ],
-			to = scope_Spectrum.getStep(( location * 100 ) / baseSize()),
-			value = scope_Spectrum.fromStepping( to );
-
-		Object.keys(scope_Events).forEach(function( targetEvent ) {
-			if ( 'hover' === targetEvent.split('.')[0] ) {
-				scope_Events[targetEvent].forEach(function( callback ) {
-					callback.call( scope_Self, value );
-				});
-			}
-		});
 	}
 
 	// Attach events to several slider parts.
 	function events ( behaviour ) {
 
+		var i, drag;
+
 		// Attach the standard drag event to the handles.
 		if ( !behaviour.fixed ) {
 
-			scope_Handles.forEach(function( handle, index ){
+			for ( i = 0; i < scope_Handles.length; i += 1 ) {
 
 				// These events are only bound to the visual handle
 				// element, not the 'real' origin element.
-				attach ( actions.start, handle.children[0], start, {
-					handles: [ handle ],
-					handleNumber: index
+				attach ( actions.start, scope_Handles[i].children[0], start, {
+					handles: [ scope_Handles[i] ]
 				});
-			});
+			}
 		}
 
 		// Attach the tap event to the slider base.
@@ -86654,16 +88396,11 @@ function closure ( target, options, originalOptions ){
 			});
 		}
 
-		// Fire hover events
-		if ( behaviour.hover ) {
-			attach ( actions.move, scope_Base, hover, { hover: true } );
-		}
-
-		// Make the range draggable.
+		// Make the range dragable.
 		if ( behaviour.drag ){
 
-			var drag = [scope_Base.querySelector( '.' + options.cssClasses.connect )];
-			addClass(drag[0], options.cssClasses.draggable);
+			drag = [scope_Base.getElementsByClassName( Classes[7] )[0]];
+			addClass(drag[0], Classes[10]);
 
 			// When the range is fixed, the entire range can
 			// be dragged by the handles. The handle in the first
@@ -86709,31 +88446,23 @@ function closure ( target, options, originalOptions ){
 		// Handle the step option.
 		to = scope_Spectrum.getStep( to );
 
-		// Limit percentage to the 0 - 100 range
-		to = limit(to);
+		// Limit to 0/100 for .val input, trim anything beyond 7 digits, as
+		// JavaScript has some issues in its floating point implementation.
+		to = limit(parseFloat(to.toFixed(7)));
 
-		// Return false if handle can't move
+		// Return false if handle can't move.
 		if ( to === scope_Locations[trigger] ) {
 			return false;
 		}
 
 		// Set the handle to the new position.
-		// Use requestAnimationFrame for efficient painting.
-		// No significant effect in Chrome, Edge sees dramatic
-		// performace improvements.
-		if ( window.requestAnimationFrame ) {
-			window.requestAnimationFrame(function(){
-				handle.style[options.style] = to + '%';
-			});
-		} else {
-			handle.style[options.style] = to + '%';
-		}
+		handle.style[options.style] = to + '%';
 
 		// Force proper handle stacking
 		if ( !handle.previousSibling ) {
-			removeClass(handle, options.cssClasses.stacking);
+			removeClass(handle, Classes[17]);
 			if ( to > 50 ) {
-				addClass(handle, options.cssClasses.stacking);
+				addClass(handle, Classes[17]);
 			}
 		}
 
@@ -86789,12 +88518,9 @@ function closure ( target, options, originalOptions ){
 	}
 
 	// Set the slider value.
-	function valueSet ( input, fireSetEvent ) {
+	function valueSet ( input ) {
 
 		var count, values = asArray( input ), i;
-
-		// Event fires by default
-		fireSetEvent = (fireSetEvent === undefined ? true : !!fireSetEvent);
 
 		// The RTL settings is implemented by reversing the front-end,
 		// internal mechanisms are the same.
@@ -86805,7 +88531,7 @@ function closure ( target, options, originalOptions ){
 		// Animation is optional.
 		// Make sure the initial values where set before using animated placement.
 		if ( options.animate && scope_Locations[0] !== -1 ) {
-			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+			addClassFor( scope_Target, Classes[14], 300 );
 		}
 
 		// Determine how often to set the handles.
@@ -86819,11 +88545,7 @@ function closure ( target, options, originalOptions ){
 
 		// Fire the 'set' event for both handles.
 		for ( i = 0; i < scope_Handles.length; i++ ) {
-
-			// Fire the event only for handles that received a new value, as per #579
-			if ( values[i] !== null && fireSetEvent ) {
-				fireEvent('set', i);
-			}
+			fireEvent('set', i);
 		}
 	}
 
@@ -86842,16 +88564,11 @@ function closure ( target, options, originalOptions ){
 
 	// Removes classes from the root and empties it.
 	function destroy ( ) {
-
-		for ( var key in options.cssClasses ) {
-			if ( !options.cssClasses.hasOwnProperty(key) ) { continue; }
-			removeClass(scope_Target, options.cssClasses[key]);
-		}
-
-		while (scope_Target.firstChild) {
-			scope_Target.removeChild(scope_Target.firstChild);
-		}
-
+		Classes.forEach(function(cls){
+			if ( !cls ) { return; } // Ignore empty classes
+			removeClass(scope_Target, cls);
+		});
+		scope_Target.innerHTML = '';
 		delete scope_Target.noUiSlider;
 	}
 
@@ -86906,8 +88623,8 @@ function closure ( target, options, originalOptions ){
 	// Undo attachment of event
 	function removeEvent ( namespacedEvent ) {
 
-		var event = namespacedEvent && namespacedEvent.split('.')[0],
-			namespace = event && namespacedEvent.substring(event.length);
+		var event = namespacedEvent.split('.')[0],
+			namespace = namespacedEvent.substring(event.length);
 
 		Object.keys(scope_Events).forEach(function( bind ){
 
@@ -86920,45 +88637,12 @@ function closure ( target, options, originalOptions ){
 		});
 	}
 
-	// Updateable: margin, limit, step, range, animate, snap
-	function updateOptions ( optionsToUpdate, fireSetEvent ) {
-
-		// Spectrum is created using the range, snap, direction and step options.
-		// 'snap' and 'step' can be updated, 'direction' cannot, due to event binding.
-		// If 'snap' and 'step' are not passed, they should remain unchanged.
-		var v = valueGet(), newOptions = testOptions({
-			start: [0, 0],
-			margin: optionsToUpdate.margin,
-			limit: optionsToUpdate.limit,
-			step: optionsToUpdate.step === undefined ? options.singleStep : optionsToUpdate.step,
-			range: optionsToUpdate.range,
-			animate: optionsToUpdate.animate,
-			snap: optionsToUpdate.snap === undefined ? options.snap : optionsToUpdate.snap
-		});
-
-		['margin', 'limit', 'range', 'animate'].forEach(function(name){
-
-			// Only change options that we're actually passed to update.
-			if ( optionsToUpdate[name] !== undefined ) {
-				options[name] = optionsToUpdate[name];
-			}
-		});
-
-		// Save current spectrum direction as testOptions in testRange call
-		// doesn't rely on current direction
-		newOptions.spectrum.direction = scope_Spectrum.direction;
-		scope_Spectrum = newOptions.spectrum;
-
-		// Invalidate the current positioning so valueSet forces an update.
-		scope_Locations = [-1, -1];
-		valueSet(optionsToUpdate.start || v, fireSetEvent);
-	}
-
 
 	// Throw an error if the slider was already initialized.
 	if ( scope_Target.noUiSlider ) {
 		throw new Error('Slider was already initialized.');
 	}
+
 
 	// Create the base element, initialise HTML and set classes.
 	// Add handles and links.
@@ -86968,31 +88652,21 @@ function closure ( target, options, originalOptions ){
 	// Set the connect classes.
 	addConnection ( options.connect, scope_Target, scope_Handles );
 
+	// Attach user events.
+	events( options.events );
+
 	if ( options.pips ) {
 		pips(options.pips);
 	}
 
-	if ( options.tooltips ) {
-		tooltips();
-	}
-
-	scope_Self = {
+	return {
 		destroy: destroy,
 		steps: getCurrentStep,
 		on: bindEvent,
 		off: removeEvent,
 		get: valueGet,
-		set: valueSet,
-		updateOptions: updateOptions,
-		options: originalOptions, // Issue #600
-		target: scope_Target, // Issue #597
-		pips: pips // Issue #594
+		set: valueSet
 	};
-
-	// Attach user events.
-	events( options.events );
-
-	return scope_Self;
 
 }
 
@@ -87006,13 +88680,12 @@ function closure ( target, options, originalOptions ){
 
 		// Test the options and create the slider environment;
 		var options = testOptions( originalOptions, target ),
-			slider = closure( target, options, originalOptions );
+			slider = closure( target, options );
 
 		// Use the public value method to set the start values.
 		slider.set(options.start);
 
 		target.noUiSlider = slider;
-		return slider;
 	}
 
 	// Use an object instead of a function for future expansibility;
@@ -87021,7 +88694,7 @@ function closure ( target, options, originalOptions ){
 	};
 
 }));
-},{}],"owlCarousel":[function(require,module,exports){
+},{"jquery":"jquery"}],"owlCarousel":[function(require,module,exports){
 /*
  *  jQuery OwlCarousel v1.3.3
  *
@@ -88546,17 +90219,17 @@ if (typeof Object.create !== "function") {
 
 module.exports = require('./src/js/main');
 
-},{"./src/js/main":447}],"react-dom":[function(require,module,exports){
+},{"./src/js/main":448}],"react-dom":[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":512}],"react":[function(require,module,exports){
+},{"react/lib/ReactDOM":513}],"react":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":501}],"redux":[function(require,module,exports){
+},{"./lib/React":502}],"redux":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -88605,7 +90278,7 @@ exports.bindActionCreators = _bindActionCreators2['default'];
 exports.applyMiddleware = _applyMiddleware2['default'];
 exports.compose = _compose2['default'];
 }).call(this,require('_process'))
-},{"./applyMiddleware":633,"./bindActionCreators":634,"./combineReducers":635,"./compose":636,"./createStore":637,"./utils/warning":638,"_process":462}],"reqwest":[function(require,module,exports){
+},{"./applyMiddleware":634,"./bindActionCreators":635,"./combineReducers":636,"./compose":637,"./createStore":638,"./utils/warning":639,"_process":463}],"reqwest":[function(require,module,exports){
 /*!
   * Reqwest! A general purpose XHR connection manager
   * license MIT (c) Dustin Diaz 2014
@@ -92631,4 +94304,4 @@ else {
   return URI;
 }));
 
-},{"./IPv6":646,"./SecondLevelDomains":647,"./punycode":648}]},{},[3]);
+},{"./IPv6":647,"./SecondLevelDomains":648,"./punycode":649}]},{},[3]);
