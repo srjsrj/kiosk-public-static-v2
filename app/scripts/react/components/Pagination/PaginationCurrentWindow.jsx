@@ -7,7 +7,7 @@ function PaginationCurrentWindow(props) {
   const {
     currentPage,
     totalPages,
-    onClick,
+    getPageHref,
   } = props;
   const startPage = Math.max(currentPage - WINDOW_SIZE, 1);
   const endPage = Math.min(currentPage + WINDOW_SIZE, totalPages) + 1;
@@ -26,10 +26,7 @@ function PaginationCurrentWindow(props) {
             {isCurrent
               ? page
               : (
-                <a
-                  href="#"
-                  onClick={onClick.bind(null, page)}
-                >
+                <a href={getPageHref(page)}>
                   {page}
                 </a>
               )
@@ -44,7 +41,7 @@ function PaginationCurrentWindow(props) {
 
 PaginationCurrentWindow.propTypes = {
   currentPage: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  getPageHref: PropTypes.func.isRequired,
   totalPages: PropTypes.number.isRequired,
 };
 

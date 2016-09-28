@@ -1099,5 +1099,7 @@ global.ReactDOMServer.renderToString(global.React.createElement(global.WishlistC
 global.ReactDOMServer.renderToString(global.React.createElement(global.MenuTop, require('../test/fixtures/menuTop/sample1')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.MenuBottom, require('../test/fixtures/menuBottom/sample')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.NavBar, require('../test/fixtures/navBar/sample')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.ProductList, require('../test/fixtures/productList/sample.json')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.CategoriesShow, require('../test/fixtures/categoriesShow/sample.json')));
 
 console.log('Prerendering public components test finished successfully');

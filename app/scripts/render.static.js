@@ -22,6 +22,8 @@ import navBarSample from 'test/fixtures/navBar/sample';
 import productListSample from 'test/fixtures/productList/sample';
 import productGroupSample from 'test/fixtures/productGroup/sample.json';
 import childrenProductsSample from 'test/fixtures/childrenProducts/sample.json';
+import categoriesShowSample from 'test/fixtures/categoriesShow/sample.json';
+import categoriesShowEmpty from 'test/fixtures/categoriesShow/empty-products.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -41,5 +43,8 @@ global.NavBarSample = () => React.createElement(global.NavBar, navBarSample);
 global.ProductListSample = () => React.createElement(global.ProductList, productListSample);
 global.ProductGroupSample = () => React.createElement(global.ProductGroup, productGroupSample);
 global.ChildrenProductsSample = () => React.createElement(global.ChildrenProducts, childrenProductsSample);
+global.CategoriesShowSample = () => React.createElement(global.CategoriesShow, categoriesShowSample);
+global.CategoriesShowEmpty = () => React.createElement(global.CategoriesShow, categoriesShowEmpty);
+global.CategoriesShowFilterDirty = () => React.createElement(global.CategoriesShow, { ...categoriesShowEmpty, isFilterDirty: true });
 
 import './lib/ReactRailsUJS';
