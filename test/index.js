@@ -44,3 +44,4 @@ import './react/components/CategoriesShow/index.test';
 import './react/components/CategoriesShowChildren/index.test';
 import './react/components/common/PostProducts.test';
 import './react/components/DictionaryEntitiesShow/index.test';
+import './react/components/ProductArchived/index.test';

@@ -22,5 +22,6 @@ global.ReactDOMServer.renderToString(global.React.createElement(global.Categorie
 global.ReactDOMServer.renderToString(global.React.createElement(global.CategoriesShowChildren, require('../test/fixtures/childrenProducts/sample.json')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.PostProducts, { title: 'a', postProductsText: '<p>b</p>' }));
 global.ReactDOMServer.renderToString(global.React.createElement(global.DictionaryEntitiesShow, require('../test/fixtures/dictionaryEntitiesShow/sample.json')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.ProductArchived, require('../test/fixtures/productArchived/sample.json')));
 
 console.log('Prerendering public components test finished successfully');

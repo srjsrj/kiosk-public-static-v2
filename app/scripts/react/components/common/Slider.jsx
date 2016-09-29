@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import noUiSlider from 'noUiSlider';
+import noUiSlider from 'nouislider';
 
 const MINIMUM_VALUE = 0,
       MAXIMUM_VALUE = 100,

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class NavBarSearch extends Component {
+class ProductSearch extends Component {
   render() {
     const {
       searchProductsPath,
@@ -25,14 +25,14 @@ class NavBarSearch extends Component {
   }
 }
 
-NavBarSearch.propTypes = {
+ProductSearch.propTypes = {
   searchProductsPath: PropTypes.string.isRequired,
   searchQuery: PropTypes.string,
   t: PropTypes.func.isRequired,
 };
 
-NavBarSearch.defaultProps = {
+ProductSearch.defaultProps = {
   searchQuery: '',
 };
 
-export default NavBarSearch;
+export default ProductSearch;
