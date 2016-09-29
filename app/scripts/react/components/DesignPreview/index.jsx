@@ -52,7 +52,7 @@ const _rules = {
         dep: 'feedTransparency',
         rule(depValue) {
           return {
-            '.b-page__content__inner': {
+            '.b-page__content__inner, .sticky-active .b-nav': {
               'background-color': tinycolor(value).setAlpha(1 - depValue).toRgbString()
             }
           }

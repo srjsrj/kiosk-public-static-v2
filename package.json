@@ -1,6 +1,6 @@
 {
   "name": "KioskPublicStatic",
-  "version": "0.0.554",
+  "version": "0.0.559",
   "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "react-dom": "^0.14.5",
     "react-nouislider": "^1.14.0",
     "react-redux": "^4.4.5",
+    "react-stickynode": "^1.2.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "reqwest": "^1.1.6",

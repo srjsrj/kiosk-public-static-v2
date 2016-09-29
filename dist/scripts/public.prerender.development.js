@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _numeral2.default.language('ru', _ru2.default);
 _numeral2.default.language('ru');
 
-},{"numeral":444,"numeral/languages/ru":443}],2:[function(require,module,exports){
+},{"numeral":445,"numeral/languages/ru":444}],2:[function(require,module,exports){
 (function (global){
 window = undefined; // React-rails set window to this, it's unexpected behavior
 React = require('react');
@@ -65,7 +65,7 @@ CategoriesShowChildren = require('./react/components/CategoriesShowChildren');
 PostProducts = require('./react/components/common/PostProducts');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/Cart":17,"./react/components/Cart/CartCoupon":12,"./react/components/CategoriesShow":31,"./react/components/CategoriesShowChildren":33,"./react/components/Checkout/CheckoutCoupon":36,"./react/components/ChildrenProducts":44,"./react/components/Clientbar":46,"./react/components/CurrencySwitcher":48,"./react/components/ErrorPage":50,"./react/components/LocaleSwitcher":54,"./react/components/Logo/LogoContainer":55,"./react/components/MenuBottom":58,"./react/components/MenuTop":65,"./react/components/NavBar":69,"./react/components/Order":73,"./react/components/Pagination":76,"./react/components/Product/ProductBlock":85,"./react/components/Product/ProductCard":102,"./react/components/ProductGroup":121,"./react/components/ProductList":123,"./react/components/ScrollToTop":124,"./react/components/TopBanner":125,"./react/components/Wishlist":130,"./react/components/common/ImageSlider":149,"./react/components/common/PostProducts":156,"./react/reducers/Design.prerender":175,"./react/reducers/Popup":176,"./react/reducers/cart":177,"./react/reducers/packages":178,"react":"react","react-dom":"react-dom","react-dom/server":468,"react-redux":472,"redux":"redux"}],3:[function(require,module,exports){
+},{"./locales/numeral/ru":1,"./react/components/Cart":17,"./react/components/Cart/CartCoupon":12,"./react/components/CategoriesShow":31,"./react/components/CategoriesShowChildren":33,"./react/components/Checkout/CheckoutCoupon":36,"./react/components/ChildrenProducts":44,"./react/components/Clientbar":46,"./react/components/CurrencySwitcher":48,"./react/components/ErrorPage":50,"./react/components/LocaleSwitcher":54,"./react/components/Logo/LogoContainer":55,"./react/components/MenuBottom":58,"./react/components/MenuTop":65,"./react/components/NavBar":69,"./react/components/Order":73,"./react/components/Pagination":76,"./react/components/Product/ProductBlock":85,"./react/components/Product/ProductCard":102,"./react/components/ProductGroup":121,"./react/components/ProductList":123,"./react/components/ScrollToTop":124,"./react/components/TopBanner":125,"./react/components/Wishlist":130,"./react/components/common/ImageSlider":149,"./react/components/common/PostProducts":156,"./react/reducers/Design.prerender":175,"./react/reducers/Popup":176,"./react/reducers/cart":177,"./react/reducers/packages":178,"react":"react","react-dom":"react-dom","react-dom/server":472,"react-redux":476,"redux":"redux"}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -1874,7 +1874,7 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
 })(CartContainer)));
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":166,"../../reducers/cart":177,"../../reducers/packages":178,"../HoC/connectToRedux":51,"../HoC/provideTranslations":52,"./Cart":10,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"immutable":"immutable","react":"react","react-redux":472}],18:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":166,"../../reducers/cart":177,"../../reducers/packages":178,"../HoC/connectToRedux":51,"../HoC/provideTranslations":52,"./Cart":10,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"immutable":"immutable","react":"react","react-redux":476}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2857,7 +2857,7 @@ CatalogFilterRange.defaultProps = {
 exports.default = CatalogFilterRange;
 module.exports = exports['default'];
 
-},{"../../actions/catalogFilterActions":6,"./utils":29,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"babel-runtime/helpers/slicedToArray":229,"numeral":444,"react":"react","react-nouislider":469}],26:[function(require,module,exports){
+},{"../../actions/catalogFilterActions":6,"./utils":29,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"babel-runtime/helpers/slicedToArray":229,"numeral":445,"react":"react","react-nouislider":473}],26:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5313,7 +5313,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-redux":472}],52:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-redux":476}],52:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5734,7 +5734,7 @@ var LogoContainer = (_dec = (0, _reactRedux.connect)(function (state) {
 exports.default = (0, _connectToRedux2.default)(LogoContainer);
 module.exports = exports['default'];
 
-},{"../HoC/connectToRedux":51,"./index":56,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-redux":472}],56:[function(require,module,exports){
+},{"../HoC/connectToRedux":51,"./index":56,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-redux":476}],56:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6875,6 +6875,10 @@ var _provideTranslations = require('../HoC/provideTranslations');
 
 var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
 
+var _reactStickynode = require('react-stickynode');
+
+var _reactStickynode2 = _interopRequireDefault(_reactStickynode);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -6896,15 +6900,25 @@ var MenuTop = function (_Component) {
       var items = _props.items;
       var t = _props.t;
       var vendorCabinetPath = _props.vendorCabinetPath;
+      var isMenuTopDesktopSticky = _props.isMenuTopDesktopSticky;
 
 
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_MenuTopDesktop2.default, {
-          activeItems: activeItems,
-          items: items
-        }),
+        _react2.default.createElement(
+          _reactStickynode2.default,
+          {
+            enabled: isMenuTopDesktopSticky,
+            top: '.top-banner',
+            innerZ: 500,
+            activeClass: 'sticky-active'
+          },
+          _react2.default.createElement(_MenuTopDesktop2.default, {
+            activeItems: activeItems,
+            items: items
+          })
+        ),
         _react2.default.createElement(_MenuTopMobile2.default, {
           hasClientCabinet: hasClientCabinet,
           items: items,
@@ -6922,13 +6936,18 @@ MenuTop.propTypes = {
   hasClientCabinet: _react.PropTypes.bool,
   items: _react.PropTypes.arrayOf(schemas.menuItem).isRequired,
   t: _react.PropTypes.func.isRequired,
-  vendorCabinetPath: _react.PropTypes.string
+  vendorCabinetPath: _react.PropTypes.string,
+  isMenuTopDesktopSticky: _react.PropTypes.bool
+};
+
+MenuTop.defaultProps = {
+  isMenuTopDesktopSticky: false
 };
 
 exports.default = (0, _provideTranslations2.default)(MenuTop);
 module.exports = exports['default'];
 
-},{"../../schemas":189,"../HoC/provideTranslations":52,"./MenuTopDesktop":59,"./MenuTopMobile":63,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react"}],66:[function(require,module,exports){
+},{"../../schemas":189,"../HoC/provideTranslations":52,"./MenuTopDesktop":59,"./MenuTopMobile":63,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-stickynode":486}],66:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7995,7 +8014,7 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
 })(OrderContainer)));
 module.exports = exports['default'];
 
-},{"../../actions/CartActions":4,"../../helpers/dom":166,"../../reducers/cart":177,"../../schemas":189,"../HoC/connectToRedux":51,"../HoC/provideTranslations":52,"./Order":71,"babel-runtime/core-js/object/assign":214,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"immutable":"immutable","react":"react","react-redux":472}],74:[function(require,module,exports){
+},{"../../actions/CartActions":4,"../../helpers/dom":166,"../../reducers/cart":177,"../../schemas":189,"../HoC/connectToRedux":51,"../HoC/provideTranslations":52,"./Order":71,"babel-runtime/core-js/object/assign":214,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"immutable":"immutable","react":"react","react-redux":476}],74:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9270,7 +9289,7 @@ exports.default = (0, _provideTranslations2.default)(ProductCard);
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../../HoC/provideTranslations":52,"../ProductCart":107,"../ProductPrices":112,"./ProductCard.constants":88,"./ProductCardBadges":90,"./ProductCardBreadcrumbs":91,"./ProductCardDetails":94,"./ProductCardGallery":95,"./ProductCardSchema":98,"./ProductCardSimilarProducts":99,"./ProductCardTitle":100,"./ProductCardVideo":101,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-disqus-thread":467}],90:[function(require,module,exports){
+},{"../../HoC/provideTranslations":52,"../ProductCart":107,"../ProductPrices":112,"./ProductCard.constants":88,"./ProductCardBadges":90,"./ProductCardBreadcrumbs":91,"./ProductCardDetails":94,"./ProductCardGallery":95,"./ProductCardSchema":98,"./ProductCardSimilarProducts":99,"./ProductCardTitle":100,"./ProductCardVideo":101,"babel-runtime/core-js/object/get-prototype-of":217,"babel-runtime/helpers/classCallCheck":223,"babel-runtime/helpers/createClass":224,"babel-runtime/helpers/extends":226,"babel-runtime/helpers/inherits":227,"babel-runtime/helpers/possibleConstructorReturn":228,"react":"react","react-disqus-thread":471}],90:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16518,7 +16537,7 @@ function unknownIsoCodeMessage(money) {
   });
 }
 
-},{"../models/currencies":174,"i18next":"i18next","numeral":444}],168:[function(require,module,exports){
+},{"../models/currencies":174,"i18next":"i18next","numeral":445}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16536,7 +16555,7 @@ function numberToHumanSize(number) {
   return (0, _numeral2.default)(number).format('0.00 b');
 }
 
-},{"numeral":444}],169:[function(require,module,exports){
+},{"numeral":445}],169:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21575,7 +21594,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":339}],339:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":339}],339:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -21627,7 +21646,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":465}],340:[function(require,module,exports){
+},{"_process":467}],340:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -24043,7 +24062,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":465}],358:[function(require,module,exports){
+},{"_process":467}],358:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -27665,6 +27684,1966 @@ function property(path) {
 module.exports = property;
 
 },{"../internal/baseProperty":390,"../internal/basePropertyDeep":391,"../internal/isKey":415}],443:[function(require,module,exports){
+/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+
+(function (factory) {
+
+    if ( typeof define === 'function' && define.amd ) {
+
+        // AMD. Register as an anonymous module.
+        define([], factory);
+
+    } else if ( typeof exports === 'object' ) {
+
+        // Node/CommonJS
+        module.exports = factory();
+
+    } else {
+
+        // Browser globals
+        window.noUiSlider = factory();
+    }
+
+}(function( ){
+
+	'use strict';
+
+
+	// Removes duplicates from an array.
+	function unique(array) {
+		return array.filter(function(a){
+			return !this[a] ? this[a] = true : false;
+		}, {});
+	}
+
+	// Round a value to the closest 'to'.
+	function closest ( value, to ) {
+		return Math.round(value / to) * to;
+	}
+
+	// Current position of an element relative to the document.
+	function offset ( elem ) {
+
+	var rect = elem.getBoundingClientRect(),
+		doc = elem.ownerDocument,
+		docElem = doc.documentElement,
+		pageOffset = getPageOffset();
+
+		// getBoundingClientRect contains left scroll in Chrome on Android.
+		// I haven't found a feature detection that proves this. Worst case
+		// scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
+		if ( /webkit.*Chrome.*Mobile/i.test(navigator.userAgent) ) {
+			pageOffset.x = 0;
+		}
+
+		return {
+			top: rect.top + pageOffset.y - docElem.clientTop,
+			left: rect.left + pageOffset.x - docElem.clientLeft
+		};
+	}
+
+	// Checks whether a value is numerical.
+	function isNumeric ( a ) {
+		return typeof a === 'number' && !isNaN( a ) && isFinite( a );
+	}
+
+	// Sets a class and removes it after [duration] ms.
+	function addClassFor ( element, className, duration ) {
+		addClass(element, className);
+		setTimeout(function(){
+			removeClass(element, className);
+		}, duration);
+	}
+
+	// Limits a value to 0 - 100
+	function limit ( a ) {
+		return Math.max(Math.min(a, 100), 0);
+	}
+
+	// Wraps a variable as an array, if it isn't one yet.
+	function asArray ( a ) {
+		return Array.isArray(a) ? a : [a];
+	}
+
+	// Counts decimals
+	function countDecimals ( numStr ) {
+		var pieces = numStr.split(".");
+		return pieces.length > 1 ? pieces[1].length : 0;
+	}
+
+	// http://youmightnotneedjquery.com/#add_class
+	function addClass ( el, className ) {
+		if ( el.classList ) {
+			el.classList.add(className);
+		} else {
+			el.className += ' ' + className;
+		}
+	}
+
+	// http://youmightnotneedjquery.com/#remove_class
+	function removeClass ( el, className ) {
+		if ( el.classList ) {
+			el.classList.remove(className);
+		} else {
+			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+	}
+
+	// https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+	function hasClass ( el, className ) {
+		return el.classList ? el.classList.contains(className) : new RegExp('\\b' + className + '\\b').test(el.className);
+	}
+
+	// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
+	function getPageOffset ( ) {
+
+		var supportPageOffset = window.pageXOffset !== undefined,
+			isCSS1Compat = ((document.compatMode || "") === "CSS1Compat"),
+			x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
+			y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+
+		return {
+			x: x,
+			y: y
+		};
+	}
+
+	// we provide a function to compute constants instead
+	// of accessing window.* as soon as the module needs it
+	// so that we do not compute anything if not needed
+	function getActions ( ) {
+
+		// Determine the events to bind. IE11 implements pointerEvents without
+		// a prefix, which breaks compatibility with the IE10 implementation.
+		return window.navigator.pointerEnabled ? {
+			start: 'pointerdown',
+			move: 'pointermove',
+			end: 'pointerup'
+		} : window.navigator.msPointerEnabled ? {
+			start: 'MSPointerDown',
+			move: 'MSPointerMove',
+			end: 'MSPointerUp'
+		} : {
+			start: 'mousedown touchstart',
+			move: 'mousemove touchmove',
+			end: 'mouseup touchend'
+		};
+	}
+
+
+// Value calculation
+
+	// Determine the size of a sub-range in relation to a full range.
+	function subRangeRatio ( pa, pb ) {
+		return (100 / (pb - pa));
+	}
+
+	// (percentage) How many percent is this value of this range?
+	function fromPercentage ( range, value ) {
+		return (value * 100) / ( range[1] - range[0] );
+	}
+
+	// (percentage) Where is this value on this range?
+	function toPercentage ( range, value ) {
+		return fromPercentage( range, range[0] < 0 ?
+			value + Math.abs(range[0]) :
+				value - range[0] );
+	}
+
+	// (value) How much is this percentage on this range?
+	function isPercentage ( range, value ) {
+		return ((value * ( range[1] - range[0] )) / 100) + range[0];
+	}
+
+
+// Range conversion
+
+	function getJ ( value, arr ) {
+
+		var j = 1;
+
+		while ( value >= arr[j] ){
+			j += 1;
+		}
+
+		return j;
+	}
+
+	// (percentage) Input a value, find where, on a scale of 0-100, it applies.
+	function toStepping ( xVal, xPct, value ) {
+
+		if ( value >= xVal.slice(-1)[0] ){
+			return 100;
+		}
+
+		var j = getJ( value, xVal ), va, vb, pa, pb;
+
+		va = xVal[j-1];
+		vb = xVal[j];
+		pa = xPct[j-1];
+		pb = xPct[j];
+
+		return pa + (toPercentage([va, vb], value) / subRangeRatio (pa, pb));
+	}
+
+	// (value) Input a percentage, find where it is on the specified range.
+	function fromStepping ( xVal, xPct, value ) {
+
+		// There is no range group that fits 100
+		if ( value >= 100 ){
+			return xVal.slice(-1)[0];
+		}
+
+		var j = getJ( value, xPct ), va, vb, pa, pb;
+
+		va = xVal[j-1];
+		vb = xVal[j];
+		pa = xPct[j-1];
+		pb = xPct[j];
+
+		return isPercentage([va, vb], (value - pa) * subRangeRatio (pa, pb));
+	}
+
+	// (percentage) Get the step that applies at a certain value.
+	function getStep ( xPct, xSteps, snap, value ) {
+
+		if ( value === 100 ) {
+			return value;
+		}
+
+		var j = getJ( value, xPct ), a, b;
+
+		// If 'snap' is set, steps are used as fixed points on the slider.
+		if ( snap ) {
+
+			a = xPct[j-1];
+			b = xPct[j];
+
+			// Find the closest position, a or b.
+			if ((value - a) > ((b-a)/2)){
+				return b;
+			}
+
+			return a;
+		}
+
+		if ( !xSteps[j-1] ){
+			return value;
+		}
+
+		return xPct[j-1] + closest(
+			value - xPct[j-1],
+			xSteps[j-1]
+		);
+	}
+
+
+// Entry parsing
+
+	function handleEntryPoint ( index, value, that ) {
+
+		var percentage;
+
+		// Wrap numerical input in an array.
+		if ( typeof value === "number" ) {
+			value = [value];
+		}
+
+		// Reject any invalid input, by testing whether value is an array.
+		if ( Object.prototype.toString.call( value ) !== '[object Array]' ){
+			throw new Error("noUiSlider: 'range' contains invalid value.");
+		}
+
+		// Covert min/max syntax to 0 and 100.
+		if ( index === 'min' ) {
+			percentage = 0;
+		} else if ( index === 'max' ) {
+			percentage = 100;
+		} else {
+			percentage = parseFloat( index );
+		}
+
+		// Check for correct input.
+		if ( !isNumeric( percentage ) || !isNumeric( value[0] ) ) {
+			throw new Error("noUiSlider: 'range' value isn't numeric.");
+		}
+
+		// Store values.
+		that.xPct.push( percentage );
+		that.xVal.push( value[0] );
+
+		// NaN will evaluate to false too, but to keep
+		// logging clear, set step explicitly. Make sure
+		// not to override the 'step' setting with false.
+		if ( !percentage ) {
+			if ( !isNaN( value[1] ) ) {
+				that.xSteps[0] = value[1];
+			}
+		} else {
+			that.xSteps.push( isNaN(value[1]) ? false : value[1] );
+		}
+	}
+
+	function handleStepPoint ( i, n, that ) {
+
+		// Ignore 'false' stepping.
+		if ( !n ) {
+			return true;
+		}
+
+		// Factor to range ratio
+		that.xSteps[i] = fromPercentage([
+			 that.xVal[i]
+			,that.xVal[i+1]
+		], n) / subRangeRatio (
+			that.xPct[i],
+			that.xPct[i+1] );
+	}
+
+
+// Interface
+
+	// The interface to Spectrum handles all direction-based
+	// conversions, so the above values are unaware.
+
+	function Spectrum ( entry, snap, direction, singleStep ) {
+
+		this.xPct = [];
+		this.xVal = [];
+		this.xSteps = [ singleStep || false ];
+		this.xNumSteps = [ false ];
+
+		this.snap = snap;
+		this.direction = direction;
+
+		var index, ordered = [ /* [0, 'min'], [1, '50%'], [2, 'max'] */ ];
+
+		// Map the object keys to an array.
+		for ( index in entry ) {
+			if ( entry.hasOwnProperty(index) ) {
+				ordered.push([entry[index], index]);
+			}
+		}
+
+		// Sort all entries by value (numeric sort).
+		if ( ordered.length && typeof ordered[0][0] === "object" ) {
+			ordered.sort(function(a, b) { return a[0][0] - b[0][0]; });
+		} else {
+			ordered.sort(function(a, b) { return a[0] - b[0]; });
+		}
+
+
+		// Convert all entries to subranges.
+		for ( index = 0; index < ordered.length; index++ ) {
+			handleEntryPoint(ordered[index][1], ordered[index][0], this);
+		}
+
+		// Store the actual step values.
+		// xSteps is sorted in the same order as xPct and xVal.
+		this.xNumSteps = this.xSteps.slice(0);
+
+		// Convert all numeric steps to the percentage of the subrange they represent.
+		for ( index = 0; index < this.xNumSteps.length; index++ ) {
+			handleStepPoint(index, this.xNumSteps[index], this);
+		}
+	}
+
+	Spectrum.prototype.getMargin = function ( value ) {
+		return this.xPct.length === 2 ? fromPercentage(this.xVal, value) : false;
+	};
+
+	Spectrum.prototype.toStepping = function ( value ) {
+
+		value = toStepping( this.xVal, this.xPct, value );
+
+		// Invert the value if this is a right-to-left slider.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return value;
+	};
+
+	Spectrum.prototype.fromStepping = function ( value ) {
+
+		// Invert the value if this is a right-to-left slider.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return fromStepping( this.xVal, this.xPct, value );
+	};
+
+	Spectrum.prototype.getStep = function ( value ) {
+
+		// Find the proper step for rtl sliders by search in inverse direction.
+		// Fixes issue #262.
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		value = getStep(this.xPct, this.xSteps, this.snap, value );
+
+		if ( this.direction ) {
+			value = 100 - value;
+		}
+
+		return value;
+	};
+
+	Spectrum.prototype.getApplicableStep = function ( value ) {
+
+		// If the value is 100%, return the negative step twice.
+		var j = getJ(value, this.xPct), offset = value === 100 ? 2 : 1;
+		return [this.xNumSteps[j-2], this.xVal[j-offset], this.xNumSteps[j-offset]];
+	};
+
+	// Outside testing
+	Spectrum.prototype.convert = function ( value ) {
+		return this.getStep(this.toStepping(value));
+	};
+
+/*	Every input option is tested and parsed. This'll prevent
+	endless validation in internal methods. These tests are
+	structured with an item for every option available. An
+	option can be marked as required by setting the 'r' flag.
+	The testing function is provided with three arguments:
+		- The provided value for the option;
+		- A reference to the options object;
+		- The name for the option;
+
+	The testing function returns false when an error is detected,
+	or true when everything is OK. It can also modify the option
+	object, to make sure all values can be correctly looped elsewhere. */
+
+	var defaultFormatter = { 'to': function( value ){
+		return value !== undefined && value.toFixed(2);
+	}, 'from': Number };
+
+	function testStep ( parsed, entry ) {
+
+		if ( !isNumeric( entry ) ) {
+			throw new Error("noUiSlider: 'step' is not numeric.");
+		}
+
+		// The step option can still be used to set stepping
+		// for linear sliders. Overwritten if set in 'range'.
+		parsed.singleStep = entry;
+	}
+
+	function testRange ( parsed, entry ) {
+
+		// Filter incorrect input.
+		if ( typeof entry !== 'object' || Array.isArray(entry) ) {
+			throw new Error("noUiSlider: 'range' is not an object.");
+		}
+
+		// Catch missing start or end.
+		if ( entry.min === undefined || entry.max === undefined ) {
+			throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
+		}
+
+		// Catch equal start or end.
+		if ( entry.min === entry.max ) {
+			throw new Error("noUiSlider: 'range' 'min' and 'max' cannot be equal.");
+		}
+
+		parsed.spectrum = new Spectrum(entry, parsed.snap, parsed.dir, parsed.singleStep);
+	}
+
+	function testStart ( parsed, entry ) {
+
+		entry = asArray(entry);
+
+		// Validate input. Values aren't tested, as the public .val method
+		// will always provide a valid location.
+		if ( !Array.isArray( entry ) || !entry.length || entry.length > 2 ) {
+			throw new Error("noUiSlider: 'start' option is incorrect.");
+		}
+
+		// Store the number of handles.
+		parsed.handles = entry.length;
+
+		// When the slider is initialized, the .val method will
+		// be called with the start options.
+		parsed.start = entry;
+	}
+
+	function testSnap ( parsed, entry ) {
+
+		// Enforce 100% stepping within subranges.
+		parsed.snap = entry;
+
+		if ( typeof entry !== 'boolean' ){
+			throw new Error("noUiSlider: 'snap' option must be a boolean.");
+		}
+	}
+
+	function testAnimate ( parsed, entry ) {
+
+		// Enforce 100% stepping within subranges.
+		parsed.animate = entry;
+
+		if ( typeof entry !== 'boolean' ){
+			throw new Error("noUiSlider: 'animate' option must be a boolean.");
+		}
+	}
+
+	function testAnimationDuration ( parsed, entry ) {
+
+		parsed.animationDuration = entry;
+
+		if ( typeof entry !== 'number' ){
+			throw new Error("noUiSlider: 'animationDuration' option must be a number.");
+		}
+	}
+
+	function testConnect ( parsed, entry ) {
+
+		if ( entry === 'lower' && parsed.handles === 1 ) {
+			parsed.connect = 1;
+		} else if ( entry === 'upper' && parsed.handles === 1 ) {
+			parsed.connect = 2;
+		} else if ( entry === true && parsed.handles === 2 ) {
+			parsed.connect = 3;
+		} else if ( entry === false ) {
+			parsed.connect = 0;
+		} else {
+			throw new Error("noUiSlider: 'connect' option doesn't match handle count.");
+		}
+	}
+
+	function testOrientation ( parsed, entry ) {
+
+		// Set orientation to an a numerical value for easy
+		// array selection.
+		switch ( entry ){
+		  case 'horizontal':
+			parsed.ort = 0;
+			break;
+		  case 'vertical':
+			parsed.ort = 1;
+			break;
+		  default:
+			throw new Error("noUiSlider: 'orientation' option is invalid.");
+		}
+	}
+
+	function testMargin ( parsed, entry ) {
+
+		if ( !isNumeric(entry) ){
+			throw new Error("noUiSlider: 'margin' option must be numeric.");
+		}
+
+		// Issue #582
+		if ( entry === 0 ) {
+			return;
+		}
+
+		parsed.margin = parsed.spectrum.getMargin(entry);
+
+		if ( !parsed.margin ) {
+			throw new Error("noUiSlider: 'margin' option is only supported on linear sliders.");
+		}
+	}
+
+	function testLimit ( parsed, entry ) {
+
+		if ( !isNumeric(entry) ){
+			throw new Error("noUiSlider: 'limit' option must be numeric.");
+		}
+
+		parsed.limit = parsed.spectrum.getMargin(entry);
+
+		if ( !parsed.limit ) {
+			throw new Error("noUiSlider: 'limit' option is only supported on linear sliders.");
+		}
+	}
+
+	function testDirection ( parsed, entry ) {
+
+		// Set direction as a numerical value for easy parsing.
+		// Invert connection for RTL sliders, so that the proper
+		// handles get the connect/background classes.
+		switch ( entry ) {
+		  case 'ltr':
+			parsed.dir = 0;
+			break;
+		  case 'rtl':
+			parsed.dir = 1;
+			parsed.connect = [0,2,1,3][parsed.connect];
+			break;
+		  default:
+			throw new Error("noUiSlider: 'direction' option was not recognized.");
+		}
+	}
+
+	function testBehaviour ( parsed, entry ) {
+
+		// Make sure the input is a string.
+		if ( typeof entry !== 'string' ) {
+			throw new Error("noUiSlider: 'behaviour' must be a string containing options.");
+		}
+
+		// Check if the string contains any keywords.
+		// None are required.
+		var tap = entry.indexOf('tap') >= 0,
+			drag = entry.indexOf('drag') >= 0,
+			fixed = entry.indexOf('fixed') >= 0,
+			snap = entry.indexOf('snap') >= 0,
+			hover = entry.indexOf('hover') >= 0;
+
+		// Fix #472
+		if ( drag && !parsed.connect ) {
+			throw new Error("noUiSlider: 'drag' behaviour must be used with 'connect': true.");
+		}
+
+		parsed.events = {
+			tap: tap || snap,
+			drag: drag,
+			fixed: fixed,
+			snap: snap,
+			hover: hover
+		};
+	}
+
+	function testTooltips ( parsed, entry ) {
+
+		var i;
+
+		if ( entry === false ) {
+			return;
+		} else if ( entry === true ) {
+
+			parsed.tooltips = [];
+
+			for ( i = 0; i < parsed.handles; i++ ) {
+				parsed.tooltips.push(true);
+			}
+
+		} else {
+
+			parsed.tooltips = asArray(entry);
+
+			if ( parsed.tooltips.length !== parsed.handles ) {
+				throw new Error("noUiSlider: must pass a formatter for all handles.");
+			}
+
+			parsed.tooltips.forEach(function(formatter){
+				if ( typeof formatter !== 'boolean' && (typeof formatter !== 'object' || typeof formatter.to !== 'function') ) {
+					throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
+				}
+			});
+		}
+	}
+
+	function testFormat ( parsed, entry ) {
+
+		parsed.format = entry;
+
+		// Any object with a to and from method is supported.
+		if ( typeof entry.to === 'function' && typeof entry.from === 'function' ) {
+			return true;
+		}
+
+		throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
+	}
+
+	function testCssPrefix ( parsed, entry ) {
+
+		if ( entry !== undefined && typeof entry !== 'string' && entry !== false ) {
+			throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
+		}
+
+		parsed.cssPrefix = entry;
+	}
+
+	function testCssClasses ( parsed, entry ) {
+
+		if ( entry !== undefined && typeof entry !== 'object' ) {
+			throw new Error("noUiSlider: 'cssClasses' must be an object.");
+		}
+
+		if ( typeof parsed.cssPrefix === 'string' ) {
+			parsed.cssClasses = {};
+
+			for ( var key in entry ) {
+				if ( !entry.hasOwnProperty(key) ) { continue; }
+
+				parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
+			}
+		} else {
+			parsed.cssClasses = entry;
+		}
+	}
+
+	// Test all developer settings and parse to assumption-safe values.
+	function testOptions ( options ) {
+
+		// To prove a fix for #537, freeze options here.
+		// If the object is modified, an error will be thrown.
+		// Object.freeze(options);
+
+		var parsed = {
+			margin: 0,
+			limit: 0,
+			animate: true,
+			animationDuration: 300,
+			format: defaultFormatter
+		}, tests;
+
+		// Tests are executed in the order they are presented here.
+		tests = {
+			'step': { r: false, t: testStep },
+			'start': { r: true, t: testStart },
+			'connect': { r: true, t: testConnect },
+			'direction': { r: true, t: testDirection },
+			'snap': { r: false, t: testSnap },
+			'animate': { r: false, t: testAnimate },
+			'animationDuration': { r: false, t: testAnimationDuration },
+			'range': { r: true, t: testRange },
+			'orientation': { r: false, t: testOrientation },
+			'margin': { r: false, t: testMargin },
+			'limit': { r: false, t: testLimit },
+			'behaviour': { r: true, t: testBehaviour },
+			'format': { r: false, t: testFormat },
+			'tooltips': { r: false, t: testTooltips },
+			'cssPrefix': { r: false, t: testCssPrefix },
+			'cssClasses': { r: false, t: testCssClasses }
+		};
+
+		var defaults = {
+			'connect': false,
+			'direction': 'ltr',
+			'behaviour': 'tap',
+			'orientation': 'horizontal',
+			'cssPrefix' : 'noUi-',
+			'cssClasses': {
+				target: 'target',
+				base: 'base',
+				origin: 'origin',
+				handle: 'handle',
+				handleLower: 'handle-lower',
+				handleUpper: 'handle-upper',
+				horizontal: 'horizontal',
+				vertical: 'vertical',
+				background: 'background',
+				connect: 'connect',
+				ltr: 'ltr',
+				rtl: 'rtl',
+				draggable: 'draggable',
+				drag: 'state-drag',
+				tap: 'state-tap',
+				active: 'active',
+				stacking: 'stacking',
+				tooltip: 'tooltip',
+				pips: 'pips',
+				pipsHorizontal: 'pips-horizontal',
+				pipsVertical: 'pips-vertical',
+				marker: 'marker',
+				markerHorizontal: 'marker-horizontal',
+				markerVertical: 'marker-vertical',
+				markerNormal: 'marker-normal',
+				markerLarge: 'marker-large',
+				markerSub: 'marker-sub',
+				value: 'value',
+				valueHorizontal: 'value-horizontal',
+				valueVertical: 'value-vertical',
+				valueNormal: 'value-normal',
+				valueLarge: 'value-large',
+				valueSub: 'value-sub'
+			}
+		};
+
+		// Run all options through a testing mechanism to ensure correct
+		// input. It should be noted that options might get modified to
+		// be handled properly. E.g. wrapping integers in arrays.
+		Object.keys(tests).forEach(function( name ){
+
+			// If the option isn't set, but it is required, throw an error.
+			if ( options[name] === undefined && defaults[name] === undefined ) {
+
+				if ( tests[name].r ) {
+					throw new Error("noUiSlider: '" + name + "' is required.");
+				}
+
+				return true;
+			}
+
+			tests[name].t( parsed, options[name] === undefined ? defaults[name] : options[name] );
+		});
+
+		// Forward pips options
+		parsed.pips = options.pips;
+
+		// Pre-define the styles.
+		parsed.style = parsed.ort ? 'top' : 'left';
+
+		return parsed;
+	}
+
+
+function closure ( target, options, originalOptions ){
+	var
+		actions = getActions( ),
+		// All variables local to 'closure' are prefixed with 'scope_'
+		scope_Target = target,
+		scope_Locations = [-1, -1],
+		scope_Base,
+		scope_Handles,
+		scope_Spectrum = options.spectrum,
+		scope_Values = [],
+		scope_Events = {},
+		scope_Self;
+
+
+	// Delimit proposed values for handle positions.
+	function getPositions ( a, b, delimit ) {
+
+		// Add movement to current position.
+		var c = a + b[0], d = a + b[1];
+
+		// Only alter the other position on drag,
+		// not on standard sliding.
+		if ( delimit ) {
+			if ( c < 0 ) {
+				d += Math.abs(c);
+			}
+			if ( d > 100 ) {
+				c -= ( d - 100 );
+			}
+
+			// Limit values to 0 and 100.
+			return [limit(c), limit(d)];
+		}
+
+		return [c,d];
+	}
+
+	// Provide a clean event with standardized offset values.
+	function fixEvent ( e, pageOffset ) {
+
+		// Prevent scrolling and panning on touch events, while
+		// attempting to slide. The tap event also depends on this.
+		e.preventDefault();
+
+		// Filter the event to register the type, which can be
+		// touch, mouse or pointer. Offset changes need to be
+		// made on an event specific basis.
+		var touch = e.type.indexOf('touch') === 0,
+			mouse = e.type.indexOf('mouse') === 0,
+			pointer = e.type.indexOf('pointer') === 0,
+			x,y, event = e;
+
+		// IE10 implemented pointer events with a prefix;
+		if ( e.type.indexOf('MSPointer') === 0 ) {
+			pointer = true;
+		}
+
+		if ( touch ) {
+			// noUiSlider supports one movement at a time,
+			// so we can select the first 'changedTouch'.
+			x = e.changedTouches[0].pageX;
+			y = e.changedTouches[0].pageY;
+		}
+
+		pageOffset = pageOffset || getPageOffset();
+
+		if ( mouse || pointer ) {
+			x = e.clientX + pageOffset.x;
+			y = e.clientY + pageOffset.y;
+		}
+
+		event.pageOffset = pageOffset;
+		event.points = [x, y];
+		event.cursor = mouse || pointer; // Fix #435
+
+		return event;
+	}
+
+	// Append a handle to the base.
+	function addHandle ( direction, index ) {
+
+		var origin = document.createElement('div'),
+			handle = document.createElement('div'),
+			classModifier = [options.cssClasses.handleLower, options.cssClasses.handleUpper];
+
+		if ( direction ) {
+			classModifier.reverse();
+		}
+
+		addClass(handle, options.cssClasses.handle);
+		addClass(handle, classModifier[index]);
+
+		addClass(origin, options.cssClasses.origin);
+		origin.appendChild(handle);
+
+		return origin;
+	}
+
+	// Add the proper connection classes.
+	function addConnection ( connect, target, handles ) {
+
+		// Apply the required connection classes to the elements
+		// that need them. Some classes are made up for several
+		// segments listed in the class list, to allow easy
+		// renaming and provide a minor compression benefit.
+		switch ( connect ) {
+			case 1:	addClass(target, options.cssClasses.connect);
+					addClass(handles[0], options.cssClasses.background);
+					break;
+			case 3: addClass(handles[1], options.cssClasses.background);
+					/* falls through */
+			case 2: addClass(handles[0], options.cssClasses.connect);
+					/* falls through */
+			case 0: addClass(target, options.cssClasses.background);
+					break;
+		}
+	}
+
+	// Add handles to the slider base.
+	function addHandles ( nrHandles, direction, base ) {
+
+		var index, handles = [];
+
+		// Append handles.
+		for ( index = 0; index < nrHandles; index += 1 ) {
+
+			// Keep a list of all added handles.
+			handles.push( base.appendChild(addHandle( direction, index )) );
+		}
+
+		return handles;
+	}
+
+	// Initialize a single slider.
+	function addSlider ( direction, orientation, target ) {
+
+		// Apply classes and data to the target.
+		addClass(target, options.cssClasses.target);
+
+		if ( direction === 0 ) {
+			addClass(target, options.cssClasses.ltr);
+		} else {
+			addClass(target, options.cssClasses.rtl);
+		}
+
+		if ( orientation === 0 ) {
+			addClass(target, options.cssClasses.horizontal);
+		} else {
+			addClass(target, options.cssClasses.vertical);
+		}
+
+		var div = document.createElement('div');
+		addClass(div, options.cssClasses.base);
+		target.appendChild(div);
+		return div;
+	}
+
+
+	function addTooltip ( handle, index ) {
+
+		if ( !options.tooltips[index] ) {
+			return false;
+		}
+
+		var element = document.createElement('div');
+		element.className = options.cssClasses.tooltip;
+		return handle.firstChild.appendChild(element);
+	}
+
+	// The tooltips option is a shorthand for using the 'update' event.
+	function tooltips ( ) {
+
+		if ( options.dir ) {
+			options.tooltips.reverse();
+		}
+
+		// Tooltips are added with options.tooltips in original order.
+		var tips = scope_Handles.map(addTooltip);
+
+		if ( options.dir ) {
+			tips.reverse();
+			options.tooltips.reverse();
+		}
+
+		bindEvent('update', function(f, o, r) {
+			if ( tips[o] ) {
+				tips[o].innerHTML = options.tooltips[o] === true ? f[o] : options.tooltips[o].to(r[o]);
+			}
+		});
+	}
+
+
+	function getGroup ( mode, values, stepped ) {
+
+		// Use the range.
+		if ( mode === 'range' || mode === 'steps' ) {
+			return scope_Spectrum.xVal;
+		}
+
+		if ( mode === 'count' ) {
+
+			// Divide 0 - 100 in 'count' parts.
+			var spread = ( 100 / (values-1) ), v, i = 0;
+			values = [];
+
+			// List these parts and have them handled as 'positions'.
+			while ((v=i++*spread) <= 100 ) {
+				values.push(v);
+			}
+
+			mode = 'positions';
+		}
+
+		if ( mode === 'positions' ) {
+
+			// Map all percentages to on-range values.
+			return values.map(function( value ){
+				return scope_Spectrum.fromStepping( stepped ? scope_Spectrum.getStep( value ) : value );
+			});
+		}
+
+		if ( mode === 'values' ) {
+
+			// If the value must be stepped, it needs to be converted to a percentage first.
+			if ( stepped ) {
+
+				return values.map(function( value ){
+
+					// Convert to percentage, apply step, return to value.
+					return scope_Spectrum.fromStepping( scope_Spectrum.getStep( scope_Spectrum.toStepping( value ) ) );
+				});
+
+			}
+
+			// Otherwise, we can simply use the values.
+			return values;
+		}
+	}
+
+	function generateSpread ( density, mode, group ) {
+
+		function safeIncrement(value, increment) {
+			// Avoid floating point variance by dropping the smallest decimal places.
+			return (value + increment).toFixed(7) / 1;
+		}
+
+		var originalSpectrumDirection = scope_Spectrum.direction,
+			indexes = {},
+			firstInRange = scope_Spectrum.xVal[0],
+			lastInRange = scope_Spectrum.xVal[scope_Spectrum.xVal.length-1],
+			ignoreFirst = false,
+			ignoreLast = false,
+			prevPct = 0;
+
+		// This function loops the spectrum in an ltr linear fashion,
+		// while the toStepping method is direction aware. Trick it into
+		// believing it is ltr.
+		scope_Spectrum.direction = 0;
+
+		// Create a copy of the group, sort it and filter away all duplicates.
+		group = unique(group.slice().sort(function(a, b){ return a - b; }));
+
+		// Make sure the range starts with the first element.
+		if ( group[0] !== firstInRange ) {
+			group.unshift(firstInRange);
+			ignoreFirst = true;
+		}
+
+		// Likewise for the last one.
+		if ( group[group.length - 1] !== lastInRange ) {
+			group.push(lastInRange);
+			ignoreLast = true;
+		}
+
+		group.forEach(function ( current, index ) {
+
+			// Get the current step and the lower + upper positions.
+			var step, i, q,
+				low = current,
+				high = group[index+1],
+				newPct, pctDifference, pctPos, type,
+				steps, realSteps, stepsize;
+
+			// When using 'steps' mode, use the provided steps.
+			// Otherwise, we'll step on to the next subrange.
+			if ( mode === 'steps' ) {
+				step = scope_Spectrum.xNumSteps[ index ];
+			}
+
+			// Default to a 'full' step.
+			if ( !step ) {
+				step = high-low;
+			}
+
+			// Low can be 0, so test for false. If high is undefined,
+			// we are at the last subrange. Index 0 is already handled.
+			if ( low === false || high === undefined ) {
+				return;
+			}
+
+			// Find all steps in the subrange.
+			for ( i = low; i <= high; i = safeIncrement(i, step) ) {
+
+				// Get the percentage value for the current step,
+				// calculate the size for the subrange.
+				newPct = scope_Spectrum.toStepping( i );
+				pctDifference = newPct - prevPct;
+
+				steps = pctDifference / density;
+				realSteps = Math.round(steps);
+
+				// This ratio represents the ammount of percentage-space a point indicates.
+				// For a density 1 the points/percentage = 1. For density 2, that percentage needs to be re-devided.
+				// Round the percentage offset to an even number, then divide by two
+				// to spread the offset on both sides of the range.
+				stepsize = pctDifference/realSteps;
+
+				// Divide all points evenly, adding the correct number to this subrange.
+				// Run up to <= so that 100% gets a point, event if ignoreLast is set.
+				for ( q = 1; q <= realSteps; q += 1 ) {
+
+					// The ratio between the rounded value and the actual size might be ~1% off.
+					// Correct the percentage offset by the number of points
+					// per subrange. density = 1 will result in 100 points on the
+					// full range, 2 for 50, 4 for 25, etc.
+					pctPos = prevPct + ( q * stepsize );
+					indexes[pctPos.toFixed(5)] = ['x', 0];
+				}
+
+				// Determine the point type.
+				type = (group.indexOf(i) > -1) ? 1 : ( mode === 'steps' ? 2 : 0 );
+
+				// Enforce the 'ignoreFirst' option by overwriting the type for 0.
+				if ( !index && ignoreFirst ) {
+					type = 0;
+				}
+
+				if ( !(i === high && ignoreLast)) {
+					// Mark the 'type' of this point. 0 = plain, 1 = real value, 2 = step value.
+					indexes[newPct.toFixed(5)] = [i, type];
+				}
+
+				// Update the percentage count.
+				prevPct = newPct;
+			}
+		});
+
+		// Reset the spectrum.
+		scope_Spectrum.direction = originalSpectrumDirection;
+
+		return indexes;
+	}
+
+	function addMarking ( spread, filterFunc, formatter ) {
+
+		var element = document.createElement('div'),
+			out = '',
+			valueSizeClasses = [
+				options.cssClasses.valueNormal,
+				options.cssClasses.valueLarge,
+				options.cssClasses.valueSub
+			],
+			markerSizeClasses = [
+				options.cssClasses.markerNormal,
+				options.cssClasses.markerLarge,
+				options.cssClasses.markerSub
+			],
+			valueOrientationClasses = [
+				options.cssClasses.valueHorizontal,
+				options.cssClasses.valueVertical
+			],
+			markerOrientationClasses = [
+				options.cssClasses.markerHorizontal,
+				options.cssClasses.markerVertical
+			];
+
+		addClass(element, options.cssClasses.pips);
+		addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+
+		function getClasses( type, source ){
+			var a = source === options.cssClasses.value,
+				orientationClasses = a ? valueOrientationClasses : markerOrientationClasses,
+				sizeClasses = a ? valueSizeClasses : markerSizeClasses;
+
+			return source + ' ' + orientationClasses[options.ort] + ' ' + sizeClasses[type];
+		}
+
+		function getTags( offset, source, values ) {
+			return 'class="' + getClasses(values[1], source) + '" style="' + options.style + ': ' + offset + '%"';
+		}
+
+		function addSpread ( offset, values ){
+
+			if ( scope_Spectrum.direction ) {
+				offset = 100 - offset;
+			}
+
+			// Apply the filter function, if it is set.
+			values[1] = (values[1] && filterFunc) ? filterFunc(values[0], values[1]) : values[1];
+
+			// Add a marker for every point
+			out += '<div ' + getTags(offset, options.cssClasses.marker, values) + '></div>';
+
+			// Values are only appended for points marked '1' or '2'.
+			if ( values[1] ) {
+				out += '<div ' + getTags(offset, options.cssClasses.value, values) + '>' + formatter.to(values[0]) + '</div>';
+			}
+		}
+
+		// Append all points.
+		Object.keys(spread).forEach(function(a){
+			addSpread(a, spread[a]);
+		});
+
+		element.innerHTML = out;
+
+		return element;
+	}
+
+	function pips ( grid ) {
+
+	var mode = grid.mode,
+		density = grid.density || 1,
+		filter = grid.filter || false,
+		values = grid.values || false,
+		stepped = grid.stepped || false,
+		group = getGroup( mode, values, stepped ),
+		spread = generateSpread( density, mode, group ),
+		format = grid.format || {
+			to: Math.round
+		};
+
+		return scope_Target.appendChild(addMarking(
+			spread,
+			filter,
+			format
+		));
+	}
+
+
+	// Shorthand for base dimensions.
+	function baseSize ( ) {
+		var rect = scope_Base.getBoundingClientRect(), alt = 'offset' + ['Width', 'Height'][options.ort];
+		return options.ort === 0 ? (rect.width||scope_Base[alt]) : (rect.height||scope_Base[alt]);
+	}
+
+	// External event handling
+	function fireEvent ( event, handleNumber, tap ) {
+
+		var i;
+
+		// During initialization, do not fire events.
+		for ( i = 0; i < options.handles; i++ ) {
+			if ( scope_Locations[i] === -1 ) {
+				return;
+			}
+		}
+
+		if ( handleNumber !== undefined && options.handles !== 1 ) {
+			handleNumber = Math.abs(handleNumber - options.dir);
+		}
+
+		Object.keys(scope_Events).forEach(function( targetEvent ) {
+
+			var eventType = targetEvent.split('.')[0];
+
+			if ( event === eventType ) {
+				scope_Events[targetEvent].forEach(function( callback ) {
+
+					callback.call(
+						// Use the slider public API as the scope ('this')
+						scope_Self,
+						// Return values as array, so arg_1[arg_2] is always valid.
+						asArray(valueGet()),
+						// Handle index, 0 or 1
+						handleNumber,
+						// Unformatted slider values
+						asArray(inSliderOrder(Array.prototype.slice.call(scope_Values))),
+						// Event is fired by tap, true or false
+						tap || false,
+						// Left offset of the handle, in relation to the slider
+						scope_Locations
+					);
+				});
+			}
+		});
+	}
+
+	// Returns the input array, respecting the slider direction configuration.
+	function inSliderOrder ( values ) {
+
+		// If only one handle is used, return a single value.
+		if ( values.length === 1 ){
+			return values[0];
+		}
+
+		if ( options.dir ) {
+			return values.reverse();
+		}
+
+		return values;
+	}
+
+
+	// Handler for attaching events trough a proxy.
+	function attach ( events, element, callback, data ) {
+
+		// This function can be used to 'filter' events to the slider.
+		// element is a node, not a nodeList
+
+		var method = function ( e ){
+
+			if ( scope_Target.hasAttribute('disabled') ) {
+				return false;
+			}
+
+			// Stop if an active 'tap' transition is taking place.
+			if ( hasClass(scope_Target, options.cssClasses.tap) ) {
+				return false;
+			}
+
+			e = fixEvent(e, data.pageOffset);
+
+			// Ignore right or middle clicks on start #454
+			if ( events === actions.start && e.buttons !== undefined && e.buttons > 1 ) {
+				return false;
+			}
+
+			// Ignore right or middle clicks on start #454
+			if ( data.hover && e.buttons ) {
+				return false;
+			}
+
+			e.calcPoint = e.points[ options.ort ];
+
+			// Call the event handler with the event [ and additional data ].
+			callback ( e, data );
+
+		}, methods = [];
+
+		// Bind a closure on the target for every event type.
+		events.split(' ').forEach(function( eventName ){
+			element.addEventListener(eventName, method, false);
+			methods.push([eventName, method]);
+		});
+
+		return methods;
+	}
+
+	// Handle movement on document for handle and range drag.
+	function move ( event, data ) {
+
+		// Fix #498
+		// Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
+		// https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
+		// IE9 has .buttons and .which zero on mousemove.
+		// Firefox breaks the spec MDN defines.
+		if ( navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0 ) {
+			return end(event, data);
+		}
+
+		var handles = data.handles || scope_Handles, positions, state = false,
+			proposal = ((event.calcPoint - data.start) * 100) / data.baseSize,
+			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1, i;
+
+		// Calculate relative positions for the handles.
+		positions = getPositions( proposal, data.positions, handles.length > 1);
+
+		state = setHandle ( handles[0], positions[handleNumber], handles.length === 1 );
+
+		if ( handles.length > 1 ) {
+
+			state = setHandle ( handles[1], positions[handleNumber?0:1], false ) || state;
+
+			if ( state ) {
+				// fire for both handles
+				for ( i = 0; i < data.handles.length; i++ ) {
+					fireEvent('slide', i);
+				}
+			}
+		} else if ( state ) {
+			// Fire for a single handle
+			fireEvent('slide', handleNumber);
+		}
+	}
+
+	// Unbind move events on document, call callbacks.
+	function end ( event, data ) {
+
+		// The handle is no longer active, so remove the class.
+		var active = scope_Base.querySelector( '.' + options.cssClasses.active ),
+			handleNumber = data.handles[0] === scope_Handles[0] ? 0 : 1;
+
+		if ( active !== null ) {
+			removeClass(active, options.cssClasses.active);
+		}
+
+		// Remove cursor styles and text-selection events bound to the body.
+		if ( event.cursor ) {
+			document.body.style.cursor = '';
+			document.body.removeEventListener('selectstart', document.body.noUiListener);
+		}
+
+		var d = document.documentElement;
+
+		// Unbind the move and end events, which are added on 'start'.
+		d.noUiListeners.forEach(function( c ) {
+			d.removeEventListener(c[0], c[1]);
+		});
+
+		// Remove dragging class.
+		removeClass(scope_Target, options.cssClasses.drag);
+
+		// Fire the change and set events.
+		fireEvent('set', handleNumber);
+		fireEvent('change', handleNumber);
+
+		// If this is a standard handle movement, fire the end event.
+		if ( data.handleNumber !== undefined ) {
+			fireEvent('end', data.handleNumber);
+		}
+	}
+
+	// Fire 'end' when a mouse or pen leaves the document.
+	function documentLeave ( event, data ) {
+		if ( event.type === "mouseout" && event.target.nodeName === "HTML" && event.relatedTarget === null ){
+			end ( event, data );
+		}
+	}
+
+	// Bind move events on document.
+	function start ( event, data ) {
+
+		var d = document.documentElement;
+
+		// Mark the handle as 'active' so it can be styled.
+		if ( data.handles.length === 1 ) {
+			// Support 'disabled' handles
+			if ( data.handles[0].hasAttribute('disabled') ) {
+				return false;
+			}
+
+			addClass(data.handles[0].children[0], options.cssClasses.active);
+		}
+
+		// Fix #551, where a handle gets selected instead of dragged.
+		event.preventDefault();
+
+		// A drag should never propagate up to the 'tap' event.
+		event.stopPropagation();
+
+		// Attach the move and end events.
+		var moveEvent = attach(actions.move, d, move, {
+			start: event.calcPoint,
+			baseSize: baseSize(),
+			pageOffset: event.pageOffset,
+			handles: data.handles,
+			handleNumber: data.handleNumber,
+			buttonsProperty: event.buttons,
+			positions: [
+				scope_Locations[0],
+				scope_Locations[scope_Handles.length - 1]
+			]
+		}), endEvent = attach(actions.end, d, end, {
+			handles: data.handles,
+			handleNumber: data.handleNumber
+		});
+
+		var outEvent = attach("mouseout", d, documentLeave, {
+			handles: data.handles,
+			handleNumber: data.handleNumber
+		});
+
+		d.noUiListeners = moveEvent.concat(endEvent, outEvent);
+
+		// Text selection isn't an issue on touch devices,
+		// so adding cursor styles can be skipped.
+		if ( event.cursor ) {
+
+			// Prevent the 'I' cursor and extend the range-drag cursor.
+			document.body.style.cursor = getComputedStyle(event.target).cursor;
+
+			// Mark the target with a dragging state.
+			if ( scope_Handles.length > 1 ) {
+				addClass(scope_Target, options.cssClasses.drag);
+			}
+
+			var f = function(){
+				return false;
+			};
+
+			document.body.noUiListener = f;
+
+			// Prevent text selection when dragging the handles.
+			document.body.addEventListener('selectstart', f, false);
+		}
+
+		if ( data.handleNumber !== undefined ) {
+			fireEvent('start', data.handleNumber);
+		}
+	}
+
+	// Move closest handle to tapped location.
+	function tap ( event ) {
+
+		var location = event.calcPoint, total = 0, handleNumber, to;
+
+		// The tap event shouldn't propagate up and cause 'edge' to run.
+		event.stopPropagation();
+
+		// Add up the handle offsets.
+		scope_Handles.forEach(function(a){
+			total += offset(a)[ options.style ];
+		});
+
+		// Find the handle closest to the tapped position.
+		handleNumber = ( location < total/2 || scope_Handles.length === 1 ) ? 0 : 1;
+
+		// Check if handler is not disablet if yes set number to the next handler
+		if (scope_Handles[handleNumber].hasAttribute('disabled')) {
+			handleNumber = handleNumber ? 0 : 1;
+		}
+
+		location -= offset(scope_Base)[ options.style ];
+
+		// Calculate the new position.
+		to = ( location * 100 ) / baseSize();
+
+		if ( !options.events.snap ) {
+			// Flag the slider as it is now in a transitional state.
+			// Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
+			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+		}
+
+		// Support 'disabled' handles
+		if ( scope_Handles[handleNumber].hasAttribute('disabled') ) {
+			return false;
+		}
+
+		// Find the closest handle and calculate the tapped point.
+		// The set handle to the new position.
+		setHandle( scope_Handles[handleNumber], to );
+
+		fireEvent('slide', handleNumber, true);
+		fireEvent('set', handleNumber, true);
+		fireEvent('change', handleNumber, true);
+
+		if ( options.events.snap ) {
+			start(event, { handles: [scope_Handles[handleNumber]] });
+		}
+	}
+
+	// Fires a 'hover' event for a hovered mouse/pen position.
+	function hover ( event ) {
+
+		var location = event.calcPoint - offset(scope_Base)[ options.style ],
+			to = scope_Spectrum.getStep(( location * 100 ) / baseSize()),
+			value = scope_Spectrum.fromStepping( to );
+
+		Object.keys(scope_Events).forEach(function( targetEvent ) {
+			if ( 'hover' === targetEvent.split('.')[0] ) {
+				scope_Events[targetEvent].forEach(function( callback ) {
+					callback.call( scope_Self, value );
+				});
+			}
+		});
+	}
+
+	// Attach events to several slider parts.
+	function events ( behaviour ) {
+
+		// Attach the standard drag event to the handles.
+		if ( !behaviour.fixed ) {
+
+			scope_Handles.forEach(function( handle, index ){
+
+				// These events are only bound to the visual handle
+				// element, not the 'real' origin element.
+				attach ( actions.start, handle.children[0], start, {
+					handles: [ handle ],
+					handleNumber: index
+				});
+			});
+		}
+
+		// Attach the tap event to the slider base.
+		if ( behaviour.tap ) {
+
+			attach ( actions.start, scope_Base, tap, {
+				handles: scope_Handles
+			});
+		}
+
+		// Fire hover events
+		if ( behaviour.hover ) {
+			attach ( actions.move, scope_Base, hover, { hover: true } );
+		}
+
+		// Make the range draggable.
+		if ( behaviour.drag ){
+
+			var drag = [scope_Base.querySelector( '.' + options.cssClasses.connect )];
+			addClass(drag[0], options.cssClasses.draggable);
+
+			// When the range is fixed, the entire range can
+			// be dragged by the handles. The handle in the first
+			// origin will propagate the start event upward,
+			// but it needs to be bound manually on the other.
+			if ( behaviour.fixed ) {
+				drag.push(scope_Handles[(drag[0] === scope_Handles[0] ? 1 : 0)].children[0]);
+			}
+
+			drag.forEach(function( element ) {
+				attach ( actions.start, element, start, {
+					handles: scope_Handles
+				});
+			});
+		}
+	}
+
+
+	// Test suggested values and apply margin, step.
+	function setHandle ( handle, to, noLimitOption ) {
+
+		var trigger = handle !== scope_Handles[0] ? 1 : 0,
+			lowerMargin = scope_Locations[0] + options.margin,
+			upperMargin = scope_Locations[1] - options.margin,
+			lowerLimit = scope_Locations[0] + options.limit,
+			upperLimit = scope_Locations[1] - options.limit;
+
+		// For sliders with multiple handles,
+		// limit movement to the other handle.
+		// Apply the margin option by adding it to the handle positions.
+		if ( scope_Handles.length > 1 ) {
+			to = trigger ? Math.max( to, lowerMargin ) : Math.min( to, upperMargin );
+		}
+
+		// The limit option has the opposite effect, limiting handles to a
+		// maximum distance from another. Limit must be > 0, as otherwise
+		// handles would be unmoveable. 'noLimitOption' is set to 'false'
+		// for the .val() method, except for pass 4/4.
+		if ( noLimitOption !== false && options.limit && scope_Handles.length > 1 ) {
+			to = trigger ? Math.min ( to, lowerLimit ) : Math.max( to, upperLimit );
+		}
+
+		// Handle the step option.
+		to = scope_Spectrum.getStep( to );
+
+		// Limit percentage to the 0 - 100 range
+		to = limit(to);
+
+		// Return false if handle can't move
+		if ( to === scope_Locations[trigger] ) {
+			return false;
+		}
+
+		// Set the handle to the new position.
+		// Use requestAnimationFrame for efficient painting.
+		// No significant effect in Chrome, Edge sees dramatic
+		// performace improvements.
+		if ( window.requestAnimationFrame ) {
+			window.requestAnimationFrame(function(){
+				handle.style[options.style] = to + '%';
+			});
+		} else {
+			handle.style[options.style] = to + '%';
+		}
+
+		// Force proper handle stacking
+		if ( !handle.previousSibling ) {
+			removeClass(handle, options.cssClasses.stacking);
+			if ( to > 50 ) {
+				addClass(handle, options.cssClasses.stacking);
+			}
+		}
+
+		// Update locations.
+		scope_Locations[trigger] = to;
+
+		// Convert the value to the slider stepping/range.
+		scope_Values[trigger] = scope_Spectrum.fromStepping( to );
+
+		fireEvent('update', trigger);
+
+		return true;
+	}
+
+	// Loop values from value method and apply them.
+	function setValues ( count, values ) {
+
+		var i, trigger, to;
+
+		// With the limit option, we'll need another limiting pass.
+		if ( options.limit ) {
+			count += 1;
+		}
+
+		// If there are multiple handles to be set run the setting
+		// mechanism twice for the first handle, to make sure it
+		// can be bounced of the second one properly.
+		for ( i = 0; i < count; i += 1 ) {
+
+			trigger = i%2;
+
+			// Get the current argument from the array.
+			to = values[trigger];
+
+			// Setting with null indicates an 'ignore'.
+			// Inputting 'false' is invalid.
+			if ( to !== null && to !== false ) {
+
+				// If a formatted number was passed, attemt to decode it.
+				if ( typeof to === 'number' ) {
+					to = String(to);
+				}
+
+				to = options.format.from( to );
+
+				// Request an update for all links if the value was invalid.
+				// Do so too if setting the handle fails.
+				if ( to === false || isNaN(to) || setHandle( scope_Handles[trigger], scope_Spectrum.toStepping( to ), i === (3 - options.dir) ) === false ) {
+					fireEvent('update', trigger);
+				}
+			}
+		}
+	}
+
+	// Set the slider value.
+	function valueSet ( input, fireSetEvent ) {
+
+		var count, values = asArray( input ), i;
+
+		// Event fires by default
+		fireSetEvent = (fireSetEvent === undefined ? true : !!fireSetEvent);
+
+		// The RTL settings is implemented by reversing the front-end,
+		// internal mechanisms are the same.
+		if ( options.dir && options.handles > 1 ) {
+			values.reverse();
+		}
+
+		// Animation is optional.
+		// Make sure the initial values where set before using animated placement.
+		if ( options.animate && scope_Locations[0] !== -1 ) {
+			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+		}
+
+		// Determine how often to set the handles.
+		count = scope_Handles.length > 1 ? 3 : 1;
+
+		if ( values.length === 1 ) {
+			count = 1;
+		}
+
+		setValues ( count, values );
+
+		// Fire the 'set' event for both handles.
+		for ( i = 0; i < scope_Handles.length; i++ ) {
+
+			// Fire the event only for handles that received a new value, as per #579
+			if ( values[i] !== null && fireSetEvent ) {
+				fireEvent('set', i);
+			}
+		}
+	}
+
+	// Get the slider value.
+	function valueGet ( ) {
+
+		var i, retour = [];
+
+		// Get the value from all handles.
+		for ( i = 0; i < options.handles; i += 1 ){
+			retour[i] = options.format.to( scope_Values[i] );
+		}
+
+		return inSliderOrder( retour );
+	}
+
+	// Removes classes from the root and empties it.
+	function destroy ( ) {
+
+		for ( var key in options.cssClasses ) {
+			if ( !options.cssClasses.hasOwnProperty(key) ) { continue; }
+			removeClass(scope_Target, options.cssClasses[key]);
+		}
+
+		while (scope_Target.firstChild) {
+			scope_Target.removeChild(scope_Target.firstChild);
+		}
+
+		delete scope_Target.noUiSlider;
+	}
+
+	// Get the current step size for the slider.
+	function getCurrentStep ( ) {
+
+		// Check all locations, map them to their stepping point.
+		// Get the step point, then find it in the input list.
+		var retour = scope_Locations.map(function( location, index ){
+
+			var step = scope_Spectrum.getApplicableStep( location ),
+
+				// As per #391, the comparison for the decrement step can have some rounding issues.
+				// Round the value to the precision used in the step.
+				stepDecimals = countDecimals(String(step[2])),
+
+				// Get the current numeric value
+				value = scope_Values[index],
+
+				// To move the slider 'one step up', the current step value needs to be added.
+				// Use null if we are at the maximum slider value.
+				increment = location === 100 ? null : step[2],
+
+				// Going 'one step down' might put the slider in a different sub-range, so we
+				// need to switch between the current or the previous step.
+				prev = Number((value - step[2]).toFixed(stepDecimals)),
+
+				// If the value fits the step, return the current step value. Otherwise, use the
+				// previous step. Return null if the slider is at its minimum value.
+				decrement = location === 0 ? null : (prev >= step[1]) ? step[2] : (step[0] || false);
+
+			return [decrement, increment];
+		});
+
+		// Return values in the proper order.
+		return inSliderOrder( retour );
+	}
+
+	// Attach an event to this slider, possibly including a namespace
+	function bindEvent ( namespacedEvent, callback ) {
+		scope_Events[namespacedEvent] = scope_Events[namespacedEvent] || [];
+		scope_Events[namespacedEvent].push(callback);
+
+		// If the event bound is 'update,' fire it immediately for all handles.
+		if ( namespacedEvent.split('.')[0] === 'update' ) {
+			scope_Handles.forEach(function(a, index){
+				fireEvent('update', index);
+			});
+		}
+	}
+
+	// Undo attachment of event
+	function removeEvent ( namespacedEvent ) {
+
+		var event = namespacedEvent && namespacedEvent.split('.')[0],
+			namespace = event && namespacedEvent.substring(event.length);
+
+		Object.keys(scope_Events).forEach(function( bind ){
+
+			var tEvent = bind.split('.')[0],
+				tNamespace = bind.substring(tEvent.length);
+
+			if ( (!event || event === tEvent) && (!namespace || namespace === tNamespace) ) {
+				delete scope_Events[bind];
+			}
+		});
+	}
+
+	// Updateable: margin, limit, step, range, animate, snap
+	function updateOptions ( optionsToUpdate, fireSetEvent ) {
+
+		// Spectrum is created using the range, snap, direction and step options.
+		// 'snap' and 'step' can be updated, 'direction' cannot, due to event binding.
+		// If 'snap' and 'step' are not passed, they should remain unchanged.
+		var v = valueGet(), newOptions = testOptions({
+			start: [0, 0],
+			margin: optionsToUpdate.margin,
+			limit: optionsToUpdate.limit,
+			step: optionsToUpdate.step === undefined ? options.singleStep : optionsToUpdate.step,
+			range: optionsToUpdate.range,
+			animate: optionsToUpdate.animate,
+			snap: optionsToUpdate.snap === undefined ? options.snap : optionsToUpdate.snap
+		});
+
+		['margin', 'limit', 'range', 'animate'].forEach(function(name){
+
+			// Only change options that we're actually passed to update.
+			if ( optionsToUpdate[name] !== undefined ) {
+				options[name] = optionsToUpdate[name];
+			}
+		});
+
+		// Save current spectrum direction as testOptions in testRange call
+		// doesn't rely on current direction
+		newOptions.spectrum.direction = scope_Spectrum.direction;
+		scope_Spectrum = newOptions.spectrum;
+
+		// Invalidate the current positioning so valueSet forces an update.
+		scope_Locations = [-1, -1];
+		valueSet(optionsToUpdate.start || v, fireSetEvent);
+	}
+
+
+	// Throw an error if the slider was already initialized.
+	if ( scope_Target.noUiSlider ) {
+		throw new Error('Slider was already initialized.');
+	}
+
+	// Create the base element, initialise HTML and set classes.
+	// Add handles and links.
+	scope_Base = addSlider( options.dir, options.ort, scope_Target );
+	scope_Handles = addHandles( options.handles, options.dir, scope_Base );
+
+	// Set the connect classes.
+	addConnection ( options.connect, scope_Target, scope_Handles );
+
+	if ( options.pips ) {
+		pips(options.pips);
+	}
+
+	if ( options.tooltips ) {
+		tooltips();
+	}
+
+	scope_Self = {
+		destroy: destroy,
+		steps: getCurrentStep,
+		on: bindEvent,
+		off: removeEvent,
+		get: valueGet,
+		set: valueSet,
+		updateOptions: updateOptions,
+		options: originalOptions, // Issue #600
+		target: scope_Target, // Issue #597
+		pips: pips // Issue #594
+	};
+
+	// Attach user events.
+	events( options.events );
+
+	return scope_Self;
+
+}
+
+
+	// Run the standard initializer
+	function initialize ( target, originalOptions ) {
+
+		if ( !target.nodeName ) {
+			throw new Error('noUiSlider.create requires a single element.');
+		}
+
+		// Test the options and create the slider environment;
+		var options = testOptions( originalOptions, target ),
+			slider = closure( target, options, originalOptions );
+
+		// Use the public value method to set the start values.
+		slider.set(options.start);
+
+		target.noUiSlider = slider;
+		return slider;
+	}
+
+	// Use an object instead of a function for future expansibility;
+	return {
+		create: initialize
+	};
+
+}));
+},{}],444:[function(require,module,exports){
 /*! 
  * numeral.js language configuration
  * language : russian (ru)
@@ -27703,7 +29682,7 @@ module.exports = property;
     }
 }());
 
-},{}],444:[function(require,module,exports){
+},{}],445:[function(require,module,exports){
 /*!
  * numeral.js
  * version : 1.5.3
@@ -28384,7 +30363,7 @@ module.exports = property;
     }
 }).call(this);
 
-},{}],445:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 'use strict';
 
 function oldAdd(element, className) {
@@ -28428,7 +30407,7 @@ exports.list = function (element) {
   }
 };
 
-},{}],446:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 'use strict';
 
 var DOM = {};
@@ -28514,7 +30493,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-},{}],447:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 'use strict';
 
 var EventElement = function (element) {
@@ -28587,7 +30566,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-},{}],448:[function(require,module,exports){
+},{}],449:[function(require,module,exports){
 'use strict';
 
 module.exports = (function () {
@@ -28602,7 +30581,7 @@ module.exports = (function () {
   };
 })();
 
-},{}],449:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 'use strict';
 
 var cls = require('./class');
@@ -28687,7 +30666,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-},{"./class":445,"./dom":446}],450:[function(require,module,exports){
+},{"./class":446,"./dom":447}],451:[function(require,module,exports){
 'use strict';
 
 var destroy = require('./plugin/destroy');
@@ -28700,7 +30679,7 @@ module.exports = {
   destroy: destroy
 };
 
-},{"./plugin/destroy":452,"./plugin/initialize":460,"./plugin/update":464}],451:[function(require,module,exports){
+},{"./plugin/destroy":453,"./plugin/initialize":461,"./plugin/update":465}],452:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -28719,7 +30698,7 @@ module.exports = {
   theme: 'default'
 };
 
-},{}],452:[function(require,module,exports){
+},{}],453:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -28743,7 +30722,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-},{"../lib/dom":446,"../lib/helper":449,"./instances":461}],453:[function(require,module,exports){
+},{"../lib/dom":447,"../lib/helper":450,"./instances":462}],454:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -28805,7 +30784,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-},{"../../lib/helper":449,"../instances":461,"../update-geometry":462,"../update-scroll":463}],454:[function(require,module,exports){
+},{"../../lib/helper":450,"../instances":462,"../update-geometry":463,"../update-scroll":464}],455:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -28910,7 +30889,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-},{"../../lib/dom":446,"../../lib/helper":449,"../instances":461,"../update-geometry":462,"../update-scroll":463}],455:[function(require,module,exports){
+},{"../../lib/dom":447,"../../lib/helper":450,"../instances":462,"../update-geometry":463,"../update-scroll":464}],456:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29042,7 +31021,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-},{"../../lib/dom":446,"../../lib/helper":449,"../instances":461,"../update-geometry":462,"../update-scroll":463}],456:[function(require,module,exports){
+},{"../../lib/dom":447,"../../lib/helper":450,"../instances":462,"../update-geometry":463,"../update-scroll":464}],457:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -29180,7 +31159,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-},{"../instances":461,"../update-geometry":462,"../update-scroll":463}],457:[function(require,module,exports){
+},{"../instances":462,"../update-geometry":463,"../update-scroll":464}],458:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -29197,7 +31176,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-},{"../instances":461,"../update-geometry":462}],458:[function(require,module,exports){
+},{"../instances":462,"../update-geometry":463}],459:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29308,7 +31287,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-},{"../../lib/helper":449,"../instances":461,"../update-geometry":462,"../update-scroll":463}],459:[function(require,module,exports){
+},{"../../lib/helper":450,"../instances":462,"../update-geometry":463,"../update-scroll":464}],460:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -29486,7 +31465,7 @@ module.exports = function (element) {
   bindTouchHandler(element, i, _.env.supportsTouch, _.env.supportsIePointer);
 };
 
-},{"../../lib/helper":449,"../instances":461,"../update-geometry":462,"../update-scroll":463}],460:[function(require,module,exports){
+},{"../../lib/helper":450,"../instances":462,"../update-geometry":463,"../update-scroll":464}],461:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -29525,7 +31504,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-},{"../lib/class":445,"../lib/helper":449,"./handler/click-rail":453,"./handler/drag-scrollbar":454,"./handler/keyboard":455,"./handler/mouse-wheel":456,"./handler/native-scroll":457,"./handler/selection":458,"./handler/touch":459,"./instances":461,"./update-geometry":462}],461:[function(require,module,exports){
+},{"../lib/class":446,"../lib/helper":450,"./handler/click-rail":454,"./handler/drag-scrollbar":455,"./handler/keyboard":456,"./handler/mouse-wheel":457,"./handler/native-scroll":458,"./handler/selection":459,"./handler/touch":460,"./instances":462,"./update-geometry":463}],462:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -29634,7 +31613,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-},{"../lib/class":445,"../lib/dom":446,"../lib/event-manager":447,"../lib/guid":448,"../lib/helper":449,"./default-setting":451}],462:[function(require,module,exports){
+},{"../lib/class":446,"../lib/dom":447,"../lib/event-manager":448,"../lib/guid":449,"../lib/helper":450,"./default-setting":452}],463:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -29762,7 +31741,7 @@ module.exports = function (element) {
   }
 };
 
-},{"../lib/class":445,"../lib/dom":446,"../lib/helper":449,"./instances":461,"./update-scroll":463}],463:[function(require,module,exports){
+},{"../lib/class":446,"../lib/dom":447,"../lib/helper":450,"./instances":462,"./update-scroll":464}],464:[function(require,module,exports){
 'use strict';
 
 var instances = require('./instances');
@@ -29876,7 +31855,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-},{"./instances":461}],464:[function(require,module,exports){
+},{"./instances":462}],465:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -29915,7 +31894,43 @@ module.exports = function (element) {
   dom.css(i.scrollbarYRail, 'display', '');
 };
 
-},{"../lib/dom":446,"../lib/helper":449,"./instances":461,"./update-geometry":462,"./update-scroll":463}],465:[function(require,module,exports){
+},{"../lib/dom":447,"../lib/helper":450,"./instances":462,"./update-geometry":463,"./update-scroll":464}],466:[function(require,module,exports){
+(function (process){
+// Generated by CoffeeScript 1.7.1
+(function() {
+  var getNanoSeconds, hrtime, loadTime;
+
+  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
+    module.exports = function() {
+      return performance.now();
+    };
+  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
+    module.exports = function() {
+      return (getNanoSeconds() - loadTime) / 1e6;
+    };
+    hrtime = process.hrtime;
+    getNanoSeconds = function() {
+      var hr;
+      hr = hrtime();
+      return hr[0] * 1e9 + hr[1];
+    };
+    loadTime = getNanoSeconds();
+  } else if (Date.now) {
+    module.exports = function() {
+      return Date.now() - loadTime;
+    };
+    loadTime = Date.now();
+  } else {
+    module.exports = function() {
+      return new Date().getTime() - loadTime;
+    };
+    loadTime = new Date().getTime();
+  }
+
+}).call(this);
+
+}).call(this,require('_process'))
+},{"_process":467}],467:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -30097,7 +32112,85 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],466:[function(require,module,exports){
+},{}],468:[function(require,module,exports){
+(function (global){
+var now = require('performance-now')
+  , root = typeof window === 'undefined' ? global : window
+  , vendors = ['moz', 'webkit']
+  , suffix = 'AnimationFrame'
+  , raf = root['request' + suffix]
+  , caf = root['cancel' + suffix] || root['cancelRequest' + suffix]
+
+for(var i = 0; !raf && i < vendors.length; i++) {
+  raf = root[vendors[i] + 'Request' + suffix]
+  caf = root[vendors[i] + 'Cancel' + suffix]
+      || root[vendors[i] + 'CancelRequest' + suffix]
+}
+
+// Some versions of FF have rAF but not cAF
+if(!raf || !caf) {
+  var last = 0
+    , id = 0
+    , queue = []
+    , frameDuration = 1000 / 60
+
+  raf = function(callback) {
+    if(queue.length === 0) {
+      var _now = now()
+        , next = Math.max(0, frameDuration - (_now - last))
+      last = next + _now
+      setTimeout(function() {
+        var cp = queue.slice(0)
+        // Clear queue here to prevent
+        // callbacks from appending listeners
+        // to the current frame's queue
+        queue.length = 0
+        for(var i = 0; i < cp.length; i++) {
+          if(!cp[i].cancelled) {
+            try{
+              cp[i].callback(last)
+            } catch(e) {
+              setTimeout(function() { throw e }, 0)
+            }
+          }
+        }
+      }, Math.round(next))
+    }
+    queue.push({
+      handle: ++id,
+      callback: callback,
+      cancelled: false
+    })
+    return id
+  }
+
+  caf = function(handle) {
+    for(var i = 0; i < queue.length; i++) {
+      if(queue[i].handle === handle) {
+        queue[i].cancelled = true
+      }
+    }
+  }
+}
+
+module.exports = function(fn) {
+  // Wrap in a new function to prevent
+  // `cancel` potentially being assigned
+  // to the native rAF function
+  return raf.call(root, fn)
+}
+module.exports.cancel = function() {
+  caf.apply(root, arguments)
+}
+module.exports.polyfill = function() {
+  root.requestAnimationFrame = raf
+  root.cancelAnimationFrame = caf
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"performance-now":466}],469:[function(require,module,exports){
+module.exports = require('react/lib/shallowCompare');
+},{"react/lib/shallowCompare":612}],470:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -30287,16 +32380,16 @@ module.exports = _react2['default'].createClass({
     }
   }
 });
-},{"react":"react"}],467:[function(require,module,exports){
+},{"react":"react"}],471:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":466}],468:[function(require,module,exports){
+},{"./components/DisqusThread":470}],472:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOMServer');
 
-},{"react/lib/ReactDOMServer":525}],469:[function(require,module,exports){
+},{"react/lib/ReactDOMServer":531}],473:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -30436,7 +32529,7 @@ Nouislider.propTypes = {
 
 module.exports = Nouislider;
 
-},{"nouislider":"noUiSlider","react":"react"}],470:[function(require,module,exports){
+},{"nouislider":443,"react":"react"}],474:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30517,7 +32610,7 @@ Provider.childContextTypes = {
   store: _storeShape2["default"].isRequired
 };
 }).call(this,require('_process'))
-},{"../utils/storeShape":474,"../utils/warning":475,"_process":465,"react":"react"}],471:[function(require,module,exports){
+},{"../utils/storeShape":478,"../utils/warning":479,"_process":467,"react":"react"}],475:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30913,7 +33006,7 @@ function connect(mapStateToProps, mapDispatchToProps, mergeProps) {
   };
 }
 }).call(this,require('_process'))
-},{"../utils/shallowEqual":473,"../utils/storeShape":474,"../utils/warning":475,"../utils/wrapActionCreators":476,"_process":465,"hoist-non-react-statics":340,"invariant":357,"lodash/isPlainObject":480,"react":"react"}],472:[function(require,module,exports){
+},{"../utils/shallowEqual":477,"../utils/storeShape":478,"../utils/warning":479,"../utils/wrapActionCreators":480,"_process":467,"hoist-non-react-statics":340,"invariant":357,"lodash/isPlainObject":484,"react":"react"}],476:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -30931,7 +33024,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 exports.Provider = _Provider2["default"];
 exports.connect = _connect2["default"];
-},{"./components/Provider":470,"./components/connect":471}],473:[function(require,module,exports){
+},{"./components/Provider":474,"./components/connect":475}],477:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30958,7 +33051,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-},{}],474:[function(require,module,exports){
+},{}],478:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -30970,7 +33063,7 @@ exports["default"] = _react.PropTypes.shape({
   dispatch: _react.PropTypes.func.isRequired,
   getState: _react.PropTypes.func.isRequired
 });
-},{"react":"react"}],475:[function(require,module,exports){
+},{"react":"react"}],479:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -30995,7 +33088,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],476:[function(require,module,exports){
+},{}],480:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -31008,7 +33101,7 @@ function wrapActionCreators(actionCreators) {
     return (0, _redux.bindActionCreators)(actionCreators, dispatch);
   };
 }
-},{"redux":"redux"}],477:[function(require,module,exports){
+},{"redux":"redux"}],481:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -31016,7 +33109,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-},{"./_overArg":478}],478:[function(require,module,exports){
+},{"./_overArg":482}],482:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -31033,7 +33126,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],479:[function(require,module,exports){
+},{}],483:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -31064,7 +33157,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],480:[function(require,module,exports){
+},{}],484:[function(require,module,exports){
 var getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
 
@@ -31134,7 +33227,498 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-},{"./_getPrototype":477,"./isObjectLike":479}],481:[function(require,module,exports){
+},{"./_getPrototype":481,"./isObjectLike":483}],485:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+/* global window, document */
+
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _subscribeUiEvent = require('subscribe-ui-event');
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reactAddonsShallowCompare = require('react-addons-shallow-compare');
+
+var _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare);
+
+// constants
+var STATUS_ORIGINAL = 0; // The default status, locating at the original position.
+var STATUS_RELEASED = 1; // The released status, locating at somewhere on document but not default one.
+var STATUS_FIXED = 2; // The sticky status, locating fixed to the top or the bottom of screen.
+
+var TRANSFORM_PROP = 'transform';
+
+// global variable for all instances
+var doc;
+var docBody;
+var docEl;
+var canEnableTransforms = true; // Use transform by default, so no Sticky on lower-end browser when no Modernizr
+var M;
+var scrollDelta = 0;
+var win;
+var winHeight = -1;
+
+var Sticky = (function (_Component) {
+    _inherits(Sticky, _Component);
+
+    function Sticky(props, context) {
+        _classCallCheck(this, Sticky);
+
+        _get(Object.getPrototypeOf(Sticky.prototype), 'constructor', this).call(this, props, context);
+        this.handleResize = this.handleResize.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.handleScrollStart = this.handleScrollStart.bind(this);
+        this.delta = 0;
+        this.stickyTop = 0;
+        this.stickyBottom = 0;
+        this.frozen = false;
+        this.skipNextScrollEvent = false;
+        this.scrollTop = -1;
+
+        this.bottomBoundaryTarget;
+        this.topTarget;
+        this.subscribers;
+
+        this.state = {
+            top: 0, // A top offset from viewport top where Sticky sticks to when scrolling up
+            bottom: 0, // A bottom offset from viewport top where Sticky sticks to when scrolling down
+            width: 0, // Sticky width
+            height: 0, // Sticky height
+            x: 0, // The original x of Sticky
+            y: 0, // The original y of Sticky
+            topBoundary: 0, // The top boundary on document
+            bottomBoundary: Infinity, // The bottom boundary on document
+            status: STATUS_ORIGINAL, // The Sticky status
+            pos: 0, // Real y-axis offset for rendering position-fixed and position-relative
+            activated: false // once browser info is available after mounted, it becomes true to avoid checksum error
+        };
+    }
+
+    _createClass(Sticky, [{
+        key: 'getTargetHeight',
+        value: function getTargetHeight(target) {
+            return target && target.offsetHeight || 0;
+        }
+    }, {
+        key: 'getTopPosition',
+        value: function getTopPosition(top) {
+            // TODO, topTarget is for current layout, may remove
+            // a top argument can be provided to override reading from the props
+            top = top || this.props.top || this.props.topTarget || 0;
+            if (typeof top === 'string') {
+                if (!this.topTarget) {
+                    this.topTarget = doc.querySelector(top);
+                }
+                top = this.getTargetHeight(this.topTarget);
+            }
+            return top;
+        }
+    }, {
+        key: 'getTargetBottom',
+        value: function getTargetBottom(target) {
+            if (!target) {
+                return -1;
+            }
+            var rect = target.getBoundingClientRect();
+            return this.scrollTop + rect.bottom;
+        }
+    }, {
+        key: 'getBottomBoundary',
+        value: function getBottomBoundary(bottomBoundary) {
+            // a bottomBoundary can be provided to avoid reading from the props
+            var boundary = bottomBoundary || this.props.bottomBoundary;
+
+            // TODO, bottomBoundary was an object, depricate it later.
+            if (typeof boundary === 'object') {
+                boundary = boundary.value || boundary.target || 0;
+            }
+
+            if (typeof boundary === 'string') {
+                if (!this.bottomBoundaryTarget) {
+                    this.bottomBoundaryTarget = doc.querySelector(boundary);
+                }
+                boundary = this.getTargetBottom(this.bottomBoundaryTarget);
+            }
+            return boundary && boundary > 0 ? boundary : Infinity;
+        }
+    }, {
+        key: 'reset',
+        value: function reset() {
+            this.setState({
+                status: STATUS_ORIGINAL,
+                pos: 0
+            });
+        }
+    }, {
+        key: 'release',
+        value: function release(pos) {
+            this.setState({
+                status: STATUS_RELEASED,
+                pos: pos - this.state.y
+            });
+        }
+    }, {
+        key: 'fix',
+        value: function fix(pos) {
+            this.setState({
+                status: STATUS_FIXED,
+                pos: pos
+            });
+        }
+
+        /**
+         * Update the initial position, width, and height. It should update whenever children change.
+         * @param {Object} options optional top and bottomBoundary new values
+         */
+    }, {
+        key: 'updateInitialDimension',
+        value: function updateInitialDimension(options) {
+            options = options || {};
+
+            var _refs = this.refs;
+            var outer = _refs.outer;
+            var inner = _refs.inner;
+
+            var outerRect = outer.getBoundingClientRect();
+            var innerRect = inner.getBoundingClientRect();
+
+            var width = outerRect.width || outerRect.right - outerRect.left;
+            var height = innerRect.height || innerRect.bottom - innerRect.top;;
+            var outerY = outerRect.top + this.scrollTop;
+
+            this.setState({
+                top: this.getTopPosition(options.top),
+                bottom: Math.min(this.state.top + height, winHeight),
+                width: width,
+                height: height,
+                x: outerRect.left,
+                y: outerY,
+                bottomBoundary: this.getBottomBoundary(options.bottomBoundary),
+                topBoundary: outerY
+            });
+        }
+    }, {
+        key: 'handleResize',
+        value: function handleResize(e, ae) {
+            if (this.props.shouldFreeze()) {
+                return;
+            }
+
+            winHeight = ae.resize.height;
+            this.updateInitialDimension();
+            this.update();
+        }
+    }, {
+        key: 'handleScrollStart',
+        value: function handleScrollStart(e, ae) {
+            this.frozen = this.props.shouldFreeze();
+
+            if (this.frozen) {
+                return;
+            }
+
+            if (this.scrollTop === ae.scroll.top) {
+                // Scroll position hasn't changed,
+                // do nothing
+                this.skipNextScrollEvent = true;
+            } else {
+                this.scrollTop = ae.scroll.top;
+                this.updateInitialDimension();
+            }
+        }
+    }, {
+        key: 'handleScroll',
+        value: function handleScroll(e, ae) {
+            // Scroll doesn't need to be handled
+            if (this.skipNextScrollEvent) {
+                this.skipNextScrollEvent = false;
+                return;
+            }
+
+            scrollDelta = ae.scroll.delta;
+            this.scrollTop = ae.scroll.top;
+            this.update();
+        }
+
+        /**
+         * Update Sticky position.
+         */
+    }, {
+        key: 'update',
+        value: function update() {
+            var disabled = !this.props.enabled || this.state.bottomBoundary - this.state.topBoundary <= this.state.height || this.state.width === 0 && this.state.height === 0;
+
+            if (disabled) {
+                if (this.state.status !== STATUS_ORIGINAL) {
+                    this.reset();
+                }
+                return;
+            }
+
+            var delta = scrollDelta;
+            // "top" and "bottom" are the positions that this.state.top and this.state.bottom project
+            // on document from viewport.
+            var top = this.scrollTop + this.state.top;
+            var bottom = this.scrollTop + this.state.bottom;
+
+            // There are 2 principles to make sure Sticky won't get wrong so much:
+            // 1. Reset Sticky to the original postion when "top" <= topBoundary
+            // 2. Release Sticky to the bottom boundary when "bottom" >= bottomBoundary
+            if (top <= this.state.topBoundary) {
+                // #1
+                this.reset();
+            } else if (bottom >= this.state.bottomBoundary) {
+                // #2
+                this.stickyBottom = this.state.bottomBoundary;
+                this.stickyTop = this.stickyBottom - this.state.height;
+                this.release(this.stickyTop);
+            } else {
+                if (this.state.height > winHeight - this.state.top) {
+                    // In this case, Sticky is higher then viewport minus top offset
+                    switch (this.state.status) {
+                        case STATUS_ORIGINAL:
+                            this.release(this.state.y);
+                            this.stickyTop = this.state.y;
+                            this.stickyBottom = this.stickyTop + this.state.height;
+                        // Commentting out "break" is on purpose, because there is a chance to transit to FIXED
+                        // from ORIGINAL when calling window.scrollTo().
+                        // break;
+                        case STATUS_RELEASED:
+                            // If "top" and "bottom" are inbetween stickyTop and stickyBottom, then Sticky is in
+                            // RELEASE status. Otherwise, it changes to FIXED status, and its bottom sticks to
+                            // viewport bottom when scrolling down, or its top sticks to viewport top when scrolling up.
+                            this.stickyBottom = this.stickyTop + this.state.height;
+                            if (delta > 0 && bottom > this.stickyBottom) {
+                                this.fix(this.state.bottom - this.state.height);
+                            } else if (delta < 0 && top < this.stickyTop) {
+                                this.fix(this.state.top);
+                            }
+                            break;
+                        case STATUS_FIXED:
+                            var toRelease = true;
+                            var pos = this.state.pos;
+                            var height = this.state.height;
+                            // In regular cases, when Sticky is in FIXED status,
+                            // 1. it's top will stick to the screen top,
+                            // 2. it's bottom will stick to the screen bottom,
+                            // 3. if not the cases above, then it's height gets changed
+                            if (delta > 0 && pos === this.state.top) {
+                                // case 1, and scrolling down
+                                this.stickyTop = top - delta;
+                                this.stickyBottom = this.stickyTop + height;
+                            } else if (delta < 0 && pos === this.state.bottom - height) {
+                                // case 2, and scrolling up
+                                this.stickyBottom = bottom - delta;
+                                this.stickyTop = this.stickyBottom - height;
+                            } else if (pos !== this.state.bottom - height && pos !== this.state.top) {
+                                // case 3
+                                // This case only happens when Sticky's bottom sticks to the screen bottom and
+                                // its height gets changed. Sticky should be in RELEASE status and update its
+                                // sticky bottom by calculating how much height it changed.
+                                var deltaHeight = pos + height - this.state.bottom;
+                                this.stickyBottom = bottom - delta + deltaHeight;
+                                this.stickyTop = this.stickyBottom - height;
+                            } else {
+                                toRelease = false;
+                            }
+
+                            if (toRelease) {
+                                this.release(this.stickyTop);
+                            }
+                            break;
+                    }
+                } else {
+                    // In this case, Sticky is shorter then viewport minus top offset
+                    // and will always fix to the top offset of viewport
+                    this.fix(this.state.top);
+                }
+            }
+            this.delta = delta;
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            this.updateInitialDimension(nextProps);
+            this.update();
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            var _this = this;
+
+            if (prevState.status !== this.state.status && this.props.onStateChange) {
+                this.props.onStateChange({ status: this.state.status });
+            }
+            // if the props for enabling are toggled, then trigger the update or reset depending on the current props
+            if (prevProps.enabled !== this.props.enabled) {
+                if (this.props.enabled) {
+                    this.setState({ activated: true }, function () {
+                        _this.updateInitialDimension();
+                        _this.update();
+                    });
+                } else {
+                    this.setState({ activated: false }, function () {
+                        _this.reset();
+                    });
+                }
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            var subscribers = this.subscribers || [];
+            for (var i = subscribers.length - 1; i >= 0; i--) {
+                this.subscribers[i].unsubscribe();
+            }
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // Only initialize the globals if this is the first
+            // time this component type has been mounted
+            if (!win) {
+                win = window;
+                doc = document;
+                docEl = doc.documentElement;
+                docBody = doc.body;
+                winHeight = win.innerHeight || docEl.clientHeight;
+                M = window.Modernizr;
+                // No Sticky on lower-end browser when no Modernizr
+                if (M) {
+                    canEnableTransforms = M.csstransforms3d;
+                    TRANSFORM_PROP = M.prefixed('transform');
+                }
+            }
+
+            // when mount, the scrollTop is not necessary on the top
+            this.scrollTop = docBody.scrollTop + docEl.scrollTop;
+
+            if (this.props.enabled) {
+                this.setState({ activated: true });
+                this.updateInitialDimension();
+                this.update();
+            }
+            // bind the listeners regardless if initially enabled - allows the component to toggle sticky functionality
+            this.subscribers = [(0, _subscribeUiEvent.subscribe)('scrollStart', this.handleScrollStart.bind(this), { useRAF: true }), (0, _subscribeUiEvent.subscribe)('scroll', this.handleScroll.bind(this), { useRAF: true, enableScrollInfo: true }), (0, _subscribeUiEvent.subscribe)('resize', this.handleResize.bind(this), { enableResizeInfo: true })];
+        }
+    }, {
+        key: 'translate',
+        value: function translate(style, pos) {
+            var enableTransforms = canEnableTransforms && this.props.enableTransforms;
+            if (enableTransforms && this.state.activated) {
+                style[TRANSFORM_PROP] = 'translate3d(0,' + pos + 'px,0)';
+            } else {
+                style.top = pos + 'px';
+            }
+        }
+    }, {
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate(nextProps, nextState) {
+            return !this.props.shouldFreeze() && (0, _reactAddonsShallowCompare2['default'])(this, nextProps, nextState);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _classNames;
+
+            // TODO, "overflow: auto" prevents collapse, need a good way to get children height
+            var innerStyle = {
+                position: this.state.status === STATUS_FIXED ? 'fixed' : 'relative',
+                top: this.state.status === STATUS_FIXED ? '0px' : '',
+                zIndex: this.props.innerZ
+            };
+            var outerStyle = {};
+
+            // always use translate3d to enhance the performance
+            this.translate(innerStyle, this.state.pos);
+            if (this.state.status !== STATUS_ORIGINAL) {
+                innerStyle.width = this.state.width + 'px';
+                outerStyle.height = this.state.height + 'px';
+            }
+
+            var outerClasses = (0, _classnames2['default'])('sticky-outer-wrapper', this.props.className, (_classNames = {}, _defineProperty(_classNames, this.props.activeClass, this.state.status === STATUS_FIXED), _defineProperty(_classNames, this.props.releasedClass, this.state.status === STATUS_RELEASED), _classNames));
+
+            return _react2['default'].createElement(
+                'div',
+                { ref: 'outer', className: outerClasses, style: outerStyle },
+                _react2['default'].createElement(
+                    'div',
+                    { ref: 'inner', className: 'sticky-inner-wrapper', style: innerStyle },
+                    this.props.children
+                )
+            );
+        }
+    }]);
+
+    return Sticky;
+})(_react.Component);
+
+Sticky.displayName = 'Sticky';
+
+Sticky.defaultProps = {
+    shouldFreeze: function shouldFreeze() {
+        return false;
+    },
+    enabled: true,
+    top: 0,
+    bottomBoundary: 0,
+    enableTransforms: true,
+    activeClass: 'active',
+    releasedClass: 'released',
+    onStateChange: null
+};
+
+/**
+ * @param {Bool} enabled A switch to enable or disable Sticky.
+ * @param {String/Number} top A top offset px for Sticky. Could be a selector representing a node
+ *        whose height should serve as the top offset.
+ * @param {String/Number} bottomBoundary A bottom boundary px on document where Sticky will stop.
+ *        Could be a selector representing a node whose bottom should serve as the bottom boudary.
+ */
+Sticky.propTypes = {
+    enabled: _react.PropTypes.bool,
+    top: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
+    bottomBoundary: _react.PropTypes.oneOfType([_react.PropTypes.object, // TODO, may remove
+    _react.PropTypes.string, _react.PropTypes.number]),
+    enableTransforms: _react.PropTypes.bool,
+    activeClass: _react.PropTypes.string,
+    releasedClass: _react.PropTypes.string,
+    onStateChange: _react.PropTypes.func,
+    shouldFreeze: _react.PropTypes.func,
+    innerZ: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number])
+};
+
+Sticky.STATUS_ORIGINAL = STATUS_ORIGINAL;
+Sticky.STATUS_RELEASED = STATUS_RELEASED;
+Sticky.STATUS_FIXED = STATUS_FIXED;
+
+module.exports = Sticky;
+
+},{"classnames":"classnames","react":"react","react-addons-shallow-compare":469,"subscribe-ui-event":662}],486:[function(require,module,exports){
+module.exports = require('./dist/Sticky');
+
+},{"./dist/Sticky":485}],487:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31171,7 +33755,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactMount":545,"./findDOMNode":588,"fbjs/lib/focusNode":618}],482:[function(require,module,exports){
+},{"./ReactMount":551,"./findDOMNode":594,"fbjs/lib/focusNode":625}],488:[function(require,module,exports){
 /**
  * Copyright 2013-2015 Facebook, Inc.
  * All rights reserved.
@@ -31577,7 +34161,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventConstants":494,"./EventPropagators":498,"./FallbackCompositionState":499,"./SyntheticCompositionEvent":570,"./SyntheticInputEvent":574,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/keyOf":628}],483:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPropagators":504,"./FallbackCompositionState":505,"./SyntheticCompositionEvent":576,"./SyntheticInputEvent":580,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/keyOf":635}],489:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -31717,7 +34301,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],484:[function(require,module,exports){
+},{}],490:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31895,7 +34479,7 @@ ReactPerf.measureMethods(CSSPropertyOperations, 'CSSPropertyOperations', {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":483,"./ReactPerf":551,"./dangerousStyleValue":585,"_process":465,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/camelizeStyleName":612,"fbjs/lib/hyphenateStyleName":623,"fbjs/lib/memoizeStringOnly":630,"fbjs/lib/warning":635}],485:[function(require,module,exports){
+},{"./CSSProperty":489,"./ReactPerf":557,"./dangerousStyleValue":591,"_process":467,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/camelizeStyleName":619,"fbjs/lib/hyphenateStyleName":630,"fbjs/lib/memoizeStringOnly":637,"fbjs/lib/warning":642}],491:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -31991,7 +34575,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./PooledClass":503,"_process":465,"fbjs/lib/invariant":624}],486:[function(require,module,exports){
+},{"./Object.assign":508,"./PooledClass":509,"_process":467,"fbjs/lib/invariant":631}],492:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32313,7 +34897,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventConstants":494,"./EventPluginHub":495,"./EventPropagators":498,"./ReactUpdates":563,"./SyntheticEvent":572,"./getEventTarget":594,"./isEventSupported":599,"./isTextInputElement":600,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/keyOf":628}],487:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPluginHub":501,"./EventPropagators":504,"./ReactUpdates":569,"./SyntheticEvent":578,"./getEventTarget":600,"./isEventSupported":605,"./isTextInputElement":606,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/keyOf":635}],493:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -32337,7 +34921,7 @@ var ClientReactRootIndex = {
 };
 
 module.exports = ClientReactRootIndex;
-},{}],488:[function(require,module,exports){
+},{}],494:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32469,7 +35053,7 @@ ReactPerf.measureMethods(DOMChildrenOperations, 'DOMChildrenOperations', {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./Danger":491,"./ReactMultiChildUpdateTypes":547,"./ReactPerf":551,"./setInnerHTML":604,"./setTextContent":605,"_process":465,"fbjs/lib/invariant":624}],489:[function(require,module,exports){
+},{"./Danger":497,"./ReactMultiChildUpdateTypes":553,"./ReactPerf":557,"./setInnerHTML":610,"./setTextContent":611,"_process":467,"fbjs/lib/invariant":631}],495:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32706,7 +35290,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],490:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],496:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32934,7 +35518,7 @@ ReactPerf.measureMethods(DOMPropertyOperations, 'DOMPropertyOperations', {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":489,"./ReactPerf":551,"./quoteAttributeValueForBrowser":602,"_process":465,"fbjs/lib/warning":635}],491:[function(require,module,exports){
+},{"./DOMProperty":495,"./ReactPerf":557,"./quoteAttributeValueForBrowser":608,"_process":467,"fbjs/lib/warning":642}],497:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33082,7 +35666,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/createNodesFromMarkup":615,"fbjs/lib/emptyFunction":616,"fbjs/lib/getMarkupWrap":620,"fbjs/lib/invariant":624}],492:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/createNodesFromMarkup":622,"fbjs/lib/emptyFunction":623,"fbjs/lib/getMarkupWrap":627,"fbjs/lib/invariant":631}],498:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33110,7 +35694,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-},{"fbjs/lib/keyOf":628}],493:[function(require,module,exports){
+},{"fbjs/lib/keyOf":635}],499:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33235,7 +35819,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventConstants":494,"./EventPropagators":498,"./ReactMount":545,"./SyntheticMouseEvent":576,"fbjs/lib/keyOf":628}],494:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPropagators":504,"./ReactMount":551,"./SyntheticMouseEvent":582,"fbjs/lib/keyOf":635}],500:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -33328,7 +35912,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-},{"fbjs/lib/keyMirror":627}],495:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":634}],501:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33610,7 +36194,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":496,"./EventPluginUtils":497,"./ReactErrorUtils":536,"./accumulateInto":582,"./forEachAccumulated":590,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],496:[function(require,module,exports){
+},{"./EventPluginRegistry":502,"./EventPluginUtils":503,"./ReactErrorUtils":542,"./accumulateInto":588,"./forEachAccumulated":596,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],502:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -33833,7 +36417,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],497:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],503:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34038,7 +36622,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./EventConstants":494,"./ReactErrorUtils":536,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],498:[function(require,module,exports){
+},{"./EventConstants":500,"./ReactErrorUtils":542,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],504:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34176,7 +36760,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventConstants":494,"./EventPluginHub":495,"./accumulateInto":582,"./forEachAccumulated":590,"_process":465,"fbjs/lib/warning":635}],499:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPluginHub":501,"./accumulateInto":588,"./forEachAccumulated":596,"_process":467,"fbjs/lib/warning":642}],505:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -34272,7 +36856,7 @@ assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./Object.assign":502,"./PooledClass":503,"./getTextContentAccessor":597}],500:[function(require,module,exports){
+},{"./Object.assign":508,"./PooledClass":509,"./getTextContentAccessor":603}],506:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -34503,7 +37087,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":489,"fbjs/lib/ExecutionEnvironment":610}],501:[function(require,module,exports){
+},{"./DOMProperty":495,"fbjs/lib/ExecutionEnvironment":617}],507:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34640,7 +37224,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocations":553,"./ReactPropTypes":554,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],502:[function(require,module,exports){
+},{"./ReactPropTypeLocations":559,"./ReactPropTypes":560,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],508:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -34688,7 +37272,7 @@ function assign(target, sources) {
 }
 
 module.exports = assign;
-},{}],503:[function(require,module,exports){
+},{}],509:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34810,7 +37394,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],504:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],510:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -34851,7 +37435,7 @@ React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
 React.__SECRET_DOM_SERVER_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOMServer;
 
 module.exports = React;
-},{"./Object.assign":502,"./ReactDOM":515,"./ReactDOMServer":525,"./ReactIsomorphic":543,"./deprecated":586}],505:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactDOM":521,"./ReactDOMServer":531,"./ReactIsomorphic":549,"./deprecated":592}],511:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -34890,7 +37474,7 @@ var ReactBrowserComponentMixin = {
 
 module.exports = ReactBrowserComponentMixin;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":542,"./findDOMNode":588,"_process":465,"fbjs/lib/warning":635}],506:[function(require,module,exports){
+},{"./ReactInstanceMap":548,"./findDOMNode":594,"_process":467,"fbjs/lib/warning":642}],512:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35215,7 +37799,7 @@ ReactPerf.measureMethods(ReactBrowserEventEmitter, 'ReactBrowserEventEmitter', {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventConstants":494,"./EventPluginHub":495,"./EventPluginRegistry":496,"./Object.assign":502,"./ReactEventEmitterMixin":537,"./ReactPerf":551,"./ViewportMetrics":581,"./isEventSupported":599}],507:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPluginHub":501,"./EventPluginRegistry":502,"./Object.assign":508,"./ReactEventEmitterMixin":543,"./ReactPerf":557,"./ViewportMetrics":587,"./isEventSupported":605}],513:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -35340,7 +37924,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./ReactReconciler":556,"./instantiateReactComponent":598,"./shouldUpdateReactComponent":606,"./traverseAllChildren":607,"_process":465,"fbjs/lib/warning":635}],508:[function(require,module,exports){
+},{"./ReactReconciler":562,"./instantiateReactComponent":604,"./shouldUpdateReactComponent":613,"./traverseAllChildren":614,"_process":467,"fbjs/lib/warning":642}],514:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -35523,7 +38107,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":503,"./ReactElement":532,"./traverseAllChildren":607,"fbjs/lib/emptyFunction":616}],509:[function(require,module,exports){
+},{"./PooledClass":509,"./ReactElement":538,"./traverseAllChildren":614,"fbjs/lib/emptyFunction":623}],515:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36297,7 +38881,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactComponent":510,"./ReactElement":532,"./ReactNoopUpdateQueue":549,"./ReactPropTypeLocationNames":552,"./ReactPropTypeLocations":553,"_process":465,"fbjs/lib/emptyObject":617,"fbjs/lib/invariant":624,"fbjs/lib/keyMirror":627,"fbjs/lib/keyOf":628,"fbjs/lib/warning":635}],510:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactComponent":516,"./ReactElement":538,"./ReactNoopUpdateQueue":555,"./ReactPropTypeLocationNames":558,"./ReactPropTypeLocations":559,"_process":467,"fbjs/lib/emptyObject":624,"fbjs/lib/invariant":631,"fbjs/lib/keyMirror":634,"fbjs/lib/keyOf":635,"fbjs/lib/warning":642}],516:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -36422,7 +39006,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":549,"./canDefineProperty":584,"_process":465,"fbjs/lib/emptyObject":617,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],511:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":555,"./canDefineProperty":590,"_process":467,"fbjs/lib/emptyObject":624,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],517:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -36464,7 +39048,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./ReactDOMIDOperations":520,"./ReactMount":545}],512:[function(require,module,exports){
+},{"./ReactDOMIDOperations":526,"./ReactMount":551}],518:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -36518,7 +39102,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],513:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],519:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37215,7 +39799,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactComponentEnvironment":512,"./ReactCurrentOwner":514,"./ReactElement":532,"./ReactInstanceMap":542,"./ReactPerf":551,"./ReactPropTypeLocationNames":552,"./ReactPropTypeLocations":553,"./ReactReconciler":556,"./ReactUpdateQueue":562,"./shouldUpdateReactComponent":606,"_process":465,"fbjs/lib/emptyObject":617,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],514:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactComponentEnvironment":518,"./ReactCurrentOwner":520,"./ReactElement":538,"./ReactInstanceMap":548,"./ReactPerf":557,"./ReactPropTypeLocationNames":558,"./ReactPropTypeLocations":559,"./ReactReconciler":562,"./ReactUpdateQueue":568,"./shouldUpdateReactComponent":613,"_process":467,"fbjs/lib/emptyObject":624,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],520:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37246,7 +39830,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],515:[function(require,module,exports){
+},{}],521:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -37341,7 +39925,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":514,"./ReactDOMTextComponent":526,"./ReactDefaultInjection":529,"./ReactInstanceHandles":541,"./ReactMount":545,"./ReactPerf":551,"./ReactReconciler":556,"./ReactUpdates":563,"./ReactVersion":564,"./findDOMNode":588,"./renderSubtreeIntoContainer":603,"_process":465,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/warning":635}],516:[function(require,module,exports){
+},{"./ReactCurrentOwner":520,"./ReactDOMTextComponent":532,"./ReactDefaultInjection":535,"./ReactInstanceHandles":547,"./ReactMount":551,"./ReactPerf":557,"./ReactReconciler":562,"./ReactUpdates":569,"./ReactVersion":570,"./findDOMNode":594,"./renderSubtreeIntoContainer":609,"_process":467,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/warning":642}],522:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -37392,7 +39976,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-},{}],517:[function(require,module,exports){
+},{}],523:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38357,7 +40941,7 @@ assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mix
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":481,"./CSSPropertyOperations":484,"./DOMProperty":489,"./DOMPropertyOperations":490,"./EventConstants":494,"./Object.assign":502,"./ReactBrowserEventEmitter":506,"./ReactComponentBrowserEnvironment":511,"./ReactDOMButton":516,"./ReactDOMInput":521,"./ReactDOMOption":522,"./ReactDOMSelect":523,"./ReactDOMTextarea":527,"./ReactMount":545,"./ReactMultiChild":546,"./ReactPerf":551,"./ReactUpdateQueue":562,"./canDefineProperty":584,"./escapeTextContentForBrowser":587,"./isEventSupported":599,"./setInnerHTML":604,"./setTextContent":605,"./validateDOMNesting":608,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/keyOf":628,"fbjs/lib/shallowEqual":633,"fbjs/lib/warning":635}],518:[function(require,module,exports){
+},{"./AutoFocusUtils":487,"./CSSPropertyOperations":490,"./DOMProperty":495,"./DOMPropertyOperations":496,"./EventConstants":500,"./Object.assign":508,"./ReactBrowserEventEmitter":512,"./ReactComponentBrowserEnvironment":517,"./ReactDOMButton":522,"./ReactDOMInput":527,"./ReactDOMOption":528,"./ReactDOMSelect":529,"./ReactDOMTextarea":533,"./ReactMount":551,"./ReactMultiChild":552,"./ReactPerf":557,"./ReactUpdateQueue":568,"./canDefineProperty":590,"./escapeTextContentForBrowser":593,"./isEventSupported":605,"./setInnerHTML":610,"./setTextContent":611,"./validateDOMNesting":615,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/keyOf":635,"fbjs/lib/shallowEqual":640,"fbjs/lib/warning":642}],524:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38537,7 +41121,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":532,"./ReactElementValidator":533,"_process":465,"fbjs/lib/mapObject":629}],519:[function(require,module,exports){
+},{"./ReactElement":538,"./ReactElementValidator":539,"_process":467,"fbjs/lib/mapObject":636}],525:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -38556,7 +41140,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],520:[function(require,module,exports){
+},{}],526:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38653,7 +41237,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 
 module.exports = ReactDOMIDOperations;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":488,"./DOMPropertyOperations":490,"./ReactMount":545,"./ReactPerf":551,"_process":465,"fbjs/lib/invariant":624}],521:[function(require,module,exports){
+},{"./DOMChildrenOperations":494,"./DOMPropertyOperations":496,"./ReactMount":551,"./ReactPerf":557,"_process":467,"fbjs/lib/invariant":631}],527:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38809,7 +41393,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":501,"./Object.assign":502,"./ReactDOMIDOperations":520,"./ReactMount":545,"./ReactUpdates":563,"_process":465,"fbjs/lib/invariant":624}],522:[function(require,module,exports){
+},{"./LinkedValueUtils":507,"./Object.assign":508,"./ReactDOMIDOperations":526,"./ReactMount":551,"./ReactUpdates":569,"_process":467,"fbjs/lib/invariant":631}],528:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -38901,7 +41485,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactChildren":508,"./ReactDOMSelect":523,"_process":465,"fbjs/lib/warning":635}],523:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactChildren":514,"./ReactDOMSelect":529,"_process":467,"fbjs/lib/warning":642}],529:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39092,7 +41676,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":501,"./Object.assign":502,"./ReactMount":545,"./ReactUpdates":563,"_process":465,"fbjs/lib/warning":635}],524:[function(require,module,exports){
+},{"./LinkedValueUtils":507,"./Object.assign":508,"./ReactMount":551,"./ReactUpdates":569,"_process":467,"fbjs/lib/warning":642}],530:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39305,7 +41889,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":596,"./getTextContentAccessor":597,"fbjs/lib/ExecutionEnvironment":610}],525:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":602,"./getTextContentAccessor":603,"fbjs/lib/ExecutionEnvironment":617}],531:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39332,7 +41916,7 @@ var ReactDOMServer = {
 };
 
 module.exports = ReactDOMServer;
-},{"./ReactDefaultInjection":529,"./ReactServerRendering":560,"./ReactVersion":564}],526:[function(require,module,exports){
+},{"./ReactDefaultInjection":535,"./ReactServerRendering":566,"./ReactVersion":570}],532:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39462,7 +42046,7 @@ assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":488,"./DOMPropertyOperations":490,"./Object.assign":502,"./ReactComponentBrowserEnvironment":511,"./ReactMount":545,"./escapeTextContentForBrowser":587,"./setTextContent":605,"./validateDOMNesting":608,"_process":465}],527:[function(require,module,exports){
+},{"./DOMChildrenOperations":494,"./DOMPropertyOperations":496,"./Object.assign":508,"./ReactComponentBrowserEnvironment":517,"./ReactMount":551,"./escapeTextContentForBrowser":593,"./setTextContent":611,"./validateDOMNesting":615,"_process":467}],533:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39578,7 +42162,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":501,"./Object.assign":502,"./ReactDOMIDOperations":520,"./ReactUpdates":563,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],528:[function(require,module,exports){
+},{"./LinkedValueUtils":507,"./Object.assign":508,"./ReactDOMIDOperations":526,"./ReactUpdates":569,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],534:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39646,7 +42230,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./Object.assign":502,"./ReactUpdates":563,"./Transaction":580,"fbjs/lib/emptyFunction":616}],529:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactUpdates":569,"./Transaction":586,"fbjs/lib/emptyFunction":623}],535:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -39746,7 +42330,7 @@ module.exports = {
   inject: inject
 };
 }).call(this,require('_process'))
-},{"./BeforeInputEventPlugin":482,"./ChangeEventPlugin":486,"./ClientReactRootIndex":487,"./DefaultEventPluginOrder":492,"./EnterLeaveEventPlugin":493,"./HTMLDOMPropertyConfig":500,"./ReactBrowserComponentMixin":505,"./ReactComponentBrowserEnvironment":511,"./ReactDOMComponent":517,"./ReactDOMTextComponent":526,"./ReactDefaultBatchingStrategy":528,"./ReactDefaultPerf":530,"./ReactEventListener":538,"./ReactInjection":539,"./ReactInstanceHandles":541,"./ReactMount":545,"./ReactReconcileTransaction":555,"./SVGDOMPropertyConfig":565,"./SelectEventPlugin":566,"./ServerReactRootIndex":567,"./SimpleEventPlugin":568,"_process":465,"fbjs/lib/ExecutionEnvironment":610}],530:[function(require,module,exports){
+},{"./BeforeInputEventPlugin":488,"./ChangeEventPlugin":492,"./ClientReactRootIndex":493,"./DefaultEventPluginOrder":498,"./EnterLeaveEventPlugin":499,"./HTMLDOMPropertyConfig":506,"./ReactBrowserComponentMixin":511,"./ReactComponentBrowserEnvironment":517,"./ReactDOMComponent":523,"./ReactDOMTextComponent":532,"./ReactDefaultBatchingStrategy":534,"./ReactDefaultPerf":536,"./ReactEventListener":544,"./ReactInjection":545,"./ReactInstanceHandles":547,"./ReactMount":551,"./ReactReconcileTransaction":561,"./SVGDOMPropertyConfig":571,"./SelectEventPlugin":572,"./ServerReactRootIndex":573,"./SimpleEventPlugin":574,"_process":467,"fbjs/lib/ExecutionEnvironment":617}],536:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -39984,7 +42568,7 @@ var ReactDefaultPerf = {
 };
 
 module.exports = ReactDefaultPerf;
-},{"./DOMProperty":489,"./ReactDefaultPerfAnalysis":531,"./ReactMount":545,"./ReactPerf":551,"fbjs/lib/performanceNow":632}],531:[function(require,module,exports){
+},{"./DOMProperty":495,"./ReactDefaultPerfAnalysis":537,"./ReactMount":551,"./ReactPerf":557,"fbjs/lib/performanceNow":639}],537:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40186,7 +42770,7 @@ var ReactDefaultPerfAnalysis = {
 };
 
 module.exports = ReactDefaultPerfAnalysis;
-},{"./Object.assign":502}],532:[function(require,module,exports){
+},{"./Object.assign":508}],538:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -40436,7 +43020,7 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactCurrentOwner":514,"./canDefineProperty":584,"_process":465}],533:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactCurrentOwner":520,"./canDefineProperty":590,"_process":467}],539:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -40720,7 +43304,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":514,"./ReactElement":532,"./ReactPropTypeLocationNames":552,"./ReactPropTypeLocations":553,"./canDefineProperty":584,"./getIteratorFn":595,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],534:[function(require,module,exports){
+},{"./ReactCurrentOwner":520,"./ReactElement":538,"./ReactPropTypeLocationNames":558,"./ReactPropTypeLocations":559,"./canDefineProperty":590,"./getIteratorFn":601,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],540:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -40776,7 +43360,7 @@ assign(ReactEmptyComponent.prototype, {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{"./Object.assign":502,"./ReactElement":532,"./ReactEmptyComponentRegistry":535,"./ReactReconciler":556}],535:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactElement":538,"./ReactEmptyComponentRegistry":541,"./ReactReconciler":562}],541:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -40825,7 +43409,7 @@ var ReactEmptyComponentRegistry = {
 };
 
 module.exports = ReactEmptyComponentRegistry;
-},{}],536:[function(require,module,exports){
+},{}],542:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -40905,7 +43489,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":465}],537:[function(require,module,exports){
+},{"_process":467}],543:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -40944,7 +43528,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":495}],538:[function(require,module,exports){
+},{"./EventPluginHub":501}],544:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41156,7 +43740,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./Object.assign":502,"./PooledClass":503,"./ReactInstanceHandles":541,"./ReactMount":545,"./ReactUpdates":563,"./getEventTarget":594,"fbjs/lib/EventListener":609,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/getUnboundedScrollPosition":621}],539:[function(require,module,exports){
+},{"./Object.assign":508,"./PooledClass":509,"./ReactInstanceHandles":547,"./ReactMount":551,"./ReactUpdates":569,"./getEventTarget":600,"fbjs/lib/EventListener":616,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/getUnboundedScrollPosition":628}],545:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41195,7 +43779,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":489,"./EventPluginHub":495,"./ReactBrowserEventEmitter":506,"./ReactClass":509,"./ReactComponentEnvironment":512,"./ReactEmptyComponent":534,"./ReactNativeComponent":548,"./ReactPerf":551,"./ReactRootIndex":558,"./ReactUpdates":563}],540:[function(require,module,exports){
+},{"./DOMProperty":495,"./EventPluginHub":501,"./ReactBrowserEventEmitter":512,"./ReactClass":515,"./ReactComponentEnvironment":518,"./ReactEmptyComponent":540,"./ReactNativeComponent":554,"./ReactPerf":557,"./ReactRootIndex":564,"./ReactUpdates":569}],546:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41320,7 +43904,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":524,"fbjs/lib/containsNode":613,"fbjs/lib/focusNode":618,"fbjs/lib/getActiveElement":619}],541:[function(require,module,exports){
+},{"./ReactDOMSelection":530,"fbjs/lib/containsNode":620,"fbjs/lib/focusNode":625,"fbjs/lib/getActiveElement":626}],547:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -41625,7 +44209,7 @@ var ReactInstanceHandles = {
 
 module.exports = ReactInstanceHandles;
 }).call(this,require('_process'))
-},{"./ReactRootIndex":558,"_process":465,"fbjs/lib/invariant":624}],542:[function(require,module,exports){
+},{"./ReactRootIndex":564,"_process":467,"fbjs/lib/invariant":631}],548:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41673,7 +44257,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],543:[function(require,module,exports){
+},{}],549:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -41750,7 +44334,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactChildren":508,"./ReactClass":509,"./ReactComponent":510,"./ReactDOMFactories":518,"./ReactElement":532,"./ReactElementValidator":533,"./ReactPropTypes":554,"./ReactVersion":564,"./onlyChild":601,"_process":465}],544:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactChildren":514,"./ReactClass":515,"./ReactComponent":516,"./ReactDOMFactories":524,"./ReactElement":538,"./ReactElementValidator":539,"./ReactPropTypes":560,"./ReactVersion":570,"./onlyChild":607,"_process":467}],550:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41796,7 +44380,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":583}],545:[function(require,module,exports){
+},{"./adler32":589}],551:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42649,7 +45233,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMProperty":489,"./Object.assign":502,"./ReactBrowserEventEmitter":506,"./ReactCurrentOwner":514,"./ReactDOMFeatureFlags":519,"./ReactElement":532,"./ReactEmptyComponentRegistry":535,"./ReactInstanceHandles":541,"./ReactInstanceMap":542,"./ReactMarkupChecksum":544,"./ReactPerf":551,"./ReactReconciler":556,"./ReactUpdateQueue":562,"./ReactUpdates":563,"./instantiateReactComponent":598,"./setInnerHTML":604,"./shouldUpdateReactComponent":606,"./validateDOMNesting":608,"_process":465,"fbjs/lib/containsNode":613,"fbjs/lib/emptyObject":617,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],546:[function(require,module,exports){
+},{"./DOMProperty":495,"./Object.assign":508,"./ReactBrowserEventEmitter":512,"./ReactCurrentOwner":520,"./ReactDOMFeatureFlags":525,"./ReactElement":538,"./ReactEmptyComponentRegistry":541,"./ReactInstanceHandles":547,"./ReactInstanceMap":548,"./ReactMarkupChecksum":550,"./ReactPerf":557,"./ReactReconciler":562,"./ReactUpdateQueue":568,"./ReactUpdates":569,"./instantiateReactComponent":604,"./setInnerHTML":610,"./shouldUpdateReactComponent":613,"./validateDOMNesting":615,"_process":467,"fbjs/lib/containsNode":620,"fbjs/lib/emptyObject":624,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],552:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43148,7 +45732,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":507,"./ReactComponentEnvironment":512,"./ReactCurrentOwner":514,"./ReactMultiChildUpdateTypes":547,"./ReactReconciler":556,"./flattenChildren":589,"_process":465}],547:[function(require,module,exports){
+},{"./ReactChildReconciler":513,"./ReactComponentEnvironment":518,"./ReactCurrentOwner":520,"./ReactMultiChildUpdateTypes":553,"./ReactReconciler":562,"./flattenChildren":595,"_process":467}],553:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43181,7 +45765,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-},{"fbjs/lib/keyMirror":627}],548:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":634}],554:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -43278,7 +45862,7 @@ var ReactNativeComponent = {
 
 module.exports = ReactNativeComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"_process":465,"fbjs/lib/invariant":624}],549:[function(require,module,exports){
+},{"./Object.assign":508,"_process":467,"fbjs/lib/invariant":631}],555:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -43399,7 +45983,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/warning":635}],550:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/warning":642}],556:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43493,7 +46077,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],551:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],557:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43592,7 +46176,7 @@ function _noMeasure(objName, fnName, func) {
 
 module.exports = ReactPerf;
 }).call(this,require('_process'))
-},{"_process":465}],552:[function(require,module,exports){
+},{"_process":467}],558:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43619,7 +46203,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":465}],553:[function(require,module,exports){
+},{"_process":467}],559:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43642,7 +46226,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-},{"fbjs/lib/keyMirror":627}],554:[function(require,module,exports){
+},{"fbjs/lib/keyMirror":634}],560:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43999,7 +46583,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":532,"./ReactPropTypeLocationNames":552,"./getIteratorFn":595,"fbjs/lib/emptyFunction":616}],555:[function(require,module,exports){
+},{"./ReactElement":538,"./ReactPropTypeLocationNames":558,"./getIteratorFn":601,"fbjs/lib/emptyFunction":623}],561:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44151,7 +46735,7 @@ assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":485,"./Object.assign":502,"./PooledClass":503,"./ReactBrowserEventEmitter":506,"./ReactDOMFeatureFlags":519,"./ReactInputSelection":540,"./Transaction":580}],556:[function(require,module,exports){
+},{"./CallbackQueue":491,"./Object.assign":508,"./PooledClass":509,"./ReactBrowserEventEmitter":512,"./ReactDOMFeatureFlags":525,"./ReactInputSelection":546,"./Transaction":586}],562:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44259,7 +46843,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-},{"./ReactRef":557}],557:[function(require,module,exports){
+},{"./ReactRef":563}],563:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44338,7 +46922,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":550}],558:[function(require,module,exports){
+},{"./ReactOwner":556}],564:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44368,7 +46952,7 @@ var ReactRootIndex = {
 };
 
 module.exports = ReactRootIndex;
-},{}],559:[function(require,module,exports){
+},{}],565:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -44392,7 +46976,7 @@ var ReactServerBatchingStrategy = {
 };
 
 module.exports = ReactServerBatchingStrategy;
-},{}],560:[function(require,module,exports){
+},{}],566:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44478,7 +47062,7 @@ module.exports = {
   renderToStaticMarkup: renderToStaticMarkup
 };
 }).call(this,require('_process'))
-},{"./ReactDefaultBatchingStrategy":528,"./ReactElement":532,"./ReactInstanceHandles":541,"./ReactMarkupChecksum":544,"./ReactServerBatchingStrategy":559,"./ReactServerRenderingTransaction":561,"./ReactUpdates":563,"./instantiateReactComponent":598,"_process":465,"fbjs/lib/emptyObject":617,"fbjs/lib/invariant":624}],561:[function(require,module,exports){
+},{"./ReactDefaultBatchingStrategy":534,"./ReactElement":538,"./ReactInstanceHandles":547,"./ReactMarkupChecksum":550,"./ReactServerBatchingStrategy":565,"./ReactServerRenderingTransaction":567,"./ReactUpdates":569,"./instantiateReactComponent":604,"_process":467,"fbjs/lib/emptyObject":624,"fbjs/lib/invariant":631}],567:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -44566,7 +47150,7 @@ assign(ReactServerRenderingTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"./CallbackQueue":485,"./Object.assign":502,"./PooledClass":503,"./Transaction":580,"fbjs/lib/emptyFunction":616}],562:[function(require,module,exports){
+},{"./CallbackQueue":491,"./Object.assign":508,"./PooledClass":509,"./Transaction":586,"fbjs/lib/emptyFunction":623}],568:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -44826,7 +47410,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactCurrentOwner":514,"./ReactElement":532,"./ReactInstanceMap":542,"./ReactUpdates":563,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],563:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactCurrentOwner":520,"./ReactElement":538,"./ReactInstanceMap":548,"./ReactUpdates":569,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],569:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45052,7 +47636,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":485,"./Object.assign":502,"./PooledClass":503,"./ReactPerf":551,"./ReactReconciler":556,"./Transaction":580,"_process":465,"fbjs/lib/invariant":624}],564:[function(require,module,exports){
+},{"./CallbackQueue":491,"./Object.assign":508,"./PooledClass":509,"./ReactPerf":557,"./ReactReconciler":562,"./Transaction":586,"_process":467,"fbjs/lib/invariant":631}],570:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45067,7 +47651,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '0.14.8';
-},{}],565:[function(require,module,exports){
+},{}],571:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45195,7 +47779,7 @@ var SVGDOMPropertyConfig = {
 };
 
 module.exports = SVGDOMPropertyConfig;
-},{"./DOMProperty":489}],566:[function(require,module,exports){
+},{"./DOMProperty":495}],572:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45397,7 +47981,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventConstants":494,"./EventPropagators":498,"./ReactInputSelection":540,"./SyntheticEvent":572,"./isTextInputElement":600,"fbjs/lib/ExecutionEnvironment":610,"fbjs/lib/getActiveElement":619,"fbjs/lib/keyOf":628,"fbjs/lib/shallowEqual":633}],567:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPropagators":504,"./ReactInputSelection":546,"./SyntheticEvent":578,"./isTextInputElement":606,"fbjs/lib/ExecutionEnvironment":617,"fbjs/lib/getActiveElement":626,"fbjs/lib/keyOf":635,"fbjs/lib/shallowEqual":640}],573:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45427,7 +48011,7 @@ var ServerReactRootIndex = {
 };
 
 module.exports = ServerReactRootIndex;
-},{}],568:[function(require,module,exports){
+},{}],574:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46017,7 +48601,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventConstants":494,"./EventPropagators":498,"./ReactMount":545,"./SyntheticClipboardEvent":569,"./SyntheticDragEvent":571,"./SyntheticEvent":572,"./SyntheticFocusEvent":573,"./SyntheticKeyboardEvent":575,"./SyntheticMouseEvent":576,"./SyntheticTouchEvent":577,"./SyntheticUIEvent":578,"./SyntheticWheelEvent":579,"./getEventCharCode":591,"_process":465,"fbjs/lib/EventListener":609,"fbjs/lib/emptyFunction":616,"fbjs/lib/invariant":624,"fbjs/lib/keyOf":628}],569:[function(require,module,exports){
+},{"./EventConstants":500,"./EventPropagators":504,"./ReactMount":551,"./SyntheticClipboardEvent":575,"./SyntheticDragEvent":577,"./SyntheticEvent":578,"./SyntheticFocusEvent":579,"./SyntheticKeyboardEvent":581,"./SyntheticMouseEvent":582,"./SyntheticTouchEvent":583,"./SyntheticUIEvent":584,"./SyntheticWheelEvent":585,"./getEventCharCode":597,"_process":467,"fbjs/lib/EventListener":616,"fbjs/lib/emptyFunction":623,"fbjs/lib/invariant":631,"fbjs/lib/keyOf":635}],575:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46057,7 +48641,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":572}],570:[function(require,module,exports){
+},{"./SyntheticEvent":578}],576:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46095,7 +48679,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":572}],571:[function(require,module,exports){
+},{"./SyntheticEvent":578}],577:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46133,7 +48717,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":576}],572:[function(require,module,exports){
+},{"./SyntheticMouseEvent":582}],578:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46316,7 +48900,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.fourArgumentPooler);
 
 module.exports = SyntheticEvent;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./PooledClass":503,"_process":465,"fbjs/lib/emptyFunction":616,"fbjs/lib/warning":635}],573:[function(require,module,exports){
+},{"./Object.assign":508,"./PooledClass":509,"_process":467,"fbjs/lib/emptyFunction":623,"fbjs/lib/warning":642}],579:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46354,7 +48938,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":578}],574:[function(require,module,exports){
+},{"./SyntheticUIEvent":584}],580:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46393,7 +48977,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":572}],575:[function(require,module,exports){
+},{"./SyntheticEvent":578}],581:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46479,7 +49063,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":578,"./getEventCharCode":591,"./getEventKey":592,"./getEventModifierState":593}],576:[function(require,module,exports){
+},{"./SyntheticUIEvent":584,"./getEventCharCode":597,"./getEventKey":598,"./getEventModifierState":599}],582:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46553,7 +49137,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":578,"./ViewportMetrics":581,"./getEventModifierState":593}],577:[function(require,module,exports){
+},{"./SyntheticUIEvent":584,"./ViewportMetrics":587,"./getEventModifierState":599}],583:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46600,7 +49184,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":578,"./getEventModifierState":593}],578:[function(require,module,exports){
+},{"./SyntheticUIEvent":584,"./getEventModifierState":599}],584:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46661,7 +49245,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":572,"./getEventTarget":594}],579:[function(require,module,exports){
+},{"./SyntheticEvent":578,"./getEventTarget":600}],585:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46717,7 +49301,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":576}],580:[function(require,module,exports){
+},{"./SyntheticMouseEvent":582}],586:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46951,7 +49535,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],581:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],587:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46979,7 +49563,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],582:[function(require,module,exports){
+},{}],588:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -47041,7 +49625,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"_process":465,"fbjs/lib/invariant":624}],583:[function(require,module,exports){
+},{"_process":467,"fbjs/lib/invariant":631}],589:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47084,7 +49668,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],584:[function(require,module,exports){
+},{}],590:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47111,7 +49695,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":465}],585:[function(require,module,exports){
+},{"_process":467}],591:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47167,7 +49751,7 @@ function dangerousStyleValue(name, value) {
 }
 
 module.exports = dangerousStyleValue;
-},{"./CSSProperty":483}],586:[function(require,module,exports){
+},{"./CSSProperty":489}],592:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47218,7 +49802,7 @@ function deprecated(fnName, newModule, newPackage, ctx, fn) {
 
 module.exports = deprecated;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"_process":465,"fbjs/lib/warning":635}],587:[function(require,module,exports){
+},{"./Object.assign":508,"_process":467,"fbjs/lib/warning":642}],593:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47257,7 +49841,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],588:[function(require,module,exports){
+},{}],594:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47309,7 +49893,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":514,"./ReactInstanceMap":542,"./ReactMount":545,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],589:[function(require,module,exports){
+},{"./ReactCurrentOwner":520,"./ReactInstanceMap":548,"./ReactMount":551,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],595:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47360,7 +49944,7 @@ function flattenChildren(children) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./traverseAllChildren":607,"_process":465,"fbjs/lib/warning":635}],590:[function(require,module,exports){
+},{"./traverseAllChildren":614,"_process":467,"fbjs/lib/warning":642}],596:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47390,7 +49974,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-},{}],591:[function(require,module,exports){
+},{}],597:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47441,7 +50025,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],592:[function(require,module,exports){
+},{}],598:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47545,7 +50129,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":591}],593:[function(require,module,exports){
+},{"./getEventCharCode":597}],599:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47590,7 +50174,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],594:[function(require,module,exports){
+},{}],600:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47620,7 +50204,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],595:[function(require,module,exports){
+},{}],601:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47661,7 +50245,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],596:[function(require,module,exports){
+},{}],602:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47735,7 +50319,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],597:[function(require,module,exports){
+},{}],603:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47769,7 +50353,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":610}],598:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":617}],604:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47884,7 +50468,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"./ReactCompositeComponent":513,"./ReactEmptyComponent":534,"./ReactNativeComponent":548,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],599:[function(require,module,exports){
+},{"./Object.assign":508,"./ReactCompositeComponent":519,"./ReactEmptyComponent":540,"./ReactNativeComponent":554,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],605:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47945,7 +50529,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":610}],600:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":617}],606:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47986,7 +50570,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],601:[function(require,module,exports){
+},{}],607:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48022,7 +50606,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":532,"_process":465,"fbjs/lib/invariant":624}],602:[function(require,module,exports){
+},{"./ReactElement":538,"_process":467,"fbjs/lib/invariant":631}],608:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48049,7 +50633,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":587}],603:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":593}],609:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48066,7 +50650,7 @@ module.exports = quoteAttributeValueForBrowser;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":545}],604:[function(require,module,exports){
+},{"./ReactMount":551}],610:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48157,7 +50741,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"fbjs/lib/ExecutionEnvironment":610}],605:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":617}],611:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48198,7 +50782,32 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":587,"./setInnerHTML":604,"fbjs/lib/ExecutionEnvironment":610}],606:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":593,"./setInnerHTML":610,"fbjs/lib/ExecutionEnvironment":617}],612:[function(require,module,exports){
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+* @providesModule shallowCompare
+*/
+
+'use strict';
+
+var shallowEqual = require('fbjs/lib/shallowEqual');
+
+/**
+ * Does a shallow comparison for props and state.
+ * See ReactComponentWithPureRenderMixin
+ */
+function shallowCompare(instance, nextProps, nextState) {
+  return !shallowEqual(instance.props, nextProps) || !shallowEqual(instance.state, nextState);
+}
+
+module.exports = shallowCompare;
+},{"fbjs/lib/shallowEqual":640}],613:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48242,7 +50851,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],607:[function(require,module,exports){
+},{}],614:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48434,7 +51043,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":514,"./ReactElement":532,"./ReactInstanceHandles":541,"./getIteratorFn":595,"_process":465,"fbjs/lib/invariant":624,"fbjs/lib/warning":635}],608:[function(require,module,exports){
+},{"./ReactCurrentOwner":520,"./ReactElement":538,"./ReactInstanceHandles":547,"./getIteratorFn":601,"_process":467,"fbjs/lib/invariant":631,"fbjs/lib/warning":642}],615:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -48800,7 +51409,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"./Object.assign":502,"_process":465,"fbjs/lib/emptyFunction":616,"fbjs/lib/warning":635}],609:[function(require,module,exports){
+},{"./Object.assign":508,"_process":467,"fbjs/lib/emptyFunction":623,"fbjs/lib/warning":642}],616:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -48887,7 +51496,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":616,"_process":465}],610:[function(require,module,exports){
+},{"./emptyFunction":623,"_process":467}],617:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48924,7 +51533,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],611:[function(require,module,exports){
+},{}],618:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48957,7 +51566,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],612:[function(require,module,exports){
+},{}],619:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48998,7 +51607,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":611}],613:[function(require,module,exports){
+},{"./camelize":618}],620:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49054,7 +51663,7 @@ function containsNode(_x, _x2) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":626}],614:[function(require,module,exports){
+},{"./isTextNode":633}],621:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49140,7 +51749,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-},{"./toArray":634}],615:[function(require,module,exports){
+},{"./toArray":641}],622:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49227,7 +51836,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":610,"./createArrayFromMixed":614,"./getMarkupWrap":620,"./invariant":624,"_process":465}],616:[function(require,module,exports){
+},{"./ExecutionEnvironment":617,"./createArrayFromMixed":621,"./getMarkupWrap":627,"./invariant":631,"_process":467}],623:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49266,7 +51875,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],617:[function(require,module,exports){
+},{}],624:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49289,7 +51898,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":465}],618:[function(require,module,exports){
+},{"_process":467}],625:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49316,7 +51925,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],619:[function(require,module,exports){
+},{}],626:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49352,7 +51961,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],620:[function(require,module,exports){
+},{}],627:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49450,7 +52059,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":610,"./invariant":624,"_process":465}],621:[function(require,module,exports){
+},{"./ExecutionEnvironment":617,"./invariant":631,"_process":467}],628:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49489,7 +52098,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],622:[function(require,module,exports){
+},{}],629:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49523,7 +52132,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],623:[function(require,module,exports){
+},{}],630:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49563,7 +52172,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":622}],624:[function(require,module,exports){
+},{"./hyphenate":629}],631:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49616,7 +52225,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":465}],625:[function(require,module,exports){
+},{"_process":467}],632:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49640,7 +52249,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],626:[function(require,module,exports){
+},{}],633:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49666,7 +52275,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":625}],627:[function(require,module,exports){
+},{"./isNode":632}],634:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49717,7 +52326,7 @@ var keyMirror = function (obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-},{"./invariant":624,"_process":465}],628:[function(require,module,exports){
+},{"./invariant":631,"_process":467}],635:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49753,7 +52362,7 @@ var keyOf = function (oneKeyObj) {
 };
 
 module.exports = keyOf;
-},{}],629:[function(require,module,exports){
+},{}],636:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49805,7 +52414,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-},{}],630:[function(require,module,exports){
+},{}],637:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49837,7 +52446,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],631:[function(require,module,exports){
+},{}],638:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49861,7 +52470,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":610}],632:[function(require,module,exports){
+},{"./ExecutionEnvironment":617}],639:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49896,7 +52505,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":631}],633:[function(require,module,exports){
+},{"./performance":638}],640:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49947,7 +52556,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],634:[function(require,module,exports){
+},{}],641:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50007,7 +52616,7 @@ function toArray(obj) {
 
 module.exports = toArray;
 }).call(this,require('_process'))
-},{"./invariant":624,"_process":465}],635:[function(require,module,exports){
+},{"./invariant":631,"_process":467}],642:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -50067,7 +52676,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":616,"_process":465}],636:[function(require,module,exports){
+},{"./emptyFunction":623,"_process":467}],643:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50126,7 +52735,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":639}],637:[function(require,module,exports){
+},{"./compose":646}],644:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50178,7 +52787,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-},{}],638:[function(require,module,exports){
+},{}],645:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50323,7 +52932,7 @@ function combineReducers(reducers) {
   };
 }
 }).call(this,require('_process'))
-},{"./createStore":640,"./utils/warning":641,"_process":465,"lodash/isPlainObject":645}],639:[function(require,module,exports){
+},{"./createStore":647,"./utils/warning":648,"_process":467,"lodash/isPlainObject":652}],646:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -50362,7 +52971,7 @@ function compose() {
     }, last.apply(undefined, arguments));
   };
 }
-},{}],640:[function(require,module,exports){
+},{}],647:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50624,7 +53233,7 @@ function createStore(reducer, preloadedState, enhancer) {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2['default']] = observable, _ref2;
 }
-},{"lodash/isPlainObject":645,"symbol-observable":646}],641:[function(require,module,exports){
+},{"lodash/isPlainObject":652,"symbol-observable":765}],648:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50650,18 +53259,3681 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],642:[function(require,module,exports){
-arguments[4][477][0].apply(exports,arguments)
-},{"./_overArg":643,"dup":477}],643:[function(require,module,exports){
-arguments[4][478][0].apply(exports,arguments)
-},{"dup":478}],644:[function(require,module,exports){
-arguments[4][479][0].apply(exports,arguments)
-},{"dup":479}],645:[function(require,module,exports){
-arguments[4][480][0].apply(exports,arguments)
-},{"./_getPrototype":642,"./isObjectLike":644,"dup":480}],646:[function(require,module,exports){
+},{}],649:[function(require,module,exports){
+arguments[4][481][0].apply(exports,arguments)
+},{"./_overArg":650,"dup":481}],650:[function(require,module,exports){
+arguments[4][482][0].apply(exports,arguments)
+},{"dup":482}],651:[function(require,module,exports){
+arguments[4][483][0].apply(exports,arguments)
+},{"dup":483}],652:[function(require,module,exports){
+arguments[4][484][0].apply(exports,arguments)
+},{"./_getPrototype":649,"./isObjectLike":651,"dup":484}],653:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+/* global window, document */
+
+'use strict';
+
+var globalVars = require('./globalVars');
+var resize = {
+    width: 0,
+    height: 0
+};
+var scroll = {
+    delta: 0,
+    top: 0
+};
+var touch = {
+    axisIntention: '',
+    startX: 0,
+    startY: 0,
+    deltaX: 0,
+    deltaY: 0
+};
+
+var INTENTION_THRESHOLD = 5;
+
+/**
+ * ArgmentedEvent will hold some global information, such like window scroll postion,
+ * so that those information is only calculated once.
+ * @param {Object} option - The option for SyntheticEvent
+ */
+function ArgmentedEvent(option) {
+    option = option || {};
+    var mainType = (option.mainType || '').toLowerCase();
+    var subType = (option.subType || '').toLowerCase();
+
+    this.mainType = mainType;
+    this.subType = subType;
+    this.type = mainType + subType.charAt(0).toUpperCase() + subType.slice(1) || '';
+    this.scroll = scroll;
+    this.resize = resize;
+    this.touch = touch;
+}
+
+ArgmentedEvent.prototype = {
+    getXY: function getXY(touch) {
+        var t = { x: 0, y: 0 };
+        var docBody = document.body;
+        var docEl = document.documentElement;
+
+        if (touch.pageX || touch.pageY) {
+            t.x = touch.pageX;
+            t.y = touch.pageY;
+        } else {
+            t.x = touch.clientX + docBody.scrollLeft + docEl.scrollLeft;
+            t.y = touch.clientY + docBody.scrollTop + docEl.scrollTop;
+        }
+
+        return t;
+    },
+
+    update: function update(e) {
+        var mainType = this.mainType;
+        var subType = this.subType;
+        var docEl = document.documentElement;
+
+        if (globalVars.enableScrollInfo && (mainType === 'scroll' || mainType === 'touchmove')) {
+            var top = docEl.scrollTop + document.body.scrollTop;
+            // Prevent delta from being 0
+            if (top !== this.scroll.top) {
+                this.scroll.delta = top - this.scroll.top;
+                this.scroll.top = top;
+            }
+        }
+        if (globalVars.enableResizeInfo && mainType === 'resize') {
+            this.resize.width = window.innerWidth || docEl.clientWidth;
+            this.resize.height = window.innerHeight || docEl.clientHeight;
+        }
+        if (globalVars.enableTouchInfo && e.touches && (mainType === 'touchstart' || mainType === 'touchmove' || mainType === 'touchend')) {
+            var pos;
+            var absX;
+            var absY;
+            if (mainType === 'touchstart' || subType === 'start') {
+                pos = this.getXY(e.touches[0]);
+                this.touch.axisIntention = '';
+                this.touch.startX = pos.x;
+                this.touch.startY = pos.y;
+                this.touch.deltaX = 0;
+                this.touch.deltaY = 0;
+            } else if (mainType === 'touchmove') {
+                pos = this.getXY(e.touches[0]);
+                this.touch.deltaX = pos.x - this.touch.startX;
+                this.touch.deltaY = pos.y - this.touch.startY;
+                if (this.touch.axisIntention === '') {
+                    absX = Math.abs(this.touch.deltaX);
+                    absY = Math.abs(this.touch.deltaY);
+                    if (absX > INTENTION_THRESHOLD && absX >= absY) {
+                        this.touch.axisIntention = 'x';
+                    } else if (absY > INTENTION_THRESHOLD && absY > absX) {
+                        this.touch.axisIntention = 'y';
+                    }
+                }
+            }
+        }
+    }
+};
+
+module.exports = ArgmentedEvent;
+
+},{"./globalVars":655}],654:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+module.exports = {
+  EVENT_END_DELAY: 100,
+  DEFAULT_THROTTLE_RATE: 50
+};
+
+},{}],655:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+var EventEmitter = require('eventemitter3');
+
+module.exports = {
+    connections: {},
+    EE: new EventEmitter(),
+    enableResizeInfo: false,
+    enableScrollInfo: false,
+    listeners: {},
+    removers: []
+};
+
+},{"eventemitter3":663}],656:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+/* global navigator, parseFloat */
+'use strict';
+
+var leIE8 = false; // less then or equal to IE8
+
+if (typeof navigator !== 'undefined') {
+    var matches = navigator.userAgent.match(/MSIE (\d+\.\d+)/);
+    if (matches) {
+        leIE8 = parseFloat(matches[1], 10) < 9;
+    }
+}
+
+module.exports = leIE8;
+
+},{}],657:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+/**
+ * Cross-browser addEventListener.
+ * @method listen
+ * @param {Object} target - The target to add event listener.
+ * @param {String} eventType - The event type.
+ * @param {Function} handler - The event handler.
+ * @return {Object} The object to be able to remove the handler.
+ */
+function listen(target, eventType, handler) {
+    var add = 'addEventListener';
+    var _remove = 'removeEventListener';
+
+    if (!target.addEventListener && target.attachEvent) {
+        add = 'attachEvent';
+        _remove = 'detachEvent';
+        eventType = 'on' + eventType;
+    }
+    target[add](eventType, handler, false);
+
+    return {
+        remove: function remove() {
+            target[_remove](eventType, handler);
+        }
+    };
+}
+
+module.exports = listen;
+
+},{}],658:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+var rAF = require('raf');
+var getTime = Date.now || /* istanbul ignore next */function () {
+    return new Date().getTime();
+};
+function rAFThrottle(func, throttle) {
+    var context;
+    var args;
+    var last = 0;
+    var requestId = 0;
+
+    throttle = throttle || 15;
+
+    var later = function later() {
+        var now = getTime();
+        var remaining = throttle - (now - last);
+
+        if (remaining <= 0) {
+            last = now;
+            requestId = 0;
+            func.apply(context, args);
+        } else {
+            requestId = rAF(later);
+        }
+    };
+
+    return function throttledFunc() {
+        context = this;
+        args = arguments;
+
+        if (!requestId) {
+            requestId = rAF(later);
+        }
+    };
+}
+
+module.exports = rAFThrottle;
+
+},{"raf":468}],659:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+/* global window, document, setTimeout */
+'use strict';
+
+var _clone = require('lodash/clone');
+var _throttle = require('lodash/throttle');
+var AugmentedEvent = require('./AugmentedEvent');
+var globalVars = require('./globalVars');
+var connections = globalVars.connections;
+var EE = globalVars.EE;
+var leIE8 = require('./lib/leIE8');
+var listen = require('./lib/listen');
+var listeners = globalVars.listeners;
+var rAFThrottle = require('./lib/rAFThrottle');
+var removers = globalVars.removers;
+var subscriptions = globalVars.subscriptions;
+
+// constants
+var EVENT_END_DELAY = require('./constants').EVENT_END_DELAY;
+
+// global variables
+var doc;
+var win;
+var body;
+var hashId = 0;
+
+if (typeof window !== 'undefined') {
+    win = window;
+    doc = win.document || document;
+    body = doc.body;
+}
+
+function getHash(domNode) {
+    return domNode.id || 'target-id-' + hashId++;
+}
+
+/**
+ * Connect a throttled event to a throttled main event, and return an event remover.
+ * The number of connections to a throttled main event will be kept. If all throttled events
+ * are removed, then remove throttled main event.
+ * @method connectThrottle
+ * @param {String} throttledEvent - A throttled event
+ * @param {Function} cb - Callback function
+ * @param {Object} ctx - The "this"
+ * @param {String} throttledMainEvent - A throttled main event
+ * @return {Object} An event remover
+ */
+function connectThrottle(throttledEvent, cb, ctx, throttledMainEvent) {
+    EE.on(throttledEvent, cb, ctx);
+    throttledMainEvent = throttledMainEvent || throttledEvent;
+    connections[throttledMainEvent] = (connections[throttledMainEvent] || 0) + 1;
+    return {
+        _type: throttledEvent,
+        _cb: cb,
+        _ctx: ctx,
+        unsubscribe: function unsubscribe() {
+            if (!this._type) {
+                return;
+            }
+
+            EE.removeListener(throttledEvent, cb, ctx);
+            connections[throttledMainEvent]--;
+            if (connections[throttledMainEvent] === 0) {
+                listeners[throttledMainEvent].remove();
+                listeners[throttledMainEvent] = undefined;
+            }
+
+            this._type = undefined;
+            this._cb = undefined;
+            this._ctx = undefined;
+
+            // remove the remover from removers array
+            for (var i = removers.length - 1; i >= 0; i--) {
+                var remover = removers[i];
+                if (remover === this) {
+                    removers.splice(i, 1);
+                    break;
+                }
+            }
+        }
+    };
+}
+
+/**
+ * Connect to event, event start and event end.
+ * @method connectContinuousEvent
+ * @param {Object} target - The target of a main event, window or document.
+ * @param {String} mainEvent - A browser event, like scroll or resize.
+ * @param {String} event - A subscribe event.
+ */
+function connectContinuousEvent(target, mainEvent, event) {
+    return function throttleEvent(throttleRate, cb, options) {
+        var context = options.context;
+        var domTarget = options.target;
+        var domId = domTarget && getHash(domTarget);
+        var targetPart = domId ? ':' + domId : '';
+
+        var throttledStartEvent = mainEvent + 'Start:' + throttleRate + targetPart;
+        var throttledEndEvent = mainEvent + 'End:' + throttleRate + targetPart;
+        var throttledMainEvent = mainEvent + ':' + throttleRate + targetPart;
+        var throttledEvent = event + ':' + throttleRate + targetPart;
+
+        var remover = connectThrottle(throttledEvent, cb, context, throttledMainEvent);
+        removers.push(remover);
+
+        if (listeners[throttledMainEvent]) {
+            return remover;
+        }
+
+        var ae = {
+            start: new AugmentedEvent({ mainType: mainEvent, subType: 'start' }), // start
+            main: new AugmentedEvent({ mainType: mainEvent }), // main
+            end: new AugmentedEvent({ mainType: mainEvent, subType: 'end' }) };
+
+        // No throttle for throttleRate = 0
+        // end
+        if (throttleRate === 'raf') {
+            throttleRate = 16; // Set as a number for setTimeout later.
+            handler = rAFThrottle(handler);
+        } else if (throttleRate > 0) {
+            handler = _throttle(handler, throttleRate);
+        }
+
+        var timer;
+        function endCallback(e) {
+            ae.end.update(e);
+            EE.emit(throttledEndEvent, e, ae.end);
+            timer = null;
+        }
+        function handler(e) {
+            if (!timer) {
+                ae.start.update(e);
+                EE.emit(throttledStartEvent, e, ae.start);
+            }
+            clearTimeout(timer);
+
+            ae.main.update(e);
+            EE.emit(throttledMainEvent, e, ae.main);
+            if (!leIE8) {
+                timer = setTimeout(endCallback.bind(null, e), throttleRate + EVENT_END_DELAY);
+            } else {
+                // For browser less then and equal to IE8, event object need to be cloned for setTimeout.
+                e = _clone(e);
+                timer = setTimeout(function eventEndDelay() {
+                    endCallback(e);
+                }, throttleRate + EVENT_END_DELAY);
+            }
+        }
+
+        listeners[throttledMainEvent] = listen(domTarget || target, mainEvent, handler);
+        return remover;
+    };
+}
+
+function connectDiscreteEvent(target, event) {
+    return function throttleEvent(throttleRate, cb, options) {
+        var context = options.context;
+        var domTarget = options.target;
+        var domId = domTarget && getHash(domTarget);
+
+        // no throttling for discrete event
+        var throttledEvent = event + ':0' + (domId ? ':' + domId : '');
+
+        var remover = connectThrottle(throttledEvent, cb, context);
+        removers.push(remover);
+
+        if (listeners[throttledEvent]) {
+            return remover;
+        }
+
+        var ae = new AugmentedEvent({ mainType: event });
+
+        function handler(e) {
+            ae.update(e);
+            EE.emit(throttledEvent, e, ae);
+        }
+
+        listeners[throttledEvent] = listen(domTarget || target, event, handler);
+        return remover;
+    };
+}
+
+module.exports = {
+    scrollStart: connectContinuousEvent(win, 'scroll', 'scrollStart'),
+    scrollEnd: connectContinuousEvent(win, 'scroll', 'scrollEnd'),
+    scroll: connectContinuousEvent(win, 'scroll', 'scroll'),
+    resizeStart: connectContinuousEvent(win, 'resize', 'resizeStart'),
+    resizeEnd: connectContinuousEvent(win, 'resize', 'resizeEnd'),
+    resize: connectContinuousEvent(win, 'resize', 'resize'),
+    visibilitychange: connectDiscreteEvent(doc, 'visibilitychange'),
+    touchmoveStart: connectContinuousEvent(body, 'touchmove', 'touchmoveStart'),
+    touchmoveEnd: connectContinuousEvent(body, 'touchmove', 'touchmoveEnd'),
+    touchmove: connectContinuousEvent(body, 'touchmove', 'touchmove'),
+    touchstart: connectDiscreteEvent(body, 'touchstart'),
+    touchend: connectDiscreteEvent(body, 'touchend')
+};
+
+},{"./AugmentedEvent":653,"./constants":654,"./globalVars":655,"./lib/leIE8":656,"./lib/listen":657,"./lib/rAFThrottle":658,"lodash/clone":746,"lodash/throttle":763}],660:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+var globalVars = require('./globalVars');
+var leIE8 = require('./lib/leIE8'); // less then or equal to IE8
+var mainEventConnectors = require('./mainEventConnectors');
+
+// constants
+var DEFAULT_THROTTLE_RATE = require('./constants').DEFAULT_THROTTLE_RATE;
+
+/**
+ * Subscribe to UI events.
+ * @method subscribe
+ * @param {String} type - The type of event.
+ * @param {Function} cb - The callback function.
+ * @param {Object} options.context - The caller.
+ * @param {Number} options.throttleRate - The amount of time for throttling.
+ * @param {Boolean} options.useRAF - Use rAF for throttling if true.
+ * @return {Object} The object with unsubscribe function.
+ */
+function subscribe(type, cb, options) {
+    options = options || {};
+
+    var useRAF = options.useRAF || false;
+    var throttleRate = parseInt(options.throttleRate, 10);
+
+    if (isNaN(throttleRate)) {
+        throttleRate = DEFAULT_THROTTLE_RATE;
+    }
+
+    if (useRAF) {
+        throttleRate = 'raf';
+    }
+
+    // turn off throttle if the browser is IE8 or less, because window.event will be reset
+    // when using any delayed function, i.g., setTimeout, or rAF.
+    if (leIE8) {
+        throttleRate = 0;
+    }
+
+    // once those variables enabled, then never disabled.
+    globalVars.enableScrollInfo = globalVars.enableScrollInfo || options.enableScrollInfo || false;
+    globalVars.enableResizeInfo = globalVars.enableResizeInfo || options.enableResizeInfo || false;
+    globalVars.enableTouchInfo = globalVars.enableTouchInfo || options.enableTouchInfo || false;
+
+    return mainEventConnectors[type](throttleRate, cb, options);
+}
+
+module.exports = subscribe;
+
+},{"./constants":654,"./globalVars":655,"./lib/leIE8":656,"./mainEventConnectors":659}],661:[function(require,module,exports){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+var removers = require('./globalVars').removers;
+
+/**
+ * Unsubscribe to UI events.
+ * @method unsubscribe
+ * @param {String} type - The type of event.
+ * @param {Function} cb - The callback function.
+ */
+function unsubscribe(type, cb, options) {
+    var remover;
+    for (var i = removers.length - 1; i >= 0; i--) {
+        remover = removers[i];
+        if (remover._cb === cb && remover._type.indexOf(type) >= 0) {
+            remover.unsubscribe();
+            removers.splice(i, 1);
+        }
+    }
+}
+
+module.exports = unsubscribe;
+
+},{"./globalVars":655}],662:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+'use strict';
+
+function warn() {
+    if ('production' !== process.env.NODE_ENV) {
+        console.warn('Warning: the function is client-side only, does not work on server side');
+    }
+}
+
+if (typeof window !== 'undefined') {
+    module.exports = {
+        listen: require('./dist/lib/listen'),
+        subscribe: require('./dist/subscribe'),
+        unsubscribe: require('./dist/unsubscribe')
+    };
+} else {
+    module.exports = {
+        listen: warn,
+        subscribe: warn,
+        unsubscribe: warn
+    };
+}
+
+}).call(this,require('_process'))
+},{"./dist/lib/listen":657,"./dist/subscribe":660,"./dist/unsubscribe":661,"_process":467}],663:[function(require,module,exports){
+'use strict';
+
+var has = Object.prototype.hasOwnProperty
+  , prefix = '~';
+
+/**
+ * Constructor to create a storage for our `EE` objects.
+ * An `Events` instance is a plain object whose properties are event names.
+ *
+ * @constructor
+ * @api private
+ */
+function Events() {}
+
+//
+// We try to not inherit from `Object.prototype`. In some engines creating an
+// instance in this way is faster than calling `Object.create(null)` directly.
+// If `Object.create(null)` is not supported we prefix the event names with a
+// character to make sure that the built-in object properties are not
+// overridden or used as an attack vector.
+//
+if (Object.create) {
+  Events.prototype = Object.create(null);
+
+  //
+  // This hack is needed because the `__proto__` property is still inherited in
+  // some old browsers like Android 4, iPhone 5.1, Opera 11 and Safari 5.
+  //
+  if (!new Events().__proto__) prefix = false;
+}
+
+/**
+ * Representation of a single event listener.
+ *
+ * @param {Function} fn The listener function.
+ * @param {Mixed} context The context to invoke the listener with.
+ * @param {Boolean} [once=false] Specify if the listener is a one-time listener.
+ * @constructor
+ * @api private
+ */
+function EE(fn, context, once) {
+  this.fn = fn;
+  this.context = context;
+  this.once = once || false;
+}
+
+/**
+ * Minimal `EventEmitter` interface that is molded against the Node.js
+ * `EventEmitter` interface.
+ *
+ * @constructor
+ * @api public
+ */
+function EventEmitter() {
+  this._events = new Events();
+  this._eventsCount = 0;
+}
+
+/**
+ * Return an array listing the events for which the emitter has registered
+ * listeners.
+ *
+ * @returns {Array}
+ * @api public
+ */
+EventEmitter.prototype.eventNames = function eventNames() {
+  var names = []
+    , events
+    , name;
+
+  if (this._eventsCount === 0) return names;
+
+  for (name in (events = this._events)) {
+    if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
+  }
+
+  if (Object.getOwnPropertySymbols) {
+    return names.concat(Object.getOwnPropertySymbols(events));
+  }
+
+  return names;
+};
+
+/**
+ * Return the listeners registered for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Boolean} exists Only check if there are listeners.
+ * @returns {Array|Boolean}
+ * @api public
+ */
+EventEmitter.prototype.listeners = function listeners(event, exists) {
+  var evt = prefix ? prefix + event : event
+    , available = this._events[evt];
+
+  if (exists) return !!available;
+  if (!available) return [];
+  if (available.fn) return [available.fn];
+
+  for (var i = 0, l = available.length, ee = new Array(l); i < l; i++) {
+    ee[i] = available[i].fn;
+  }
+
+  return ee;
+};
+
+/**
+ * Calls each of the listeners registered for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @returns {Boolean} `true` if the event had listeners, else `false`.
+ * @api public
+ */
+EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return false;
+
+  var listeners = this._events[evt]
+    , len = arguments.length
+    , args
+    , i;
+
+  if (listeners.fn) {
+    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
+
+    switch (len) {
+      case 1: return listeners.fn.call(listeners.context), true;
+      case 2: return listeners.fn.call(listeners.context, a1), true;
+      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
+      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
+      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+    }
+
+    for (i = 1, args = new Array(len -1); i < len; i++) {
+      args[i - 1] = arguments[i];
+    }
+
+    listeners.fn.apply(listeners.context, args);
+  } else {
+    var length = listeners.length
+      , j;
+
+    for (i = 0; i < length; i++) {
+      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
+
+      switch (len) {
+        case 1: listeners[i].fn.call(listeners[i].context); break;
+        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
+        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
+        case 4: listeners[i].fn.call(listeners[i].context, a1, a2, a3); break;
+        default:
+          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
+            args[j - 1] = arguments[j];
+          }
+
+          listeners[i].fn.apply(listeners[i].context, args);
+      }
+    }
+  }
+
+  return true;
+};
+
+/**
+ * Add a listener for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {Mixed} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.on = function on(event, fn, context) {
+  var listener = new EE(fn, context || this)
+    , evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) this._events[evt] = listener, this._eventsCount++;
+  else if (!this._events[evt].fn) this._events[evt].push(listener);
+  else this._events[evt] = [this._events[evt], listener];
+
+  return this;
+};
+
+/**
+ * Add a one-time listener for a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {Mixed} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.once = function once(event, fn, context) {
+  var listener = new EE(fn, context || this, true)
+    , evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) this._events[evt] = listener, this._eventsCount++;
+  else if (!this._events[evt].fn) this._events[evt].push(listener);
+  else this._events[evt] = [this._events[evt], listener];
+
+  return this;
+};
+
+/**
+ * Remove the listeners of a given event.
+ *
+ * @param {String|Symbol} event The event name.
+ * @param {Function} fn Only remove the listeners that match this function.
+ * @param {Mixed} context Only remove the listeners that have this context.
+ * @param {Boolean} once Only remove one-time listeners.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return this;
+  if (!fn) {
+    if (--this._eventsCount === 0) this._events = new Events();
+    else delete this._events[evt];
+    return this;
+  }
+
+  var listeners = this._events[evt];
+
+  if (listeners.fn) {
+    if (
+         listeners.fn === fn
+      && (!once || listeners.once)
+      && (!context || listeners.context === context)
+    ) {
+      if (--this._eventsCount === 0) this._events = new Events();
+      else delete this._events[evt];
+    }
+  } else {
+    for (var i = 0, events = [], length = listeners.length; i < length; i++) {
+      if (
+           listeners[i].fn !== fn
+        || (once && !listeners[i].once)
+        || (context && listeners[i].context !== context)
+      ) {
+        events.push(listeners[i]);
+      }
+    }
+
+    //
+    // Reset the array, or remove it completely if we have no more listeners.
+    //
+    if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+    else if (--this._eventsCount === 0) this._events = new Events();
+    else delete this._events[evt];
+  }
+
+  return this;
+};
+
+/**
+ * Remove all listeners, or those of the specified event.
+ *
+ * @param {String|Symbol} [event] The event name.
+ * @returns {EventEmitter} `this`.
+ * @api public
+ */
+EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
+  var evt;
+
+  if (event) {
+    evt = prefix ? prefix + event : event;
+    if (this._events[evt]) {
+      if (--this._eventsCount === 0) this._events = new Events();
+      else delete this._events[evt];
+    }
+  } else {
+    this._events = new Events();
+    this._eventsCount = 0;
+  }
+
+  return this;
+};
+
+//
+// Alias methods names because people roll like that.
+//
+EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
+EventEmitter.prototype.addListener = EventEmitter.prototype.on;
+
+//
+// This function doesn't apply anymore.
+//
+EventEmitter.prototype.setMaxListeners = function setMaxListeners() {
+  return this;
+};
+
+//
+// Expose the prefix.
+//
+EventEmitter.prefixed = prefix;
+
+//
+// Allow `EventEmitter` to be imported as module namespace.
+//
+EventEmitter.EventEmitter = EventEmitter;
+
+//
+// Expose the module.
+//
+if ('undefined' !== typeof module) {
+  module.exports = EventEmitter;
+}
+
+},{}],664:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView');
+
+module.exports = DataView;
+
+},{"./_getNative":707,"./_root":738}],665:[function(require,module,exports){
+var hashClear = require('./_hashClear'),
+    hashDelete = require('./_hashDelete'),
+    hashGet = require('./_hashGet'),
+    hashHas = require('./_hashHas'),
+    hashSet = require('./_hashSet');
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+module.exports = Hash;
+
+},{"./_hashClear":712,"./_hashDelete":713,"./_hashGet":714,"./_hashHas":715,"./_hashSet":716}],666:[function(require,module,exports){
+var listCacheClear = require('./_listCacheClear'),
+    listCacheDelete = require('./_listCacheDelete'),
+    listCacheGet = require('./_listCacheGet'),
+    listCacheHas = require('./_listCacheHas'),
+    listCacheSet = require('./_listCacheSet');
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+module.exports = ListCache;
+
+},{"./_listCacheClear":724,"./_listCacheDelete":725,"./_listCacheGet":726,"./_listCacheHas":727,"./_listCacheSet":728}],667:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+},{"./_getNative":707,"./_root":738}],668:[function(require,module,exports){
+var mapCacheClear = require('./_mapCacheClear'),
+    mapCacheDelete = require('./_mapCacheDelete'),
+    mapCacheGet = require('./_mapCacheGet'),
+    mapCacheHas = require('./_mapCacheHas'),
+    mapCacheSet = require('./_mapCacheSet');
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries ? entries.length : 0;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+module.exports = MapCache;
+
+},{"./_mapCacheClear":729,"./_mapCacheDelete":730,"./_mapCacheGet":731,"./_mapCacheHas":732,"./_mapCacheSet":733}],669:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Promise = getNative(root, 'Promise');
+
+module.exports = Promise;
+
+},{"./_getNative":707,"./_root":738}],670:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Set = getNative(root, 'Set');
+
+module.exports = Set;
+
+},{"./_getNative":707,"./_root":738}],671:[function(require,module,exports){
+var ListCache = require('./_ListCache'),
+    stackClear = require('./_stackClear'),
+    stackDelete = require('./_stackDelete'),
+    stackGet = require('./_stackGet'),
+    stackHas = require('./_stackHas'),
+    stackSet = require('./_stackSet');
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  var data = this.__data__ = new ListCache(entries);
+  this.size = data.size;
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = stackClear;
+Stack.prototype['delete'] = stackDelete;
+Stack.prototype.get = stackGet;
+Stack.prototype.has = stackHas;
+Stack.prototype.set = stackSet;
+
+module.exports = Stack;
+
+},{"./_ListCache":666,"./_stackClear":740,"./_stackDelete":741,"./_stackGet":742,"./_stackHas":743,"./_stackSet":744}],672:[function(require,module,exports){
+var root = require('./_root');
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+},{"./_root":738}],673:[function(require,module,exports){
+var root = require('./_root');
+
+/** Built-in value references. */
+var Uint8Array = root.Uint8Array;
+
+module.exports = Uint8Array;
+
+},{"./_root":738}],674:[function(require,module,exports){
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = getNative(root, 'WeakMap');
+
+module.exports = WeakMap;
+
+},{"./_getNative":707,"./_root":738}],675:[function(require,module,exports){
+/**
+ * Adds the key-value `pair` to `map`.
+ *
+ * @private
+ * @param {Object} map The map to modify.
+ * @param {Array} pair The key-value pair to add.
+ * @returns {Object} Returns `map`.
+ */
+function addMapEntry(map, pair) {
+  // Don't return `map.set` because it's not chainable in IE 11.
+  map.set(pair[0], pair[1]);
+  return map;
+}
+
+module.exports = addMapEntry;
+
+},{}],676:[function(require,module,exports){
+/**
+ * Adds `value` to `set`.
+ *
+ * @private
+ * @param {Object} set The set to modify.
+ * @param {*} value The value to add.
+ * @returns {Object} Returns `set`.
+ */
+function addSetEntry(set, value) {
+  // Don't return `set.add` because it's not chainable in IE 11.
+  set.add(value);
+  return set;
+}
+
+module.exports = addSetEntry;
+
+},{}],677:[function(require,module,exports){
+/**
+ * A specialized version of `_.forEach` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns `array`.
+ */
+function arrayEach(array, iteratee) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  while (++index < length) {
+    if (iteratee(array[index], index, array) === false) {
+      break;
+    }
+  }
+  return array;
+}
+
+module.exports = arrayEach;
+
+},{}],678:[function(require,module,exports){
+var baseTimes = require('./_baseTimes'),
+    isArguments = require('./isArguments'),
+    isArray = require('./isArray'),
+    isIndex = require('./_isIndex');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  // Safari 9 makes `arguments.length` enumerable in strict mode.
+  var result = (isArray(value) || isArguments(value))
+    ? baseTimes(value.length, String)
+    : [];
+
+  var length = result.length,
+      skipIndexes = !!length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (key == 'length' || isIndex(key, length)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = arrayLikeKeys;
+
+},{"./_baseTimes":691,"./_isIndex":720,"./isArguments":749,"./isArray":750}],679:[function(require,module,exports){
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+module.exports = arrayPush;
+
+},{}],680:[function(require,module,exports){
+/**
+ * A specialized version of `_.reduce` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @param {boolean} [initAccum] Specify using the first element of `array` as
+ *  the initial value.
+ * @returns {*} Returns the accumulated value.
+ */
+function arrayReduce(array, iteratee, accumulator, initAccum) {
+  var index = -1,
+      length = array ? array.length : 0;
+
+  if (initAccum && length) {
+    accumulator = array[++index];
+  }
+  while (++index < length) {
+    accumulator = iteratee(accumulator, array[index], index, array);
+  }
+  return accumulator;
+}
+
+module.exports = arrayReduce;
+
+},{}],681:[function(require,module,exports){
+var baseAssignValue = require('./_baseAssignValue'),
+    eq = require('./eq');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Assigns `value` to `key` of `object` if the existing value is not equivalent
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
+      (value === undefined && !(key in object))) {
+    baseAssignValue(object, key, value);
+  }
+}
+
+module.exports = assignValue;
+
+},{"./_baseAssignValue":684,"./eq":748}],682:[function(require,module,exports){
+var eq = require('./eq');
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;
+
+},{"./eq":748}],683:[function(require,module,exports){
+var copyObject = require('./_copyObject'),
+    keys = require('./keys');
+
+/**
+ * The base implementation of `_.assign` without support for multiple sources
+ * or `customizer` functions.
+ *
+ * @private
+ * @param {Object} object The destination object.
+ * @param {Object} source The source object.
+ * @returns {Object} Returns `object`.
+ */
+function baseAssign(object, source) {
+  return object && copyObject(source, keys(source), object);
+}
+
+module.exports = baseAssign;
+
+},{"./_copyObject":701,"./keys":759}],684:[function(require,module,exports){
+/** Built-in value references. */
+var defineProperty = Object.defineProperty;
+
+/**
+ * The base implementation of `assignValue` and `assignMergeValue` without
+ * value checks.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function baseAssignValue(object, key, value) {
+  if (key == '__proto__' && defineProperty) {
+    defineProperty(object, key, {
+      'configurable': true,
+      'enumerable': true,
+      'value': value,
+      'writable': true
+    });
+  } else {
+    object[key] = value;
+  }
+}
+
+module.exports = baseAssignValue;
+
+},{}],685:[function(require,module,exports){
+var Stack = require('./_Stack'),
+    arrayEach = require('./_arrayEach'),
+    assignValue = require('./_assignValue'),
+    baseAssign = require('./_baseAssign'),
+    cloneBuffer = require('./_cloneBuffer'),
+    copyArray = require('./_copyArray'),
+    copySymbols = require('./_copySymbols'),
+    getAllKeys = require('./_getAllKeys'),
+    getTag = require('./_getTag'),
+    initCloneArray = require('./_initCloneArray'),
+    initCloneByTag = require('./_initCloneByTag'),
+    initCloneObject = require('./_initCloneObject'),
+    isArray = require('./isArray'),
+    isBuffer = require('./isBuffer'),
+    isObject = require('./isObject'),
+    keys = require('./keys');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values supported by `_.clone`. */
+var cloneableTags = {};
+cloneableTags[argsTag] = cloneableTags[arrayTag] =
+cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
+cloneableTags[boolTag] = cloneableTags[dateTag] =
+cloneableTags[float32Tag] = cloneableTags[float64Tag] =
+cloneableTags[int8Tag] = cloneableTags[int16Tag] =
+cloneableTags[int32Tag] = cloneableTags[mapTag] =
+cloneableTags[numberTag] = cloneableTags[objectTag] =
+cloneableTags[regexpTag] = cloneableTags[setTag] =
+cloneableTags[stringTag] = cloneableTags[symbolTag] =
+cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
+cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
+cloneableTags[errorTag] = cloneableTags[funcTag] =
+cloneableTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.clone` and `_.cloneDeep` which tracks
+ * traversed objects.
+ *
+ * @private
+ * @param {*} value The value to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @param {boolean} [isFull] Specify a clone including symbols.
+ * @param {Function} [customizer] The function to customize cloning.
+ * @param {string} [key] The key of `value`.
+ * @param {Object} [object] The parent object of `value`.
+ * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
+ * @returns {*} Returns the cloned value.
+ */
+function baseClone(value, isDeep, isFull, customizer, key, object, stack) {
+  var result;
+  if (customizer) {
+    result = object ? customizer(value, key, object, stack) : customizer(value);
+  }
+  if (result !== undefined) {
+    return result;
+  }
+  if (!isObject(value)) {
+    return value;
+  }
+  var isArr = isArray(value);
+  if (isArr) {
+    result = initCloneArray(value);
+    if (!isDeep) {
+      return copyArray(value, result);
+    }
+  } else {
+    var tag = getTag(value),
+        isFunc = tag == funcTag || tag == genTag;
+
+    if (isBuffer(value)) {
+      return cloneBuffer(value, isDeep);
+    }
+    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
+      result = initCloneObject(isFunc ? {} : value);
+      if (!isDeep) {
+        return copySymbols(value, baseAssign(result, value));
+      }
+    } else {
+      if (!cloneableTags[tag]) {
+        return object ? value : {};
+      }
+      result = initCloneByTag(value, tag, baseClone, isDeep);
+    }
+  }
+  // Check for circular references and return its corresponding clone.
+  stack || (stack = new Stack);
+  var stacked = stack.get(value);
+  if (stacked) {
+    return stacked;
+  }
+  stack.set(value, result);
+
+  if (!isArr) {
+    var props = isFull ? getAllKeys(value) : keys(value);
+  }
+  arrayEach(props || value, function(subValue, key) {
+    if (props) {
+      key = subValue;
+      subValue = value[key];
+    }
+    // Recursively populate clone (susceptible to call stack limits).
+    assignValue(result, key, baseClone(subValue, isDeep, isFull, customizer, key, value, stack));
+  });
+  return result;
+}
+
+module.exports = baseClone;
+
+},{"./_Stack":671,"./_arrayEach":677,"./_assignValue":681,"./_baseAssign":683,"./_cloneBuffer":693,"./_copyArray":700,"./_copySymbols":702,"./_getAllKeys":705,"./_getTag":710,"./_initCloneArray":717,"./_initCloneByTag":718,"./_initCloneObject":719,"./isArray":750,"./isBuffer":753,"./isObject":756,"./keys":759}],686:[function(require,module,exports){
+var isObject = require('./isObject');
+
+/** Built-in value references. */
+var objectCreate = Object.create;
+
+/**
+ * The base implementation of `_.create` without support for assigning
+ * properties to the created object.
+ *
+ * @private
+ * @param {Object} proto The object to inherit from.
+ * @returns {Object} Returns the new object.
+ */
+var baseCreate = (function() {
+  function object() {}
+  return function(proto) {
+    if (!isObject(proto)) {
+      return {};
+    }
+    if (objectCreate) {
+      return objectCreate(proto);
+    }
+    object.prototype = prototype;
+    var result = new object;
+    object.prototype = undefined;
+    return result;
+  };
+}());
+
+module.exports = baseCreate;
+
+},{"./isObject":756}],687:[function(require,module,exports){
+var arrayPush = require('./_arrayPush'),
+    isArray = require('./isArray');
+
+/**
+ * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+ * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @param {Function} symbolsFunc The function to get the symbols of `object`.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+  var result = keysFunc(object);
+  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
+}
+
+module.exports = baseGetAllKeys;
+
+},{"./_arrayPush":679,"./isArray":750}],688:[function(require,module,exports){
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * The base implementation of `getTag`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  return objectToString.call(value);
+}
+
+module.exports = baseGetTag;
+
+},{}],689:[function(require,module,exports){
+var isFunction = require('./isFunction'),
+    isMasked = require('./_isMasked'),
+    isObject = require('./isObject'),
+    toSource = require('./_toSource');
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+module.exports = baseIsNative;
+
+},{"./_isMasked":722,"./_toSource":745,"./isFunction":754,"./isObject":756}],690:[function(require,module,exports){
+var isPrototype = require('./_isPrototype'),
+    nativeKeys = require('./_nativeKeys');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeys;
+
+},{"./_isPrototype":723,"./_nativeKeys":736}],691:[function(require,module,exports){
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+module.exports = baseTimes;
+
+},{}],692:[function(require,module,exports){
+var Uint8Array = require('./_Uint8Array');
+
+/**
+ * Creates a clone of `arrayBuffer`.
+ *
+ * @private
+ * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
+ * @returns {ArrayBuffer} Returns the cloned array buffer.
+ */
+function cloneArrayBuffer(arrayBuffer) {
+  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
+  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
+  return result;
+}
+
+module.exports = cloneArrayBuffer;
+
+},{"./_Uint8Array":673}],693:[function(require,module,exports){
+var root = require('./_root');
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined,
+    allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined;
+
+/**
+ * Creates a clone of  `buffer`.
+ *
+ * @private
+ * @param {Buffer} buffer The buffer to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Buffer} Returns the cloned buffer.
+ */
+function cloneBuffer(buffer, isDeep) {
+  if (isDeep) {
+    return buffer.slice();
+  }
+  var length = buffer.length,
+      result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
+
+  buffer.copy(result);
+  return result;
+}
+
+module.exports = cloneBuffer;
+
+},{"./_root":738}],694:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer');
+
+/**
+ * Creates a clone of `dataView`.
+ *
+ * @private
+ * @param {Object} dataView The data view to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned data view.
+ */
+function cloneDataView(dataView, isDeep) {
+  var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
+  return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
+}
+
+module.exports = cloneDataView;
+
+},{"./_cloneArrayBuffer":692}],695:[function(require,module,exports){
+var addMapEntry = require('./_addMapEntry'),
+    arrayReduce = require('./_arrayReduce'),
+    mapToArray = require('./_mapToArray');
+
+/**
+ * Creates a clone of `map`.
+ *
+ * @private
+ * @param {Object} map The map to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned map.
+ */
+function cloneMap(map, isDeep, cloneFunc) {
+  var array = isDeep ? cloneFunc(mapToArray(map), true) : mapToArray(map);
+  return arrayReduce(array, addMapEntry, new map.constructor);
+}
+
+module.exports = cloneMap;
+
+},{"./_addMapEntry":675,"./_arrayReduce":680,"./_mapToArray":734}],696:[function(require,module,exports){
+/** Used to match `RegExp` flags from their coerced string values. */
+var reFlags = /\w*$/;
+
+/**
+ * Creates a clone of `regexp`.
+ *
+ * @private
+ * @param {Object} regexp The regexp to clone.
+ * @returns {Object} Returns the cloned regexp.
+ */
+function cloneRegExp(regexp) {
+  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
+  result.lastIndex = regexp.lastIndex;
+  return result;
+}
+
+module.exports = cloneRegExp;
+
+},{}],697:[function(require,module,exports){
+var addSetEntry = require('./_addSetEntry'),
+    arrayReduce = require('./_arrayReduce'),
+    setToArray = require('./_setToArray');
+
+/**
+ * Creates a clone of `set`.
+ *
+ * @private
+ * @param {Object} set The set to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned set.
+ */
+function cloneSet(set, isDeep, cloneFunc) {
+  var array = isDeep ? cloneFunc(setToArray(set), true) : setToArray(set);
+  return arrayReduce(array, addSetEntry, new set.constructor);
+}
+
+module.exports = cloneSet;
+
+},{"./_addSetEntry":676,"./_arrayReduce":680,"./_setToArray":739}],698:[function(require,module,exports){
+var Symbol = require('./_Symbol');
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+/**
+ * Creates a clone of the `symbol` object.
+ *
+ * @private
+ * @param {Object} symbol The symbol object to clone.
+ * @returns {Object} Returns the cloned symbol object.
+ */
+function cloneSymbol(symbol) {
+  return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
+}
+
+module.exports = cloneSymbol;
+
+},{"./_Symbol":672}],699:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer');
+
+/**
+ * Creates a clone of `typedArray`.
+ *
+ * @private
+ * @param {Object} typedArray The typed array to clone.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the cloned typed array.
+ */
+function cloneTypedArray(typedArray, isDeep) {
+  var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
+}
+
+module.exports = cloneTypedArray;
+
+},{"./_cloneArrayBuffer":692}],700:[function(require,module,exports){
+/**
+ * Copies the values of `source` to `array`.
+ *
+ * @private
+ * @param {Array} source The array to copy values from.
+ * @param {Array} [array=[]] The array to copy values to.
+ * @returns {Array} Returns `array`.
+ */
+function copyArray(source, array) {
+  var index = -1,
+      length = source.length;
+
+  array || (array = Array(length));
+  while (++index < length) {
+    array[index] = source[index];
+  }
+  return array;
+}
+
+module.exports = copyArray;
+
+},{}],701:[function(require,module,exports){
+var assignValue = require('./_assignValue'),
+    baseAssignValue = require('./_baseAssignValue');
+
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+function copyObject(source, props, object, customizer) {
+  var isNew = !object;
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer
+      ? customizer(object[key], source[key], key, object, source)
+      : undefined;
+
+    if (newValue === undefined) {
+      newValue = source[key];
+    }
+    if (isNew) {
+      baseAssignValue(object, key, newValue);
+    } else {
+      assignValue(object, key, newValue);
+    }
+  }
+  return object;
+}
+
+module.exports = copyObject;
+
+},{"./_assignValue":681,"./_baseAssignValue":684}],702:[function(require,module,exports){
+var copyObject = require('./_copyObject'),
+    getSymbols = require('./_getSymbols');
+
+/**
+ * Copies own symbol properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy symbols from.
+ * @param {Object} [object={}] The object to copy symbols to.
+ * @returns {Object} Returns `object`.
+ */
+function copySymbols(source, object) {
+  return copyObject(source, getSymbols(source), object);
+}
+
+module.exports = copySymbols;
+
+},{"./_copyObject":701,"./_getSymbols":709}],703:[function(require,module,exports){
+var root = require('./_root');
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;
+
+},{"./_root":738}],704:[function(require,module,exports){
+(function (global){
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],705:[function(require,module,exports){
+var baseGetAllKeys = require('./_baseGetAllKeys'),
+    getSymbols = require('./_getSymbols'),
+    keys = require('./keys');
+
+/**
+ * Creates an array of own enumerable property names and symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeys(object) {
+  return baseGetAllKeys(object, keys, getSymbols);
+}
+
+module.exports = getAllKeys;
+
+},{"./_baseGetAllKeys":687,"./_getSymbols":709,"./keys":759}],706:[function(require,module,exports){
+var isKeyable = require('./_isKeyable');
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+module.exports = getMapData;
+
+},{"./_isKeyable":721}],707:[function(require,module,exports){
+var baseIsNative = require('./_baseIsNative'),
+    getValue = require('./_getValue');
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+},{"./_baseIsNative":689,"./_getValue":711}],708:[function(require,module,exports){
+arguments[4][481][0].apply(exports,arguments)
+},{"./_overArg":737,"dup":481}],709:[function(require,module,exports){
+var overArg = require('./_overArg'),
+    stubArray = require('./stubArray');
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own enumerable symbol properties of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+var getSymbols = nativeGetSymbols ? overArg(nativeGetSymbols, Object) : stubArray;
+
+module.exports = getSymbols;
+
+},{"./_overArg":737,"./stubArray":761}],710:[function(require,module,exports){
+var DataView = require('./_DataView'),
+    Map = require('./_Map'),
+    Promise = require('./_Promise'),
+    Set = require('./_Set'),
+    WeakMap = require('./_WeakMap'),
+    baseGetTag = require('./_baseGetTag'),
+    toSource = require('./_toSource');
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = baseGetTag;
+
+// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = objectToString.call(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : undefined;
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;
+
+},{"./_DataView":664,"./_Map":667,"./_Promise":669,"./_Set":670,"./_WeakMap":674,"./_baseGetTag":688,"./_toSource":745}],711:[function(require,module,exports){
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+module.exports = getValue;
+
+},{}],712:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+  this.size = 0;
+}
+
+module.exports = hashClear;
+
+},{"./_nativeCreate":735}],713:[function(require,module,exports){
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  var result = this.has(key) && delete this.__data__[key];
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = hashDelete;
+
+},{}],714:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+module.exports = hashGet;
+
+},{"./_nativeCreate":735}],715:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+}
+
+module.exports = hashHas;
+
+},{"./_nativeCreate":735}],716:[function(require,module,exports){
+var nativeCreate = require('./_nativeCreate');
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  this.size += this.has(key) ? 0 : 1;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+module.exports = hashSet;
+
+},{"./_nativeCreate":735}],717:[function(require,module,exports){
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Initializes an array clone.
+ *
+ * @private
+ * @param {Array} array The array to clone.
+ * @returns {Array} Returns the initialized clone.
+ */
+function initCloneArray(array) {
+  var length = array.length,
+      result = array.constructor(length);
+
+  // Add properties assigned by `RegExp#exec`.
+  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+    result.index = array.index;
+    result.input = array.input;
+  }
+  return result;
+}
+
+module.exports = initCloneArray;
+
+},{}],718:[function(require,module,exports){
+var cloneArrayBuffer = require('./_cloneArrayBuffer'),
+    cloneDataView = require('./_cloneDataView'),
+    cloneMap = require('./_cloneMap'),
+    cloneRegExp = require('./_cloneRegExp'),
+    cloneSet = require('./_cloneSet'),
+    cloneSymbol = require('./_cloneSymbol'),
+    cloneTypedArray = require('./_cloneTypedArray');
+
+/** `Object#toString` result references. */
+var boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/**
+ * Initializes an object clone based on its `toStringTag`.
+ *
+ * **Note:** This function only supports cloning values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @param {string} tag The `toStringTag` of the object to clone.
+ * @param {Function} cloneFunc The function to clone values.
+ * @param {boolean} [isDeep] Specify a deep clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneByTag(object, tag, cloneFunc, isDeep) {
+  var Ctor = object.constructor;
+  switch (tag) {
+    case arrayBufferTag:
+      return cloneArrayBuffer(object);
+
+    case boolTag:
+    case dateTag:
+      return new Ctor(+object);
+
+    case dataViewTag:
+      return cloneDataView(object, isDeep);
+
+    case float32Tag: case float64Tag:
+    case int8Tag: case int16Tag: case int32Tag:
+    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+      return cloneTypedArray(object, isDeep);
+
+    case mapTag:
+      return cloneMap(object, isDeep, cloneFunc);
+
+    case numberTag:
+    case stringTag:
+      return new Ctor(object);
+
+    case regexpTag:
+      return cloneRegExp(object);
+
+    case setTag:
+      return cloneSet(object, isDeep, cloneFunc);
+
+    case symbolTag:
+      return cloneSymbol(object);
+  }
+}
+
+module.exports = initCloneByTag;
+
+},{"./_cloneArrayBuffer":692,"./_cloneDataView":694,"./_cloneMap":695,"./_cloneRegExp":696,"./_cloneSet":697,"./_cloneSymbol":698,"./_cloneTypedArray":699}],719:[function(require,module,exports){
+var baseCreate = require('./_baseCreate'),
+    getPrototype = require('./_getPrototype'),
+    isPrototype = require('./_isPrototype');
+
+/**
+ * Initializes an object clone.
+ *
+ * @private
+ * @param {Object} object The object to clone.
+ * @returns {Object} Returns the initialized clone.
+ */
+function initCloneObject(object) {
+  return (typeof object.constructor == 'function' && !isPrototype(object))
+    ? baseCreate(getPrototype(object))
+    : {};
+}
+
+module.exports = initCloneObject;
+
+},{"./_baseCreate":686,"./_getPrototype":708,"./_isPrototype":723}],720:[function(require,module,exports){
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  length = length == null ? MAX_SAFE_INTEGER : length;
+  return !!length &&
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
+}
+
+module.exports = isIndex;
+
+},{}],721:[function(require,module,exports){
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+module.exports = isKeyable;
+
+},{}],722:[function(require,module,exports){
+var coreJsData = require('./_coreJsData');
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+module.exports = isMasked;
+
+},{"./_coreJsData":703}],723:[function(require,module,exports){
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+module.exports = isPrototype;
+
+},{}],724:[function(require,module,exports){
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+  this.size = 0;
+}
+
+module.exports = listCacheClear;
+
+},{}],725:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  --this.size;
+  return true;
+}
+
+module.exports = listCacheDelete;
+
+},{"./_assocIndexOf":682}],726:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;
+
+},{"./_assocIndexOf":682}],727:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+module.exports = listCacheHas;
+
+},{"./_assocIndexOf":682}],728:[function(require,module,exports){
+var assocIndexOf = require('./_assocIndexOf');
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    ++this.size;
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+module.exports = listCacheSet;
+
+},{"./_assocIndexOf":682}],729:[function(require,module,exports){
+var Hash = require('./_Hash'),
+    ListCache = require('./_ListCache'),
+    Map = require('./_Map');
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+module.exports = mapCacheClear;
+
+},{"./_Hash":665,"./_ListCache":666,"./_Map":667}],730:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  var result = getMapData(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = mapCacheDelete;
+
+},{"./_getMapData":706}],731:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+module.exports = mapCacheGet;
+
+},{"./_getMapData":706}],732:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+module.exports = mapCacheHas;
+
+},{"./_getMapData":706}],733:[function(require,module,exports){
+var getMapData = require('./_getMapData');
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  var data = getMapData(this, key),
+      size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+module.exports = mapCacheSet;
+
+},{"./_getMapData":706}],734:[function(require,module,exports){
+/**
+ * Converts `map` to its key-value pairs.
+ *
+ * @private
+ * @param {Object} map The map to convert.
+ * @returns {Array} Returns the key-value pairs.
+ */
+function mapToArray(map) {
+  var index = -1,
+      result = Array(map.size);
+
+  map.forEach(function(value, key) {
+    result[++index] = [key, value];
+  });
+  return result;
+}
+
+module.exports = mapToArray;
+
+},{}],735:[function(require,module,exports){
+var getNative = require('./_getNative');
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;
+
+},{"./_getNative":707}],736:[function(require,module,exports){
+var overArg = require('./_overArg');
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object);
+
+module.exports = nativeKeys;
+
+},{"./_overArg":737}],737:[function(require,module,exports){
+arguments[4][482][0].apply(exports,arguments)
+},{"dup":482}],738:[function(require,module,exports){
+var freeGlobal = require('./_freeGlobal');
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+},{"./_freeGlobal":704}],739:[function(require,module,exports){
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+module.exports = setToArray;
+
+},{}],740:[function(require,module,exports){
+var ListCache = require('./_ListCache');
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new ListCache;
+  this.size = 0;
+}
+
+module.exports = stackClear;
+
+},{"./_ListCache":666}],741:[function(require,module,exports){
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  var data = this.__data__,
+      result = data['delete'](key);
+
+  this.size = data.size;
+  return result;
+}
+
+module.exports = stackDelete;
+
+},{}],742:[function(require,module,exports){
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+module.exports = stackGet;
+
+},{}],743:[function(require,module,exports){
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+module.exports = stackHas;
+
+},{}],744:[function(require,module,exports){
+var ListCache = require('./_ListCache'),
+    Map = require('./_Map'),
+    MapCache = require('./_MapCache');
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var data = this.__data__;
+  if (data instanceof ListCache) {
+    var pairs = data.__data__;
+    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+      pairs.push([key, value]);
+      this.size = ++data.size;
+      return this;
+    }
+    data = this.__data__ = new MapCache(pairs);
+  }
+  data.set(key, value);
+  this.size = data.size;
+  return this;
+}
+
+module.exports = stackSet;
+
+},{"./_ListCache":666,"./_Map":667,"./_MapCache":668}],745:[function(require,module,exports){
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to process.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+module.exports = toSource;
+
+},{}],746:[function(require,module,exports){
+var baseClone = require('./_baseClone');
+
+/**
+ * Creates a shallow clone of `value`.
+ *
+ * **Note:** This method is loosely based on the
+ * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
+ * and supports cloning arrays, array buffers, booleans, date objects, maps,
+ * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
+ * arrays. The own enumerable properties of `arguments` objects are cloned
+ * as plain objects. An empty object is returned for uncloneable values such
+ * as error objects, functions, DOM nodes, and WeakMaps.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to clone.
+ * @returns {*} Returns the cloned value.
+ * @see _.cloneDeep
+ * @example
+ *
+ * var objects = [{ 'a': 1 }, { 'b': 2 }];
+ *
+ * var shallow = _.clone(objects);
+ * console.log(shallow[0] === objects[0]);
+ * // => true
+ */
+function clone(value) {
+  return baseClone(value, false, true);
+}
+
+module.exports = clone;
+
+},{"./_baseClone":685}],747:[function(require,module,exports){
+var isObject = require('./isObject'),
+    now = require('./now'),
+    toNumber = require('./toNumber');
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+module.exports = debounce;
+
+},{"./isObject":756,"./now":760,"./toNumber":764}],748:[function(require,module,exports){
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+module.exports = eq;
+
+},{}],749:[function(require,module,exports){
+var isArrayLikeObject = require('./isArrayLikeObject');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+function isArguments(value) {
+  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+}
+
+module.exports = isArguments;
+
+},{"./isArrayLikeObject":752}],750:[function(require,module,exports){
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+module.exports = isArray;
+
+},{}],751:[function(require,module,exports){
+var isFunction = require('./isFunction'),
+    isLength = require('./isLength');
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+module.exports = isArrayLike;
+
+},{"./isFunction":754,"./isLength":755}],752:[function(require,module,exports){
+var isArrayLike = require('./isArrayLike'),
+    isObjectLike = require('./isObjectLike');
+
+/**
+ * This method is like `_.isArrayLike` except that it also checks if `value`
+ * is an object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array-like object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArrayLikeObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLikeObject(document.body.children);
+ * // => true
+ *
+ * _.isArrayLikeObject('abc');
+ * // => false
+ *
+ * _.isArrayLikeObject(_.noop);
+ * // => false
+ */
+function isArrayLikeObject(value) {
+  return isObjectLike(value) && isArrayLike(value);
+}
+
+module.exports = isArrayLikeObject;
+
+},{"./isArrayLike":751,"./isObjectLike":757}],753:[function(require,module,exports){
+var root = require('./_root'),
+    stubFalse = require('./stubFalse');
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = nativeIsBuffer || stubFalse;
+
+module.exports = isBuffer;
+
+},{"./_root":738,"./stubFalse":762}],754:[function(require,module,exports){
+var isObject = require('./isObject');
+
+/** `Object#toString` result references. */
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8-9 which returns 'object' for typed array and other constructors.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}
+
+module.exports = isFunction;
+
+},{"./isObject":756}],755:[function(require,module,exports){
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;
+
+},{}],756:[function(require,module,exports){
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+},{}],757:[function(require,module,exports){
+arguments[4][483][0].apply(exports,arguments)
+},{"dup":483}],758:[function(require,module,exports){
+var isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+},{"./isObjectLike":757}],759:[function(require,module,exports){
+var arrayLikeKeys = require('./_arrayLikeKeys'),
+    baseKeys = require('./_baseKeys'),
+    isArrayLike = require('./isArrayLike');
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
+
+module.exports = keys;
+
+},{"./_arrayLikeKeys":678,"./_baseKeys":690,"./isArrayLike":751}],760:[function(require,module,exports){
+var root = require('./_root');
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+module.exports = now;
+
+},{"./_root":738}],761:[function(require,module,exports){
+/**
+ * This method returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function stubArray() {
+  return [];
+}
+
+module.exports = stubArray;
+
+},{}],762:[function(require,module,exports){
+/**
+ * This method returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+module.exports = stubFalse;
+
+},{}],763:[function(require,module,exports){
+var debounce = require('./debounce'),
+    isObject = require('./isObject');
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a throttled function that only invokes `func` at most once per
+ * every `wait` milliseconds. The throttled function comes with a `cancel`
+ * method to cancel delayed `func` invocations and a `flush` method to
+ * immediately invoke them. Provide `options` to indicate whether `func`
+ * should be invoked on the leading and/or trailing edge of the `wait`
+ * timeout. The `func` is invoked with the last arguments provided to the
+ * throttled function. Subsequent calls to the throttled function return the
+ * result of the last `func` invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the throttled function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.throttle` and `_.debounce`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to throttle.
+ * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=true]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new throttled function.
+ * @example
+ *
+ * // Avoid excessively updating the position while scrolling.
+ * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+ *
+ * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+ * jQuery(element).on('click', throttled);
+ *
+ * // Cancel the trailing throttled invocation.
+ * jQuery(window).on('popstate', throttled.cancel);
+ */
+function throttle(func, wait, options) {
+  var leading = true,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  if (isObject(options)) {
+    leading = 'leading' in options ? !!options.leading : leading;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+  return debounce(func, wait, {
+    'leading': leading,
+    'maxWait': wait,
+    'trailing': trailing
+  });
+}
+
+module.exports = throttle;
+
+},{"./debounce":747,"./isObject":756}],764:[function(require,module,exports){
+var isObject = require('./isObject'),
+    isSymbol = require('./isSymbol');
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+},{"./isObject":756,"./isSymbol":758}],765:[function(require,module,exports){
 module.exports = require('./lib/index');
 
-},{"./lib/index":647}],647:[function(require,module,exports){
+},{"./lib/index":766}],766:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -50686,7 +56958,7 @@ if (typeof global !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill":648}],648:[function(require,module,exports){
+},{"./ponyfill":767}],767:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -50710,7 +56982,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],649:[function(require,module,exports){
+},{}],768:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * IPv6 Support
@@ -50897,7 +57169,7 @@ function symbolObservablePonyfill(root) {
   };
 }));
 
-},{}],650:[function(require,module,exports){
+},{}],769:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * Second Level Domain (SLD) Support
@@ -51139,7 +57411,7 @@ function symbolObservablePonyfill(root) {
   return SLD;
 }));
 
-},{}],651:[function(require,module,exports){
+},{}],770:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {
@@ -84491,7 +90763,10 @@ module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],"noUiSlider":[function(require,module,exports){
-/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+/*! noUiSlider - 8.0.1 - 2015-06-29 19:11:22 */
+
+/*jslint browser: true */
+/*jslint white: true */
 
 (function (factory) {
 
@@ -84503,7 +90778,7 @@ module.exports = exports['default'];
     } else if ( typeof exports === 'object' ) {
 
         // Node/CommonJS
-        module.exports = factory();
+        module.exports = factory(require('jquery'));
 
     } else {
 
@@ -84533,25 +90808,32 @@ module.exports = exports['default'];
 
 	var rect = elem.getBoundingClientRect(),
 		doc = elem.ownerDocument,
+		win = doc.defaultView || doc.parentWindow,
 		docElem = doc.documentElement,
-		pageOffset = getPageOffset();
+		xOff = win.pageXOffset;
 
 		// getBoundingClientRect contains left scroll in Chrome on Android.
 		// I haven't found a feature detection that proves this. Worst case
 		// scenario on mis-match: the 'tap' feature on horizontal sliders breaks.
 		if ( /webkit.*Chrome.*Mobile/i.test(navigator.userAgent) ) {
-			pageOffset.x = 0;
+			xOff = 0;
 		}
 
 		return {
-			top: rect.top + pageOffset.y - docElem.clientTop,
-			left: rect.left + pageOffset.x - docElem.clientLeft
+			top: rect.top + win.pageYOffset - docElem.clientTop,
+			left: rect.left + xOff - docElem.clientLeft
 		};
 	}
 
 	// Checks whether a value is numerical.
 	function isNumeric ( a ) {
 		return typeof a === 'number' && !isNaN( a ) && isFinite( a );
+	}
+
+	// Rounds a number to 7 supported decimals.
+	function accurateNumber( number ) {
+		var p = Math.pow(10, 7);
+		return Number((Math.round(number*p)/p).toFixed(7));
 	}
 
 	// Sets a class and removes it after [duration] ms.
@@ -84596,46 +90878,55 @@ module.exports = exports['default'];
 		}
 	}
 
-	// https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+	// http://youmightnotneedjquery.com/#has_class
 	function hasClass ( el, className ) {
-		return el.classList ? el.classList.contains(className) : new RegExp('\\b' + className + '\\b').test(el.className);
+		if ( el.classList ) {
+			el.classList.contains(className);
+		} else {
+			new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+		}
 	}
 
-	// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
-	function getPageOffset ( ) {
 
-		var supportPageOffset = window.pageXOffset !== undefined,
-			isCSS1Compat = ((document.compatMode || "") === "CSS1Compat"),
-			x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
-			y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-
-		return {
-			x: x,
-			y: y
-		};
-	}
-
-	// we provide a function to compute constants instead
-	// of accessing window.* as soon as the module needs it
-	// so that we do not compute anything if not needed
-	function getActions ( ) {
-
-		// Determine the events to bind. IE11 implements pointerEvents without
-		// a prefix, which breaks compatibility with the IE10 implementation.
-		return window.navigator.pointerEnabled ? {
-			start: 'pointerdown',
-			move: 'pointermove',
-			end: 'pointerup'
-		} : window.navigator.msPointerEnabled ? {
-			start: 'MSPointerDown',
-			move: 'MSPointerMove',
-			end: 'MSPointerUp'
-		} : {
-			start: 'mousedown touchstart',
-			move: 'mousemove touchmove',
-			end: 'mouseup touchend'
-		};
-	}
+	var
+	// Determine the events to bind. IE11 implements pointerEvents without
+	// a prefix, which breaks compatibility with the IE10 implementation.
+	/** @const */
+	actions = window.navigator.pointerEnabled ? {
+		start: 'pointerdown',
+		move: 'pointermove',
+		end: 'pointerup'
+	} : window.navigator.msPointerEnabled ? {
+		start: 'MSPointerDown',
+		move: 'MSPointerMove',
+		end: 'MSPointerUp'
+	} : {
+		start: 'mousedown touchstart',
+		move: 'mousemove touchmove',
+		end: 'mouseup touchend'
+	},
+	// Re-usable list of classes;
+	/** @const */
+	Classes = [
+/*  0 */  'noUi-target'
+/*  1 */ ,'noUi-base'
+/*  2 */ ,'noUi-origin'
+/*  3 */ ,'noUi-handle'
+/*  4 */ ,'noUi-horizontal'
+/*  5 */ ,'noUi-vertical'
+/*  6 */ ,'noUi-background'
+/*  7 */ ,'noUi-connect'
+/*  8 */ ,'noUi-ltr'
+/*  9 */ ,'noUi-rtl'
+/* 10 */ ,'noUi-dragable'
+/* 11 */ ,''
+/* 12 */ ,'noUi-state-drag'
+/* 13 */ ,''
+/* 14 */ ,'noUi-state-tap'
+/* 15 */ ,'noUi-active'
+/* 16 */ ,''
+/* 17 */ ,'noUi-stacking'
+	];
 
 
 // Value calculation
@@ -84833,12 +91124,7 @@ module.exports = exports['default'];
 		}
 
 		// Sort all entries by value (numeric sort).
-		if ( ordered.length && typeof ordered[0][0] === "object" ) {
-			ordered.sort(function(a, b) { return a[0][0] - b[0][0]; });
-		} else {
-			ordered.sort(function(a, b) { return a[0] - b[0]; });
-		}
-
+		ordered.sort(function(a, b) { return a[0] - b[0]; });
 
 		// Convert all entries to subranges.
 		for ( index = 0; index < ordered.length; index++ ) {
@@ -84878,7 +91164,7 @@ module.exports = exports['default'];
 			value = 100 - value;
 		}
 
-		return fromStepping( this.xVal, this.xPct, value );
+		return accurateNumber(fromStepping( this.xVal, this.xPct, value ));
 	};
 
 	Spectrum.prototype.getStep = function ( value ) {
@@ -84924,7 +91210,7 @@ module.exports = exports['default'];
 	object, to make sure all values can be correctly looped elsewhere. */
 
 	var defaultFormatter = { 'to': function( value ){
-		return value !== undefined && value.toFixed(2);
+		return value.toFixed(2);
 	}, 'from': Number };
 
 	function testStep ( parsed, entry ) {
@@ -84948,11 +91234,6 @@ module.exports = exports['default'];
 		// Catch missing start or end.
 		if ( entry.min === undefined || entry.max === undefined ) {
 			throw new Error("noUiSlider: Missing 'min' or 'max' in 'range'.");
-		}
-
-		// Catch equal start or end.
-		if ( entry.min === entry.max ) {
-			throw new Error("noUiSlider: 'range' 'min' and 'max' cannot be equal.");
 		}
 
 		parsed.spectrum = new Spectrum(entry, parsed.snap, parsed.dir, parsed.singleStep);
@@ -84996,15 +91277,6 @@ module.exports = exports['default'];
 		}
 	}
 
-	function testAnimationDuration ( parsed, entry ) {
-
-		parsed.animationDuration = entry;
-
-		if ( typeof entry !== 'number' ){
-			throw new Error("noUiSlider: 'animationDuration' option must be a number.");
-		}
-	}
-
 	function testConnect ( parsed, entry ) {
 
 		if ( entry === 'lower' && parsed.handles === 1 ) {
@@ -85040,11 +91312,6 @@ module.exports = exports['default'];
 
 		if ( !isNumeric(entry) ){
 			throw new Error("noUiSlider: 'margin' option must be numeric.");
-		}
-
-		// Issue #582
-		if ( entry === 0 ) {
-			return;
 		}
 
 		parsed.margin = parsed.spectrum.getMargin(entry);
@@ -85097,51 +91364,14 @@ module.exports = exports['default'];
 		var tap = entry.indexOf('tap') >= 0,
 			drag = entry.indexOf('drag') >= 0,
 			fixed = entry.indexOf('fixed') >= 0,
-			snap = entry.indexOf('snap') >= 0,
-			hover = entry.indexOf('hover') >= 0;
-
-		// Fix #472
-		if ( drag && !parsed.connect ) {
-			throw new Error("noUiSlider: 'drag' behaviour must be used with 'connect': true.");
-		}
+			snap = entry.indexOf('snap') >= 0;
 
 		parsed.events = {
 			tap: tap || snap,
 			drag: drag,
 			fixed: fixed,
-			snap: snap,
-			hover: hover
+			snap: snap
 		};
-	}
-
-	function testTooltips ( parsed, entry ) {
-
-		var i;
-
-		if ( entry === false ) {
-			return;
-		} else if ( entry === true ) {
-
-			parsed.tooltips = [];
-
-			for ( i = 0; i < parsed.handles; i++ ) {
-				parsed.tooltips.push(true);
-			}
-
-		} else {
-
-			parsed.tooltips = asArray(entry);
-
-			if ( parsed.tooltips.length !== parsed.handles ) {
-				throw new Error("noUiSlider: must pass a formatter for all handles.");
-			}
-
-			parsed.tooltips.forEach(function(formatter){
-				if ( typeof formatter !== 'boolean' && (typeof formatter !== 'object' || typeof formatter.to !== 'function') ) {
-					throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
-				}
-			});
-		}
 	}
 
 	function testFormat ( parsed, entry ) {
@@ -85153,49 +91383,16 @@ module.exports = exports['default'];
 			return true;
 		}
 
-		throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
-	}
-
-	function testCssPrefix ( parsed, entry ) {
-
-		if ( entry !== undefined && typeof entry !== 'string' && entry !== false ) {
-			throw new Error("noUiSlider: 'cssPrefix' must be a string or `false`.");
-		}
-
-		parsed.cssPrefix = entry;
-	}
-
-	function testCssClasses ( parsed, entry ) {
-
-		if ( entry !== undefined && typeof entry !== 'object' ) {
-			throw new Error("noUiSlider: 'cssClasses' must be an object.");
-		}
-
-		if ( typeof parsed.cssPrefix === 'string' ) {
-			parsed.cssClasses = {};
-
-			for ( var key in entry ) {
-				if ( !entry.hasOwnProperty(key) ) { continue; }
-
-				parsed.cssClasses[key] = parsed.cssPrefix + entry[key];
-			}
-		} else {
-			parsed.cssClasses = entry;
-		}
+		throw new Error( "noUiSlider: 'format' requires 'to' and 'from' methods.");
 	}
 
 	// Test all developer settings and parse to assumption-safe values.
 	function testOptions ( options ) {
 
-		// To prove a fix for #537, freeze options here.
-		// If the object is modified, an error will be thrown.
-		// Object.freeze(options);
-
 		var parsed = {
 			margin: 0,
 			limit: 0,
 			animate: true,
-			animationDuration: 300,
 			format: defaultFormatter
 		}, tests;
 
@@ -85207,77 +91404,46 @@ module.exports = exports['default'];
 			'direction': { r: true, t: testDirection },
 			'snap': { r: false, t: testSnap },
 			'animate': { r: false, t: testAnimate },
-			'animationDuration': { r: false, t: testAnimationDuration },
 			'range': { r: true, t: testRange },
 			'orientation': { r: false, t: testOrientation },
 			'margin': { r: false, t: testMargin },
 			'limit': { r: false, t: testLimit },
 			'behaviour': { r: true, t: testBehaviour },
-			'format': { r: false, t: testFormat },
-			'tooltips': { r: false, t: testTooltips },
-			'cssPrefix': { r: false, t: testCssPrefix },
-			'cssClasses': { r: false, t: testCssClasses }
+			'format': { r: false, t: testFormat }
 		};
 
 		var defaults = {
 			'connect': false,
 			'direction': 'ltr',
 			'behaviour': 'tap',
-			'orientation': 'horizontal',
-			'cssPrefix' : 'noUi-',
-			'cssClasses': {
-				target: 'target',
-				base: 'base',
-				origin: 'origin',
-				handle: 'handle',
-				handleLower: 'handle-lower',
-				handleUpper: 'handle-upper',
-				horizontal: 'horizontal',
-				vertical: 'vertical',
-				background: 'background',
-				connect: 'connect',
-				ltr: 'ltr',
-				rtl: 'rtl',
-				draggable: 'draggable',
-				drag: 'state-drag',
-				tap: 'state-tap',
-				active: 'active',
-				stacking: 'stacking',
-				tooltip: 'tooltip',
-				pips: 'pips',
-				pipsHorizontal: 'pips-horizontal',
-				pipsVertical: 'pips-vertical',
-				marker: 'marker',
-				markerHorizontal: 'marker-horizontal',
-				markerVertical: 'marker-vertical',
-				markerNormal: 'marker-normal',
-				markerLarge: 'marker-large',
-				markerSub: 'marker-sub',
-				value: 'value',
-				valueHorizontal: 'value-horizontal',
-				valueVertical: 'value-vertical',
-				valueNormal: 'value-normal',
-				valueLarge: 'value-large',
-				valueSub: 'value-sub'
-			}
+			'orientation': 'horizontal'
 		};
+
+		// Set defaults where applicable.
+		Object.keys(defaults).forEach(function ( name ) {
+			if ( options[name] === undefined ) {
+				options[name] = defaults[name];
+			}
+		});
 
 		// Run all options through a testing mechanism to ensure correct
 		// input. It should be noted that options might get modified to
 		// be handled properly. E.g. wrapping integers in arrays.
 		Object.keys(tests).forEach(function( name ){
 
-			// If the option isn't set, but it is required, throw an error.
-			if ( options[name] === undefined && defaults[name] === undefined ) {
+			var test = tests[name];
 
-				if ( tests[name].r ) {
+			// If the option isn't set, but it is required, throw an error.
+			if ( options[name] === undefined ) {
+
+				if ( test.r ) {
 					throw new Error("noUiSlider: '" + name + "' is required.");
 				}
 
 				return true;
 			}
 
-			tests[name].t( parsed, options[name] === undefined ? defaults[name] : options[name] );
+			test.t( parsed, options[name] );
 		});
 
 		// Forward pips options
@@ -85288,20 +91454,6 @@ module.exports = exports['default'];
 
 		return parsed;
 	}
-
-
-function closure ( target, options, originalOptions ){
-	var
-		actions = getActions( ),
-		// All variables local to 'closure' are prefixed with 'scope_'
-		scope_Target = target,
-		scope_Locations = [-1, -1],
-		scope_Base,
-		scope_Handles,
-		scope_Spectrum = options.spectrum,
-		scope_Values = [],
-		scope_Events = {},
-		scope_Self;
 
 
 	// Delimit proposed values for handle positions.
@@ -85328,7 +91480,7 @@ function closure ( target, options, originalOptions ){
 	}
 
 	// Provide a clean event with standardized offset values.
-	function fixEvent ( e, pageOffset ) {
+	function fixEvent ( e ) {
 
 		// Prevent scrolling and panning on touch events, while
 		// attempting to slide. The tap event also depends on this.
@@ -85354,14 +91506,11 @@ function closure ( target, options, originalOptions ){
 			y = e.changedTouches[0].pageY;
 		}
 
-		pageOffset = pageOffset || getPageOffset();
-
 		if ( mouse || pointer ) {
-			x = e.clientX + pageOffset.x;
-			y = e.clientY + pageOffset.y;
+			x = e.clientX + window.pageXOffset;
+			y = e.clientY + window.pageYOffset;
 		}
 
-		event.pageOffset = pageOffset;
 		event.points = [x, y];
 		event.cursor = mouse || pointer; // Fix #435
 
@@ -85373,16 +91522,16 @@ function closure ( target, options, originalOptions ){
 
 		var origin = document.createElement('div'),
 			handle = document.createElement('div'),
-			classModifier = [options.cssClasses.handleLower, options.cssClasses.handleUpper];
+			additions = [ '-lower', '-upper' ];
 
 		if ( direction ) {
-			classModifier.reverse();
+			additions.reverse();
 		}
 
-		addClass(handle, options.cssClasses.handle);
-		addClass(handle, classModifier[index]);
+		addClass(handle, Classes[3]);
+		addClass(handle, Classes[3] + additions[index]);
 
-		addClass(origin, options.cssClasses.origin);
+		addClass(origin, Classes[2]);
 		origin.appendChild(handle);
 
 		return origin;
@@ -85396,14 +91545,14 @@ function closure ( target, options, originalOptions ){
 		// segments listed in the class list, to allow easy
 		// renaming and provide a minor compression benefit.
 		switch ( connect ) {
-			case 1:	addClass(target, options.cssClasses.connect);
-					addClass(handles[0], options.cssClasses.background);
+			case 1:	addClass(target, Classes[7]);
+					addClass(handles[0], Classes[6]);
 					break;
-			case 3: addClass(handles[1], options.cssClasses.background);
+			case 3: addClass(handles[1], Classes[6]);
 					/* falls through */
-			case 2: addClass(handles[0], options.cssClasses.connect);
+			case 2: addClass(handles[0], Classes[7]);
 					/* falls through */
-			case 0: addClass(target, options.cssClasses.background);
+			case 0: addClass(target, Classes[6]);
 					break;
 		}
 	}
@@ -85427,59 +91576,27 @@ function closure ( target, options, originalOptions ){
 	function addSlider ( direction, orientation, target ) {
 
 		// Apply classes and data to the target.
-		addClass(target, options.cssClasses.target);
-
-		if ( direction === 0 ) {
-			addClass(target, options.cssClasses.ltr);
-		} else {
-			addClass(target, options.cssClasses.rtl);
-		}
-
-		if ( orientation === 0 ) {
-			addClass(target, options.cssClasses.horizontal);
-		} else {
-			addClass(target, options.cssClasses.vertical);
-		}
+		addClass(target, Classes[0]);
+		addClass(target, Classes[8 + direction]);
+		addClass(target, Classes[4 + orientation]);
 
 		var div = document.createElement('div');
-		addClass(div, options.cssClasses.base);
+		addClass(div, Classes[1]);
 		target.appendChild(div);
 		return div;
 	}
 
 
-	function addTooltip ( handle, index ) {
+function closure ( target, options ){
 
-		if ( !options.tooltips[index] ) {
-			return false;
-		}
-
-		var element = document.createElement('div');
-		element.className = options.cssClasses.tooltip;
-		return handle.firstChild.appendChild(element);
-	}
-
-	// The tooltips option is a shorthand for using the 'update' event.
-	function tooltips ( ) {
-
-		if ( options.dir ) {
-			options.tooltips.reverse();
-		}
-
-		// Tooltips are added with options.tooltips in original order.
-		var tips = scope_Handles.map(addTooltip);
-
-		if ( options.dir ) {
-			tips.reverse();
-			options.tooltips.reverse();
-		}
-
-		bindEvent('update', function(f, o, r) {
-			if ( tips[o] ) {
-				tips[o].innerHTML = options.tooltips[o] === true ? f[o] : options.tooltips[o].to(r[o]);
-			}
-		});
-	}
+	// All variables local to 'closure' are prefixed with 'scope_'
+	var scope_Target = target,
+		scope_Locations = [-1, -1],
+		scope_Base,
+		scope_Handles,
+		scope_Spectrum = options.spectrum,
+		scope_Values = [],
+		scope_Events = {};
 
 
 	function getGroup ( mode, values, stepped ) {
@@ -85530,11 +91647,6 @@ function closure ( target, options, originalOptions ){
 	}
 
 	function generateSpread ( density, mode, group ) {
-
-		function safeIncrement(value, increment) {
-			// Avoid floating point variance by dropping the smallest decimal places.
-			return (value + increment).toFixed(7) / 1;
-		}
 
 		var originalSpectrumDirection = scope_Spectrum.direction,
 			indexes = {},
@@ -85591,7 +91703,7 @@ function closure ( target, options, originalOptions ){
 			}
 
 			// Find all steps in the subrange.
-			for ( i = low; i <= high; i = safeIncrement(i, step) ) {
+			for ( i = low; i <= high; i += step ) {
 
 				// Get the percentage value for the current step,
 				// calculate the size for the subrange.
@@ -85645,40 +91757,21 @@ function closure ( target, options, originalOptions ){
 
 	function addMarking ( spread, filterFunc, formatter ) {
 
-		var element = document.createElement('div'),
-			out = '',
-			valueSizeClasses = [
-				options.cssClasses.valueNormal,
-				options.cssClasses.valueLarge,
-				options.cssClasses.valueSub
-			],
-			markerSizeClasses = [
-				options.cssClasses.markerNormal,
-				options.cssClasses.markerLarge,
-				options.cssClasses.markerSub
-			],
-			valueOrientationClasses = [
-				options.cssClasses.valueHorizontal,
-				options.cssClasses.valueVertical
-			],
-			markerOrientationClasses = [
-				options.cssClasses.markerHorizontal,
-				options.cssClasses.markerVertical
-			];
+		var style = ['horizontal', 'vertical'][options.ort],
+			element = document.createElement('div');
 
-		addClass(element, options.cssClasses.pips);
-		addClass(element, options.ort === 0 ? options.cssClasses.pipsHorizontal : options.cssClasses.pipsVertical);
+		addClass(element, 'noUi-pips');
+		addClass(element, 'noUi-pips-' + style);
 
-		function getClasses( type, source ){
-			var a = source === options.cssClasses.value,
-				orientationClasses = a ? valueOrientationClasses : markerOrientationClasses,
-				sizeClasses = a ? valueSizeClasses : markerSizeClasses;
-
-			return source + ' ' + orientationClasses[options.ort] + ' ' + sizeClasses[type];
+		function getSize( type, value ){
+			return [ '-normal', '-large', '-sub' ][type];
 		}
 
 		function getTags( offset, source, values ) {
-			return 'class="' + getClasses(values[1], source) + '" style="' + options.style + ': ' + offset + '%"';
+			return 'class="' + source + ' ' +
+				source + '-' + style + ' ' +
+				source + getSize(values[1], values[0]) +
+				'" style="' + options.style + ': ' + offset + '%"';
 		}
 
 		function addSpread ( offset, values ){
@@ -85691,11 +91784,11 @@ function closure ( target, options, originalOptions ){
 			values[1] = (values[1] && filterFunc) ? filterFunc(values[0], values[1]) : values[1];
 
 			// Add a marker for every point
-			out += '<div ' + getTags(offset, options.cssClasses.marker, values) + '></div>';
+			element.innerHTML += '<div ' + getTags(offset, 'noUi-marker', values) + '></div>';
 
 			// Values are only appended for points marked '1' or '2'.
 			if ( values[1] ) {
-				out += '<div ' + getTags(offset, options.cssClasses.value, values) + '>' + formatter.to(values[0]) + '</div>';
+				element.innerHTML += '<div '+getTags(offset, 'noUi-value', values)+'>' + formatter.to(values[0]) + '</div>';
 			}
 		}
 
@@ -85703,8 +91796,6 @@ function closure ( target, options, originalOptions ){
 		Object.keys(spread).forEach(function(a){
 			addSpread(a, spread[a]);
 		});
-
-		element.innerHTML = out;
 
 		return element;
 	}
@@ -85732,23 +91823,13 @@ function closure ( target, options, originalOptions ){
 
 	// Shorthand for base dimensions.
 	function baseSize ( ) {
-		var rect = scope_Base.getBoundingClientRect(), alt = 'offset' + ['Width', 'Height'][options.ort];
-		return options.ort === 0 ? (rect.width||scope_Base[alt]) : (rect.height||scope_Base[alt]);
+		return scope_Base['offset' + ['Width', 'Height'][options.ort]];
 	}
 
 	// External event handling
-	function fireEvent ( event, handleNumber, tap ) {
+	function fireEvent ( event, handleNumber ) {
 
-		var i;
-
-		// During initialization, do not fire events.
-		for ( i = 0; i < options.handles; i++ ) {
-			if ( scope_Locations[i] === -1 ) {
-				return;
-			}
-		}
-
-		if ( handleNumber !== undefined && options.handles !== 1 ) {
+		if ( handleNumber !== undefined ) {
 			handleNumber = Math.abs(handleNumber - options.dir);
 		}
 
@@ -85758,21 +91839,9 @@ function closure ( target, options, originalOptions ){
 
 			if ( event === eventType ) {
 				scope_Events[targetEvent].forEach(function( callback ) {
-
-					callback.call(
-						// Use the slider public API as the scope ('this')
-						scope_Self,
-						// Return values as array, so arg_1[arg_2] is always valid.
-						asArray(valueGet()),
-						// Handle index, 0 or 1
-						handleNumber,
-						// Unformatted slider values
-						asArray(inSliderOrder(Array.prototype.slice.call(scope_Values))),
-						// Event is fired by tap, true or false
-						tap || false,
-						// Left offset of the handle, in relation to the slider
-						scope_Locations
-					);
+					// .reverse is in place
+					// Return values as array, so arg_1[arg_2] is always valid.
+					callback( asArray(valueGet()), handleNumber, inSliderOrder(Array.prototype.slice.call(scope_Values)) );
 				});
 			}
 		});
@@ -85807,19 +91876,14 @@ function closure ( target, options, originalOptions ){
 			}
 
 			// Stop if an active 'tap' transition is taking place.
-			if ( hasClass(scope_Target, options.cssClasses.tap) ) {
+			if ( hasClass(scope_Target, Classes[14]) ) {
 				return false;
 			}
 
-			e = fixEvent(e, data.pageOffset);
+			e = fixEvent(e);
 
 			// Ignore right or middle clicks on start #454
 			if ( events === actions.start && e.buttons !== undefined && e.buttons > 1 ) {
-				return false;
-			}
-
-			// Ignore right or middle clicks on start #454
-			if ( data.hover && e.buttons ) {
 				return false;
 			}
 
@@ -85842,18 +91906,9 @@ function closure ( target, options, originalOptions ){
 	// Handle movement on document for handle and range drag.
 	function move ( event, data ) {
 
-		// Fix #498
-		// Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
-		// https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
-		// IE9 has .buttons and .which zero on mousemove.
-		// Firefox breaks the spec MDN defines.
-		if ( navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0 ) {
-			return end(event, data);
-		}
-
 		var handles = data.handles || scope_Handles, positions, state = false,
-			proposal = ((event.calcPoint - data.start) * 100) / data.baseSize,
-			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1, i;
+			proposal = ((event.calcPoint - data.start) * 100) / baseSize(),
+			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1;
 
 		// Calculate relative positions for the handles.
 		positions = getPositions( proposal, data.positions, handles.length > 1);
@@ -85880,11 +91935,11 @@ function closure ( target, options, originalOptions ){
 	function end ( event, data ) {
 
 		// The handle is no longer active, so remove the class.
-		var active = scope_Base.querySelector( '.' + options.cssClasses.active ),
+		var active = scope_Base.getElementsByClassName(Classes[15]),
 			handleNumber = data.handles[0] === scope_Handles[0] ? 0 : 1;
 
-		if ( active !== null ) {
-			removeClass(active, options.cssClasses.active);
+		if ( active.length ) {
+			removeClass(active[0], Classes[15]);
 		}
 
 		// Remove cursor styles and text-selection events bound to the body.
@@ -85901,23 +91956,11 @@ function closure ( target, options, originalOptions ){
 		});
 
 		// Remove dragging class.
-		removeClass(scope_Target, options.cssClasses.drag);
+		removeClass(scope_Target, Classes[12]);
 
 		// Fire the change and set events.
 		fireEvent('set', handleNumber);
 		fireEvent('change', handleNumber);
-
-		// If this is a standard handle movement, fire the end event.
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('end', data.handleNumber);
-		}
-	}
-
-	// Fire 'end' when a mouse or pen leaves the document.
-	function documentLeave ( event, data ) {
-		if ( event.type === "mouseout" && event.target.nodeName === "HTML" && event.relatedTarget === null ){
-			end ( event, data );
-		}
 	}
 
 	// Bind move events on document.
@@ -85927,16 +91970,13 @@ function closure ( target, options, originalOptions ){
 
 		// Mark the handle as 'active' so it can be styled.
 		if ( data.handles.length === 1 ) {
+			addClass(data.handles[0].children[0], Classes[15]);
+
 			// Support 'disabled' handles
 			if ( data.handles[0].hasAttribute('disabled') ) {
 				return false;
 			}
-
-			addClass(data.handles[0].children[0], options.cssClasses.active);
 		}
-
-		// Fix #551, where a handle gets selected instead of dragged.
-		event.preventDefault();
 
 		// A drag should never propagate up to the 'tap' event.
 		event.stopPropagation();
@@ -85944,26 +91984,16 @@ function closure ( target, options, originalOptions ){
 		// Attach the move and end events.
 		var moveEvent = attach(actions.move, d, move, {
 			start: event.calcPoint,
-			baseSize: baseSize(),
-			pageOffset: event.pageOffset,
 			handles: data.handles,
-			handleNumber: data.handleNumber,
-			buttonsProperty: event.buttons,
 			positions: [
 				scope_Locations[0],
 				scope_Locations[scope_Handles.length - 1]
 			]
 		}), endEvent = attach(actions.end, d, end, {
-			handles: data.handles,
-			handleNumber: data.handleNumber
+			handles: data.handles
 		});
 
-		var outEvent = attach("mouseout", d, documentLeave, {
-			handles: data.handles,
-			handleNumber: data.handleNumber
-		});
-
-		d.noUiListeners = moveEvent.concat(endEvent, outEvent);
+		d.noUiListeners = moveEvent.concat(endEvent);
 
 		// Text selection isn't an issue on touch devices,
 		// so adding cursor styles can be skipped.
@@ -85974,7 +92004,7 @@ function closure ( target, options, originalOptions ){
 
 			// Mark the target with a dragging state.
 			if ( scope_Handles.length > 1 ) {
-				addClass(scope_Target, options.cssClasses.drag);
+				addClass(scope_Target, Classes[12]);
 			}
 
 			var f = function(){
@@ -85985,10 +92015,6 @@ function closure ( target, options, originalOptions ){
 
 			// Prevent text selection when dragging the handles.
 			document.body.addEventListener('selectstart', f, false);
-		}
-
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('start', data.handleNumber);
 		}
 	}
 
@@ -86008,11 +92034,6 @@ function closure ( target, options, originalOptions ){
 		// Find the handle closest to the tapped position.
 		handleNumber = ( location < total/2 || scope_Handles.length === 1 ) ? 0 : 1;
 
-		// Check if handler is not disablet if yes set number to the next handler
-		if (scope_Handles[handleNumber].hasAttribute('disabled')) {
-			handleNumber = handleNumber ? 0 : 1;
-		}
-
 		location -= offset(scope_Base)[ options.style ];
 
 		// Calculate the new position.
@@ -86020,8 +92041,8 @@ function closure ( target, options, originalOptions ){
 
 		if ( !options.events.snap ) {
 			// Flag the slider as it is now in a transitional state.
-			// Transition takes a configurable amount of ms (default 300). Re-enable the slider after that.
-			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+			// Transition takes 300 ms, so re-enable the slider afterwards.
+			addClassFor( scope_Target, Classes[14], 300 );
 		}
 
 		// Support 'disabled' handles
@@ -86033,46 +92054,31 @@ function closure ( target, options, originalOptions ){
 		// The set handle to the new position.
 		setHandle( scope_Handles[handleNumber], to );
 
-		fireEvent('slide', handleNumber, true);
-		fireEvent('set', handleNumber, true);
-		fireEvent('change', handleNumber, true);
+		fireEvent('slide', handleNumber);
+		fireEvent('set', handleNumber);
+		fireEvent('change', handleNumber);
 
 		if ( options.events.snap ) {
-			start(event, { handles: [scope_Handles[handleNumber]] });
+			start(event, { handles: [scope_Handles[total]] });
 		}
-	}
-
-	// Fires a 'hover' event for a hovered mouse/pen position.
-	function hover ( event ) {
-
-		var location = event.calcPoint - offset(scope_Base)[ options.style ],
-			to = scope_Spectrum.getStep(( location * 100 ) / baseSize()),
-			value = scope_Spectrum.fromStepping( to );
-
-		Object.keys(scope_Events).forEach(function( targetEvent ) {
-			if ( 'hover' === targetEvent.split('.')[0] ) {
-				scope_Events[targetEvent].forEach(function( callback ) {
-					callback.call( scope_Self, value );
-				});
-			}
-		});
 	}
 
 	// Attach events to several slider parts.
 	function events ( behaviour ) {
 
+		var i, drag;
+
 		// Attach the standard drag event to the handles.
 		if ( !behaviour.fixed ) {
 
-			scope_Handles.forEach(function( handle, index ){
+			for ( i = 0; i < scope_Handles.length; i += 1 ) {
 
 				// These events are only bound to the visual handle
 				// element, not the 'real' origin element.
-				attach ( actions.start, handle.children[0], start, {
-					handles: [ handle ],
-					handleNumber: index
+				attach ( actions.start, scope_Handles[i].children[0], start, {
+					handles: [ scope_Handles[i] ]
 				});
-			});
+			}
 		}
 
 		// Attach the tap event to the slider base.
@@ -86083,16 +92089,11 @@ function closure ( target, options, originalOptions ){
 			});
 		}
 
-		// Fire hover events
-		if ( behaviour.hover ) {
-			attach ( actions.move, scope_Base, hover, { hover: true } );
-		}
-
-		// Make the range draggable.
+		// Make the range dragable.
 		if ( behaviour.drag ){
 
-			var drag = [scope_Base.querySelector( '.' + options.cssClasses.connect )];
-			addClass(drag[0], options.cssClasses.draggable);
+			drag = [scope_Base.getElementsByClassName( Classes[7] )[0]];
+			addClass(drag[0], Classes[10]);
 
 			// When the range is fixed, the entire range can
 			// be dragged by the handles. The handle in the first
@@ -86138,31 +92139,23 @@ function closure ( target, options, originalOptions ){
 		// Handle the step option.
 		to = scope_Spectrum.getStep( to );
 
-		// Limit percentage to the 0 - 100 range
-		to = limit(to);
+		// Limit to 0/100 for .val input, trim anything beyond 7 digits, as
+		// JavaScript has some issues in its floating point implementation.
+		to = limit(parseFloat(to.toFixed(7)));
 
-		// Return false if handle can't move
+		// Return false if handle can't move.
 		if ( to === scope_Locations[trigger] ) {
 			return false;
 		}
 
 		// Set the handle to the new position.
-		// Use requestAnimationFrame for efficient painting.
-		// No significant effect in Chrome, Edge sees dramatic
-		// performace improvements.
-		if ( window.requestAnimationFrame ) {
-			window.requestAnimationFrame(function(){
-				handle.style[options.style] = to + '%';
-			});
-		} else {
-			handle.style[options.style] = to + '%';
-		}
+		handle.style[options.style] = to + '%';
 
 		// Force proper handle stacking
 		if ( !handle.previousSibling ) {
-			removeClass(handle, options.cssClasses.stacking);
+			removeClass(handle, Classes[17]);
 			if ( to > 50 ) {
-				addClass(handle, options.cssClasses.stacking);
+				addClass(handle, Classes[17]);
 			}
 		}
 
@@ -86218,12 +92211,9 @@ function closure ( target, options, originalOptions ){
 	}
 
 	// Set the slider value.
-	function valueSet ( input, fireSetEvent ) {
+	function valueSet ( input ) {
 
 		var count, values = asArray( input ), i;
-
-		// Event fires by default
-		fireSetEvent = (fireSetEvent === undefined ? true : !!fireSetEvent);
 
 		// The RTL settings is implemented by reversing the front-end,
 		// internal mechanisms are the same.
@@ -86234,7 +92224,7 @@ function closure ( target, options, originalOptions ){
 		// Animation is optional.
 		// Make sure the initial values where set before using animated placement.
 		if ( options.animate && scope_Locations[0] !== -1 ) {
-			addClassFor( scope_Target, options.cssClasses.tap, options.animationDuration );
+			addClassFor( scope_Target, Classes[14], 300 );
 		}
 
 		// Determine how often to set the handles.
@@ -86248,11 +92238,7 @@ function closure ( target, options, originalOptions ){
 
 		// Fire the 'set' event for both handles.
 		for ( i = 0; i < scope_Handles.length; i++ ) {
-
-			// Fire the event only for handles that received a new value, as per #579
-			if ( values[i] !== null && fireSetEvent ) {
-				fireEvent('set', i);
-			}
+			fireEvent('set', i);
 		}
 	}
 
@@ -86271,16 +92257,11 @@ function closure ( target, options, originalOptions ){
 
 	// Removes classes from the root and empties it.
 	function destroy ( ) {
-
-		for ( var key in options.cssClasses ) {
-			if ( !options.cssClasses.hasOwnProperty(key) ) { continue; }
-			removeClass(scope_Target, options.cssClasses[key]);
-		}
-
-		while (scope_Target.firstChild) {
-			scope_Target.removeChild(scope_Target.firstChild);
-		}
-
+		Classes.forEach(function(cls){
+			if ( !cls ) { return; } // Ignore empty classes
+			removeClass(scope_Target, cls);
+		});
+		scope_Target.innerHTML = '';
 		delete scope_Target.noUiSlider;
 	}
 
@@ -86335,8 +92316,8 @@ function closure ( target, options, originalOptions ){
 	// Undo attachment of event
 	function removeEvent ( namespacedEvent ) {
 
-		var event = namespacedEvent && namespacedEvent.split('.')[0],
-			namespace = event && namespacedEvent.substring(event.length);
+		var event = namespacedEvent.split('.')[0],
+			namespace = namespacedEvent.substring(event.length);
 
 		Object.keys(scope_Events).forEach(function( bind ){
 
@@ -86349,45 +92330,12 @@ function closure ( target, options, originalOptions ){
 		});
 	}
 
-	// Updateable: margin, limit, step, range, animate, snap
-	function updateOptions ( optionsToUpdate, fireSetEvent ) {
-
-		// Spectrum is created using the range, snap, direction and step options.
-		// 'snap' and 'step' can be updated, 'direction' cannot, due to event binding.
-		// If 'snap' and 'step' are not passed, they should remain unchanged.
-		var v = valueGet(), newOptions = testOptions({
-			start: [0, 0],
-			margin: optionsToUpdate.margin,
-			limit: optionsToUpdate.limit,
-			step: optionsToUpdate.step === undefined ? options.singleStep : optionsToUpdate.step,
-			range: optionsToUpdate.range,
-			animate: optionsToUpdate.animate,
-			snap: optionsToUpdate.snap === undefined ? options.snap : optionsToUpdate.snap
-		});
-
-		['margin', 'limit', 'range', 'animate'].forEach(function(name){
-
-			// Only change options that we're actually passed to update.
-			if ( optionsToUpdate[name] !== undefined ) {
-				options[name] = optionsToUpdate[name];
-			}
-		});
-
-		// Save current spectrum direction as testOptions in testRange call
-		// doesn't rely on current direction
-		newOptions.spectrum.direction = scope_Spectrum.direction;
-		scope_Spectrum = newOptions.spectrum;
-
-		// Invalidate the current positioning so valueSet forces an update.
-		scope_Locations = [-1, -1];
-		valueSet(optionsToUpdate.start || v, fireSetEvent);
-	}
-
 
 	// Throw an error if the slider was already initialized.
 	if ( scope_Target.noUiSlider ) {
 		throw new Error('Slider was already initialized.');
 	}
+
 
 	// Create the base element, initialise HTML and set classes.
 	// Add handles and links.
@@ -86397,31 +92345,21 @@ function closure ( target, options, originalOptions ){
 	// Set the connect classes.
 	addConnection ( options.connect, scope_Target, scope_Handles );
 
+	// Attach user events.
+	events( options.events );
+
 	if ( options.pips ) {
 		pips(options.pips);
 	}
 
-	if ( options.tooltips ) {
-		tooltips();
-	}
-
-	scope_Self = {
+	return {
 		destroy: destroy,
 		steps: getCurrentStep,
 		on: bindEvent,
 		off: removeEvent,
 		get: valueGet,
-		set: valueSet,
-		updateOptions: updateOptions,
-		options: originalOptions, // Issue #600
-		target: scope_Target, // Issue #597
-		pips: pips // Issue #594
+		set: valueSet
 	};
-
-	// Attach user events.
-	events( options.events );
-
-	return scope_Self;
 
 }
 
@@ -86435,13 +92373,12 @@ function closure ( target, options, originalOptions ){
 
 		// Test the options and create the slider environment;
 		var options = testOptions( originalOptions, target ),
-			slider = closure( target, options, originalOptions );
+			slider = closure( target, options );
 
 		// Use the public value method to set the start values.
 		slider.set(options.start);
 
 		target.noUiSlider = slider;
-		return slider;
 	}
 
 	// Use an object instead of a function for future expansibility;
@@ -86450,7 +92387,7 @@ function closure ( target, options, originalOptions ){
 	};
 
 }));
-},{}],"owlCarousel":[function(require,module,exports){
+},{"jquery":"jquery"}],"owlCarousel":[function(require,module,exports){
 /*
  *  jQuery OwlCarousel v1.3.3
  *
@@ -87975,17 +93912,17 @@ if (typeof Object.create !== "function") {
 
 module.exports = require('./src/js/main');
 
-},{"./src/js/main":450}],"react-dom":[function(require,module,exports){
+},{"./src/js/main":451}],"react-dom":[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-},{"react/lib/ReactDOM":515}],"react":[function(require,module,exports){
+},{"react/lib/ReactDOM":521}],"react":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":504}],"redux":[function(require,module,exports){
+},{"./lib/React":510}],"redux":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -88034,7 +93971,7 @@ exports.bindActionCreators = _bindActionCreators2['default'];
 exports.applyMiddleware = _applyMiddleware2['default'];
 exports.compose = _compose2['default'];
 }).call(this,require('_process'))
-},{"./applyMiddleware":636,"./bindActionCreators":637,"./combineReducers":638,"./compose":639,"./createStore":640,"./utils/warning":641,"_process":465}],"reqwest":[function(require,module,exports){
+},{"./applyMiddleware":643,"./bindActionCreators":644,"./combineReducers":645,"./compose":646,"./createStore":647,"./utils/warning":648,"_process":467}],"reqwest":[function(require,module,exports){
 /*!
   * Reqwest! A general purpose XHR connection manager
   * license MIT (c) Dustin Diaz 2014
@@ -92060,4 +97997,4 @@ else {
   return URI;
 }));
 
-},{"./IPv6":649,"./SecondLevelDomains":650,"./punycode":651}]},{},[3]);
+},{"./IPv6":768,"./SecondLevelDomains":769,"./punycode":770}]},{},[3]);
