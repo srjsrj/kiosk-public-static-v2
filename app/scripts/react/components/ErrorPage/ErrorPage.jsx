@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class NotFound extends Component {
+class ErrorPage extends Component {
   render() {
     const {
       subject,
@@ -30,16 +30,16 @@ class NotFound extends Component {
   }
 }
 
-NotFound.propTypes = {
+ErrorPage.propTypes = {
   subject: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired
 };
 
-NotFound.defaultProps = {
+ErrorPage.defaultProps = {
   phone: '8(800)77-55-661',
   email: 'support@kiiiosk.ru'
 };
 
-export default NotFound;
+export default ErrorPage;
