@@ -46,5 +46,6 @@ global.ChildrenProductsSample = () => React.createElement(global.ChildrenProduct
 global.CategoriesShowSample = () => React.createElement(global.CategoriesShow, categoriesShowSample);
 global.CategoriesShowEmpty = () => React.createElement(global.CategoriesShow, categoriesShowEmpty);
 global.CategoriesShowFilterDirty = () => React.createElement(global.CategoriesShow, { ...categoriesShowEmpty, isFilterDirty: true });
-
+global.CategoriesShowChildrenSample = () => React.createElement(global.CategoriesShowChildren, { ...childrenProductsSample, vendorRootPath: '/vendor/root/path' });
+global.CategoriesShowChildrenEmpty = () => React.createElement(global.CategoriesShowChildren, { childrenProducts: [], vendorRootPath: '/vendor/root/path' });
 import './lib/ReactRailsUJS';
