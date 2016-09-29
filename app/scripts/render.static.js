@@ -25,6 +25,7 @@ import productGroupSample from 'test/fixtures/productGroup/sample.json';
 import childrenProductsSample from 'test/fixtures/childrenProducts/sample.json';
 import categoriesShowSample from 'test/fixtures/categoriesShow/sample.json';
 import categoriesShowEmpty from 'test/fixtures/categoriesShow/empty-products.json';
+import dictionaryEntitiesShowSample from 'test/fixtures/dictionaryEntitiesShow/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -50,4 +51,7 @@ global.CategoriesShowEmpty = () => React.createElement(global.CategoriesShow, ca
 global.CategoriesShowFilterDirty = () => React.createElement(global.CategoriesShow, { ...categoriesShowEmpty, isFilterDirty: true });
 global.CategoriesShowChildrenSample = () => React.createElement(global.CategoriesShowChildren, { ...childrenProductsSample, vendorRootPath: '/vendor/root/path' });
 global.CategoriesShowChildrenEmpty = () => React.createElement(global.CategoriesShowChildren, { childrenProducts: [], vendorRootPath: '/vendor/root/path' });
+global.DictionaryEntitiesShowSample = () => React.createElement(global.DictionaryEntitiesShow, dictionaryEntitiesShowSample);
+global.DictionaryEntitiesShowEmpty = () => React.createElement(global.DictionaryEntitiesShow, { ...dictionaryEntitiesShowSample, products: { items: [], pagination: {} }});
+
 import './lib/ReactRailsUJS';
