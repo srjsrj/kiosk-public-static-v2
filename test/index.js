@@ -42,3 +42,4 @@ import './react/components/ChildrenProducts/index.test';
 import './react/components/Pagination/index.test';
 import './react/components/CategoriesShow/index.test';
 import './react/components/CategoriesShowChildren/index.test';
+import './react/components/common/PostProducts.test';
