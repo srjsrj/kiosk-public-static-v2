@@ -48,5 +48,6 @@ global.ProductGroup = require('rc/ProductGroup');
 global.ChildrenProducts = require('rc/ChildrenProducts');
 global.CategoriesShow = require('rc/CategoriesShow');
 global.ErrorPage = require('./react/components/ErrorPage');
+global.CategoriesShowChildren = require('rc/CategoriesShowChildren');
 
 import './react/application';
