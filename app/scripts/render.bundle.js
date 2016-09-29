@@ -11,7 +11,7 @@ import './shared/app';
 import './shared/cart';
 import './shared/load_more';
 // import './shared/lightbox';
-import './shared/jump';
+import './shared/jumpg';
 import './shared/application_slider';
 import './shared/theme_switcher';
 
@@ -51,6 +51,6 @@ global.ErrorPage = require('./react/components/ErrorPage');
 global.CategoriesShowChildren = require('rc/CategoriesShowChildren');
 global.PostProducts = require('rc/common/PostProducts');
 global.DictionaryEntitiesShow = require('rc/DictionaryEntitiesShow');
-global.ProductArchived = require('rc/ProductArchived');
+global.BlogPost = require('./react/components/BlogPost');
 
 import './react/application';
