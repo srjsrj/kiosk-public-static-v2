@@ -16,6 +16,7 @@ import productWeight from '../../test/fixtures/products/weight';
 import productDoesntSell from '../../test/fixtures/products/3917';
 import productNoGoods from '../../test/fixtures/products/no-goods';
 import menuTopSample1 from 'test/fixtures/menuTop/sample1';
+import menuTopStickySample from 'test/fixtures/menuTop/sticky';
 import menuTopSample2 from 'test/fixtures/menuTop/sample2';
 import menuBottomSample from 'test/fixtures/menuBottom/sample';
 import navBarSample from 'test/fixtures/navBar/sample';
@@ -38,6 +39,7 @@ global.ProductCardWeight = () => React.createElement(global.ProductCard, product
 global.ProductCardNoGoods = () => React.createElement(global.ProductCard, productNoGoods);
 global.MenuTopSample1 = () => React.createElement(global.MenuTop, menuTopSample1);
 global.MenuTopSample2 = () => React.createElement(global.MenuTop, menuTopSample2);
+global.MenuTopStickySample = () => React.createElement(global.MenuTop, menuTopStickySample);
 global.MenuBottomSample = () => React.createElement(global.MenuBottom, menuBottomSample);
 global.NavBarSample = () => React.createElement(global.NavBar, navBarSample);
 global.ProductListSample = () => React.createElement(global.ProductList, productListSample);
