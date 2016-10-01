@@ -26,6 +26,7 @@ import childrenProductsSample from 'test/fixtures/childrenProducts/sample.json';
 import categoriesShowSample from 'test/fixtures/categoriesShow/sample.json';
 import categoriesShowEmpty from 'test/fixtures/categoriesShow/empty-products.json';
 import dictionaryEntitiesShowSample from 'test/fixtures/dictionaryEntitiesShow/sample.json';
+import productArchivedSample from 'test/fixtures/productArchived/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -53,5 +54,6 @@ global.CategoriesShowChildrenSample = () => React.createElement(global.Categorie
 global.CategoriesShowChildrenEmpty = () => React.createElement(global.CategoriesShowChildren, { childrenProducts: [], vendorRootPath: '/vendor/root/path' });
 global.DictionaryEntitiesShowSample = () => React.createElement(global.DictionaryEntitiesShow, dictionaryEntitiesShowSample);
 global.DictionaryEntitiesShowEmpty = () => React.createElement(global.DictionaryEntitiesShow, { ...dictionaryEntitiesShowSample, products: { items: [], pagination: {} }});
+global.ProductArchivedSample = () => React.createElement(global.ProductArchived, productArchivedSample);
 
 import './lib/ReactRailsUJS';

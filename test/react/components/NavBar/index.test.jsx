@@ -6,6 +6,7 @@ import navBarPropsSample from 'test/fixtures/navBar/sample';
 import NavBarContainer from 'rc/NavBar';
 import NavBar from 'rc/NavBar/NavBar';
 import NavBarContacts from 'rc/NavBar/NavBarContacts';
+import ProductSearch from 'rc/common/ProductSearch';
 import { Clientbar } from 'rc/Clientbar';
 import t from 'test/mocks/t';
 
@@ -40,5 +41,12 @@ describe('[Component] NavBar', () => {
       render(<NavBarContacts vendorContacts={contacts} vendorTitle={title} />)
       .find('li')
     ).to.have.length(3);
+  });
+
+  it('should render ProductSearch inside', () => {
+    expect(
+      shallow(<NavBar {...props} />)
+        .find(ProductSearch)
+    ).to.have.length(1);
   });
 });
