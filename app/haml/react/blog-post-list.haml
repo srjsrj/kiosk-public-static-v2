@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+  %body.b-page.b-page_cols-4
+    %div{data: {'react-class':BlogPostList", react-props:'{"totalPages": 3, "currentPage":2, "posts": [{"has_link": false, title: "example", text: "example", read_more: "read_more", date: "12.04.2016"}, {"has_link": false, title: "example", text: "example", read_more: "read_more", date: "12.04.2016"}, {"has_link": false, title: "example", text: "example", read_more: "read_more", date: "12.04.2016"}] }'}
+
+    %script{src: '../scripts/vendor.js'}
+    %script{src: '../scripts/client.js'}
+    %script{:defer => "defer", :type => "text/javascript"}
