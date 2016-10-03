@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 import { diff } from 'deep-diff';
 import ErrorService from '../../../services/Error';
@@ -18,6 +19,7 @@ class ProductProperties extends Component {
     onGoodChange: PropTypes.func,
     properties: PropTypes.array.isRequired,
     wishlistUrl: PropTypes.string,
+    t: PropTypes.func.isRequired,
   }
   static defaultProps = {
     goods: [],
@@ -78,7 +80,7 @@ class ProductProperties extends Component {
 
     this.setState({
       good: getMatchedGood(properties, goods, newValues),
-      values: newValues
+      values: newValues,
     });
   }
   render() {
@@ -95,7 +97,7 @@ class ProductProperties extends Component {
       <ProductAddToCartButton
         disabled={!good}
         t={t}
-        text={!!good ? t('vendor.button.to_cart') : t('vendor.button.select_good')}
+        text={good ? t('vendor.button.to_cart') : t('vendor.button.select_good')}
       />
     );
 

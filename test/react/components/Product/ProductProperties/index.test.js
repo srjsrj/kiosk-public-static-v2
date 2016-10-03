@@ -1,22 +1,18 @@
+/*global describe, it */
 import React from 'react';
-import { renderIntoDocument } from 'react-addons-test-utils';
+import { render, mount } from 'enzyme';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 
-import then from '../../../../utils/then';
-import t from '../../../../mocks/t';
+import then from 'test/utils/then';
+import t from 'test/mocks/t';
 
-import { PHOTO_CHANGE } from '../../../../../app/scripts/react/constants/globalEventKeys';
-import ProductProperties from '../../../../../app/scripts/react/components/Product/ProductProperties';
+import { PHOTO_CHANGE } from 'r/constants/globalEventKeys';
+import ProductProperties from 'rc/Product/ProductProperties';
 
 describe('[Component] ProductProperties', () => {
   it('should render without properties', () => {
-    const props = { t };
-    const component = renderIntoDocument(
-      <ProductProperties {...props} />
-    );
-
-    expect(component).to.be.an('object');
+    expect(() => render(<ProductProperties t={t} />)).not.to.throw();
   });
 
   it('should trigger "photo change" event when good has been changed', (done) => {
@@ -47,7 +43,7 @@ describe('[Component] ProductProperties', () => {
       },
     };
     const props = { t };
-    const component = renderIntoDocument(
+    const component = mount(
       <ProductProperties {...props} />
     );
     const changeSpy = spy($.prototype, 'trigger');
