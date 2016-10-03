@@ -47,3 +47,4 @@ import './react/components/common/PostProducts.test';
 import './react/components/DictionaryEntitiesShow/index.test';
 import './react/components/ProductArchived/index.test';
 import './react/components/ProductSearch/index.test';
+import './react/components/WelcomeChildren/index.test';
