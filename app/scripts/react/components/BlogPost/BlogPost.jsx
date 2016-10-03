@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import provideTranslations from '../HoC/provideTranslations'
+import provideTranslations from '../HoC/provideTranslations';
 
 class BlogPost extends Component {
   render() {
@@ -44,8 +44,14 @@ BlogPost.propTypes = {
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  prev: PropTypes.object.isRequired,
-  next: PropTypes.object.isRequired
+  prev: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  }).isOptional,
+  next: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired    
+  }).isOptional
 };
 
 export default provideTranslations(BlogPost);
