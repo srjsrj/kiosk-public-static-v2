@@ -10,9 +10,9 @@
 // }]
 //
 // goods: [{
-//   article: 'Артикул 12', 
+//   article: 'Артикул 12',
 //   good_global_id: 'qweqwewqeq',
-//   image_url: 'htttp://...product.png', 
+//   image_url: 'htttp://...product.png',
 //   quantity: 12,
 //   attributes: { 345: 12, 123: 456 }
 // }]
@@ -27,6 +27,8 @@
 //     { value: 789, title: 'Серо-синий', color: '#6c7a89', disabled: false }
 //   ]
 // }
+
+import { includes } from 'lodash';
 
 export function getOptions(properties, goods, filters) {
   return properties.reduce((prev, property) => {
@@ -67,7 +69,11 @@ export function getUpdatedValues(property, properties, goods, filters, data) {
       const enabledValues = getEnabledValues(prop.id, goods, newValues);
 
       if (enabledValues.length) {
-        newValues[prop.id] = enabledValues[0];
+        if (includes(enabledValues, filters[prop.id])) {
+          newValues[prop.id] = filters[prop.id];
+        } else {
+          newValues[prop.id] = enabledValues[0];
+        }
       }
     }
   }

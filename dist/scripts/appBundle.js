@@ -904,7 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.563'
+  version: '0.0.565'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -14537,6 +14537,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _class, _temp;
 
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -14611,7 +14615,7 @@ var ProductProperties = (_temp = _class = function (_Component) {
         if (this.props.onGoodChange) {
           this.props.onGoodChange(this.state.good);
         }
-        $(document).trigger(_globalEventKeys.PHOTO_CHANGE, good ? good.image : null);
+        (0, _jquery2.default)(document).trigger(_globalEventKeys.PHOTO_CHANGE, good ? good.image : null);
       }
     }
   }, {
@@ -14670,7 +14674,7 @@ var ProductProperties = (_temp = _class = function (_Component) {
       var addToCartButton = _react2.default.createElement(_ProductAddToCartButton2.default, {
         disabled: !good,
         t: t,
-        text: !!good ? t('vendor.button.to_cart') : t('vendor.button.select_good')
+        text: good ? t('vendor.button.to_cart') : t('vendor.button.select_good')
       });
 
       if (this.props.properties.length > 1) {
@@ -14730,7 +14734,8 @@ var ProductProperties = (_temp = _class = function (_Component) {
   isWishlisted: _react.PropTypes.bool,
   onGoodChange: _react.PropTypes.func,
   properties: _react.PropTypes.array.isRequired,
-  wishlistUrl: _react.PropTypes.string
+  wishlistUrl: _react.PropTypes.string,
+  t: _react.PropTypes.func.isRequired
 }, _class.defaultProps = {
   goods: [],
   properties: []
@@ -14738,7 +14743,7 @@ var ProductProperties = (_temp = _class = function (_Component) {
 exports.default = ProductProperties;
 module.exports = exports['default'];
 
-},{"../../../constants/globalEventKeys":203,"../../../services/Error":247,"../../common/HiddenInput":181,"../ProductAddToCartButton":101,"../ProductCart/ProductCartWishlist":130,"./PropertyList":137,"./PropertySingle":141,"./utils":143,"babel-runtime/core-js/object/get-prototype-of":274,"babel-runtime/core-js/object/keys":275,"babel-runtime/helpers/classCallCheck":280,"babel-runtime/helpers/createClass":281,"babel-runtime/helpers/defineProperty":282,"babel-runtime/helpers/extends":283,"babel-runtime/helpers/inherits":284,"babel-runtime/helpers/possibleConstructorReturn":285,"deep-diff":393,"react":"react"}],143:[function(require,module,exports){
+},{"../../../constants/globalEventKeys":203,"../../../services/Error":247,"../../common/HiddenInput":181,"../ProductAddToCartButton":101,"../ProductCart/ProductCartWishlist":130,"./PropertyList":137,"./PropertySingle":141,"./utils":143,"babel-runtime/core-js/object/get-prototype-of":274,"babel-runtime/core-js/object/keys":275,"babel-runtime/helpers/classCallCheck":280,"babel-runtime/helpers/createClass":281,"babel-runtime/helpers/defineProperty":282,"babel-runtime/helpers/extends":283,"babel-runtime/helpers/inherits":284,"babel-runtime/helpers/possibleConstructorReturn":285,"deep-diff":393,"jquery":"jquery","react":"react"}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14759,9 +14764,17 @@ exports.getUpdatedValues = getUpdatedValues;
 exports.getInitialGood = getInitialGood;
 exports.getMatchedGood = getMatchedGood;
 
+var _lodash = require('lodash');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Example of format
+function getOptions(properties, goods, filters) {
+  return properties.reduce(function (prev, property) {
+    var propertyFilters = getFiltersForProperty(property, properties, filters);
+
+    return (0, _extends4.default)({}, prev, (0, _defineProperty3.default)({}, property.id, getOptionsForProperty(property, goods, propertyFilters)));
+  }, {});
+} // Example of format
 // properties: [{
 //   id: 123,
 //   type: 'PropertyColor',
@@ -14773,9 +14786,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // }]
 //
 // goods: [{
-//   article: 'Артикул 12', 
+//   article: 'Артикул 12',
 //   good_global_id: 'qweqwewqeq',
-//   image_url: 'htttp://...product.png', 
+//   image_url: 'htttp://...product.png',
 //   quantity: 12,
 //   attributes: { 345: 12, 123: 456 }
 // }]
@@ -14790,14 +14803,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //     { value: 789, title: 'Серо-синий', color: '#6c7a89', disabled: false }
 //   ]
 // }
-
-function getOptions(properties, goods, filters) {
-  return properties.reduce(function (prev, property) {
-    var propertyFilters = getFiltersForProperty(property, properties, filters);
-
-    return (0, _extends4.default)({}, prev, (0, _defineProperty3.default)({}, property.id, getOptionsForProperty(property, goods, propertyFilters)));
-  }, {});
-}
 
 function getInitialValues(properties, goods) {
   var initialValues = {};
@@ -14824,7 +14829,11 @@ function getUpdatedValues(property, properties, goods, filters, data) {
       var enabledValues = getEnabledValues(prop.id, goods, newValues);
 
       if (enabledValues.length) {
-        newValues[prop.id] = enabledValues[0];
+        if ((0, _lodash.includes)(enabledValues, filters[prop.id])) {
+          newValues[prop.id] = filters[prop.id];
+        } else {
+          newValues[prop.id] = enabledValues[0];
+        }
       }
     }
   }
@@ -14916,7 +14925,7 @@ function isGoodStrictlyFiltered(good, filters) {
   return true;
 }
 
-},{"babel-runtime/helpers/defineProperty":282,"babel-runtime/helpers/extends":283}],144:[function(require,module,exports){
+},{"babel-runtime/helpers/defineProperty":282,"babel-runtime/helpers/extends":283,"lodash":"lodash"}],144:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
