@@ -1,0 +1,29 @@
+{
+  "blogPosts": {
+    "totalPages":3,
+    "currentPage":2,
+    "posts": [
+      { 
+        "hasLink":false,
+        "title":"example",
+        "text":"example",
+        "readMore":"read_more",
+        "date":"12.04.2016"
+      },
+      { 
+        "hasLink":false,
+        "title":"example",
+        "text":"example",
+        "readMore":"read_more",
+        "date":"12.04.2016"
+      },
+      { 
+        "hasLink":false,
+        "title":"example",
+        "text":"example",
+        "readMore":"read_more",
+        "date":"12.04.2016"
+      },
+    ]
+  }
+}

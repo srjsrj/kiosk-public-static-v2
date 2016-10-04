@@ -53,5 +53,6 @@ global.PostProducts = require('rc/common/PostProducts');
 global.DictionaryEntitiesShow = require('rc/DictionaryEntitiesShow');
 global.ProductArchived = require('rc/ProductArchived');
 global.BlogPost = require('./react/components/BlogPost');
+global.BlogPostList = requier('rc/BlogPostList');
 
 import './react/application';
