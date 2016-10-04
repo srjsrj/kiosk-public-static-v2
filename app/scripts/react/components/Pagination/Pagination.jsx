@@ -24,9 +24,11 @@ class Pagination extends Component {
       totalPages,
     } = this.props;
 
+    const showArrows = (totalPages <= WINDOW_SIZE)
+
     return (
       <nav className="pagination">
-        {currentPage > 1 && (
+        {showArrows && (currentPage > 1) && (
           <span className="first">
             <a href={this.getPageHref(1)}>
               {'&laquo;'}
@@ -34,7 +36,7 @@ class Pagination extends Component {
           </span>
         )}
         {' '}
-        {currentPage - 1 > 0 && (
+        {showArrows && (currentPage - 1 > 0) && (
           <span className="prev">
             <a href={this.getPageHref(currentPage - 1)}>
               {'‹'}
@@ -60,7 +62,7 @@ class Pagination extends Component {
           </span>
         )}
         {' '}
-        {currentPage + 1 <= totalPages && (
+        {showArrows && (currentPage + 1 <= totalPages) && (
           <span className="next">
             <a href={this.getPageHref(currentPage + 1)}>
               {'›'}
@@ -68,7 +70,7 @@ class Pagination extends Component {
           </span>
         )}
         {' '}
-        {currentPage != totalPages && (
+        {showArrows && (currentPage != totalPages) && (
           <span className="last">
             <a href={this.getPageHref(totalPages)}>
               {'&raquo;'}
