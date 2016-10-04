@@ -37,8 +37,16 @@ class WelcomeChildren extends Component {
             </div>
           </div>
         )}
-        {childrenProducts && <ChildrenProducts childrenProducts={childrenProducts} />}
-        {postProductsText && <PostProducts postProductsText={postProductsText}/>}
+        {childrenProducts && (
+          <div className="b-page__content__inner b-page__content__inner_content">
+            <ChildrenProducts childrenProducts={childrenProducts} />
+          </div>
+        )}
+        {postProductsText && (
+          <div className="b-page__content__inner b-page__content__inner_content">
+            <PostProducts postProductsText={postProductsText}/>
+          </div>
+        )}
       </div>
     );
   }
