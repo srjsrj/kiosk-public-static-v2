@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ImageSlider from 'rc/common/ImageSlider';
 import ChildrenProducts from 'rc/ChildrenProducts/ChildrenProducts';
 import PostProducts from 'rc/common/PostProducts';
+import * as schemas from 'r/schemas';
 
 class WelcomeChildren extends Component {
   render() {
@@ -44,9 +45,9 @@ class WelcomeChildren extends Component {
 }
 
 WelcomeChildren.propTypes = {
-  childrenProducts: PropTypes.array,
+  childrenProducts: schemas.childrenProducts,
   showWelcomeSlider: PropTypes.bool.isRequired,
-  vendor: PropTypes.object,
+  vendor: schemas.vendor,
 };
 
 export default WelcomeChildren;
