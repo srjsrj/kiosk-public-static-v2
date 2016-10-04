@@ -31,6 +31,7 @@ import blogPostListSample from 'test/fixtures/blogPostList/sample.json';
 import productSearchSample from 'test/fixtures/productSearch/sample.json';
 import productSearchEmpty from 'test/fixtures/productSearch/empty.json';
 import welcomeChildrenSample from 'test/fixtures/welcomeChildren/sample.json';
+import welcomeSample from 'test/fixtures/welcome/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -63,5 +64,6 @@ global.BlogPostListSample = () => React.createElement(global.BlogPostList, blogP
 global.ProductSearchSample = () => React.createElement(global.ProductSearch, productSearchSample);
 global.ProductSearchEmpty = () => React.createElement(global.ProductSearch, productSearchEmpty);
 global.WelcomeChildrenSample = () => React.createElement(global.WelcomeChildren, welcomeChildrenSample);
+global.WelcomeSample = () => React.createElement(global.Welcome, welcomeSample);
 
 import './lib/ReactRailsUJS';

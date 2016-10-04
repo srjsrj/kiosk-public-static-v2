@@ -51,3 +51,4 @@ BlogPost = require('./react/components/BlogPost');
 BlogPostList = require('./react/components/BlogPostList');
 ProductSearch = require('./react/components/ProductSearch');
 WelcomeChildren = require('./react/components/WelcomeChildren');
+Welcome = require('./react/components/Welcome');
