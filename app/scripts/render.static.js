@@ -28,6 +28,8 @@ import categoriesShowEmpty from 'test/fixtures/categoriesShow/empty-products.jso
 import dictionaryEntitiesShowSample from 'test/fixtures/dictionaryEntitiesShow/sample.json';
 import productArchivedSample from 'test/fixtures/productArchived/sample.json';
 import blogPostListSample from 'test/fixtures/blogPostList/sample.json';
+import productSearchSample from 'test/fixtures/productSearch/sample.json';
+import productSearchEmpty from 'test/fixtures/productSearch/empty.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -57,5 +59,7 @@ global.DictionaryEntitiesShowSample = () => React.createElement(global.Dictionar
 global.DictionaryEntitiesShowEmpty = () => React.createElement(global.DictionaryEntitiesShow, { ...dictionaryEntitiesShowSample, products: { items: [], pagination: {} }});
 global.ProductArchivedSample = () => React.createElement(global.ProductArchived, productArchivedSample);
 global.BlogPostListSample = () => React.createElement(global.BlogPostList, blogPostListSample);
+global.ProductSearchSample = () => React.createElement(global.ProductSearch, productSearchSample);
+global.ProductSearchEmpty = () => React.createElement(global.ProductSearch, productSearchEmpty);
 
 import './lib/ReactRailsUJS';

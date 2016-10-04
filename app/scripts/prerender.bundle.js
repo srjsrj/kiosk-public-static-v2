@@ -49,3 +49,4 @@ DictionaryEntitiesShow = require('./react/components/DictionaryEntitiesShow');
 ProductArchived = require('./react/components/ProductArchived');
 BlogPost = require('./react/components/BlogPost');
 BlogPostList = require('./react/components/BlogPostList');
+ProductSearch = require('./react/components/ProductSearch');
