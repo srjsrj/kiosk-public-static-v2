@@ -15,11 +15,7 @@ class BlogPostList extends Component {
     return (
       <div className="b-page__content__inner b-page__content__inner_content">
         <section className="posts">
-          {posts.map( (post, idx) => {
-            return (
-              <BlogPostListItem {...Object.assign(post, {key: `blog-post-list-item-${idx}`})} />
-            )
-          })}
+          {posts.map((post, idx) => <BlogPostListItem {...post} key={`blog-post-list-item-${idx}`} />)}
 
           <Pagination totalPages={totalPages} currentPage={currentPage} />
         </section>

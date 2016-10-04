@@ -19,44 +19,44 @@ class BlogPostListItem extends Component {
     if(image) {
       if(hasLink) {
         imagePart = ( 
-          <a href={ headerUrl } title={ title } target={ linkTarget }>
-            <img src={ image } alt={ title }/>
+          <a href={headerUrl} title={title} target={linkTarget}>
+            <img src={image} alt={title}/>
           </a>
         );
       } else {
-        imagePart = (<img src={ image } alt={ title }/>);
+        imagePart = (<img src={image} alt={title}/>);
       }
     }
 
     if(hasLink) {
       titlePart = (
-        <a href={ headerUrl } title={ title } target={ linkTarget }>
+        <a href={headerUrl} title={title} target={linkTarget}>
           <h2 className="post__title">
-            { title }
+            {title}
           </h2>
         </a>
       );
     } else {
       titlePart = (
         <h2 className="post__title">
-          { title }
+          {title}
         </h2>
       );
     }
 
     return (
       <article className="post post--short">
-        { imagePart }
+        {imagePart}
         <div className="post__content">
-          { titlePart }
+          {titlePart}
           <div className="post__text b-text">
-            { text }
+            {text}
           </div>
           <div className="post__date">
-            { date }
+            {date}
           </div>
           <div className="post__read_more b-text">
-            { readMore }
+            {readMore}
           </div>
         </div>
       </article>
