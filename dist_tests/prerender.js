@@ -28,5 +28,6 @@ global.ReactDOMServer.renderToString(global.React.createElement(global.WelcomeCh
 global.ReactDOMServer.renderToString(global.React.createElement(global.Welcome, require('../test/fixtures/welcome/sample.json')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.OrderCancelled, require('../test/fixtures/orderCancelled/sample.json')));
 global.ReactDOMServer.renderToString(global.React.createElement(global.OrderCreated, require('../test/fixtures/orderCreated/sample.json')));
+global.ReactDOMServer.renderToString(global.React.createElement(global.OrderPaid, require('../test/fixtures/orderPaid/sample.json')));
 
 console.log('Prerendering public components test finished successfully');

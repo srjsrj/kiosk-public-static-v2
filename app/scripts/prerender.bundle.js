@@ -57,3 +57,4 @@ ContentPage = require('./react/components/ContentPage');
 Dictionary = require('./react/components/Dictionary');
 OrderCancelled = require('./react/components/OrderCancelled');
 OrderCreated = require('./react/components/OrderCreated');
+OrderPaid = require('./react/components/OrderPaid');

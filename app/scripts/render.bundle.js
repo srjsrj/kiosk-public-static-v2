@@ -62,5 +62,6 @@ global.ContentPage = require('./react/components/ContentPage');
 global.Dictionary = require('./react/components/Dictionary');
 global.OrderCancelled = require('rc/OrderCancelled');
 global.OrderCreated = require('rc/OrderCreated');
+global.OrderPaid = require('rc/OrderPaid');
 
 import './react/application';

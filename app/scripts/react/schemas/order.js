@@ -18,13 +18,19 @@ export default shape({
   default_url: string.isRequired,
   free_delivery: bool,
   free_delivery_threshold: money,
+  order_delivery: shape({
+    tracking_id: string,
+    tracking_url: string,
+  }),
   delivery_price: money,
   delivery_type: shape({
-
+    type: string.isRequired,
+    pickup_address: string,
   }),
   workflow_state: shape({
     bg_style: object.isRequired,
     title: string,
+    color: string,
   }),
   admin_comments: arrayOf(comment),
   items: arrayOf(orderItem).isRequired,

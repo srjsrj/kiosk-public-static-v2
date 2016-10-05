@@ -21,7 +21,7 @@ class OrderCreated extends Component {
       free_delivery_threshold: freeDeliveryThreshold,
       delivery_type: deliveryType,
     } = order;
-    const message = t('vendor.created.desc_html', {
+    const message = t('vendor.order.created.desc_html', {
       phone,
       link: `<a href="${defaultUrl}">${externalId}</a>`,
       price: humanizedMoneyWithCurrency(totalWithDeliveryPrice),
@@ -46,10 +46,10 @@ class OrderCreated extends Component {
               </a>
             </p>
             <p>
-              <div dangerouslySetInnerHTML={{ __html: message }} />
+              <span dangerouslySetInnerHTML={{ __html: message }} />
               <OrderSelfDeliveryMessage deliveryType={deliveryType} t={t} />
               {freeDeliveryMessage && (
-                <div dangerouslySetInnerHTML={{ __html: freeDeliveryMessage}} />
+                <span dangerouslySetInnerHTML={{ __html: freeDeliveryMessage}} />
               )}
             </p>
             <a className="b-btn" href={vendorRootPath}>
