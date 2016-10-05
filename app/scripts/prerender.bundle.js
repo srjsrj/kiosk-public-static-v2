@@ -58,3 +58,4 @@ Dictionary = require('./react/components/Dictionary');
 OrderCancelled = require('./react/components/OrderCancelled');
 OrderCreated = require('./react/components/OrderCreated');
 OrderPaid = require('./react/components/OrderPaid');
+OrderPayment = require('./react/components/OrderPayment');
