@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import OrderComments from './OrderComments';
-import OrderContents from './OrderContents';
+import OrderComments from 'rc/common/Order/OrderComments';
+import OrderContents from 'rc/common/Order/OrderContents';
 import * as schemas from 'r/schemas';
 
 class OrderCancelled extends Component {

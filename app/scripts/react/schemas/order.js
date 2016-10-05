@@ -14,21 +14,28 @@ const {
 } = PropTypes;
 
 export default shape({
-  external_id: string,
+  external_id: number,
+  default_url: string.isRequired,
+  free_delivery: bool,
+  free_delivery_threshold: money,
+  delivery_price: money,
+  delivery_type: shape({
+
+  }),
   workflow_state: shape({
     bg_style: object.isRequired,
     title: string,
   }),
   admin_comments: arrayOf(comment),
   items: arrayOf(orderItem).isRequired,
-  total_with_delivery_price: money.isRequired,
-  package_price: money,
-  delivery_price: money,
   package_good: good,
-  coupon: {
+  package_price: money,
+  total_with_delivery_price: money.isRequired,
+  phone: string,
+  coupon: shape({
     discount: number.isRequired,
     discount_type: string,
     fixed_discount: money,
     free_delivery: bool,
-  },
+  }),
 });
