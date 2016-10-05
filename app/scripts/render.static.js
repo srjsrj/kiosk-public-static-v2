@@ -34,6 +34,7 @@ import welcomeChildrenSample from 'test/fixtures/welcomeChildren/sample.json';
 import welcomeSample from 'test/fixtures/welcome/sample.json';
 import lookbookSample from 'test/fixtures/lookbook/sample.json';
 import ContentPageSample from 'test/fixtures/contentPage/sample.json';
+import orderCancelledProps from 'test/fixtures/orderCancelled/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -69,5 +70,6 @@ global.WelcomeChildrenSample = () => React.createElement(global.WelcomeChildren,
 global.WelcomeSample = () => React.createElement(global.Welcome, welcomeSample);
 global.LookbookSample = () => React.createElement(global.Lookbook, lookbookSample);
 global.ContentPageSample = () => React.createElement(global.ContentPage, ContentPageSample);
+global.OrderCancelledSample = () => React.createElement(global.OrderCancelled, orderCancelledProps);
 
 import './lib/ReactRailsUJS';

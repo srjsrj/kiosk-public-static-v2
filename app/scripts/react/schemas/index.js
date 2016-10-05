@@ -21,3 +21,6 @@ export { default as pagination } from './pagination';
 export { default as catalogFilterOption } from './catalogFilterOption';
 export { default as productList } from './productList';
 export { default as childrenProducts } from './childrenProducts';
+export { default as comment } from './comment';
+export { default as orderItem } from './orderItem';
+export { default as order } from './order';

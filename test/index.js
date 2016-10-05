@@ -49,3 +49,4 @@ import './react/components/ProductArchived/index.test';
 import './react/components/ProductSearch/index.test';
 import './react/components/WelcomeChildren/index.test';
 import './react/components/Welcome/index.test';
+import './react/components/OrderCancelled/index.test';
