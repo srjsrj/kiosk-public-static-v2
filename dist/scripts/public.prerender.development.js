@@ -14,19 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _numeral2.default.language('ru', _ru2.default);
 _numeral2.default.language('ru');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"numeral":459,"numeral/languages/ru":458}],2:[function(require,module,exports){
-=======
-},{"numeral":461,"numeral/languages/ru":460}],2:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"numeral":476,"numeral/languages/ru":475}],2:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"numeral":478,"numeral/languages/ru":477}],2:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"numeral":484,"numeral/languages/ru":483}],2:[function(require,module,exports){
 (function (global){
 window = undefined; // React-rails set window to this, it's unexpected behavior
 React = require('react');
@@ -81,20 +69,9 @@ BlogPost = require('./react/components/BlogPost');
 BlogPostList = require('./react/components/BlogPostList');
 ProductSearch = require('./react/components/ProductSearch');
 WelcomeChildren = require('./react/components/WelcomeChildren');
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/BlogPost":11,"./react/components/BlogPostList":14,"./react/components/Cart":22,"./react/components/Cart/CartCoupon":17,"./react/components/CategoriesShow":36,"./react/components/CategoriesShowChildren":38,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/ChildrenProducts":49,"./react/components/Clientbar":51,"./react/components/CurrencySwitcher":53,"./react/components/DictionaryEntitiesShow":55,"./react/components/ErrorPage":57,"./react/components/LocaleSwitcher":61,"./react/components/Logo/LogoContainer":62,"./react/components/MenuBottom":65,"./react/components/MenuTop":72,"./react/components/NavBar":75,"./react/components/Order":79,"./react/components/Pagination":82,"./react/components/Product/ProductBlock":91,"./react/components/Product/ProductCard":108,"./react/components/ProductArchived":127,"./react/components/ProductGroup":129,"./react/components/ProductList":131,"./react/components/ProductSearch":133,"./react/components/ScrollToTop":134,"./react/components/TopBanner":135,"./react/components/WelcomeChildren":137,"./react/components/Wishlist":142,"./react/components/common/ImageSlider":161,"./react/components/common/PostProducts":168,"./react/reducers/Design.prerender":188,"./react/reducers/Popup":189,"./react/reducers/cart":190,"./react/reducers/packages":191,"react":"react","react-dom":"react-dom","react-dom/server":486,"react-redux":490,"redux":"redux"}],3:[function(require,module,exports){
-=======
-ProductSearch = require('./react/components/ProductSearch');
-WelcomeChildren = require('./react/components/WelcomeChildren');
 Welcome = require('./react/components/Welcome');
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./locales/numeral/ru":1,"./react/components/BlogPost":11,"./react/components/BlogPostList":14,"./react/components/Cart":22,"./react/components/Cart/CartCoupon":17,"./react/components/CategoriesShow":36,"./react/components/CategoriesShowChildren":38,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/ChildrenProducts":49,"./react/components/Clientbar":51,"./react/components/CurrencySwitcher":53,"./react/components/DictionaryEntitiesShow":55,"./react/components/ErrorPage":57,"./react/components/LocaleSwitcher":61,"./react/components/Logo/LogoContainer":62,"./react/components/MenuBottom":65,"./react/components/MenuTop":72,"./react/components/NavBar":75,"./react/components/Order":79,"./react/components/Pagination":82,"./react/components/Product/ProductBlock":91,"./react/components/Product/ProductCard":108,"./react/components/ProductArchived":127,"./react/components/ProductGroup":129,"./react/components/ProductList":131,"./react/components/ProductSearch":133,"./react/components/ScrollToTop":134,"./react/components/TopBanner":135,"./react/components/Welcome":137,"./react/components/WelcomeChildren":139,"./react/components/Wishlist":144,"./react/components/common/ImageSlider":163,"./react/components/common/PostProducts":170,"./react/reducers/Design.prerender":190,"./react/reducers/Popup":191,"./react/reducers/cart":192,"./react/reducers/packages":193,"react":"react","react-dom":"react-dom","react-dom/server":488,"react-redux":492,"redux":"redux"}],3:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
+Lookbook = require('./react/components/Lookbook');
+ContentPage = require('./react/components/ContentPage');
 OrderCancelled = require('./react/components/OrderCancelled');
 OrderCreated = require('./react/components/OrderCreated');
 OrderPaid = require('./react/components/OrderPaid');
@@ -102,12 +79,7 @@ OrderPayment = require('./react/components/OrderPayment');
 OrderShow = require('./react/components/OrderShow');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-},{"./locales/numeral/ru":1,"./react/components/BlogPost":11,"./react/components/BlogPostList":14,"./react/components/Cart":22,"./react/components/Cart/CartCoupon":17,"./react/components/CategoriesShow":36,"./react/components/CategoriesShowChildren":38,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/ChildrenProducts":49,"./react/components/Clientbar":51,"./react/components/CurrencySwitcher":53,"./react/components/DictionaryEntitiesShow":55,"./react/components/ErrorPage":57,"./react/components/LocaleSwitcher":61,"./react/components/Logo/LogoContainer":62,"./react/components/MenuBottom":65,"./react/components/MenuTop":72,"./react/components/NavBar":75,"./react/components/Order":79,"./react/components/OrderCancelled":81,"./react/components/OrderCreated":83,"./react/components/OrderPaid":85,"./react/components/OrderPayment":87,"./react/components/Pagination":90,"./react/components/Product/ProductBlock":99,"./react/components/Product/ProductCard":116,"./react/components/ProductArchived":135,"./react/components/ProductGroup":137,"./react/components/ProductList":139,"./react/components/ProductSearch":141,"./react/components/ScrollToTop":142,"./react/components/TopBanner":143,"./react/components/WelcomeChildren":145,"./react/components/Wishlist":150,"./react/components/common/ImageSlider":170,"./react/components/common/PostProducts":182,"./react/reducers/Design.prerender":202,"./react/reducers/Popup":203,"./react/reducers/cart":204,"./react/reducers/packages":205,"react":"react","react-dom":"react-dom","react-dom/server":503,"react-redux":507,"redux":"redux"}],3:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./locales/numeral/ru":1,"./react/components/BlogPost":11,"./react/components/BlogPostList":14,"./react/components/Cart":22,"./react/components/Cart/CartCoupon":17,"./react/components/CategoriesShow":36,"./react/components/CategoriesShowChildren":38,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/ChildrenProducts":49,"./react/components/Clientbar":51,"./react/components/CurrencySwitcher":53,"./react/components/DictionaryEntitiesShow":55,"./react/components/ErrorPage":57,"./react/components/LocaleSwitcher":61,"./react/components/Logo/LogoContainer":62,"./react/components/MenuBottom":65,"./react/components/MenuTop":72,"./react/components/NavBar":75,"./react/components/Order":79,"./react/components/OrderCancelled":81,"./react/components/OrderCreated":83,"./react/components/OrderPaid":85,"./react/components/OrderPayment":87,"./react/components/OrderShow":89,"./react/components/Pagination":92,"./react/components/Product/ProductBlock":101,"./react/components/Product/ProductCard":118,"./react/components/ProductArchived":137,"./react/components/ProductGroup":139,"./react/components/ProductList":141,"./react/components/ProductSearch":143,"./react/components/ScrollToTop":144,"./react/components/TopBanner":145,"./react/components/WelcomeChildren":147,"./react/components/Wishlist":152,"./react/components/common/ImageSlider":172,"./react/components/common/PostProducts":184,"./react/reducers/Design.prerender":204,"./react/reducers/Popup":205,"./react/reducers/cart":206,"./react/reducers/packages":207,"react":"react","react-dom":"react-dom","react-dom/server":505,"react-redux":509,"redux":"redux"}],3:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./locales/numeral/ru":1,"./react/components/BlogPost":11,"./react/components/BlogPostList":14,"./react/components/Cart":22,"./react/components/Cart/CartCoupon":17,"./react/components/CategoriesShow":36,"./react/components/CategoriesShowChildren":38,"./react/components/Checkout/CheckoutCoupon":41,"./react/components/ChildrenProducts":49,"./react/components/Clientbar":51,"./react/components/ContentPage":53,"./react/components/CurrencySwitcher":55,"./react/components/DictionaryEntitiesShow":57,"./react/components/ErrorPage":59,"./react/components/LocaleSwitcher":63,"./react/components/Logo/LogoContainer":64,"./react/components/Lookbook":67,"./react/components/MenuBottom":69,"./react/components/MenuTop":76,"./react/components/NavBar":79,"./react/components/Order":83,"./react/components/OrderCancelled":85,"./react/components/OrderCreated":87,"./react/components/OrderPaid":89,"./react/components/OrderPayment":91,"./react/components/OrderShow":93,"./react/components/Pagination":96,"./react/components/Product/ProductBlock":105,"./react/components/Product/ProductCard":122,"./react/components/ProductArchived":141,"./react/components/ProductGroup":143,"./react/components/ProductList":145,"./react/components/ProductSearch":147,"./react/components/ScrollToTop":148,"./react/components/TopBanner":149,"./react/components/Welcome":151,"./react/components/WelcomeChildren":153,"./react/components/Wishlist":158,"./react/components/common/ImageSlider":178,"./react/components/common/PostProducts":190,"./react/reducers/Design.prerender":210,"./react/reducers/Popup":211,"./react/reducers/cart":212,"./react/reducers/packages":213,"react":"react","react-dom":"react-dom","react-dom/server":511,"react-redux":515,"redux":"redux"}],3:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -249,19 +221,7 @@ function fetchCart() {
   };
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../routes/api":223,"../middleware/api":186,"babel-runtime/helpers/defineProperty":240,"humps":356}],5:[function(require,module,exports){
-=======
-},{"../../routes/api":225,"../middleware/api":188,"babel-runtime/helpers/defineProperty":242,"humps":358}],5:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../routes/api":240,"../middleware/api":200,"babel-runtime/helpers/defineProperty":257,"humps":373}],5:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../routes/api":242,"../middleware/api":202,"babel-runtime/helpers/defineProperty":259,"humps":375}],5:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../routes/api":248,"../middleware/api":208,"babel-runtime/helpers/defineProperty":265,"humps":381}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -310,19 +270,7 @@ function fetchPackages() {
   };
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../routes/api":223,"../middleware/api":186,"babel-runtime/helpers/defineProperty":240,"humps":356}],6:[function(require,module,exports){
-=======
-},{"../../routes/api":225,"../middleware/api":188,"babel-runtime/helpers/defineProperty":242,"humps":358}],6:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../routes/api":240,"../middleware/api":200,"babel-runtime/helpers/defineProperty":257,"humps":373}],6:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../routes/api":242,"../middleware/api":202,"babel-runtime/helpers/defineProperty":259,"humps":375}],6:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../routes/api":248,"../middleware/api":208,"babel-runtime/helpers/defineProperty":265,"humps":381}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -359,19 +307,7 @@ function showFilteredCount(filter, t) {
   }).fail(_Notice2.default.errorResponse);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../api/api":9,"../services/Notice":217}],7:[function(require,module,exports){
-=======
-},{"../api/api":9,"../services/Notice":219}],7:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../api/api":9,"../services/Notice":234}],7:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../api/api":9,"../services/Notice":236}],7:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../api/api":9,"../services/Notice":242}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -388,19 +324,7 @@ function load(vendorID, productCardID) {
   });
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../routes/api":223}],8:[function(require,module,exports){
-=======
-},{"../../routes/api":225}],8:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../routes/api":240}],8:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../routes/api":242}],8:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../routes/api":248}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -492,19 +416,7 @@ function initBasketState() {
   });
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../routes/api":223,"../../stores/BasketDispatcher":220}],9:[function(require,module,exports){
-=======
-},{"../../../routes/api":225,"../../stores/BasketDispatcher":222}],9:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../routes/api":240,"../../stores/BasketDispatcher":237}],9:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../routes/api":242,"../../stores/BasketDispatcher":239}],9:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../routes/api":248,"../../stores/BasketDispatcher":245}],9:[function(require,module,exports){
 var Api, TIMEOUT, abortPendingRequests, apiRoutes, deleteRequest, getRequest, postRequest, putRequest, request, vendorKey, _pendingRequests;
 
 apiRoutes = require('../../routes/api');
@@ -592,19 +504,7 @@ Api = {
 module.exports = Api;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../routes/api":223}],10:[function(require,module,exports){
-=======
-},{"../../routes/api":225}],10:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../routes/api":240}],10:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../routes/api":242}],10:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../routes/api":248}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -738,19 +638,7 @@ BlogPost.propTypes = {
 exports.default = (0, _provideTranslations2.default)(BlogPost);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],11:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],11:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],11:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],11:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -776,19 +664,7 @@ function BlogPostContainer(props) {
 exports.default = BlogPostContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./BlogPost":10,"humps":356,"react":"react"}],12:[function(require,module,exports){
-=======
-},{"./BlogPost":10,"humps":358,"react":"react"}],12:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./BlogPost":10,"humps":373,"react":"react"}],12:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./BlogPost":10,"humps":375,"react":"react"}],12:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./BlogPost":10,"humps":381,"react":"react"}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -882,15 +758,7 @@ BlogPostList.propTypes = {
 exports.default = BlogPostList;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../Pagination":82,"./BlogPostListItem":13,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],13:[function(require,module,exports){
-=======
-},{"../Pagination":90,"./BlogPostListItem":13,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],13:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../Pagination":92,"./BlogPostListItem":13,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],13:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../Pagination":96,"./BlogPostListItem":13,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1022,15 +890,7 @@ BlogPostListItem.propTypes = {
 exports.default = BlogPostListItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],14:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],14:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],14:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1056,19 +916,7 @@ function BlogPostListContainer(props) {
 exports.default = BlogPostListContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./BlogPostList":12,"humps":356,"react":"react"}],15:[function(require,module,exports){
-=======
-},{"./BlogPostList":12,"humps":358,"react":"react"}],15:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./BlogPostList":12,"humps":373,"react":"react"}],15:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./BlogPostList":12,"humps":375,"react":"react"}],15:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./BlogPostList":12,"humps":381,"react":"react"}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1285,19 +1133,7 @@ Cart.propTypes = {
 exports.default = Cart;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/FormAuthenticity":154,"../common/Money/HumanizedMoneyWithCurrency":167,"./CartCoupon":17,"./CartList":18,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"react":"react"}],16:[function(require,module,exports){
-=======
-},{"../common/FormAuthenticity":156,"../common/Money/HumanizedMoneyWithCurrency":169,"./CartCoupon":17,"./CartList":18,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"react":"react"}],16:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/FormAuthenticity":163,"../common/Money/HumanizedMoneyWithCurrency":176,"./CartCoupon":17,"./CartList":18,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"react":"react"}],16:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/FormAuthenticity":165,"../common/Money/HumanizedMoneyWithCurrency":178,"./CartCoupon":17,"./CartList":18,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"react":"react"}],16:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/FormAuthenticity":171,"../common/Money/HumanizedMoneyWithCurrency":184,"./CartCoupon":17,"./CartList":18,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"react":"react"}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1362,19 +1198,7 @@ var CartAlert = (_temp = _class = function (_Component) {
 exports.default = CartAlert;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/Alert":150,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],17:[function(require,module,exports){
-=======
-},{"../common/Alert":152,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],17:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/Alert":158,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],17:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/Alert":160,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],17:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/Alert":166,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1546,19 +1370,7 @@ CartCoupon.defaultProps = {
 
 exports.default = (0, _provideTranslations2.default)(CartCoupon);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../routes/api":223,"../HoC/provideTranslations":59,"../common/TextInput":172,"./CartAlert":16,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],18:[function(require,module,exports){
-=======
-},{"../../../routes/api":225,"../HoC/provideTranslations":59,"../common/TextInput":174,"./CartAlert":16,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],18:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../routes/api":240,"../HoC/provideTranslations":59,"../common/TextInput":186,"./CartAlert":16,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],18:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../routes/api":242,"../HoC/provideTranslations":59,"../common/TextInput":188,"./CartAlert":16,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],18:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../routes/api":248,"../HoC/provideTranslations":61,"../common/TextInput":194,"./CartAlert":16,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1671,19 +1483,7 @@ CartList.propTypes = {
 exports.default = CartList;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CartListItem":19,"./CartListPackageItem":20,"./CartListPackages":21,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],19:[function(require,module,exports){
-=======
-},{"./CartListItem":19,"./CartListPackageItem":20,"./CartListPackages":21,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],19:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CartListItem":19,"./CartListPackageItem":20,"./CartListPackages":21,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],19:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CartListItem":19,"./CartListPackageItem":20,"./CartListPackages":21,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],19:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CartListItem":19,"./CartListPackageItem":20,"./CartListPackages":21,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1965,19 +1765,7 @@ CartListItem.propTypes = {
 exports.default = CartListItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/AssetImage":151,"../common/Image":160,"../common/Money/HumanizedMoneyWithCurrency":167,"../common/Select":171,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"humps":356,"immutable":"immutable","react":"react"}],20:[function(require,module,exports){
-=======
-},{"../common/AssetImage":153,"../common/Image":162,"../common/Money/HumanizedMoneyWithCurrency":169,"../common/Select":173,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"humps":358,"immutable":"immutable","react":"react"}],20:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/AssetImage":159,"../common/Image":169,"../common/Money/HumanizedMoneyWithCurrency":176,"../common/Select":185,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"humps":373,"immutable":"immutable","react":"react"}],20:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/AssetImage":161,"../common/Image":171,"../common/Money/HumanizedMoneyWithCurrency":178,"../common/Select":187,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"humps":375,"immutable":"immutable","react":"react"}],20:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/AssetImage":167,"../common/Image":177,"../common/Money/HumanizedMoneyWithCurrency":184,"../common/Select":193,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"humps":381,"immutable":"immutable","react":"react"}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2119,19 +1907,7 @@ CartListPackageItem.propTypes = {
 exports.default = CartListPackageItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/AssetImage":151,"../common/Image":160,"../common/Money/HumanizedMoneyWithCurrency":167,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"immutable":"immutable","react":"react"}],21:[function(require,module,exports){
-=======
-},{"../common/AssetImage":153,"../common/Image":162,"../common/Money/HumanizedMoneyWithCurrency":169,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"immutable":"immutable","react":"react"}],21:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/AssetImage":159,"../common/Image":169,"../common/Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"immutable":"immutable","react":"react"}],21:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/AssetImage":161,"../common/Image":171,"../common/Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"immutable":"immutable","react":"react"}],21:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/AssetImage":167,"../common/Image":177,"../common/Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"immutable":"immutable","react":"react"}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2304,19 +2080,7 @@ CartListPackages.propTypes = {
 exports.default = CartListPackages;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/money":180,"../common/Image":160,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"immutable":"immutable","react":"react"}],22:[function(require,module,exports){
-=======
-},{"../../helpers/money":182,"../common/Image":162,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"immutable":"immutable","react":"react"}],22:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/money":194,"../common/Image":169,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"immutable":"immutable","react":"react"}],22:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/money":196,"../common/Image":171,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"immutable":"immutable","react":"react"}],22:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/money":202,"../common/Image":177,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"immutable":"immutable","react":"react"}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2536,19 +2300,7 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
 })(CartContainer)));
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":179,"../../reducers/cart":190,"../../reducers/packages":191,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Cart":15,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"immutable":"immutable","react":"react","react-redux":490}],23:[function(require,module,exports){
-=======
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":181,"../../reducers/cart":192,"../../reducers/packages":193,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Cart":15,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"immutable":"immutable","react":"react","react-redux":492}],23:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":193,"../../reducers/cart":204,"../../reducers/packages":205,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Cart":15,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"immutable":"immutable","react":"react","react-redux":507}],23:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":195,"../../reducers/cart":206,"../../reducers/packages":207,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Cart":15,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"immutable":"immutable","react":"react","react-redux":509}],23:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/CartActions":4,"../../actions/PackagesActions":5,"../../helpers/dom":201,"../../reducers/cart":212,"../../reducers/packages":213,"../HoC/connectToRedux":60,"../HoC/provideTranslations":61,"./Cart":15,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"immutable":"immutable","react":"react","react-redux":515}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2646,19 +2398,7 @@ CatalogFilter.propTypes = {
 exports.default = (0, _provideTranslations2.default)(CatalogFilter);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"../common/Checkbox":153,"./CatalogFilterOptions":28,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],24:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"../common/Checkbox":155,"./CatalogFilterOptions":28,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],24:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"../common/Checkbox":161,"./CatalogFilterOptions":28,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],24:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"../common/Checkbox":163,"./CatalogFilterOptions":28,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],24:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"../common/Checkbox":169,"./CatalogFilterOptions":28,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2871,19 +2611,7 @@ CatalogFilterCheckbox.propTypes = {
 exports.default = CatalogFilterCheckbox;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/catalogFilterActions":6,"./CatalogFilterCheckbox.constants":24,"./CatalogFilterExpandButton":27,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
-=======
-},{"../../actions/catalogFilterActions":6,"./CatalogFilterCheckbox.constants":24,"./CatalogFilterExpandButton":27,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/catalogFilterActions":6,"./CatalogFilterCheckbox.constants":24,"./CatalogFilterExpandButton":27,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../actions/catalogFilterActions":6,"./CatalogFilterCheckbox.constants":24,"./CatalogFilterExpandButton":27,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/catalogFilterActions":6,"./CatalogFilterCheckbox.constants":24,"./CatalogFilterExpandButton":27,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react","react-dom":"react-dom"}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3000,19 +2728,7 @@ CatalogFilterColor.propTypes = {
 exports.default = CatalogFilterColor;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],27:[function(require,module,exports){
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],27:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],27:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],27:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3110,19 +2826,7 @@ CatalogFilterExpandButton.propTypes = {
 exports.default = CatalogFilterExpandButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],28:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],28:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],28:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],28:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3242,19 +2946,7 @@ CatalogFilterOptions.propTypes = {
 exports.default = CatalogFilterOptions;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CatalogFilterCheckbox":25,"./CatalogFilterColor":26,"./CatalogFilterRadio":29,"./CatalogFilterRange":30,"./CatalogFilterSelectedOptions":31,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],29:[function(require,module,exports){
-=======
-},{"./CatalogFilterCheckbox":25,"./CatalogFilterColor":26,"./CatalogFilterRadio":29,"./CatalogFilterRange":30,"./CatalogFilterSelectedOptions":31,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],29:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CatalogFilterCheckbox":25,"./CatalogFilterColor":26,"./CatalogFilterRadio":29,"./CatalogFilterRange":30,"./CatalogFilterSelectedOptions":31,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],29:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CatalogFilterCheckbox":25,"./CatalogFilterColor":26,"./CatalogFilterRadio":29,"./CatalogFilterRange":30,"./CatalogFilterSelectedOptions":31,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],29:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CatalogFilterCheckbox":25,"./CatalogFilterColor":26,"./CatalogFilterRadio":29,"./CatalogFilterRange":30,"./CatalogFilterSelectedOptions":31,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3390,19 +3082,7 @@ CatalogFilterRadio.propTypes = {
 exports.default = CatalogFilterRadio;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],30:[function(require,module,exports){
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],30:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],30:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],30:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3603,19 +3283,7 @@ CatalogFilterRange.defaultProps = {
 exports.default = CatalogFilterRange;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/slicedToArray":244,"numeral":459,"react":"react","react-nouislider":487}],31:[function(require,module,exports){
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/slicedToArray":246,"numeral":461,"react":"react","react-nouislider":489}],31:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/slicedToArray":261,"numeral":476,"react":"react","react-nouislider":504}],31:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/slicedToArray":263,"numeral":478,"react":"react","react-nouislider":506}],31:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/catalogFilterActions":6,"./utils":34,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/slicedToArray":269,"numeral":484,"react":"react","react-nouislider":512}],31:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3695,19 +3363,7 @@ CatalogFilterSelectedOptions.propTypes = {
 exports.default = CatalogFilterSelectedOptions;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],32:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],32:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],32:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],32:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3797,19 +3453,7 @@ CatalogFilterContainer.defaultProps = {
 exports.default = CatalogFilterContainer;
 exports.CatalogFilter = _CatalogFilter2.default;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./CatalogFilter.jsx":23,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],33:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./CatalogFilter.jsx":23,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],33:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./CatalogFilter.jsx":23,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],33:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./CatalogFilter.jsx":23,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],33:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./CatalogFilter.jsx":23,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3850,19 +3494,7 @@ function getFilter(instance) {
 }
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/extends":241,"jquery":"jquery","react-dom":"react-dom","urijs":"urijs"}],34:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/extends":243,"jquery":"jquery","react-dom":"react-dom","urijs":"urijs"}],34:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/extends":258,"jquery":"jquery","react-dom":"react-dom","urijs":"urijs"}],34:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/extends":260,"jquery":"jquery","react-dom":"react-dom","urijs":"urijs"}],34:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/extends":266,"jquery":"jquery","react-dom":"react-dom","urijs":"urijs"}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3974,19 +3606,7 @@ CategoriesShow.propTypes = {
 exports.default = CategoriesShow;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],36:[function(require,module,exports){
-=======
-},{"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],36:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ProductList/ProductList":138,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],36:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductList/ProductList":140,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],36:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductList/ProductList":144,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4069,19 +3689,7 @@ CategoriesShowContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(CategoriesShowContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"../ProductList":131,"./CategoriesShow":35,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],37:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":131,"./CategoriesShow":35,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],37:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":139,"./CategoriesShow":35,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],37:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":141,"./CategoriesShow":35,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],37:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"../ProductList":145,"./CategoriesShow":35,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4165,19 +3773,7 @@ CategoriesShowChildren.propTypes = {
 exports.default = CategoriesShowChildren;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ChildrenProducts":49,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],38:[function(require,module,exports){
-=======
-},{"../ChildrenProducts":49,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],38:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ChildrenProducts":49,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],38:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ChildrenProducts":49,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],38:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ChildrenProducts":49,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4254,19 +3850,7 @@ CategoriesShowChildrenContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(CategoriesShowChildrenContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ChildrenProducts":49,"../HoC/provideTranslations":59,"./CategoriesShowChildren":37,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],39:[function(require,module,exports){
-=======
-},{"../ChildrenProducts":49,"../HoC/provideTranslations":59,"./CategoriesShowChildren":37,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],39:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ChildrenProducts":49,"../HoC/provideTranslations":59,"./CategoriesShowChildren":37,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],39:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ChildrenProducts":49,"../HoC/provideTranslations":59,"./CategoriesShowChildren":37,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],39:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ChildrenProducts":49,"../HoC/provideTranslations":61,"./CategoriesShowChildren":37,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4389,19 +3973,7 @@ CheckoutActions.propTypes = {
 exports.default = CheckoutActions;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./CheckoutPublicOffer":45,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],40:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./CheckoutPublicOffer":45,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],40:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./CheckoutPublicOffer":45,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],40:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./CheckoutPublicOffer":45,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],40:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./CheckoutPublicOffer":45,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4466,19 +4038,7 @@ CheckoutAlert.propTypes = {
 exports.default = CheckoutAlert;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/Alert":150,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],41:[function(require,module,exports){
-=======
-},{"../common/Alert":152,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],41:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/Alert":158,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],41:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/Alert":160,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],41:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/Alert":166,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4664,19 +4224,7 @@ CheckoutCoupon.defaultProps = {
 exports.default = CheckoutCoupon;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../routes/api":223,"../common/TextInput":172,"./CheckoutAlert":40,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],42:[function(require,module,exports){
-=======
-},{"../../../routes/api":225,"../common/TextInput":174,"./CheckoutAlert":40,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],42:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../routes/api":240,"../common/TextInput":186,"./CheckoutAlert":40,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],42:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../routes/api":242,"../common/TextInput":188,"./CheckoutAlert":40,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],42:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../routes/api":248,"../common/TextInput":194,"./CheckoutAlert":40,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4822,19 +4370,7 @@ CheckoutDeliveries.defaultProps = {
 exports.default = CheckoutDeliveries;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/money":180,"../../helpers/text":184,"../common/Money/HumanizedMoneyWithCurrency":167,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"immutable":"immutable","react":"react"}],43:[function(require,module,exports){
-=======
-},{"../../helpers/money":182,"../../helpers/text":186,"../common/Money/HumanizedMoneyWithCurrency":169,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"immutable":"immutable","react":"react"}],43:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/money":194,"../../helpers/text":198,"../common/Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"immutable":"immutable","react":"react"}],43:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/money":196,"../../helpers/text":200,"../common/Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"immutable":"immutable","react":"react"}],43:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/money":202,"../../helpers/text":206,"../common/Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"immutable":"immutable","react":"react"}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5003,19 +4539,7 @@ CheckoutFields.defaultProps = {};
 exports.default = CheckoutFields;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"react":"react"}],44:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"react":"react"}],44:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"react":"react"}],44:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"react":"react"}],44:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"react":"react"}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5136,19 +4660,7 @@ CheckoutPayments.defaultProps = {
 exports.default = CheckoutPayments;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/text":184,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],45:[function(require,module,exports){
-=======
-},{"../../helpers/text":186,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],45:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/text":198,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],45:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/text":200,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],45:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/text":206,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5261,19 +4773,7 @@ CheckoutPublicOffer.defaultProps = {
 exports.default = CheckoutPublicOffer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/Checkbox":153,"../common/HiddenInput":156,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],46:[function(require,module,exports){
-=======
-},{"../common/Checkbox":155,"../common/HiddenInput":158,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],46:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/Checkbox":161,"../common/HiddenInput":165,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],46:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/Checkbox":163,"../common/HiddenInput":167,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],46:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/Checkbox":169,"../common/HiddenInput":173,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],46:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5360,19 +4860,7 @@ CheckoutStep.propTypes = {
 exports.default = CheckoutStep;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],47:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],47:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],47:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],47:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5570,19 +5058,7 @@ Checkout.defaultProps = {
 exports.default = Checkout;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../routes/app":224,"../../schemas":203,"../common/Alert":150,"../common/FormAuthenticity":154,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],48:[function(require,module,exports){
-=======
-},{"../../../routes/app":226,"../../schemas":205,"../common/Alert":152,"../common/FormAuthenticity":156,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],48:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../routes/app":241,"../../schemas":218,"../common/Alert":158,"../common/FormAuthenticity":163,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],48:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../routes/app":243,"../../schemas":220,"../common/Alert":160,"../common/FormAuthenticity":165,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],48:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../routes/app":249,"../../schemas":226,"../common/Alert":166,"../common/FormAuthenticity":171,"./CheckoutActions":39,"./CheckoutCoupon":41,"./CheckoutDeliveries":42,"./CheckoutFields":43,"./CheckoutPayments":44,"./CheckoutStep":46,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5668,19 +5144,7 @@ ChildrenProducts.propTypes = {
 exports.default = ChildrenProducts;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductGroup":129,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],49:[function(require,module,exports){
-=======
-},{"../ProductGroup":129,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],49:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ProductGroup":137,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],49:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductGroup":139,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],49:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductGroup":143,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],49:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5752,19 +5216,7 @@ ChildrenProductsContainer.defaultProps = {
 exports.default = ChildrenProductsContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./ChildrenProducts":48,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],50:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./ChildrenProducts":48,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],50:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./ChildrenProducts":48,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],50:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./ChildrenProducts":48,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],50:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./ChildrenProducts":48,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],50:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5874,19 +5326,7 @@ Clientbar.defaultProps = {
 exports.default = Clientbar;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../buttons/CabinetButton":145,"../buttons/CartButton/CartButtonController":147,"../buttons/WishlistButton":149,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],51:[function(require,module,exports){
-=======
-},{"../buttons/CabinetButton":147,"../buttons/CartButton/CartButtonController":149,"../buttons/WishlistButton":151,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],51:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../buttons/CabinetButton":153,"../buttons/CartButton/CartButtonController":155,"../buttons/WishlistButton":157,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],51:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../buttons/CabinetButton":155,"../buttons/CartButton/CartButtonController":157,"../buttons/WishlistButton":159,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],51:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../buttons/CabinetButton":161,"../buttons/CartButton/CartButtonController":163,"../buttons/WishlistButton":165,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],51:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5905,6 +5345,131 @@ Object.defineProperty(exports, 'Clientbar', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 },{"./Clientbar":50}],52:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ImageSlider = require('../common/ImageSlider');
+
+var _ImageSlider2 = _interopRequireDefault(_ImageSlider);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ContentPage = function (_Component) {
+  (0, _inherits3.default)(ContentPage, _Component);
+
+  function ContentPage() {
+    (0, _classCallCheck3.default)(this, ContentPage);
+    return (0, _possibleConstructorReturn3.default)(this, (ContentPage.__proto__ || (0, _getPrototypeOf2.default)(ContentPage)).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(ContentPage, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var title = _props.title;
+      var text = _props.text;
+      var images = _props.images;
+
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'b-page__content__inner b-page__content__inner_content' },
+        _react2.default.createElement(
+          'div',
+          { className: 'b-article' },
+          _react2.default.createElement(
+            'div',
+            { className: 'b-text' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              title
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'section',
+          { className: 'b-item-list' },
+          _react2.default.createElement(_ImageSlider2.default, { slides: images, hasThumbs: images.length > 1, className: 'b-slider_promo' })
+        ),
+        _react2.default.createElement(
+          'article',
+          { className: 'b-article' },
+          _react2.default.createElement(
+            'div',
+            { className: 'b-text' },
+            text
+          )
+        )
+      );
+    }
+  }]);
+  return ContentPage;
+}(_react.Component);
+
+ContentPage.propTypes = {
+  title: _react.PropTypes.string.isRequired,
+  text: _react.PropTypes.string.isRequired,
+  images: _ImageSlider2.default.propTypes.slides
+};
+
+exports.default = ContentPage;
+module.exports = exports['default'];
+
+},{"../common/ImageSlider":178,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],53:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _humps = require('humps');
+
+var _ContentPage = require('./ContentPage');
+
+var _ContentPage2 = _interopRequireDefault(_ContentPage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ContentPageContainer(props) {
+  return _react2.default.createElement(_ContentPage2.default, (0, _humps.camelizeKeys)(props));
+}
+
+exports.default = ContentPageContainer;
+module.exports = exports['default'];
+
+},{"./ContentPage":52,"humps":381,"react":"react"}],54:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6012,19 +5577,7 @@ CurrencySwitcher.propTypes = {
 exports.default = CurrencySwitcher;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/money":180,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"lodash/collection/map":382,"lodash/collection/size":383,"lodash/function/bind":385,"lodash/object/get":451,"react":"react"}],53:[function(require,module,exports){
-=======
-},{"../../helpers/money":182,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"lodash/collection/map":384,"lodash/collection/size":385,"lodash/function/bind":387,"lodash/object/get":453,"react":"react"}],53:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/money":194,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"lodash/collection/map":399,"lodash/collection/size":400,"lodash/function/bind":402,"lodash/object/get":468,"react":"react"}],53:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/money":196,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"lodash/collection/map":401,"lodash/collection/size":402,"lodash/function/bind":404,"lodash/object/get":470,"react":"react"}],53:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/money":202,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"lodash/collection/map":407,"lodash/collection/size":408,"lodash/function/bind":410,"lodash/object/get":476,"react":"react"}],55:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6104,19 +5657,7 @@ CurrencySwitcherContainer.defaultProps = {
 exports.default = CurrencySwitcherContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CurrencySwitcher":52,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","urijs":"urijs"}],54:[function(require,module,exports){
-=======
-},{"./CurrencySwitcher":52,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","urijs":"urijs"}],54:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CurrencySwitcher":52,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","urijs":"urijs"}],54:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CurrencySwitcher":52,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","urijs":"urijs"}],54:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CurrencySwitcher":54,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","urijs":"urijs"}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6207,19 +5748,7 @@ DictionaryEntitiesShow.propTypes = {
 exports.default = DictionaryEntitiesShow;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],55:[function(require,module,exports){
-=======
-},{"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],55:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ProductList/ProductList":138,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],55:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductList/ProductList":140,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],55:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductList/ProductList":144,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],57:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6301,19 +5830,7 @@ DictionaryEntitiesShowContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(DictionaryEntitiesShowContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"../ProductList":131,"./DictionaryEntitiesShow":54,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],56:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":131,"./DictionaryEntitiesShow":54,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],56:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":139,"./DictionaryEntitiesShow":54,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],56:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"../ProductList":141,"./DictionaryEntitiesShow":54,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],56:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"../ProductList":145,"./DictionaryEntitiesShow":56,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],58:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6424,19 +5941,7 @@ ErrorPage.defaultProps = {
 exports.default = ErrorPage;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],57:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],57:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],57:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],57:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],59:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6462,19 +5967,7 @@ function ErrorPageContainter(props) {
 exports.default = ErrorPageContainter;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ErrorPage":56,"humps":356,"react":"react"}],58:[function(require,module,exports){
-=======
-},{"./ErrorPage":56,"humps":358,"react":"react"}],58:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ErrorPage":56,"humps":373,"react":"react"}],58:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ErrorPage":56,"humps":375,"react":"react"}],58:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ErrorPage":58,"humps":381,"react":"react"}],60:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -6538,19 +6031,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-redux":490}],59:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-redux":492}],59:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-redux":507}],59:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-redux":509}],59:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-redux":515}],61:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6681,19 +6162,7 @@ var provideTranslations = function provideTranslations(WrappedComponent) {
 exports.default = provideTranslations;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../constants/localeLanguages":175,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"i18next":"i18next","react":"react"}],60:[function(require,module,exports){
-=======
-},{"../../constants/localeLanguages":177,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"i18next":"i18next","react":"react"}],60:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../constants/localeLanguages":189,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"i18next":"i18next","react":"react"}],60:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../constants/localeLanguages":191,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"i18next":"i18next","react":"react"}],60:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../constants/localeLanguages":197,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"i18next":"i18next","react":"react"}],62:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6803,19 +6272,7 @@ LocaleSwitcher.propTypes = {
 exports.default = (0, _provideTranslations2.default)(LocaleSwitcher);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"lodash/collection/map":382,"lodash/collection/size":383,"lodash/function/bind":385,"react":"react"}],61:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"lodash/collection/map":384,"lodash/collection/size":385,"lodash/function/bind":387,"react":"react"}],61:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"lodash/collection/map":399,"lodash/collection/size":400,"lodash/function/bind":402,"react":"react"}],61:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"lodash/collection/map":401,"lodash/collection/size":402,"lodash/function/bind":404,"react":"react"}],61:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"lodash/collection/map":407,"lodash/collection/size":408,"lodash/function/bind":410,"react":"react"}],63:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -6897,19 +6354,7 @@ LocaleSwitcherContainer.defaultProps = {
 exports.default = LocaleSwitcherContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./LocaleSwitcher":60,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],62:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./LocaleSwitcher":60,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],62:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./LocaleSwitcher":60,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],62:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./LocaleSwitcher":60,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],62:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./LocaleSwitcher":62,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],64:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7007,19 +6452,7 @@ var LogoContainer = (_dec = (0, _reactRedux.connect)(function (state) {
 exports.default = (0, _connectToRedux2.default)(LogoContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/connectToRedux":58,"./index":63,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-redux":490}],63:[function(require,module,exports){
-=======
-},{"../HoC/connectToRedux":58,"./index":63,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-redux":492}],63:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/connectToRedux":58,"./index":63,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-redux":507}],63:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/connectToRedux":58,"./index":63,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-redux":509}],63:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/connectToRedux":60,"./index":65,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-redux":515}],65:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7091,19 +6524,115 @@ var Logo = (_temp = _class = function (_Component) {
 exports.default = Logo;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],64:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],64:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],64:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],64:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],66:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ImageSlider = require('../common/ImageSlider');
+
+var _ImageSlider2 = _interopRequireDefault(_ImageSlider);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Lookbook = function (_Component) {
+  (0, _inherits3.default)(Lookbook, _Component);
+
+  function Lookbook() {
+    (0, _classCallCheck3.default)(this, Lookbook);
+    return (0, _possibleConstructorReturn3.default)(this, (Lookbook.__proto__ || (0, _getPrototypeOf2.default)(Lookbook)).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(Lookbook, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props;
+      var title = _props.title;
+      var images = _props.images;
+
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'b-page__content__inner b-page__content__inner_content' },
+        _react2.default.createElement(
+          'section',
+          { className: 'b-item-list' },
+          _react2.default.createElement(
+            'h1',
+            { className: 'b-item-list__title' },
+            ' ',
+            title,
+            ' '
+          ),
+          _react2.default.createElement(_ImageSlider2.default, { slides: images, hasThumbs: images.length > 1, className: 'b-slider_promo' })
+        )
+      );
+    }
+  }]);
+  return Lookbook;
+}(_react.Component);
+
+Lookbook.propTypes = {
+  title: _react.PropTypes.string.isRequired,
+  images: _ImageSlider2.default.propTypes.slides
+};
+
+exports.default = Lookbook;
+module.exports = exports['default'];
+
+},{"../common/ImageSlider":178,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],67:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _humps = require('humps');
+
+var _Lookbook = require('./Lookbook');
+
+var _Lookbook2 = _interopRequireDefault(_Lookbook);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function LookbookContainer(props) {
+  return _react2.default.createElement(_Lookbook2.default, (0, _humps.camelizeKeys)(props));
+}
+
+exports.default = LookbookContainer;
+module.exports = exports['default'];
+
+},{"./Lookbook":66,"humps":381,"react":"react"}],68:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7200,19 +6729,7 @@ MenuBottomLink.defaultProps = {
 exports.default = MenuBottomLink;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],65:[function(require,module,exports){
-=======
-},{"../../schemas":205,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],65:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],65:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],65:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],69:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7378,19 +6895,7 @@ MenuBottom.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(MenuBottom);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../CurrencySwitcher":53,"../HoC/provideTranslations":59,"../LocaleSwitcher":61,"./MenuBottomLink":64,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],66:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../CurrencySwitcher":53,"../HoC/provideTranslations":59,"../LocaleSwitcher":61,"./MenuBottomLink":64,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],66:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../CurrencySwitcher":53,"../HoC/provideTranslations":59,"../LocaleSwitcher":61,"./MenuBottomLink":64,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],66:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../CurrencySwitcher":53,"../HoC/provideTranslations":59,"../LocaleSwitcher":61,"./MenuBottomLink":64,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],66:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../CurrencySwitcher":55,"../HoC/provideTranslations":61,"../LocaleSwitcher":63,"./MenuBottomLink":68,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],70:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7505,19 +7010,7 @@ MenuTopDesktop.propTypes = {
 exports.default = MenuTopDesktop;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./MenuTopDesktopSingle":68,"./MenuTopDesktopWithChildren":69,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],67:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./MenuTopDesktopSingle":68,"./MenuTopDesktopWithChildren":69,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],67:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./MenuTopDesktopSingle":68,"./MenuTopDesktopWithChildren":69,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],67:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./MenuTopDesktopSingle":68,"./MenuTopDesktopWithChildren":69,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],67:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./MenuTopDesktopSingle":72,"./MenuTopDesktopWithChildren":73,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],71:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7620,19 +7113,7 @@ MenuTopDesktopChild.propTypes = {
 exports.default = MenuTopDesktopChild;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],68:[function(require,module,exports){
-=======
-},{"../../schemas":205,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],68:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],68:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],68:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],72:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7727,19 +7208,7 @@ MenuTopDesktopSingle.propTypes = {
 exports.default = MenuTopDesktopSingle;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],69:[function(require,module,exports){
-=======
-},{"../../schemas":205,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],69:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],69:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],69:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],73:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7896,19 +7365,7 @@ MenuTopDeskTopWithChildren.propTypes = {
 exports.default = MenuTopDeskTopWithChildren;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./MenuTopDesktopChild":67,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],70:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./MenuTopDesktopChild":67,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],70:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./MenuTopDesktopChild":67,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],70:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./MenuTopDesktopChild":67,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],70:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./MenuTopDesktopChild":71,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],74:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8118,19 +7575,7 @@ MenuTopMobile.propTypes = {
 exports.default = MenuTopMobile;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./MenuTopToggleButton":71,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],71:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./MenuTopToggleButton":71,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],71:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./MenuTopToggleButton":71,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],71:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./MenuTopToggleButton":71,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],71:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./MenuTopToggleButton":75,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],75:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8209,19 +7654,7 @@ MenuTopToggleButton.propTypes = {
 exports.default = MenuTopToggleButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],72:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],72:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],72:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],72:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8340,19 +7773,7 @@ MenuTop.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(MenuTop);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../HoC/provideTranslations":59,"./MenuTopDesktop":66,"./MenuTopMobile":70,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-stickynode":500}],73:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../HoC/provideTranslations":59,"./MenuTopDesktop":66,"./MenuTopMobile":70,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-stickynode":502}],73:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../HoC/provideTranslations":59,"./MenuTopDesktop":66,"./MenuTopMobile":70,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-stickynode":517}],73:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./MenuTopDesktop":66,"./MenuTopMobile":70,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-stickynode":519}],73:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./MenuTopDesktop":70,"./MenuTopMobile":74,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-stickynode":525}],77:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8481,19 +7902,7 @@ NavBar.propTypes = {
 exports.default = NavBar;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../Clientbar":51,"../Logo":63,"../common/ProductSearchForm":169,"./NavBarContacts":74,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],74:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../Clientbar":51,"../Logo":63,"../common/ProductSearchForm":171,"./NavBarContacts":74,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],74:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../Clientbar":51,"../Logo":63,"../common/ProductSearchForm":183,"./NavBarContacts":74,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],74:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../Clientbar":51,"../Logo":63,"../common/ProductSearchForm":185,"./NavBarContacts":74,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],74:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../Clientbar":51,"../Logo":65,"../common/ProductSearchForm":191,"./NavBarContacts":78,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],78:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8636,19 +8045,7 @@ NavBarContacts.defaultProps = {
 exports.default = NavBarContacts;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"babel-runtime/core-js/json/stringify":228,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/typeof":246,"react":"react"}],75:[function(require,module,exports){
-=======
-},{"../../schemas":205,"babel-runtime/core-js/json/stringify":230,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/typeof":248,"react":"react"}],75:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"babel-runtime/core-js/json/stringify":245,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/typeof":263,"react":"react"}],75:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"babel-runtime/core-js/json/stringify":247,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/typeof":265,"react":"react"}],75:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"babel-runtime/core-js/json/stringify":253,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/typeof":271,"react":"react"}],79:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8743,19 +8140,7 @@ NavBarContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(NavBarContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../Clientbar":51,"../HoC/provideTranslations":59,"../Logo":63,"./NavBar":73,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],76:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../Clientbar":51,"../HoC/provideTranslations":59,"../Logo":63,"./NavBar":73,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],76:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../Clientbar":51,"../HoC/provideTranslations":59,"../Logo":63,"./NavBar":73,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],76:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../Clientbar":51,"../HoC/provideTranslations":59,"../Logo":63,"./NavBar":73,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],76:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../Clientbar":51,"../HoC/provideTranslations":61,"../Logo":65,"./NavBar":77,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],80:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -8859,19 +8244,7 @@ var Notice = (_temp = _class = function (_Component) {
 exports.default = Notice;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../entities/Timer":178,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],77:[function(require,module,exports){
-=======
-},{"../../entities/Timer":180,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],77:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../entities/Timer":192,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],77:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../entities/Timer":194,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],77:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../entities/Timer":200,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],81:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9010,19 +8383,7 @@ Order.propTypes = {
 exports.default = Order;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../Checkout":47,"./OrderTitle":78,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],78:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../Checkout":47,"./OrderTitle":78,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],78:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../Checkout":47,"./OrderTitle":78,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],78:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../Checkout":47,"./OrderTitle":78,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],78:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../Checkout":47,"./OrderTitle":82,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],82:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9135,19 +8496,7 @@ OrderTitle.propTypes = {
 exports.default = OrderTitle;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../common/Money/HumanizedMoneyWithCurrency":167,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"humps":356,"react":"react"}],79:[function(require,module,exports){
-=======
-},{"../common/Money/HumanizedMoneyWithCurrency":169,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"humps":358,"react":"react"}],79:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../common/Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"humps":373,"react":"react"}],79:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../common/Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"humps":375,"react":"react"}],79:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../common/Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"humps":381,"react":"react"}],83:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9407,18 +8756,7 @@ exports.default = (0, _provideTranslations2.default)((0, _connectToRedux2.defaul
 })(OrderContainer)));
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../actions/CartActions":4,"../../helpers/dom":179,"../../reducers/cart":190,"../../schemas":203,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Order":77,"babel-runtime/core-js/object/assign":229,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"immutable":"immutable","react":"react","react-redux":490}],80:[function(require,module,exports){
-=======
-},{"../../actions/CartActions":4,"../../helpers/dom":181,"../../reducers/cart":192,"../../schemas":205,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Order":77,"babel-runtime/core-js/object/assign":231,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"immutable":"immutable","react":"react","react-redux":492}],80:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../actions/CartActions":4,"../../helpers/dom":193,"../../reducers/cart":204,"../../schemas":218,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Order":77,"babel-runtime/core-js/object/assign":246,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"immutable":"immutable","react":"react","react-redux":507}],80:[function(require,module,exports){
-=======
-},{"../../actions/CartActions":4,"../../helpers/dom":195,"../../reducers/cart":206,"../../schemas":220,"../HoC/connectToRedux":58,"../HoC/provideTranslations":59,"./Order":77,"babel-runtime/core-js/object/assign":248,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"immutable":"immutable","react":"react","react-redux":509}],80:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../actions/CartActions":4,"../../helpers/dom":201,"../../reducers/cart":212,"../../schemas":226,"../HoC/connectToRedux":60,"../HoC/provideTranslations":61,"./Order":81,"babel-runtime/core-js/object/assign":254,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"immutable":"immutable","react":"react","react-redux":515}],84:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9543,7 +8881,7 @@ OrderCancelled.defaultProps = {
 exports.default = OrderCancelled;
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../common/Order/OrderComments":179,"../common/Order/OrderContents":180,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],81:[function(require,module,exports){
+},{"../../schemas":226,"../common/Order/OrderComments":185,"../common/Order/OrderContents":186,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],85:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9628,7 +8966,7 @@ OrderCancelledContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(OrderCancelledContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./OrderCancelled":80,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],82:[function(require,module,exports){
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./OrderCancelled":84,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],86:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9769,7 +9107,7 @@ OrderCreated.defaultProps = {
 exports.default = OrderCreated;
 module.exports = exports['default'];
 
-},{"../../helpers/money":196,"../../schemas":220,"../common/Order/OrderComments":179,"../common/Order/OrderSelfDeliveryMessage":182,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],83:[function(require,module,exports){
+},{"../../helpers/money":202,"../../schemas":226,"../common/Order/OrderComments":185,"../common/Order/OrderSelfDeliveryMessage":188,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],87:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9848,7 +9186,7 @@ OrderCreatedContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(OrderCreatedContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./OrderCreated":82,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],84:[function(require,module,exports){
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./OrderCreated":86,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],88:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9993,7 +9331,7 @@ OrderPaid.defaultProps = {
 exports.default = OrderPaid;
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../common/Order/OrderComments":179,"../common/Order/OrderContents":180,"../common/Order/OrderState":183,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],85:[function(require,module,exports){
+},{"../../schemas":226,"../common/Order/OrderComments":185,"../common/Order/OrderContents":186,"../common/Order/OrderState":189,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],89:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10075,7 +9413,7 @@ OrderPaidContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(OrderPaidContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./OrderPaid":84,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],86:[function(require,module,exports){
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./OrderPaid":88,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],90:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10196,7 +9534,7 @@ OrderPayment.defaultProps = {
 exports.default = OrderPayment;
 module.exports = exports['default'];
 
-},{"../../helpers/dom":195,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],87:[function(require,module,exports){
+},{"../../helpers/dom":201,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],91:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10274,11 +9612,7 @@ OrderPaymentContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(OrderPaymentContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"./OrderPayment":86,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],88:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"./OrderPayment":86,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],88:[function(require,module,exports){
+},{"../HoC/provideTranslations":61,"./OrderPayment":90,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],92:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10439,7 +9773,7 @@ OrderShow.defaultProps = {
 exports.default = OrderShow;
 module.exports = exports['default'];
 
-},{"../../helpers/money":196,"../../schemas":220,"../common/Order/OrderContents":180,"../common/Order/OrderState":183,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],89:[function(require,module,exports){
+},{"../../helpers/money":202,"../../schemas":226,"../common/Order/OrderContents":186,"../common/Order/OrderState":189,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],93:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10519,8 +9853,7 @@ OrderShowContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(OrderShowContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./OrderShow":88,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],90:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./OrderShow":92,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],94:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10673,19 +10006,7 @@ Pagination.defaultProps = {
 
 exports.default = Pagination;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/dom":179,"./PaginationCurrentWindow":81,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","urijs":"urijs"}],81:[function(require,module,exports){
-=======
-},{"../../helpers/dom":181,"./PaginationCurrentWindow":81,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","urijs":"urijs"}],81:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/dom":193,"./PaginationCurrentWindow":89,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","urijs":"urijs"}],89:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/dom":195,"./PaginationCurrentWindow":91,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","urijs":"urijs"}],91:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/dom":201,"./PaginationCurrentWindow":95,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","urijs":"urijs"}],95:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10747,15 +10068,7 @@ PaginationCurrentWindow.propTypes = {
 exports.default = PaginationCurrentWindow;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"././Pagination.jsx":80,"classnames":"classnames","lodash":"lodash","react":"react"}],82:[function(require,module,exports){
-=======
-},{"././Pagination.jsx":88,"classnames":"classnames","lodash":"lodash","react":"react"}],90:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"././Pagination.jsx":90,"classnames":"classnames","lodash":"lodash","react":"react"}],92:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"././Pagination.jsx":94,"classnames":"classnames","lodash":"lodash","react":"react"}],96:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10789,19 +10102,7 @@ PaginationContainer.propTypes = schemas.pagination.isRequired;
 exports.default = PaginationContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./Pagination":80,"humps":356,"react":"react"}],83:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./Pagination":80,"humps":358,"react":"react"}],83:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./Pagination":88,"humps":373,"react":"react"}],91:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./Pagination":90,"humps":375,"react":"react"}],93:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./Pagination":94,"humps":381,"react":"react"}],97:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10839,15 +10140,7 @@ ProductAddToCartButton.propTypes = {
 exports.default = ProductAddToCartButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],84:[function(require,module,exports){
-=======
-},{"react":"react"}],92:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],94:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],98:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10882,15 +10175,7 @@ ProductBadge.propTypes = {
 exports.default = ProductBadge;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"classnames":"classnames","react":"react"}],85:[function(require,module,exports){
-=======
-},{"classnames":"classnames","react":"react"}],93:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"classnames":"classnames","react":"react"}],95:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"classnames":"classnames","react":"react"}],99:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10920,15 +10205,7 @@ ProductBadgeNew.propTypes = {
 exports.default = ProductBadgeNew;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductBadge":84,"react":"react"}],86:[function(require,module,exports){
-=======
-},{"./ProductBadge":92,"react":"react"}],94:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductBadge":94,"react":"react"}],96:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductBadge":98,"react":"react"}],100:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10975,15 +10252,7 @@ ProductBadgeSale.propTypes = {
 exports.default = ProductBadgeSale;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductBadge":84,"react":"react"}],87:[function(require,module,exports){
-=======
-},{"./ProductBadge":92,"react":"react"}],95:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductBadge":94,"react":"react"}],97:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductBadge":98,"react":"react"}],101:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11013,15 +10282,7 @@ ProductBadgeSoldOut.propTypes = {
 exports.default = ProductBadgeSoldOut;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductBadge":84,"react":"react"}],88:[function(require,module,exports){
-=======
-},{"./ProductBadge":92,"react":"react"}],96:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductBadge":94,"react":"react"}],98:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductBadge":98,"react":"react"}],102:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11051,15 +10312,7 @@ ProductBadgeUnavailable.propTypes = {
 exports.default = ProductBadgeUnavailable;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductBadge":84,"react":"react"}],89:[function(require,module,exports){
-=======
-},{"./ProductBadge":92,"react":"react"}],97:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductBadge":94,"react":"react"}],99:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductBadge":98,"react":"react"}],103:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11108,15 +10361,7 @@ ProductBlockBadges.propTypes = {
 exports.default = ProductBlockBadges;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductBadges/ProductBadgeNew":85,"../ProductBadges/ProductBadgeSale":86,"../ProductBadges/ProductBadgeSoldOut":87,"../ProductBadges/ProductBadgeUnavailable":88,"react":"react"}],90:[function(require,module,exports){
-=======
-},{"../ProductBadges/ProductBadgeNew":93,"../ProductBadges/ProductBadgeSale":94,"../ProductBadges/ProductBadgeSoldOut":95,"../ProductBadges/ProductBadgeUnavailable":96,"react":"react"}],98:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductBadges/ProductBadgeNew":95,"../ProductBadges/ProductBadgeSale":96,"../ProductBadges/ProductBadgeSoldOut":97,"../ProductBadges/ProductBadgeUnavailable":98,"react":"react"}],100:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductBadges/ProductBadgeNew":99,"../ProductBadges/ProductBadgeSale":100,"../ProductBadges/ProductBadgeSoldOut":101,"../ProductBadges/ProductBadgeUnavailable":102,"react":"react"}],104:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11240,19 +10485,7 @@ ProductBlockImage.defaultProps = {
 exports.default = ProductBlockImage;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Image":160,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],91:[function(require,module,exports){
-=======
-},{"../../common/Image":162,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],91:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Image":169,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],99:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Image":171,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],101:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Image":177,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],105:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11345,15 +10578,7 @@ ProductBlock.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductBlock);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../HoC/provideTranslations":59,"../ProductBlockCartForm/ProductBlockCartFormButton":92,"../ProductPrices":118,"./ProductBlockBadges":89,"./ProductBlockImage":90,"react":"react"}],92:[function(require,module,exports){
-=======
-},{"../../HoC/provideTranslations":59,"../ProductBlockCartForm/ProductBlockCartFormButton":100,"../ProductPrices":126,"./ProductBlockBadges":97,"./ProductBlockImage":98,"react":"react"}],100:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../HoC/provideTranslations":59,"../ProductBlockCartForm/ProductBlockCartFormButton":102,"../ProductPrices":128,"./ProductBlockBadges":99,"./ProductBlockImage":100,"react":"react"}],102:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../HoC/provideTranslations":61,"../ProductBlockCartForm/ProductBlockCartFormButton":106,"../ProductPrices":132,"./ProductBlockBadges":103,"./ProductBlockImage":104,"react":"react"}],106:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11519,19 +10744,7 @@ ProductBlockCartFormButton.defaultProps = {
 exports.default = ProductBlockCartFormButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../actions/view/BasketActions":8,"../../../stores/BasketStore":221,"../../common/InputNumberSpinner":164,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"lodash":"lodash","react":"react"}],93:[function(require,module,exports){
-=======
-},{"../../../actions/view/BasketActions":8,"../../../stores/BasketStore":223,"../../common/InputNumberSpinner":166,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"lodash":"lodash","react":"react"}],93:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../actions/view/BasketActions":8,"../../../stores/BasketStore":238,"../../common/InputNumberSpinner":173,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"lodash":"lodash","react":"react"}],101:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../actions/view/BasketActions":8,"../../../stores/BasketStore":240,"../../common/InputNumberSpinner":175,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"lodash":"lodash","react":"react"}],103:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../actions/view/BasketActions":8,"../../../stores/BasketStore":246,"../../common/InputNumberSpinner":181,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"lodash":"lodash","react":"react"}],107:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11668,19 +10881,7 @@ ProductBulk.propTypes = {
 exports.default = ProductBulk;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Money/HumanizedMoneyWithCurrency":167,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],94:[function(require,module,exports){
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":169,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],94:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],102:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],104:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],108:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11688,15 +10889,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var DISQUS_IDENTIFIER = exports.DISQUS_IDENTIFIER = 'disqus_product';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],95:[function(require,module,exports){
-=======
-},{}],103:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],105:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],109:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -11937,19 +11130,7 @@ exports.default = (0, _provideTranslations2.default)(ProductCard);
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../HoC/provideTranslations":59,"../ProductCart":113,"../ProductPrices":118,"./ProductCard.constants":94,"./ProductCardBadges":96,"./ProductCardBreadcrumbs":97,"./ProductCardDetails":100,"./ProductCardGallery":101,"./ProductCardSchema":104,"./ProductCardSimilarProducts":105,"./ProductCardTitle":106,"./ProductCardVideo":107,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-disqus-thread":485}],96:[function(require,module,exports){
-=======
-},{"../../HoC/provideTranslations":59,"../ProductCart":113,"../ProductPrices":118,"./ProductCard.constants":94,"./ProductCardBadges":96,"./ProductCardBreadcrumbs":97,"./ProductCardDetails":100,"./ProductCardGallery":101,"./ProductCardSchema":104,"./ProductCardSimilarProducts":105,"./ProductCardTitle":106,"./ProductCardVideo":107,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-disqus-thread":487}],96:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../HoC/provideTranslations":59,"../ProductCart":121,"../ProductPrices":126,"./ProductCard.constants":102,"./ProductCardBadges":104,"./ProductCardBreadcrumbs":105,"./ProductCardDetails":108,"./ProductCardGallery":109,"./ProductCardSchema":112,"./ProductCardSimilarProducts":113,"./ProductCardTitle":114,"./ProductCardVideo":115,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-disqus-thread":502}],104:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../HoC/provideTranslations":59,"../ProductCart":123,"../ProductPrices":128,"./ProductCard.constants":104,"./ProductCardBadges":106,"./ProductCardBreadcrumbs":107,"./ProductCardDetails":110,"./ProductCardGallery":111,"./ProductCardSchema":114,"./ProductCardSimilarProducts":115,"./ProductCardTitle":116,"./ProductCardVideo":117,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-disqus-thread":504}],106:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../HoC/provideTranslations":61,"../ProductCart":127,"../ProductPrices":132,"./ProductCard.constants":108,"./ProductCardBadges":110,"./ProductCardBreadcrumbs":111,"./ProductCardDetails":114,"./ProductCardGallery":115,"./ProductCardSchema":118,"./ProductCardSimilarProducts":119,"./ProductCardTitle":120,"./ProductCardVideo":121,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-disqus-thread":510}],110:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -11988,15 +11169,7 @@ ProductCardBadges.propTypes = {
 exports.default = ProductCardBadges;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductBadges/ProductBadgeNew":85,"../ProductBadges/ProductBadgeSale":86,"react":"react"}],97:[function(require,module,exports){
-=======
-},{"../ProductBadges/ProductBadgeNew":93,"../ProductBadges/ProductBadgeSale":94,"react":"react"}],105:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductBadges/ProductBadgeNew":95,"../ProductBadges/ProductBadgeSale":96,"react":"react"}],107:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductBadges/ProductBadgeNew":99,"../ProductBadges/ProductBadgeSale":100,"react":"react"}],111:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12073,19 +11246,7 @@ var ProductCardBreadcrumbs = (_temp = _class = function (_Component) {
 exports.default = ProductCardBreadcrumbs;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../helpers/vendors":185,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],98:[function(require,module,exports){
-=======
-},{"../../../helpers/vendors":187,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],98:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../helpers/vendors":199,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],106:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../helpers/vendors":201,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],108:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../helpers/vendors":207,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],112:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12095,15 +11256,7 @@ var ERROR_STATE = exports.ERROR_STATE = 'error';
 var LOADING_STATE = exports.LOADING_STATE = 'loading';
 var READY_STATE = exports.READY_STATE = 'ready';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],99:[function(require,module,exports){
-=======
-},{}],107:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],109:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],113:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12231,19 +11384,7 @@ ProductCardContainer.propTypes = {
 exports.default = ProductCardContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../actions/productCardActions":7,"./ProductCard":95,"./ProductCardContainer.constants":98,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],100:[function(require,module,exports){
-=======
-},{"../../../actions/productCardActions":7,"./ProductCard":95,"./ProductCardContainer.constants":98,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],100:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../actions/productCardActions":7,"./ProductCard":103,"./ProductCardContainer.constants":106,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],108:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../actions/productCardActions":7,"./ProductCard":105,"./ProductCardContainer.constants":108,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],110:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../actions/productCardActions":7,"./ProductCard":109,"./ProductCardContainer.constants":112,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],114:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12420,19 +11561,7 @@ var ProductCardDetails = (_temp = _class = function (_Component) {
 exports.default = ProductCardDetails;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../helpers/product":182,"../../../helpers/seo":183,"../ProductBlock/ProductBlockImage":90,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],101:[function(require,module,exports){
-=======
-},{"../../../helpers/product":184,"../../../helpers/seo":185,"../ProductBlock/ProductBlockImage":90,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],101:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../helpers/product":196,"../../../helpers/seo":197,"../ProductBlock/ProductBlockImage":98,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],109:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../helpers/product":198,"../../../helpers/seo":199,"../ProductBlock/ProductBlockImage":100,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],111:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../helpers/product":204,"../../../helpers/seo":205,"../ProductBlock/ProductBlockImage":104,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],115:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12524,19 +11653,7 @@ ProductCardGallery.defaultProps = {
 exports.default = ProductCardGallery;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../constants/globalEventKeys":174,"./ProductCardGalleryImage":102,"./ProductCardGallerySlider":103,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","jquery":"jquery","react":"react","react-dom":"react-dom"}],102:[function(require,module,exports){
-=======
-},{"../../../constants/globalEventKeys":176,"./ProductCardGalleryImage":102,"./ProductCardGallerySlider":103,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","jquery":"jquery","react":"react","react-dom":"react-dom"}],102:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../constants/globalEventKeys":188,"./ProductCardGalleryImage":110,"./ProductCardGallerySlider":111,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","jquery":"jquery","react":"react","react-dom":"react-dom"}],110:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../constants/globalEventKeys":190,"./ProductCardGalleryImage":112,"./ProductCardGallerySlider":113,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","jquery":"jquery","react":"react","react-dom":"react-dom"}],112:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../constants/globalEventKeys":196,"./ProductCardGalleryImage":116,"./ProductCardGallerySlider":117,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","jquery":"jquery","react":"react","react-dom":"react-dom"}],116:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12635,19 +11752,7 @@ ProductCardGalleryImage.propTypes = {
 exports.default = ProductCardGalleryImage;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Image/RelativeImage":159,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","jquery":"jquery","react":"react"}],103:[function(require,module,exports){
-=======
-},{"../../common/Image/RelativeImage":161,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","jquery":"jquery","react":"react"}],103:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Image/RelativeImage":168,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","jquery":"jquery","react":"react"}],111:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Image/RelativeImage":170,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","jquery":"jquery","react":"react"}],113:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Image/RelativeImage":176,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","jquery":"jquery","react":"react"}],117:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -12954,19 +12059,7 @@ ProductCardGallerySlider.defaultProps = {
 exports.default = ProductCardGallerySlider;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../constants/globalEventKeys":174,"../../common/Image/RelativeImage":159,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"jquery":"jquery","react":"react","react-dom":"react-dom"}],104:[function(require,module,exports){
-=======
-},{"../../../constants/globalEventKeys":176,"../../common/Image/RelativeImage":161,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"jquery":"jquery","react":"react","react-dom":"react-dom"}],104:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../constants/globalEventKeys":188,"../../common/Image/RelativeImage":168,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"jquery":"jquery","react":"react","react-dom":"react-dom"}],112:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../constants/globalEventKeys":190,"../../common/Image/RelativeImage":170,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"jquery":"jquery","react":"react","react-dom":"react-dom"}],114:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../constants/globalEventKeys":196,"../../common/Image/RelativeImage":176,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"jquery":"jquery","react":"react","react-dom":"react-dom"}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13025,19 +12118,7 @@ var ProductCardSchema = (_temp = _class = function (_Component) {
 exports.default = ProductCardSchema;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../helpers/product":182,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],105:[function(require,module,exports){
-=======
-},{"../../../helpers/product":184,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],105:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../helpers/product":196,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],113:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../helpers/product":198,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],115:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../helpers/product":204,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],119:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13092,19 +12173,7 @@ ProductCardSimilarProducts.defaultProps = {
 exports.default = ProductCardSimilarProducts;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"../ProductBlock":91,"react":"react"}],106:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"../ProductBlock":91,"react":"react"}],106:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"../ProductBlock":99,"react":"react"}],114:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../ProductBlock":101,"react":"react"}],116:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../ProductBlock":105,"react":"react"}],120:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13183,19 +12252,7 @@ var ProductCardTitle = (_temp = _class = function (_Component) {
 exports.default = ProductCardTitle;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../helpers/seo":183,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],107:[function(require,module,exports){
-=======
-},{"../../../helpers/seo":185,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],107:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../helpers/seo":197,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],115:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../helpers/seo":199,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],117:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../helpers/seo":205,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],121:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13261,19 +12318,7 @@ var ProductCardVideo = (_temp = _class = function (_Component) {
 exports.default = ProductCardVideo;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],108:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],108:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],116:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],118:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],122:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13300,15 +12345,7 @@ Object.defineProperty(exports, 'ProductCardContainer', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductCard":95,"./ProductCardContainer":99}],109:[function(require,module,exports){
-=======
-},{"./ProductCard":103,"./ProductCardContainer":107}],117:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductCard":105,"./ProductCardContainer":109}],119:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductCard":109,"./ProductCardContainer":113}],123:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13364,19 +12401,7 @@ var ProductCartForProduct = function ProductCartForProduct(props) {
 exports.default = ProductCartForProduct;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/HiddenInput":156,"../ProductAddToCartButton":83,"./ProductCartWishlist":112,"babel-runtime/helpers/extends":241,"react":"react"}],110:[function(require,module,exports){
-=======
-},{"../../common/HiddenInput":158,"../ProductAddToCartButton":83,"./ProductCartWishlist":112,"babel-runtime/helpers/extends":243,"react":"react"}],110:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/HiddenInput":165,"../ProductAddToCartButton":91,"./ProductCartWishlist":120,"babel-runtime/helpers/extends":258,"react":"react"}],118:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/HiddenInput":167,"../ProductAddToCartButton":93,"./ProductCartWishlist":122,"babel-runtime/helpers/extends":260,"react":"react"}],120:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/HiddenInput":173,"../ProductAddToCartButton":97,"./ProductCartWishlist":126,"babel-runtime/helpers/extends":266,"react":"react"}],124:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13464,19 +12489,7 @@ var ProductCartForProductItems = (_temp = _class = function (_Component) {
 exports.default = ProductCartForProductItems;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../ProductGoods":114,"../ProductProperties":124,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],111:[function(require,module,exports){
-=======
-},{"../ProductGoods":114,"../ProductProperties":124,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],111:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../ProductGoods":122,"../ProductProperties":132,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],119:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../ProductGoods":124,"../ProductProperties":134,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],121:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../ProductGoods":128,"../ProductProperties":138,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],125:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13520,19 +12533,7 @@ var ProductCartNotAvailable = function ProductCartNotAvailable(props) {
 exports.default = ProductCartNotAvailable;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductCartWishlist":112,"babel-runtime/helpers/extends":241,"react":"react"}],112:[function(require,module,exports){
-=======
-},{"./ProductCartWishlist":112,"babel-runtime/helpers/extends":243,"react":"react"}],112:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ProductCartWishlist":120,"babel-runtime/helpers/extends":258,"react":"react"}],120:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductCartWishlist":122,"babel-runtime/helpers/extends":260,"react":"react"}],122:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductCartWishlist":126,"babel-runtime/helpers/extends":266,"react":"react"}],126:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13653,19 +12654,7 @@ var ProductCartWishlist = (_temp = _class = function (_Component) {
 exports.default = ProductCartWishlist;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Icon":157,"../../common/Link":165,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","urijs":"urijs"}],113:[function(require,module,exports){
-=======
-},{"../../common/Icon":159,"../../common/Link":167,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","urijs":"urijs"}],113:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Icon":166,"../../common/Link":174,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","urijs":"urijs"}],121:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Icon":168,"../../common/Link":176,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","urijs":"urijs"}],123:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Icon":174,"../../common/Link":182,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","urijs":"urijs"}],127:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13818,19 +12807,7 @@ var ProductCart = (_temp = _class = function (_Component) {
 exports.default = ProductCart;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../../routes/app":224,"../../common/CSRFToken":152,"../../common/HiddenInput":156,"../ProductBulk":93,"./ProductCartForProduct":109,"./ProductCartForProductItems":110,"./ProductCartNotAvailable":111,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"jquery":"jquery","react":"react"}],114:[function(require,module,exports){
-=======
-},{"../../../../routes/app":226,"../../common/CSRFToken":154,"../../common/HiddenInput":158,"../ProductBulk":93,"./ProductCartForProduct":109,"./ProductCartForProductItems":110,"./ProductCartNotAvailable":111,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"jquery":"jquery","react":"react"}],114:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../../routes/app":241,"../../common/CSRFToken":160,"../../common/HiddenInput":165,"../ProductBulk":101,"./ProductCartForProduct":117,"./ProductCartForProductItems":118,"./ProductCartNotAvailable":119,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"jquery":"jquery","react":"react"}],122:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../../routes/app":243,"../../common/CSRFToken":162,"../../common/HiddenInput":167,"../ProductBulk":103,"./ProductCartForProduct":119,"./ProductCartForProductItems":120,"./ProductCartNotAvailable":121,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"jquery":"jquery","react":"react"}],124:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../../routes/app":249,"../../common/CSRFToken":168,"../../common/HiddenInput":173,"../ProductBulk":107,"./ProductCartForProduct":123,"./ProductCartForProductItems":124,"./ProductCartNotAvailable":125,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"jquery":"jquery","react":"react"}],128:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14050,19 +13027,7 @@ var ProductGoods = (_temp = _class = function (_Component) {
 exports.default = ProductGoods;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../constants/globalEventKeys":174,"../../../helpers/product":182,"../ProductAddToCartButton":83,"../ProductCart/ProductCartWishlist":112,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],115:[function(require,module,exports){
-=======
-},{"../../../constants/globalEventKeys":176,"../../../helpers/product":184,"../ProductAddToCartButton":83,"../ProductCart/ProductCartWishlist":112,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],115:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../constants/globalEventKeys":188,"../../../helpers/product":196,"../ProductAddToCartButton":91,"../ProductCart/ProductCartWishlist":120,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],123:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../constants/globalEventKeys":190,"../../../helpers/product":198,"../ProductAddToCartButton":93,"../ProductCart/ProductCartWishlist":122,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],125:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../constants/globalEventKeys":196,"../../../helpers/product":204,"../ProductAddToCartButton":97,"../ProductCart/ProductCartWishlist":126,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],129:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14096,19 +13061,7 @@ ProductGoodActualPrice.propTypes = {
 exports.default = ProductGoodActualPrice;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Money/HumanizedMoneyWithCurrency":167,"react":"react"}],116:[function(require,module,exports){
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":169,"react":"react"}],116:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":176,"react":"react"}],124:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":178,"react":"react"}],126:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Money/HumanizedMoneyWithCurrency":184,"react":"react"}],130:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14225,19 +13178,7 @@ var ProductGoodPrice = (_temp = _class = function (_Component) {
 exports.default = ProductGoodPrice;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Money/HumanizedMoneyWithCurrency":167,"./ProductGoodActualPrice":115,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],117:[function(require,module,exports){
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":169,"./ProductGoodActualPrice":115,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],117:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":176,"./ProductGoodActualPrice":123,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],125:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Money/HumanizedMoneyWithCurrency":178,"./ProductGoodActualPrice":125,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],127:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Money/HumanizedMoneyWithCurrency":184,"./ProductGoodActualPrice":129,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],131:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14314,19 +13255,7 @@ var ProductGoodPrices = (_temp = _class = function (_Component) {
 exports.default = ProductGoodPrices;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Money/HumanizedMoney":166,"../../common/Money/HumanizedMoneyWithCurrency":167,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],118:[function(require,module,exports){
-=======
-},{"../../common/Money/HumanizedMoney":168,"../../common/Money/HumanizedMoneyWithCurrency":169,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],118:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Money/HumanizedMoney":175,"../../common/Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],126:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Money/HumanizedMoney":177,"../../common/Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],128:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Money/HumanizedMoney":183,"../../common/Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],132:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14469,19 +13398,7 @@ ProductPrices.propTypes = {
 exports.default = ProductPrices;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ProductGoodPrice":116,"./ProductGoodPrices":117,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/typeof":246,"deep-diff":350,"react":"react"}],119:[function(require,module,exports){
-=======
-},{"./ProductGoodPrice":116,"./ProductGoodPrices":117,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/typeof":248,"deep-diff":352,"react":"react"}],119:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ProductGoodPrice":124,"./ProductGoodPrices":125,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/typeof":263,"deep-diff":367,"react":"react"}],127:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ProductGoodPrice":126,"./ProductGoodPrices":127,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/typeof":265,"deep-diff":369,"react":"react"}],129:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ProductGoodPrice":130,"./ProductGoodPrices":131,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/typeof":271,"deep-diff":375,"react":"react"}],133:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14551,19 +13468,7 @@ var PropertyList = function PropertyList(_ref) {
 exports.default = PropertyList;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./PropertyListItem":120,"./utils":125,"babel-runtime/helpers/typeof":246,"react":"react"}],120:[function(require,module,exports){
-=======
-},{"./PropertyListItem":120,"./utils":125,"babel-runtime/helpers/typeof":248,"react":"react"}],120:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./PropertyListItem":128,"./utils":133,"babel-runtime/helpers/typeof":263,"react":"react"}],128:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./PropertyListItem":130,"./utils":135,"babel-runtime/helpers/typeof":265,"react":"react"}],130:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./PropertyListItem":134,"./utils":139,"babel-runtime/helpers/typeof":271,"react":"react"}],134:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14678,19 +13583,7 @@ var PropertyListItem = (_temp = _class = function (_Component) {
 exports.default = PropertyListItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../constants/propertyTypes":176,"./PropertyListItemColor":121,"./PropertyListItemDictionary":122,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],121:[function(require,module,exports){
-=======
-},{"../../../constants/propertyTypes":178,"./PropertyListItemColor":121,"./PropertyListItemDictionary":122,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],121:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../constants/propertyTypes":190,"./PropertyListItemColor":129,"./PropertyListItemDictionary":130,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],129:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../constants/propertyTypes":192,"./PropertyListItemColor":131,"./PropertyListItemDictionary":132,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],131:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../constants/propertyTypes":198,"./PropertyListItemColor":135,"./PropertyListItemDictionary":136,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],135:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14773,19 +13666,7 @@ var PropertyListItemColor = (_temp = _class = function (_Component) {
 exports.default = PropertyListItemColor;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/RadioColor":170,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],122:[function(require,module,exports){
-=======
-},{"../../common/RadioColor":172,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],122:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/RadioColor":184,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],130:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/RadioColor":186,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],132:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/RadioColor":192,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],136:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14868,19 +13749,7 @@ var PropertyListItemDictionary = (_temp = _class = function (_Component) {
 exports.default = PropertyListItemDictionary;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Select":171,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],123:[function(require,module,exports){
-=======
-},{"../../common/Select":173,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],123:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Select":185,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],131:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Select":187,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],133:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Select":193,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],137:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14969,19 +13838,7 @@ var PropertySingle = (_temp = _class = function (_Component) {
 exports.default = PropertySingle;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../common/Select":171,"./utils":125,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],124:[function(require,module,exports){
-=======
-},{"../../common/Select":173,"./utils":125,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],124:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../common/Select":185,"./utils":133,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],132:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../common/Select":187,"./utils":135,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],134:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../common/Select":193,"./utils":139,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],138:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15228,19 +14085,7 @@ var ProductProperties = (_temp = _class = function (_Component) {
 exports.default = ProductProperties;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../constants/globalEventKeys":174,"../../../services/Error":216,"../../common/HiddenInput":156,"../ProductAddToCartButton":83,"../ProductCart/ProductCartWishlist":112,"./PropertyList":119,"./PropertySingle":123,"./utils":125,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/core-js/object/keys":233,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"deep-diff":350,"jquery":"jquery","react":"react"}],125:[function(require,module,exports){
-=======
-},{"../../../constants/globalEventKeys":176,"../../../services/Error":218,"../../common/HiddenInput":158,"../ProductAddToCartButton":83,"../ProductCart/ProductCartWishlist":112,"./PropertyList":119,"./PropertySingle":123,"./utils":125,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/core-js/object/keys":235,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"deep-diff":352,"jquery":"jquery","react":"react"}],125:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../constants/globalEventKeys":188,"../../../services/Error":233,"../../common/HiddenInput":165,"../ProductAddToCartButton":91,"../ProductCart/ProductCartWishlist":120,"./PropertyList":127,"./PropertySingle":131,"./utils":133,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/core-js/object/keys":250,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"deep-diff":367,"jquery":"jquery","react":"react"}],133:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../constants/globalEventKeys":190,"../../../services/Error":235,"../../common/HiddenInput":167,"../ProductAddToCartButton":93,"../ProductCart/ProductCartWishlist":122,"./PropertyList":129,"./PropertySingle":133,"./utils":135,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/core-js/object/keys":252,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"deep-diff":369,"jquery":"jquery","react":"react"}],135:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../constants/globalEventKeys":196,"../../../services/Error":241,"../../common/HiddenInput":173,"../ProductAddToCartButton":97,"../ProductCart/ProductCartWishlist":126,"./PropertyList":133,"./PropertySingle":137,"./utils":139,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/core-js/object/keys":258,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"deep-diff":375,"jquery":"jquery","react":"react"}],139:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15422,19 +14267,7 @@ function isGoodStrictlyFiltered(good, filters) {
   return true;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/extends":241,"lodash":"lodash"}],126:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/extends":243,"lodash":"lodash"}],126:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/extends":258,"lodash":"lodash"}],134:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/extends":260,"lodash":"lodash"}],136:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/extends":266,"lodash":"lodash"}],140:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15559,19 +14392,7 @@ ProductArchived.propTypes = {
 exports.default = ProductArchived;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/product":182,"../../helpers/seo":183,"../common/ProductSearchForm":169,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],127:[function(require,module,exports){
-=======
-},{"../../helpers/product":184,"../../helpers/seo":185,"../common/ProductSearchForm":171,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],127:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/product":196,"../../helpers/seo":197,"../common/ProductSearchForm":183,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],135:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/product":198,"../../helpers/seo":199,"../common/ProductSearchForm":185,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],137:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/product":204,"../../helpers/seo":205,"../common/ProductSearchForm":191,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],141:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15649,19 +14470,7 @@ ProductArchivedContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductArchivedContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../HoC/provideTranslations":59,"./ProductArchived":126,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],128:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../HoC/provideTranslations":59,"./ProductArchived":126,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],128:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../HoC/provideTranslations":59,"./ProductArchived":134,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],136:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./ProductArchived":136,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],138:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./ProductArchived":140,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],142:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15772,19 +14581,7 @@ ProductGroup.propTypes = {
 exports.default = ProductGroup;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../Product/ProductBlock":91,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],129:[function(require,module,exports){
-=======
-},{"../Product/ProductBlock":91,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],129:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../Product/ProductBlock":99,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],137:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../Product/ProductBlock":101,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],139:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../Product/ProductBlock":105,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],143:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -15874,19 +14671,7 @@ ProductGroupContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductGroupContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../HoC/provideTranslations":59,"../Product/ProductBlock":91,"./ProductGroup":128,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"react":"react"}],130:[function(require,module,exports){
-=======
-},{"../HoC/provideTranslations":59,"../Product/ProductBlock":91,"./ProductGroup":128,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],130:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../HoC/provideTranslations":59,"../Product/ProductBlock":99,"./ProductGroup":136,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],138:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../HoC/provideTranslations":59,"../Product/ProductBlock":101,"./ProductGroup":138,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],140:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../HoC/provideTranslations":61,"../Product/ProductBlock":105,"./ProductGroup":142,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],144:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16058,19 +14843,7 @@ ProductList.propTypes = {
 exports.default = ProductList;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../CatalogFilter":32,"../Pagination":82,"../Product/ProductBlock":91,"../common/Image":160,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"react":"react"}],131:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../CatalogFilter":32,"../Pagination":82,"../Product/ProductBlock":91,"../common/Image":162,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],131:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../CatalogFilter":32,"../Pagination":90,"../Product/ProductBlock":99,"../common/Image":169,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],139:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../CatalogFilter":32,"../Pagination":92,"../Product/ProductBlock":101,"../common/Image":171,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],141:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../CatalogFilter":32,"../Pagination":96,"../Product/ProductBlock":105,"../common/Image":177,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],145:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16173,19 +14946,7 @@ ProductListContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductListContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductList":130,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"react":"react"}],132:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductList":130,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],132:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductList":138,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],140:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductList":140,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],142:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../CatalogFilter":32,"../HoC/provideTranslations":61,"./ProductList":144,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],146:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16306,19 +15067,7 @@ ProductSearch.propTypes = {
 exports.default = ProductSearch;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../CatalogFilter":32,"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"react":"react"}],133:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../CatalogFilter":32,"../ProductList/ProductList":130,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],133:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../CatalogFilter":32,"../ProductList/ProductList":138,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],141:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../CatalogFilter":32,"../ProductList/ProductList":140,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],143:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../CatalogFilter":32,"../ProductList/ProductList":144,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],147:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16413,16 +15162,7 @@ ProductSearchContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductSearchContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductSearch":132,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"babel-runtime/helpers/toConsumableArray":245,"react":"react"}],134:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductSearch":132,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],134:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductSearch":140,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"babel-runtime/helpers/toConsumableArray":262,"react":"react"}],142:[function(require,module,exports){
->>>>>>> OrderPayment component
+},{"../../schemas":226,"../CatalogFilter":32,"../HoC/provideTranslations":61,"./ProductSearch":146,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],148:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16453,7 +15193,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -16565,11 +15304,7 @@ ScrollToTop.defaultProps = {
 exports.default = ScrollToTop;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../../helpers/dom":179,"../common/Icon":157,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],135:[function(require,module,exports){
-=======
-},{"../../helpers/dom":181,"../common/Icon":159,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],135:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
+},{"../../helpers/dom":201,"../common/Icon":174,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],149:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16686,11 +15421,7 @@ TopBanner.defaultProps = {
 exports.default = TopBanner;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../../constants/globalEventKeys":174,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],136:[function(require,module,exports){
-=======
-},{"../../constants/globalEventKeys":176,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],136:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
+},{"../../constants/globalEventKeys":196,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16847,10 +15578,7 @@ Welcome.defaultProps = {};
 exports.default = Welcome;
 module.exports = exports['default'];
 
-},{"../../helpers/seo":185,"../../schemas":205,"../CatalogFilter":32,"../ProductList/ProductList":130,"../common/ImageSlider":163,"../common/PostProducts":170,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],137:[function(require,module,exports){
-=======
-},{"../../schemas":220,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./ProductSearch":142,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"babel-runtime/helpers/toConsumableArray":264,"react":"react"}],144:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/seo":205,"../../schemas":226,"../CatalogFilter":32,"../ProductList/ProductList":144,"../common/ImageSlider":178,"../common/PostProducts":190,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],151:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -16885,8 +15613,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
-=======
 var _schemas = require('../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
@@ -16954,242 +15680,7 @@ WelcomeContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(WelcomeContainer);
 module.exports = exports['default'];
 
-},{"../../schemas":205,"../CatalogFilter":32,"../HoC/provideTranslations":59,"./Welcome":136,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"babel-runtime/helpers/toConsumableArray":247,"react":"react"}],138:[function(require,module,exports){
-=======
-var _classnames = require('classnames');
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _dom = require('../../helpers/dom');
-
-var _Icon = require('../common/Icon');
-
-var _Icon2 = _interopRequireDefault(_Icon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ScrollToTop = function (_Component) {
-  (0, _inherits3.default)(ScrollToTop, _Component);
-
-  function ScrollToTop(props) {
-    (0, _classCallCheck3.default)(this, ScrollToTop);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (ScrollToTop.__proto__ || (0, _getPrototypeOf2.default)(ScrollToTop)).call(this, props));
-
-    _this.handleClick = _this.handleClick.bind(_this);
-    _this.updateVisibility = _this.updateVisibility.bind(_this);
-
-    _this.state = {
-      isVisible: false
-    };
-    return _this;
-  }
-
-  (0, _createClass3.default)(ScrollToTop, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var $container = this.getContainer();
-      $container.on('scroll', this.updateVisibility);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      var $container = this.getContainer();
-      $container.off('scroll', this.updateVisibility);
-    }
-  }, {
-    key: 'getContainer',
-    value: function getContainer() {
-      return $((0, _dom.getElt)(this.props.containerSelector));
-    }
-  }, {
-    key: 'getScrollableContainer',
-    value: function getScrollableContainer() {
-      var $container = this.getContainer();
-      return $container.get(0).self = $container.get(0) ? $('html, body') : $container;
-    }
-  }, {
-    key: 'updateVisibility',
-    value: function updateVisibility() {
-      var offset = this.props.offset;
-
-      var $container = this.getContainer();
-
-      this.setState({
-        isVisible: $container.scrollTop() > offset
-      });
-    }
-  }, {
-    key: 'handleClick',
-    value: function handleClick() {
-      var duration = this.props.duration;
-
-      var $container = this.getScrollableContainer();
-
-      $container.animate({ scrollTop: 0 }, duration);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var isVisible = this.state.isVisible;
-
-      var buttonClasses = (0, _classnames2.default)({
-        'ScrollToTop': true,
-        'is-visible': isVisible,
-        'element--active-opacity': true
-      });
-
-      return _react2.default.createElement(
-        'div',
-        { className: buttonClasses, onClick: this.handleClick },
-        _react2.default.createElement(
-          'div',
-          { className: 'ScrollToTop-content' },
-          _react2.default.createElement(_Icon2.default, { name: 'scroll-to-top' })
-        )
-      );
-    }
-  }]);
-  return ScrollToTop;
-}(_react.Component);
-
-ScrollToTop.propTypes = {
-  containerSelector: _react.PropTypes.string,
-  duration: _react.PropTypes.number,
-  offset: _react.PropTypes.number
-};
-ScrollToTop.defaultProps = {
-  containerSelector: 'window',
-  duration: 1000,
-  offset: 300
-};
-
-exports.default = ScrollToTop;
-module.exports = exports['default'];
-
-},{"../../helpers/dom":195,"../common/Icon":168,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],145:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _globalEventKeys = require('../../constants/globalEventKeys');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var STICKY_DETACH = 'sticky_kit:detach';
-var STICKY_RECALC = 'sticky_kit:recalc';
-
-var TopBanner = function (_Component) {
-  (0, _inherits3.default)(TopBanner, _Component);
-
-  function TopBanner(props) {
-    (0, _classCallCheck3.default)(this, TopBanner);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (TopBanner.__proto__ || (0, _getPrototypeOf2.default)(TopBanner)).call(this, props));
-
-    _this.recalcSticky = _this.recalcSticky.bind(_this);
-    return _this;
-  }
-
-  (0, _createClass3.default)(TopBanner, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var parent = this.props.parent;
-
-      var $topBanner = $((0, _reactDom.findDOMNode)(this.refs.banner));
-
-      $topBanner.stick_in_parent({ parent: parent });
-      $(document).on(_globalEventKeys.DOM_CHANGE, this.recalcSticky);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      var $topBanner = $((0, _reactDom.findDOMNode)(this.refs.banner));
-
-      $topBanner.trigger(STICKY_DETACH);
-      $(document).off(_globalEventKeys.DOM_CHANGE, this.recalcSticky);
-    }
-  }, {
-    key: 'recalcSticky',
-    value: function recalcSticky() {
-      $(document.body).trigger(STICKY_RECALC);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props;
-      var content = _props.content;
-      var url = _props.url;
-
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'top-banner', ref: 'banner' },
-        url ? _react2.default.createElement(
-          'a',
-          { className: 'top-banner__link', href: url },
-          _react2.default.createElement(
-            'div',
-            { className: 'top-banner__content' },
-            content
-          )
-        ) : _react2.default.createElement(
-          'div',
-          { className: 'top-banner__content' },
-          content
-        )
-      );
-    }
-  }]);
-  return TopBanner;
-}(_react.Component);
-
-TopBanner.propTypes = {
-  content: _react.PropTypes.string.isRequired,
-  parent: _react.PropTypes.string,
-  url: _react.PropTypes.string
-};
-TopBanner.defaultProps = {
-  parent: '.b-page__content'
-};
-
-exports.default = TopBanner;
-module.exports = exports['default'];
-
-<<<<<<< HEAD
-},{"../../constants/globalEventKeys":188,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],144:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../constants/globalEventKeys":190,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],146:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../CatalogFilter":32,"../HoC/provideTranslations":61,"./Welcome":150,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"babel-runtime/helpers/toConsumableArray":270,"react":"react"}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17284,7 +15775,6 @@ var WelcomeChildren = function (_Component) {
             })
           )
         ),
-<<<<<<< HEAD
         childrenProducts && _react2.default.createElement(
           'div',
           { className: 'b-page__content__inner b-page__content__inner_content' },
@@ -17295,10 +15785,6 @@ var WelcomeChildren = function (_Component) {
           { className: 'b-page__content__inner b-page__content__inner_content' },
           _react2.default.createElement(_PostProducts2.default, { postProductsText: postProductsText })
         )
-=======
-        childrenProducts && _react2.default.createElement(_ChildrenProducts2.default, { childrenProducts: childrenProducts }),
-        postProductsText && _react2.default.createElement(_PostProducts2.default, { postProductsText: postProductsText })
->>>>>>> OrderPayment component
       );
     }
   }]);
@@ -17314,15 +15800,7 @@ WelcomeChildren.propTypes = {
 exports.default = WelcomeChildren;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":205,"../ChildrenProducts/ChildrenProducts":48,"../common/ImageSlider":163,"../common/PostProducts":170,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],139:[function(require,module,exports){
-=======
-},{"../../schemas":218,"../ChildrenProducts/ChildrenProducts":48,"../common/ImageSlider":170,"../common/PostProducts":182,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],145:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../ChildrenProducts/ChildrenProducts":48,"../common/ImageSlider":172,"../common/PostProducts":184,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],147:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../ChildrenProducts/ChildrenProducts":48,"../common/ImageSlider":178,"../common/PostProducts":190,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17353,10 +15831,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
->>>>>>> 3c40b99... Welcome component
-=======
->>>>>>> OrderPayment component
 var _WelcomeChildren = require('./WelcomeChildren');
 
 var _WelcomeChildren2 = _interopRequireDefault(_WelcomeChildren);
@@ -17400,19 +15874,7 @@ WelcomeChildrenContainer.defaultProps = {
 exports.default = WelcomeChildrenContainer;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./WelcomeChildren":136,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],138:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./WelcomeChildren":138,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],140:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./WelcomeChildren":144,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],146:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./WelcomeChildren":146,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],148:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./WelcomeChildren":152,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],154:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17515,19 +15977,7 @@ Wishlist.propTypes = {
 exports.default = Wishlist;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./WishlistList":141,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],139:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./WishlistList":143,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],141:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./WishlistList":149,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],147:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./WishlistList":151,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],149:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./WishlistList":157,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],155:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17613,19 +16063,7 @@ WishlistAddToCartButton.propTypes = {
 exports.default = WishlistAddToCartButton;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],140:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],142:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],148:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],150:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],156:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17776,19 +16214,7 @@ WishlistItem.propTypes = {
 exports.default = WishlistItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../helpers/money":180,"../../schemas":203,"../common/AssetImage":151,"../common/GoodDetails":155,"../common/Image/Image":158,"./WishlistAddToCartButton":139,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],141:[function(require,module,exports){
-=======
-},{"../../helpers/money":182,"../../schemas":205,"../common/AssetImage":153,"../common/GoodDetails":157,"../common/Image/Image":160,"./WishlistAddToCartButton":141,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],143:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../helpers/money":194,"../../schemas":218,"../common/AssetImage":159,"../common/GoodDetails":164,"../common/Image/Image":167,"./WishlistAddToCartButton":147,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],149:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../helpers/money":196,"../../schemas":220,"../common/AssetImage":161,"../common/GoodDetails":166,"../common/Image/Image":169,"./WishlistAddToCartButton":149,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],151:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../helpers/money":202,"../../schemas":226,"../common/AssetImage":167,"../common/GoodDetails":172,"../common/Image/Image":175,"./WishlistAddToCartButton":155,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],157:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17888,19 +16314,7 @@ WishlistList.propTypes = {
 exports.default = WishlistList;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"./WishlistItem":140,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],142:[function(require,module,exports){
-=======
-},{"../../schemas":205,"./WishlistItem":142,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],144:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"./WishlistItem":148,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],150:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"./WishlistItem":150,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],152:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"./WishlistItem":156,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],158:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17985,19 +16399,7 @@ WishlistContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(WishlistContainer);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../schemas":203,"../HoC/provideTranslations":59,"./Wishlist":138,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],143:[function(require,module,exports){
-=======
-},{"../../schemas":205,"../HoC/provideTranslations":59,"./Wishlist":140,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],145:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../schemas":218,"../HoC/provideTranslations":59,"./Wishlist":146,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],151:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../schemas":220,"../HoC/provideTranslations":59,"./Wishlist":148,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],153:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../schemas":226,"../HoC/provideTranslations":61,"./Wishlist":154,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],159:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18117,19 +16519,7 @@ Bubble.propTypes = {
 exports.default = Bubble;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],144:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],146:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],152:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],154:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],160:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18197,19 +16587,7 @@ var CabinetButton = (_temp = _class = function (_Component) {
 exports.default = CabinetButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../Bubble":143,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],145:[function(require,module,exports){
-=======
-},{"../Bubble":145,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],147:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../Bubble":151,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],153:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../Bubble":153,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],155:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../Bubble":159,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],161:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18227,19 +16605,7 @@ Object.defineProperty(exports, 'CabinetButton', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CabinetButton":144}],146:[function(require,module,exports){
-=======
-},{"./CabinetButton":146}],148:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CabinetButton":152}],154:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CabinetButton":154}],156:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CabinetButton":160}],162:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18308,19 +16674,7 @@ var CartButton = function (_Component) {
 exports.default = CartButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../Bubble":143,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],147:[function(require,module,exports){
-=======
-},{"../Bubble":145,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],149:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../Bubble":151,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],155:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../Bubble":153,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],157:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../Bubble":159,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],163:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18456,19 +16810,7 @@ CartButtonController.defaultProps = {
 exports.default = CartButtonController;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../actions/view/BasketActions":8,"../../../helpers/money":180,"../../../stores/BasketStore":221,"./CartButton":146,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],148:[function(require,module,exports){
-=======
-},{"../../../actions/view/BasketActions":8,"../../../helpers/money":182,"../../../stores/BasketStore":223,"./CartButton":148,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],150:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../actions/view/BasketActions":8,"../../../helpers/money":194,"../../../stores/BasketStore":238,"./CartButton":154,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],156:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../actions/view/BasketActions":8,"../../../helpers/money":196,"../../../stores/BasketStore":240,"./CartButton":156,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],158:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../actions/view/BasketActions":8,"../../../helpers/money":202,"../../../stores/BasketStore":246,"./CartButton":162,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],164:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18542,19 +16884,7 @@ var WishlistButton = (_temp = _class = function (_Component) {
 exports.default = WishlistButton;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../Bubble":143,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],149:[function(require,module,exports){
-=======
-},{"../Bubble":145,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],151:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../Bubble":151,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],157:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../Bubble":153,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],159:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../Bubble":159,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],165:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18572,19 +16902,7 @@ Object.defineProperty(exports, 'WishlistButton', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./WishlistButton":148}],150:[function(require,module,exports){
-=======
-},{"./WishlistButton":150}],152:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./WishlistButton":156}],158:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./WishlistButton":158}],160:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./WishlistButton":164}],166:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18668,19 +16986,7 @@ Alert.defaultProps = {
 exports.default = Alert;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],151:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],153:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],159:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],161:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],167:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18711,19 +17017,7 @@ AssetImage.propTypes = {
 exports.default = AssetImage;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/extends":241,"react":"react"}],152:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/extends":243,"react":"react"}],154:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/extends":258,"react":"react"}],160:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/extends":260,"react":"react"}],162:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/extends":266,"react":"react"}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18827,19 +17121,7 @@ var CSRFToken = (_temp2 = _class = function (_Component) {
 exports.default = CSRFToken;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./HiddenInput":156,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],153:[function(require,module,exports){
-=======
-},{"./HiddenInput":158,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],155:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./HiddenInput":165,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],161:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./HiddenInput":167,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],163:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./HiddenInput":173,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],169:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18903,18 +17185,7 @@ Checkbox.propTypes = {
 exports.default = Checkbox;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],154:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],156:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],162:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],164:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],170:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -18952,12 +17223,7 @@ FaIcon.defaultProps = {
 exports.default = FaIcon;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"classnames":"classnames","react":"react"}],163:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"classnames":"classnames","react":"react"}],165:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"classnames":"classnames","react":"react"}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19040,19 +17306,7 @@ FormAuthenticity.defaultProps = {
 exports.default = FormAuthenticity;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../CSRFToken":152,"../HiddenInput":156,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],155:[function(require,module,exports){
-=======
-},{"../CSRFToken":154,"../HiddenInput":158,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],157:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../CSRFToken":160,"../HiddenInput":165,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],164:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../CSRFToken":162,"../HiddenInput":167,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],166:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../CSRFToken":168,"../HiddenInput":173,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19128,19 +17382,7 @@ GoodDetails.defaultProps = {
 exports.default = GoodDetails;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"lodash":"lodash","react":"react"}],156:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"lodash":"lodash","react":"react"}],158:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"lodash":"lodash","react":"react"}],165:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"lodash":"lodash","react":"react"}],167:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"lodash":"lodash","react":"react"}],173:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19203,19 +17445,7 @@ HiddenInput.propTypes = {
 exports.default = HiddenInput;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],157:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],159:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],166:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],168:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],174:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19296,19 +17526,7 @@ var Icon = (_temp = _class = function (_Component) {
 exports.default = Icon;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/defineProperty":240,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react"}],158:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/defineProperty":242,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react"}],160:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/defineProperty":257,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],167:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/defineProperty":259,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],169:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/defineProperty":265,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],175:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19462,19 +17680,7 @@ Image.defaultProps = {
 exports.default = Image;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"../../../services/Thumbor":218,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],159:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"../../../services/Thumbor":220,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],161:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"../../../services/Thumbor":235,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],168:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../../../services/Thumbor":237,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],170:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../../../services/Thumbor":243,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],176:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19619,19 +17825,7 @@ RelativeImage.defaultProps = {
 exports.default = RelativeImage;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"./Image":158,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react","react-dom":"react-dom"}],160:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"./Image":160,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react","react-dom":"react-dom"}],162:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"./Image":167,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react","react-dom":"react-dom"}],169:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"./Image":169,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react","react-dom":"react-dom"}],171:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"./Image":175,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react","react-dom":"react-dom"}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19658,19 +17852,7 @@ Object.defineProperty(exports, 'RelativeImage', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Image":158,"./RelativeImage":159}],161:[function(require,module,exports){
-=======
-},{"./Image":160,"./RelativeImage":161}],163:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Image":167,"./RelativeImage":168}],170:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Image":169,"./RelativeImage":170}],172:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Image":175,"./RelativeImage":176}],178:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19860,19 +18042,7 @@ ImageSlider.defaultProps = {
 exports.default = ImageSlider;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"./ImageSliderSlides":162,"./ImageSliderThumbs":163,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","lodash/collection/size":383,"react":"react","react-dom":"react-dom"}],162:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"./ImageSliderSlides":164,"./ImageSliderThumbs":165,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","lodash/collection/size":385,"react":"react","react-dom":"react-dom"}],164:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"./ImageSliderSlides":171,"./ImageSliderThumbs":172,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","lodash/collection/size":400,"react":"react","react-dom":"react-dom"}],171:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"./ImageSliderSlides":173,"./ImageSliderThumbs":174,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","lodash/collection/size":402,"react":"react","react-dom":"react-dom"}],173:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"./ImageSliderSlides":179,"./ImageSliderThumbs":180,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","lodash/collection/size":408,"react":"react","react-dom":"react-dom"}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19959,19 +18129,7 @@ ImageSliderSlides.propTypes = {
 exports.default = ImageSliderSlides;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"../Image/RelativeImage":159,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],163:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"../Image/RelativeImage":161,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],165:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"../Image/RelativeImage":168,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],172:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../Image/RelativeImage":170,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],174:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../Image/RelativeImage":176,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],180:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20082,19 +18240,7 @@ ImageSliderThumbs.propTypes = {
 exports.default = ImageSliderThumbs;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../../schemas":203,"../Image/Image":158,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],164:[function(require,module,exports){
-=======
-},{"../../../schemas":205,"../Image/Image":160,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],166:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../../schemas":218,"../Image/Image":167,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],173:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../Image/Image":169,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],175:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../Image/Image":175,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20240,18 +18386,7 @@ var InputNumberSpinner = (_temp = _class = function (_Component) {
 exports.default = InputNumberSpinner;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"jquery":"jquery","react":"react"}],165:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"jquery":"jquery","react":"react"}],167:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"jquery":"jquery","react":"react"}],174:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"jquery":"jquery","react":"react"}],176:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"jquery":"jquery","react":"react"}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20354,7 +18489,7 @@ Link.defaultProps = {
 exports.default = Link;
 module.exports = exports['default'];
 
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],177:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],183:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20426,7 +18561,7 @@ HumanizedMoney.propTypes = {
 exports.default = HumanizedMoney;
 module.exports = exports['default'];
 
-},{"../../../helpers/money":196,"../../../schemas":220,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],178:[function(require,module,exports){
+},{"../../../helpers/money":202,"../../../schemas":226,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20528,7 +18663,7 @@ HumanizedMoneyWithCurrency.propTypes = {
 exports.default = HumanizedMoneyWithCurrency;
 module.exports = exports['default'];
 
-},{"../../../helpers/money":196,"../../../schemas":220,"./HumanizedMoney":177,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],179:[function(require,module,exports){
+},{"../../../helpers/money":202,"../../../schemas":226,"./HumanizedMoney":183,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],185:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20647,12 +18782,7 @@ OrderComments.defaultProps = {
 exports.default = OrderComments;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../../../schemas":218,"../FaIcon":162,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],178:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../FaIcon":164,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],180:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../FaIcon":170,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],186:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20683,49 +18813,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Link = function (_Component) {
-  (0, _inherits3.default)(Link, _Component);
-
-  function Link() {
-    (0, _classCallCheck3.default)(this, Link);
-    return (0, _possibleConstructorReturn3.default)(this, (Link.__proto__ || (0, _getPrototypeOf2.default)(Link)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(Link, [{
-    key: 'request',
-    value: function request(method, url) {
-      var form = document.createElement('form');
-      form.setAttribute('method', 'POST');
-      form.setAttribute('action', url);
-
-      function addField(key, value) {
-        var hiddenField = document.createElement('input');
-        hiddenField.setAttribute('type', 'hidden');
-        hiddenField.setAttribute('name', key);
-        hiddenField.setAttribute('value', value);
-        form.appendChild(hiddenField);
-      };
-
-      addField('_method', method);
-      document.body.appendChild(form);
-      form.submit();
-    }
-  }, {
-    key: 'handleClick',
-    value: function handleClick(ev) {
-      var _props = this.props;
-      var href = _props.href;
-      var method = _props.method;
-
-
-      if (method !== 'GET') {
-        ev.preventDefault();
-        this.request(method, href);
-      }
-=======
 var _OrderItem = require('./OrderItem');
 
 var _OrderItem2 = _interopRequireDefault(_OrderItem);
@@ -20837,45 +18924,10 @@ var OrderContents = function (_Component) {
           _react2.default.createElement(_FaIcon2.default, { name: 'truck' })
         )
       );
->>>>>>> OrderPayment component
     }
   }, {
     key: 'render',
     value: function render() {
-<<<<<<< HEAD
-      var _props2 = this.props;
-      var children = _props2.children;
-      var href = _props2.href;
-
-
-      return _react2.default.createElement(
-        'a',
-        { href: href, onClick: this.handleClick.bind(this) },
-        children
-      );
-    }
-  }]);
-  return Link;
-}(_react.Component);
-
-Link.propTypes = {
-  children: _react.PropTypes.oneOfType([_react.PropTypes.array, _react.PropTypes.element]).isRequired,
-  href: _react.PropTypes.string.isRequired,
-  method: _react.PropTypes.string
-};
-Link.defaultProps = {
-  method: 'GET'
-};
-
-exports.default = Link;
-module.exports = exports['default'];
-
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],166:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],168:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
       var _props = this.props;
       var _props$order = _props.order;
       var items = _props$order.items;
@@ -20980,12 +19032,7 @@ OrderContents.defaultProps = {
 exports.default = OrderContents;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../../../schemas":218,"../FaIcon":162,"../Money/HumanizedMoneyWithCurrency":176,"./OrderItem":179,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],179:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../FaIcon":164,"../Money/HumanizedMoneyWithCurrency":178,"./OrderItem":181,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],181:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../FaIcon":170,"../Money/HumanizedMoneyWithCurrency":184,"./OrderItem":187,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],187:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21016,8 +19063,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
-=======
 var _Image = require('../Image');
 
 var _Image2 = _interopRequireDefault(_Image);
@@ -21026,58 +19071,14 @@ var _HumanizedMoneyWithCurrency = require('../Money/HumanizedMoneyWithCurrency')
 
 var _HumanizedMoneyWithCurrency2 = _interopRequireDefault(_HumanizedMoneyWithCurrency);
 
->>>>>>> OrderPayment component
 var _schemas = require('../../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
 
-<<<<<<< HEAD
-var _money = require('../../../helpers/money');
-
-=======
->>>>>>> OrderPayment component
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-var HumanizedMoney = function (_Component) {
-  (0, _inherits3.default)(HumanizedMoney, _Component);
-
-  function HumanizedMoney() {
-    (0, _classCallCheck3.default)(this, HumanizedMoney);
-    return (0, _possibleConstructorReturn3.default)(this, (HumanizedMoney.__proto__ || (0, _getPrototypeOf2.default)(HumanizedMoney)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(HumanizedMoney, [{
-    key: 'render',
-    value: function render() {
-      var money = this.props.money;
-
-
-      return _react2.default.createElement(
-        'span',
-        null,
-        (0, _money.humanizedMoney)(money)
-      );
-    }
-  }]);
-  return HumanizedMoney;
-}(_react.Component);
-
-HumanizedMoney.propTypes = {
-  money: schemas.money
-};
-
-exports.default = HumanizedMoney;
-module.exports = exports['default'];
-
-<<<<<<< HEAD
-},{"../../../helpers/money":180,"../../../schemas":203,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],167:[function(require,module,exports){
-=======
-},{"../../../helpers/money":182,"../../../schemas":205,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],169:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
 var OrderItem = function (_Component) {
   (0, _inherits3.default)(OrderItem, _Component);
 
@@ -21164,12 +19165,7 @@ OrderItem.defaultProps = {
 exports.default = OrderItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"../../../schemas":218,"../Image":169,"../Money/HumanizedMoneyWithCurrency":176,"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],180:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../../schemas":220,"../Image":171,"../Money/HumanizedMoneyWithCurrency":178,"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],182:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../../schemas":226,"../Image":177,"../Money/HumanizedMoneyWithCurrency":184,"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],188:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21200,84 +19196,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
-var _schemas = require('../../../schemas');
-
-var schemas = _interopRequireWildcard(_schemas);
-
-var _money = require('../../../helpers/money');
-
-var _HumanizedMoney = require('./HumanizedMoney');
-
-var _HumanizedMoney2 = _interopRequireDefault(_HumanizedMoney);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var HumanizedMoneyWithCurrency = function (_Component) {
-  (0, _inherits3.default)(HumanizedMoneyWithCurrency, _Component);
-
-  function HumanizedMoneyWithCurrency() {
-    (0, _classCallCheck3.default)(this, HumanizedMoneyWithCurrency);
-    return (0, _possibleConstructorReturn3.default)(this, (HumanizedMoneyWithCurrency.__proto__ || (0, _getPrototypeOf2.default)(HumanizedMoneyWithCurrency)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(HumanizedMoneyWithCurrency, [{
-    key: 'render',
-    value: function render() {
-      var money = this.props.money;
-
-
-      if (!money || money.cents === 0) {
-        return _react2.default.createElement(
-          'span',
-          null,
-          '-'
-        );
-      }
-
-      if (!(0, _money.isCurrencyExists)(money)) {
-        return _react2.default.createElement(
-          'span',
-          null,
-          (0, _money.unknownIsoCodeMessage)(money)
-        );
-      }
-
-      var symbol = _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: (0, _money.getHTMLName)(money) } });
-
-      return (0, _money.isSymbolFirst)(money) ? _react2.default.createElement(
-        'span',
-        null,
-        symbol,
-        ' ',
-        _react2.default.createElement(_HumanizedMoney2.default, { money: money })
-      ) : _react2.default.createElement(
-        'span',
-        null,
-        _react2.default.createElement(_HumanizedMoney2.default, { money: money }),
-        ' ',
-        symbol
-      );
-    }
-  }]);
-  return HumanizedMoneyWithCurrency;
-}(_react.Component);
-
-HumanizedMoneyWithCurrency.propTypes = {
-  money: schemas.money
-};
-
-exports.default = HumanizedMoneyWithCurrency;
-module.exports = exports['default'];
-
-<<<<<<< HEAD
-},{"../../../helpers/money":180,"../../../schemas":203,"./HumanizedMoney":166,"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],168:[function(require,module,exports){
-=======
-},{"../../../helpers/money":182,"../../../schemas":205,"./HumanizedMoney":168,"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],170:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DELIVERY_TYPE_SELFDELIVERY = 'selfdelivery';
@@ -21326,7 +19244,7 @@ OrderSelfDeliveryMessage.defaultProps = {
 exports.default = OrderSelfDeliveryMessage;
 module.exports = exports['default'];
 
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],183:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],189:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21415,12 +19333,7 @@ OrderState.defaultProps = {
 exports.default = OrderState;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react"}],182:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react"}],184:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react"}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21492,19 +19405,7 @@ PostProducts.propTypes = {
 exports.default = PostProducts;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],169:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],171:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],183:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],185:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],191:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21588,19 +19489,7 @@ ProductSearchForm.defaultProps = {
 exports.default = ProductSearchForm;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],170:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],172:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],184:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],186:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],192:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21719,19 +19608,7 @@ var RadioColor = (_temp = _class = function (_Component) {
 exports.default = RadioColor;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"classnames":"classnames","react":"react","tinycolor2":"tinycolor2"}],171:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"classnames":"classnames","react":"react","tinycolor2":"tinycolor2"}],173:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"classnames":"classnames","react":"react","tinycolor2":"tinycolor2"}],185:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"classnames":"classnames","react":"react","tinycolor2":"tinycolor2"}],187:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"classnames":"classnames","react":"react","tinycolor2":"tinycolor2"}],193:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21834,19 +19711,7 @@ var Select = (_temp = _class = function (_Component) {
 exports.default = Select;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],172:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],174:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],186:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],188:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],194:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21910,19 +19775,7 @@ var TextInput = (_temp = _class = function (_Component) {
 exports.default = TextInput;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"react":"react"}],173:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"react":"react"}],175:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"react":"react"}],187:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"react":"react"}],189:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"react":"react"}],195:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21942,19 +19795,7 @@ var INFO_LOAD_FAIL = exports.INFO_LOAD_FAIL = 'INFO_LOAD_FAIL';
 var POPUP_OPEN = exports.POPUP_OPEN = 'POPUP_OPEN';
 var POPUP_CLOSE = exports.POPUP_CLOSE = 'POPUP_CLOSE';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],174:[function(require,module,exports){
-=======
-},{}],176:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],188:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],190:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],196:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21965,19 +19806,7 @@ var DOM_CHANGE = exports.DOM_CHANGE = 'DOM_CHANGE';
 // Product card
 var PHOTO_CHANGE = exports.PHOTO_CHANGE = 'productPhotoChange';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],175:[function(require,module,exports){
-=======
-},{}],177:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],189:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],191:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],197:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21986,19 +19815,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = ['ru', 'en', 'ua', 'kz'];
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],176:[function(require,module,exports){
-=======
-},{}],178:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],190:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],192:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],198:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22015,19 +19832,7 @@ var PROPERTY_STRING_TYPE = exports.PROPERTY_STRING_TYPE = 'PropertyString';
 var PROPERTY_BOOLEAN_TYPE = exports.PROPERTY_BOOLEAN_TYPE = 'PropertyBoolean';
 var PROPERTY_DICTIONARY_TYPE = exports.PROPERTY_DICTIONARY_TYPE = 'items';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],177:[function(require,module,exports){
-=======
-},{}],179:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],191:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],193:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],199:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22085,19 +19890,7 @@ var BaseDispatcher = function (_Flux$Dispatcher) {
 exports.default = BaseDispatcher;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"flux":352}],178:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"flux":354}],180:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"flux":369}],192:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"flux":371}],194:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"flux":377}],200:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22134,19 +19927,7 @@ var Timer = function Timer(callback, delay) {
 exports.default = Timer;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/classCallCheck":238}],179:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/classCallCheck":240}],181:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/classCallCheck":255}],193:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/classCallCheck":257}],195:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/classCallCheck":263}],201:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22173,19 +19954,7 @@ function canUseDOM() {
   return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],180:[function(require,module,exports){
-=======
-},{}],182:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],194:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],196:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],202:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22274,19 +20043,7 @@ function unknownIsoCodeMessage(money) {
   });
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../models/currencies":187,"i18next":"i18next","numeral":459}],181:[function(require,module,exports){
-=======
-},{"../models/currencies":189,"i18next":"i18next","numeral":461}],183:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../models/currencies":201,"i18next":"i18next","numeral":476}],195:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../models/currencies":203,"i18next":"i18next","numeral":478}],197:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../models/currencies":209,"i18next":"i18next","numeral":484}],203:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22304,19 +20061,7 @@ function numberToHumanSize(number) {
   return (0, _numeral2.default)(number).format('0.00 b');
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"numeral":459}],182:[function(require,module,exports){
-=======
-},{"numeral":461}],184:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"numeral":476}],196:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"numeral":478}],198:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"numeral":484}],204:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22459,19 +20204,7 @@ function hasDifferentPrices(product) {
   return diffCents.length > 1;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./money":180,"./number":181,"./seo":183,"react":"react"}],183:[function(require,module,exports){
-=======
-},{"./money":182,"./number":183,"./seo":185,"react":"react"}],185:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./money":194,"./number":195,"./seo":197,"react":"react"}],197:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./money":196,"./number":197,"./seo":199,"react":"react"}],199:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./money":202,"./number":203,"./seo":205,"react":"react"}],205:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22515,19 +20248,7 @@ function schemaOrgGoodAvailability(good) {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],184:[function(require,module,exports){
-=======
-},{}],186:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],198:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],200:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],206:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22547,19 +20268,7 @@ var simpleFormat = exports.simpleFormat = function simpleFormat() {
   return newStr;
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],185:[function(require,module,exports){
-=======
-},{}],187:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],199:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],201:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],207:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22610,19 +20319,7 @@ function categoryLink(category) {
   );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],186:[function(require,module,exports){
-=======
-},{"react":"react"}],188:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],200:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],202:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],208:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22750,19 +20447,7 @@ exports.default = function (store) {
   };
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../services/Notice":217,"babel-runtime/core-js/object/assign":229,"babel-runtime/core-js/promise":235,"babel-runtime/core-js/symbol":236,"babel-runtime/helpers/slicedToArray":244,"babel-runtime/helpers/typeof":246,"humps":356}],187:[function(require,module,exports){
-=======
-},{"../services/Notice":219,"babel-runtime/core-js/object/assign":231,"babel-runtime/core-js/promise":237,"babel-runtime/core-js/symbol":238,"babel-runtime/helpers/slicedToArray":246,"babel-runtime/helpers/typeof":248,"humps":358}],189:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../services/Notice":234,"babel-runtime/core-js/object/assign":246,"babel-runtime/core-js/promise":252,"babel-runtime/core-js/symbol":253,"babel-runtime/helpers/slicedToArray":261,"babel-runtime/helpers/typeof":263,"humps":373}],201:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../services/Notice":236,"babel-runtime/core-js/object/assign":248,"babel-runtime/core-js/promise":254,"babel-runtime/core-js/symbol":255,"babel-runtime/helpers/slicedToArray":263,"babel-runtime/helpers/typeof":265,"humps":375}],203:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../services/Notice":242,"babel-runtime/core-js/object/assign":254,"babel-runtime/core-js/promise":260,"babel-runtime/core-js/symbol":261,"babel-runtime/helpers/slicedToArray":269,"babel-runtime/helpers/typeof":271,"humps":381}],209:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22867,19 +20552,7 @@ var currencies = {
 exports.default = currencies;
 module.exports = exports["default"];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],188:[function(require,module,exports){
-=======
-},{}],190:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],202:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],204:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],210:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22930,19 +20603,7 @@ var initialState = _immutable2.default.fromJS({
 exports.default = (0, _createReducer2.default)(initialState, {});
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utils/createReducer":222,"immutable":"immutable"}],189:[function(require,module,exports){
-=======
-},{"../utils/createReducer":224,"immutable":"immutable"}],191:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utils/createReducer":239,"immutable":"immutable"}],203:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utils/createReducer":241,"immutable":"immutable"}],205:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utils/createReducer":247,"immutable":"immutable"}],211:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22993,19 +20654,7 @@ exports.default = (0, _createReducer3.default)(initialState, (_createReducer = {
 }), _createReducer));
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../constants/actionTypes":173,"../utils/createReducer":222,"babel-runtime/helpers/defineProperty":240,"immutable":"immutable"}],190:[function(require,module,exports){
-=======
-},{"../constants/actionTypes":175,"../utils/createReducer":224,"babel-runtime/helpers/defineProperty":242,"immutable":"immutable"}],192:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../constants/actionTypes":187,"../utils/createReducer":239,"babel-runtime/helpers/defineProperty":257,"immutable":"immutable"}],204:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../constants/actionTypes":189,"../utils/createReducer":241,"babel-runtime/helpers/defineProperty":259,"immutable":"immutable"}],206:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../constants/actionTypes":195,"../utils/createReducer":247,"babel-runtime/helpers/defineProperty":265,"immutable":"immutable"}],212:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23126,19 +20775,7 @@ var actionMap = (_actionMap = {}, (0, _defineProperty3.default)(_actionMap, _Car
 
 exports.default = (0, _createReducer2.default)(initialState, actionMap);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../actions/CartActions":4,"../utils/createReducer":222,"babel-runtime/helpers/defineProperty":240,"immutable":"immutable"}],191:[function(require,module,exports){
-=======
-},{"../actions/CartActions":4,"../utils/createReducer":224,"babel-runtime/helpers/defineProperty":242,"immutable":"immutable"}],193:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../actions/CartActions":4,"../utils/createReducer":239,"babel-runtime/helpers/defineProperty":257,"immutable":"immutable"}],205:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../actions/CartActions":4,"../utils/createReducer":241,"babel-runtime/helpers/defineProperty":259,"immutable":"immutable"}],207:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../actions/CartActions":4,"../utils/createReducer":247,"babel-runtime/helpers/defineProperty":265,"immutable":"immutable"}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23197,19 +20834,7 @@ var actionMap = (_actionMap = {}, (0, _defineProperty3.default)(_actionMap, _Pac
 
 exports.default = (0, _createReducer2.default)(initialState, actionMap);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../actions/PackagesActions":5,"../utils/createReducer":222,"babel-runtime/helpers/defineProperty":240,"immutable":"immutable"}],192:[function(require,module,exports){
-=======
-},{"../actions/PackagesActions":5,"../utils/createReducer":224,"babel-runtime/helpers/defineProperty":242,"immutable":"immutable"}],194:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../actions/PackagesActions":5,"../utils/createReducer":239,"babel-runtime/helpers/defineProperty":257,"immutable":"immutable"}],206:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../actions/PackagesActions":5,"../utils/createReducer":241,"babel-runtime/helpers/defineProperty":259,"immutable":"immutable"}],208:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../actions/PackagesActions":5,"../utils/createReducer":247,"babel-runtime/helpers/defineProperty":265,"immutable":"immutable"}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23230,19 +20855,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./money":206,"react":"react"}],193:[function(require,module,exports){
-=======
-},{"./money":208,"react":"react"}],195:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./money":221,"react":"react"}],207:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./money":223,"react":"react"}],209:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./money":229,"react":"react"}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23290,19 +20903,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./good":201,"./money":206,"react":"react"}],194:[function(require,module,exports){
-=======
-},{"./good":203,"./money":208,"react":"react"}],196:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./good":216,"./money":221,"react":"react"}],208:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./good":218,"./money":223,"react":"react"}],210:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./good":224,"./money":229,"react":"react"}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23371,19 +20972,7 @@ var colorOption = shape((0, _extends3.default)({}, baseFields, {
 exports.default = oneOfType([rangeOption, checkboxOption, radioOption, colorOption]);
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/extends":241,"react":"react"}],195:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/extends":243,"react":"react"}],197:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/extends":258,"react":"react"}],209:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/extends":260,"react":"react"}],211:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/extends":266,"react":"react"}],217:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23398,19 +20987,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],196:[function(require,module,exports){
-=======
-},{"react":"react"}],198:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],210:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],212:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23429,19 +21006,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],197:[function(require,module,exports){
-=======
-},{"react":"react"}],199:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],211:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],213:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],219:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23458,19 +21023,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],198:[function(require,module,exports){
-=======
-},{"react":"react"}],200:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],212:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],214:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23495,18 +21048,7 @@ exports.default = arrayOf(shape({
 }));
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./product":210,"react":"react"}],199:[function(require,module,exports){
-=======
-},{"./product":212,"react":"react"}],201:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./product":227,"react":"react"}],213:[function(require,module,exports){
-=======
-},{"./product":229,"react":"react"}],215:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./product":235,"react":"react"}],221:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23524,12 +21066,7 @@ exports.default = shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"react":"react"}],214:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],216:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23557,19 +21094,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./money":206,"react":"react"}],200:[function(require,module,exports){
-=======
-},{"./money":208,"react":"react"}],202:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./money":221,"react":"react"}],215:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./money":223,"react":"react"}],217:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./money":229,"react":"react"}],223:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23584,19 +21109,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],201:[function(require,module,exports){
-=======
-},{"react":"react"}],203:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],216:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],218:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23634,19 +21147,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./image":202,"./money":206,"react":"react"}],202:[function(require,module,exports){
-=======
-},{"./image":204,"./money":208,"react":"react"}],204:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./image":217,"./money":221,"react":"react"}],217:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./image":219,"./money":223,"react":"react"}],219:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./image":225,"./money":229,"react":"react"}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23662,19 +21163,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],203:[function(require,module,exports){
-=======
-},{"react":"react"}],205:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],218:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],220:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23888,15 +21377,6 @@ Object.defineProperty(exports, 'childrenProducts', {
   }
 });
 
-<<<<<<< HEAD
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-<<<<<<< HEAD
-},{"./cart":192,"./cartApi":193,"./catalogFilterOption":194,"./checkoutCoupon":195,"./checkoutField":196,"./checkoutPublicOffer":197,"./childrenProducts":198,"./deliveryType":199,"./formAuthenticity":200,"./good":201,"./image":202,"./locale":204,"./menuItem":205,"./money":206,"./packagesApi":207,"./pagination":208,"./paymentType":209,"./product":210,"./productList":211,"./slide":212,"./vendor":213,"./vendorContact":214,"./wishlistItem":215}],204:[function(require,module,exports){
-=======
-},{"./cart":194,"./cartApi":195,"./catalogFilterOption":196,"./checkoutCoupon":197,"./checkoutField":198,"./checkoutPublicOffer":199,"./childrenProducts":200,"./deliveryType":201,"./formAuthenticity":202,"./good":203,"./image":204,"./locale":206,"./menuItem":207,"./money":208,"./packagesApi":209,"./pagination":210,"./paymentType":211,"./product":212,"./productList":213,"./slide":214,"./vendor":215,"./vendorContact":216,"./wishlistItem":217}],206:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
 var _comment = require('./comment');
 
 Object.defineProperty(exports, 'comment', {
@@ -23926,12 +21406,7 @@ Object.defineProperty(exports, 'order', {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
-},{"./cart":206,"./cartApi":207,"./catalogFilterOption":208,"./checkoutCoupon":209,"./checkoutField":210,"./checkoutPublicOffer":211,"./childrenProducts":212,"./comment":213,"./deliveryType":214,"./formAuthenticity":215,"./good":216,"./image":217,"./locale":219,"./menuItem":220,"./money":221,"./order":222,"./orderItem":223,"./packagesApi":224,"./pagination":225,"./paymentType":226,"./product":227,"./productList":228,"./slide":229,"./vendor":230,"./vendorContact":231,"./wishlistItem":232}],219:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./cart":208,"./cartApi":209,"./catalogFilterOption":210,"./checkoutCoupon":211,"./checkoutField":212,"./checkoutPublicOffer":213,"./childrenProducts":214,"./comment":215,"./deliveryType":216,"./formAuthenticity":217,"./good":218,"./image":219,"./locale":221,"./menuItem":222,"./money":223,"./order":224,"./orderItem":225,"./packagesApi":226,"./pagination":227,"./paymentType":228,"./product":229,"./productList":230,"./slide":231,"./vendor":232,"./vendorContact":233,"./wishlistItem":234}],221:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./cart":214,"./cartApi":215,"./catalogFilterOption":216,"./checkoutCoupon":217,"./checkoutField":218,"./checkoutPublicOffer":219,"./childrenProducts":220,"./comment":221,"./deliveryType":222,"./formAuthenticity":223,"./good":224,"./image":225,"./locale":227,"./menuItem":228,"./money":229,"./order":230,"./orderItem":231,"./packagesApi":232,"./pagination":233,"./paymentType":234,"./product":235,"./productList":236,"./slide":237,"./vendor":238,"./vendorContact":239,"./wishlistItem":240}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23946,19 +21421,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],205:[function(require,module,exports){
-=======
-},{"react":"react"}],207:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],220:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],222:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23984,19 +21447,7 @@ function lazyMenuItem() {
 exports.default = menuItem;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],206:[function(require,module,exports){
-=======
-},{"react":"react"}],208:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],221:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],223:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24011,18 +21462,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],207:[function(require,module,exports){
-=======
-},{"react":"react"}],209:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],222:[function(require,module,exports){
-=======
-},{"react":"react"}],224:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],230:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24096,7 +21536,7 @@ exports.default = shape({
 });
 module.exports = exports['default'];
 
-},{"./comment":215,"./good":218,"./money":223,"./orderItem":225,"react":"react"}],225:[function(require,module,exports){
+},{"./comment":221,"./good":224,"./money":229,"./orderItem":231,"react":"react"}],231:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24128,12 +21568,7 @@ exports.default = shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-},{"./good":216,"./money":221,"react":"react"}],224:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./good":218,"./money":223,"react":"react"}],226:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./good":224,"./money":229,"react":"react"}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24169,19 +21604,7 @@ exports.default = _react.PropTypes.arrayOf(_react.PropTypes.shape({
 }));
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./image":202,"./money":206,"react":"react"}],208:[function(require,module,exports){
-=======
-},{"./image":204,"./money":208,"react":"react"}],210:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./image":217,"./money":221,"react":"react"}],225:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./image":219,"./money":223,"react":"react"}],227:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./image":225,"./money":229,"react":"react"}],233:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24197,19 +21620,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],209:[function(require,module,exports){
-=======
-},{"react":"react"}],211:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],226:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],228:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24225,19 +21636,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],210:[function(require,module,exports){
-=======
-},{"react":"react"}],212:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],227:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],229:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24279,19 +21678,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./good":201,"./image":202,"./money":206,"react":"react"}],211:[function(require,module,exports){
-=======
-},{"./good":203,"./image":204,"./money":208,"react":"react"}],213:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./good":216,"./image":217,"./money":221,"react":"react"}],228:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./good":218,"./image":219,"./money":223,"react":"react"}],230:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./good":224,"./image":225,"./money":229,"react":"react"}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24320,19 +21707,7 @@ exports.default = shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./pagination":208,"./product":210,"react":"react"}],212:[function(require,module,exports){
-=======
-},{"./pagination":210,"./product":212,"react":"react"}],214:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./pagination":225,"./product":227,"react":"react"}],229:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./pagination":227,"./product":229,"react":"react"}],231:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./pagination":233,"./product":235,"react":"react"}],237:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24354,19 +21729,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./image":202,"react":"react"}],213:[function(require,module,exports){
-=======
-},{"./image":204,"react":"react"}],215:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./image":217,"react":"react"}],230:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./image":219,"react":"react"}],232:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./image":225,"react":"react"}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24398,19 +21761,7 @@ exports.default = shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./slide":212,"./vendorContact":214,"react":"react"}],214:[function(require,module,exports){
-=======
-},{"./slide":214,"./vendorContact":216,"react":"react"}],216:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./slide":229,"./vendorContact":231,"react":"react"}],231:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./slide":231,"./vendorContact":233,"react":"react"}],233:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./slide":237,"./vendorContact":239,"react":"react"}],239:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24426,19 +21777,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],215:[function(require,module,exports){
-=======
-},{"react":"react"}],217:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],232:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],234:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24470,19 +21809,7 @@ exports.default = _react.PropTypes.shape({
 });
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./good":201,"./product":210,"react":"react"}],216:[function(require,module,exports){
-=======
-},{"./good":203,"./product":212,"react":"react"}],218:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./good":216,"./product":227,"react":"react"}],233:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./good":218,"./product":229,"react":"react"}],235:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./good":224,"./product":235,"react":"react"}],241:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -24539,19 +21866,7 @@ exports.default = {
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],217:[function(require,module,exports){
-=======
-},{}],219:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],234:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],236:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],242:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -24656,19 +21971,7 @@ exports.default = NoticeService;
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../components/Notice":76,"babel-runtime/helpers/extends":241,"babel-runtime/helpers/typeof":246,"lodash":"lodash","react":"react","react-dom":"react-dom"}],218:[function(require,module,exports){
-=======
-},{"../components/Notice":76,"babel-runtime/helpers/extends":243,"babel-runtime/helpers/typeof":248,"lodash":"lodash","react":"react","react-dom":"react-dom"}],220:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../components/Notice":76,"babel-runtime/helpers/extends":258,"babel-runtime/helpers/typeof":263,"lodash":"lodash","react":"react","react-dom":"react-dom"}],235:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../components/Notice":76,"babel-runtime/helpers/extends":260,"babel-runtime/helpers/typeof":265,"lodash":"lodash","react":"react","react-dom":"react-dom"}],237:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../components/Notice":80,"babel-runtime/helpers/extends":266,"babel-runtime/helpers/typeof":271,"lodash":"lodash","react":"react","react-dom":"react-dom"}],243:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -24720,19 +22023,7 @@ exports.default = ThumborService;
 module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/helpers/toConsumableArray":245}],219:[function(require,module,exports){
-=======
-},{"babel-runtime/helpers/toConsumableArray":247}],221:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/helpers/toConsumableArray":262}],236:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/helpers/toConsumableArray":264}],238:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/helpers/toConsumableArray":270}],244:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24795,19 +22086,7 @@ var BaseStore = function (_EventEmitter) {
 exports.default = BaseStore;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"babel-runtime/core-js/object/get-prototype-of":232,"babel-runtime/helpers/classCallCheck":238,"babel-runtime/helpers/createClass":239,"babel-runtime/helpers/inherits":242,"babel-runtime/helpers/possibleConstructorReturn":243,"events":351}],220:[function(require,module,exports){
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":234,"babel-runtime/helpers/classCallCheck":240,"babel-runtime/helpers/createClass":241,"babel-runtime/helpers/inherits":244,"babel-runtime/helpers/possibleConstructorReturn":245,"events":353}],222:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":249,"babel-runtime/helpers/classCallCheck":255,"babel-runtime/helpers/createClass":256,"babel-runtime/helpers/inherits":259,"babel-runtime/helpers/possibleConstructorReturn":260,"events":368}],237:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"babel-runtime/core-js/object/get-prototype-of":251,"babel-runtime/helpers/classCallCheck":257,"babel-runtime/helpers/createClass":258,"babel-runtime/helpers/inherits":261,"babel-runtime/helpers/possibleConstructorReturn":262,"events":370}],239:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"babel-runtime/core-js/object/get-prototype-of":257,"babel-runtime/helpers/classCallCheck":263,"babel-runtime/helpers/createClass":264,"babel-runtime/helpers/inherits":267,"babel-runtime/helpers/possibleConstructorReturn":268,"events":376}],245:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24853,19 +22132,7 @@ BasketDispatcher.register(function (payload) {
 exports.default = BasketDispatcher;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../dispatchers/BaseDispatcher":177,"./BasketStore":221}],221:[function(require,module,exports){
-=======
-},{"../dispatchers/BaseDispatcher":179,"./BasketStore":223}],223:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../dispatchers/BaseDispatcher":191,"./BasketStore":238}],238:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../dispatchers/BaseDispatcher":193,"./BasketStore":240}],240:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../dispatchers/BaseDispatcher":199,"./BasketStore":246}],246:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24912,19 +22179,7 @@ var BasketStore = _lodash2.default.extend(new _BaseStore2.default(), {
 exports.default = BasketStore;
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./BaseStore":219,"lodash":"lodash"}],222:[function(require,module,exports){
-=======
-},{"./BaseStore":221,"lodash":"lodash"}],224:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./BaseStore":236,"lodash":"lodash"}],239:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./BaseStore":238,"lodash":"lodash"}],241:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./BaseStore":244,"lodash":"lodash"}],247:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24964,19 +22219,7 @@ function createReducer(initialState, handlers) {
 }
 module.exports = exports['default'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"immutable":"immutable"}],223:[function(require,module,exports){
-=======
-},{"immutable":"immutable"}],225:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"immutable":"immutable"}],240:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"immutable":"immutable"}],242:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"immutable":"immutable"}],248:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -25027,19 +22270,7 @@ function packages() {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],224:[function(require,module,exports){
-=======
-},{}],226:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],241:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],243:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],249:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25055,79 +22286,33 @@ function vendorOrder() {
   return '/orders';
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],225:[function(require,module,exports){
-=======
-},{}],227:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
+},{}],250:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/array/from"), __esModule: true };
-},{"core-js/library/fn/array/from":249}],228:[function(require,module,exports){
+},{"core-js/library/fn/array/from":272}],251:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/get-iterator"), __esModule: true };
-},{"core-js/library/fn/get-iterator":250}],229:[function(require,module,exports){
+},{"core-js/library/fn/get-iterator":273}],252:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/is-iterable"), __esModule: true };
-},{"core-js/library/fn/is-iterable":251}],230:[function(require,module,exports){
+},{"core-js/library/fn/is-iterable":274}],253:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
-},{"core-js/library/fn/json/stringify":252}],231:[function(require,module,exports){
+},{"core-js/library/fn/json/stringify":275}],254:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":253}],232:[function(require,module,exports){
+},{"core-js/library/fn/object/assign":276}],255:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":254}],233:[function(require,module,exports){
+},{"core-js/library/fn/object/create":277}],256:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
-},{"core-js/library/fn/object/define-property":255}],234:[function(require,module,exports){
+},{"core-js/library/fn/object/define-property":278}],257:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/get-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/get-prototype-of":256}],235:[function(require,module,exports){
+},{"core-js/library/fn/object/get-prototype-of":279}],258:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":257}],236:[function(require,module,exports){
+},{"core-js/library/fn/object/keys":280}],259:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":258}],237:[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":281}],260:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/promise"), __esModule: true };
-},{"core-js/library/fn/promise":259}],238:[function(require,module,exports){
+},{"core-js/library/fn/promise":282}],261:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":260}],239:[function(require,module,exports){
+},{"core-js/library/fn/symbol":283}],262:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol/iterator"), __esModule: true };
-<<<<<<< HEAD
-},{"core-js/library/fn/symbol/iterator":259}],238:[function(require,module,exports){
-=======
-},{"core-js/library/fn/symbol/iterator":261}],240:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],242:[function(require,module,exports){
-=======
-},{}],244:[function(require,module,exports){
->>>>>>> OrderShow component
-module.exports = { "default": require("core-js/library/fn/array/from"), __esModule: true };
-},{"core-js/library/fn/array/from":266}],245:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/get-iterator"), __esModule: true };
-},{"core-js/library/fn/get-iterator":267}],246:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/is-iterable"), __esModule: true };
-},{"core-js/library/fn/is-iterable":268}],247:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
-},{"core-js/library/fn/json/stringify":269}],248:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":270}],249:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":271}],250:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
-},{"core-js/library/fn/object/define-property":272}],251:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/get-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/get-prototype-of":273}],252:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":274}],253:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":275}],254:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/promise"), __esModule: true };
-},{"core-js/library/fn/promise":276}],255:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":277}],256:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/symbol/iterator"), __esModule: true };
-<<<<<<< HEAD
-},{"core-js/library/fn/symbol/iterator":276}],255:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"core-js/library/fn/symbol/iterator":278}],257:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"core-js/library/fn/symbol/iterator":284}],263:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25137,19 +22322,7 @@ exports.default = function (instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],239:[function(require,module,exports){
-=======
-},{}],241:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],256:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],258:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],264:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25177,19 +22350,7 @@ exports.default = function () {
     return Constructor;
   };
 }();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/object/define-property":231}],240:[function(require,module,exports){
-=======
-},{"../core-js/object/define-property":233}],242:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/object/define-property":248}],257:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/object/define-property":250}],259:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/object/define-property":256}],265:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25214,19 +22375,7 @@ exports.default = function (obj, key, value) {
 
   return obj;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/object/define-property":231}],241:[function(require,module,exports){
-=======
-},{"../core-js/object/define-property":233}],243:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/object/define-property":248}],258:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/object/define-property":250}],260:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/object/define-property":256}],266:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25250,19 +22399,7 @@ exports.default = _assign2.default || function (target) {
 
   return target;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/object/assign":229}],242:[function(require,module,exports){
-=======
-},{"../core-js/object/assign":231}],244:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/object/assign":246}],259:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/object/assign":248}],261:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/object/assign":254}],267:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25296,19 +22433,7 @@ exports.default = function (subClass, superClass) {
   });
   if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/object/create":230,"../core-js/object/set-prototype-of":234,"../helpers/typeof":246}],243:[function(require,module,exports){
-=======
-},{"../core-js/object/create":232,"../core-js/object/set-prototype-of":236,"../helpers/typeof":248}],245:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/object/create":247,"../core-js/object/set-prototype-of":251,"../helpers/typeof":263}],260:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/object/create":249,"../core-js/object/set-prototype-of":253,"../helpers/typeof":265}],262:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/object/create":255,"../core-js/object/set-prototype-of":259,"../helpers/typeof":271}],268:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25326,19 +22451,7 @@ exports.default = function (self, call) {
 
   return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../helpers/typeof":246}],244:[function(require,module,exports){
-=======
-},{"../helpers/typeof":248}],246:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../helpers/typeof":263}],261:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../helpers/typeof":265}],263:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../helpers/typeof":271}],269:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25390,19 +22503,7 @@ exports.default = function () {
     }
   };
 }();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/get-iterator":226,"../core-js/is-iterable":227}],245:[function(require,module,exports){
-=======
-},{"../core-js/get-iterator":228,"../core-js/is-iterable":229}],247:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/get-iterator":243,"../core-js/is-iterable":244}],262:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/get-iterator":245,"../core-js/is-iterable":246}],264:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/get-iterator":251,"../core-js/is-iterable":252}],270:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25424,19 +22525,7 @@ exports.default = function (arr) {
     return (0, _from2.default)(arr);
   }
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/array/from":225}],246:[function(require,module,exports){
-=======
-},{"../core-js/array/from":227}],248:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/array/from":242}],263:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../core-js/array/from":244}],265:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../core-js/array/from":250}],271:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -25458,269 +22547,84 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 } : function (obj) {
   return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../core-js/symbol":236,"../core-js/symbol/iterator":237}],247:[function(require,module,exports){
+},{"../core-js/symbol":261,"../core-js/symbol/iterator":262}],272:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/es6.array.from');
 module.exports = require('../../modules/_core').Array.from;
-},{"../../modules/_core":267,"../../modules/es6.array.from":335,"../../modules/es6.string.iterator":345}],248:[function(require,module,exports){
+},{"../../modules/_core":292,"../../modules/es6.array.from":360,"../../modules/es6.string.iterator":370}],273:[function(require,module,exports){
 require('../modules/web.dom.iterable');
 require('../modules/es6.string.iterator');
 module.exports = require('../modules/core.get-iterator');
-},{"../modules/core.get-iterator":333,"../modules/es6.string.iterator":345,"../modules/web.dom.iterable":349}],249:[function(require,module,exports){
+},{"../modules/core.get-iterator":358,"../modules/es6.string.iterator":370,"../modules/web.dom.iterable":374}],274:[function(require,module,exports){
 require('../modules/web.dom.iterable');
 require('../modules/es6.string.iterator');
 module.exports = require('../modules/core.is-iterable');
-},{"../modules/core.is-iterable":334,"../modules/es6.string.iterator":345,"../modules/web.dom.iterable":349}],250:[function(require,module,exports){
-=======
-},{"../core-js/symbol":238,"../core-js/symbol/iterator":239}],249:[function(require,module,exports){
-require('../../modules/es6.string.iterator');
-require('../../modules/es6.array.from');
-module.exports = require('../../modules/_core').Array.from;
-},{"../../modules/_core":269,"../../modules/es6.array.from":337,"../../modules/es6.string.iterator":347}],250:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.get-iterator');
-},{"../modules/core.get-iterator":335,"../modules/es6.string.iterator":347,"../modules/web.dom.iterable":351}],251:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.is-iterable');
-},{"../modules/core.is-iterable":336,"../modules/es6.string.iterator":347,"../modules/web.dom.iterable":351}],252:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../core-js/symbol":253,"../core-js/symbol/iterator":254}],264:[function(require,module,exports){
-=======
-},{"../core-js/symbol":255,"../core-js/symbol/iterator":256}],266:[function(require,module,exports){
->>>>>>> OrderShow component
-require('../../modules/es6.string.iterator');
-require('../../modules/es6.array.from');
-module.exports = require('../../modules/_core').Array.from;
-},{"../../modules/_core":286,"../../modules/es6.array.from":354,"../../modules/es6.string.iterator":364}],267:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.get-iterator');
-},{"../modules/core.get-iterator":352,"../modules/es6.string.iterator":364,"../modules/web.dom.iterable":368}],268:[function(require,module,exports){
-require('../modules/web.dom.iterable');
-require('../modules/es6.string.iterator');
-module.exports = require('../modules/core.is-iterable');
-<<<<<<< HEAD
-},{"../modules/core.is-iterable":351,"../modules/es6.string.iterator":362,"../modules/web.dom.iterable":366}],267:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../modules/core.is-iterable":353,"../modules/es6.string.iterator":364,"../modules/web.dom.iterable":368}],269:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../modules/core.is-iterable":359,"../modules/es6.string.iterator":370,"../modules/web.dom.iterable":374}],275:[function(require,module,exports){
 var core  = require('../../modules/_core')
   , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
 module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
   return $JSON.stringify.apply($JSON, arguments);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../modules/_core":267}],251:[function(require,module,exports){
+},{"../../modules/_core":292}],276:[function(require,module,exports){
 require('../../modules/es6.object.assign');
 module.exports = require('../../modules/_core').Object.assign;
-},{"../../modules/_core":267,"../../modules/es6.object.assign":337}],252:[function(require,module,exports){
-=======
-},{"../../modules/_core":269}],253:[function(require,module,exports){
-require('../../modules/es6.object.assign');
-module.exports = require('../../modules/_core').Object.assign;
-},{"../../modules/_core":269,"../../modules/es6.object.assign":339}],254:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../modules/_core":284}],268:[function(require,module,exports){
-require('../../modules/es6.object.assign');
-module.exports = require('../../modules/_core').Object.assign;
-},{"../../modules/_core":284,"../../modules/es6.object.assign":354}],269:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../modules/_core":286}],270:[function(require,module,exports){
-require('../../modules/es6.object.assign');
-module.exports = require('../../modules/_core').Object.assign;
-},{"../../modules/_core":286,"../../modules/es6.object.assign":356}],271:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../modules/_core":292,"../../modules/es6.object.assign":362}],277:[function(require,module,exports){
 require('../../modules/es6.object.create');
 var $Object = require('../../modules/_core').Object;
 module.exports = function create(P, D){
   return $Object.create(P, D);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../modules/_core":267,"../../modules/es6.object.create":338}],253:[function(require,module,exports){
-=======
-},{"../../modules/_core":269,"../../modules/es6.object.create":340}],255:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../modules/_core":284,"../../modules/es6.object.create":355}],270:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../modules/_core":286,"../../modules/es6.object.create":357}],272:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../modules/_core":292,"../../modules/es6.object.create":363}],278:[function(require,module,exports){
 require('../../modules/es6.object.define-property');
 var $Object = require('../../modules/_core').Object;
 module.exports = function defineProperty(it, key, desc){
   return $Object.defineProperty(it, key, desc);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../modules/_core":267,"../../modules/es6.object.define-property":339}],254:[function(require,module,exports){
+},{"../../modules/_core":292,"../../modules/es6.object.define-property":364}],279:[function(require,module,exports){
 require('../../modules/es6.object.get-prototype-of');
 module.exports = require('../../modules/_core').Object.getPrototypeOf;
-},{"../../modules/_core":267,"../../modules/es6.object.get-prototype-of":340}],255:[function(require,module,exports){
+},{"../../modules/_core":292,"../../modules/es6.object.get-prototype-of":365}],280:[function(require,module,exports){
 require('../../modules/es6.object.keys');
 module.exports = require('../../modules/_core').Object.keys;
-},{"../../modules/_core":267,"../../modules/es6.object.keys":341}],256:[function(require,module,exports){
+},{"../../modules/_core":292,"../../modules/es6.object.keys":366}],281:[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/_core').Object.setPrototypeOf;
-},{"../../modules/_core":267,"../../modules/es6.object.set-prototype-of":342}],257:[function(require,module,exports){
-=======
-},{"../../modules/_core":269,"../../modules/es6.object.define-property":341}],256:[function(require,module,exports){
-require('../../modules/es6.object.get-prototype-of');
-module.exports = require('../../modules/_core').Object.getPrototypeOf;
-},{"../../modules/_core":269,"../../modules/es6.object.get-prototype-of":342}],257:[function(require,module,exports){
-require('../../modules/es6.object.keys');
-module.exports = require('../../modules/_core').Object.keys;
-},{"../../modules/_core":269,"../../modules/es6.object.keys":343}],258:[function(require,module,exports){
-require('../../modules/es6.object.set-prototype-of');
-module.exports = require('../../modules/_core').Object.setPrototypeOf;
-},{"../../modules/_core":269,"../../modules/es6.object.set-prototype-of":344}],259:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../modules/_core":284,"../../modules/es6.object.define-property":356}],271:[function(require,module,exports){
-=======
-},{"../../modules/_core":286,"../../modules/es6.object.define-property":358}],273:[function(require,module,exports){
->>>>>>> OrderShow component
-require('../../modules/es6.object.get-prototype-of');
-module.exports = require('../../modules/_core').Object.getPrototypeOf;
-},{"../../modules/_core":286,"../../modules/es6.object.get-prototype-of":359}],274:[function(require,module,exports){
-require('../../modules/es6.object.keys');
-module.exports = require('../../modules/_core').Object.keys;
-},{"../../modules/_core":286,"../../modules/es6.object.keys":360}],275:[function(require,module,exports){
-require('../../modules/es6.object.set-prototype-of');
-module.exports = require('../../modules/_core').Object.setPrototypeOf;
-<<<<<<< HEAD
-},{"../../modules/_core":284,"../../modules/es6.object.set-prototype-of":359}],274:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../modules/_core":286,"../../modules/es6.object.set-prototype-of":361}],276:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../modules/_core":292,"../../modules/es6.object.set-prototype-of":367}],282:[function(require,module,exports){
 require('../modules/es6.object.to-string');
 require('../modules/es6.string.iterator');
 require('../modules/web.dom.iterable');
 require('../modules/es6.promise');
 module.exports = require('../modules/_core').Promise;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../modules/_core":267,"../modules/es6.object.to-string":343,"../modules/es6.promise":344,"../modules/es6.string.iterator":345,"../modules/web.dom.iterable":349}],258:[function(require,module,exports){
-=======
-},{"../modules/_core":269,"../modules/es6.object.to-string":345,"../modules/es6.promise":346,"../modules/es6.string.iterator":347,"../modules/web.dom.iterable":351}],260:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../modules/_core":284,"../modules/es6.object.to-string":360,"../modules/es6.promise":361,"../modules/es6.string.iterator":362,"../modules/web.dom.iterable":366}],275:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../modules/_core":286,"../modules/es6.object.to-string":362,"../modules/es6.promise":363,"../modules/es6.string.iterator":364,"../modules/web.dom.iterable":368}],277:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../modules/_core":292,"../modules/es6.object.to-string":368,"../modules/es6.promise":369,"../modules/es6.string.iterator":370,"../modules/web.dom.iterable":374}],283:[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 require('../../modules/es7.symbol.async-iterator');
 require('../../modules/es7.symbol.observable');
 module.exports = require('../../modules/_core').Symbol;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../modules/_core":267,"../../modules/es6.object.to-string":343,"../../modules/es6.symbol":346,"../../modules/es7.symbol.async-iterator":347,"../../modules/es7.symbol.observable":348}],259:[function(require,module,exports){
+},{"../../modules/_core":292,"../../modules/es6.object.to-string":368,"../../modules/es6.symbol":371,"../../modules/es7.symbol.async-iterator":372,"../../modules/es7.symbol.observable":373}],284:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/web.dom.iterable');
 module.exports = require('../../modules/_wks-ext').f('iterator');
-},{"../../modules/_wks-ext":330,"../../modules/es6.string.iterator":345,"../../modules/web.dom.iterable":349}],260:[function(require,module,exports){
-=======
-},{"../../modules/_core":269,"../../modules/es6.object.to-string":345,"../../modules/es6.symbol":348,"../../modules/es7.symbol.async-iterator":349,"../../modules/es7.symbol.observable":350}],261:[function(require,module,exports){
-require('../../modules/es6.string.iterator');
-require('../../modules/web.dom.iterable');
-module.exports = require('../../modules/_wks-ext').f('iterator');
-},{"../../modules/_wks-ext":332,"../../modules/es6.string.iterator":347,"../../modules/web.dom.iterable":351}],262:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../modules/_core":284,"../../modules/es6.object.to-string":360,"../../modules/es6.symbol":363,"../../modules/es7.symbol.async-iterator":364,"../../modules/es7.symbol.observable":365}],276:[function(require,module,exports){
-require('../../modules/es6.string.iterator');
-require('../../modules/web.dom.iterable');
-module.exports = require('../../modules/_wks-ext').f('iterator');
-},{"../../modules/_wks-ext":347,"../../modules/es6.string.iterator":362,"../../modules/web.dom.iterable":366}],277:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../modules/_core":286,"../../modules/es6.object.to-string":362,"../../modules/es6.symbol":365,"../../modules/es7.symbol.async-iterator":366,"../../modules/es7.symbol.observable":367}],278:[function(require,module,exports){
-require('../../modules/es6.string.iterator');
-require('../../modules/web.dom.iterable');
-module.exports = require('../../modules/_wks-ext').f('iterator');
-},{"../../modules/_wks-ext":349,"../../modules/es6.string.iterator":364,"../../modules/web.dom.iterable":368}],279:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../modules/_wks-ext":355,"../../modules/es6.string.iterator":370,"../../modules/web.dom.iterable":374}],285:[function(require,module,exports){
 module.exports = function(it){
   if(typeof it != 'function')throw TypeError(it + ' is not a function!');
   return it;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],261:[function(require,module,exports){
+},{}],286:[function(require,module,exports){
 module.exports = function(){ /* empty */ };
-},{}],262:[function(require,module,exports){
-=======
-},{}],263:[function(require,module,exports){
-module.exports = function(){ /* empty */ };
-},{}],264:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],278:[function(require,module,exports){
-module.exports = function(){ /* empty */ };
-},{}],279:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],280:[function(require,module,exports){
-module.exports = function(){ /* empty */ };
-},{}],281:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],287:[function(require,module,exports){
 module.exports = function(it, Constructor, name, forbiddenField){
   if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
     throw TypeError(name + ': incorrect invocation!');
   } return it;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],263:[function(require,module,exports){
-=======
-},{}],265:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],280:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],282:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],288:[function(require,module,exports){
 var isObject = require('./_is-object');
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_is-object":287}],264:[function(require,module,exports){
-=======
-},{"./_is-object":289}],266:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_is-object":304}],281:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_is-object":306}],283:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_is-object":312}],289:[function(require,module,exports){
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = require('./_to-iobject')
@@ -25742,19 +22646,7 @@ module.exports = function(IS_INCLUDES){
     } return !IS_INCLUDES && -1;
   };
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_to-index":322,"./_to-iobject":324,"./_to-length":325}],265:[function(require,module,exports){
-=======
-},{"./_to-index":324,"./_to-iobject":326,"./_to-length":327}],267:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_to-index":339,"./_to-iobject":341,"./_to-length":342}],282:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_to-index":341,"./_to-iobject":343,"./_to-length":344}],284:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_to-index":347,"./_to-iobject":349,"./_to-length":350}],290:[function(require,module,exports){
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = require('./_cof')
   , TAG = require('./_wks')('toStringTag')
@@ -25778,49 +22670,16 @@ module.exports = function(it){
     // ES3 arguments fallback
     : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cof":266,"./_wks":331}],266:[function(require,module,exports){
-=======
-},{"./_cof":268,"./_wks":333}],268:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cof":283,"./_wks":348}],283:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cof":285,"./_wks":350}],285:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cof":291,"./_wks":356}],291:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function(it){
   return toString.call(it).slice(8, -1);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],267:[function(require,module,exports){
+},{}],292:[function(require,module,exports){
 var core = module.exports = {version: '2.4.0'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],268:[function(require,module,exports){
-=======
-},{}],269:[function(require,module,exports){
-var core = module.exports = {version: '2.4.0'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],270:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],284:[function(require,module,exports){
-var core = module.exports = {version: '2.4.0'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],285:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],286:[function(require,module,exports){
-var core = module.exports = {version: '2.4.0'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],287:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],293:[function(require,module,exports){
 'use strict';
 var $defineProperty = require('./_object-dp')
   , createDesc      = require('./_property-desc');
@@ -25829,19 +22688,7 @@ module.exports = function(object, index, value){
   if(index in object)$defineProperty.f(object, index, createDesc(0, value));
   else object[index] = value;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-dp":300,"./_property-desc":311}],269:[function(require,module,exports){
-=======
-},{"./_object-dp":302,"./_property-desc":313}],271:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-dp":317,"./_property-desc":328}],286:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_object-dp":319,"./_property-desc":330}],288:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_object-dp":325,"./_property-desc":336}],294:[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./_a-function');
 module.exports = function(fn, that, length){
@@ -25862,54 +22709,18 @@ module.exports = function(fn, that, length){
     return fn.apply(that, arguments);
   };
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_a-function":260}],270:[function(require,module,exports){
-=======
-},{"./_a-function":262}],272:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_a-function":277}],287:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_a-function":279}],289:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_a-function":285}],295:[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function(it){
   if(it == undefined)throw TypeError("Can't call method on  " + it);
   return it;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],271:[function(require,module,exports){
-=======
-},{}],273:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],288:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],290:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],296:[function(require,module,exports){
 // Thank's IE8 for his funny defineProperty
 module.exports = !require('./_fails')(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_fails":276}],272:[function(require,module,exports){
-=======
-},{"./_fails":278}],274:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_fails":293}],289:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_fails":295}],291:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_fails":301}],297:[function(require,module,exports){
 var isObject = require('./_is-object')
   , document = require('./_global').document
   // in old IE typeof document.createElement is 'object'
@@ -25917,36 +22728,12 @@ var isObject = require('./_is-object')
 module.exports = function(it){
   return is ? document.createElement(it) : {};
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_global":278,"./_is-object":287}],273:[function(require,module,exports){
-=======
-},{"./_global":280,"./_is-object":289}],275:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_global":295,"./_is-object":304}],290:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_global":297,"./_is-object":306}],292:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_global":303,"./_is-object":312}],298:[function(require,module,exports){
 // IE 8- don't enum bug keys
 module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],274:[function(require,module,exports){
-=======
-},{}],276:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],291:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],293:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],299:[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var getKeys = require('./_object-keys')
   , gOPS    = require('./_object-gops')
@@ -25962,19 +22749,7 @@ module.exports = function(it){
     while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
   } return result;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-gops":305,"./_object-keys":308,"./_object-pie":309}],275:[function(require,module,exports){
-=======
-},{"./_object-gops":307,"./_object-keys":310,"./_object-pie":311}],277:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-gops":322,"./_object-keys":325,"./_object-pie":326}],292:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_object-gops":324,"./_object-keys":327,"./_object-pie":328}],294:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_object-gops":330,"./_object-keys":333,"./_object-pie":334}],300:[function(require,module,exports){
 var global    = require('./_global')
   , core      = require('./_core')
   , ctx       = require('./_ctx')
@@ -26036,19 +22811,7 @@ $export.W = 32;  // wrap
 $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library` 
 module.exports = $export;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_core":267,"./_ctx":269,"./_global":278,"./_hide":280}],276:[function(require,module,exports){
-=======
-},{"./_core":269,"./_ctx":271,"./_global":280,"./_hide":282}],278:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_core":284,"./_ctx":286,"./_global":295,"./_hide":297}],293:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_core":286,"./_ctx":288,"./_global":297,"./_hide":299}],295:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_core":292,"./_ctx":294,"./_global":303,"./_hide":305}],301:[function(require,module,exports){
 module.exports = function(exec){
   try {
     return !!exec();
@@ -26056,19 +22819,7 @@ module.exports = function(exec){
     return true;
   }
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],277:[function(require,module,exports){
-=======
-},{}],279:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],294:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],296:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],302:[function(require,module,exports){
 var ctx         = require('./_ctx')
   , call        = require('./_iter-call')
   , isArrayIter = require('./_is-array-iter')
@@ -26094,53 +22845,17 @@ var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
 };
 exports.BREAK  = BREAK;
 exports.RETURN = RETURN;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_ctx":269,"./_is-array-iter":285,"./_iter-call":288,"./_to-length":325,"./core.get-iterator-method":332}],278:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_ctx":271,"./_is-array-iter":287,"./_iter-call":290,"./_to-length":327,"./core.get-iterator-method":334}],280:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_ctx":286,"./_is-array-iter":302,"./_iter-call":305,"./_to-length":342,"./core.get-iterator-method":349}],295:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_ctx":288,"./_is-array-iter":304,"./_iter-call":307,"./_to-length":344,"./core.get-iterator-method":351}],297:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_ctx":294,"./_is-array-iter":310,"./_iter-call":313,"./_to-length":350,"./core.get-iterator-method":357}],303:[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
 if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],279:[function(require,module,exports){
-=======
-},{}],281:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],296:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],298:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],304:[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 module.exports = function(it, key){
   return hasOwnProperty.call(it, key);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],280:[function(require,module,exports){
-=======
-},{}],282:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],297:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],299:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],305:[function(require,module,exports){
 var dP         = require('./_object-dp')
   , createDesc = require('./_property-desc');
 module.exports = require('./_descriptors') ? function(object, key, value){
@@ -26149,41 +22864,13 @@ module.exports = require('./_descriptors') ? function(object, key, value){
   object[key] = value;
   return object;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_descriptors":271,"./_object-dp":300,"./_property-desc":311}],281:[function(require,module,exports){
+},{"./_descriptors":296,"./_object-dp":325,"./_property-desc":336}],306:[function(require,module,exports){
 module.exports = require('./_global').document && document.documentElement;
-},{"./_global":278}],282:[function(require,module,exports){
+},{"./_global":303}],307:[function(require,module,exports){
 module.exports = !require('./_descriptors') && !require('./_fails')(function(){
   return Object.defineProperty(require('./_dom-create')('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
-},{"./_descriptors":271,"./_dom-create":272,"./_fails":276}],283:[function(require,module,exports){
-=======
-},{"./_descriptors":273,"./_object-dp":302,"./_property-desc":313}],283:[function(require,module,exports){
-module.exports = require('./_global').document && document.documentElement;
-},{"./_global":280}],284:[function(require,module,exports){
-module.exports = !require('./_descriptors') && !require('./_fails')(function(){
-  return Object.defineProperty(require('./_dom-create')('div'), 'a', {get: function(){ return 7; }}).a != 7;
-});
-},{"./_descriptors":273,"./_dom-create":274,"./_fails":278}],285:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_descriptors":288,"./_object-dp":317,"./_property-desc":328}],298:[function(require,module,exports){
-=======
-},{"./_descriptors":290,"./_object-dp":319,"./_property-desc":330}],300:[function(require,module,exports){
->>>>>>> OrderShow component
-module.exports = require('./_global').document && document.documentElement;
-},{"./_global":297}],301:[function(require,module,exports){
-module.exports = !require('./_descriptors') && !require('./_fails')(function(){
-  return Object.defineProperty(require('./_dom-create')('div'), 'a', {get: function(){ return 7; }}).a != 7;
-});
-<<<<<<< HEAD
-},{"./_descriptors":288,"./_dom-create":289,"./_fails":293}],300:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_descriptors":290,"./_dom-create":291,"./_fails":295}],302:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_descriptors":296,"./_dom-create":297,"./_fails":301}],308:[function(require,module,exports){
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
 module.exports = function(fn, args, that){
   var un = that === undefined;
@@ -26200,37 +22887,13 @@ module.exports = function(fn, args, that){
                       : fn.call(that, args[0], args[1], args[2], args[3]);
   } return              fn.apply(that, args);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],284:[function(require,module,exports){
-=======
-},{}],286:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],301:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],303:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],309:[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./_cof');
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cof":266}],285:[function(require,module,exports){
-=======
-},{"./_cof":268}],287:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cof":283}],302:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cof":285}],304:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cof":291}],310:[function(require,module,exports){
 // check on default Array iterator
 var Iterators  = require('./_iterators')
   , ITERATOR   = require('./_wks')('iterator')
@@ -26239,53 +22902,17 @@ var Iterators  = require('./_iterators')
 module.exports = function(it){
   return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_iterators":293,"./_wks":331}],286:[function(require,module,exports){
-=======
-},{"./_iterators":295,"./_wks":333}],288:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_iterators":310,"./_wks":348}],303:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_iterators":312,"./_wks":350}],305:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_iterators":318,"./_wks":356}],311:[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./_cof');
 module.exports = Array.isArray || function isArray(arg){
   return cof(arg) == 'Array';
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cof":266}],287:[function(require,module,exports){
+},{"./_cof":291}],312:[function(require,module,exports){
 module.exports = function(it){
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
-},{}],288:[function(require,module,exports){
-=======
-},{"./_cof":268}],289:[function(require,module,exports){
-module.exports = function(it){
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-},{}],290:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cof":283}],304:[function(require,module,exports){
-module.exports = function(it){
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-},{}],305:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cof":285}],306:[function(require,module,exports){
-module.exports = function(it){
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-},{}],307:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],313:[function(require,module,exports){
 // call something on iterator step with safe closing on error
 var anObject = require('./_an-object');
 module.exports = function(iterator, fn, value, entries){
@@ -26298,19 +22925,7 @@ module.exports = function(iterator, fn, value, entries){
     throw e;
   }
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263}],289:[function(require,module,exports){
-=======
-},{"./_an-object":265}],291:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280}],306:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282}],308:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288}],314:[function(require,module,exports){
 'use strict';
 var create         = require('./_object-create')
   , descriptor     = require('./_property-desc')
@@ -26324,19 +22939,7 @@ module.exports = function(Constructor, NAME, next){
   Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
   setToStringTag(Constructor, NAME + ' Iterator');
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_hide":280,"./_object-create":299,"./_property-desc":311,"./_set-to-string-tag":316,"./_wks":331}],290:[function(require,module,exports){
-=======
-},{"./_hide":282,"./_object-create":301,"./_property-desc":313,"./_set-to-string-tag":318,"./_wks":333}],292:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_hide":297,"./_object-create":316,"./_property-desc":328,"./_set-to-string-tag":333,"./_wks":348}],307:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_hide":299,"./_object-create":318,"./_property-desc":330,"./_set-to-string-tag":335,"./_wks":350}],309:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_hide":305,"./_object-create":324,"./_property-desc":336,"./_set-to-string-tag":341,"./_wks":356}],315:[function(require,module,exports){
 'use strict';
 var LIBRARY        = require('./_library')
   , $export        = require('./_export')
@@ -26407,19 +23010,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
   }
   return methods;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_export":275,"./_has":279,"./_hide":280,"./_iter-create":289,"./_iterators":293,"./_library":295,"./_object-gpo":306,"./_redefine":313,"./_set-to-string-tag":316,"./_wks":331}],291:[function(require,module,exports){
-=======
-},{"./_export":277,"./_has":281,"./_hide":282,"./_iter-create":291,"./_iterators":295,"./_library":297,"./_object-gpo":308,"./_redefine":315,"./_set-to-string-tag":318,"./_wks":333}],293:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_export":292,"./_has":296,"./_hide":297,"./_iter-create":306,"./_iterators":310,"./_library":312,"./_object-gpo":323,"./_redefine":330,"./_set-to-string-tag":333,"./_wks":348}],308:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_export":294,"./_has":298,"./_hide":299,"./_iter-create":308,"./_iterators":312,"./_library":314,"./_object-gpo":325,"./_redefine":332,"./_set-to-string-tag":335,"./_wks":350}],310:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_export":300,"./_has":304,"./_hide":305,"./_iter-create":314,"./_iterators":318,"./_library":320,"./_object-gpo":331,"./_redefine":338,"./_set-to-string-tag":341,"./_wks":356}],316:[function(require,module,exports){
 var ITERATOR     = require('./_wks')('iterator')
   , SAFE_CLOSING = false;
 
@@ -26441,41 +23032,13 @@ module.exports = function(exec, skipClosing){
   } catch(e){ /* empty */ }
   return safe;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_wks":331}],292:[function(require,module,exports){
+},{"./_wks":356}],317:[function(require,module,exports){
 module.exports = function(done, value){
   return {value: value, done: !!done};
 };
-},{}],293:[function(require,module,exports){
+},{}],318:[function(require,module,exports){
 module.exports = {};
-},{}],294:[function(require,module,exports){
-=======
-},{"./_wks":333}],294:[function(require,module,exports){
-module.exports = function(done, value){
-  return {value: value, done: !!done};
-};
-},{}],295:[function(require,module,exports){
-module.exports = {};
-},{}],296:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_wks":348}],309:[function(require,module,exports){
-=======
-},{"./_wks":350}],311:[function(require,module,exports){
->>>>>>> OrderShow component
-module.exports = function(done, value){
-  return {value: value, done: !!done};
-};
-},{}],312:[function(require,module,exports){
-module.exports = {};
-<<<<<<< HEAD
-},{}],311:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],313:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],319:[function(require,module,exports){
 var getKeys   = require('./_object-keys')
   , toIObject = require('./_to-iobject');
 module.exports = function(object, el){
@@ -26486,27 +23049,9 @@ module.exports = function(object, el){
     , key;
   while(length > index)if(O[key = keys[index++]] === el)return key;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-keys":308,"./_to-iobject":324}],295:[function(require,module,exports){
+},{"./_object-keys":333,"./_to-iobject":349}],320:[function(require,module,exports){
 module.exports = true;
-},{}],296:[function(require,module,exports){
-=======
-},{"./_object-keys":310,"./_to-iobject":326}],297:[function(require,module,exports){
-module.exports = true;
-},{}],298:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-keys":325,"./_to-iobject":341}],312:[function(require,module,exports){
-module.exports = true;
-},{}],313:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_object-keys":327,"./_to-iobject":343}],314:[function(require,module,exports){
-module.exports = true;
-},{}],315:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],321:[function(require,module,exports){
 var META     = require('./_uid')('meta')
   , isObject = require('./_is-object')
   , has      = require('./_has')
@@ -26560,19 +23105,7 @@ var meta = module.exports = {
   getWeak:  getWeak,
   onFreeze: onFreeze
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_fails":276,"./_has":279,"./_is-object":287,"./_object-dp":300,"./_uid":328}],297:[function(require,module,exports){
-=======
-},{"./_fails":278,"./_has":281,"./_is-object":289,"./_object-dp":302,"./_uid":330}],299:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_fails":293,"./_has":296,"./_is-object":304,"./_object-dp":317,"./_uid":345}],314:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_fails":295,"./_has":298,"./_is-object":306,"./_object-dp":319,"./_uid":347}],316:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_fails":301,"./_has":304,"./_is-object":312,"./_object-dp":325,"./_uid":353}],322:[function(require,module,exports){
 var global    = require('./_global')
   , macrotask = require('./_task').set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
@@ -26641,19 +23174,7 @@ module.exports = function(){
     } last = task;
   };
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cof":266,"./_global":278,"./_task":321}],298:[function(require,module,exports){
-=======
-},{"./_cof":268,"./_global":280,"./_task":323}],300:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cof":283,"./_global":295,"./_task":338}],315:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cof":285,"./_global":297,"./_task":340}],317:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cof":291,"./_global":303,"./_task":346}],323:[function(require,module,exports){
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = require('./_object-keys')
@@ -26687,19 +23208,7 @@ module.exports = !$assign || require('./_fails')(function(){
     while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
   } return T;
 } : $assign;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_fails":276,"./_iobject":284,"./_object-gops":305,"./_object-keys":308,"./_object-pie":309,"./_to-object":326}],299:[function(require,module,exports){
-=======
-},{"./_fails":278,"./_iobject":286,"./_object-gops":307,"./_object-keys":310,"./_object-pie":311,"./_to-object":328}],301:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_fails":293,"./_iobject":301,"./_object-gops":322,"./_object-keys":325,"./_object-pie":326,"./_to-object":343}],316:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_fails":295,"./_iobject":303,"./_object-gops":324,"./_object-keys":327,"./_object-pie":328,"./_to-object":345}],318:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_fails":301,"./_iobject":309,"./_object-gops":330,"./_object-keys":333,"./_object-pie":334,"./_to-object":351}],324:[function(require,module,exports){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = require('./_an-object')
   , dPs         = require('./_object-dps')
@@ -26742,19 +23251,7 @@ module.exports = Object.create || function create(O, Properties){
   return Properties === undefined ? result : dPs(result, Properties);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_dom-create":272,"./_enum-bug-keys":273,"./_html":281,"./_object-dps":301,"./_shared-key":317}],300:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_dom-create":274,"./_enum-bug-keys":275,"./_html":283,"./_object-dps":303,"./_shared-key":319}],302:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_dom-create":289,"./_enum-bug-keys":290,"./_html":298,"./_object-dps":318,"./_shared-key":334}],317:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_dom-create":291,"./_enum-bug-keys":292,"./_html":300,"./_object-dps":320,"./_shared-key":336}],319:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_dom-create":297,"./_enum-bug-keys":298,"./_html":306,"./_object-dps":326,"./_shared-key":342}],325:[function(require,module,exports){
 var anObject       = require('./_an-object')
   , IE8_DOM_DEFINE = require('./_ie8-dom-define')
   , toPrimitive    = require('./_to-primitive')
@@ -26771,19 +23268,7 @@ exports.f = require('./_descriptors') ? Object.defineProperty : function defineP
   if('value' in Attributes)O[P] = Attributes.value;
   return O;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_descriptors":271,"./_ie8-dom-define":282,"./_to-primitive":327}],301:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_descriptors":273,"./_ie8-dom-define":284,"./_to-primitive":329}],303:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_descriptors":288,"./_ie8-dom-define":299,"./_to-primitive":344}],318:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_descriptors":290,"./_ie8-dom-define":301,"./_to-primitive":346}],320:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_descriptors":296,"./_ie8-dom-define":307,"./_to-primitive":352}],326:[function(require,module,exports){
 var dP       = require('./_object-dp')
   , anObject = require('./_an-object')
   , getKeys  = require('./_object-keys');
@@ -26797,19 +23282,7 @@ module.exports = require('./_descriptors') ? Object.defineProperties : function 
   while(length > i)dP.f(O, P = keys[i++], Properties[P]);
   return O;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_descriptors":271,"./_object-dp":300,"./_object-keys":308}],302:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_descriptors":273,"./_object-dp":302,"./_object-keys":310}],304:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_descriptors":288,"./_object-dp":317,"./_object-keys":325}],319:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_descriptors":290,"./_object-dp":319,"./_object-keys":327}],321:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_descriptors":296,"./_object-dp":325,"./_object-keys":333}],327:[function(require,module,exports){
 var pIE            = require('./_object-pie')
   , createDesc     = require('./_property-desc')
   , toIObject      = require('./_to-iobject')
@@ -26826,19 +23299,7 @@ exports.f = require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor
   } catch(e){ /* empty */ }
   if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_descriptors":271,"./_has":279,"./_ie8-dom-define":282,"./_object-pie":309,"./_property-desc":311,"./_to-iobject":324,"./_to-primitive":327}],303:[function(require,module,exports){
-=======
-},{"./_descriptors":273,"./_has":281,"./_ie8-dom-define":284,"./_object-pie":311,"./_property-desc":313,"./_to-iobject":326,"./_to-primitive":329}],305:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_descriptors":288,"./_has":296,"./_ie8-dom-define":299,"./_object-pie":326,"./_property-desc":328,"./_to-iobject":341,"./_to-primitive":344}],320:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_descriptors":290,"./_has":298,"./_ie8-dom-define":301,"./_object-pie":328,"./_property-desc":330,"./_to-iobject":343,"./_to-primitive":346}],322:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_descriptors":296,"./_has":304,"./_ie8-dom-define":307,"./_object-pie":334,"./_property-desc":336,"./_to-iobject":349,"./_to-primitive":352}],328:[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./_to-iobject')
   , gOPN      = require('./_object-gopn').f
@@ -26859,19 +23320,7 @@ module.exports.f = function getOwnPropertyNames(it){
   return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-gopn":304,"./_to-iobject":324}],304:[function(require,module,exports){
-=======
-},{"./_object-gopn":306,"./_to-iobject":326}],306:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-gopn":321,"./_to-iobject":341}],321:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_object-gopn":323,"./_to-iobject":343}],323:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_object-gopn":329,"./_to-iobject":349}],329:[function(require,module,exports){
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys      = require('./_object-keys-internal')
   , hiddenKeys = require('./_enum-bug-keys').concat('length', 'prototype');
@@ -26879,27 +23328,9 @@ var $keys      = require('./_object-keys-internal')
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_enum-bug-keys":273,"./_object-keys-internal":307}],305:[function(require,module,exports){
+},{"./_enum-bug-keys":298,"./_object-keys-internal":332}],330:[function(require,module,exports){
 exports.f = Object.getOwnPropertySymbols;
-},{}],306:[function(require,module,exports){
-=======
-},{"./_enum-bug-keys":275,"./_object-keys-internal":309}],307:[function(require,module,exports){
-exports.f = Object.getOwnPropertySymbols;
-},{}],308:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_enum-bug-keys":290,"./_object-keys-internal":324}],322:[function(require,module,exports){
-exports.f = Object.getOwnPropertySymbols;
-},{}],323:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_enum-bug-keys":292,"./_object-keys-internal":326}],324:[function(require,module,exports){
-exports.f = Object.getOwnPropertySymbols;
-},{}],325:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],331:[function(require,module,exports){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = require('./_has')
   , toObject    = require('./_to-object')
@@ -26913,19 +23344,7 @@ module.exports = Object.getPrototypeOf || function(O){
     return O.constructor.prototype;
   } return O instanceof Object ? ObjectProto : null;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_has":279,"./_shared-key":317,"./_to-object":326}],307:[function(require,module,exports){
-=======
-},{"./_has":281,"./_shared-key":319,"./_to-object":328}],309:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_has":296,"./_shared-key":334,"./_to-object":343}],324:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_has":298,"./_shared-key":336,"./_to-object":345}],326:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_has":304,"./_shared-key":342,"./_to-object":351}],332:[function(require,module,exports){
 var has          = require('./_has')
   , toIObject    = require('./_to-iobject')
   , arrayIndexOf = require('./_array-includes')(false)
@@ -26943,19 +23362,7 @@ module.exports = function(object, names){
   }
   return result;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_array-includes":264,"./_has":279,"./_shared-key":317,"./_to-iobject":324}],308:[function(require,module,exports){
-=======
-},{"./_array-includes":266,"./_has":281,"./_shared-key":319,"./_to-iobject":326}],310:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_array-includes":281,"./_has":296,"./_shared-key":334,"./_to-iobject":341}],325:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_array-includes":283,"./_has":298,"./_shared-key":336,"./_to-iobject":343}],327:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_array-includes":289,"./_has":304,"./_shared-key":342,"./_to-iobject":349}],333:[function(require,module,exports){
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys       = require('./_object-keys-internal')
   , enumBugKeys = require('./_enum-bug-keys');
@@ -26963,27 +23370,9 @@ var $keys       = require('./_object-keys-internal')
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_enum-bug-keys":273,"./_object-keys-internal":307}],309:[function(require,module,exports){
+},{"./_enum-bug-keys":298,"./_object-keys-internal":332}],334:[function(require,module,exports){
 exports.f = {}.propertyIsEnumerable;
-},{}],310:[function(require,module,exports){
-=======
-},{"./_enum-bug-keys":275,"./_object-keys-internal":309}],311:[function(require,module,exports){
-exports.f = {}.propertyIsEnumerable;
-},{}],312:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_enum-bug-keys":290,"./_object-keys-internal":324}],326:[function(require,module,exports){
-exports.f = {}.propertyIsEnumerable;
-},{}],327:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_enum-bug-keys":292,"./_object-keys-internal":326}],328:[function(require,module,exports){
-exports.f = {}.propertyIsEnumerable;
-},{}],329:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],335:[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./_export')
   , core    = require('./_core')
@@ -26994,19 +23383,7 @@ module.exports = function(KEY, exec){
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_core":267,"./_export":275,"./_fails":276}],311:[function(require,module,exports){
-=======
-},{"./_core":269,"./_export":277,"./_fails":278}],313:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_core":284,"./_export":292,"./_fails":293}],328:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_core":286,"./_export":294,"./_fails":295}],330:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_core":292,"./_export":300,"./_fails":301}],336:[function(require,module,exports){
 module.exports = function(bitmap, value){
   return {
     enumerable  : !(bitmap & 1),
@@ -27015,19 +23392,7 @@ module.exports = function(bitmap, value){
     value       : value
   };
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],312:[function(require,module,exports){
-=======
-},{}],314:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],329:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],331:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],337:[function(require,module,exports){
 var hide = require('./_hide');
 module.exports = function(target, src, safe){
   for(var key in src){
@@ -27035,27 +23400,9 @@ module.exports = function(target, src, safe){
     else hide(target, key, src[key]);
   } return target;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_hide":280}],313:[function(require,module,exports){
+},{"./_hide":305}],338:[function(require,module,exports){
 module.exports = require('./_hide');
-},{"./_hide":280}],314:[function(require,module,exports){
-=======
-},{"./_hide":282}],315:[function(require,module,exports){
-module.exports = require('./_hide');
-},{"./_hide":282}],316:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_hide":297}],330:[function(require,module,exports){
-module.exports = require('./_hide');
-},{"./_hide":297}],331:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_hide":299}],332:[function(require,module,exports){
-module.exports = require('./_hide');
-},{"./_hide":299}],333:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_hide":305}],339:[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var isObject = require('./_is-object')
@@ -27081,19 +23428,7 @@ module.exports = {
     }({}, false) : undefined),
   check: check
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_ctx":269,"./_is-object":287,"./_object-gopd":302}],315:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_ctx":271,"./_is-object":289,"./_object-gopd":304}],317:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_ctx":286,"./_is-object":304,"./_object-gopd":319}],332:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_ctx":288,"./_is-object":306,"./_object-gopd":321}],334:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_ctx":294,"./_is-object":312,"./_object-gopd":327}],340:[function(require,module,exports){
 'use strict';
 var global      = require('./_global')
   , core        = require('./_core')
@@ -27108,19 +23443,7 @@ module.exports = function(KEY){
     get: function(){ return this; }
   });
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_core":267,"./_descriptors":271,"./_global":278,"./_object-dp":300,"./_wks":331}],316:[function(require,module,exports){
-=======
-},{"./_core":269,"./_descriptors":273,"./_global":280,"./_object-dp":302,"./_wks":333}],318:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_core":284,"./_descriptors":288,"./_global":295,"./_object-dp":317,"./_wks":348}],333:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_core":286,"./_descriptors":290,"./_global":297,"./_object-dp":319,"./_wks":350}],335:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_core":292,"./_descriptors":296,"./_global":303,"./_object-dp":325,"./_wks":356}],341:[function(require,module,exports){
 var def = require('./_object-dp').f
   , has = require('./_has')
   , TAG = require('./_wks')('toStringTag');
@@ -27128,56 +23451,20 @@ var def = require('./_object-dp').f
 module.exports = function(it, tag, stat){
   if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_has":279,"./_object-dp":300,"./_wks":331}],317:[function(require,module,exports){
-=======
-},{"./_has":281,"./_object-dp":302,"./_wks":333}],319:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_has":296,"./_object-dp":317,"./_wks":348}],334:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_has":298,"./_object-dp":319,"./_wks":350}],336:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_has":304,"./_object-dp":325,"./_wks":356}],342:[function(require,module,exports){
 var shared = require('./_shared')('keys')
   , uid    = require('./_uid');
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_shared":318,"./_uid":328}],318:[function(require,module,exports){
-=======
-},{"./_shared":320,"./_uid":330}],320:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_shared":335,"./_uid":345}],335:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_shared":337,"./_uid":347}],337:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_shared":343,"./_uid":353}],343:[function(require,module,exports){
 var global = require('./_global')
   , SHARED = '__core-js_shared__'
   , store  = global[SHARED] || (global[SHARED] = {});
 module.exports = function(key){
   return store[key] || (store[key] = {});
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_global":278}],319:[function(require,module,exports){
-=======
-},{"./_global":280}],321:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_global":295}],336:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_global":297}],338:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_global":303}],344:[function(require,module,exports){
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
 var anObject  = require('./_an-object')
   , aFunction = require('./_a-function')
@@ -27186,19 +23473,7 @@ module.exports = function(O, D){
   var C = anObject(O).constructor, S;
   return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_a-function":260,"./_an-object":263,"./_wks":331}],320:[function(require,module,exports){
-=======
-},{"./_a-function":262,"./_an-object":265,"./_wks":333}],322:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_a-function":277,"./_an-object":280,"./_wks":348}],337:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_a-function":279,"./_an-object":282,"./_wks":350}],339:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_a-function":285,"./_an-object":288,"./_wks":356}],345:[function(require,module,exports){
 var toInteger = require('./_to-integer')
   , defined   = require('./_defined');
 // true  -> String#at
@@ -27216,19 +23491,7 @@ module.exports = function(TO_STRING){
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_defined":270,"./_to-integer":323}],321:[function(require,module,exports){
-=======
-},{"./_defined":272,"./_to-integer":325}],323:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_defined":287,"./_to-integer":340}],338:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_defined":289,"./_to-integer":342}],340:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_defined":295,"./_to-integer":348}],346:[function(require,module,exports){
 var ctx                = require('./_ctx')
   , invoke             = require('./_invoke')
   , html               = require('./_html')
@@ -27304,19 +23567,7 @@ module.exports = {
   set:   setTask,
   clear: clearTask
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cof":266,"./_ctx":269,"./_dom-create":272,"./_global":278,"./_html":281,"./_invoke":283}],322:[function(require,module,exports){
-=======
-},{"./_cof":268,"./_ctx":271,"./_dom-create":274,"./_global":280,"./_html":283,"./_invoke":285}],324:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cof":283,"./_ctx":286,"./_dom-create":289,"./_global":295,"./_html":298,"./_invoke":300}],339:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cof":285,"./_ctx":288,"./_dom-create":291,"./_global":297,"./_html":300,"./_invoke":302}],341:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cof":291,"./_ctx":294,"./_dom-create":297,"./_global":303,"./_html":306,"./_invoke":308}],347:[function(require,module,exports){
 var toInteger = require('./_to-integer')
   , max       = Math.max
   , min       = Math.min;
@@ -27324,94 +23575,34 @@ module.exports = function(index, length){
   index = toInteger(index);
   return index < 0 ? max(index + length, 0) : min(index, length);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_to-integer":323}],323:[function(require,module,exports){
-=======
-},{"./_to-integer":325}],325:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_to-integer":340}],340:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_to-integer":342}],342:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_to-integer":348}],348:[function(require,module,exports){
 // 7.1.4 ToInteger
 var ceil  = Math.ceil
   , floor = Math.floor;
 module.exports = function(it){
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],324:[function(require,module,exports){
-=======
-},{}],326:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],341:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],343:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],349:[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./_iobject')
   , defined = require('./_defined');
 module.exports = function(it){
   return IObject(defined(it));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_defined":270,"./_iobject":284}],325:[function(require,module,exports){
-=======
-},{"./_defined":272,"./_iobject":286}],327:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_defined":287,"./_iobject":301}],342:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_defined":289,"./_iobject":303}],344:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_defined":295,"./_iobject":309}],350:[function(require,module,exports){
 // 7.1.15 ToLength
 var toInteger = require('./_to-integer')
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_to-integer":323}],326:[function(require,module,exports){
-=======
-},{"./_to-integer":325}],328:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_to-integer":340}],343:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_to-integer":342}],345:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_to-integer":348}],351:[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./_defined');
 module.exports = function(it){
   return Object(defined(it));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_defined":270}],327:[function(require,module,exports){
-=======
-},{"./_defined":272}],329:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_defined":287}],344:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_defined":289}],346:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_defined":295}],352:[function(require,module,exports){
 // 7.1.1 ToPrimitive(input [, PreferredType])
 var isObject = require('./_is-object');
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
@@ -27424,37 +23615,13 @@ module.exports = function(it, S){
   if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
   throw TypeError("Can't convert object to primitive value");
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_is-object":287}],328:[function(require,module,exports){
-=======
-},{"./_is-object":289}],330:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_is-object":304}],345:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_is-object":306}],347:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_is-object":312}],353:[function(require,module,exports){
 var id = 0
   , px = Math.random();
 module.exports = function(key){
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],329:[function(require,module,exports){
-=======
-},{}],331:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],346:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],348:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],354:[function(require,module,exports){
 var global         = require('./_global')
   , core           = require('./_core')
   , LIBRARY        = require('./_library')
@@ -27464,27 +23631,9 @@ module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_core":267,"./_global":278,"./_library":295,"./_object-dp":300,"./_wks-ext":330}],330:[function(require,module,exports){
+},{"./_core":292,"./_global":303,"./_library":320,"./_object-dp":325,"./_wks-ext":355}],355:[function(require,module,exports){
 exports.f = require('./_wks');
-},{"./_wks":331}],331:[function(require,module,exports){
-=======
-},{"./_core":269,"./_global":280,"./_library":297,"./_object-dp":302,"./_wks-ext":332}],332:[function(require,module,exports){
-exports.f = require('./_wks');
-},{"./_wks":333}],333:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_core":284,"./_global":295,"./_library":312,"./_object-dp":317,"./_wks-ext":347}],347:[function(require,module,exports){
-exports.f = require('./_wks');
-},{"./_wks":348}],348:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_core":286,"./_global":297,"./_library":314,"./_object-dp":319,"./_wks-ext":349}],349:[function(require,module,exports){
-exports.f = require('./_wks');
-},{"./_wks":350}],350:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_wks":356}],356:[function(require,module,exports){
 var store      = require('./_shared')('wks')
   , uid        = require('./_uid')
   , Symbol     = require('./_global').Symbol
@@ -27496,19 +23645,7 @@ var $exports = module.exports = function(name){
 };
 
 $exports.store = store;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_global":278,"./_shared":318,"./_uid":328}],332:[function(require,module,exports){
-=======
-},{"./_global":280,"./_shared":320,"./_uid":330}],334:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_global":295,"./_shared":335,"./_uid":345}],349:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_global":297,"./_shared":337,"./_uid":347}],351:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_global":303,"./_shared":343,"./_uid":353}],357:[function(require,module,exports){
 var classof   = require('./_classof')
   , ITERATOR  = require('./_wks')('iterator')
   , Iterators = require('./_iterators');
@@ -27517,19 +23654,7 @@ module.exports = require('./_core').getIteratorMethod = function(it){
     || it['@@iterator']
     || Iterators[classof(it)];
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_classof":265,"./_core":267,"./_iterators":293,"./_wks":331}],333:[function(require,module,exports){
-=======
-},{"./_classof":267,"./_core":269,"./_iterators":295,"./_wks":333}],335:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_classof":282,"./_core":284,"./_iterators":310,"./_wks":348}],350:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_classof":284,"./_core":286,"./_iterators":312,"./_wks":350}],352:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_classof":290,"./_core":292,"./_iterators":318,"./_wks":356}],358:[function(require,module,exports){
 var anObject = require('./_an-object')
   , get      = require('./core.get-iterator-method');
 module.exports = require('./_core').getIterator = function(it){
@@ -27537,19 +23662,7 @@ module.exports = require('./_core').getIterator = function(it){
   if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_core":267,"./core.get-iterator-method":332}],334:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_core":269,"./core.get-iterator-method":334}],336:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_core":284,"./core.get-iterator-method":349}],351:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_an-object":282,"./_core":286,"./core.get-iterator-method":351}],353:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_an-object":288,"./_core":292,"./core.get-iterator-method":357}],359:[function(require,module,exports){
 var classof   = require('./_classof')
   , ITERATOR  = require('./_wks')('iterator')
   , Iterators = require('./_iterators');
@@ -27559,19 +23672,7 @@ module.exports = require('./_core').isIterable = function(it){
     || '@@iterator' in O
     || Iterators.hasOwnProperty(classof(O));
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_classof":265,"./_core":267,"./_iterators":293,"./_wks":331}],335:[function(require,module,exports){
-=======
-},{"./_classof":267,"./_core":269,"./_iterators":295,"./_wks":333}],337:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_classof":282,"./_core":284,"./_iterators":310,"./_wks":348}],352:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_classof":284,"./_core":286,"./_iterators":312,"./_wks":350}],354:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_classof":290,"./_core":292,"./_iterators":318,"./_wks":356}],360:[function(require,module,exports){
 'use strict';
 var ctx            = require('./_ctx')
   , $export        = require('./_export')
@@ -27610,19 +23711,7 @@ $export($export.S + $export.F * !require('./_iter-detect')(function(iter){ Array
   }
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_create-property":268,"./_ctx":269,"./_export":275,"./_is-array-iter":285,"./_iter-call":288,"./_iter-detect":291,"./_to-length":325,"./_to-object":326,"./core.get-iterator-method":332}],336:[function(require,module,exports){
-=======
-},{"./_create-property":270,"./_ctx":271,"./_export":277,"./_is-array-iter":287,"./_iter-call":290,"./_iter-detect":293,"./_to-length":327,"./_to-object":328,"./core.get-iterator-method":334}],338:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_create-property":285,"./_ctx":286,"./_export":292,"./_is-array-iter":302,"./_iter-call":305,"./_iter-detect":308,"./_to-length":342,"./_to-object":343,"./core.get-iterator-method":349}],353:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_create-property":287,"./_ctx":288,"./_export":294,"./_is-array-iter":304,"./_iter-call":307,"./_iter-detect":310,"./_to-length":344,"./_to-object":345,"./core.get-iterator-method":351}],355:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_create-property":293,"./_ctx":294,"./_export":300,"./_is-array-iter":310,"./_iter-call":313,"./_iter-detect":316,"./_to-length":350,"./_to-object":351,"./core.get-iterator-method":357}],361:[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./_add-to-unscopables')
   , step             = require('./_iter-step')
@@ -27657,60 +23746,20 @@ Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_add-to-unscopables":261,"./_iter-define":290,"./_iter-step":292,"./_iterators":293,"./_to-iobject":324}],337:[function(require,module,exports){
-=======
-},{"./_add-to-unscopables":263,"./_iter-define":292,"./_iter-step":294,"./_iterators":295,"./_to-iobject":326}],339:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_add-to-unscopables":278,"./_iter-define":307,"./_iter-step":309,"./_iterators":310,"./_to-iobject":341}],354:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_add-to-unscopables":280,"./_iter-define":309,"./_iter-step":311,"./_iterators":312,"./_to-iobject":343}],356:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_add-to-unscopables":286,"./_iter-define":315,"./_iter-step":317,"./_iterators":318,"./_to-iobject":349}],362:[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./_export');
 
 $export($export.S + $export.F, 'Object', {assign: require('./_object-assign')});
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_export":275,"./_object-assign":298}],338:[function(require,module,exports){
-=======
-},{"./_export":277,"./_object-assign":300}],340:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
+},{"./_export":300,"./_object-assign":323}],363:[function(require,module,exports){
 var $export = require('./_export')
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 $export($export.S, 'Object', {create: require('./_object-create')});
-},{"./_export":277,"./_object-create":301}],341:[function(require,module,exports){
+},{"./_export":300,"./_object-create":324}],364:[function(require,module,exports){
 var $export = require('./_export');
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !require('./_descriptors'), 'Object', {defineProperty: require('./_object-dp').f});
-<<<<<<< HEAD
-},{"./_descriptors":271,"./_export":275,"./_object-dp":300}],340:[function(require,module,exports){
-=======
-},{"./_descriptors":273,"./_export":277,"./_object-dp":302}],342:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_export":292,"./_object-assign":315}],355:[function(require,module,exports){
-=======
-},{"./_export":294,"./_object-assign":317}],357:[function(require,module,exports){
->>>>>>> OrderShow component
-var $export = require('./_export')
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', {create: require('./_object-create')});
-},{"./_export":294,"./_object-create":318}],358:[function(require,module,exports){
-var $export = require('./_export');
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !require('./_descriptors'), 'Object', {defineProperty: require('./_object-dp').f});
-<<<<<<< HEAD
-},{"./_descriptors":288,"./_export":292,"./_object-dp":317}],357:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_descriptors":290,"./_export":294,"./_object-dp":319}],359:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_descriptors":296,"./_export":300,"./_object-dp":325}],365:[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject        = require('./_to-object')
   , $getPrototypeOf = require('./_object-gpo');
@@ -27720,19 +23769,7 @@ require('./_object-sap')('getPrototypeOf', function(){
     return $getPrototypeOf(toObject(it));
   };
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-gpo":306,"./_object-sap":310,"./_to-object":326}],341:[function(require,module,exports){
-=======
-},{"./_object-gpo":308,"./_object-sap":312,"./_to-object":328}],343:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-gpo":323,"./_object-sap":327,"./_to-object":343}],358:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_object-gpo":325,"./_object-sap":329,"./_to-object":345}],360:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_object-gpo":331,"./_object-sap":335,"./_to-object":351}],366:[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./_to-object')
   , $keys    = require('./_object-keys');
@@ -27742,41 +23779,13 @@ require('./_object-sap')('keys', function(){
     return $keys(toObject(it));
   };
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_object-keys":308,"./_object-sap":310,"./_to-object":326}],342:[function(require,module,exports){
+},{"./_object-keys":333,"./_object-sap":335,"./_to-object":351}],367:[function(require,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = require('./_export');
 $export($export.S, 'Object', {setPrototypeOf: require('./_set-proto').set});
-},{"./_export":275,"./_set-proto":314}],343:[function(require,module,exports){
+},{"./_export":300,"./_set-proto":339}],368:[function(require,module,exports){
 
-},{}],344:[function(require,module,exports){
-=======
-},{"./_object-keys":310,"./_object-sap":312,"./_to-object":328}],344:[function(require,module,exports){
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $export = require('./_export');
-$export($export.S, 'Object', {setPrototypeOf: require('./_set-proto').set});
-},{"./_export":277,"./_set-proto":316}],345:[function(require,module,exports){
-
-},{}],346:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_object-keys":325,"./_object-sap":327,"./_to-object":343}],359:[function(require,module,exports){
-=======
-},{"./_object-keys":327,"./_object-sap":329,"./_to-object":345}],361:[function(require,module,exports){
->>>>>>> OrderShow component
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $export = require('./_export');
-$export($export.S, 'Object', {setPrototypeOf: require('./_set-proto').set});
-},{"./_export":294,"./_set-proto":333}],362:[function(require,module,exports){
-
-<<<<<<< HEAD
-},{}],361:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],363:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],369:[function(require,module,exports){
 'use strict';
 var LIBRARY            = require('./_library')
   , global             = require('./_global')
@@ -28076,19 +24085,7 @@ $export($export.S + $export.F * !(USE_NATIVE && require('./_iter-detect')(functi
     return capability.promise;
   }
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_a-function":260,"./_an-instance":262,"./_classof":265,"./_core":267,"./_ctx":269,"./_export":275,"./_for-of":277,"./_global":278,"./_is-object":287,"./_iter-detect":291,"./_library":295,"./_microtask":297,"./_redefine-all":312,"./_set-species":315,"./_set-to-string-tag":316,"./_species-constructor":319,"./_task":321,"./_wks":331}],345:[function(require,module,exports){
-=======
-},{"./_a-function":262,"./_an-instance":264,"./_classof":267,"./_core":269,"./_ctx":271,"./_export":277,"./_for-of":279,"./_global":280,"./_is-object":289,"./_iter-detect":293,"./_library":297,"./_microtask":299,"./_redefine-all":314,"./_set-species":317,"./_set-to-string-tag":318,"./_species-constructor":321,"./_task":323,"./_wks":333}],347:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_a-function":277,"./_an-instance":279,"./_classof":282,"./_core":284,"./_ctx":286,"./_export":292,"./_for-of":294,"./_global":295,"./_is-object":304,"./_iter-detect":308,"./_library":312,"./_microtask":314,"./_redefine-all":329,"./_set-species":332,"./_set-to-string-tag":333,"./_species-constructor":336,"./_task":338,"./_wks":348}],362:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_a-function":279,"./_an-instance":281,"./_classof":284,"./_core":286,"./_ctx":288,"./_export":294,"./_for-of":296,"./_global":297,"./_is-object":306,"./_iter-detect":310,"./_library":314,"./_microtask":316,"./_redefine-all":331,"./_set-species":334,"./_set-to-string-tag":335,"./_species-constructor":338,"./_task":340,"./_wks":350}],364:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_a-function":285,"./_an-instance":287,"./_classof":290,"./_core":292,"./_ctx":294,"./_export":300,"./_for-of":302,"./_global":303,"./_is-object":312,"./_iter-detect":316,"./_library":320,"./_microtask":322,"./_redefine-all":337,"./_set-species":340,"./_set-to-string-tag":341,"./_species-constructor":344,"./_task":346,"./_wks":356}],370:[function(require,module,exports){
 'use strict';
 var $at  = require('./_string-at')(true);
 
@@ -28106,19 +24103,7 @@ require('./_iter-define')(String, 'String', function(iterated){
   this._i += point.length;
   return {value: point, done: false};
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_iter-define":290,"./_string-at":320}],346:[function(require,module,exports){
-=======
-},{"./_iter-define":292,"./_string-at":322}],348:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_iter-define":307,"./_string-at":337}],363:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_iter-define":309,"./_string-at":339}],365:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_iter-define":315,"./_string-at":345}],371:[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var global         = require('./_global')
@@ -28354,35 +24339,11 @@ setToStringTag($Symbol, 'Symbol');
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_an-object":263,"./_descriptors":271,"./_enum-keys":274,"./_export":275,"./_fails":276,"./_global":278,"./_has":279,"./_hide":280,"./_is-array":286,"./_keyof":294,"./_library":295,"./_meta":296,"./_object-create":299,"./_object-dp":300,"./_object-gopd":302,"./_object-gopn":304,"./_object-gopn-ext":303,"./_object-gops":305,"./_object-keys":308,"./_object-pie":309,"./_property-desc":311,"./_redefine":313,"./_set-to-string-tag":316,"./_shared":318,"./_to-iobject":324,"./_to-primitive":327,"./_uid":328,"./_wks":331,"./_wks-define":329,"./_wks-ext":330}],347:[function(require,module,exports){
+},{"./_an-object":288,"./_descriptors":296,"./_enum-keys":299,"./_export":300,"./_fails":301,"./_global":303,"./_has":304,"./_hide":305,"./_is-array":311,"./_keyof":319,"./_library":320,"./_meta":321,"./_object-create":324,"./_object-dp":325,"./_object-gopd":327,"./_object-gopn":329,"./_object-gopn-ext":328,"./_object-gops":330,"./_object-keys":333,"./_object-pie":334,"./_property-desc":336,"./_redefine":338,"./_set-to-string-tag":341,"./_shared":343,"./_to-iobject":349,"./_to-primitive":352,"./_uid":353,"./_wks":356,"./_wks-define":354,"./_wks-ext":355}],372:[function(require,module,exports){
 require('./_wks-define')('asyncIterator');
-},{"./_wks-define":329}],348:[function(require,module,exports){
+},{"./_wks-define":354}],373:[function(require,module,exports){
 require('./_wks-define')('observable');
-},{"./_wks-define":329}],349:[function(require,module,exports){
-=======
-},{"./_an-object":265,"./_descriptors":273,"./_enum-keys":276,"./_export":277,"./_fails":278,"./_global":280,"./_has":281,"./_hide":282,"./_is-array":288,"./_keyof":296,"./_library":297,"./_meta":298,"./_object-create":301,"./_object-dp":302,"./_object-gopd":304,"./_object-gopn":306,"./_object-gopn-ext":305,"./_object-gops":307,"./_object-keys":310,"./_object-pie":311,"./_property-desc":313,"./_redefine":315,"./_set-to-string-tag":318,"./_shared":320,"./_to-iobject":326,"./_to-primitive":329,"./_uid":330,"./_wks":333,"./_wks-define":331,"./_wks-ext":332}],349:[function(require,module,exports){
-require('./_wks-define')('asyncIterator');
-},{"./_wks-define":331}],350:[function(require,module,exports){
-require('./_wks-define')('observable');
-},{"./_wks-define":331}],351:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_an-object":280,"./_descriptors":288,"./_enum-keys":291,"./_export":292,"./_fails":293,"./_global":295,"./_has":296,"./_hide":297,"./_is-array":303,"./_keyof":311,"./_library":312,"./_meta":313,"./_object-create":316,"./_object-dp":317,"./_object-gopd":319,"./_object-gopn":321,"./_object-gopn-ext":320,"./_object-gops":322,"./_object-keys":325,"./_object-pie":326,"./_property-desc":328,"./_redefine":330,"./_set-to-string-tag":333,"./_shared":335,"./_to-iobject":341,"./_to-primitive":344,"./_uid":345,"./_wks":348,"./_wks-define":346,"./_wks-ext":347}],364:[function(require,module,exports){
-=======
-},{"./_an-object":282,"./_descriptors":290,"./_enum-keys":293,"./_export":294,"./_fails":295,"./_global":297,"./_has":298,"./_hide":299,"./_is-array":305,"./_keyof":313,"./_library":314,"./_meta":315,"./_object-create":318,"./_object-dp":319,"./_object-gopd":321,"./_object-gopn":323,"./_object-gopn-ext":322,"./_object-gops":324,"./_object-keys":327,"./_object-pie":328,"./_property-desc":330,"./_redefine":332,"./_set-to-string-tag":335,"./_shared":337,"./_to-iobject":343,"./_to-primitive":346,"./_uid":347,"./_wks":350,"./_wks-define":348,"./_wks-ext":349}],366:[function(require,module,exports){
->>>>>>> OrderShow component
-require('./_wks-define')('asyncIterator');
-},{"./_wks-define":348}],367:[function(require,module,exports){
-require('./_wks-define')('observable');
-<<<<<<< HEAD
-},{"./_wks-define":346}],366:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_wks-define":348}],368:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_wks-define":354}],374:[function(require,module,exports){
 require('./es6.array.iterator');
 var global        = require('./_global')
   , hide          = require('./_hide')
@@ -28396,19 +24357,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
   if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
   Iterators[NAME] = Iterators.Array;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_global":278,"./_hide":280,"./_iterators":293,"./_wks":331,"./es6.array.iterator":336}],350:[function(require,module,exports){
-=======
-},{"./_global":280,"./_hide":282,"./_iterators":295,"./_wks":333,"./es6.array.iterator":338}],352:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_global":295,"./_hide":297,"./_iterators":310,"./_wks":348,"./es6.array.iterator":353}],367:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_global":297,"./_hide":299,"./_iterators":312,"./_wks":350,"./es6.array.iterator":355}],369:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_global":303,"./_hide":305,"./_iterators":318,"./_wks":356,"./es6.array.iterator":361}],375:[function(require,module,exports){
 (function (global){
 /*!
  * deep-diff.
@@ -28834,19 +24783,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],351:[function(require,module,exports){
-=======
-},{}],353:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],368:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],370:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],376:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -29150,19 +25087,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],352:[function(require,module,exports){
-=======
-},{}],354:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],369:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],371:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],377:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -29174,19 +25099,7 @@ function isUndefined(arg) {
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./lib/Dispatcher":353}],353:[function(require,module,exports){
-=======
-},{"./lib/Dispatcher":355}],355:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./lib/Dispatcher":370}],370:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./lib/Dispatcher":372}],372:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./lib/Dispatcher":378}],378:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -29420,19 +25333,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":354}],354:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":356}],356:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":371}],371:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":373}],373:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":379}],379:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -29484,19 +25385,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],355:[function(require,module,exports){
-=======
-},{"_process":483}],357:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],372:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],374:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],380:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -29548,19 +25437,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],356:[function(require,module,exports){
-=======
-},{}],358:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],373:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],375:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],381:[function(require,module,exports){
 // =========
 // = humps =
 // =========
@@ -29699,19 +25576,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
   }
 
 })(this);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],357:[function(require,module,exports){
-=======
-},{}],359:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],374:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],376:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],382:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29975,19 +25840,7 @@ var Connector = function (_EventEmitter) {
 }(_EventEmitter3.default);
 
 exports.default = Connector;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventEmitter":359,"./logger":369,"./utils":371}],358:[function(require,module,exports){
-=======
-},{"./EventEmitter":361,"./logger":371,"./utils":373}],360:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventEmitter":376,"./logger":386,"./utils":388}],375:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventEmitter":378,"./logger":388,"./utils":390}],377:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventEmitter":384,"./logger":394,"./utils":396}],383:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30076,19 +25929,7 @@ var Connector = function (_EventEmitter) {
 }(_EventEmitter3.default);
 
 exports.default = Connector;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventEmitter":359,"./logger":369,"./utils":371}],359:[function(require,module,exports){
-=======
-},{"./EventEmitter":361,"./logger":371,"./utils":373}],361:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventEmitter":376,"./logger":386,"./utils":388}],376:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventEmitter":378,"./logger":388,"./utils":390}],378:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventEmitter":384,"./logger":394,"./utils":396}],384:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30156,19 +25997,7 @@ var EventEmitter = function () {
 }();
 
 exports.default = EventEmitter;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],360:[function(require,module,exports){
-=======
-},{}],362:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],377:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],379:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],385:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30314,19 +26143,7 @@ var Interpolator = function () {
 }();
 
 exports.default = Interpolator;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./logger":369,"./utils":371}],361:[function(require,module,exports){
-=======
-},{"./logger":371,"./utils":373}],363:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./logger":386,"./utils":388}],378:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./logger":388,"./utils":390}],380:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./logger":394,"./utils":396}],386:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30435,19 +26252,7 @@ var LanguageUtil = function () {
 ;
 
 exports.default = LanguageUtil;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./logger":369}],362:[function(require,module,exports){
-=======
-},{"./logger":371}],364:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./logger":386}],379:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./logger":388}],381:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./logger":394}],387:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30612,19 +26417,7 @@ var PluralResolver = function () {
 ;
 
 exports.default = PluralResolver;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./logger":369}],363:[function(require,module,exports){
-=======
-},{"./logger":371}],365:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./logger":386}],380:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./logger":388}],382:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./logger":394}],388:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -30782,19 +26575,7 @@ var ResourceStore = function (_EventEmitter) {
 }(_EventEmitter3.default);
 
 exports.default = ResourceStore;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventEmitter":359,"./utils":371}],364:[function(require,module,exports){
-=======
-},{"./EventEmitter":361,"./utils":373}],366:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventEmitter":376,"./utils":388}],381:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventEmitter":378,"./utils":390}],383:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventEmitter":384,"./utils":396}],389:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31103,19 +26884,7 @@ var Translator = function (_EventEmitter) {
 }(_EventEmitter3.default);
 
 exports.default = Translator;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventEmitter":359,"./compatibility/v1":365,"./logger":369,"./postProcessor":370,"./utils":371}],365:[function(require,module,exports){
-=======
-},{"./EventEmitter":361,"./compatibility/v1":367,"./logger":371,"./postProcessor":372,"./utils":373}],367:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventEmitter":376,"./compatibility/v1":382,"./logger":386,"./postProcessor":387,"./utils":388}],382:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventEmitter":378,"./compatibility/v1":384,"./logger":388,"./postProcessor":389,"./utils":390}],384:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventEmitter":384,"./compatibility/v1":390,"./logger":394,"./postProcessor":395,"./utils":396}],390:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31270,19 +27039,7 @@ function appendBackwardsAPI(i18n) {
     });
   };
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../logger":369}],366:[function(require,module,exports){
-=======
-},{"../logger":371}],368:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../logger":386}],383:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../logger":388}],385:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../logger":394}],391:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31354,19 +27111,7 @@ function transformOptions(options) {
 
   return options;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],367:[function(require,module,exports){
-=======
-},{}],369:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],384:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],386:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],392:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31753,19 +27498,7 @@ var I18n = function (_EventEmitter) {
 }(_EventEmitter3.default);
 
 exports.default = new I18n();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./BackendConnector":357,"./CacheConnector":358,"./EventEmitter":359,"./Interpolator":360,"./LanguageUtils":361,"./PluralResolver":362,"./ResourceStore":363,"./Translator":364,"./compatibility/v1":365,"./defaults":366,"./logger":369,"./postProcessor":370}],368:[function(require,module,exports){
-=======
-},{"./BackendConnector":359,"./CacheConnector":360,"./EventEmitter":361,"./Interpolator":362,"./LanguageUtils":363,"./PluralResolver":364,"./ResourceStore":365,"./Translator":366,"./compatibility/v1":367,"./defaults":368,"./logger":371,"./postProcessor":372}],370:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./BackendConnector":374,"./CacheConnector":375,"./EventEmitter":376,"./Interpolator":377,"./LanguageUtils":378,"./PluralResolver":379,"./ResourceStore":380,"./Translator":381,"./compatibility/v1":382,"./defaults":383,"./logger":386,"./postProcessor":387}],385:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./BackendConnector":376,"./CacheConnector":377,"./EventEmitter":378,"./Interpolator":379,"./LanguageUtils":380,"./PluralResolver":381,"./ResourceStore":382,"./Translator":383,"./compatibility/v1":384,"./defaults":385,"./logger":388,"./postProcessor":389}],387:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./BackendConnector":382,"./CacheConnector":383,"./EventEmitter":384,"./Interpolator":385,"./LanguageUtils":386,"./PluralResolver":387,"./ResourceStore":388,"./Translator":389,"./compatibility/v1":390,"./defaults":391,"./logger":394,"./postProcessor":395}],393:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31779,19 +27512,7 @@ var _i18next2 = _interopRequireDefault(_i18next);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _i18next2.default;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./i18next":367}],369:[function(require,module,exports){
-=======
-},{"./i18next":369}],371:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./i18next":384}],386:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./i18next":386}],388:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./i18next":392}],394:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -31884,19 +27605,7 @@ var Logger = function () {
 ;
 
 exports.default = new Logger();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],370:[function(require,module,exports){
-=======
-},{}],372:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],387:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],389:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],395:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31919,19 +27628,7 @@ exports.default = {
     return value;
   }
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],371:[function(require,module,exports){
-=======
-},{}],373:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],388:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],390:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],396:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -32049,19 +27746,7 @@ function escape(data) {
     return data;
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],372:[function(require,module,exports){
-=======
-},{}],374:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],389:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],391:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],397:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -32116,19 +27801,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],373:[function(require,module,exports){
-=======
-},{"_process":483}],375:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],390:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],392:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],398:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -32235,19 +27908,7 @@ var Jss = (function () {
 
 exports['default'] = Jss;
 module.exports = exports['default'];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./PluginsRegistry":374,"./Rule":375,"./StyleSheet":376,"./uid":379}],374:[function(require,module,exports){
-=======
-},{"./PluginsRegistry":376,"./Rule":377,"./StyleSheet":378,"./uid":381}],376:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./PluginsRegistry":391,"./Rule":392,"./StyleSheet":393,"./uid":396}],391:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./PluginsRegistry":393,"./Rule":394,"./StyleSheet":395,"./uid":398}],393:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./PluginsRegistry":399,"./Rule":400,"./StyleSheet":401,"./uid":404}],399:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -32290,19 +27951,7 @@ var PluginsRegistry = (function () {
 
 exports["default"] = PluginsRegistry;
 module.exports = exports["default"];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],375:[function(require,module,exports){
-=======
-},{}],377:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],392:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],394:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],400:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -32572,19 +28221,7 @@ function indent(level, str) {
   }return indentStr + str;
 }
 module.exports = exports['default'];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./clone":377,"./defaults":378,"./uid":379}],376:[function(require,module,exports){
-=======
-},{"./clone":379,"./defaults":380,"./uid":381}],378:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./clone":394,"./defaults":395,"./uid":396}],393:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./clone":396,"./defaults":397,"./uid":398}],395:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./clone":402,"./defaults":403,"./uid":404}],401:[function(require,module,exports){
 /**
  * StyleSheet abstraction, contains rules, injects stylesheet into dom.
  *
@@ -32855,19 +28492,7 @@ var StyleSheet = (function () {
 
 exports['default'] = StyleSheet;
 module.exports = exports['default'];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],377:[function(require,module,exports){
-=======
-},{}],379:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],394:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],396:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],402:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -32890,19 +28515,7 @@ function clone(obj) {
 }
 
 module.exports = exports["default"];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],378:[function(require,module,exports){
-=======
-},{}],380:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],395:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],397:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],403:[function(require,module,exports){
 /**
  * Merges second object with first one only if value is undefined.
  * It expects both objects to be plain.
@@ -32924,19 +28537,7 @@ function defaults(obj1, obj2) {
 }
 
 module.exports = exports["default"];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],379:[function(require,module,exports){
-=======
-},{}],381:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],396:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],398:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],404:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -32972,19 +28573,7 @@ function reset() {
   counter = 0;
 }
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],380:[function(require,module,exports){
-=======
-},{}],382:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],397:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],399:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],405:[function(require,module,exports){
 /**
  * Gets the last element of `array`.
  *
@@ -33005,19 +28594,7 @@ function last(array) {
 
 module.exports = last;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],381:[function(require,module,exports){
-=======
-},{}],383:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],398:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],400:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],406:[function(require,module,exports){
 var LazyWrapper = require('../internal/LazyWrapper'),
     LodashWrapper = require('../internal/LodashWrapper'),
     baseLodash = require('../internal/baseLodash'),
@@ -33144,19 +28721,7 @@ lodash.prototype = baseLodash.prototype;
 
 module.exports = lodash;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/LazyWrapper":387,"../internal/LodashWrapper":388,"../internal/baseLodash":401,"../internal/isObjectLike":433,"../internal/wrapperClone":444,"../lang/isArray":446}],382:[function(require,module,exports){
-=======
-},{"../internal/LazyWrapper":389,"../internal/LodashWrapper":390,"../internal/baseLodash":403,"../internal/isObjectLike":435,"../internal/wrapperClone":446,"../lang/isArray":448}],384:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/LazyWrapper":404,"../internal/LodashWrapper":405,"../internal/baseLodash":418,"../internal/isObjectLike":450,"../internal/wrapperClone":461,"../lang/isArray":463}],399:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/LazyWrapper":406,"../internal/LodashWrapper":407,"../internal/baseLodash":420,"../internal/isObjectLike":452,"../internal/wrapperClone":463,"../lang/isArray":465}],401:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/LazyWrapper":412,"../internal/LodashWrapper":413,"../internal/baseLodash":426,"../internal/isObjectLike":458,"../internal/wrapperClone":469,"../lang/isArray":471}],407:[function(require,module,exports){
 var arrayMap = require('../internal/arrayMap'),
     baseCallback = require('../internal/baseCallback'),
     baseMap = require('../internal/baseMap'),
@@ -33226,19 +28791,7 @@ function map(collection, iteratee, thisArg) {
 
 module.exports = map;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/arrayMap":390,"../internal/baseCallback":392,"../internal/baseMap":402,"../lang/isArray":446}],383:[function(require,module,exports){
-=======
-},{"../internal/arrayMap":392,"../internal/baseCallback":394,"../internal/baseMap":404,"../lang/isArray":448}],385:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/arrayMap":407,"../internal/baseCallback":409,"../internal/baseMap":419,"../lang/isArray":463}],400:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/arrayMap":409,"../internal/baseCallback":411,"../internal/baseMap":421,"../lang/isArray":465}],402:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/arrayMap":415,"../internal/baseCallback":417,"../internal/baseMap":427,"../lang/isArray":471}],408:[function(require,module,exports){
 var getLength = require('../internal/getLength'),
     isLength = require('../internal/isLength'),
     keys = require('../object/keys');
@@ -33270,19 +28823,7 @@ function size(collection) {
 
 module.exports = size;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/getLength":425,"../internal/isLength":432,"../object/keys":452}],384:[function(require,module,exports){
-=======
-},{"../internal/getLength":427,"../internal/isLength":434,"../object/keys":454}],386:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/getLength":442,"../internal/isLength":449,"../object/keys":469}],401:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/getLength":444,"../internal/isLength":451,"../object/keys":471}],403:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/getLength":450,"../internal/isLength":457,"../object/keys":477}],409:[function(require,module,exports){
 var getNative = require('../internal/getNative');
 
 /* Native method references for those with the same name as other `lodash` methods. */
@@ -33308,19 +28849,7 @@ var now = nativeNow || function() {
 
 module.exports = now;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/getNative":427}],385:[function(require,module,exports){
-=======
-},{"../internal/getNative":429}],387:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/getNative":444}],402:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/getNative":446}],404:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/getNative":452}],410:[function(require,module,exports){
 var createWrapper = require('../internal/createWrapper'),
     replaceHolders = require('../internal/replaceHolders'),
     restParam = require('./restParam');
@@ -33378,19 +28907,7 @@ bind.placeholder = {};
 
 module.exports = bind;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/createWrapper":419,"../internal/replaceHolders":439,"./restParam":386}],386:[function(require,module,exports){
-=======
-},{"../internal/createWrapper":421,"../internal/replaceHolders":441,"./restParam":388}],388:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/createWrapper":436,"../internal/replaceHolders":456,"./restParam":403}],403:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/createWrapper":438,"../internal/replaceHolders":458,"./restParam":405}],405:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/createWrapper":444,"../internal/replaceHolders":464,"./restParam":411}],411:[function(require,module,exports){
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
@@ -33450,19 +28967,7 @@ function restParam(func, start) {
 
 module.exports = restParam;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],387:[function(require,module,exports){
-=======
-},{}],389:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],404:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],406:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],412:[function(require,module,exports){
 var baseCreate = require('./baseCreate'),
     baseLodash = require('./baseLodash');
 
@@ -33490,19 +28995,7 @@ LazyWrapper.prototype.constructor = LazyWrapper;
 
 module.exports = LazyWrapper;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseCreate":393,"./baseLodash":401}],388:[function(require,module,exports){
-=======
-},{"./baseCreate":395,"./baseLodash":403}],390:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseCreate":410,"./baseLodash":418}],405:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseCreate":412,"./baseLodash":420}],407:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseCreate":418,"./baseLodash":426}],413:[function(require,module,exports){
 var baseCreate = require('./baseCreate'),
     baseLodash = require('./baseLodash');
 
@@ -33525,19 +29018,7 @@ LodashWrapper.prototype.constructor = LodashWrapper;
 
 module.exports = LodashWrapper;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseCreate":393,"./baseLodash":401}],389:[function(require,module,exports){
-=======
-},{"./baseCreate":395,"./baseLodash":403}],391:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseCreate":410,"./baseLodash":418}],406:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseCreate":412,"./baseLodash":420}],408:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseCreate":418,"./baseLodash":426}],414:[function(require,module,exports){
 /**
  * Copies the values of `source` to `array`.
  *
@@ -33559,19 +29040,7 @@ function arrayCopy(source, array) {
 
 module.exports = arrayCopy;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],390:[function(require,module,exports){
-=======
-},{}],392:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],407:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],409:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],415:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for callback
  * shorthands and `this` binding.
@@ -33594,19 +29063,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],391:[function(require,module,exports){
-=======
-},{}],393:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],408:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],410:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],416:[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for callback
  * shorthands and `this` binding.
@@ -33631,19 +29088,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],392:[function(require,module,exports){
-=======
-},{}],394:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],409:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],411:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],417:[function(require,module,exports){
 var baseMatches = require('./baseMatches'),
     baseMatchesProperty = require('./baseMatchesProperty'),
     bindCallback = require('./bindCallback'),
@@ -33680,19 +29125,7 @@ function baseCallback(func, thisArg, argCount) {
 
 module.exports = baseCallback;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utility/identity":455,"../utility/property":457,"./baseMatches":403,"./baseMatchesProperty":404,"./bindCallback":410}],393:[function(require,module,exports){
-=======
-},{"../utility/identity":457,"../utility/property":459,"./baseMatches":405,"./baseMatchesProperty":406,"./bindCallback":412}],395:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utility/identity":472,"../utility/property":474,"./baseMatches":420,"./baseMatchesProperty":421,"./bindCallback":427}],410:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utility/identity":474,"../utility/property":476,"./baseMatches":422,"./baseMatchesProperty":423,"./bindCallback":429}],412:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utility/identity":480,"../utility/property":482,"./baseMatches":428,"./baseMatchesProperty":429,"./bindCallback":435}],418:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -33717,19 +29150,7 @@ var baseCreate = (function() {
 
 module.exports = baseCreate;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isObject":449}],394:[function(require,module,exports){
-=======
-},{"../lang/isObject":451}],396:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isObject":466}],411:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isObject":468}],413:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isObject":474}],419:[function(require,module,exports){
 var baseForOwn = require('./baseForOwn'),
     createBaseEach = require('./createBaseEach');
 
@@ -33746,19 +29167,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseForOwn":396,"./createBaseEach":413}],395:[function(require,module,exports){
-=======
-},{"./baseForOwn":398,"./createBaseEach":415}],397:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseForOwn":413,"./createBaseEach":430}],412:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseForOwn":415,"./createBaseEach":432}],414:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseForOwn":421,"./createBaseEach":438}],420:[function(require,module,exports){
 var createBaseFor = require('./createBaseFor');
 
 /**
@@ -33777,19 +29186,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./createBaseFor":414}],396:[function(require,module,exports){
-=======
-},{"./createBaseFor":416}],398:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./createBaseFor":431}],413:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./createBaseFor":433}],415:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./createBaseFor":439}],421:[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keys = require('../object/keys');
 
@@ -33808,19 +29205,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../object/keys":452,"./baseFor":395}],397:[function(require,module,exports){
-=======
-},{"../object/keys":454,"./baseFor":397}],399:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../object/keys":469,"./baseFor":412}],414:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../object/keys":471,"./baseFor":414}],416:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../object/keys":477,"./baseFor":420}],422:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -33851,19 +29236,7 @@ function baseGet(object, path, pathKey) {
 
 module.exports = baseGet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./toObject":442}],398:[function(require,module,exports){
-=======
-},{"./toObject":444}],400:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./toObject":459}],415:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./toObject":461}],417:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./toObject":467}],423:[function(require,module,exports){
 var baseIsEqualDeep = require('./baseIsEqualDeep'),
     isObject = require('../lang/isObject'),
     isObjectLike = require('./isObjectLike');
@@ -33893,19 +29266,7 @@ function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
 
 module.exports = baseIsEqual;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isObject":449,"./baseIsEqualDeep":399,"./isObjectLike":433}],399:[function(require,module,exports){
-=======
-},{"../lang/isObject":451,"./baseIsEqualDeep":401,"./isObjectLike":435}],401:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isObject":466,"./baseIsEqualDeep":416,"./isObjectLike":450}],416:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isObject":468,"./baseIsEqualDeep":418,"./isObjectLike":452}],418:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isObject":474,"./baseIsEqualDeep":424,"./isObjectLike":458}],424:[function(require,module,exports){
 var equalArrays = require('./equalArrays'),
     equalByTag = require('./equalByTag'),
     equalObjects = require('./equalObjects'),
@@ -34009,19 +29370,7 @@ function baseIsEqualDeep(object, other, equalFunc, customizer, isLoose, stackA, 
 
 module.exports = baseIsEqualDeep;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isArray":446,"../lang/isTypedArray":450,"./equalArrays":420,"./equalByTag":421,"./equalObjects":422}],400:[function(require,module,exports){
-=======
-},{"../lang/isArray":448,"../lang/isTypedArray":452,"./equalArrays":422,"./equalByTag":423,"./equalObjects":424}],402:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isArray":463,"../lang/isTypedArray":467,"./equalArrays":437,"./equalByTag":438,"./equalObjects":439}],417:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isArray":465,"../lang/isTypedArray":469,"./equalArrays":439,"./equalByTag":440,"./equalObjects":441}],419:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isArray":471,"../lang/isTypedArray":475,"./equalArrays":445,"./equalByTag":446,"./equalObjects":447}],425:[function(require,module,exports){
 var baseIsEqual = require('./baseIsEqual'),
     toObject = require('./toObject');
 
@@ -34075,19 +29424,7 @@ function baseIsMatch(object, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseIsEqual":398,"./toObject":442}],401:[function(require,module,exports){
-=======
-},{"./baseIsEqual":400,"./toObject":444}],403:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseIsEqual":415,"./toObject":459}],418:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseIsEqual":417,"./toObject":461}],420:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseIsEqual":423,"./toObject":467}],426:[function(require,module,exports){
 /**
  * The function whose prototype all chaining wrappers inherit from.
  *
@@ -34099,19 +29436,7 @@ function baseLodash() {
 
 module.exports = baseLodash;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],402:[function(require,module,exports){
-=======
-},{}],404:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],419:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],421:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],427:[function(require,module,exports){
 var baseEach = require('./baseEach'),
     isArrayLike = require('./isArrayLike');
 
@@ -34136,19 +29461,7 @@ function baseMap(collection, iteratee) {
 
 module.exports = baseMap;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseEach":394,"./isArrayLike":428}],403:[function(require,module,exports){
-=======
-},{"./baseEach":396,"./isArrayLike":430}],405:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseEach":411,"./isArrayLike":445}],420:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseEach":413,"./isArrayLike":447}],422:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseEach":419,"./isArrayLike":453}],428:[function(require,module,exports){
 var baseIsMatch = require('./baseIsMatch'),
     getMatchData = require('./getMatchData'),
     toObject = require('./toObject');
@@ -34180,19 +29493,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseIsMatch":400,"./getMatchData":426,"./toObject":442}],404:[function(require,module,exports){
-=======
-},{"./baseIsMatch":402,"./getMatchData":428,"./toObject":444}],406:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseIsMatch":417,"./getMatchData":443,"./toObject":459}],421:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseIsMatch":419,"./getMatchData":445,"./toObject":461}],423:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseIsMatch":425,"./getMatchData":451,"./toObject":467}],429:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     baseIsEqual = require('./baseIsEqual'),
     baseSlice = require('./baseSlice'),
@@ -34239,19 +29540,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../array/last":380,"../lang/isArray":446,"./baseGet":397,"./baseIsEqual":398,"./baseSlice":408,"./isKey":430,"./isStrictComparable":434,"./toObject":442,"./toPath":443}],405:[function(require,module,exports){
-=======
-},{"../array/last":382,"../lang/isArray":448,"./baseGet":399,"./baseIsEqual":400,"./baseSlice":410,"./isKey":432,"./isStrictComparable":436,"./toObject":444,"./toPath":445}],407:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../array/last":397,"../lang/isArray":463,"./baseGet":414,"./baseIsEqual":415,"./baseSlice":425,"./isKey":447,"./isStrictComparable":451,"./toObject":459,"./toPath":460}],422:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../array/last":399,"../lang/isArray":465,"./baseGet":416,"./baseIsEqual":417,"./baseSlice":427,"./isKey":449,"./isStrictComparable":453,"./toObject":461,"./toPath":462}],424:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../array/last":405,"../lang/isArray":471,"./baseGet":422,"./baseIsEqual":423,"./baseSlice":433,"./isKey":455,"./isStrictComparable":459,"./toObject":467,"./toPath":468}],430:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -34267,19 +29556,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],406:[function(require,module,exports){
-=======
-},{}],408:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],423:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],425:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],431:[function(require,module,exports){
 var baseGet = require('./baseGet'),
     toPath = require('./toPath');
 
@@ -34300,19 +29577,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseGet":397,"./toPath":443}],407:[function(require,module,exports){
-=======
-},{"./baseGet":399,"./toPath":445}],409:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseGet":414,"./toPath":460}],424:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseGet":416,"./toPath":462}],426:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseGet":422,"./toPath":468}],432:[function(require,module,exports){
 var identity = require('../utility/identity'),
     metaMap = require('./metaMap');
 
@@ -34331,19 +29596,7 @@ var baseSetData = !metaMap ? identity : function(func, data) {
 
 module.exports = baseSetData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utility/identity":455,"./metaMap":436}],408:[function(require,module,exports){
-=======
-},{"../utility/identity":457,"./metaMap":438}],410:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utility/identity":472,"./metaMap":453}],425:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utility/identity":474,"./metaMap":455}],427:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utility/identity":480,"./metaMap":461}],433:[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -34377,19 +29630,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],409:[function(require,module,exports){
-=======
-},{}],411:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],426:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],428:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],434:[function(require,module,exports){
 /**
  * Converts `value` to a string if it's not one. An empty string is returned
  * for `null` or `undefined` values.
@@ -34404,19 +29645,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],410:[function(require,module,exports){
-=======
-},{}],412:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],427:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],429:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],435:[function(require,module,exports){
 var identity = require('../utility/identity');
 
 /**
@@ -34457,19 +29686,7 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utility/identity":455}],411:[function(require,module,exports){
-=======
-},{"../utility/identity":457}],413:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utility/identity":472}],428:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utility/identity":474}],430:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utility/identity":480}],436:[function(require,module,exports){
 /* Native method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
 
@@ -34505,19 +29722,7 @@ function composeArgs(args, partials, holders) {
 
 module.exports = composeArgs;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],412:[function(require,module,exports){
-=======
-},{}],414:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],429:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],431:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],437:[function(require,module,exports){
 /* Native method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
 
@@ -34555,19 +29760,7 @@ function composeArgsRight(args, partials, holders) {
 
 module.exports = composeArgsRight;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],413:[function(require,module,exports){
-=======
-},{}],415:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],430:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],432:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],438:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength'),
     toObject = require('./toObject');
@@ -34600,19 +29793,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./getLength":425,"./isLength":432,"./toObject":442}],414:[function(require,module,exports){
-=======
-},{"./getLength":427,"./isLength":434,"./toObject":444}],416:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./getLength":442,"./isLength":449,"./toObject":459}],431:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./getLength":444,"./isLength":451,"./toObject":461}],433:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./getLength":450,"./isLength":457,"./toObject":467}],439:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -34641,19 +29822,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./toObject":442}],415:[function(require,module,exports){
-=======
-},{"./toObject":444}],417:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./toObject":459}],432:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./toObject":461}],434:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./toObject":467}],440:[function(require,module,exports){
 (function (global){
 var createCtorWrapper = require('./createCtorWrapper');
 
@@ -34679,19 +29848,7 @@ function createBindWrapper(func, thisArg) {
 module.exports = createBindWrapper;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./createCtorWrapper":416}],416:[function(require,module,exports){
-=======
-},{"./createCtorWrapper":418}],418:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./createCtorWrapper":433}],433:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./createCtorWrapper":435}],435:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./createCtorWrapper":441}],441:[function(require,module,exports){
 var baseCreate = require('./baseCreate'),
     isObject = require('../lang/isObject');
 
@@ -34730,19 +29887,7 @@ function createCtorWrapper(Ctor) {
 
 module.exports = createCtorWrapper;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isObject":449,"./baseCreate":393}],417:[function(require,module,exports){
-=======
-},{"../lang/isObject":451,"./baseCreate":395}],419:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isObject":466,"./baseCreate":410}],434:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isObject":468,"./baseCreate":412}],436:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isObject":474,"./baseCreate":418}],442:[function(require,module,exports){
 (function (global){
 var arrayCopy = require('./arrayCopy'),
     composeArgs = require('./composeArgs'),
@@ -34857,19 +30002,7 @@ function createHybridWrapper(func, bitmask, thisArg, partials, holders, partials
 module.exports = createHybridWrapper;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./arrayCopy":389,"./composeArgs":411,"./composeArgsRight":412,"./createCtorWrapper":416,"./isLaziable":431,"./reorder":438,"./replaceHolders":439,"./setData":440}],418:[function(require,module,exports){
-=======
-},{"./arrayCopy":391,"./composeArgs":413,"./composeArgsRight":414,"./createCtorWrapper":418,"./isLaziable":433,"./reorder":440,"./replaceHolders":441,"./setData":442}],420:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./arrayCopy":406,"./composeArgs":428,"./composeArgsRight":429,"./createCtorWrapper":433,"./isLaziable":448,"./reorder":455,"./replaceHolders":456,"./setData":457}],435:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./arrayCopy":408,"./composeArgs":430,"./composeArgsRight":431,"./createCtorWrapper":435,"./isLaziable":450,"./reorder":457,"./replaceHolders":458,"./setData":459}],437:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./arrayCopy":414,"./composeArgs":436,"./composeArgsRight":437,"./createCtorWrapper":441,"./isLaziable":456,"./reorder":463,"./replaceHolders":464,"./setData":465}],443:[function(require,module,exports){
 (function (global){
 var createCtorWrapper = require('./createCtorWrapper');
 
@@ -34916,19 +30049,7 @@ function createPartialWrapper(func, bitmask, thisArg, partials) {
 module.exports = createPartialWrapper;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./createCtorWrapper":416}],419:[function(require,module,exports){
-=======
-},{"./createCtorWrapper":418}],421:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./createCtorWrapper":433}],436:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./createCtorWrapper":435}],438:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./createCtorWrapper":441}],444:[function(require,module,exports){
 var baseSetData = require('./baseSetData'),
     createBindWrapper = require('./createBindWrapper'),
     createHybridWrapper = require('./createHybridWrapper'),
@@ -35016,19 +30137,7 @@ function createWrapper(func, bitmask, thisArg, partials, holders, argPos, ary, a
 
 module.exports = createWrapper;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseSetData":407,"./createBindWrapper":415,"./createHybridWrapper":417,"./createPartialWrapper":418,"./getData":423,"./mergeData":435,"./setData":440}],420:[function(require,module,exports){
-=======
-},{"./baseSetData":409,"./createBindWrapper":417,"./createHybridWrapper":419,"./createPartialWrapper":420,"./getData":425,"./mergeData":437,"./setData":442}],422:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseSetData":424,"./createBindWrapper":432,"./createHybridWrapper":434,"./createPartialWrapper":435,"./getData":440,"./mergeData":452,"./setData":457}],437:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseSetData":426,"./createBindWrapper":434,"./createHybridWrapper":436,"./createPartialWrapper":437,"./getData":442,"./mergeData":454,"./setData":459}],439:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseSetData":432,"./createBindWrapper":440,"./createHybridWrapper":442,"./createPartialWrapper":443,"./getData":448,"./mergeData":460,"./setData":465}],445:[function(require,module,exports){
 var arraySome = require('./arraySome');
 
 /**
@@ -35081,19 +30190,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
 
 module.exports = equalArrays;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./arraySome":391}],421:[function(require,module,exports){
-=======
-},{"./arraySome":393}],423:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./arraySome":408}],438:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./arraySome":410}],440:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./arraySome":416}],446:[function(require,module,exports){
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
     dateTag = '[object Date]',
@@ -35143,19 +30240,7 @@ function equalByTag(object, other, tag) {
 
 module.exports = equalByTag;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],422:[function(require,module,exports){
-=======
-},{}],424:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],439:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],441:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],447:[function(require,module,exports){
 var keys = require('../object/keys');
 
 /** Used for native method references. */
@@ -35224,19 +30309,7 @@ function equalObjects(object, other, equalFunc, customizer, isLoose, stackA, sta
 
 module.exports = equalObjects;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../object/keys":452}],423:[function(require,module,exports){
-=======
-},{"../object/keys":454}],425:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../object/keys":469}],440:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../object/keys":471}],442:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../object/keys":477}],448:[function(require,module,exports){
 var metaMap = require('./metaMap'),
     noop = require('../utility/noop');
 
@@ -35253,19 +30326,7 @@ var getData = !metaMap ? noop : function(func) {
 
 module.exports = getData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utility/noop":456,"./metaMap":436}],424:[function(require,module,exports){
-=======
-},{"../utility/noop":458,"./metaMap":438}],426:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utility/noop":473,"./metaMap":453}],441:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utility/noop":475,"./metaMap":455}],443:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utility/noop":481,"./metaMap":461}],449:[function(require,module,exports){
 var realNames = require('./realNames');
 
 /**
@@ -35292,19 +30353,7 @@ function getFuncName(func) {
 
 module.exports = getFuncName;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./realNames":437}],425:[function(require,module,exports){
-=======
-},{"./realNames":439}],427:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./realNames":454}],442:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./realNames":456}],444:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./realNames":462}],450:[function(require,module,exports){
 var baseProperty = require('./baseProperty');
 
 /**
@@ -35321,19 +30370,7 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./baseProperty":405}],426:[function(require,module,exports){
-=======
-},{"./baseProperty":407}],428:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./baseProperty":422}],443:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./baseProperty":424}],445:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./baseProperty":430}],451:[function(require,module,exports){
 var isStrictComparable = require('./isStrictComparable'),
     pairs = require('../object/pairs');
 
@@ -35356,19 +30393,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../object/pairs":454,"./isStrictComparable":434}],427:[function(require,module,exports){
-=======
-},{"../object/pairs":456,"./isStrictComparable":436}],429:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../object/pairs":471,"./isStrictComparable":451}],444:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../object/pairs":473,"./isStrictComparable":453}],446:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../object/pairs":479,"./isStrictComparable":459}],452:[function(require,module,exports){
 var isNative = require('../lang/isNative');
 
 /**
@@ -35386,19 +30411,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isNative":448}],428:[function(require,module,exports){
-=======
-},{"../lang/isNative":450}],430:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isNative":465}],445:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isNative":467}],447:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isNative":473}],453:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength');
 
@@ -35415,19 +30428,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./getLength":425,"./isLength":432}],429:[function(require,module,exports){
-=======
-},{"./getLength":427,"./isLength":434}],431:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./getLength":442,"./isLength":449}],446:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./getLength":444,"./isLength":451}],448:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./getLength":450,"./isLength":457}],454:[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -35453,19 +30454,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],430:[function(require,module,exports){
-=======
-},{}],432:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],447:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],449:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],455:[function(require,module,exports){
 var isArray = require('../lang/isArray'),
     toObject = require('./toObject');
 
@@ -35495,19 +30484,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isArray":446,"./toObject":442}],431:[function(require,module,exports){
-=======
-},{"../lang/isArray":448,"./toObject":444}],433:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isArray":463,"./toObject":459}],448:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isArray":465,"./toObject":461}],450:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isArray":471,"./toObject":467}],456:[function(require,module,exports){
 var LazyWrapper = require('./LazyWrapper'),
     getData = require('./getData'),
     getFuncName = require('./getFuncName'),
@@ -35536,19 +30513,7 @@ function isLaziable(func) {
 
 module.exports = isLaziable;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../chain/lodash":381,"./LazyWrapper":387,"./getData":423,"./getFuncName":424}],432:[function(require,module,exports){
-=======
-},{"../chain/lodash":383,"./LazyWrapper":389,"./getData":425,"./getFuncName":426}],434:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../chain/lodash":398,"./LazyWrapper":404,"./getData":440,"./getFuncName":441}],449:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../chain/lodash":400,"./LazyWrapper":406,"./getData":442,"./getFuncName":443}],451:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../chain/lodash":406,"./LazyWrapper":412,"./getData":448,"./getFuncName":449}],457:[function(require,module,exports){
 /**
  * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
@@ -35570,19 +30535,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],433:[function(require,module,exports){
-=======
-},{}],435:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],450:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],452:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],458:[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -35596,19 +30549,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],434:[function(require,module,exports){
-=======
-},{}],436:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],451:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],453:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],459:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -35625,19 +30566,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isObject":449}],435:[function(require,module,exports){
-=======
-},{"../lang/isObject":451}],437:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isObject":466}],452:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isObject":468}],454:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isObject":474}],460:[function(require,module,exports){
 var arrayCopy = require('./arrayCopy'),
     composeArgs = require('./composeArgs'),
     composeArgsRight = require('./composeArgsRight'),
@@ -35728,19 +30657,7 @@ function mergeData(data, source) {
 
 module.exports = mergeData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./arrayCopy":389,"./composeArgs":411,"./composeArgsRight":412,"./replaceHolders":439}],436:[function(require,module,exports){
-=======
-},{"./arrayCopy":391,"./composeArgs":413,"./composeArgsRight":414,"./replaceHolders":441}],438:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./arrayCopy":406,"./composeArgs":428,"./composeArgsRight":429,"./replaceHolders":456}],453:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./arrayCopy":408,"./composeArgs":430,"./composeArgsRight":431,"./replaceHolders":458}],455:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./arrayCopy":414,"./composeArgs":436,"./composeArgsRight":437,"./replaceHolders":464}],461:[function(require,module,exports){
 (function (global){
 var getNative = require('./getNative');
 
@@ -35753,37 +30670,13 @@ var metaMap = WeakMap && new WeakMap;
 module.exports = metaMap;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./getNative":427}],437:[function(require,module,exports){
-=======
-},{"./getNative":429}],439:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./getNative":444}],454:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./getNative":446}],456:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./getNative":452}],462:[function(require,module,exports){
 /** Used to lookup unminified function names. */
 var realNames = {};
 
 module.exports = realNames;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],438:[function(require,module,exports){
-=======
-},{}],440:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],455:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],457:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],463:[function(require,module,exports){
 var arrayCopy = require('./arrayCopy'),
     isIndex = require('./isIndex');
 
@@ -35814,19 +30707,7 @@ function reorder(array, indexes) {
 
 module.exports = reorder;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./arrayCopy":389,"./isIndex":429}],439:[function(require,module,exports){
-=======
-},{"./arrayCopy":391,"./isIndex":431}],441:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./arrayCopy":406,"./isIndex":446}],456:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./arrayCopy":408,"./isIndex":448}],458:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./arrayCopy":414,"./isIndex":454}],464:[function(require,module,exports){
 /** Used as the internal argument placeholder. */
 var PLACEHOLDER = '__lodash_placeholder__';
 
@@ -35856,19 +30737,7 @@ function replaceHolders(array, placeholder) {
 
 module.exports = replaceHolders;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],440:[function(require,module,exports){
-=======
-},{}],442:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],457:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],459:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],465:[function(require,module,exports){
 var baseSetData = require('./baseSetData'),
     now = require('../date/now');
 
@@ -35911,19 +30780,7 @@ var setData = (function() {
 
 module.exports = setData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../date/now":384,"./baseSetData":407}],441:[function(require,module,exports){
-=======
-},{"../date/now":386,"./baseSetData":409}],443:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../date/now":401,"./baseSetData":424}],458:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../date/now":403,"./baseSetData":426}],460:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../date/now":409,"./baseSetData":432}],466:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('./isIndex'),
@@ -35966,19 +30823,7 @@ function shimKeys(object) {
 
 module.exports = shimKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isArguments":445,"../lang/isArray":446,"../object/keysIn":453,"./isIndex":429,"./isLength":432}],442:[function(require,module,exports){
-=======
-},{"../lang/isArguments":447,"../lang/isArray":448,"../object/keysIn":455,"./isIndex":431,"./isLength":434}],444:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isArguments":462,"../lang/isArray":463,"../object/keysIn":470,"./isIndex":446,"./isLength":449}],459:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isArguments":464,"../lang/isArray":465,"../object/keysIn":472,"./isIndex":448,"./isLength":451}],461:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isArguments":470,"../lang/isArray":471,"../object/keysIn":478,"./isIndex":454,"./isLength":457}],467:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -35994,19 +30839,7 @@ function toObject(value) {
 
 module.exports = toObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isObject":449}],443:[function(require,module,exports){
-=======
-},{"../lang/isObject":451}],445:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isObject":466}],460:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isObject":468}],462:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isObject":474}],468:[function(require,module,exports){
 var baseToString = require('./baseToString'),
     isArray = require('../lang/isArray');
 
@@ -36036,19 +30869,7 @@ function toPath(value) {
 
 module.exports = toPath;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lang/isArray":446,"./baseToString":409}],444:[function(require,module,exports){
-=======
-},{"../lang/isArray":448,"./baseToString":411}],446:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lang/isArray":463,"./baseToString":426}],461:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lang/isArray":465,"./baseToString":428}],463:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lang/isArray":471,"./baseToString":434}],469:[function(require,module,exports){
 var LazyWrapper = require('./LazyWrapper'),
     LodashWrapper = require('./LodashWrapper'),
     arrayCopy = require('./arrayCopy');
@@ -36068,19 +30889,7 @@ function wrapperClone(wrapper) {
 
 module.exports = wrapperClone;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./LazyWrapper":387,"./LodashWrapper":388,"./arrayCopy":389}],445:[function(require,module,exports){
-=======
-},{"./LazyWrapper":389,"./LodashWrapper":390,"./arrayCopy":391}],447:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./LazyWrapper":404,"./LodashWrapper":405,"./arrayCopy":406}],462:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./LazyWrapper":406,"./LodashWrapper":407,"./arrayCopy":408}],464:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./LazyWrapper":412,"./LodashWrapper":413,"./arrayCopy":414}],470:[function(require,module,exports){
 var isArrayLike = require('../internal/isArrayLike'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -36116,19 +30925,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/isArrayLike":428,"../internal/isObjectLike":433}],446:[function(require,module,exports){
-=======
-},{"../internal/isArrayLike":430,"../internal/isObjectLike":435}],448:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/isArrayLike":445,"../internal/isObjectLike":450}],463:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/isArrayLike":447,"../internal/isObjectLike":452}],465:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/isArrayLike":453,"../internal/isObjectLike":458}],471:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
@@ -36170,19 +30967,7 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/getNative":427,"../internal/isLength":432,"../internal/isObjectLike":433}],447:[function(require,module,exports){
-=======
-},{"../internal/getNative":429,"../internal/isLength":434,"../internal/isObjectLike":435}],449:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/getNative":444,"../internal/isLength":449,"../internal/isObjectLike":450}],464:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/getNative":446,"../internal/isLength":451,"../internal/isObjectLike":452}],466:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/getNative":452,"../internal/isLength":457,"../internal/isObjectLike":458}],472:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
@@ -36222,19 +31007,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObject":449}],448:[function(require,module,exports){
-=======
-},{"./isObject":451}],450:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObject":466}],465:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObject":468}],467:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isObject":474}],473:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -36284,19 +31057,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/isObjectLike":433,"./isFunction":447}],449:[function(require,module,exports){
-=======
-},{"../internal/isObjectLike":435,"./isFunction":449}],451:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/isObjectLike":450,"./isFunction":464}],466:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/isObjectLike":452,"./isFunction":466}],468:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/isObjectLike":458,"./isFunction":472}],474:[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -36326,19 +31087,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],450:[function(require,module,exports){
-=======
-},{}],452:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],467:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],469:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],475:[function(require,module,exports){
 var isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -36414,19 +31163,7 @@ function isTypedArray(value) {
 
 module.exports = isTypedArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/isLength":432,"../internal/isObjectLike":433}],451:[function(require,module,exports){
-=======
-},{"../internal/isLength":434,"../internal/isObjectLike":435}],453:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/isLength":449,"../internal/isObjectLike":450}],468:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/isLength":451,"../internal/isObjectLike":452}],470:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/isLength":457,"../internal/isObjectLike":458}],476:[function(require,module,exports){
 var baseGet = require('../internal/baseGet'),
     toPath = require('../internal/toPath');
 
@@ -36461,19 +31198,7 @@ function get(object, path, defaultValue) {
 
 module.exports = get;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/baseGet":397,"../internal/toPath":443}],452:[function(require,module,exports){
-=======
-},{"../internal/baseGet":399,"../internal/toPath":445}],454:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/baseGet":414,"../internal/toPath":460}],469:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/baseGet":416,"../internal/toPath":462}],471:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/baseGet":422,"../internal/toPath":468}],477:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isArrayLike = require('../internal/isArrayLike'),
     isObject = require('../lang/isObject'),
@@ -36520,19 +31245,7 @@ var keys = !nativeKeys ? shimKeys : function(object) {
 
 module.exports = keys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/getNative":427,"../internal/isArrayLike":428,"../internal/shimKeys":441,"../lang/isObject":449}],453:[function(require,module,exports){
-=======
-},{"../internal/getNative":429,"../internal/isArrayLike":430,"../internal/shimKeys":443,"../lang/isObject":451}],455:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/getNative":444,"../internal/isArrayLike":445,"../internal/shimKeys":458,"../lang/isObject":466}],470:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/getNative":446,"../internal/isArrayLike":447,"../internal/shimKeys":460,"../lang/isObject":468}],472:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/getNative":452,"../internal/isArrayLike":453,"../internal/shimKeys":466,"../lang/isObject":474}],478:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('../internal/isIndex'),
@@ -36598,19 +31311,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/isIndex":429,"../internal/isLength":432,"../lang/isArguments":445,"../lang/isArray":446,"../lang/isObject":449}],454:[function(require,module,exports){
-=======
-},{"../internal/isIndex":431,"../internal/isLength":434,"../lang/isArguments":447,"../lang/isArray":448,"../lang/isObject":451}],456:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/isIndex":446,"../internal/isLength":449,"../lang/isArguments":462,"../lang/isArray":463,"../lang/isObject":466}],471:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/isIndex":448,"../internal/isLength":451,"../lang/isArguments":464,"../lang/isArray":465,"../lang/isObject":468}],473:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/isIndex":454,"../internal/isLength":457,"../lang/isArguments":470,"../lang/isArray":471,"../lang/isObject":474}],479:[function(require,module,exports){
 var keys = require('./keys'),
     toObject = require('../internal/toObject');
 
@@ -36645,19 +31346,7 @@ function pairs(object) {
 
 module.exports = pairs;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/toObject":442,"./keys":452}],455:[function(require,module,exports){
-=======
-},{"../internal/toObject":444,"./keys":454}],457:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/toObject":459,"./keys":469}],472:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/toObject":461,"./keys":471}],474:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/toObject":467,"./keys":477}],480:[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -36679,19 +31368,7 @@ function identity(value) {
 
 module.exports = identity;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],456:[function(require,module,exports){
-=======
-},{}],458:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],473:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],475:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],481:[function(require,module,exports){
 /**
  * A no-operation function that returns `undefined` regardless of the
  * arguments it receives.
@@ -36712,19 +31389,7 @@ function noop() {
 
 module.exports = noop;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],457:[function(require,module,exports){
-=======
-},{}],459:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],474:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],476:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],482:[function(require,module,exports){
 var baseProperty = require('../internal/baseProperty'),
     basePropertyDeep = require('../internal/basePropertyDeep'),
     isKey = require('../internal/isKey');
@@ -36757,19 +31422,7 @@ function property(path) {
 
 module.exports = property;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../internal/baseProperty":405,"../internal/basePropertyDeep":406,"../internal/isKey":430}],458:[function(require,module,exports){
-=======
-},{"../internal/baseProperty":407,"../internal/basePropertyDeep":408,"../internal/isKey":432}],460:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../internal/baseProperty":422,"../internal/basePropertyDeep":423,"../internal/isKey":447}],475:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../internal/baseProperty":424,"../internal/basePropertyDeep":425,"../internal/isKey":449}],477:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../internal/baseProperty":430,"../internal/basePropertyDeep":431,"../internal/isKey":455}],483:[function(require,module,exports){
 /*! 
  * numeral.js language configuration
  * language : russian (ru)
@@ -36808,19 +31461,7 @@ module.exports = property;
     }
 }());
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],459:[function(require,module,exports){
-=======
-},{}],461:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],476:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],478:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],484:[function(require,module,exports){
 /*!
  * numeral.js
  * version : 1.5.3
@@ -37501,19 +32142,7 @@ module.exports = property;
     }
 }).call(this);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],460:[function(require,module,exports){
-=======
-},{}],462:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],477:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],479:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],485:[function(require,module,exports){
 'use strict';
 
 function oldAdd(element, className) {
@@ -37557,19 +32186,7 @@ exports.list = function (element) {
   }
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],461:[function(require,module,exports){
-=======
-},{}],463:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],478:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],480:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],486:[function(require,module,exports){
 'use strict';
 
 var DOM = {};
@@ -37655,19 +32272,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],462:[function(require,module,exports){
-=======
-},{}],464:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],479:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],481:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],487:[function(require,module,exports){
 'use strict';
 
 var EventElement = function (element) {
@@ -37740,19 +32345,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],463:[function(require,module,exports){
-=======
-},{}],465:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],480:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],482:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],488:[function(require,module,exports){
 'use strict';
 
 module.exports = (function () {
@@ -37767,19 +32360,7 @@ module.exports = (function () {
   };
 })();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],464:[function(require,module,exports){
-=======
-},{}],466:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],481:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],483:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],489:[function(require,module,exports){
 'use strict';
 
 var cls = require('./class');
@@ -37864,19 +32445,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./class":460,"./dom":461}],465:[function(require,module,exports){
-=======
-},{"./class":462,"./dom":463}],467:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./class":477,"./dom":478}],482:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./class":479,"./dom":480}],484:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./class":485,"./dom":486}],490:[function(require,module,exports){
 'use strict';
 
 var destroy = require('./plugin/destroy');
@@ -37889,19 +32458,7 @@ module.exports = {
   destroy: destroy
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./plugin/destroy":467,"./plugin/initialize":475,"./plugin/update":479}],466:[function(require,module,exports){
-=======
-},{"./plugin/destroy":469,"./plugin/initialize":477,"./plugin/update":481}],468:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./plugin/destroy":484,"./plugin/initialize":492,"./plugin/update":496}],483:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./plugin/destroy":486,"./plugin/initialize":494,"./plugin/update":498}],485:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./plugin/destroy":492,"./plugin/initialize":500,"./plugin/update":504}],491:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -37920,19 +32477,7 @@ module.exports = {
   theme: 'default'
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],467:[function(require,module,exports){
-=======
-},{}],469:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],484:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],486:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],492:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -37956,19 +32501,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lib/dom":461,"../lib/helper":464,"./instances":476}],468:[function(require,module,exports){
-=======
-},{"../lib/dom":463,"../lib/helper":466,"./instances":478}],470:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lib/dom":478,"../lib/helper":481,"./instances":493}],485:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lib/dom":480,"../lib/helper":483,"./instances":495}],487:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lib/dom":486,"../lib/helper":489,"./instances":501}],493:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -38030,19 +32563,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../lib/helper":464,"../instances":476,"../update-geometry":477,"../update-scroll":478}],469:[function(require,module,exports){
-=======
-},{"../../lib/helper":466,"../instances":478,"../update-geometry":479,"../update-scroll":480}],471:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../lib/helper":481,"../instances":493,"../update-geometry":494,"../update-scroll":495}],486:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../lib/helper":483,"../instances":495,"../update-geometry":496,"../update-scroll":497}],488:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../lib/helper":489,"../instances":501,"../update-geometry":502,"../update-scroll":503}],494:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -38147,19 +32668,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../lib/dom":461,"../../lib/helper":464,"../instances":476,"../update-geometry":477,"../update-scroll":478}],470:[function(require,module,exports){
-=======
-},{"../../lib/dom":463,"../../lib/helper":466,"../instances":478,"../update-geometry":479,"../update-scroll":480}],472:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../lib/dom":478,"../../lib/helper":481,"../instances":493,"../update-geometry":494,"../update-scroll":495}],487:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../lib/dom":480,"../../lib/helper":483,"../instances":495,"../update-geometry":496,"../update-scroll":497}],489:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../lib/dom":486,"../../lib/helper":489,"../instances":501,"../update-geometry":502,"../update-scroll":503}],495:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -38291,19 +32800,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../lib/dom":461,"../../lib/helper":464,"../instances":476,"../update-geometry":477,"../update-scroll":478}],471:[function(require,module,exports){
-=======
-},{"../../lib/dom":463,"../../lib/helper":466,"../instances":478,"../update-geometry":479,"../update-scroll":480}],473:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../lib/dom":478,"../../lib/helper":481,"../instances":493,"../update-geometry":494,"../update-scroll":495}],488:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../lib/dom":480,"../../lib/helper":483,"../instances":495,"../update-geometry":496,"../update-scroll":497}],490:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../lib/dom":486,"../../lib/helper":489,"../instances":501,"../update-geometry":502,"../update-scroll":503}],496:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -38441,19 +32938,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../instances":476,"../update-geometry":477,"../update-scroll":478}],472:[function(require,module,exports){
-=======
-},{"../instances":478,"../update-geometry":479,"../update-scroll":480}],474:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../instances":493,"../update-geometry":494,"../update-scroll":495}],489:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../instances":495,"../update-geometry":496,"../update-scroll":497}],491:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../instances":501,"../update-geometry":502,"../update-scroll":503}],497:[function(require,module,exports){
 'use strict';
 
 var instances = require('../instances');
@@ -38470,19 +32955,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../instances":476,"../update-geometry":477}],473:[function(require,module,exports){
-=======
-},{"../instances":478,"../update-geometry":479}],475:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../instances":493,"../update-geometry":494}],490:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../instances":495,"../update-geometry":496}],492:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../instances":501,"../update-geometry":502}],498:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -38593,19 +33066,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../lib/helper":464,"../instances":476,"../update-geometry":477,"../update-scroll":478}],474:[function(require,module,exports){
-=======
-},{"../../lib/helper":466,"../instances":478,"../update-geometry":479,"../update-scroll":480}],476:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../lib/helper":481,"../instances":493,"../update-geometry":494,"../update-scroll":495}],491:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../lib/helper":483,"../instances":495,"../update-geometry":496,"../update-scroll":497}],493:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../lib/helper":489,"../instances":501,"../update-geometry":502,"../update-scroll":503}],499:[function(require,module,exports){
 'use strict';
 
 var _ = require('../../lib/helper');
@@ -38783,19 +33244,7 @@ module.exports = function (element) {
   bindTouchHandler(element, i, _.env.supportsTouch, _.env.supportsIePointer);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../../lib/helper":464,"../instances":476,"../update-geometry":477,"../update-scroll":478}],475:[function(require,module,exports){
-=======
-},{"../../lib/helper":466,"../instances":478,"../update-geometry":479,"../update-scroll":480}],477:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../../lib/helper":481,"../instances":493,"../update-geometry":494,"../update-scroll":495}],492:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../../lib/helper":483,"../instances":495,"../update-geometry":496,"../update-scroll":497}],494:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../../lib/helper":489,"../instances":501,"../update-geometry":502,"../update-scroll":503}],500:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -38834,19 +33283,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lib/class":460,"../lib/helper":464,"./handler/click-rail":468,"./handler/drag-scrollbar":469,"./handler/keyboard":470,"./handler/mouse-wheel":471,"./handler/native-scroll":472,"./handler/selection":473,"./handler/touch":474,"./instances":476,"./update-geometry":477}],476:[function(require,module,exports){
-=======
-},{"../lib/class":462,"../lib/helper":466,"./handler/click-rail":470,"./handler/drag-scrollbar":471,"./handler/keyboard":472,"./handler/mouse-wheel":473,"./handler/native-scroll":474,"./handler/selection":475,"./handler/touch":476,"./instances":478,"./update-geometry":479}],478:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lib/class":477,"../lib/helper":481,"./handler/click-rail":485,"./handler/drag-scrollbar":486,"./handler/keyboard":487,"./handler/mouse-wheel":488,"./handler/native-scroll":489,"./handler/selection":490,"./handler/touch":491,"./instances":493,"./update-geometry":494}],493:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lib/class":479,"../lib/helper":483,"./handler/click-rail":487,"./handler/drag-scrollbar":488,"./handler/keyboard":489,"./handler/mouse-wheel":490,"./handler/native-scroll":491,"./handler/selection":492,"./handler/touch":493,"./instances":495,"./update-geometry":496}],495:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lib/class":485,"../lib/helper":489,"./handler/click-rail":493,"./handler/drag-scrollbar":494,"./handler/keyboard":495,"./handler/mouse-wheel":496,"./handler/native-scroll":497,"./handler/selection":498,"./handler/touch":499,"./instances":501,"./update-geometry":502}],501:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -38955,19 +33392,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lib/class":460,"../lib/dom":461,"../lib/event-manager":462,"../lib/guid":463,"../lib/helper":464,"./default-setting":466}],477:[function(require,module,exports){
-=======
-},{"../lib/class":462,"../lib/dom":463,"../lib/event-manager":464,"../lib/guid":465,"../lib/helper":466,"./default-setting":468}],479:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lib/class":477,"../lib/dom":478,"../lib/event-manager":479,"../lib/guid":480,"../lib/helper":481,"./default-setting":483}],494:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lib/class":479,"../lib/dom":480,"../lib/event-manager":481,"../lib/guid":482,"../lib/helper":483,"./default-setting":485}],496:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lib/class":485,"../lib/dom":486,"../lib/event-manager":487,"../lib/guid":488,"../lib/helper":489,"./default-setting":491}],502:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -39095,19 +33520,7 @@ module.exports = function (element) {
   }
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lib/class":460,"../lib/dom":461,"../lib/helper":464,"./instances":476,"./update-scroll":478}],478:[function(require,module,exports){
-=======
-},{"../lib/class":462,"../lib/dom":463,"../lib/helper":466,"./instances":478,"./update-scroll":480}],480:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lib/class":477,"../lib/dom":478,"../lib/helper":481,"./instances":493,"./update-scroll":495}],495:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lib/class":479,"../lib/dom":480,"../lib/helper":483,"./instances":495,"./update-scroll":497}],497:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lib/class":485,"../lib/dom":486,"../lib/helper":489,"./instances":501,"./update-scroll":503}],503:[function(require,module,exports){
 'use strict';
 
 var instances = require('./instances');
@@ -39221,19 +33634,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./instances":476}],479:[function(require,module,exports){
-=======
-},{"./instances":478}],481:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./instances":493}],496:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./instances":495}],498:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./instances":501}],504:[function(require,module,exports){
 'use strict';
 
 var _ = require('../lib/helper');
@@ -39272,19 +33673,7 @@ module.exports = function (element) {
   dom.css(i.scrollbarYRail, 'display', '');
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../lib/dom":461,"../lib/helper":464,"./instances":476,"./update-geometry":477,"./update-scroll":478}],480:[function(require,module,exports){
-=======
-},{"../lib/dom":463,"../lib/helper":466,"./instances":478,"./update-geometry":479,"./update-scroll":480}],482:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../lib/dom":478,"../lib/helper":481,"./instances":493,"./update-geometry":494,"./update-scroll":495}],497:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../lib/dom":480,"../lib/helper":483,"./instances":495,"./update-geometry":496,"./update-scroll":497}],499:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../lib/dom":486,"../lib/helper":489,"./instances":501,"./update-geometry":502,"./update-scroll":503}],505:[function(require,module,exports){
 (function (process){
 // Generated by CoffeeScript 1.7.1
 (function() {
@@ -39320,19 +33709,7 @@ module.exports = function (element) {
 }).call(this);
 
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],481:[function(require,module,exports){
-=======
-},{"_process":483}],483:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],498:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],500:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],506:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -39514,19 +33891,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],482:[function(require,module,exports){
-=======
-},{}],484:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],499:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],501:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],507:[function(require,module,exports){
 (function (global){
 var now = require('performance-now')
   , root = typeof window === 'undefined' ? global : window
@@ -39602,27 +33967,9 @@ module.exports.polyfill = function() {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"performance-now":480}],483:[function(require,module,exports){
+},{"performance-now":505}],508:[function(require,module,exports){
 module.exports = require('react/lib/shallowCompare');
-},{"react/lib/shallowCompare":626}],484:[function(require,module,exports){
-=======
-},{"performance-now":482}],485:[function(require,module,exports){
-module.exports = require('react/lib/shallowCompare');
-},{"react/lib/shallowCompare":628}],486:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"performance-now":497}],500:[function(require,module,exports){
-module.exports = require('react/lib/shallowCompare');
-},{"react/lib/shallowCompare":643}],501:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"performance-now":499}],502:[function(require,module,exports){
-module.exports = require('react/lib/shallowCompare');
-},{"react/lib/shallowCompare":645}],503:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react/lib/shallowCompare":651}],509:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -39812,52 +34159,16 @@ module.exports = _react2['default'].createClass({
     }
   }
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],485:[function(require,module,exports){
+},{"react":"react"}],510:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":484}],486:[function(require,module,exports){
-=======
-},{"react":"react"}],487:[function(require,module,exports){
-'use strict';
-
-module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":486}],488:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],502:[function(require,module,exports){
-'use strict';
-
-module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":501}],503:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],504:[function(require,module,exports){
-'use strict';
-
-module.exports = require('./components/DisqusThread');
-},{"./components/DisqusThread":503}],505:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./components/DisqusThread":509}],511:[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOMServer');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react/lib/ReactDOMServer":545}],487:[function(require,module,exports){
-=======
-},{"react/lib/ReactDOMServer":547}],489:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react/lib/ReactDOMServer":562}],504:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react/lib/ReactDOMServer":564}],506:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react/lib/ReactDOMServer":570}],512:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -39997,19 +34308,7 @@ Nouislider.propTypes = {
 
 module.exports = Nouislider;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"nouislider":"nouislider","react":"react"}],488:[function(require,module,exports){
-=======
-},{"nouislider":"nouislider","react":"react"}],490:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"nouislider":"nouislider","react":"react"}],505:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"nouislider":"nouislider","react":"react"}],507:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"nouislider":"nouislider","react":"react"}],513:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -40090,19 +34389,7 @@ Provider.childContextTypes = {
   store: _storeShape2["default"].isRequired
 };
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utils/storeShape":492,"../utils/warning":493,"_process":481,"react":"react"}],489:[function(require,module,exports){
-=======
-},{"../utils/storeShape":494,"../utils/warning":495,"_process":483,"react":"react"}],491:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utils/storeShape":509,"../utils/warning":510,"_process":498,"react":"react"}],506:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utils/storeShape":511,"../utils/warning":512,"_process":500,"react":"react"}],508:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utils/storeShape":517,"../utils/warning":518,"_process":506,"react":"react"}],514:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -40498,19 +34785,7 @@ function connect(mapStateToProps, mapDispatchToProps, mergeProps) {
   };
 }
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"../utils/shallowEqual":491,"../utils/storeShape":492,"../utils/warning":493,"../utils/wrapActionCreators":494,"_process":481,"hoist-non-react-statics":355,"invariant":372,"lodash/isPlainObject":498,"react":"react"}],490:[function(require,module,exports){
-=======
-},{"../utils/shallowEqual":493,"../utils/storeShape":494,"../utils/warning":495,"../utils/wrapActionCreators":496,"_process":483,"hoist-non-react-statics":357,"invariant":374,"lodash/isPlainObject":500,"react":"react"}],492:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"../utils/shallowEqual":508,"../utils/storeShape":509,"../utils/warning":510,"../utils/wrapActionCreators":511,"_process":498,"hoist-non-react-statics":372,"invariant":389,"lodash/isPlainObject":515,"react":"react"}],507:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"../utils/shallowEqual":510,"../utils/storeShape":511,"../utils/warning":512,"../utils/wrapActionCreators":513,"_process":500,"hoist-non-react-statics":374,"invariant":391,"lodash/isPlainObject":517,"react":"react"}],509:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"../utils/shallowEqual":516,"../utils/storeShape":517,"../utils/warning":518,"../utils/wrapActionCreators":519,"_process":506,"hoist-non-react-statics":380,"invariant":397,"lodash/isPlainObject":523,"react":"react"}],515:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40528,19 +34803,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 exports.Provider = _Provider2["default"];
 exports.connect = _connect2["default"];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./components/Provider":488,"./components/connect":489}],491:[function(require,module,exports){
-=======
-},{"./components/Provider":490,"./components/connect":491}],493:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./components/Provider":505,"./components/connect":506}],508:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./components/Provider":507,"./components/connect":508}],510:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./components/Provider":513,"./components/connect":514}],516:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -40567,19 +34830,7 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],492:[function(require,module,exports){
-=======
-},{}],494:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],509:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],511:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],517:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40591,19 +34842,7 @@ exports["default"] = _react.PropTypes.shape({
   dispatch: _react.PropTypes.func.isRequired,
   getState: _react.PropTypes.func.isRequired
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react":"react"}],493:[function(require,module,exports){
-=======
-},{"react":"react"}],495:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react":"react"}],510:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react":"react"}],512:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react":"react"}],518:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40628,19 +34867,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],494:[function(require,module,exports){
-=======
-},{}],496:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],511:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],513:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],519:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40653,19 +34880,7 @@ function wrapActionCreators(actionCreators) {
     return (0, _redux.bindActionCreators)(actionCreators, dispatch);
   };
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"redux":"redux"}],495:[function(require,module,exports){
-=======
-},{"redux":"redux"}],497:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"redux":"redux"}],512:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"redux":"redux"}],514:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"redux":"redux"}],520:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -40673,19 +34888,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_overArg":496}],496:[function(require,module,exports){
-=======
-},{"./_overArg":498}],498:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_overArg":513}],513:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_overArg":515}],515:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_overArg":521}],521:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -40702,19 +34905,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],497:[function(require,module,exports){
-=======
-},{}],499:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],514:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],516:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],522:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -40745,19 +34936,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],498:[function(require,module,exports){
-=======
-},{}],500:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],515:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],517:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],523:[function(require,module,exports){
 var getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
 
@@ -40827,19 +35006,7 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getPrototype":495,"./isObjectLike":497}],499:[function(require,module,exports){
-=======
-},{"./_getPrototype":497,"./isObjectLike":499}],501:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getPrototype":512,"./isObjectLike":514}],516:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getPrototype":514,"./isObjectLike":516}],518:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getPrototype":520,"./isObjectLike":522}],524:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -41327,31 +35494,10 @@ Sticky.STATUS_FIXED = STATUS_FIXED;
 
 module.exports = Sticky;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"classnames":"classnames","react":"react","react-addons-shallow-compare":483,"subscribe-ui-event":676}],500:[function(require,module,exports){
+},{"classnames":"classnames","react":"react","react-addons-shallow-compare":508,"subscribe-ui-event":701}],525:[function(require,module,exports){
 module.exports = require('./dist/Sticky');
 
-},{"./dist/Sticky":499}],501:[function(require,module,exports){
-=======
-},{"classnames":"classnames","react":"react","react-addons-shallow-compare":485,"subscribe-ui-event":678}],502:[function(require,module,exports){
-module.exports = require('./dist/Sticky');
-
-},{"./dist/Sticky":501}],503:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"classnames":"classnames","react":"react","react-addons-shallow-compare":500,"subscribe-ui-event":693}],517:[function(require,module,exports){
-module.exports = require('./dist/Sticky');
-
-},{"./dist/Sticky":516}],518:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"classnames":"classnames","react":"react","react-addons-shallow-compare":502,"subscribe-ui-event":695}],519:[function(require,module,exports){
-module.exports = require('./dist/Sticky');
-
-},{"./dist/Sticky":518}],520:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./dist/Sticky":524}],526:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41388,19 +35534,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactMount":565,"./findDOMNode":608,"fbjs/lib/focusNode":639}],502:[function(require,module,exports){
-=======
-},{"./ReactMount":567,"./findDOMNode":610,"fbjs/lib/focusNode":641}],504:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactMount":582,"./findDOMNode":625,"fbjs/lib/focusNode":656}],519:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactMount":584,"./findDOMNode":627,"fbjs/lib/focusNode":658}],521:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactMount":590,"./findDOMNode":633,"fbjs/lib/focusNode":664}],527:[function(require,module,exports){
 /**
  * Copyright 2013-2015 Facebook, Inc.
  * All rights reserved.
@@ -41806,19 +35940,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPropagators":518,"./FallbackCompositionState":519,"./SyntheticCompositionEvent":590,"./SyntheticInputEvent":594,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/keyOf":649}],503:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPropagators":520,"./FallbackCompositionState":521,"./SyntheticCompositionEvent":592,"./SyntheticInputEvent":596,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/keyOf":651}],505:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPropagators":535,"./FallbackCompositionState":536,"./SyntheticCompositionEvent":607,"./SyntheticInputEvent":611,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/keyOf":666}],520:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPropagators":537,"./FallbackCompositionState":538,"./SyntheticCompositionEvent":609,"./SyntheticInputEvent":613,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/keyOf":668}],522:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPropagators":543,"./FallbackCompositionState":544,"./SyntheticCompositionEvent":615,"./SyntheticInputEvent":619,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/keyOf":674}],528:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -41958,19 +36080,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],504:[function(require,module,exports){
-=======
-},{}],506:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],521:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],523:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],529:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42148,19 +36258,7 @@ ReactPerf.measureMethods(CSSPropertyOperations, 'CSSPropertyOperations', {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CSSProperty":503,"./ReactPerf":571,"./dangerousStyleValue":605,"_process":481,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/camelizeStyleName":633,"fbjs/lib/hyphenateStyleName":644,"fbjs/lib/memoizeStringOnly":651,"fbjs/lib/warning":656}],505:[function(require,module,exports){
-=======
-},{"./CSSProperty":505,"./ReactPerf":573,"./dangerousStyleValue":607,"_process":483,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/camelizeStyleName":635,"fbjs/lib/hyphenateStyleName":646,"fbjs/lib/memoizeStringOnly":653,"fbjs/lib/warning":658}],507:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CSSProperty":520,"./ReactPerf":588,"./dangerousStyleValue":622,"_process":498,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/camelizeStyleName":650,"fbjs/lib/hyphenateStyleName":661,"fbjs/lib/memoizeStringOnly":668,"fbjs/lib/warning":673}],522:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CSSProperty":522,"./ReactPerf":590,"./dangerousStyleValue":624,"_process":500,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/camelizeStyleName":652,"fbjs/lib/hyphenateStyleName":663,"fbjs/lib/memoizeStringOnly":670,"fbjs/lib/warning":675}],524:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CSSProperty":528,"./ReactPerf":596,"./dangerousStyleValue":630,"_process":506,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/camelizeStyleName":658,"fbjs/lib/hyphenateStyleName":669,"fbjs/lib/memoizeStringOnly":676,"fbjs/lib/warning":681}],530:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42256,19 +36354,7 @@ PooledClass.addPoolingTo(CallbackQueue);
 
 module.exports = CallbackQueue;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./PooledClass":523,"_process":481,"fbjs/lib/invariant":645}],506:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./PooledClass":525,"_process":483,"fbjs/lib/invariant":647}],508:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./PooledClass":540,"_process":498,"fbjs/lib/invariant":662}],523:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./PooledClass":542,"_process":500,"fbjs/lib/invariant":664}],525:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./PooledClass":548,"_process":506,"fbjs/lib/invariant":670}],531:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42590,19 +36676,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPluginHub":515,"./EventPropagators":518,"./ReactUpdates":583,"./SyntheticEvent":592,"./getEventTarget":614,"./isEventSupported":619,"./isTextInputElement":620,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/keyOf":649}],507:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPluginHub":517,"./EventPropagators":520,"./ReactUpdates":585,"./SyntheticEvent":594,"./getEventTarget":616,"./isEventSupported":621,"./isTextInputElement":622,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/keyOf":651}],509:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPluginHub":532,"./EventPropagators":535,"./ReactUpdates":600,"./SyntheticEvent":609,"./getEventTarget":631,"./isEventSupported":636,"./isTextInputElement":637,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/keyOf":666}],524:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPluginHub":534,"./EventPropagators":537,"./ReactUpdates":602,"./SyntheticEvent":611,"./getEventTarget":633,"./isEventSupported":638,"./isTextInputElement":639,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/keyOf":668}],526:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPluginHub":540,"./EventPropagators":543,"./ReactUpdates":608,"./SyntheticEvent":617,"./getEventTarget":639,"./isEventSupported":644,"./isTextInputElement":645,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/keyOf":674}],532:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -42626,19 +36700,7 @@ var ClientReactRootIndex = {
 };
 
 module.exports = ClientReactRootIndex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],508:[function(require,module,exports){
-=======
-},{}],510:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],525:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],527:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],533:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -42770,19 +36832,7 @@ ReactPerf.measureMethods(DOMChildrenOperations, 'DOMChildrenOperations', {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Danger":511,"./ReactMultiChildUpdateTypes":567,"./ReactPerf":571,"./setInnerHTML":624,"./setTextContent":625,"_process":481,"fbjs/lib/invariant":645}],509:[function(require,module,exports){
-=======
-},{"./Danger":513,"./ReactMultiChildUpdateTypes":569,"./ReactPerf":573,"./setInnerHTML":626,"./setTextContent":627,"_process":483,"fbjs/lib/invariant":647}],511:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Danger":528,"./ReactMultiChildUpdateTypes":584,"./ReactPerf":588,"./setInnerHTML":641,"./setTextContent":642,"_process":498,"fbjs/lib/invariant":662}],526:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Danger":530,"./ReactMultiChildUpdateTypes":586,"./ReactPerf":590,"./setInnerHTML":643,"./setTextContent":644,"_process":500,"fbjs/lib/invariant":664}],528:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Danger":536,"./ReactMultiChildUpdateTypes":592,"./ReactPerf":596,"./setInnerHTML":649,"./setTextContent":650,"_process":506,"fbjs/lib/invariant":670}],534:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43019,19 +37069,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],510:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],512:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],527:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],529:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],535:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43259,19 +37297,7 @@ ReactPerf.measureMethods(DOMPropertyOperations, 'DOMPropertyOperations', {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509,"./ReactPerf":571,"./quoteAttributeValueForBrowser":622,"_process":481,"fbjs/lib/warning":656}],511:[function(require,module,exports){
-=======
-},{"./DOMProperty":511,"./ReactPerf":573,"./quoteAttributeValueForBrowser":624,"_process":483,"fbjs/lib/warning":658}],513:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526,"./ReactPerf":588,"./quoteAttributeValueForBrowser":639,"_process":498,"fbjs/lib/warning":673}],528:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528,"./ReactPerf":590,"./quoteAttributeValueForBrowser":641,"_process":500,"fbjs/lib/warning":675}],530:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534,"./ReactPerf":596,"./quoteAttributeValueForBrowser":647,"_process":506,"fbjs/lib/warning":681}],536:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43419,19 +37445,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/createNodesFromMarkup":636,"fbjs/lib/emptyFunction":637,"fbjs/lib/getMarkupWrap":641,"fbjs/lib/invariant":645}],512:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/createNodesFromMarkup":638,"fbjs/lib/emptyFunction":639,"fbjs/lib/getMarkupWrap":643,"fbjs/lib/invariant":647}],514:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/createNodesFromMarkup":653,"fbjs/lib/emptyFunction":654,"fbjs/lib/getMarkupWrap":658,"fbjs/lib/invariant":662}],529:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/createNodesFromMarkup":655,"fbjs/lib/emptyFunction":656,"fbjs/lib/getMarkupWrap":660,"fbjs/lib/invariant":664}],531:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/createNodesFromMarkup":661,"fbjs/lib/emptyFunction":662,"fbjs/lib/getMarkupWrap":666,"fbjs/lib/invariant":670}],537:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43459,19 +37473,7 @@ var keyOf = require('fbjs/lib/keyOf');
 var DefaultEventPluginOrder = [keyOf({ ResponderEventPlugin: null }), keyOf({ SimpleEventPlugin: null }), keyOf({ TapEventPlugin: null }), keyOf({ EnterLeaveEventPlugin: null }), keyOf({ ChangeEventPlugin: null }), keyOf({ SelectEventPlugin: null }), keyOf({ BeforeInputEventPlugin: null })];
 
 module.exports = DefaultEventPluginOrder;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/keyOf":649}],513:[function(require,module,exports){
-=======
-},{"fbjs/lib/keyOf":651}],515:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/keyOf":666}],530:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/keyOf":668}],532:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/keyOf":674}],538:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43596,19 +37598,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPropagators":518,"./ReactMount":565,"./SyntheticMouseEvent":596,"fbjs/lib/keyOf":649}],514:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPropagators":520,"./ReactMount":567,"./SyntheticMouseEvent":598,"fbjs/lib/keyOf":651}],516:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPropagators":535,"./ReactMount":582,"./SyntheticMouseEvent":613,"fbjs/lib/keyOf":666}],531:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPropagators":537,"./ReactMount":584,"./SyntheticMouseEvent":615,"fbjs/lib/keyOf":668}],533:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPropagators":543,"./ReactMount":590,"./SyntheticMouseEvent":621,"fbjs/lib/keyOf":674}],539:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -43701,19 +37691,7 @@ var EventConstants = {
 };
 
 module.exports = EventConstants;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/keyMirror":648}],515:[function(require,module,exports){
-=======
-},{"fbjs/lib/keyMirror":650}],517:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/keyMirror":665}],532:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/keyMirror":667}],534:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/keyMirror":673}],540:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -43995,19 +37973,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventPluginRegistry":516,"./EventPluginUtils":517,"./ReactErrorUtils":556,"./accumulateInto":602,"./forEachAccumulated":610,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],516:[function(require,module,exports){
-=======
-},{"./EventPluginRegistry":518,"./EventPluginUtils":519,"./ReactErrorUtils":558,"./accumulateInto":604,"./forEachAccumulated":612,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],518:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventPluginRegistry":533,"./EventPluginUtils":534,"./ReactErrorUtils":573,"./accumulateInto":619,"./forEachAccumulated":627,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],533:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventPluginRegistry":535,"./EventPluginUtils":536,"./ReactErrorUtils":575,"./accumulateInto":621,"./forEachAccumulated":629,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],535:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventPluginRegistry":541,"./EventPluginUtils":542,"./ReactErrorUtils":581,"./accumulateInto":627,"./forEachAccumulated":635,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],541:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44230,19 +38196,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],517:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],519:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],534:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],536:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],542:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44447,19 +38401,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./ReactErrorUtils":556,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],518:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./ReactErrorUtils":558,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],520:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./ReactErrorUtils":573,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],535:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./ReactErrorUtils":575,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],537:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./ReactErrorUtils":581,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],543:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -44597,19 +38539,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPluginHub":515,"./accumulateInto":602,"./forEachAccumulated":610,"_process":481,"fbjs/lib/warning":656}],519:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPluginHub":517,"./accumulateInto":604,"./forEachAccumulated":612,"_process":483,"fbjs/lib/warning":658}],521:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPluginHub":532,"./accumulateInto":619,"./forEachAccumulated":627,"_process":498,"fbjs/lib/warning":673}],536:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPluginHub":534,"./accumulateInto":621,"./forEachAccumulated":629,"_process":500,"fbjs/lib/warning":675}],538:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPluginHub":540,"./accumulateInto":627,"./forEachAccumulated":635,"_process":506,"fbjs/lib/warning":681}],544:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44705,19 +38635,7 @@ assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./PooledClass":523,"./getTextContentAccessor":617}],520:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./PooledClass":525,"./getTextContentAccessor":619}],522:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./PooledClass":540,"./getTextContentAccessor":634}],537:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./PooledClass":542,"./getTextContentAccessor":636}],539:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./PooledClass":548,"./getTextContentAccessor":642}],545:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44948,19 +38866,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509,"fbjs/lib/ExecutionEnvironment":631}],521:[function(require,module,exports){
-=======
-},{"./DOMProperty":511,"fbjs/lib/ExecutionEnvironment":633}],523:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526,"fbjs/lib/ExecutionEnvironment":648}],538:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528,"fbjs/lib/ExecutionEnvironment":650}],540:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534,"fbjs/lib/ExecutionEnvironment":656}],546:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45097,19 +39003,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactPropTypeLocations":573,"./ReactPropTypes":574,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],522:[function(require,module,exports){
-=======
-},{"./ReactPropTypeLocations":575,"./ReactPropTypes":576,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],524:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactPropTypeLocations":590,"./ReactPropTypes":591,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],539:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactPropTypeLocations":592,"./ReactPropTypes":593,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],541:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactPropTypeLocations":598,"./ReactPropTypes":599,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],547:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -45157,19 +39051,7 @@ function assign(target, sources) {
 }
 
 module.exports = assign;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],523:[function(require,module,exports){
-=======
-},{}],525:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],540:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],542:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],548:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45291,19 +39173,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],524:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],526:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],541:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],543:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],549:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45344,19 +39214,7 @@ React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
 React.__SECRET_DOM_SERVER_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOMServer;
 
 module.exports = React;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactDOM":535,"./ReactDOMServer":545,"./ReactIsomorphic":563,"./deprecated":606}],525:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactDOM":537,"./ReactDOMServer":547,"./ReactIsomorphic":565,"./deprecated":608}],527:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactDOM":552,"./ReactDOMServer":562,"./ReactIsomorphic":580,"./deprecated":623}],542:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactDOM":554,"./ReactDOMServer":564,"./ReactIsomorphic":582,"./deprecated":625}],544:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactDOM":560,"./ReactDOMServer":570,"./ReactIsomorphic":588,"./deprecated":631}],550:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -45395,19 +39253,7 @@ var ReactBrowserComponentMixin = {
 
 module.exports = ReactBrowserComponentMixin;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactInstanceMap":562,"./findDOMNode":608,"_process":481,"fbjs/lib/warning":656}],526:[function(require,module,exports){
-=======
-},{"./ReactInstanceMap":564,"./findDOMNode":610,"_process":483,"fbjs/lib/warning":658}],528:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactInstanceMap":579,"./findDOMNode":625,"_process":498,"fbjs/lib/warning":673}],543:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactInstanceMap":581,"./findDOMNode":627,"_process":500,"fbjs/lib/warning":675}],545:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactInstanceMap":587,"./findDOMNode":633,"_process":506,"fbjs/lib/warning":681}],551:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -45732,19 +39578,7 @@ ReactPerf.measureMethods(ReactBrowserEventEmitter, 'ReactBrowserEventEmitter', {
 });
 
 module.exports = ReactBrowserEventEmitter;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPluginHub":515,"./EventPluginRegistry":516,"./Object.assign":522,"./ReactEventEmitterMixin":557,"./ReactPerf":571,"./ViewportMetrics":601,"./isEventSupported":619}],527:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPluginHub":517,"./EventPluginRegistry":518,"./Object.assign":524,"./ReactEventEmitterMixin":559,"./ReactPerf":573,"./ViewportMetrics":603,"./isEventSupported":621}],529:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPluginHub":532,"./EventPluginRegistry":533,"./Object.assign":539,"./ReactEventEmitterMixin":574,"./ReactPerf":588,"./ViewportMetrics":618,"./isEventSupported":636}],544:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPluginHub":534,"./EventPluginRegistry":535,"./Object.assign":541,"./ReactEventEmitterMixin":576,"./ReactPerf":590,"./ViewportMetrics":620,"./isEventSupported":638}],546:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPluginHub":540,"./EventPluginRegistry":541,"./Object.assign":547,"./ReactEventEmitterMixin":582,"./ReactPerf":596,"./ViewportMetrics":626,"./isEventSupported":644}],552:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -45869,19 +39703,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactReconciler":576,"./instantiateReactComponent":618,"./shouldUpdateReactComponent":627,"./traverseAllChildren":628,"_process":481,"fbjs/lib/warning":656}],528:[function(require,module,exports){
-=======
-},{"./ReactReconciler":578,"./instantiateReactComponent":620,"./shouldUpdateReactComponent":629,"./traverseAllChildren":630,"_process":483,"fbjs/lib/warning":658}],530:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactReconciler":593,"./instantiateReactComponent":635,"./shouldUpdateReactComponent":644,"./traverseAllChildren":645,"_process":498,"fbjs/lib/warning":673}],545:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactReconciler":595,"./instantiateReactComponent":637,"./shouldUpdateReactComponent":646,"./traverseAllChildren":647,"_process":500,"fbjs/lib/warning":675}],547:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactReconciler":601,"./instantiateReactComponent":643,"./shouldUpdateReactComponent":652,"./traverseAllChildren":653,"_process":506,"fbjs/lib/warning":681}],553:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -46064,19 +39886,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./PooledClass":523,"./ReactElement":552,"./traverseAllChildren":628,"fbjs/lib/emptyFunction":637}],529:[function(require,module,exports){
-=======
-},{"./PooledClass":525,"./ReactElement":554,"./traverseAllChildren":630,"fbjs/lib/emptyFunction":639}],531:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./PooledClass":540,"./ReactElement":569,"./traverseAllChildren":645,"fbjs/lib/emptyFunction":654}],546:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./PooledClass":542,"./ReactElement":571,"./traverseAllChildren":647,"fbjs/lib/emptyFunction":656}],548:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./PooledClass":548,"./ReactElement":577,"./traverseAllChildren":653,"fbjs/lib/emptyFunction":662}],554:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46850,19 +40660,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactComponent":530,"./ReactElement":552,"./ReactNoopUpdateQueue":569,"./ReactPropTypeLocationNames":572,"./ReactPropTypeLocations":573,"_process":481,"fbjs/lib/emptyObject":638,"fbjs/lib/invariant":645,"fbjs/lib/keyMirror":648,"fbjs/lib/keyOf":649,"fbjs/lib/warning":656}],530:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactComponent":532,"./ReactElement":554,"./ReactNoopUpdateQueue":571,"./ReactPropTypeLocationNames":574,"./ReactPropTypeLocations":575,"_process":483,"fbjs/lib/emptyObject":640,"fbjs/lib/invariant":647,"fbjs/lib/keyMirror":650,"fbjs/lib/keyOf":651,"fbjs/lib/warning":658}],532:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactComponent":547,"./ReactElement":569,"./ReactNoopUpdateQueue":586,"./ReactPropTypeLocationNames":589,"./ReactPropTypeLocations":590,"_process":498,"fbjs/lib/emptyObject":655,"fbjs/lib/invariant":662,"fbjs/lib/keyMirror":665,"fbjs/lib/keyOf":666,"fbjs/lib/warning":673}],547:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactComponent":549,"./ReactElement":571,"./ReactNoopUpdateQueue":588,"./ReactPropTypeLocationNames":591,"./ReactPropTypeLocations":592,"_process":500,"fbjs/lib/emptyObject":657,"fbjs/lib/invariant":664,"fbjs/lib/keyMirror":667,"fbjs/lib/keyOf":668,"fbjs/lib/warning":675}],549:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactComponent":555,"./ReactElement":577,"./ReactNoopUpdateQueue":594,"./ReactPropTypeLocationNames":597,"./ReactPropTypeLocations":598,"_process":506,"fbjs/lib/emptyObject":663,"fbjs/lib/invariant":670,"fbjs/lib/keyMirror":673,"fbjs/lib/keyOf":674,"fbjs/lib/warning":681}],555:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -46987,19 +40785,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactNoopUpdateQueue":569,"./canDefineProperty":604,"_process":481,"fbjs/lib/emptyObject":638,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],531:[function(require,module,exports){
-=======
-},{"./ReactNoopUpdateQueue":571,"./canDefineProperty":606,"_process":483,"fbjs/lib/emptyObject":640,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],533:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactNoopUpdateQueue":586,"./canDefineProperty":621,"_process":498,"fbjs/lib/emptyObject":655,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],548:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactNoopUpdateQueue":588,"./canDefineProperty":623,"_process":500,"fbjs/lib/emptyObject":657,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],550:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactNoopUpdateQueue":594,"./canDefineProperty":629,"_process":506,"fbjs/lib/emptyObject":663,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],556:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47041,19 +40827,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactDOMIDOperations":540,"./ReactMount":565}],532:[function(require,module,exports){
-=======
-},{"./ReactDOMIDOperations":542,"./ReactMount":567}],534:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactDOMIDOperations":557,"./ReactMount":582}],549:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactDOMIDOperations":559,"./ReactMount":584}],551:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactDOMIDOperations":565,"./ReactMount":590}],557:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -47107,19 +40881,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],533:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],535:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],550:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],552:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],558:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47816,19 +41578,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactComponentEnvironment":532,"./ReactCurrentOwner":534,"./ReactElement":552,"./ReactInstanceMap":562,"./ReactPerf":571,"./ReactPropTypeLocationNames":572,"./ReactPropTypeLocations":573,"./ReactReconciler":576,"./ReactUpdateQueue":582,"./shouldUpdateReactComponent":627,"_process":481,"fbjs/lib/emptyObject":638,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],534:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactComponentEnvironment":534,"./ReactCurrentOwner":536,"./ReactElement":554,"./ReactInstanceMap":564,"./ReactPerf":573,"./ReactPropTypeLocationNames":574,"./ReactPropTypeLocations":575,"./ReactReconciler":578,"./ReactUpdateQueue":584,"./shouldUpdateReactComponent":629,"_process":483,"fbjs/lib/emptyObject":640,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],536:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactComponentEnvironment":549,"./ReactCurrentOwner":551,"./ReactElement":569,"./ReactInstanceMap":579,"./ReactPerf":588,"./ReactPropTypeLocationNames":589,"./ReactPropTypeLocations":590,"./ReactReconciler":593,"./ReactUpdateQueue":599,"./shouldUpdateReactComponent":644,"_process":498,"fbjs/lib/emptyObject":655,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],551:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactComponentEnvironment":551,"./ReactCurrentOwner":553,"./ReactElement":571,"./ReactInstanceMap":581,"./ReactPerf":590,"./ReactPropTypeLocationNames":591,"./ReactPropTypeLocations":592,"./ReactReconciler":595,"./ReactUpdateQueue":601,"./shouldUpdateReactComponent":646,"_process":500,"fbjs/lib/emptyObject":657,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],553:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactComponentEnvironment":557,"./ReactCurrentOwner":559,"./ReactElement":577,"./ReactInstanceMap":587,"./ReactPerf":596,"./ReactPropTypeLocationNames":597,"./ReactPropTypeLocations":598,"./ReactReconciler":601,"./ReactUpdateQueue":607,"./shouldUpdateReactComponent":652,"_process":506,"fbjs/lib/emptyObject":663,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],559:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -47859,19 +41609,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],535:[function(require,module,exports){
-=======
-},{}],537:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],552:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],554:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],560:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -47966,19 +41704,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactCurrentOwner":534,"./ReactDOMTextComponent":546,"./ReactDefaultInjection":549,"./ReactInstanceHandles":561,"./ReactMount":565,"./ReactPerf":571,"./ReactReconciler":576,"./ReactUpdates":583,"./ReactVersion":584,"./findDOMNode":608,"./renderSubtreeIntoContainer":623,"_process":481,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/warning":656}],536:[function(require,module,exports){
-=======
-},{"./ReactCurrentOwner":536,"./ReactDOMTextComponent":548,"./ReactDefaultInjection":551,"./ReactInstanceHandles":563,"./ReactMount":567,"./ReactPerf":573,"./ReactReconciler":578,"./ReactUpdates":585,"./ReactVersion":586,"./findDOMNode":610,"./renderSubtreeIntoContainer":625,"_process":483,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/warning":658}],538:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactCurrentOwner":551,"./ReactDOMTextComponent":563,"./ReactDefaultInjection":566,"./ReactInstanceHandles":578,"./ReactMount":582,"./ReactPerf":588,"./ReactReconciler":593,"./ReactUpdates":600,"./ReactVersion":601,"./findDOMNode":625,"./renderSubtreeIntoContainer":640,"_process":498,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/warning":673}],553:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactCurrentOwner":553,"./ReactDOMTextComponent":565,"./ReactDefaultInjection":568,"./ReactInstanceHandles":580,"./ReactMount":584,"./ReactPerf":590,"./ReactReconciler":595,"./ReactUpdates":602,"./ReactVersion":603,"./findDOMNode":627,"./renderSubtreeIntoContainer":642,"_process":500,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/warning":675}],555:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactCurrentOwner":559,"./ReactDOMTextComponent":571,"./ReactDefaultInjection":574,"./ReactInstanceHandles":586,"./ReactMount":590,"./ReactPerf":596,"./ReactReconciler":601,"./ReactUpdates":608,"./ReactVersion":609,"./findDOMNode":633,"./renderSubtreeIntoContainer":648,"_process":506,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/warning":681}],561:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -48029,19 +41755,7 @@ var ReactDOMButton = {
 };
 
 module.exports = ReactDOMButton;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],537:[function(require,module,exports){
-=======
-},{}],539:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],554:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],556:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],562:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49006,19 +42720,7 @@ assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mix
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./AutoFocusUtils":501,"./CSSPropertyOperations":504,"./DOMProperty":509,"./DOMPropertyOperations":510,"./EventConstants":514,"./Object.assign":522,"./ReactBrowserEventEmitter":526,"./ReactComponentBrowserEnvironment":531,"./ReactDOMButton":536,"./ReactDOMInput":541,"./ReactDOMOption":542,"./ReactDOMSelect":543,"./ReactDOMTextarea":547,"./ReactMount":565,"./ReactMultiChild":566,"./ReactPerf":571,"./ReactUpdateQueue":582,"./canDefineProperty":604,"./escapeTextContentForBrowser":607,"./isEventSupported":619,"./setInnerHTML":624,"./setTextContent":625,"./validateDOMNesting":629,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/keyOf":649,"fbjs/lib/shallowEqual":654,"fbjs/lib/warning":656}],538:[function(require,module,exports){
-=======
-},{"./AutoFocusUtils":503,"./CSSPropertyOperations":506,"./DOMProperty":511,"./DOMPropertyOperations":512,"./EventConstants":516,"./Object.assign":524,"./ReactBrowserEventEmitter":528,"./ReactComponentBrowserEnvironment":533,"./ReactDOMButton":538,"./ReactDOMInput":543,"./ReactDOMOption":544,"./ReactDOMSelect":545,"./ReactDOMTextarea":549,"./ReactMount":567,"./ReactMultiChild":568,"./ReactPerf":573,"./ReactUpdateQueue":584,"./canDefineProperty":606,"./escapeTextContentForBrowser":609,"./isEventSupported":621,"./setInnerHTML":626,"./setTextContent":627,"./validateDOMNesting":631,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/keyOf":651,"fbjs/lib/shallowEqual":656,"fbjs/lib/warning":658}],540:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./AutoFocusUtils":518,"./CSSPropertyOperations":521,"./DOMProperty":526,"./DOMPropertyOperations":527,"./EventConstants":531,"./Object.assign":539,"./ReactBrowserEventEmitter":543,"./ReactComponentBrowserEnvironment":548,"./ReactDOMButton":553,"./ReactDOMInput":558,"./ReactDOMOption":559,"./ReactDOMSelect":560,"./ReactDOMTextarea":564,"./ReactMount":582,"./ReactMultiChild":583,"./ReactPerf":588,"./ReactUpdateQueue":599,"./canDefineProperty":621,"./escapeTextContentForBrowser":624,"./isEventSupported":636,"./setInnerHTML":641,"./setTextContent":642,"./validateDOMNesting":646,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/keyOf":666,"fbjs/lib/shallowEqual":671,"fbjs/lib/warning":673}],555:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./AutoFocusUtils":520,"./CSSPropertyOperations":523,"./DOMProperty":528,"./DOMPropertyOperations":529,"./EventConstants":533,"./Object.assign":541,"./ReactBrowserEventEmitter":545,"./ReactComponentBrowserEnvironment":550,"./ReactDOMButton":555,"./ReactDOMInput":560,"./ReactDOMOption":561,"./ReactDOMSelect":562,"./ReactDOMTextarea":566,"./ReactMount":584,"./ReactMultiChild":585,"./ReactPerf":590,"./ReactUpdateQueue":601,"./canDefineProperty":623,"./escapeTextContentForBrowser":626,"./isEventSupported":638,"./setInnerHTML":643,"./setTextContent":644,"./validateDOMNesting":648,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/keyOf":668,"fbjs/lib/shallowEqual":673,"fbjs/lib/warning":675}],557:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./AutoFocusUtils":526,"./CSSPropertyOperations":529,"./DOMProperty":534,"./DOMPropertyOperations":535,"./EventConstants":539,"./Object.assign":547,"./ReactBrowserEventEmitter":551,"./ReactComponentBrowserEnvironment":556,"./ReactDOMButton":561,"./ReactDOMInput":566,"./ReactDOMOption":567,"./ReactDOMSelect":568,"./ReactDOMTextarea":572,"./ReactMount":590,"./ReactMultiChild":591,"./ReactPerf":596,"./ReactUpdateQueue":607,"./canDefineProperty":629,"./escapeTextContentForBrowser":632,"./isEventSupported":644,"./setInnerHTML":649,"./setTextContent":650,"./validateDOMNesting":654,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/keyOf":674,"fbjs/lib/shallowEqual":679,"fbjs/lib/warning":681}],563:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49198,19 +42900,7 @@ var ReactDOMFactories = mapObject({
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactElement":552,"./ReactElementValidator":553,"_process":481,"fbjs/lib/mapObject":650}],539:[function(require,module,exports){
-=======
-},{"./ReactElement":554,"./ReactElementValidator":555,"_process":483,"fbjs/lib/mapObject":652}],541:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactElement":569,"./ReactElementValidator":570,"_process":498,"fbjs/lib/mapObject":667}],556:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactElement":571,"./ReactElementValidator":572,"_process":500,"fbjs/lib/mapObject":669}],558:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactElement":577,"./ReactElementValidator":578,"_process":506,"fbjs/lib/mapObject":675}],564:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -49229,19 +42919,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],540:[function(require,module,exports){
-=======
-},{}],542:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],557:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],559:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],565:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49338,19 +43016,7 @@ ReactPerf.measureMethods(ReactDOMIDOperations, 'ReactDOMIDOperations', {
 
 module.exports = ReactDOMIDOperations;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMChildrenOperations":508,"./DOMPropertyOperations":510,"./ReactMount":565,"./ReactPerf":571,"_process":481,"fbjs/lib/invariant":645}],541:[function(require,module,exports){
-=======
-},{"./DOMChildrenOperations":510,"./DOMPropertyOperations":512,"./ReactMount":567,"./ReactPerf":573,"_process":483,"fbjs/lib/invariant":647}],543:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMChildrenOperations":525,"./DOMPropertyOperations":527,"./ReactMount":582,"./ReactPerf":588,"_process":498,"fbjs/lib/invariant":662}],558:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMChildrenOperations":527,"./DOMPropertyOperations":529,"./ReactMount":584,"./ReactPerf":590,"_process":500,"fbjs/lib/invariant":664}],560:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMChildrenOperations":533,"./DOMPropertyOperations":535,"./ReactMount":590,"./ReactPerf":596,"_process":506,"fbjs/lib/invariant":670}],566:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49506,19 +43172,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./LinkedValueUtils":521,"./Object.assign":522,"./ReactDOMIDOperations":540,"./ReactMount":565,"./ReactUpdates":583,"_process":481,"fbjs/lib/invariant":645}],542:[function(require,module,exports){
-=======
-},{"./LinkedValueUtils":523,"./Object.assign":524,"./ReactDOMIDOperations":542,"./ReactMount":567,"./ReactUpdates":585,"_process":483,"fbjs/lib/invariant":647}],544:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./LinkedValueUtils":538,"./Object.assign":539,"./ReactDOMIDOperations":557,"./ReactMount":582,"./ReactUpdates":600,"_process":498,"fbjs/lib/invariant":662}],559:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./LinkedValueUtils":540,"./Object.assign":541,"./ReactDOMIDOperations":559,"./ReactMount":584,"./ReactUpdates":602,"_process":500,"fbjs/lib/invariant":664}],561:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./LinkedValueUtils":546,"./Object.assign":547,"./ReactDOMIDOperations":565,"./ReactMount":590,"./ReactUpdates":608,"_process":506,"fbjs/lib/invariant":670}],567:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49610,19 +43264,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactChildren":528,"./ReactDOMSelect":543,"_process":481,"fbjs/lib/warning":656}],543:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactChildren":530,"./ReactDOMSelect":545,"_process":483,"fbjs/lib/warning":658}],545:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactChildren":545,"./ReactDOMSelect":560,"_process":498,"fbjs/lib/warning":673}],560:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactChildren":547,"./ReactDOMSelect":562,"_process":500,"fbjs/lib/warning":675}],562:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactChildren":553,"./ReactDOMSelect":568,"_process":506,"fbjs/lib/warning":681}],568:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -49813,19 +43455,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./LinkedValueUtils":521,"./Object.assign":522,"./ReactMount":565,"./ReactUpdates":583,"_process":481,"fbjs/lib/warning":656}],544:[function(require,module,exports){
-=======
-},{"./LinkedValueUtils":523,"./Object.assign":524,"./ReactMount":567,"./ReactUpdates":585,"_process":483,"fbjs/lib/warning":658}],546:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./LinkedValueUtils":538,"./Object.assign":539,"./ReactMount":582,"./ReactUpdates":600,"_process":498,"fbjs/lib/warning":673}],561:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./LinkedValueUtils":540,"./Object.assign":541,"./ReactMount":584,"./ReactUpdates":602,"_process":500,"fbjs/lib/warning":675}],563:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./LinkedValueUtils":546,"./Object.assign":547,"./ReactMount":590,"./ReactUpdates":608,"_process":506,"fbjs/lib/warning":681}],569:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50038,19 +43668,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./getNodeForCharacterOffset":616,"./getTextContentAccessor":617,"fbjs/lib/ExecutionEnvironment":631}],545:[function(require,module,exports){
-=======
-},{"./getNodeForCharacterOffset":618,"./getTextContentAccessor":619,"fbjs/lib/ExecutionEnvironment":633}],547:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./getNodeForCharacterOffset":633,"./getTextContentAccessor":634,"fbjs/lib/ExecutionEnvironment":648}],562:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./getNodeForCharacterOffset":635,"./getTextContentAccessor":636,"fbjs/lib/ExecutionEnvironment":650}],564:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./getNodeForCharacterOffset":641,"./getTextContentAccessor":642,"fbjs/lib/ExecutionEnvironment":656}],570:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50077,19 +43695,7 @@ var ReactDOMServer = {
 };
 
 module.exports = ReactDOMServer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactDefaultInjection":549,"./ReactServerRendering":580,"./ReactVersion":584}],546:[function(require,module,exports){
-=======
-},{"./ReactDefaultInjection":551,"./ReactServerRendering":582,"./ReactVersion":586}],548:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactDefaultInjection":566,"./ReactServerRendering":597,"./ReactVersion":601}],563:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactDefaultInjection":568,"./ReactServerRendering":599,"./ReactVersion":603}],565:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactDefaultInjection":574,"./ReactServerRendering":605,"./ReactVersion":609}],571:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50219,19 +43825,7 @@ assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMChildrenOperations":508,"./DOMPropertyOperations":510,"./Object.assign":522,"./ReactComponentBrowserEnvironment":531,"./ReactMount":565,"./escapeTextContentForBrowser":607,"./setTextContent":625,"./validateDOMNesting":629,"_process":481}],547:[function(require,module,exports){
-=======
-},{"./DOMChildrenOperations":510,"./DOMPropertyOperations":512,"./Object.assign":524,"./ReactComponentBrowserEnvironment":533,"./ReactMount":567,"./escapeTextContentForBrowser":609,"./setTextContent":627,"./validateDOMNesting":631,"_process":483}],549:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMChildrenOperations":525,"./DOMPropertyOperations":527,"./Object.assign":539,"./ReactComponentBrowserEnvironment":548,"./ReactMount":582,"./escapeTextContentForBrowser":624,"./setTextContent":642,"./validateDOMNesting":646,"_process":498}],564:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMChildrenOperations":527,"./DOMPropertyOperations":529,"./Object.assign":541,"./ReactComponentBrowserEnvironment":550,"./ReactMount":584,"./escapeTextContentForBrowser":626,"./setTextContent":644,"./validateDOMNesting":648,"_process":500}],566:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMChildrenOperations":533,"./DOMPropertyOperations":535,"./Object.assign":547,"./ReactComponentBrowserEnvironment":556,"./ReactMount":590,"./escapeTextContentForBrowser":632,"./setTextContent":650,"./validateDOMNesting":654,"_process":506}],572:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50347,19 +43941,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./LinkedValueUtils":521,"./Object.assign":522,"./ReactDOMIDOperations":540,"./ReactUpdates":583,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],548:[function(require,module,exports){
-=======
-},{"./LinkedValueUtils":523,"./Object.assign":524,"./ReactDOMIDOperations":542,"./ReactUpdates":585,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],550:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./LinkedValueUtils":538,"./Object.assign":539,"./ReactDOMIDOperations":557,"./ReactUpdates":600,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],565:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./LinkedValueUtils":540,"./Object.assign":541,"./ReactDOMIDOperations":559,"./ReactUpdates":602,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],567:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./LinkedValueUtils":546,"./Object.assign":547,"./ReactDOMIDOperations":565,"./ReactUpdates":608,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],573:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50427,19 +44009,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactUpdates":583,"./Transaction":600,"fbjs/lib/emptyFunction":637}],549:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactUpdates":585,"./Transaction":602,"fbjs/lib/emptyFunction":639}],551:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactUpdates":600,"./Transaction":617,"fbjs/lib/emptyFunction":654}],566:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactUpdates":602,"./Transaction":619,"fbjs/lib/emptyFunction":656}],568:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactUpdates":608,"./Transaction":625,"fbjs/lib/emptyFunction":662}],574:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -50539,19 +44109,7 @@ module.exports = {
   inject: inject
 };
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./BeforeInputEventPlugin":502,"./ChangeEventPlugin":506,"./ClientReactRootIndex":507,"./DefaultEventPluginOrder":512,"./EnterLeaveEventPlugin":513,"./HTMLDOMPropertyConfig":520,"./ReactBrowserComponentMixin":525,"./ReactComponentBrowserEnvironment":531,"./ReactDOMComponent":537,"./ReactDOMTextComponent":546,"./ReactDefaultBatchingStrategy":548,"./ReactDefaultPerf":550,"./ReactEventListener":558,"./ReactInjection":559,"./ReactInstanceHandles":561,"./ReactMount":565,"./ReactReconcileTransaction":575,"./SVGDOMPropertyConfig":585,"./SelectEventPlugin":586,"./ServerReactRootIndex":587,"./SimpleEventPlugin":588,"_process":481,"fbjs/lib/ExecutionEnvironment":631}],550:[function(require,module,exports){
-=======
-},{"./BeforeInputEventPlugin":504,"./ChangeEventPlugin":508,"./ClientReactRootIndex":509,"./DefaultEventPluginOrder":514,"./EnterLeaveEventPlugin":515,"./HTMLDOMPropertyConfig":522,"./ReactBrowserComponentMixin":527,"./ReactComponentBrowserEnvironment":533,"./ReactDOMComponent":539,"./ReactDOMTextComponent":548,"./ReactDefaultBatchingStrategy":550,"./ReactDefaultPerf":552,"./ReactEventListener":560,"./ReactInjection":561,"./ReactInstanceHandles":563,"./ReactMount":567,"./ReactReconcileTransaction":577,"./SVGDOMPropertyConfig":587,"./SelectEventPlugin":588,"./ServerReactRootIndex":589,"./SimpleEventPlugin":590,"_process":483,"fbjs/lib/ExecutionEnvironment":633}],552:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./BeforeInputEventPlugin":519,"./ChangeEventPlugin":523,"./ClientReactRootIndex":524,"./DefaultEventPluginOrder":529,"./EnterLeaveEventPlugin":530,"./HTMLDOMPropertyConfig":537,"./ReactBrowserComponentMixin":542,"./ReactComponentBrowserEnvironment":548,"./ReactDOMComponent":554,"./ReactDOMTextComponent":563,"./ReactDefaultBatchingStrategy":565,"./ReactDefaultPerf":567,"./ReactEventListener":575,"./ReactInjection":576,"./ReactInstanceHandles":578,"./ReactMount":582,"./ReactReconcileTransaction":592,"./SVGDOMPropertyConfig":602,"./SelectEventPlugin":603,"./ServerReactRootIndex":604,"./SimpleEventPlugin":605,"_process":498,"fbjs/lib/ExecutionEnvironment":648}],567:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./BeforeInputEventPlugin":521,"./ChangeEventPlugin":525,"./ClientReactRootIndex":526,"./DefaultEventPluginOrder":531,"./EnterLeaveEventPlugin":532,"./HTMLDOMPropertyConfig":539,"./ReactBrowserComponentMixin":544,"./ReactComponentBrowserEnvironment":550,"./ReactDOMComponent":556,"./ReactDOMTextComponent":565,"./ReactDefaultBatchingStrategy":567,"./ReactDefaultPerf":569,"./ReactEventListener":577,"./ReactInjection":578,"./ReactInstanceHandles":580,"./ReactMount":584,"./ReactReconcileTransaction":594,"./SVGDOMPropertyConfig":604,"./SelectEventPlugin":605,"./ServerReactRootIndex":606,"./SimpleEventPlugin":607,"_process":500,"fbjs/lib/ExecutionEnvironment":650}],569:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./BeforeInputEventPlugin":527,"./ChangeEventPlugin":531,"./ClientReactRootIndex":532,"./DefaultEventPluginOrder":537,"./EnterLeaveEventPlugin":538,"./HTMLDOMPropertyConfig":545,"./ReactBrowserComponentMixin":550,"./ReactComponentBrowserEnvironment":556,"./ReactDOMComponent":562,"./ReactDOMTextComponent":571,"./ReactDefaultBatchingStrategy":573,"./ReactDefaultPerf":575,"./ReactEventListener":583,"./ReactInjection":584,"./ReactInstanceHandles":586,"./ReactMount":590,"./ReactReconcileTransaction":600,"./SVGDOMPropertyConfig":610,"./SelectEventPlugin":611,"./ServerReactRootIndex":612,"./SimpleEventPlugin":613,"_process":506,"fbjs/lib/ExecutionEnvironment":656}],575:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -50789,19 +44347,7 @@ var ReactDefaultPerf = {
 };
 
 module.exports = ReactDefaultPerf;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509,"./ReactDefaultPerfAnalysis":551,"./ReactMount":565,"./ReactPerf":571,"fbjs/lib/performanceNow":653}],551:[function(require,module,exports){
-=======
-},{"./DOMProperty":511,"./ReactDefaultPerfAnalysis":553,"./ReactMount":567,"./ReactPerf":573,"fbjs/lib/performanceNow":655}],553:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526,"./ReactDefaultPerfAnalysis":568,"./ReactMount":582,"./ReactPerf":588,"fbjs/lib/performanceNow":670}],568:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528,"./ReactDefaultPerfAnalysis":570,"./ReactMount":584,"./ReactPerf":590,"fbjs/lib/performanceNow":672}],570:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534,"./ReactDefaultPerfAnalysis":576,"./ReactMount":590,"./ReactPerf":596,"fbjs/lib/performanceNow":678}],576:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -51003,19 +44549,7 @@ var ReactDefaultPerfAnalysis = {
 };
 
 module.exports = ReactDefaultPerfAnalysis;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522}],552:[function(require,module,exports){
-=======
-},{"./Object.assign":524}],554:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539}],569:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541}],571:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547}],577:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -51265,19 +44799,7 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactCurrentOwner":534,"./canDefineProperty":604,"_process":481}],553:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactCurrentOwner":536,"./canDefineProperty":606,"_process":483}],555:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactCurrentOwner":551,"./canDefineProperty":621,"_process":498}],570:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactCurrentOwner":553,"./canDefineProperty":623,"_process":500}],572:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactCurrentOwner":559,"./canDefineProperty":629,"_process":506}],578:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -51561,19 +45083,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactCurrentOwner":534,"./ReactElement":552,"./ReactPropTypeLocationNames":572,"./ReactPropTypeLocations":573,"./canDefineProperty":604,"./getIteratorFn":615,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],554:[function(require,module,exports){
-=======
-},{"./ReactCurrentOwner":536,"./ReactElement":554,"./ReactPropTypeLocationNames":574,"./ReactPropTypeLocations":575,"./canDefineProperty":606,"./getIteratorFn":617,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],556:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactCurrentOwner":551,"./ReactElement":569,"./ReactPropTypeLocationNames":589,"./ReactPropTypeLocations":590,"./canDefineProperty":621,"./getIteratorFn":632,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],571:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactCurrentOwner":553,"./ReactElement":571,"./ReactPropTypeLocationNames":591,"./ReactPropTypeLocations":592,"./canDefineProperty":623,"./getIteratorFn":634,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],573:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactCurrentOwner":559,"./ReactElement":577,"./ReactPropTypeLocationNames":597,"./ReactPropTypeLocations":598,"./canDefineProperty":629,"./getIteratorFn":640,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],579:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -51629,19 +45139,7 @@ assign(ReactEmptyComponent.prototype, {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactElement":552,"./ReactEmptyComponentRegistry":555,"./ReactReconciler":576}],555:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactElement":554,"./ReactEmptyComponentRegistry":557,"./ReactReconciler":578}],557:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactElement":569,"./ReactEmptyComponentRegistry":572,"./ReactReconciler":593}],572:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactElement":571,"./ReactEmptyComponentRegistry":574,"./ReactReconciler":595}],574:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactElement":577,"./ReactEmptyComponentRegistry":580,"./ReactReconciler":601}],580:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -51690,19 +45188,7 @@ var ReactEmptyComponentRegistry = {
 };
 
 module.exports = ReactEmptyComponentRegistry;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],556:[function(require,module,exports){
-=======
-},{}],558:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],573:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],575:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],581:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -51782,19 +45268,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],557:[function(require,module,exports){
-=======
-},{"_process":483}],559:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],574:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],576:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],582:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -51833,19 +45307,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventPluginHub":515}],558:[function(require,module,exports){
-=======
-},{"./EventPluginHub":517}],560:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventPluginHub":532}],575:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventPluginHub":534}],577:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventPluginHub":540}],583:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -52057,19 +45519,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./PooledClass":523,"./ReactInstanceHandles":561,"./ReactMount":565,"./ReactUpdates":583,"./getEventTarget":614,"fbjs/lib/EventListener":630,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/getUnboundedScrollPosition":642}],559:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./PooledClass":525,"./ReactInstanceHandles":563,"./ReactMount":567,"./ReactUpdates":585,"./getEventTarget":616,"fbjs/lib/EventListener":632,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/getUnboundedScrollPosition":644}],561:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./PooledClass":540,"./ReactInstanceHandles":578,"./ReactMount":582,"./ReactUpdates":600,"./getEventTarget":631,"fbjs/lib/EventListener":647,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/getUnboundedScrollPosition":659}],576:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./PooledClass":542,"./ReactInstanceHandles":580,"./ReactMount":584,"./ReactUpdates":602,"./getEventTarget":633,"fbjs/lib/EventListener":649,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/getUnboundedScrollPosition":661}],578:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./PooledClass":548,"./ReactInstanceHandles":586,"./ReactMount":590,"./ReactUpdates":608,"./getEventTarget":639,"fbjs/lib/EventListener":655,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/getUnboundedScrollPosition":667}],584:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -52108,19 +45558,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509,"./EventPluginHub":515,"./ReactBrowserEventEmitter":526,"./ReactClass":529,"./ReactComponentEnvironment":532,"./ReactEmptyComponent":554,"./ReactNativeComponent":568,"./ReactPerf":571,"./ReactRootIndex":578,"./ReactUpdates":583}],560:[function(require,module,exports){
-=======
-},{"./DOMProperty":511,"./EventPluginHub":517,"./ReactBrowserEventEmitter":528,"./ReactClass":531,"./ReactComponentEnvironment":534,"./ReactEmptyComponent":556,"./ReactNativeComponent":570,"./ReactPerf":573,"./ReactRootIndex":580,"./ReactUpdates":585}],562:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526,"./EventPluginHub":532,"./ReactBrowserEventEmitter":543,"./ReactClass":546,"./ReactComponentEnvironment":549,"./ReactEmptyComponent":571,"./ReactNativeComponent":585,"./ReactPerf":588,"./ReactRootIndex":595,"./ReactUpdates":600}],577:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528,"./EventPluginHub":534,"./ReactBrowserEventEmitter":545,"./ReactClass":548,"./ReactComponentEnvironment":551,"./ReactEmptyComponent":573,"./ReactNativeComponent":587,"./ReactPerf":590,"./ReactRootIndex":597,"./ReactUpdates":602}],579:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534,"./EventPluginHub":540,"./ReactBrowserEventEmitter":551,"./ReactClass":554,"./ReactComponentEnvironment":557,"./ReactEmptyComponent":579,"./ReactNativeComponent":593,"./ReactPerf":596,"./ReactRootIndex":603,"./ReactUpdates":608}],585:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -52245,19 +45683,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactDOMSelection":544,"fbjs/lib/containsNode":634,"fbjs/lib/focusNode":639,"fbjs/lib/getActiveElement":640}],561:[function(require,module,exports){
-=======
-},{"./ReactDOMSelection":546,"fbjs/lib/containsNode":636,"fbjs/lib/focusNode":641,"fbjs/lib/getActiveElement":642}],563:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactDOMSelection":561,"fbjs/lib/containsNode":651,"fbjs/lib/focusNode":656,"fbjs/lib/getActiveElement":657}],578:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactDOMSelection":563,"fbjs/lib/containsNode":653,"fbjs/lib/focusNode":658,"fbjs/lib/getActiveElement":659}],580:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactDOMSelection":569,"fbjs/lib/containsNode":659,"fbjs/lib/focusNode":664,"fbjs/lib/getActiveElement":665}],586:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -52562,19 +45988,7 @@ var ReactInstanceHandles = {
 
 module.exports = ReactInstanceHandles;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactRootIndex":578,"_process":481,"fbjs/lib/invariant":645}],562:[function(require,module,exports){
-=======
-},{"./ReactRootIndex":580,"_process":483,"fbjs/lib/invariant":647}],564:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactRootIndex":595,"_process":498,"fbjs/lib/invariant":662}],579:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactRootIndex":597,"_process":500,"fbjs/lib/invariant":664}],581:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactRootIndex":603,"_process":506,"fbjs/lib/invariant":670}],587:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -52622,19 +46036,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],563:[function(require,module,exports){
-=======
-},{}],565:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],580:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],582:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],588:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -52711,19 +46113,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactChildren":528,"./ReactClass":529,"./ReactComponent":530,"./ReactDOMFactories":538,"./ReactElement":552,"./ReactElementValidator":553,"./ReactPropTypes":574,"./ReactVersion":584,"./onlyChild":621,"_process":481}],564:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactChildren":530,"./ReactClass":531,"./ReactComponent":532,"./ReactDOMFactories":540,"./ReactElement":554,"./ReactElementValidator":555,"./ReactPropTypes":576,"./ReactVersion":586,"./onlyChild":623,"_process":483}],566:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactChildren":545,"./ReactClass":546,"./ReactComponent":547,"./ReactDOMFactories":555,"./ReactElement":569,"./ReactElementValidator":570,"./ReactPropTypes":591,"./ReactVersion":601,"./onlyChild":638,"_process":498}],581:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactChildren":547,"./ReactClass":548,"./ReactComponent":549,"./ReactDOMFactories":557,"./ReactElement":571,"./ReactElementValidator":572,"./ReactPropTypes":593,"./ReactVersion":603,"./onlyChild":640,"_process":500}],583:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactChildren":553,"./ReactClass":554,"./ReactComponent":555,"./ReactDOMFactories":563,"./ReactElement":577,"./ReactElementValidator":578,"./ReactPropTypes":599,"./ReactVersion":609,"./onlyChild":646,"_process":506}],589:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -52769,19 +46159,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./adler32":603}],565:[function(require,module,exports){
-=======
-},{"./adler32":605}],567:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./adler32":620}],582:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./adler32":622}],584:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./adler32":628}],590:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -53634,19 +47012,7 @@ ReactPerf.measureMethods(ReactMount, 'ReactMount', {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509,"./Object.assign":522,"./ReactBrowserEventEmitter":526,"./ReactCurrentOwner":534,"./ReactDOMFeatureFlags":539,"./ReactElement":552,"./ReactEmptyComponentRegistry":555,"./ReactInstanceHandles":561,"./ReactInstanceMap":562,"./ReactMarkupChecksum":564,"./ReactPerf":571,"./ReactReconciler":576,"./ReactUpdateQueue":582,"./ReactUpdates":583,"./instantiateReactComponent":618,"./setInnerHTML":624,"./shouldUpdateReactComponent":627,"./validateDOMNesting":629,"_process":481,"fbjs/lib/containsNode":634,"fbjs/lib/emptyObject":638,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],566:[function(require,module,exports){
-=======
-},{"./DOMProperty":511,"./Object.assign":524,"./ReactBrowserEventEmitter":528,"./ReactCurrentOwner":536,"./ReactDOMFeatureFlags":541,"./ReactElement":554,"./ReactEmptyComponentRegistry":557,"./ReactInstanceHandles":563,"./ReactInstanceMap":564,"./ReactMarkupChecksum":566,"./ReactPerf":573,"./ReactReconciler":578,"./ReactUpdateQueue":584,"./ReactUpdates":585,"./instantiateReactComponent":620,"./setInnerHTML":626,"./shouldUpdateReactComponent":629,"./validateDOMNesting":631,"_process":483,"fbjs/lib/containsNode":636,"fbjs/lib/emptyObject":640,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],568:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526,"./Object.assign":539,"./ReactBrowserEventEmitter":543,"./ReactCurrentOwner":551,"./ReactDOMFeatureFlags":556,"./ReactElement":569,"./ReactEmptyComponentRegistry":572,"./ReactInstanceHandles":578,"./ReactInstanceMap":579,"./ReactMarkupChecksum":581,"./ReactPerf":588,"./ReactReconciler":593,"./ReactUpdateQueue":599,"./ReactUpdates":600,"./instantiateReactComponent":635,"./setInnerHTML":641,"./shouldUpdateReactComponent":644,"./validateDOMNesting":646,"_process":498,"fbjs/lib/containsNode":651,"fbjs/lib/emptyObject":655,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],583:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528,"./Object.assign":541,"./ReactBrowserEventEmitter":545,"./ReactCurrentOwner":553,"./ReactDOMFeatureFlags":558,"./ReactElement":571,"./ReactEmptyComponentRegistry":574,"./ReactInstanceHandles":580,"./ReactInstanceMap":581,"./ReactMarkupChecksum":583,"./ReactPerf":590,"./ReactReconciler":595,"./ReactUpdateQueue":601,"./ReactUpdates":602,"./instantiateReactComponent":637,"./setInnerHTML":643,"./shouldUpdateReactComponent":646,"./validateDOMNesting":648,"_process":500,"fbjs/lib/containsNode":653,"fbjs/lib/emptyObject":657,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],585:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534,"./Object.assign":547,"./ReactBrowserEventEmitter":551,"./ReactCurrentOwner":559,"./ReactDOMFeatureFlags":564,"./ReactElement":577,"./ReactEmptyComponentRegistry":580,"./ReactInstanceHandles":586,"./ReactInstanceMap":587,"./ReactMarkupChecksum":589,"./ReactPerf":596,"./ReactReconciler":601,"./ReactUpdateQueue":607,"./ReactUpdates":608,"./instantiateReactComponent":643,"./setInnerHTML":649,"./shouldUpdateReactComponent":652,"./validateDOMNesting":654,"_process":506,"fbjs/lib/containsNode":659,"fbjs/lib/emptyObject":663,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],591:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -54145,19 +47511,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactChildReconciler":527,"./ReactComponentEnvironment":532,"./ReactCurrentOwner":534,"./ReactMultiChildUpdateTypes":567,"./ReactReconciler":576,"./flattenChildren":609,"_process":481}],567:[function(require,module,exports){
-=======
-},{"./ReactChildReconciler":529,"./ReactComponentEnvironment":534,"./ReactCurrentOwner":536,"./ReactMultiChildUpdateTypes":569,"./ReactReconciler":578,"./flattenChildren":611,"_process":483}],569:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactChildReconciler":544,"./ReactComponentEnvironment":549,"./ReactCurrentOwner":551,"./ReactMultiChildUpdateTypes":584,"./ReactReconciler":593,"./flattenChildren":626,"_process":498}],584:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactChildReconciler":546,"./ReactComponentEnvironment":551,"./ReactCurrentOwner":553,"./ReactMultiChildUpdateTypes":586,"./ReactReconciler":595,"./flattenChildren":628,"_process":500}],586:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactChildReconciler":552,"./ReactComponentEnvironment":557,"./ReactCurrentOwner":559,"./ReactMultiChildUpdateTypes":592,"./ReactReconciler":601,"./flattenChildren":634,"_process":506}],592:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -54190,19 +47544,7 @@ var ReactMultiChildUpdateTypes = keyMirror({
 });
 
 module.exports = ReactMultiChildUpdateTypes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/keyMirror":648}],568:[function(require,module,exports){
-=======
-},{"fbjs/lib/keyMirror":650}],570:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/keyMirror":665}],585:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/keyMirror":667}],587:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/keyMirror":673}],593:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -54299,19 +47641,7 @@ var ReactNativeComponent = {
 
 module.exports = ReactNativeComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"_process":481,"fbjs/lib/invariant":645}],569:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"_process":483,"fbjs/lib/invariant":647}],571:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"_process":498,"fbjs/lib/invariant":662}],586:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"_process":500,"fbjs/lib/invariant":664}],588:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"_process":506,"fbjs/lib/invariant":670}],594:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -54432,19 +47762,7 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/warning":656}],570:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/warning":658}],572:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/warning":673}],587:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/warning":675}],589:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/warning":681}],595:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -54538,19 +47856,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],571:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],573:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],588:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],590:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],596:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -54649,19 +47955,7 @@ function _noMeasure(objName, fnName, func) {
 
 module.exports = ReactPerf;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],572:[function(require,module,exports){
-=======
-},{"_process":483}],574:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],589:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],591:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],597:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -54688,19 +47982,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],573:[function(require,module,exports){
-=======
-},{"_process":483}],575:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],590:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],592:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],598:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -54723,19 +48005,7 @@ var ReactPropTypeLocations = keyMirror({
 });
 
 module.exports = ReactPropTypeLocations;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/keyMirror":648}],574:[function(require,module,exports){
-=======
-},{"fbjs/lib/keyMirror":650}],576:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/keyMirror":665}],591:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/keyMirror":667}],593:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/keyMirror":673}],599:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -55092,19 +48362,7 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactElement":552,"./ReactPropTypeLocationNames":572,"./getIteratorFn":615,"fbjs/lib/emptyFunction":637}],575:[function(require,module,exports){
-=======
-},{"./ReactElement":554,"./ReactPropTypeLocationNames":574,"./getIteratorFn":617,"fbjs/lib/emptyFunction":639}],577:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactElement":569,"./ReactPropTypeLocationNames":589,"./getIteratorFn":632,"fbjs/lib/emptyFunction":654}],592:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactElement":571,"./ReactPropTypeLocationNames":591,"./getIteratorFn":634,"fbjs/lib/emptyFunction":656}],594:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactElement":577,"./ReactPropTypeLocationNames":597,"./getIteratorFn":640,"fbjs/lib/emptyFunction":662}],600:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -55256,19 +48514,7 @@ assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CallbackQueue":505,"./Object.assign":522,"./PooledClass":523,"./ReactBrowserEventEmitter":526,"./ReactDOMFeatureFlags":539,"./ReactInputSelection":560,"./Transaction":600}],576:[function(require,module,exports){
-=======
-},{"./CallbackQueue":507,"./Object.assign":524,"./PooledClass":525,"./ReactBrowserEventEmitter":528,"./ReactDOMFeatureFlags":541,"./ReactInputSelection":562,"./Transaction":602}],578:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CallbackQueue":522,"./Object.assign":539,"./PooledClass":540,"./ReactBrowserEventEmitter":543,"./ReactDOMFeatureFlags":556,"./ReactInputSelection":577,"./Transaction":617}],593:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CallbackQueue":524,"./Object.assign":541,"./PooledClass":542,"./ReactBrowserEventEmitter":545,"./ReactDOMFeatureFlags":558,"./ReactInputSelection":579,"./Transaction":619}],595:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CallbackQueue":530,"./Object.assign":547,"./PooledClass":548,"./ReactBrowserEventEmitter":551,"./ReactDOMFeatureFlags":564,"./ReactInputSelection":585,"./Transaction":625}],601:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -55376,19 +48622,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactRef":577}],577:[function(require,module,exports){
-=======
-},{"./ReactRef":579}],579:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactRef":594}],594:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactRef":596}],596:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactRef":602}],602:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -55467,19 +48701,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactOwner":570}],578:[function(require,module,exports){
-=======
-},{"./ReactOwner":572}],580:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactOwner":587}],595:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactOwner":589}],597:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactOwner":595}],603:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -55509,19 +48731,7 @@ var ReactRootIndex = {
 };
 
 module.exports = ReactRootIndex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],579:[function(require,module,exports){
-=======
-},{}],581:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],596:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],598:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],604:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -55545,19 +48755,7 @@ var ReactServerBatchingStrategy = {
 };
 
 module.exports = ReactServerBatchingStrategy;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],580:[function(require,module,exports){
-=======
-},{}],582:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],597:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],599:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],605:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -55643,19 +48841,7 @@ module.exports = {
   renderToStaticMarkup: renderToStaticMarkup
 };
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactDefaultBatchingStrategy":548,"./ReactElement":552,"./ReactInstanceHandles":561,"./ReactMarkupChecksum":564,"./ReactServerBatchingStrategy":579,"./ReactServerRenderingTransaction":581,"./ReactUpdates":583,"./instantiateReactComponent":618,"_process":481,"fbjs/lib/emptyObject":638,"fbjs/lib/invariant":645}],581:[function(require,module,exports){
-=======
-},{"./ReactDefaultBatchingStrategy":550,"./ReactElement":554,"./ReactInstanceHandles":563,"./ReactMarkupChecksum":566,"./ReactServerBatchingStrategy":581,"./ReactServerRenderingTransaction":583,"./ReactUpdates":585,"./instantiateReactComponent":620,"_process":483,"fbjs/lib/emptyObject":640,"fbjs/lib/invariant":647}],583:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactDefaultBatchingStrategy":565,"./ReactElement":569,"./ReactInstanceHandles":578,"./ReactMarkupChecksum":581,"./ReactServerBatchingStrategy":596,"./ReactServerRenderingTransaction":598,"./ReactUpdates":600,"./instantiateReactComponent":635,"_process":498,"fbjs/lib/emptyObject":655,"fbjs/lib/invariant":662}],598:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactDefaultBatchingStrategy":567,"./ReactElement":571,"./ReactInstanceHandles":580,"./ReactMarkupChecksum":583,"./ReactServerBatchingStrategy":598,"./ReactServerRenderingTransaction":600,"./ReactUpdates":602,"./instantiateReactComponent":637,"_process":500,"fbjs/lib/emptyObject":657,"fbjs/lib/invariant":664}],600:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactDefaultBatchingStrategy":573,"./ReactElement":577,"./ReactInstanceHandles":586,"./ReactMarkupChecksum":589,"./ReactServerBatchingStrategy":604,"./ReactServerRenderingTransaction":606,"./ReactUpdates":608,"./instantiateReactComponent":643,"_process":506,"fbjs/lib/emptyObject":663,"fbjs/lib/invariant":670}],606:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -55743,19 +48929,7 @@ assign(ReactServerRenderingTransaction.prototype, Transaction.Mixin, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CallbackQueue":505,"./Object.assign":522,"./PooledClass":523,"./Transaction":600,"fbjs/lib/emptyFunction":637}],582:[function(require,module,exports){
-=======
-},{"./CallbackQueue":507,"./Object.assign":524,"./PooledClass":525,"./Transaction":602,"fbjs/lib/emptyFunction":639}],584:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CallbackQueue":522,"./Object.assign":539,"./PooledClass":540,"./Transaction":617,"fbjs/lib/emptyFunction":654}],599:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CallbackQueue":524,"./Object.assign":541,"./PooledClass":542,"./Transaction":619,"fbjs/lib/emptyFunction":656}],601:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CallbackQueue":530,"./Object.assign":547,"./PooledClass":548,"./Transaction":625,"fbjs/lib/emptyFunction":662}],607:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -56015,19 +49189,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactCurrentOwner":534,"./ReactElement":552,"./ReactInstanceMap":562,"./ReactUpdates":583,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],583:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactCurrentOwner":536,"./ReactElement":554,"./ReactInstanceMap":564,"./ReactUpdates":585,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],585:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactCurrentOwner":551,"./ReactElement":569,"./ReactInstanceMap":579,"./ReactUpdates":600,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],600:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactCurrentOwner":553,"./ReactElement":571,"./ReactInstanceMap":581,"./ReactUpdates":602,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],602:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactCurrentOwner":559,"./ReactElement":577,"./ReactInstanceMap":587,"./ReactUpdates":608,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],608:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -56253,19 +49415,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CallbackQueue":505,"./Object.assign":522,"./PooledClass":523,"./ReactPerf":571,"./ReactReconciler":576,"./Transaction":600,"_process":481,"fbjs/lib/invariant":645}],584:[function(require,module,exports){
-=======
-},{"./CallbackQueue":507,"./Object.assign":524,"./PooledClass":525,"./ReactPerf":573,"./ReactReconciler":578,"./Transaction":602,"_process":483,"fbjs/lib/invariant":647}],586:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CallbackQueue":522,"./Object.assign":539,"./PooledClass":540,"./ReactPerf":588,"./ReactReconciler":593,"./Transaction":617,"_process":498,"fbjs/lib/invariant":662}],601:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CallbackQueue":524,"./Object.assign":541,"./PooledClass":542,"./ReactPerf":590,"./ReactReconciler":595,"./Transaction":619,"_process":500,"fbjs/lib/invariant":664}],603:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CallbackQueue":530,"./Object.assign":547,"./PooledClass":548,"./ReactPerf":596,"./ReactReconciler":601,"./Transaction":625,"_process":506,"fbjs/lib/invariant":670}],609:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -56280,19 +49430,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '0.14.8';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],585:[function(require,module,exports){
-=======
-},{}],587:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],602:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],604:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],610:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -56420,19 +49558,7 @@ var SVGDOMPropertyConfig = {
 };
 
 module.exports = SVGDOMPropertyConfig;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./DOMProperty":509}],586:[function(require,module,exports){
-=======
-},{"./DOMProperty":511}],588:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./DOMProperty":526}],603:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./DOMProperty":528}],605:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./DOMProperty":534}],611:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -56634,19 +49760,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPropagators":518,"./ReactInputSelection":560,"./SyntheticEvent":592,"./isTextInputElement":620,"fbjs/lib/ExecutionEnvironment":631,"fbjs/lib/getActiveElement":640,"fbjs/lib/keyOf":649,"fbjs/lib/shallowEqual":654}],587:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPropagators":520,"./ReactInputSelection":562,"./SyntheticEvent":594,"./isTextInputElement":622,"fbjs/lib/ExecutionEnvironment":633,"fbjs/lib/getActiveElement":642,"fbjs/lib/keyOf":651,"fbjs/lib/shallowEqual":656}],589:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPropagators":535,"./ReactInputSelection":577,"./SyntheticEvent":609,"./isTextInputElement":637,"fbjs/lib/ExecutionEnvironment":648,"fbjs/lib/getActiveElement":657,"fbjs/lib/keyOf":666,"fbjs/lib/shallowEqual":671}],604:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPropagators":537,"./ReactInputSelection":579,"./SyntheticEvent":611,"./isTextInputElement":639,"fbjs/lib/ExecutionEnvironment":650,"fbjs/lib/getActiveElement":659,"fbjs/lib/keyOf":668,"fbjs/lib/shallowEqual":673}],606:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPropagators":543,"./ReactInputSelection":585,"./SyntheticEvent":617,"./isTextInputElement":645,"fbjs/lib/ExecutionEnvironment":656,"fbjs/lib/getActiveElement":665,"fbjs/lib/keyOf":674,"fbjs/lib/shallowEqual":679}],612:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -56676,19 +49790,7 @@ var ServerReactRootIndex = {
 };
 
 module.exports = ServerReactRootIndex;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],588:[function(require,module,exports){
-=======
-},{}],590:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],605:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],607:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],613:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -57278,19 +50380,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./EventConstants":514,"./EventPropagators":518,"./ReactMount":565,"./SyntheticClipboardEvent":589,"./SyntheticDragEvent":591,"./SyntheticEvent":592,"./SyntheticFocusEvent":593,"./SyntheticKeyboardEvent":595,"./SyntheticMouseEvent":596,"./SyntheticTouchEvent":597,"./SyntheticUIEvent":598,"./SyntheticWheelEvent":599,"./getEventCharCode":611,"_process":481,"fbjs/lib/EventListener":630,"fbjs/lib/emptyFunction":637,"fbjs/lib/invariant":645,"fbjs/lib/keyOf":649}],589:[function(require,module,exports){
-=======
-},{"./EventConstants":516,"./EventPropagators":520,"./ReactMount":567,"./SyntheticClipboardEvent":591,"./SyntheticDragEvent":593,"./SyntheticEvent":594,"./SyntheticFocusEvent":595,"./SyntheticKeyboardEvent":597,"./SyntheticMouseEvent":598,"./SyntheticTouchEvent":599,"./SyntheticUIEvent":600,"./SyntheticWheelEvent":601,"./getEventCharCode":613,"_process":483,"fbjs/lib/EventListener":632,"fbjs/lib/emptyFunction":639,"fbjs/lib/invariant":647,"fbjs/lib/keyOf":651}],591:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./EventConstants":531,"./EventPropagators":535,"./ReactMount":582,"./SyntheticClipboardEvent":606,"./SyntheticDragEvent":608,"./SyntheticEvent":609,"./SyntheticFocusEvent":610,"./SyntheticKeyboardEvent":612,"./SyntheticMouseEvent":613,"./SyntheticTouchEvent":614,"./SyntheticUIEvent":615,"./SyntheticWheelEvent":616,"./getEventCharCode":628,"_process":498,"fbjs/lib/EventListener":647,"fbjs/lib/emptyFunction":654,"fbjs/lib/invariant":662,"fbjs/lib/keyOf":666}],606:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./EventConstants":533,"./EventPropagators":537,"./ReactMount":584,"./SyntheticClipboardEvent":608,"./SyntheticDragEvent":610,"./SyntheticEvent":611,"./SyntheticFocusEvent":612,"./SyntheticKeyboardEvent":614,"./SyntheticMouseEvent":615,"./SyntheticTouchEvent":616,"./SyntheticUIEvent":617,"./SyntheticWheelEvent":618,"./getEventCharCode":630,"_process":500,"fbjs/lib/EventListener":649,"fbjs/lib/emptyFunction":656,"fbjs/lib/invariant":664,"fbjs/lib/keyOf":668}],608:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./EventConstants":539,"./EventPropagators":543,"./ReactMount":590,"./SyntheticClipboardEvent":614,"./SyntheticDragEvent":616,"./SyntheticEvent":617,"./SyntheticFocusEvent":618,"./SyntheticKeyboardEvent":620,"./SyntheticMouseEvent":621,"./SyntheticTouchEvent":622,"./SyntheticUIEvent":623,"./SyntheticWheelEvent":624,"./getEventCharCode":636,"_process":506,"fbjs/lib/EventListener":655,"fbjs/lib/emptyFunction":662,"fbjs/lib/invariant":670,"fbjs/lib/keyOf":674}],614:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57330,19 +50420,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticEvent":592}],590:[function(require,module,exports){
-=======
-},{"./SyntheticEvent":594}],592:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticEvent":609}],607:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticEvent":611}],609:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticEvent":617}],615:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57380,19 +50458,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticEvent":592}],591:[function(require,module,exports){
-=======
-},{"./SyntheticEvent":594}],593:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticEvent":609}],608:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticEvent":611}],610:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticEvent":617}],616:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57430,19 +50496,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticMouseEvent":596}],592:[function(require,module,exports){
-=======
-},{"./SyntheticMouseEvent":598}],594:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticMouseEvent":613}],609:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticMouseEvent":615}],611:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticMouseEvent":621}],617:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -57625,19 +50679,7 @@ PooledClass.addPoolingTo(SyntheticEvent, PooledClass.fourArgumentPooler);
 
 module.exports = SyntheticEvent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./PooledClass":523,"_process":481,"fbjs/lib/emptyFunction":637,"fbjs/lib/warning":656}],593:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./PooledClass":525,"_process":483,"fbjs/lib/emptyFunction":639,"fbjs/lib/warning":658}],595:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./PooledClass":540,"_process":498,"fbjs/lib/emptyFunction":654,"fbjs/lib/warning":673}],610:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./PooledClass":542,"_process":500,"fbjs/lib/emptyFunction":656,"fbjs/lib/warning":675}],612:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./PooledClass":548,"_process":506,"fbjs/lib/emptyFunction":662,"fbjs/lib/warning":681}],618:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57675,19 +50717,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticUIEvent":598}],594:[function(require,module,exports){
-=======
-},{"./SyntheticUIEvent":600}],596:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticUIEvent":615}],611:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticUIEvent":617}],613:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticUIEvent":623}],619:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57726,19 +50756,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticEvent":592}],595:[function(require,module,exports){
-=======
-},{"./SyntheticEvent":594}],597:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticEvent":609}],612:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticEvent":611}],614:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticEvent":617}],620:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57824,19 +50842,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticUIEvent":598,"./getEventCharCode":611,"./getEventKey":612,"./getEventModifierState":613}],596:[function(require,module,exports){
-=======
-},{"./SyntheticUIEvent":600,"./getEventCharCode":613,"./getEventKey":614,"./getEventModifierState":615}],598:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticUIEvent":615,"./getEventCharCode":628,"./getEventKey":629,"./getEventModifierState":630}],613:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticUIEvent":617,"./getEventCharCode":630,"./getEventKey":631,"./getEventModifierState":632}],615:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticUIEvent":623,"./getEventCharCode":636,"./getEventKey":637,"./getEventModifierState":638}],621:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57910,19 +50916,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticUIEvent":598,"./ViewportMetrics":601,"./getEventModifierState":613}],597:[function(require,module,exports){
-=======
-},{"./SyntheticUIEvent":600,"./ViewportMetrics":603,"./getEventModifierState":615}],599:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticUIEvent":615,"./ViewportMetrics":618,"./getEventModifierState":630}],614:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticUIEvent":617,"./ViewportMetrics":620,"./getEventModifierState":632}],616:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticUIEvent":623,"./ViewportMetrics":626,"./getEventModifierState":638}],622:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -57969,19 +50963,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticUIEvent":598,"./getEventModifierState":613}],598:[function(require,module,exports){
-=======
-},{"./SyntheticUIEvent":600,"./getEventModifierState":615}],600:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticUIEvent":615,"./getEventModifierState":630}],615:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticUIEvent":617,"./getEventModifierState":632}],617:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticUIEvent":623,"./getEventModifierState":638}],623:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58042,19 +51024,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticEvent":592,"./getEventTarget":614}],599:[function(require,module,exports){
-=======
-},{"./SyntheticEvent":594,"./getEventTarget":616}],601:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticEvent":609,"./getEventTarget":631}],616:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticEvent":611,"./getEventTarget":633}],618:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticEvent":617,"./getEventTarget":639}],624:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58110,19 +51080,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./SyntheticMouseEvent":596}],600:[function(require,module,exports){
-=======
-},{"./SyntheticMouseEvent":598}],602:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./SyntheticMouseEvent":613}],617:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./SyntheticMouseEvent":615}],619:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./SyntheticMouseEvent":621}],625:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -58356,19 +51314,7 @@ var Transaction = {
 
 module.exports = Transaction;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],601:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],603:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],618:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],620:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],626:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58396,19 +51342,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],602:[function(require,module,exports){
-=======
-},{}],604:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],619:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],621:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],627:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -58470,19 +51404,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481,"fbjs/lib/invariant":645}],603:[function(require,module,exports){
-=======
-},{"_process":483,"fbjs/lib/invariant":647}],605:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498,"fbjs/lib/invariant":662}],620:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500,"fbjs/lib/invariant":664}],622:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506,"fbjs/lib/invariant":670}],628:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58525,19 +51447,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],604:[function(require,module,exports){
-=======
-},{}],606:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],621:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],623:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],629:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -58564,19 +51474,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],605:[function(require,module,exports){
-=======
-},{"_process":483}],607:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],622:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],624:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],630:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58632,19 +51530,7 @@ function dangerousStyleValue(name, value) {
 }
 
 module.exports = dangerousStyleValue;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./CSSProperty":503}],606:[function(require,module,exports){
-=======
-},{"./CSSProperty":505}],608:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./CSSProperty":520}],623:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./CSSProperty":522}],625:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./CSSProperty":528}],631:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -58695,19 +51581,7 @@ function deprecated(fnName, newModule, newPackage, ctx, fn) {
 
 module.exports = deprecated;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"_process":481,"fbjs/lib/warning":656}],607:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"_process":483,"fbjs/lib/warning":658}],609:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"_process":498,"fbjs/lib/warning":673}],624:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"_process":500,"fbjs/lib/warning":675}],626:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"_process":506,"fbjs/lib/warning":681}],632:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58746,19 +51620,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],608:[function(require,module,exports){
-=======
-},{}],610:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],625:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],627:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],633:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -58810,19 +51672,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactCurrentOwner":534,"./ReactInstanceMap":562,"./ReactMount":565,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],609:[function(require,module,exports){
-=======
-},{"./ReactCurrentOwner":536,"./ReactInstanceMap":564,"./ReactMount":567,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],611:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactCurrentOwner":551,"./ReactInstanceMap":579,"./ReactMount":582,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],626:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactCurrentOwner":553,"./ReactInstanceMap":581,"./ReactMount":584,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],628:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactCurrentOwner":559,"./ReactInstanceMap":587,"./ReactMount":590,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],634:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -58873,19 +51723,7 @@ function flattenChildren(children) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./traverseAllChildren":628,"_process":481,"fbjs/lib/warning":656}],610:[function(require,module,exports){
-=======
-},{"./traverseAllChildren":630,"_process":483,"fbjs/lib/warning":658}],612:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./traverseAllChildren":645,"_process":498,"fbjs/lib/warning":673}],627:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./traverseAllChildren":647,"_process":500,"fbjs/lib/warning":675}],629:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./traverseAllChildren":653,"_process":506,"fbjs/lib/warning":681}],635:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58915,19 +51753,7 @@ var forEachAccumulated = function (arr, cb, scope) {
 };
 
 module.exports = forEachAccumulated;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],611:[function(require,module,exports){
-=======
-},{}],613:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],628:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],630:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],636:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -58978,19 +51804,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],612:[function(require,module,exports){
-=======
-},{}],614:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],629:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],631:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],637:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59094,19 +51908,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./getEventCharCode":611}],613:[function(require,module,exports){
-=======
-},{"./getEventCharCode":613}],615:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./getEventCharCode":628}],630:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./getEventCharCode":630}],632:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./getEventCharCode":636}],638:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59151,19 +51953,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],614:[function(require,module,exports){
-=======
-},{}],616:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],631:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],633:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],639:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59193,19 +51983,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],615:[function(require,module,exports){
-=======
-},{}],617:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],632:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],634:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],640:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59246,19 +52024,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],616:[function(require,module,exports){
-=======
-},{}],618:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],633:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],635:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],641:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59332,19 +52098,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],617:[function(require,module,exports){
-=======
-},{}],619:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],634:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],636:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],642:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59378,19 +52132,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/ExecutionEnvironment":631}],618:[function(require,module,exports){
-=======
-},{"fbjs/lib/ExecutionEnvironment":633}],620:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/ExecutionEnvironment":648}],635:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/ExecutionEnvironment":650}],637:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/ExecutionEnvironment":656}],643:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -59505,19 +52247,7 @@ function instantiateReactComponent(node) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"./ReactCompositeComponent":533,"./ReactEmptyComponent":554,"./ReactNativeComponent":568,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],619:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"./ReactCompositeComponent":535,"./ReactEmptyComponent":556,"./ReactNativeComponent":570,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],621:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"./ReactCompositeComponent":550,"./ReactEmptyComponent":571,"./ReactNativeComponent":585,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],636:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"./ReactCompositeComponent":552,"./ReactEmptyComponent":573,"./ReactNativeComponent":587,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],638:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"./ReactCompositeComponent":558,"./ReactEmptyComponent":579,"./ReactNativeComponent":593,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],644:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59578,19 +52308,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/ExecutionEnvironment":631}],620:[function(require,module,exports){
-=======
-},{"fbjs/lib/ExecutionEnvironment":633}],622:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/ExecutionEnvironment":648}],637:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/ExecutionEnvironment":650}],639:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/ExecutionEnvironment":656}],645:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59631,19 +52349,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],621:[function(require,module,exports){
-=======
-},{}],623:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],638:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],640:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],646:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -59679,19 +52385,7 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactElement":552,"_process":481,"fbjs/lib/invariant":645}],622:[function(require,module,exports){
-=======
-},{"./ReactElement":554,"_process":483,"fbjs/lib/invariant":647}],624:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactElement":569,"_process":498,"fbjs/lib/invariant":662}],639:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactElement":571,"_process":500,"fbjs/lib/invariant":664}],641:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactElement":577,"_process":506,"fbjs/lib/invariant":670}],647:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59718,19 +52412,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./escapeTextContentForBrowser":607}],623:[function(require,module,exports){
-=======
-},{"./escapeTextContentForBrowser":609}],625:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./escapeTextContentForBrowser":624}],640:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./escapeTextContentForBrowser":626}],642:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./escapeTextContentForBrowser":632}],648:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59747,19 +52429,7 @@ module.exports = quoteAttributeValueForBrowser;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactMount":565}],624:[function(require,module,exports){
-=======
-},{"./ReactMount":567}],626:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactMount":582}],641:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactMount":584}],643:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactMount":590}],649:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59850,19 +52520,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/ExecutionEnvironment":631}],625:[function(require,module,exports){
-=======
-},{"fbjs/lib/ExecutionEnvironment":633}],627:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/ExecutionEnvironment":648}],642:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/ExecutionEnvironment":650}],644:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/ExecutionEnvironment":656}],650:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59903,19 +52561,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./escapeTextContentForBrowser":607,"./setInnerHTML":624,"fbjs/lib/ExecutionEnvironment":631}],626:[function(require,module,exports){
-=======
-},{"./escapeTextContentForBrowser":609,"./setInnerHTML":626,"fbjs/lib/ExecutionEnvironment":633}],628:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./escapeTextContentForBrowser":624,"./setInnerHTML":641,"fbjs/lib/ExecutionEnvironment":648}],643:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./escapeTextContentForBrowser":626,"./setInnerHTML":643,"fbjs/lib/ExecutionEnvironment":650}],645:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./escapeTextContentForBrowser":632,"./setInnerHTML":649,"fbjs/lib/ExecutionEnvironment":656}],651:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59940,19 +52586,7 @@ function shallowCompare(instance, nextProps, nextState) {
 }
 
 module.exports = shallowCompare;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"fbjs/lib/shallowEqual":654}],627:[function(require,module,exports){
-=======
-},{"fbjs/lib/shallowEqual":656}],629:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"fbjs/lib/shallowEqual":671}],644:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"fbjs/lib/shallowEqual":673}],646:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"fbjs/lib/shallowEqual":679}],652:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -59996,19 +52630,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],628:[function(require,module,exports){
-=======
-},{}],630:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],645:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],647:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],653:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -60200,19 +52822,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ReactCurrentOwner":534,"./ReactElement":552,"./ReactInstanceHandles":561,"./getIteratorFn":615,"_process":481,"fbjs/lib/invariant":645,"fbjs/lib/warning":656}],629:[function(require,module,exports){
-=======
-},{"./ReactCurrentOwner":536,"./ReactElement":554,"./ReactInstanceHandles":563,"./getIteratorFn":617,"_process":483,"fbjs/lib/invariant":647,"fbjs/lib/warning":658}],631:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ReactCurrentOwner":551,"./ReactElement":569,"./ReactInstanceHandles":578,"./getIteratorFn":632,"_process":498,"fbjs/lib/invariant":662,"fbjs/lib/warning":673}],646:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ReactCurrentOwner":553,"./ReactElement":571,"./ReactInstanceHandles":580,"./getIteratorFn":634,"_process":500,"fbjs/lib/invariant":664,"fbjs/lib/warning":675}],648:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ReactCurrentOwner":559,"./ReactElement":577,"./ReactInstanceHandles":586,"./getIteratorFn":640,"_process":506,"fbjs/lib/invariant":670,"fbjs/lib/warning":681}],654:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Facebook, Inc.
@@ -60578,19 +53188,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Object.assign":522,"_process":481,"fbjs/lib/emptyFunction":637,"fbjs/lib/warning":656}],630:[function(require,module,exports){
-=======
-},{"./Object.assign":524,"_process":483,"fbjs/lib/emptyFunction":639,"fbjs/lib/warning":658}],632:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Object.assign":539,"_process":498,"fbjs/lib/emptyFunction":654,"fbjs/lib/warning":673}],647:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Object.assign":541,"_process":500,"fbjs/lib/emptyFunction":656,"fbjs/lib/warning":675}],649:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Object.assign":547,"_process":506,"fbjs/lib/emptyFunction":662,"fbjs/lib/warning":681}],655:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -60677,19 +53275,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./emptyFunction":637,"_process":481}],631:[function(require,module,exports){
-=======
-},{"./emptyFunction":639,"_process":483}],633:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./emptyFunction":654,"_process":498}],648:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./emptyFunction":656,"_process":500}],650:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./emptyFunction":662,"_process":506}],656:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -60726,19 +53312,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],632:[function(require,module,exports){
-=======
-},{}],634:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],649:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],651:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],657:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -60771,19 +53345,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],633:[function(require,module,exports){
-=======
-},{}],635:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],650:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],652:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],658:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -60824,19 +53386,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./camelize":632}],634:[function(require,module,exports){
-=======
-},{"./camelize":634}],636:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./camelize":649}],651:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./camelize":651}],653:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./camelize":657}],659:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -60892,19 +53442,7 @@ function containsNode(_x, _x2) {
 }
 
 module.exports = containsNode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isTextNode":647}],635:[function(require,module,exports){
-=======
-},{"./isTextNode":649}],637:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isTextNode":664}],652:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isTextNode":666}],654:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isTextNode":672}],660:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -60990,19 +53528,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./toArray":655}],636:[function(require,module,exports){
-=======
-},{"./toArray":657}],638:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./toArray":672}],653:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./toArray":674}],655:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./toArray":680}],661:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -61089,19 +53615,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ExecutionEnvironment":631,"./createArrayFromMixed":635,"./getMarkupWrap":641,"./invariant":645,"_process":481}],637:[function(require,module,exports){
-=======
-},{"./ExecutionEnvironment":633,"./createArrayFromMixed":637,"./getMarkupWrap":643,"./invariant":647,"_process":483}],639:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ExecutionEnvironment":648,"./createArrayFromMixed":652,"./getMarkupWrap":658,"./invariant":662,"_process":498}],654:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ExecutionEnvironment":650,"./createArrayFromMixed":654,"./getMarkupWrap":660,"./invariant":664,"_process":500}],656:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ExecutionEnvironment":656,"./createArrayFromMixed":660,"./getMarkupWrap":666,"./invariant":670,"_process":506}],662:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61140,19 +53654,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],638:[function(require,module,exports){
-=======
-},{}],640:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],655:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],657:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],663:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -61175,19 +53677,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],639:[function(require,module,exports){
-=======
-},{"_process":483}],641:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],656:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],658:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],664:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61214,19 +53704,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],640:[function(require,module,exports){
-=======
-},{}],642:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],657:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],659:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],665:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61262,19 +53740,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],641:[function(require,module,exports){
-=======
-},{}],643:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],658:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],660:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],666:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -61372,19 +53838,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ExecutionEnvironment":631,"./invariant":645,"_process":481}],642:[function(require,module,exports){
-=======
-},{"./ExecutionEnvironment":633,"./invariant":647,"_process":483}],644:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ExecutionEnvironment":648,"./invariant":662,"_process":498}],659:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ExecutionEnvironment":650,"./invariant":664,"_process":500}],661:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ExecutionEnvironment":656,"./invariant":670,"_process":506}],667:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61423,19 +53877,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],643:[function(require,module,exports){
-=======
-},{}],645:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],660:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],662:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],668:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61469,19 +53911,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],644:[function(require,module,exports){
-=======
-},{}],646:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],661:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],663:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],669:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61521,19 +53951,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./hyphenate":643}],645:[function(require,module,exports){
-=======
-},{"./hyphenate":645}],647:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./hyphenate":660}],662:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./hyphenate":662}],664:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./hyphenate":668}],670:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -61586,19 +54004,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"_process":481}],646:[function(require,module,exports){
-=======
-},{"_process":483}],648:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"_process":498}],663:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"_process":500}],665:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"_process":506}],671:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61622,19 +54028,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],647:[function(require,module,exports){
-=======
-},{}],649:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],664:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],666:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],672:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61660,19 +54054,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isNode":646}],648:[function(require,module,exports){
-=======
-},{"./isNode":648}],650:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isNode":663}],665:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isNode":665}],667:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isNode":671}],673:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -61723,19 +54105,7 @@ var keyMirror = function (obj) {
 
 module.exports = keyMirror;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./invariant":645,"_process":481}],649:[function(require,module,exports){
-=======
-},{"./invariant":647,"_process":483}],651:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./invariant":662,"_process":498}],666:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./invariant":664,"_process":500}],668:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./invariant":670,"_process":506}],674:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61771,19 +54141,7 @@ var keyOf = function (oneKeyObj) {
 };
 
 module.exports = keyOf;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],650:[function(require,module,exports){
-=======
-},{}],652:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],667:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],669:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],675:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61835,19 +54193,7 @@ function mapObject(object, callback, context) {
 }
 
 module.exports = mapObject;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],651:[function(require,module,exports){
-=======
-},{}],653:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],668:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],670:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],676:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61879,19 +54225,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],652:[function(require,module,exports){
-=======
-},{}],654:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],669:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],671:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],677:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61915,19 +54249,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ExecutionEnvironment":631}],653:[function(require,module,exports){
-=======
-},{"./ExecutionEnvironment":633}],655:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ExecutionEnvironment":648}],670:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ExecutionEnvironment":650}],672:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ExecutionEnvironment":656}],678:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -61962,19 +54284,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./performance":652}],654:[function(require,module,exports){
-=======
-},{"./performance":654}],656:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./performance":669}],671:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./performance":671}],673:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./performance":677}],679:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -62025,19 +54335,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],655:[function(require,module,exports){
-=======
-},{}],657:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],672:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],674:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],680:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -62097,19 +54395,7 @@ function toArray(obj) {
 
 module.exports = toArray;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./invariant":645,"_process":481}],656:[function(require,module,exports){
-=======
-},{"./invariant":647,"_process":483}],658:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./invariant":662,"_process":498}],673:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./invariant":664,"_process":500}],675:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./invariant":670,"_process":506}],681:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -62169,19 +54455,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./emptyFunction":637,"_process":481}],657:[function(require,module,exports){
-=======
-},{"./emptyFunction":639,"_process":483}],659:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./emptyFunction":654,"_process":498}],674:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./emptyFunction":656,"_process":500}],676:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./emptyFunction":662,"_process":506}],682:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -62240,19 +54514,7 @@ function applyMiddleware() {
     };
   };
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./compose":660}],658:[function(require,module,exports){
-=======
-},{"./compose":662}],660:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./compose":677}],675:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./compose":679}],677:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./compose":685}],683:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -62304,19 +54566,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],659:[function(require,module,exports){
-=======
-},{}],661:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],676:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],678:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],684:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -62461,19 +54711,7 @@ function combineReducers(reducers) {
   };
 }
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./createStore":661,"./utils/warning":662,"_process":481,"lodash/isPlainObject":666}],660:[function(require,module,exports){
-=======
-},{"./createStore":663,"./utils/warning":664,"_process":483,"lodash/isPlainObject":668}],662:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./createStore":678,"./utils/warning":679,"_process":498,"lodash/isPlainObject":683}],677:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./createStore":680,"./utils/warning":681,"_process":500,"lodash/isPlainObject":685}],679:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./createStore":686,"./utils/warning":687,"_process":506,"lodash/isPlainObject":691}],685:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -62512,19 +54750,7 @@ function compose() {
     }, last.apply(undefined, arguments));
   };
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],661:[function(require,module,exports){
-=======
-},{}],663:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],678:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],680:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],686:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -62786,19 +55012,7 @@ function createStore(reducer, preloadedState, enhancer) {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2['default']] = observable, _ref2;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"lodash/isPlainObject":666,"symbol-observable":779}],662:[function(require,module,exports){
-=======
-},{"lodash/isPlainObject":668,"symbol-observable":781}],664:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"lodash/isPlainObject":683,"symbol-observable":796}],679:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"lodash/isPlainObject":685,"symbol-observable":798}],681:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"lodash/isPlainObject":691,"symbol-observable":804}],687:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -62824,51 +55038,15 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],663:[function(require,module,exports){
-arguments[4][495][0].apply(exports,arguments)
-},{"./_overArg":664,"dup":495}],664:[function(require,module,exports){
-arguments[4][496][0].apply(exports,arguments)
-},{"dup":496}],665:[function(require,module,exports){
-=======
-},{}],665:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-arguments[4][497][0].apply(exports,arguments)
-},{"./_overArg":666,"dup":497}],666:[function(require,module,exports){
-arguments[4][498][0].apply(exports,arguments)
-<<<<<<< HEAD
-},{"./_getPrototype":663,"./isObjectLike":665,"dup":498}],667:[function(require,module,exports){
-=======
-},{"dup":498}],667:[function(require,module,exports){
-arguments[4][499][0].apply(exports,arguments)
-},{"dup":499}],668:[function(require,module,exports){
-arguments[4][500][0].apply(exports,arguments)
-},{"./_getPrototype":665,"./isObjectLike":667,"dup":500}],669:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],680:[function(require,module,exports){
-arguments[4][512][0].apply(exports,arguments)
-},{"./_overArg":681,"dup":512}],681:[function(require,module,exports){
-arguments[4][513][0].apply(exports,arguments)
-},{"dup":513}],682:[function(require,module,exports){
-=======
-},{}],682:[function(require,module,exports){
->>>>>>> OrderShow component
-arguments[4][514][0].apply(exports,arguments)
-},{"./_overArg":683,"dup":514}],683:[function(require,module,exports){
-arguments[4][515][0].apply(exports,arguments)
-<<<<<<< HEAD
-},{"./_getPrototype":680,"./isObjectLike":682,"dup":515}],684:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"dup":515}],684:[function(require,module,exports){
-arguments[4][516][0].apply(exports,arguments)
-},{"dup":516}],685:[function(require,module,exports){
-arguments[4][517][0].apply(exports,arguments)
-},{"./_getPrototype":682,"./isObjectLike":684,"dup":517}],686:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],688:[function(require,module,exports){
+arguments[4][520][0].apply(exports,arguments)
+},{"./_overArg":689,"dup":520}],689:[function(require,module,exports){
+arguments[4][521][0].apply(exports,arguments)
+},{"dup":521}],690:[function(require,module,exports){
+arguments[4][522][0].apply(exports,arguments)
+},{"dup":522}],691:[function(require,module,exports){
+arguments[4][523][0].apply(exports,arguments)
+},{"./_getPrototype":688,"./isObjectLike":690,"dup":523}],692:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -62979,19 +55157,7 @@ ArgmentedEvent.prototype = {
 
 module.exports = ArgmentedEvent;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./globalVars":669}],668:[function(require,module,exports){
-=======
-},{"./globalVars":671}],670:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./globalVars":686}],685:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./globalVars":688}],687:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./globalVars":694}],693:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63003,19 +55169,7 @@ module.exports = {
   DEFAULT_THROTTLE_RATE: 50
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],669:[function(require,module,exports){
-=======
-},{}],671:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],686:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],688:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],694:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63033,19 +55187,7 @@ module.exports = {
     removers: []
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"eventemitter3":677}],670:[function(require,module,exports){
-=======
-},{"eventemitter3":679}],672:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"eventemitter3":694}],687:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"eventemitter3":696}],689:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"eventemitter3":702}],695:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63064,19 +55206,7 @@ if (typeof navigator !== 'undefined') {
 
 module.exports = leIE8;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],671:[function(require,module,exports){
-=======
-},{}],673:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],688:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],690:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],696:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63111,19 +55241,7 @@ function listen(target, eventType, handler) {
 
 module.exports = listen;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],672:[function(require,module,exports){
-=======
-},{}],674:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],689:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],691:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],697:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63167,19 +55285,7 @@ function rAFThrottle(func, throttle) {
 
 module.exports = rAFThrottle;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"raf":482}],673:[function(require,module,exports){
-=======
-},{"raf":484}],675:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"raf":499}],690:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"raf":501}],692:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"raf":507}],698:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63380,19 +55486,7 @@ module.exports = {
     touchend: connectDiscreteEvent(body, 'touchend')
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./AugmentedEvent":667,"./constants":668,"./globalVars":669,"./lib/leIE8":670,"./lib/listen":671,"./lib/rAFThrottle":672,"lodash/clone":760,"lodash/throttle":777}],674:[function(require,module,exports){
-=======
-},{"./AugmentedEvent":669,"./constants":670,"./globalVars":671,"./lib/leIE8":672,"./lib/listen":673,"./lib/rAFThrottle":674,"lodash/clone":762,"lodash/throttle":779}],676:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./AugmentedEvent":684,"./constants":685,"./globalVars":686,"./lib/leIE8":687,"./lib/listen":688,"./lib/rAFThrottle":689,"lodash/clone":777,"lodash/throttle":794}],691:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./AugmentedEvent":686,"./constants":687,"./globalVars":688,"./lib/leIE8":689,"./lib/listen":690,"./lib/rAFThrottle":691,"lodash/clone":779,"lodash/throttle":796}],693:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./AugmentedEvent":692,"./constants":693,"./globalVars":694,"./lib/leIE8":695,"./lib/listen":696,"./lib/rAFThrottle":697,"lodash/clone":785,"lodash/throttle":802}],699:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63446,19 +55540,7 @@ function subscribe(type, cb, options) {
 
 module.exports = subscribe;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./constants":668,"./globalVars":669,"./lib/leIE8":670,"./mainEventConnectors":673}],675:[function(require,module,exports){
-=======
-},{"./constants":670,"./globalVars":671,"./lib/leIE8":672,"./mainEventConnectors":675}],677:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./constants":685,"./globalVars":686,"./lib/leIE8":687,"./mainEventConnectors":690}],692:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./constants":687,"./globalVars":688,"./lib/leIE8":689,"./mainEventConnectors":692}],694:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./constants":693,"./globalVars":694,"./lib/leIE8":695,"./mainEventConnectors":698}],700:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -63486,19 +55568,7 @@ function unsubscribe(type, cb, options) {
 
 module.exports = unsubscribe;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./globalVars":669}],676:[function(require,module,exports){
-=======
-},{"./globalVars":671}],678:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./globalVars":686}],693:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./globalVars":688}],695:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./globalVars":694}],701:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015, Yahoo! Inc.
@@ -63527,19 +55597,7 @@ if (typeof window !== 'undefined') {
 }
 
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./dist/lib/listen":671,"./dist/subscribe":674,"./dist/unsubscribe":675,"_process":481}],677:[function(require,module,exports){
-=======
-},{"./dist/lib/listen":673,"./dist/subscribe":676,"./dist/unsubscribe":677,"_process":483}],679:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./dist/lib/listen":688,"./dist/subscribe":691,"./dist/unsubscribe":692,"_process":498}],694:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./dist/lib/listen":690,"./dist/subscribe":693,"./dist/unsubscribe":694,"_process":500}],696:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./dist/lib/listen":696,"./dist/subscribe":699,"./dist/unsubscribe":700,"_process":506}],702:[function(require,module,exports){
 'use strict';
 
 var has = Object.prototype.hasOwnProperty
@@ -63852,19 +55910,7 @@ if ('undefined' !== typeof module) {
   module.exports = EventEmitter;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],678:[function(require,module,exports){
-=======
-},{}],680:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],695:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],697:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],703:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -63873,19 +55919,7 @@ var DataView = getNative(root, 'DataView');
 
 module.exports = DataView;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721,"./_root":752}],679:[function(require,module,exports){
-=======
-},{"./_getNative":723,"./_root":754}],681:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738,"./_root":769}],696:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740,"./_root":771}],698:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746,"./_root":777}],704:[function(require,module,exports){
 var hashClear = require('./_hashClear'),
     hashDelete = require('./_hashDelete'),
     hashGet = require('./_hashGet'),
@@ -63919,19 +55953,7 @@ Hash.prototype.set = hashSet;
 
 module.exports = Hash;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_hashClear":726,"./_hashDelete":727,"./_hashGet":728,"./_hashHas":729,"./_hashSet":730}],680:[function(require,module,exports){
-=======
-},{"./_hashClear":728,"./_hashDelete":729,"./_hashGet":730,"./_hashHas":731,"./_hashSet":732}],682:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_hashClear":743,"./_hashDelete":744,"./_hashGet":745,"./_hashHas":746,"./_hashSet":747}],697:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_hashClear":745,"./_hashDelete":746,"./_hashGet":747,"./_hashHas":748,"./_hashSet":749}],699:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_hashClear":751,"./_hashDelete":752,"./_hashGet":753,"./_hashHas":754,"./_hashSet":755}],705:[function(require,module,exports){
 var listCacheClear = require('./_listCacheClear'),
     listCacheDelete = require('./_listCacheDelete'),
     listCacheGet = require('./_listCacheGet'),
@@ -63965,19 +55987,7 @@ ListCache.prototype.set = listCacheSet;
 
 module.exports = ListCache;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_listCacheClear":738,"./_listCacheDelete":739,"./_listCacheGet":740,"./_listCacheHas":741,"./_listCacheSet":742}],681:[function(require,module,exports){
-=======
-},{"./_listCacheClear":740,"./_listCacheDelete":741,"./_listCacheGet":742,"./_listCacheHas":743,"./_listCacheSet":744}],683:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_listCacheClear":755,"./_listCacheDelete":756,"./_listCacheGet":757,"./_listCacheHas":758,"./_listCacheSet":759}],698:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_listCacheClear":757,"./_listCacheDelete":758,"./_listCacheGet":759,"./_listCacheHas":760,"./_listCacheSet":761}],700:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_listCacheClear":763,"./_listCacheDelete":764,"./_listCacheGet":765,"./_listCacheHas":766,"./_listCacheSet":767}],706:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -63986,19 +55996,7 @@ var Map = getNative(root, 'Map');
 
 module.exports = Map;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721,"./_root":752}],682:[function(require,module,exports){
-=======
-},{"./_getNative":723,"./_root":754}],684:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738,"./_root":769}],699:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740,"./_root":771}],701:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746,"./_root":777}],707:[function(require,module,exports){
 var mapCacheClear = require('./_mapCacheClear'),
     mapCacheDelete = require('./_mapCacheDelete'),
     mapCacheGet = require('./_mapCacheGet'),
@@ -64032,19 +56030,7 @@ MapCache.prototype.set = mapCacheSet;
 
 module.exports = MapCache;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_mapCacheClear":743,"./_mapCacheDelete":744,"./_mapCacheGet":745,"./_mapCacheHas":746,"./_mapCacheSet":747}],683:[function(require,module,exports){
-=======
-},{"./_mapCacheClear":745,"./_mapCacheDelete":746,"./_mapCacheGet":747,"./_mapCacheHas":748,"./_mapCacheSet":749}],685:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_mapCacheClear":760,"./_mapCacheDelete":761,"./_mapCacheGet":762,"./_mapCacheHas":763,"./_mapCacheSet":764}],700:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_mapCacheClear":762,"./_mapCacheDelete":763,"./_mapCacheGet":764,"./_mapCacheHas":765,"./_mapCacheSet":766}],702:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_mapCacheClear":768,"./_mapCacheDelete":769,"./_mapCacheGet":770,"./_mapCacheHas":771,"./_mapCacheSet":772}],708:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -64053,19 +56039,7 @@ var Promise = getNative(root, 'Promise');
 
 module.exports = Promise;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721,"./_root":752}],684:[function(require,module,exports){
-=======
-},{"./_getNative":723,"./_root":754}],686:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738,"./_root":769}],701:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740,"./_root":771}],703:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746,"./_root":777}],709:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -64074,19 +56048,7 @@ var Set = getNative(root, 'Set');
 
 module.exports = Set;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721,"./_root":752}],685:[function(require,module,exports){
-=======
-},{"./_getNative":723,"./_root":754}],687:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738,"./_root":769}],702:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740,"./_root":771}],704:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746,"./_root":777}],710:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     stackClear = require('./_stackClear'),
     stackDelete = require('./_stackDelete'),
@@ -64115,19 +56077,7 @@ Stack.prototype.set = stackSet;
 
 module.exports = Stack;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_ListCache":680,"./_stackClear":754,"./_stackDelete":755,"./_stackGet":756,"./_stackHas":757,"./_stackSet":758}],686:[function(require,module,exports){
-=======
-},{"./_ListCache":682,"./_stackClear":756,"./_stackDelete":757,"./_stackGet":758,"./_stackHas":759,"./_stackSet":760}],688:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_ListCache":697,"./_stackClear":771,"./_stackDelete":772,"./_stackGet":773,"./_stackHas":774,"./_stackSet":775}],703:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_ListCache":699,"./_stackClear":773,"./_stackDelete":774,"./_stackGet":775,"./_stackHas":776,"./_stackSet":777}],705:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_ListCache":705,"./_stackClear":779,"./_stackDelete":780,"./_stackGet":781,"./_stackHas":782,"./_stackSet":783}],711:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -64135,19 +56085,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752}],687:[function(require,module,exports){
-=======
-},{"./_root":754}],689:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769}],704:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771}],706:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777}],712:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -64155,19 +56093,7 @@ var Uint8Array = root.Uint8Array;
 
 module.exports = Uint8Array;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752}],688:[function(require,module,exports){
-=======
-},{"./_root":754}],690:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769}],705:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771}],707:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777}],713:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -64176,19 +56102,7 @@ var WeakMap = getNative(root, 'WeakMap');
 
 module.exports = WeakMap;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721,"./_root":752}],689:[function(require,module,exports){
-=======
-},{"./_getNative":723,"./_root":754}],691:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738,"./_root":769}],706:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740,"./_root":771}],708:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746,"./_root":777}],714:[function(require,module,exports){
 /**
  * Adds the key-value `pair` to `map`.
  *
@@ -64205,19 +56119,7 @@ function addMapEntry(map, pair) {
 
 module.exports = addMapEntry;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],690:[function(require,module,exports){
-=======
-},{}],692:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],707:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],709:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],715:[function(require,module,exports){
 /**
  * Adds `value` to `set`.
  *
@@ -64234,19 +56136,7 @@ function addSetEntry(set, value) {
 
 module.exports = addSetEntry;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],691:[function(require,module,exports){
-=======
-},{}],693:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],708:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],710:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],716:[function(require,module,exports){
 /**
  * A specialized version of `_.forEach` for arrays without support for
  * iteratee shorthands.
@@ -64270,19 +56160,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],692:[function(require,module,exports){
-=======
-},{}],694:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],709:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],711:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],717:[function(require,module,exports){
 var baseTimes = require('./_baseTimes'),
     isArguments = require('./isArguments'),
     isArray = require('./isArray'),
@@ -64323,19 +56201,7 @@ function arrayLikeKeys(value, inherited) {
 
 module.exports = arrayLikeKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseTimes":705,"./_isIndex":734,"./isArguments":763,"./isArray":764}],693:[function(require,module,exports){
-=======
-},{"./_baseTimes":707,"./_isIndex":736,"./isArguments":765,"./isArray":766}],695:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseTimes":722,"./_isIndex":751,"./isArguments":780,"./isArray":781}],710:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseTimes":724,"./_isIndex":753,"./isArguments":782,"./isArray":783}],712:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseTimes":730,"./_isIndex":759,"./isArguments":788,"./isArray":789}],718:[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -64357,19 +56223,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],694:[function(require,module,exports){
-=======
-},{}],696:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],711:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],713:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],719:[function(require,module,exports){
 /**
  * A specialized version of `_.reduce` for arrays without support for
  * iteratee shorthands.
@@ -64397,19 +56251,7 @@ function arrayReduce(array, iteratee, accumulator, initAccum) {
 
 module.exports = arrayReduce;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],695:[function(require,module,exports){
-=======
-},{}],697:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],712:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],714:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],720:[function(require,module,exports){
 var baseAssignValue = require('./_baseAssignValue'),
     eq = require('./eq');
 
@@ -64439,19 +56281,7 @@ function assignValue(object, key, value) {
 
 module.exports = assignValue;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseAssignValue":698,"./eq":762}],696:[function(require,module,exports){
-=======
-},{"./_baseAssignValue":700,"./eq":764}],698:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseAssignValue":715,"./eq":779}],713:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseAssignValue":717,"./eq":781}],715:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseAssignValue":723,"./eq":787}],721:[function(require,module,exports){
 var eq = require('./eq');
 
 /**
@@ -64474,19 +56304,7 @@ function assocIndexOf(array, key) {
 
 module.exports = assocIndexOf;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./eq":762}],697:[function(require,module,exports){
-=======
-},{"./eq":764}],699:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./eq":779}],714:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./eq":781}],716:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./eq":787}],722:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     keys = require('./keys');
 
@@ -64505,19 +56323,7 @@ function baseAssign(object, source) {
 
 module.exports = baseAssign;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_copyObject":715,"./keys":773}],698:[function(require,module,exports){
-=======
-},{"./_copyObject":717,"./keys":775}],700:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_copyObject":732,"./keys":790}],715:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_copyObject":734,"./keys":792}],717:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_copyObject":740,"./keys":798}],723:[function(require,module,exports){
 /** Built-in value references. */
 var defineProperty = Object.defineProperty;
 
@@ -64545,19 +56351,7 @@ function baseAssignValue(object, key, value) {
 
 module.exports = baseAssignValue;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],699:[function(require,module,exports){
-=======
-},{}],701:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],716:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],718:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],724:[function(require,module,exports){
 var Stack = require('./_Stack'),
     arrayEach = require('./_arrayEach'),
     assignValue = require('./_assignValue'),
@@ -64694,19 +56488,7 @@ function baseClone(value, isDeep, isFull, customizer, key, object, stack) {
 
 module.exports = baseClone;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_Stack":685,"./_arrayEach":691,"./_assignValue":695,"./_baseAssign":697,"./_cloneBuffer":707,"./_copyArray":714,"./_copySymbols":716,"./_getAllKeys":719,"./_getTag":724,"./_initCloneArray":731,"./_initCloneByTag":732,"./_initCloneObject":733,"./isArray":764,"./isBuffer":767,"./isObject":770,"./keys":773}],700:[function(require,module,exports){
-=======
-},{"./_Stack":687,"./_arrayEach":693,"./_assignValue":697,"./_baseAssign":699,"./_cloneBuffer":709,"./_copyArray":716,"./_copySymbols":718,"./_getAllKeys":721,"./_getTag":726,"./_initCloneArray":733,"./_initCloneByTag":734,"./_initCloneObject":735,"./isArray":766,"./isBuffer":769,"./isObject":772,"./keys":775}],702:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_Stack":702,"./_arrayEach":708,"./_assignValue":712,"./_baseAssign":714,"./_cloneBuffer":724,"./_copyArray":731,"./_copySymbols":733,"./_getAllKeys":736,"./_getTag":741,"./_initCloneArray":748,"./_initCloneByTag":749,"./_initCloneObject":750,"./isArray":781,"./isBuffer":784,"./isObject":787,"./keys":790}],717:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_Stack":704,"./_arrayEach":710,"./_assignValue":714,"./_baseAssign":716,"./_cloneBuffer":726,"./_copyArray":733,"./_copySymbols":735,"./_getAllKeys":738,"./_getTag":743,"./_initCloneArray":750,"./_initCloneByTag":751,"./_initCloneObject":752,"./isArray":783,"./isBuffer":786,"./isObject":789,"./keys":792}],719:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_Stack":710,"./_arrayEach":716,"./_assignValue":720,"./_baseAssign":722,"./_cloneBuffer":732,"./_copyArray":739,"./_copySymbols":741,"./_getAllKeys":744,"./_getTag":749,"./_initCloneArray":756,"./_initCloneByTag":757,"./_initCloneObject":758,"./isArray":789,"./isBuffer":792,"./isObject":795,"./keys":798}],725:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** Built-in value references. */
@@ -64738,19 +56520,7 @@ var baseCreate = (function() {
 
 module.exports = baseCreate;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObject":770}],701:[function(require,module,exports){
-=======
-},{"./isObject":772}],703:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObject":787}],718:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObject":789}],720:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isObject":795}],726:[function(require,module,exports){
 var arrayPush = require('./_arrayPush'),
     isArray = require('./isArray');
 
@@ -64772,19 +56542,7 @@ function baseGetAllKeys(object, keysFunc, symbolsFunc) {
 
 module.exports = baseGetAllKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_arrayPush":693,"./isArray":764}],702:[function(require,module,exports){
-=======
-},{"./_arrayPush":695,"./isArray":766}],704:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_arrayPush":710,"./isArray":781}],719:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_arrayPush":712,"./isArray":783}],721:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_arrayPush":718,"./isArray":789}],727:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -64808,19 +56566,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],703:[function(require,module,exports){
-=======
-},{}],705:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],720:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],722:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],728:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isMasked = require('./_isMasked'),
     isObject = require('./isObject'),
@@ -64869,19 +56615,7 @@ function baseIsNative(value) {
 
 module.exports = baseIsNative;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_isMasked":736,"./_toSource":759,"./isFunction":768,"./isObject":770}],704:[function(require,module,exports){
-=======
-},{"./_isMasked":738,"./_toSource":761,"./isFunction":770,"./isObject":772}],706:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_isMasked":753,"./_toSource":776,"./isFunction":785,"./isObject":787}],721:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_isMasked":755,"./_toSource":778,"./isFunction":787,"./isObject":789}],723:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_isMasked":761,"./_toSource":784,"./isFunction":793,"./isObject":795}],729:[function(require,module,exports){
 var isPrototype = require('./_isPrototype'),
     nativeKeys = require('./_nativeKeys');
 
@@ -64913,19 +56647,7 @@ function baseKeys(object) {
 
 module.exports = baseKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_isPrototype":737,"./_nativeKeys":750}],705:[function(require,module,exports){
-=======
-},{"./_isPrototype":739,"./_nativeKeys":752}],707:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_isPrototype":754,"./_nativeKeys":767}],722:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_isPrototype":756,"./_nativeKeys":769}],724:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_isPrototype":762,"./_nativeKeys":775}],730:[function(require,module,exports){
 /**
  * The base implementation of `_.times` without support for iteratee shorthands
  * or max array length checks.
@@ -64947,19 +56669,7 @@ function baseTimes(n, iteratee) {
 
 module.exports = baseTimes;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],706:[function(require,module,exports){
-=======
-},{}],708:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],723:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],725:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],731:[function(require,module,exports){
 var Uint8Array = require('./_Uint8Array');
 
 /**
@@ -64977,19 +56687,7 @@ function cloneArrayBuffer(arrayBuffer) {
 
 module.exports = cloneArrayBuffer;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_Uint8Array":687}],707:[function(require,module,exports){
-=======
-},{"./_Uint8Array":689}],709:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_Uint8Array":704}],724:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_Uint8Array":706}],726:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_Uint8Array":712}],732:[function(require,module,exports){
 var root = require('./_root');
 
 /** Detect free variable `exports`. */
@@ -65026,19 +56724,7 @@ function cloneBuffer(buffer, isDeep) {
 
 module.exports = cloneBuffer;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752}],708:[function(require,module,exports){
-=======
-},{"./_root":754}],710:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769}],725:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771}],727:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777}],733:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer');
 
 /**
@@ -65056,19 +56742,7 @@ function cloneDataView(dataView, isDeep) {
 
 module.exports = cloneDataView;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cloneArrayBuffer":706}],709:[function(require,module,exports){
-=======
-},{"./_cloneArrayBuffer":708}],711:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cloneArrayBuffer":723}],726:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cloneArrayBuffer":725}],728:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cloneArrayBuffer":731}],734:[function(require,module,exports){
 var addMapEntry = require('./_addMapEntry'),
     arrayReduce = require('./_arrayReduce'),
     mapToArray = require('./_mapToArray');
@@ -65089,19 +56763,7 @@ function cloneMap(map, isDeep, cloneFunc) {
 
 module.exports = cloneMap;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_addMapEntry":689,"./_arrayReduce":694,"./_mapToArray":748}],710:[function(require,module,exports){
-=======
-},{"./_addMapEntry":691,"./_arrayReduce":696,"./_mapToArray":750}],712:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_addMapEntry":706,"./_arrayReduce":711,"./_mapToArray":765}],727:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_addMapEntry":708,"./_arrayReduce":713,"./_mapToArray":767}],729:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_addMapEntry":714,"./_arrayReduce":719,"./_mapToArray":773}],735:[function(require,module,exports){
 /** Used to match `RegExp` flags from their coerced string values. */
 var reFlags = /\w*$/;
 
@@ -65120,19 +56782,7 @@ function cloneRegExp(regexp) {
 
 module.exports = cloneRegExp;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],711:[function(require,module,exports){
-=======
-},{}],713:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],728:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],730:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],736:[function(require,module,exports){
 var addSetEntry = require('./_addSetEntry'),
     arrayReduce = require('./_arrayReduce'),
     setToArray = require('./_setToArray');
@@ -65153,19 +56803,7 @@ function cloneSet(set, isDeep, cloneFunc) {
 
 module.exports = cloneSet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_addSetEntry":690,"./_arrayReduce":694,"./_setToArray":753}],712:[function(require,module,exports){
-=======
-},{"./_addSetEntry":692,"./_arrayReduce":696,"./_setToArray":755}],714:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_addSetEntry":707,"./_arrayReduce":711,"./_setToArray":770}],729:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_addSetEntry":709,"./_arrayReduce":713,"./_setToArray":772}],731:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_addSetEntry":715,"./_arrayReduce":719,"./_setToArray":778}],737:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used to convert symbols to primitives and strings. */
@@ -65185,19 +56823,7 @@ function cloneSymbol(symbol) {
 
 module.exports = cloneSymbol;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_Symbol":686}],713:[function(require,module,exports){
-=======
-},{"./_Symbol":688}],715:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_Symbol":703}],730:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_Symbol":705}],732:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_Symbol":711}],738:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer');
 
 /**
@@ -65215,19 +56841,7 @@ function cloneTypedArray(typedArray, isDeep) {
 
 module.exports = cloneTypedArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cloneArrayBuffer":706}],714:[function(require,module,exports){
-=======
-},{"./_cloneArrayBuffer":708}],716:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cloneArrayBuffer":723}],731:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cloneArrayBuffer":725}],733:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cloneArrayBuffer":731}],739:[function(require,module,exports){
 /**
  * Copies the values of `source` to `array`.
  *
@@ -65249,19 +56863,7 @@ function copyArray(source, array) {
 
 module.exports = copyArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],715:[function(require,module,exports){
-=======
-},{}],717:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],732:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],734:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],740:[function(require,module,exports){
 var assignValue = require('./_assignValue'),
     baseAssignValue = require('./_baseAssignValue');
 
@@ -65303,19 +56905,7 @@ function copyObject(source, props, object, customizer) {
 
 module.exports = copyObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_assignValue":695,"./_baseAssignValue":698}],716:[function(require,module,exports){
-=======
-},{"./_assignValue":697,"./_baseAssignValue":700}],718:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_assignValue":712,"./_baseAssignValue":715}],733:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_assignValue":714,"./_baseAssignValue":717}],735:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_assignValue":720,"./_baseAssignValue":723}],741:[function(require,module,exports){
 var copyObject = require('./_copyObject'),
     getSymbols = require('./_getSymbols');
 
@@ -65333,19 +56923,7 @@ function copySymbols(source, object) {
 
 module.exports = copySymbols;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_copyObject":715,"./_getSymbols":723}],717:[function(require,module,exports){
-=======
-},{"./_copyObject":717,"./_getSymbols":725}],719:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_copyObject":732,"./_getSymbols":740}],734:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_copyObject":734,"./_getSymbols":742}],736:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_copyObject":740,"./_getSymbols":748}],742:[function(require,module,exports){
 var root = require('./_root');
 
 /** Used to detect overreaching core-js shims. */
@@ -65353,19 +56931,7 @@ var coreJsData = root['__core-js_shared__'];
 
 module.exports = coreJsData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752}],718:[function(require,module,exports){
-=======
-},{"./_root":754}],720:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769}],735:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771}],737:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777}],743:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -65373,19 +56939,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],719:[function(require,module,exports){
-=======
-},{}],721:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],736:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],738:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],744:[function(require,module,exports){
 var baseGetAllKeys = require('./_baseGetAllKeys'),
     getSymbols = require('./_getSymbols'),
     keys = require('./keys');
@@ -65403,19 +56957,7 @@ function getAllKeys(object) {
 
 module.exports = getAllKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseGetAllKeys":701,"./_getSymbols":723,"./keys":773}],720:[function(require,module,exports){
-=======
-},{"./_baseGetAllKeys":703,"./_getSymbols":725,"./keys":775}],722:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseGetAllKeys":718,"./_getSymbols":740,"./keys":790}],737:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseGetAllKeys":720,"./_getSymbols":742,"./keys":792}],739:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseGetAllKeys":726,"./_getSymbols":748,"./keys":798}],745:[function(require,module,exports){
 var isKeyable = require('./_isKeyable');
 
 /**
@@ -65435,19 +56977,7 @@ function getMapData(map, key) {
 
 module.exports = getMapData;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_isKeyable":735}],721:[function(require,module,exports){
-=======
-},{"./_isKeyable":737}],723:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_isKeyable":752}],738:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_isKeyable":754}],740:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_isKeyable":760}],746:[function(require,module,exports){
 var baseIsNative = require('./_baseIsNative'),
     getValue = require('./_getValue');
 
@@ -65466,27 +56996,9 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseIsNative":703,"./_getValue":725}],722:[function(require,module,exports){
-arguments[4][495][0].apply(exports,arguments)
-},{"./_overArg":751,"dup":495}],723:[function(require,module,exports){
-=======
-},{"./_baseIsNative":705,"./_getValue":727}],724:[function(require,module,exports){
-arguments[4][497][0].apply(exports,arguments)
-},{"./_overArg":753,"dup":497}],725:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseIsNative":720,"./_getValue":742}],739:[function(require,module,exports){
-arguments[4][512][0].apply(exports,arguments)
-},{"./_overArg":768,"dup":512}],740:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseIsNative":722,"./_getValue":744}],741:[function(require,module,exports){
-arguments[4][514][0].apply(exports,arguments)
-},{"./_overArg":770,"dup":514}],742:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseIsNative":728,"./_getValue":750}],747:[function(require,module,exports){
+arguments[4][520][0].apply(exports,arguments)
+},{"./_overArg":776,"dup":520}],748:[function(require,module,exports){
 var overArg = require('./_overArg'),
     stubArray = require('./stubArray');
 
@@ -65504,19 +57016,7 @@ var getSymbols = nativeGetSymbols ? overArg(nativeGetSymbols, Object) : stubArra
 
 module.exports = getSymbols;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_overArg":751,"./stubArray":775}],724:[function(require,module,exports){
-=======
-},{"./_overArg":753,"./stubArray":777}],726:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_overArg":768,"./stubArray":792}],741:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_overArg":770,"./stubArray":794}],743:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_overArg":776,"./stubArray":800}],749:[function(require,module,exports){
 var DataView = require('./_DataView'),
     Map = require('./_Map'),
     Promise = require('./_Promise'),
@@ -65586,19 +57086,7 @@ if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
 
 module.exports = getTag;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_DataView":678,"./_Map":681,"./_Promise":683,"./_Set":684,"./_WeakMap":688,"./_baseGetTag":702,"./_toSource":759}],725:[function(require,module,exports){
-=======
-},{"./_DataView":680,"./_Map":683,"./_Promise":685,"./_Set":686,"./_WeakMap":690,"./_baseGetTag":704,"./_toSource":761}],727:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_DataView":695,"./_Map":698,"./_Promise":700,"./_Set":701,"./_WeakMap":705,"./_baseGetTag":719,"./_toSource":776}],742:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_DataView":697,"./_Map":700,"./_Promise":702,"./_Set":703,"./_WeakMap":707,"./_baseGetTag":721,"./_toSource":778}],744:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_DataView":703,"./_Map":706,"./_Promise":708,"./_Set":709,"./_WeakMap":713,"./_baseGetTag":727,"./_toSource":784}],750:[function(require,module,exports){
 /**
  * Gets the value at `key` of `object`.
  *
@@ -65613,19 +57101,7 @@ function getValue(object, key) {
 
 module.exports = getValue;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],726:[function(require,module,exports){
-=======
-},{}],728:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],743:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],745:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],751:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /**
@@ -65642,19 +57118,7 @@ function hashClear() {
 
 module.exports = hashClear;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_nativeCreate":749}],727:[function(require,module,exports){
-=======
-},{"./_nativeCreate":751}],729:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_nativeCreate":766}],744:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_nativeCreate":768}],746:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_nativeCreate":774}],752:[function(require,module,exports){
 /**
  * Removes `key` and its value from the hash.
  *
@@ -65673,19 +57137,7 @@ function hashDelete(key) {
 
 module.exports = hashDelete;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],728:[function(require,module,exports){
-=======
-},{}],730:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],745:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],747:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],753:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -65717,19 +57169,7 @@ function hashGet(key) {
 
 module.exports = hashGet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_nativeCreate":749}],729:[function(require,module,exports){
-=======
-},{"./_nativeCreate":751}],731:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_nativeCreate":766}],746:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_nativeCreate":768}],748:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_nativeCreate":774}],754:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used for built-in method references. */
@@ -65754,19 +57194,7 @@ function hashHas(key) {
 
 module.exports = hashHas;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_nativeCreate":749}],730:[function(require,module,exports){
-=======
-},{"./_nativeCreate":751}],732:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_nativeCreate":766}],747:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_nativeCreate":768}],749:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_nativeCreate":774}],755:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -65791,19 +57219,7 @@ function hashSet(key, value) {
 
 module.exports = hashSet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_nativeCreate":749}],731:[function(require,module,exports){
-=======
-},{"./_nativeCreate":751}],733:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_nativeCreate":766}],748:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_nativeCreate":768}],750:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_nativeCreate":774}],756:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -65831,19 +57247,7 @@ function initCloneArray(array) {
 
 module.exports = initCloneArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],732:[function(require,module,exports){
-=======
-},{}],734:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],749:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],751:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],757:[function(require,module,exports){
 var cloneArrayBuffer = require('./_cloneArrayBuffer'),
     cloneDataView = require('./_cloneDataView'),
     cloneMap = require('./_cloneMap'),
@@ -65925,19 +57329,7 @@ function initCloneByTag(object, tag, cloneFunc, isDeep) {
 
 module.exports = initCloneByTag;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_cloneArrayBuffer":706,"./_cloneDataView":708,"./_cloneMap":709,"./_cloneRegExp":710,"./_cloneSet":711,"./_cloneSymbol":712,"./_cloneTypedArray":713}],733:[function(require,module,exports){
-=======
-},{"./_cloneArrayBuffer":708,"./_cloneDataView":710,"./_cloneMap":711,"./_cloneRegExp":712,"./_cloneSet":713,"./_cloneSymbol":714,"./_cloneTypedArray":715}],735:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_cloneArrayBuffer":723,"./_cloneDataView":725,"./_cloneMap":726,"./_cloneRegExp":727,"./_cloneSet":728,"./_cloneSymbol":729,"./_cloneTypedArray":730}],750:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_cloneArrayBuffer":725,"./_cloneDataView":727,"./_cloneMap":728,"./_cloneRegExp":729,"./_cloneSet":730,"./_cloneSymbol":731,"./_cloneTypedArray":732}],752:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_cloneArrayBuffer":731,"./_cloneDataView":733,"./_cloneMap":734,"./_cloneRegExp":735,"./_cloneSet":736,"./_cloneSymbol":737,"./_cloneTypedArray":738}],758:[function(require,module,exports){
 var baseCreate = require('./_baseCreate'),
     getPrototype = require('./_getPrototype'),
     isPrototype = require('./_isPrototype');
@@ -65957,19 +57349,7 @@ function initCloneObject(object) {
 
 module.exports = initCloneObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseCreate":700,"./_getPrototype":722,"./_isPrototype":737}],734:[function(require,module,exports){
-=======
-},{"./_baseCreate":702,"./_getPrototype":724,"./_isPrototype":739}],736:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseCreate":717,"./_getPrototype":739,"./_isPrototype":754}],751:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseCreate":719,"./_getPrototype":741,"./_isPrototype":756}],753:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseCreate":725,"./_getPrototype":747,"./_isPrototype":762}],759:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -65993,19 +57373,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],735:[function(require,module,exports){
-=======
-},{}],737:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],752:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],754:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],760:[function(require,module,exports){
 /**
  * Checks if `value` is suitable for use as unique object key.
  *
@@ -66022,19 +57390,7 @@ function isKeyable(value) {
 
 module.exports = isKeyable;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],736:[function(require,module,exports){
-=======
-},{}],738:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],753:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],755:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],761:[function(require,module,exports){
 var coreJsData = require('./_coreJsData');
 
 /** Used to detect methods masquerading as native. */
@@ -66056,19 +57412,7 @@ function isMasked(func) {
 
 module.exports = isMasked;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_coreJsData":717}],737:[function(require,module,exports){
-=======
-},{"./_coreJsData":719}],739:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_coreJsData":734}],754:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_coreJsData":736}],756:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_coreJsData":742}],762:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -66088,19 +57432,7 @@ function isPrototype(value) {
 
 module.exports = isPrototype;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],738:[function(require,module,exports){
-=======
-},{}],740:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],755:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],757:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],763:[function(require,module,exports){
 /**
  * Removes all key-value entries from the list cache.
  *
@@ -66115,19 +57447,7 @@ function listCacheClear() {
 
 module.exports = listCacheClear;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],739:[function(require,module,exports){
-=======
-},{}],741:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],756:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],758:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],764:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /** Used for built-in method references. */
@@ -66164,19 +57484,7 @@ function listCacheDelete(key) {
 
 module.exports = listCacheDelete;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_assocIndexOf":696}],740:[function(require,module,exports){
-=======
-},{"./_assocIndexOf":698}],742:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_assocIndexOf":713}],757:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_assocIndexOf":715}],759:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_assocIndexOf":721}],765:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -66197,19 +57505,7 @@ function listCacheGet(key) {
 
 module.exports = listCacheGet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_assocIndexOf":696}],741:[function(require,module,exports){
-=======
-},{"./_assocIndexOf":698}],743:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_assocIndexOf":713}],758:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_assocIndexOf":715}],760:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_assocIndexOf":721}],766:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -66227,19 +57523,7 @@ function listCacheHas(key) {
 
 module.exports = listCacheHas;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_assocIndexOf":696}],742:[function(require,module,exports){
-=======
-},{"./_assocIndexOf":698}],744:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_assocIndexOf":713}],759:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_assocIndexOf":715}],761:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_assocIndexOf":721}],767:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -66267,19 +57551,7 @@ function listCacheSet(key, value) {
 
 module.exports = listCacheSet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_assocIndexOf":696}],743:[function(require,module,exports){
-=======
-},{"./_assocIndexOf":698}],745:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_assocIndexOf":713}],760:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_assocIndexOf":715}],762:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_assocIndexOf":721}],768:[function(require,module,exports){
 var Hash = require('./_Hash'),
     ListCache = require('./_ListCache'),
     Map = require('./_Map');
@@ -66302,19 +57574,7 @@ function mapCacheClear() {
 
 module.exports = mapCacheClear;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_Hash":679,"./_ListCache":680,"./_Map":681}],744:[function(require,module,exports){
-=======
-},{"./_Hash":681,"./_ListCache":682,"./_Map":683}],746:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_Hash":696,"./_ListCache":697,"./_Map":698}],761:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_Hash":698,"./_ListCache":699,"./_Map":700}],763:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_Hash":704,"./_ListCache":705,"./_Map":706}],769:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66334,19 +57594,7 @@ function mapCacheDelete(key) {
 
 module.exports = mapCacheDelete;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getMapData":720}],745:[function(require,module,exports){
-=======
-},{"./_getMapData":722}],747:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getMapData":737}],762:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getMapData":739}],764:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getMapData":745}],770:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66364,19 +57612,7 @@ function mapCacheGet(key) {
 
 module.exports = mapCacheGet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getMapData":720}],746:[function(require,module,exports){
-=======
-},{"./_getMapData":722}],748:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getMapData":737}],763:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getMapData":739}],765:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getMapData":745}],771:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66394,19 +57630,7 @@ function mapCacheHas(key) {
 
 module.exports = mapCacheHas;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getMapData":720}],747:[function(require,module,exports){
-=======
-},{"./_getMapData":722}],749:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getMapData":737}],764:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getMapData":739}],766:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getMapData":745}],772:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -66430,19 +57654,7 @@ function mapCacheSet(key, value) {
 
 module.exports = mapCacheSet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getMapData":720}],748:[function(require,module,exports){
-=======
-},{"./_getMapData":722}],750:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getMapData":737}],765:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getMapData":739}],767:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getMapData":745}],773:[function(require,module,exports){
 /**
  * Converts `map` to its key-value pairs.
  *
@@ -66462,19 +57674,7 @@ function mapToArray(map) {
 
 module.exports = mapToArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],749:[function(require,module,exports){
-=======
-},{}],751:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],766:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],768:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],774:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 /* Built-in method references that are verified to be native. */
@@ -66482,19 +57682,7 @@ var nativeCreate = getNative(Object, 'create');
 
 module.exports = nativeCreate;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_getNative":721}],750:[function(require,module,exports){
-=======
-},{"./_getNative":723}],752:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_getNative":738}],767:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_getNative":740}],769:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_getNative":746}],775:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -66502,27 +57690,9 @@ var nativeKeys = overArg(Object.keys, Object);
 
 module.exports = nativeKeys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_overArg":751}],751:[function(require,module,exports){
-arguments[4][496][0].apply(exports,arguments)
-},{"dup":496}],752:[function(require,module,exports){
-=======
-},{"./_overArg":753}],753:[function(require,module,exports){
-arguments[4][498][0].apply(exports,arguments)
-},{"dup":498}],754:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_overArg":768}],768:[function(require,module,exports){
-arguments[4][513][0].apply(exports,arguments)
-},{"dup":513}],769:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_overArg":770}],770:[function(require,module,exports){
-arguments[4][515][0].apply(exports,arguments)
-},{"dup":515}],771:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_overArg":776}],776:[function(require,module,exports){
+arguments[4][521][0].apply(exports,arguments)
+},{"dup":521}],777:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -66533,19 +57703,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_freeGlobal":718}],753:[function(require,module,exports){
-=======
-},{"./_freeGlobal":720}],755:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_freeGlobal":735}],770:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_freeGlobal":737}],772:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_freeGlobal":743}],778:[function(require,module,exports){
 /**
  * Converts `set` to an array of its values.
  *
@@ -66565,19 +57723,7 @@ function setToArray(set) {
 
 module.exports = setToArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],754:[function(require,module,exports){
-=======
-},{}],756:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],771:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],773:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],779:[function(require,module,exports){
 var ListCache = require('./_ListCache');
 
 /**
@@ -66594,19 +57740,7 @@ function stackClear() {
 
 module.exports = stackClear;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_ListCache":680}],755:[function(require,module,exports){
-=======
-},{"./_ListCache":682}],757:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_ListCache":697}],772:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_ListCache":699}],774:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_ListCache":705}],780:[function(require,module,exports){
 /**
  * Removes `key` and its value from the stack.
  *
@@ -66626,19 +57760,7 @@ function stackDelete(key) {
 
 module.exports = stackDelete;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],756:[function(require,module,exports){
-=======
-},{}],758:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],773:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],775:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],781:[function(require,module,exports){
 /**
  * Gets the stack value for `key`.
  *
@@ -66654,19 +57776,7 @@ function stackGet(key) {
 
 module.exports = stackGet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],757:[function(require,module,exports){
-=======
-},{}],759:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],774:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],776:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],782:[function(require,module,exports){
 /**
  * Checks if a stack value for `key` exists.
  *
@@ -66682,19 +57792,7 @@ function stackHas(key) {
 
 module.exports = stackHas;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],758:[function(require,module,exports){
-=======
-},{}],760:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],775:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],777:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],783:[function(require,module,exports){
 var ListCache = require('./_ListCache'),
     Map = require('./_Map'),
     MapCache = require('./_MapCache');
@@ -66730,19 +57828,7 @@ function stackSet(key, value) {
 
 module.exports = stackSet;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_ListCache":680,"./_Map":681,"./_MapCache":682}],759:[function(require,module,exports){
-=======
-},{"./_ListCache":682,"./_Map":683,"./_MapCache":684}],761:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_ListCache":697,"./_Map":698,"./_MapCache":699}],776:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_ListCache":699,"./_Map":700,"./_MapCache":701}],778:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_ListCache":705,"./_Map":706,"./_MapCache":707}],784:[function(require,module,exports){
 /** Used for built-in method references. */
 var funcProto = Function.prototype;
 
@@ -66770,19 +57856,7 @@ function toSource(func) {
 
 module.exports = toSource;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],760:[function(require,module,exports){
-=======
-},{}],762:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],777:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],779:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],785:[function(require,module,exports){
 var baseClone = require('./_baseClone');
 
 /**
@@ -66817,19 +57891,7 @@ function clone(value) {
 
 module.exports = clone;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_baseClone":699}],761:[function(require,module,exports){
-=======
-},{"./_baseClone":701}],763:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_baseClone":716}],778:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_baseClone":718}],780:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_baseClone":724}],786:[function(require,module,exports){
 var isObject = require('./isObject'),
     now = require('./now'),
     toNumber = require('./toNumber');
@@ -67019,19 +58081,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObject":770,"./now":774,"./toNumber":778}],762:[function(require,module,exports){
-=======
-},{"./isObject":772,"./now":776,"./toNumber":780}],764:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObject":787,"./now":791,"./toNumber":795}],779:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObject":789,"./now":793,"./toNumber":797}],781:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isObject":795,"./now":799,"./toNumber":803}],787:[function(require,module,exports){
 /**
  * Performs a
  * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
@@ -67070,19 +58120,7 @@ function eq(value, other) {
 
 module.exports = eq;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],763:[function(require,module,exports){
-=======
-},{}],765:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],780:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],782:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],788:[function(require,module,exports){
 var isArrayLikeObject = require('./isArrayLikeObject');
 
 /** `Object#toString` result references. */
@@ -67130,19 +58168,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isArrayLikeObject":766}],764:[function(require,module,exports){
-=======
-},{"./isArrayLikeObject":768}],766:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isArrayLikeObject":783}],781:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isArrayLikeObject":785}],783:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isArrayLikeObject":791}],789:[function(require,module,exports){
 /**
  * Checks if `value` is classified as an `Array` object.
  *
@@ -67170,19 +58196,7 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],765:[function(require,module,exports){
-=======
-},{}],767:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],782:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],784:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],790:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isLength = require('./isLength');
 
@@ -67217,19 +58231,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isFunction":768,"./isLength":769}],766:[function(require,module,exports){
-=======
-},{"./isFunction":770,"./isLength":771}],768:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isFunction":785,"./isLength":786}],783:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isFunction":787,"./isLength":788}],785:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isFunction":793,"./isLength":794}],791:[function(require,module,exports){
 var isArrayLike = require('./isArrayLike'),
     isObjectLike = require('./isObjectLike');
 
@@ -67264,19 +58266,7 @@ function isArrayLikeObject(value) {
 
 module.exports = isArrayLikeObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isArrayLike":765,"./isObjectLike":771}],767:[function(require,module,exports){
-=======
-},{"./isArrayLike":767,"./isObjectLike":773}],769:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isArrayLike":782,"./isObjectLike":788}],784:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isArrayLike":784,"./isObjectLike":790}],786:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isArrayLike":790,"./isObjectLike":796}],792:[function(require,module,exports){
 var root = require('./_root'),
     stubFalse = require('./stubFalse');
 
@@ -67316,19 +58306,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752,"./stubFalse":776}],768:[function(require,module,exports){
-=======
-},{"./_root":754,"./stubFalse":778}],770:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769,"./stubFalse":793}],785:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771,"./stubFalse":795}],787:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777,"./stubFalse":801}],793:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
@@ -67371,19 +58349,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObject":770}],769:[function(require,module,exports){
-=======
-},{"./isObject":772}],771:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObject":787}],786:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObject":789}],788:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isObject":795}],794:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -67420,19 +58386,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],770:[function(require,module,exports){
-=======
-},{}],772:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],787:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],789:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],795:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -67465,27 +58419,9 @@ function isObject(value) {
 
 module.exports = isObject;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],771:[function(require,module,exports){
-arguments[4][497][0].apply(exports,arguments)
-},{"dup":497}],772:[function(require,module,exports){
-=======
-},{}],773:[function(require,module,exports){
-arguments[4][499][0].apply(exports,arguments)
-},{"dup":499}],774:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],788:[function(require,module,exports){
-arguments[4][514][0].apply(exports,arguments)
-},{"dup":514}],789:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],790:[function(require,module,exports){
-arguments[4][516][0].apply(exports,arguments)
-},{"dup":516}],791:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],796:[function(require,module,exports){
+arguments[4][522][0].apply(exports,arguments)
+},{"dup":522}],797:[function(require,module,exports){
 var isObjectLike = require('./isObjectLike');
 
 /** `Object#toString` result references. */
@@ -67525,19 +58461,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObjectLike":771}],773:[function(require,module,exports){
-=======
-},{"./isObjectLike":773}],775:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObjectLike":788}],790:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObjectLike":790}],792:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./isObjectLike":796}],798:[function(require,module,exports){
 var arrayLikeKeys = require('./_arrayLikeKeys'),
     baseKeys = require('./_baseKeys'),
     isArrayLike = require('./isArrayLike');
@@ -67576,19 +58500,7 @@ function keys(object) {
 
 module.exports = keys;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_arrayLikeKeys":692,"./_baseKeys":704,"./isArrayLike":765}],774:[function(require,module,exports){
-=======
-},{"./_arrayLikeKeys":694,"./_baseKeys":706,"./isArrayLike":767}],776:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_arrayLikeKeys":709,"./_baseKeys":721,"./isArrayLike":782}],791:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_arrayLikeKeys":711,"./_baseKeys":723,"./isArrayLike":784}],793:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_arrayLikeKeys":717,"./_baseKeys":729,"./isArrayLike":790}],799:[function(require,module,exports){
 var root = require('./_root');
 
 /**
@@ -67613,19 +58525,7 @@ var now = function() {
 
 module.exports = now;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./_root":752}],775:[function(require,module,exports){
-=======
-},{"./_root":754}],777:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./_root":769}],792:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./_root":771}],794:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./_root":777}],800:[function(require,module,exports){
 /**
  * This method returns a new empty array.
  *
@@ -67650,19 +58550,7 @@ function stubArray() {
 
 module.exports = stubArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],776:[function(require,module,exports){
-=======
-},{}],778:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],793:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],795:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],801:[function(require,module,exports){
 /**
  * This method returns `false`.
  *
@@ -67682,19 +58570,7 @@ function stubFalse() {
 
 module.exports = stubFalse;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],777:[function(require,module,exports){
-=======
-},{}],779:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],794:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],796:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],802:[function(require,module,exports){
 var debounce = require('./debounce'),
     isObject = require('./isObject');
 
@@ -67765,19 +58641,7 @@ function throttle(func, wait, options) {
 
 module.exports = throttle;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./debounce":761,"./isObject":770}],778:[function(require,module,exports){
-=======
-},{"./debounce":763,"./isObject":772}],780:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./debounce":778,"./isObject":787}],795:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./debounce":780,"./isObject":789}],797:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./debounce":786,"./isObject":795}],803:[function(require,module,exports){
 var isObject = require('./isObject'),
     isSymbol = require('./isSymbol');
 
@@ -67845,31 +58709,10 @@ function toNumber(value) {
 
 module.exports = toNumber;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./isObject":770,"./isSymbol":772}],779:[function(require,module,exports){
+},{"./isObject":795,"./isSymbol":797}],804:[function(require,module,exports){
 module.exports = require('./lib/index');
 
-},{"./lib/index":780}],780:[function(require,module,exports){
-=======
-},{"./isObject":772,"./isSymbol":774}],781:[function(require,module,exports){
-module.exports = require('./lib/index');
-
-},{"./lib/index":782}],782:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./isObject":787,"./isSymbol":789}],796:[function(require,module,exports){
-module.exports = require('./lib/index');
-
-},{"./lib/index":797}],797:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./isObject":789,"./isSymbol":791}],798:[function(require,module,exports){
-module.exports = require('./lib/index');
-
-},{"./lib/index":799}],799:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./lib/index":805}],805:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -67894,19 +58737,7 @@ if (typeof global !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./ponyfill":781}],781:[function(require,module,exports){
-=======
-},{"./ponyfill":783}],783:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./ponyfill":798}],798:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./ponyfill":800}],800:[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./ponyfill":806}],806:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67930,19 +58761,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],782:[function(require,module,exports){
-=======
-},{}],784:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],799:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],801:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],807:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * IPv6 Support
@@ -68129,19 +58948,7 @@ function symbolObservablePonyfill(root) {
   };
 }));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],783:[function(require,module,exports){
-=======
-},{}],785:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],800:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],802:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],808:[function(require,module,exports){
 /*!
  * URI.js - Mutating URLs
  * Second Level Domain (SLD) Support
@@ -68383,19 +59190,7 @@ function symbolObservablePonyfill(root) {
   return SLD;
 }));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{}],784:[function(require,module,exports){
-=======
-},{}],786:[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{}],801:[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{}],803:[function(require,module,exports){
->>>>>>> OrderShow component
+},{}],809:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {
@@ -74168,19 +64963,7 @@ function symbolObservablePonyfill(root) {
 },{}],"i18next":[function(require,module,exports){
 module.exports = require('./dist/commonjs/index.js').default;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./dist/commonjs/index.js":368}],"immutable":[function(require,module,exports){
-=======
-},{"./dist/commonjs/index.js":370}],"immutable":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./dist/commonjs/index.js":385}],"immutable":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./dist/commonjs/index.js":387}],"immutable":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./dist/commonjs/index.js":393}],"immutable":[function(require,module,exports){
 /**
  *  Copyright (c) 2014-2015, Facebook, Inc.
  *  All rights reserved.
@@ -89403,19 +80186,7 @@ var _Jss2 = _interopRequireDefault(_Jss);
 
 exports['default'] = new _Jss2['default']();
 module.exports = exports['default'];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./Jss":373}],"lodash":[function(require,module,exports){
-=======
-},{"./Jss":375}],"lodash":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./Jss":390}],"lodash":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./Jss":392}],"lodash":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./Jss":398}],"lodash":[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -105255,53 +96026,17 @@ if (typeof Object.create !== "function") {
 
 module.exports = require('./src/js/main');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./src/js/main":465}],"react-dom":[function(require,module,exports){
-=======
-},{"./src/js/main":467}],"react-dom":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./src/js/main":482}],"react-dom":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./src/js/main":484}],"react-dom":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./src/js/main":490}],"react-dom":[function(require,module,exports){
 'use strict';
 
 module.exports = require('react/lib/ReactDOM');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"react/lib/ReactDOM":535}],"react":[function(require,module,exports){
-=======
-},{"react/lib/ReactDOM":537}],"react":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"react/lib/ReactDOM":552}],"react":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"react/lib/ReactDOM":554}],"react":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"react/lib/ReactDOM":560}],"react":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./lib/React":524}],"redux":[function(require,module,exports){
-=======
-},{"./lib/React":526}],"redux":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./lib/React":541}],"redux":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./lib/React":543}],"redux":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./lib/React":549}],"redux":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -105350,19 +96085,7 @@ exports.bindActionCreators = _bindActionCreators2['default'];
 exports.applyMiddleware = _applyMiddleware2['default'];
 exports.compose = _compose2['default'];
 }).call(this,require('_process'))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./applyMiddleware":657,"./bindActionCreators":658,"./combineReducers":659,"./compose":660,"./createStore":661,"./utils/warning":662,"_process":481}],"reqwest":[function(require,module,exports){
-=======
-},{"./applyMiddleware":659,"./bindActionCreators":660,"./combineReducers":661,"./compose":662,"./createStore":663,"./utils/warning":664,"_process":483}],"reqwest":[function(require,module,exports){
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./applyMiddleware":674,"./bindActionCreators":675,"./combineReducers":676,"./compose":677,"./createStore":678,"./utils/warning":679,"_process":498}],"reqwest":[function(require,module,exports){
->>>>>>> OrderPayment component
-=======
-},{"./applyMiddleware":676,"./bindActionCreators":677,"./combineReducers":678,"./compose":679,"./createStore":680,"./utils/warning":681,"_process":500}],"reqwest":[function(require,module,exports){
->>>>>>> OrderShow component
+},{"./applyMiddleware":682,"./bindActionCreators":683,"./combineReducers":684,"./compose":685,"./createStore":686,"./utils/warning":687,"_process":506}],"reqwest":[function(require,module,exports){
 /*!
   * Reqwest! A general purpose XHR connection manager
   * license MIT (c) Dustin Diaz 2014
@@ -109396,16 +100119,4 @@ else {
   return URI;
 }));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./IPv6":782,"./SecondLevelDomains":783,"./punycode":784}]},{},[3]);
-=======
-},{"./IPv6":784,"./SecondLevelDomains":785,"./punycode":786}]},{},[3]);
->>>>>>> 3c40b99... Welcome component
-=======
-},{"./IPv6":799,"./SecondLevelDomains":800,"./punycode":801}]},{},[3]);
->>>>>>> OrderPayment component
-=======
-},{"./IPv6":801,"./SecondLevelDomains":802,"./punycode":803}]},{},[3]);
->>>>>>> OrderShow component
+},{"./IPv6":807,"./SecondLevelDomains":808,"./punycode":809}]},{},[3]);
