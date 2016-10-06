@@ -60,3 +60,4 @@ OrderCreated = require('./react/components/OrderCreated');
 OrderPaid = require('./react/components/OrderPaid');
 OrderPayment = require('./react/components/OrderPayment');
 OrderShow = require('./react/components/OrderShow');
+Payment = require('./react/components/Payment');

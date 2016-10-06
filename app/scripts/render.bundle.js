@@ -65,5 +65,6 @@ global.OrderCreated = require('rc/OrderCreated');
 global.OrderPaid = require('rc/OrderPaid');
 global.OrderPayment = require('rc/OrderPayment');
 global.OrderShow = require('rc/OrderShow');
+global.Payment = require('./react/components/Payment');
 
 import './react/application';
