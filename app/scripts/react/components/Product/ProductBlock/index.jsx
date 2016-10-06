@@ -23,7 +23,7 @@ const ProductBlock = ({ showCartButton, showQuantity, product, t }) => (
         }
         <ProductPrices product={product} t={t} />
       </a>
-      {showCartButton && product.has_ordering_goods && product.goods.length == 1 &&
+      {(showCartButton && product.has_ordering_goods && product.goods.length > 0) && (
         <div className="b-item__cart-form">
           <ProductBlockCartFormButton
             product={product}
@@ -31,7 +31,7 @@ const ProductBlock = ({ showCartButton, showQuantity, product, t }) => (
             t={t}
           />
         </div>
-      }
+      )}
     </div>
   </div>
 );
