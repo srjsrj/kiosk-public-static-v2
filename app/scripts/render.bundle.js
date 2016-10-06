@@ -66,5 +66,6 @@ global.OrderPaid = require('rc/OrderPaid');
 global.OrderPayment = require('rc/OrderPayment');
 global.OrderShow = require('rc/OrderShow');
 global.Payment = require('./react/components/Payment');
+global.ClientSessionNew = require('rc/ClientSessionNew');
 
 import './react/application';

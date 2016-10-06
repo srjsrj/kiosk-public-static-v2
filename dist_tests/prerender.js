@@ -35,5 +35,6 @@ t(global.OrderCreated, require('../test/fixtures/orderCreated/sample.json'));
 t(global.OrderPaid, require('../test/fixtures/orderPaid/sample.json'));
 t(global.OrderPayment, require('../test/fixtures/orderPayment/sample.json'));
 t(global.OrderShow, require('../test/fixtures/orderShow/sample.json'));
+t(global.ClientSessionNew, require('../test/fixtures/clientSessionNew/sample.json'));
 
 console.log('Prerendering public components test finished successfully');

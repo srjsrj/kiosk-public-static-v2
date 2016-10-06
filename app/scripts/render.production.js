@@ -12,8 +12,6 @@ import './lib/csrfToken';
 import './lib/eventsHelper';
 import './lib/bugsnagAjax';
 
-import './lib/pinAlert';
-
 if (typeof Bugsnag !== 'undefined') {
   Bugsnag.releaseStage = gon.env;
   Bugsnag.notifyReleaseStages = ['production', 'reproduction', 'staging'];
