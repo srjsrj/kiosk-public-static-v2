@@ -285,6 +285,9 @@ global.gon = {
           'nothing_found_by_criteria': 'По данным критериям ничего не найдено',
         },
         'client': {
+          'cabinet': {
+            'title': 'Личный кабинет',
+          },
           'auth': 'Личный кабинет',
           'placeholders': {
             'phone': 'Номер телефона',
@@ -313,6 +316,15 @@ global.gon = {
         },
         'add_gift_package': 'Добавить подарочную коробку',
         'no_package': 'Без упаковки',
+        'order_payment_state_icon': {
+          'wait':'Ожидаем оплату',
+          'paid': 'Оплачено: %{updatedAt}',
+        },
+        'order_reserve_state_icon': {
+          'both': 'Зарезервировано локально и на складе в %{reservedAt}',
+          'local': 'Зарезервировано только локально в %{reservedAt}',
+          'remote': 'Зарезервировано только на складе в %{reservedAt}',
+        }
       },
     },
   },
