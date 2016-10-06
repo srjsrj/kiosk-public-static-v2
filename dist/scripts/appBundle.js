@@ -904,7 +904,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.573'
+  version: '0.0.574'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -12993,7 +12993,7 @@ var ProductBlock = function ProductBlock(_ref) {
         ),
         _react2.default.createElement(_ProductPrices2.default, { product: product, t: t })
       ),
-      showCartButton && product.has_ordering_goods && product.goods.length == 1 && _react2.default.createElement(
+      showCartButton && product.has_ordering_goods && product.goods.length > 0 && _react2.default.createElement(
         'div',
         { className: 'b-item__cart-form' },
         _react2.default.createElement(_ProductBlockCartFormButton2.default, {
