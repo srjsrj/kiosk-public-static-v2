@@ -24,8 +24,15 @@ export default shape({
   }),
   delivery_price: money,
   delivery_type: shape({
+    title: string,
     type: string.isRequired,
     pickup_address: string,
+  }),
+  must_be_paid_online: bool,
+  payment_url: string,
+  payment_type: shape({
+    title: string,
+    type: string.isRequired,
   }),
   workflow_state: shape({
     bg_style: object.isRequired,

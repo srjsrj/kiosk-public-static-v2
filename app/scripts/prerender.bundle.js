@@ -59,3 +59,4 @@ OrderCancelled = require('./react/components/OrderCancelled');
 OrderCreated = require('./react/components/OrderCreated');
 OrderPaid = require('./react/components/OrderPaid');
 OrderPayment = require('./react/components/OrderPayment');
+OrderShow = require('./react/components/OrderShow');

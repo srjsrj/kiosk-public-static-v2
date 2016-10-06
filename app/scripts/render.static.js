@@ -38,6 +38,7 @@ import orderCancelledProps from 'test/fixtures/orderCancelled/sample.json';
 import orderCreatedProps from 'test/fixtures/orderCreated/sample.json';
 import orderPaidProps from 'test/fixtures/orderPaid/sample.json';
 import orderPaymentProps from 'test/fixtures/orderPayment/sample.json';
+import orderShowProps from 'test/fixtures/orderShow/sample.json';
 
 global.CartContainerEmpty = () => React.createElement(global.CartContainer, cartEmpty);
 global.CartContainerSelectPackage = () => React.createElement(global.CartContainer, cartSelectPackage);
@@ -77,5 +78,6 @@ global.OrderCancelledSample = () => React.createElement(global.OrderCancelled, o
 global.OrderCreatedSample = () => React.createElement(global.OrderCreated, orderCreatedProps);
 global.OrderPaidSample = () => React.createElement(global.OrderPaid, orderPaidProps);
 global.OrderPaymentSample = () => React.createElement(global.OrderPayment, orderPaymentProps);
+global.OrderShowSample = () => React.createElement(global.OrderShow, orderShowProps);
 
 import './lib/ReactRailsUJS';

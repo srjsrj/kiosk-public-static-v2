@@ -16,7 +16,7 @@ class OrderPaid extends Component {
       external_id: externalId,
       admin_comments: adminComments,
       order_delivery: orderDelivery,
-      workflow_sate: workflowState,
+      workflow_state: workflowState,
     } = order;
     const {
       tracking_url: trackingUrl,
