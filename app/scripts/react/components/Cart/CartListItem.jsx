@@ -6,6 +6,9 @@ import Select from '../common/Select';
 import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurrency';
 import { Map } from 'immutable';
 import { decamelizeKeys } from 'humps';
+import {
+  ORDER_IMG_SIZE,
+} from 'r/constants/OrderConstants';
 
 const emptyMap = Map();
 const WEIGHT_STEP = 0.01;
@@ -142,8 +145,8 @@ class CartListItem extends Component {
           <RelativeImage
             className="b-cart__item__img"
             image={item.getIn(['good', 'image'], Map()).toJS()}
-            maxHeight={143}
-            maxWidth={143}
+            maxHeight={ORDER_IMG_SIZE}
+            maxWidth={ORDER_IMG_SIZE}
           />
         </div>
         <div className="b-cart__item__col-content">

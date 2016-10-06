@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Image from 'rc/common/Image';
 import HumanizedMoneyWithCurrency from 'rc/common/Money/HumanizedMoneyWithCurrency';
 import * as schemas from 'r/schemas';
+import {
+  ORDER_IMG_SIZE,
+} from 'r/constants/OrderConstants';
 
 class OrderItem extends Component {
   render() {
@@ -26,7 +29,7 @@ class OrderItem extends Component {
             className="b-cart__item__img"
             hasFixedSize
             image={{ url: imageUrl }}
-            maxWidth={143}
+            maxWidth={ORDER_IMG_SIZE}
           />
         </div>
         <div className="b-cart__item__col-content">

@@ -53,13 +53,6 @@ OrderCancelled.propTypes = {
 
 OrderCancelled.defaultProps = {
   isCurrentClientPresent: false,
-  order: {
-    items: [],
-    workflow_state: {
-      bg_style: {},
-    },
-    admin_comments: [],
-  },
 };
 
 export default OrderCancelled;

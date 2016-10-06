@@ -68,10 +68,4 @@ OrderCreated.propTypes = {
   vendorRootPath: PropTypes.string.isRequired,
 };
 
-OrderCreated.defaultProps = {
-  order: {
-    admin_comments: [],
-  },
-};
-
 export default OrderCreated;

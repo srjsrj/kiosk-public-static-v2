@@ -57,8 +57,4 @@ OrderPayment.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-OrderPayment.defaultProps = {
-  fields: [],
-};
-
 export default OrderPayment;

@@ -11,8 +11,4 @@ FaIcon.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-FaIcon.defaultProps = {
-  name: '',
-};
-
 export default FaIcon;

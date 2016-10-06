@@ -18,10 +18,6 @@ OrderPaidContainer.propTypes = {
 
 OrderPaidContainer.defaultProps = {
   isCurrentClientPresent: false,
-  order: {
-    admin_comments: [],
-    items: [],
-  },
 };
 
 export default provideTranslations(OrderPaidContainer);

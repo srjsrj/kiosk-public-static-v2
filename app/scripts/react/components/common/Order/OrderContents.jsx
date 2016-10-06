@@ -3,8 +3,10 @@ import OrderItem from './OrderItem';
 import HumanizedMoneyWithCurrency from 'rc/common/Money/HumanizedMoneyWithCurrency';
 import FaIcon from 'rc/common/FaIcon';
 import * as schemas from 'r/schemas';
-
-const DISCOUNT_TYPE_FIXED = 'fixed';
+import {
+  ORDER_IMG_SIZE,
+  ORDER_DISCOUNT_TYPE_FIXED,
+} from 'r/constants/OrderConstants';
 
 class OrderContents extends Component {
   renderPackageGood(packageGood, packagePrice) {
@@ -22,7 +24,7 @@ class OrderContents extends Component {
             className="b-cart__item__img"
             hasFixedSize
             image={{ url: packageImageUrl }}
-            maxWidth={143}
+            maxWidth={ORDER_IMG_SIZE}
           />
         </div>
         <div className="b-cart__item__col-content">
@@ -62,7 +64,7 @@ class OrderContents extends Component {
           <span>
             <FaIcon name="level-down" />
             {'&mdash;'}
-            {discountType === DISCOUNT_TYPE_FIXED
+            {discountType === ORDER_DISCOUNT_TYPE_FIXED
               ? <HumanizedMoneyWithCurrency money={fixedDiscount} />
               : `${discount} %`
             }

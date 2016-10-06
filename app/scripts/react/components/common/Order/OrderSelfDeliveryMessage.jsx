@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-
-const DELIVERY_TYPE_SELFDELIVERY = 'selfdelivery';
+import {
+  ORDER_DELIVERY_TYPE_SELFDELIVERY,
+} from 'r/constants/OrderConstants';
 
 class OrderSelfDeliveryMessage extends Component {
   render() {
@@ -12,7 +13,7 @@ class OrderSelfDeliveryMessage extends Component {
       t,
     } = this.props;
 
-    return type === DELIVERY_TYPE_SELFDELIVERY && pickupAdress != null
+    return type === ORDER_DELIVERY_TYPE_SELFDELIVERY && pickupAdress != null
       ? (
         <span>
           {t('vendor.order.pickup_address')}

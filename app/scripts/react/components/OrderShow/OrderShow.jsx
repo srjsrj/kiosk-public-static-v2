@@ -87,12 +87,4 @@ OrderShow.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-OrderShow.defaultProps = {
-  order: {
-    workflow_state: {},
-    items: [],
-    admin_comments: [],
-  },
-};
-
 export default OrderShow;

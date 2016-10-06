@@ -71,10 +71,6 @@ OrderPaid.propTypes = {
 
 OrderPaid.defaultProps = {
   isCurrentClientPresent: false,
-  order: {
-    admin_comments: [],
-    items: [],
-  },
 };
 
 export default OrderPaid;

@@ -14,12 +14,4 @@ OrderShowContainer.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-OrderShowContainer.defaultProps = {
-  order: {
-    workflow_state: {},
-    items: [],
-    admin_comments: [],
-  },
-};
-
 export default provideTranslations(OrderShowContainer);

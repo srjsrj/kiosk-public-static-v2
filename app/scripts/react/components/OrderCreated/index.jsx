@@ -15,10 +15,4 @@ OrderCreatedContainer.propTypes = {
   vendorCategoryPath: PropTypes.string.isRequired,
 };
 
-OrderCreatedContainer.defaultProps = {
-  order: {
-    admin_comments: [],
-  },
-};
-
 export default provideTranslations(OrderCreatedContainer);
