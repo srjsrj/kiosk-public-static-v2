@@ -60,5 +60,10 @@ global.Welcome = require('rc/Welcome');
 global.Lookbook = require('./react/components/Lookbook');
 global.ContentPage = require('./react/components/ContentPage');
 global.Dictionary = require('./react/components/Dictionary');
+global.OrderCancelled = require('rc/OrderCancelled');
+global.OrderCreated = require('rc/OrderCreated');
+global.OrderPaid = require('rc/OrderPaid');
+global.OrderPayment = require('rc/OrderPayment');
+global.OrderShow = require('rc/OrderShow');
 
 import './react/application';
