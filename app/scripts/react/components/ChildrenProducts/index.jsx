@@ -10,11 +10,15 @@ class ChildrenProductsContainer extends Component {
 
 ChildrenProductsContainer.propTypes = {
   childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: PropTypes.bool,
+  showQuantity: PropTypes.bool,
   title: PropTypes.string,
 };
 
 ChildrenProductsContainer.defaultProps = {
   childrenProducts: [],
+  showCartButton: false,
+  showQuantity: false,
 };
 
 export default ChildrenProductsContainer;

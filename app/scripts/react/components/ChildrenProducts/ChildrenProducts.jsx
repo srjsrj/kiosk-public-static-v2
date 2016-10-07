@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import ProductGroup from 'rc/ProductGroup';
+import * as schemas from 'r/schemas';
 
 class ChildrenProducts extends Component {
   render() {
     const {
       childrenProducts,
+      showCartButton,
+      showQuantity,
       title,
     } = this.props;
 
@@ -19,6 +22,8 @@ class ChildrenProducts extends Component {
           <ProductGroup
             key={`product-group-${vendorCategoryPath}`}
             products={{ items: products }}
+            showCartButton={showCartButton}
+            showQuantity={showQuantity}
             title={title}
             vendorCategoryPath={vendorCategoryPath}
           />
@@ -29,8 +34,16 @@ class ChildrenProducts extends Component {
 }
 
 ChildrenProducts.propTypes = {
-  childrenProducts: PropTypes.array.isRequired,
+  childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: PropTypes.bool,
+  showQuantity: PropTypes.bool,
   title: PropTypes.string,
+};
+
+ChildrenProducts.defaultProps = {
+  childrenProducts: [],
+  showCartButton: false,
+  showQuantity: false,
 };
 
 export default ChildrenProducts;

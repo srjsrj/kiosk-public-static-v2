@@ -860,7 +860,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.577'
+  version: '0.0.578'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -5461,6 +5461,12 @@ var _ProductGroup = require('../ProductGroup');
 
 var _ProductGroup2 = _interopRequireDefault(_ProductGroup);
 
+var _schemas = require('../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ChildrenProducts = function (_Component) {
@@ -5476,6 +5482,8 @@ var ChildrenProducts = function (_Component) {
     value: function render() {
       var _props = this.props;
       var childrenProducts = _props.childrenProducts;
+      var showCartButton = _props.showCartButton;
+      var showQuantity = _props.showQuantity;
       var title = _props.title;
 
 
@@ -5494,6 +5502,8 @@ var ChildrenProducts = function (_Component) {
           return _react2.default.createElement(_ProductGroup2.default, {
             key: 'product-group-' + vendorCategoryPath,
             products: { items: products },
+            showCartButton: showCartButton,
+            showQuantity: showQuantity,
             title: title,
             vendorCategoryPath: vendorCategoryPath
           });
@@ -5505,14 +5515,22 @@ var ChildrenProducts = function (_Component) {
 }(_react.Component);
 
 ChildrenProducts.propTypes = {
-  childrenProducts: _react.PropTypes.array.isRequired,
+  childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: _react.PropTypes.bool,
+  showQuantity: _react.PropTypes.bool,
   title: _react.PropTypes.string
+};
+
+ChildrenProducts.defaultProps = {
+  childrenProducts: [],
+  showCartButton: false,
+  showQuantity: false
 };
 
 exports.default = ChildrenProducts;
 module.exports = exports['default'];
 
-},{"../ProductGroup":172,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],56:[function(require,module,exports){
+},{"../../schemas":275,"../ProductGroup":172,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5574,11 +5592,15 @@ var ChildrenProductsContainer = function (_Component) {
 
 ChildrenProductsContainer.propTypes = {
   childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: _react.PropTypes.bool,
+  showQuantity: _react.PropTypes.bool,
   title: _react.PropTypes.string
 };
 
 ChildrenProductsContainer.defaultProps = {
-  childrenProducts: []
+  childrenProducts: [],
+  showCartButton: false,
+  showQuantity: false
 };
 
 exports.default = ChildrenProductsContainer;
