@@ -12,29 +12,31 @@ class OrderComments extends Component {
     ? (
       <div className="feed-activity-list m-b">
         <table style={{ width: '100%' }}>
-          {comments.map(({ body, author, created_at: createdAt }, idx) => (
-            <tr className="feed-element" key={`order-comment-${idx}`}>
-              <td>
-                <div className="small text-muted">
-                  <FaIcon name="clock-o" />
-                  {createdAt}
-                </div>
-              </td>
-              <td style={{ textAlign: 'left' }}>
-                <span>
-                  {body}
-                  {author && (
-                    <span>
-                      {'&mdash;'}
-                      <strong>
-                        {author}
-                      </strong>
-                    </span>
-                  )}
-                </span>
-              </td>
-            </tr>
-          ))}
+          <tbody>
+            {comments.map(({ body, author, created_at: createdAt }, idx) => (
+              <tr className="feed-element" key={`order-comment-${idx}`}>
+                <td>
+                  <div className="small text-muted">
+                    <FaIcon name="clock-o" />
+                    {createdAt}
+                  </div>
+                </td>
+                <td style={{ textAlign: 'left' }}>
+                  <span>
+                    {body}
+                    {author && (
+                      <span>
+                        {'\u2014'}
+                        <strong>
+                          {author}
+                        </strong>
+                      </span>
+                    )}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     )

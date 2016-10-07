@@ -148,6 +148,7 @@ global.gon = {
           'contents': 'Состав заказа:',
           'delivery_price': 'Стоимость доставки',
           'pay': 'Оплатить',
+          'discount': 'Скидка',
         },
         'blog': {
           'read_more': 'Читать далее..',

@@ -45,13 +45,13 @@ class OrderCreated extends Component {
                 {t('vendor.order.title', { number: externalId })}
               </a>
             </p>
+            <p dangerouslySetInnerHTML={{ __html: message }} />
             <p>
-              <span dangerouslySetInnerHTML={{ __html: message }} />
               <OrderSelfDeliveryMessage deliveryType={deliveryType} t={t} />
-              {freeDeliveryMessage && (
-                <span dangerouslySetInnerHTML={{ __html: freeDeliveryMessage}} />
-              )}
             </p>
+            {freeDeliveryMessage && (
+              <p dangerouslySetInnerHTML={{ __html: freeDeliveryMessage}} />
+            )}
             <a className="b-btn" href={vendorRootPath}>
               {t('vendor.order.continue_shopping')}
             </a>

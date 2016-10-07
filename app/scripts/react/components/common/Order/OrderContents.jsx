@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import OrderItem from './OrderItem';
+import { Image } from 'rc/common/Image';
 import HumanizedMoneyWithCurrency from 'rc/common/Money/HumanizedMoneyWithCurrency';
 import FaIcon from 'rc/common/FaIcon';
 import * as schemas from 'r/schemas';
 import {
   ORDER_IMG_SIZE,
-  ORDER_DISCOUNT_TYPE_FIXED,
 } from 'r/constants/OrderConstants';
 
 class OrderContents extends Component {
@@ -36,7 +36,7 @@ class OrderContents extends Component {
         </div>
         <div className="b-cart__item__col-quantity">
           <span>
-            {`1 ${packageQuantityUnit}`}
+            {`1 ${packageQuantityUnit.short}`}
           </span>
         </div>
         <div className="b-cart__item__col-price">
@@ -53,7 +53,7 @@ class OrderContents extends Component {
     } = this.props;
     const {
       discount,
-      discount_type: discountType,
+      fixed: isFixed,
       fixed_discount: fixedDiscount,
       free_delivery: freeDelivery,
     } = coupon;
@@ -63,8 +63,8 @@ class OrderContents extends Component {
         {discount > 0 && (
           <span>
             <FaIcon name="level-down" />
-            {'&mdash;'}
-            {discountType === ORDER_DISCOUNT_TYPE_FIXED
+            {'\u2014'}
+            {isFixed
               ? <HumanizedMoneyWithCurrency money={fixedDiscount} />
               : `${discount} %`
             }
@@ -104,7 +104,7 @@ class OrderContents extends Component {
               <div className="b-cart__item__col-img" />
               <div className="b-cart__item__col-content">
                 <h2 className="b-cart__item__title">
-                  {t('vendor.shared.coupon')}
+                  {t('vendor.order.discount')}
                 </h2>
               </div>
               <div className="b-cart__item__col-quantity" />
