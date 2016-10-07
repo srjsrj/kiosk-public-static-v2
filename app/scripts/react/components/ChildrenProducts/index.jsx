@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ChildrenProducts from './ChildrenProducts';
+import CatalogFilterContainer from 'rc/CatalogFilter';
 import * as schemas from 'r/schemas';
 
 class ChildrenProductsContainer extends Component {
@@ -9,8 +10,10 @@ class ChildrenProductsContainer extends Component {
 }
 
 ChildrenProductsContainer.propTypes = {
+  catalogFilterProps: PropTypes.shape(...CatalogFilterContainer.propTypes),
   childrenProducts: schemas.childrenProducts.isRequired,
   showCartButton: PropTypes.bool,
+  showCatalogFilter: PropTypes.bool,
   showQuantity: PropTypes.bool,
   title: PropTypes.string,
 };
@@ -18,6 +21,7 @@ ChildrenProductsContainer.propTypes = {
 ChildrenProductsContainer.defaultProps = {
   childrenProducts: [],
   showCartButton: false,
+  showCatalogFilter: false,
   showQuantity: false,
 };
 

@@ -1,14 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import ProductBlock from 'rc/Product/ProductBlock';
+import CatalogFilterContainer from 'rc/CatalogFilter';
 
 class ProductGroup extends Component {
   render() {
     const {
+      catalogFilterProps,
       i18n,
       products: {
         items,
       },
       showCartButton,
+      showCatalogFilter,
       showQuantity,
       t,
       title,
@@ -17,6 +20,7 @@ class ProductGroup extends Component {
 
     return (
       <section className="b-item-list b-item-list_catalog">
+        {showCatalogFilter && <CatalogFilterContainer {...catalogFilterProps} />}
         {title && (
           <h2>
             <a href={vendorCategoryPath}>
@@ -46,13 +50,21 @@ class ProductGroup extends Component {
 }
 
 ProductGroup.propTypes = {
+  catalogFilterProps: PropTypes.shape(...CatalogFilterContainer.propTypes),
   i18n: PropTypes.object,
   products: PropTypes.object.isRequired,
   showCartButton: PropTypes.bool.isRequired,
+  showCatalogFilter: PropTypes.bool,
   showQuantity: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   title: PropTypes.string,
   vendorCategoryPath: PropTypes.string.isRequired,
+};
+
+ProductGroup.defaultProps = {
+  showCartButton: false,
+  showCatalogFilter: false,
+  showQuantity: false,
 };
 
 export default ProductGroup;

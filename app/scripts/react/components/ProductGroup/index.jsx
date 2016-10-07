@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ProductGroup from './ProductGroup';
 import ProductBlock from 'rc/Product/ProductBlock';
+import CatalogFilterContainer from 'rc/CatalogFilter';
 import provideTranslations from 'rc/HoC/provideTranslations';
 
 class ProductGroupContainer extends Component {
@@ -10,6 +11,7 @@ class ProductGroupContainer extends Component {
 }
 
 ProductGroupContainer.propTypes = {
+  catalogFilterProps: PropTypes.shape(...CatalogFilterContainer.propTypes),
   i18n: PropTypes.object,
   products: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape(
@@ -17,6 +19,7 @@ ProductGroupContainer.propTypes = {
     )).isRequired,
   }).isRequired,
   showCartButton: PropTypes.bool.isRequired,
+  showCatalogFilter: PropTypes.bool,
   showQuantity: PropTypes.bool.isRequired,
   t: PropTypes.func.isRequired,
   title: PropTypes.string,
@@ -28,6 +31,7 @@ ProductGroupContainer.defaultProps = {
     items: [],
   },
   showCartButton: false,
+  showCatalogFilter: false,
   showQuantity: false,
   title: '',
 };
