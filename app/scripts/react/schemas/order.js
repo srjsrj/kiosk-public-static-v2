@@ -15,7 +15,7 @@ const {
 
 export default shape({
   external_id: number,
-  default_url: string.isRequired,
+  default_url: string.isRequired, // vendor_order_path(order.external_id)
   free_delivery: bool,
   free_delivery_threshold: money,
   order_delivery: shape({
@@ -25,7 +25,7 @@ export default shape({
   delivery_price: money,
   delivery_type: shape({
     title: string,
-    type: string.isRequired,
+    selfdelivery: bool,
     pickup_address: string,
   }),
   must_be_paid_online: bool,
@@ -46,8 +46,8 @@ export default shape({
   total_with_delivery_price: money.isRequired,
   phone: string,
   coupon: shape({
-    discount: number.isRequired,
-    discount_type: string,
+    discount: number,
+    fixed: bool,
     fixed_discount: money,
     free_delivery: bool,
   }),

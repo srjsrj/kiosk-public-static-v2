@@ -860,7 +860,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.576'
+  version: '0.0.577'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -11840,13 +11840,13 @@ var OrderCreated = function (_Component) {
                 t('vendor.order.title', { number: externalId })
               )
             ),
+            _react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: message } }),
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: message } }),
-              _react2.default.createElement(_OrderSelfDeliveryMessage2.default, { deliveryType: deliveryType, t: t }),
-              freeDeliveryMessage && _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: freeDeliveryMessage } })
+              _react2.default.createElement(_OrderSelfDeliveryMessage2.default, { deliveryType: deliveryType, t: t })
             ),
+            freeDeliveryMessage && _react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: freeDeliveryMessage } }),
             _react2.default.createElement(
               'a',
               { className: 'b-btn', href: vendorRootPath },
@@ -11936,7 +11936,7 @@ var OrderCreatedContainer = function (_Component) {
 OrderCreatedContainer.propTypes = {
   order: schemas.order.isRequired,
   t: _react.PropTypes.func.isRequired,
-  vendorCategoryPath: _react.PropTypes.string.isRequired
+  vendorRootPath: _react.PropTypes.string.isRequired
 };
 
 exports.default = (0, _provideTranslations2.default)(OrderCreatedContainer);
@@ -22623,44 +22623,48 @@ var OrderComments = function (_Component) {
         _react2.default.createElement(
           'table',
           { style: { width: '100%' } },
-          comments.map(function (_ref, idx) {
-            var body = _ref.body;
-            var author = _ref.author;
-            var createdAt = _ref.created_at;
-            return _react2.default.createElement(
-              'tr',
-              { className: 'feed-element', key: 'order-comment-' + idx },
-              _react2.default.createElement(
-                'td',
-                null,
+          _react2.default.createElement(
+            'tbody',
+            null,
+            comments.map(function (_ref, idx) {
+              var body = _ref.body;
+              var author = _ref.author;
+              var createdAt = _ref.created_at;
+              return _react2.default.createElement(
+                'tr',
+                { className: 'feed-element', key: 'order-comment-' + idx },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'small text-muted' },
-                  _react2.default.createElement(_FaIcon2.default, { name: 'clock-o' }),
-                  createdAt
-                )
-              ),
-              _react2.default.createElement(
-                'td',
-                { style: { textAlign: 'left' } },
-                _react2.default.createElement(
-                  'span',
+                  'td',
                   null,
-                  body,
-                  author && _react2.default.createElement(
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'small text-muted' },
+                    _react2.default.createElement(_FaIcon2.default, { name: 'clock-o' }),
+                    createdAt
+                  )
+                ),
+                _react2.default.createElement(
+                  'td',
+                  { style: { textAlign: 'left' } },
+                  _react2.default.createElement(
                     'span',
                     null,
-                    '&mdash;',
-                    _react2.default.createElement(
-                      'strong',
+                    body,
+                    author && _react2.default.createElement(
+                      'span',
                       null,
-                      author
+                      '\u2014',
+                      _react2.default.createElement(
+                        'strong',
+                        null,
+                        author
+                      )
                     )
                   )
                 )
-              )
-            );
-          })
+              );
+            })
+          )
         )
       ) : null;
     }
@@ -22714,6 +22718,8 @@ var _OrderItem = require('./OrderItem');
 
 var _OrderItem2 = _interopRequireDefault(_OrderItem);
 
+var _Image = require('../Image');
+
 var _HumanizedMoneyWithCurrency = require('../Money/HumanizedMoneyWithCurrency');
 
 var _HumanizedMoneyWithCurrency2 = _interopRequireDefault(_HumanizedMoneyWithCurrency);
@@ -22755,7 +22761,7 @@ var OrderContents = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2.default.createElement(Image, {
+          _react2.default.createElement(_Image.Image, {
             className: 'b-cart__item__img',
             hasFixedSize: true,
             image: { url: packageImageUrl },
@@ -22781,7 +22787,7 @@ var OrderContents = function (_Component) {
           _react2.default.createElement(
             'span',
             null,
-            '1 ' + packageQuantityUnit
+            '1 ' + packageQuantityUnit.short
           )
         ),
         _react2.default.createElement(
@@ -22800,7 +22806,7 @@ var OrderContents = function (_Component) {
     value: function renderCouponDiscount(coupon) {
       var t = this.props.t;
       var discount = coupon.discount;
-      var discountType = coupon.discount_type;
+      var isFixed = coupon.fixed;
       var fixedDiscount = coupon.fixed_discount;
       var freeDelivery = coupon.free_delivery;
 
@@ -22812,8 +22818,8 @@ var OrderContents = function (_Component) {
           'span',
           null,
           _react2.default.createElement(_FaIcon2.default, { name: 'level-down' }),
-          '&mdash;',
-          discountType === _OrderConstants.ORDER_DISCOUNT_TYPE_FIXED ? _react2.default.createElement(_HumanizedMoneyWithCurrency2.default, { money: fixedDiscount }) : discount + ' %'
+          '\u2014',
+          isFixed ? _react2.default.createElement(_HumanizedMoneyWithCurrency2.default, { money: fixedDiscount }) : discount + ' %'
         ),
         freeDelivery && _react2.default.createElement(
           'span',
@@ -22861,7 +22867,7 @@ var OrderContents = function (_Component) {
               _react2.default.createElement(
                 'h2',
                 { className: 'b-cart__item__title' },
-                t('vendor.shared.coupon')
+                t('vendor.order.discount')
               )
             ),
             _react2.default.createElement('div', { className: 'b-cart__item__col-quantity' }),
@@ -22929,7 +22935,7 @@ OrderContents.defaultProps = {
 exports.default = OrderContents;
 module.exports = exports['default'];
 
-},{"../../../constants/OrderConstants":237,"../../../schemas":275,"../FaIcon":210,"../Money/HumanizedMoneyWithCurrency":224,"./OrderItem":227,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],227:[function(require,module,exports){
+},{"../../../constants/OrderConstants":237,"../../../schemas":275,"../FaIcon":210,"../Image":217,"../Money/HumanizedMoneyWithCurrency":224,"./OrderItem":227,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22961,8 +22967,6 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var _Image = require('../Image');
-
-var _Image2 = _interopRequireDefault(_Image);
 
 var _HumanizedMoneyWithCurrency = require('../Money/HumanizedMoneyWithCurrency');
 
@@ -23006,7 +23010,7 @@ var OrderItem = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-img' },
-          _react2.default.createElement(_Image2.default, {
+          _react2.default.createElement(_Image.Image, {
             className: 'b-cart__item__img',
             hasFixedSize: true,
             image: { url: imageUrl },
@@ -23034,7 +23038,7 @@ var OrderItem = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'b-cart__item__col-quantity' },
-          count + ' ' + quantityUnit
+          count + ' ' + quantityUnit.short
         ),
         _react2.default.createElement(
           'div',
@@ -23095,8 +23099,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _OrderConstants = require('../../../constants/OrderConstants');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var OrderSelfDeliveryMessage = function (_Component) {
@@ -23112,12 +23114,12 @@ var OrderSelfDeliveryMessage = function (_Component) {
     value: function render() {
       var _props = this.props;
       var _props$deliveryType = _props.deliveryType;
-      var type = _props$deliveryType.type;
+      var selfdelivery = _props$deliveryType.selfdelivery;
       var pickupAdress = _props$deliveryType.pickup_address;
       var t = _props.t;
 
 
-      return type === _OrderConstants.ORDER_DELIVERY_TYPE_SELFDELIVERY && pickupAdress != null ? _react2.default.createElement(
+      return selfdelivery && pickupAdress != null ? _react2.default.createElement(
         'span',
         null,
         t('vendor.order.pickup_address'),
@@ -23130,20 +23132,22 @@ var OrderSelfDeliveryMessage = function (_Component) {
 
 OrderSelfDeliveryMessage.propTypes = {
   deliveryType: _react.PropTypes.shape({
-    type: _react.PropTypes.string.isRequired,
+    selfdelivery: _react.PropTypes.bool,
     pickup_address: _react.PropTypes.string
   }).isRequired,
   t: _react.PropTypes.func.isRequired
 };
 
 OrderSelfDeliveryMessage.defaultProps = {
-  deliveryType: {}
+  deliveryType: {
+    selfdelivery: false
+  }
 };
 
 exports.default = OrderSelfDeliveryMessage;
 module.exports = exports['default'];
 
-},{"../../../constants/OrderConstants":237,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],229:[function(require,module,exports){
+},{"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23896,14 +23900,12 @@ exports.default = TextInput;
 module.exports = exports["default"];
 
 },{"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/extends":326,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],237:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var ORDER_IMG_SIZE = exports.ORDER_IMG_SIZE = 143;
-var ORDER_DISCOUNT_TYPE_FIXED = exports.ORDER_DISCOUNT_TYPE_FIXED = 'fixed';
-var ORDER_DELIVERY_TYPE_SELFDELIVERY = exports.ORDER_DELIVERY_TYPE_SELFDELIVERY = 'selfdelivery';
 
 },{}],238:[function(require,module,exports){
 'use strict';
@@ -26100,7 +26102,7 @@ var number = _react.PropTypes.number;
 var object = _react.PropTypes.object;
 exports.default = shape({
   external_id: number,
-  default_url: string.isRequired,
+  default_url: string.isRequired, // vendor_order_path(order.external_id)
   free_delivery: bool,
   free_delivery_threshold: _money2.default,
   order_delivery: shape({
@@ -26110,7 +26112,7 @@ exports.default = shape({
   delivery_price: _money2.default,
   delivery_type: shape({
     title: string,
-    type: string.isRequired,
+    selfdelivery: bool,
     pickup_address: string
   }),
   must_be_paid_online: bool,
@@ -26131,8 +26133,8 @@ exports.default = shape({
   total_with_delivery_price: _money2.default.isRequired,
   phone: string,
   coupon: shape({
-    discount: number.isRequired,
-    discount_type: string,
+    discount: number,
+    fixed: bool,
     fixed_discount: _money2.default,
     free_delivery: bool
   })
@@ -26165,7 +26167,9 @@ exports.default = shape({
   count: number.isRequired,
   title: string.isRequired,
   total_price: _money2.default.isRequired,
-  quantity_unit: string.isRequired,
+  quantity_unit: shape({
+    short: string.isRequired
+  }).isRequired,
   image_url: string.isRequired,
   good: _good2.default.isRequired
 });

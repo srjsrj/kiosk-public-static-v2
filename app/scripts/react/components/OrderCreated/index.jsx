@@ -12,7 +12,7 @@ class OrderCreatedContainer extends Component {
 OrderCreatedContainer.propTypes = {
   order: schemas.order.isRequired,
   t: PropTypes.func.isRequired,
-  vendorCategoryPath: PropTypes.string.isRequired,
+  vendorRootPath: PropTypes.string.isRequired,
 };
 
 export default provideTranslations(OrderCreatedContainer);

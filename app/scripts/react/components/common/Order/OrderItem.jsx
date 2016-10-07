@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Image from 'rc/common/Image';
+import { Image } from 'rc/common/Image';
 import HumanizedMoneyWithCurrency from 'rc/common/Money/HumanizedMoneyWithCurrency';
 import * as schemas from 'r/schemas';
 import {
@@ -43,7 +43,7 @@ class OrderItem extends Component {
           </div>
         </div>
         <div className="b-cart__item__col-quantity">
-          {`${count} ${quantityUnit}`}
+          {`${count} ${quantityUnit.short}`}
         </div>
         <div className="b-cart__item__col-price">
           <div className="b-cart__item__price">
