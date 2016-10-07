@@ -860,7 +860,7 @@ if (global.gon.__data) {
 }
 
 global.Kiosk = {
-  version: '0.0.577'
+  version: '0.0.579'
 };
 
 // Unless we have no one common component, we will be pass <Provider /> global redux
@@ -1856,10 +1856,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -1902,12 +1898,14 @@ var _immutable = require('immutable');
 
 var _humps = require('humps');
 
+var _lodash = require('lodash');
+
 var _OrderConstants = require('../../constants/OrderConstants');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*global gon */
-var emptyMap = (0, _immutable.Map)();
+var emptyMap = (0, _immutable.Map)(); /*global gon */
+
 var WEIGHT_STEP = 0.01;
 
 var CartListItem = function (_Component) {
@@ -2016,8 +2014,7 @@ var CartListItem = function (_Component) {
       var t = _props4.t;
 
       var maxAvail = Math.min(gon.max_items_count, item.getIn(['good', 'maxOrderableQuantity'], 0));
-      var options = [].concat((0, _toConsumableArray3.default)(Array(Math.max(amount, maxAvail)).keys())) // fancy way to generate the range
-      .map(function (i) {
+      var options = (0, _lodash.range)(0, Math.max(amount, maxAvail)).map(function (i) {
         return {
           value: i + 1,
           title: i + 1,
@@ -2133,7 +2130,7 @@ CartListItem.propTypes = {
 exports.default = CartListItem;
 module.exports = exports['default'];
 
-},{"../../constants/OrderConstants":237,"../common/AssetImage":207,"../common/Image":217,"../common/Money/HumanizedMoneyWithCurrency":224,"../common/Select":234,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"humps":443,"immutable":"immutable","react":"react"}],27:[function(require,module,exports){
+},{"../../constants/OrderConstants":237,"../common/AssetImage":207,"../common/Image":217,"../common/Money/HumanizedMoneyWithCurrency":224,"../common/Select":234,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"humps":443,"immutable":"immutable","lodash":"lodash","react":"react"}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5433,6 +5430,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -5461,6 +5462,16 @@ var _ProductGroup = require('../ProductGroup');
 
 var _ProductGroup2 = _interopRequireDefault(_ProductGroup);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
+var _schemas = require('../../schemas');
+
+var schemas = _interopRequireWildcard(_schemas);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ChildrenProducts = function (_Component) {
@@ -5475,7 +5486,11 @@ var ChildrenProducts = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var catalogFilterProps = _props.catalogFilterProps;
       var childrenProducts = _props.childrenProducts;
+      var showCartButton = _props.showCartButton;
+      var showCatalogFilter = _props.showCatalogFilter;
+      var showQuantity = _props.showQuantity;
       var title = _props.title;
 
 
@@ -5487,13 +5502,17 @@ var ChildrenProducts = function (_Component) {
           { className: 'b-item-list__title' },
           title
         ),
-        childrenProducts.map(function (_ref) {
+        childrenProducts.map(function (_ref, idx) {
           var products = _ref.products;
           var title = _ref.title;
           var vendorCategoryPath = _ref.vendorCategoryPath;
           return _react2.default.createElement(_ProductGroup2.default, {
+            catalogFilterProps: catalogFilterProps,
             key: 'product-group-' + vendorCategoryPath,
             products: { items: products },
+            showCartButton: showCartButton,
+            showCatalogFilter: showCatalogFilter && idx === 0,
+            showQuantity: showQuantity,
             title: title,
             vendorCategoryPath: vendorCategoryPath
           });
@@ -5505,19 +5524,34 @@ var ChildrenProducts = function (_Component) {
 }(_react.Component);
 
 ChildrenProducts.propTypes = {
-  childrenProducts: _react.PropTypes.array.isRequired,
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
+  childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: _react.PropTypes.bool,
+  showCatalogFilter: _react.PropTypes.bool,
+  showQuantity: _react.PropTypes.bool,
   title: _react.PropTypes.string
+};
+
+ChildrenProducts.defaultProps = {
+  childrenProducts: [],
+  showCartButton: false,
+  showCatalogFilter: false,
+  showQuantity: false
 };
 
 exports.default = ChildrenProducts;
 module.exports = exports['default'];
 
-},{"../ProductGroup":172,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],56:[function(require,module,exports){
+},{"../../schemas":275,"../CatalogFilter":39,"../ProductGroup":172,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"react":"react"}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -5547,6 +5581,10 @@ var _ChildrenProducts = require('./ChildrenProducts');
 
 var _ChildrenProducts2 = _interopRequireDefault(_ChildrenProducts);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
 var _schemas = require('../../schemas');
 
 var schemas = _interopRequireWildcard(_schemas);
@@ -5573,18 +5611,25 @@ var ChildrenProductsContainer = function (_Component) {
 }(_react.Component);
 
 ChildrenProductsContainer.propTypes = {
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
   childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: _react.PropTypes.bool,
+  showCatalogFilter: _react.PropTypes.bool,
+  showQuantity: _react.PropTypes.bool,
   title: _react.PropTypes.string
 };
 
 ChildrenProductsContainer.defaultProps = {
-  childrenProducts: []
+  childrenProducts: [],
+  showCartButton: false,
+  showCatalogFilter: false,
+  showQuantity: false
 };
 
 exports.default = ChildrenProductsContainer;
 module.exports = exports['default'];
 
-},{"../../schemas":275,"./ChildrenProducts":55,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],57:[function(require,module,exports){
+},{"../../schemas":275,"../CatalogFilter":39,"./ChildrenProducts":55,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"react":"react"}],57:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17334,6 +17379,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -17362,6 +17411,10 @@ var _ProductBlock = require('../Product/ProductBlock');
 
 var _ProductBlock2 = _interopRequireDefault(_ProductBlock);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProductGroup = function (_Component) {
@@ -17376,9 +17429,11 @@ var ProductGroup = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var catalogFilterProps = _props.catalogFilterProps;
       var i18n = _props.i18n;
       var items = _props.products.items;
       var showCartButton = _props.showCartButton;
+      var showCatalogFilter = _props.showCatalogFilter;
       var showQuantity = _props.showQuantity;
       var t = _props.t;
       var title = _props.title;
@@ -17388,6 +17443,7 @@ var ProductGroup = function (_Component) {
       return _react2.default.createElement(
         'section',
         { className: 'b-item-list b-item-list_catalog' },
+        showCatalogFilter && _react2.default.createElement(_CatalogFilter2.default, catalogFilterProps),
         title && _react2.default.createElement(
           'h2',
           null,
@@ -17426,19 +17482,27 @@ var ProductGroup = function (_Component) {
 }(_react.Component);
 
 ProductGroup.propTypes = {
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
   i18n: _react.PropTypes.object,
   products: _react.PropTypes.object.isRequired,
   showCartButton: _react.PropTypes.bool.isRequired,
+  showCatalogFilter: _react.PropTypes.bool,
   showQuantity: _react.PropTypes.bool.isRequired,
   t: _react.PropTypes.func.isRequired,
   title: _react.PropTypes.string,
   vendorCategoryPath: _react.PropTypes.string.isRequired
 };
 
+ProductGroup.defaultProps = {
+  showCartButton: false,
+  showCatalogFilter: false,
+  showQuantity: false
+};
+
 exports.default = ProductGroup;
 module.exports = exports['default'];
 
-},{"../Product/ProductBlock":134,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"react":"react"}],172:[function(require,module,exports){
+},{"../CatalogFilter":39,"../Product/ProductBlock":134,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"react":"react"}],172:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -17481,6 +17545,10 @@ var _ProductBlock = require('../Product/ProductBlock');
 
 var _ProductBlock2 = _interopRequireDefault(_ProductBlock);
 
+var _CatalogFilter = require('../CatalogFilter');
+
+var _CatalogFilter2 = _interopRequireDefault(_CatalogFilter);
+
 var _provideTranslations = require('../HoC/provideTranslations');
 
 var _provideTranslations2 = _interopRequireDefault(_provideTranslations);
@@ -17505,11 +17573,13 @@ var ProductGroupContainer = function (_Component) {
 }(_react.Component);
 
 ProductGroupContainer.propTypes = {
+  catalogFilterProps: _react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_CatalogFilter2.default.propTypes)),
   i18n: _react.PropTypes.object,
   products: _react.PropTypes.shape({
     items: _react.PropTypes.arrayOf(_react.PropTypes.shape.apply(_react.PropTypes, (0, _toConsumableArray3.default)(_ProductBlock2.default.wrapped.propTypes))).isRequired
   }).isRequired,
   showCartButton: _react.PropTypes.bool.isRequired,
+  showCatalogFilter: _react.PropTypes.bool,
   showQuantity: _react.PropTypes.bool.isRequired,
   t: _react.PropTypes.func.isRequired,
   title: _react.PropTypes.string,
@@ -17521,6 +17591,7 @@ ProductGroupContainer.defaultProps = {
     items: []
   },
   showCartButton: false,
+  showCatalogFilter: false,
   showQuantity: false,
   title: ''
 };
@@ -17528,7 +17599,7 @@ ProductGroupContainer.defaultProps = {
 exports.default = (0, _provideTranslations2.default)(ProductGroupContainer);
 module.exports = exports['default'];
 
-},{"../HoC/provideTranslations":83,"../Product/ProductBlock":134,"./ProductGroup":171,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"react":"react"}],173:[function(require,module,exports){
+},{"../CatalogFilter":39,"../HoC/provideTranslations":83,"../Product/ProductBlock":134,"./ProductGroup":171,"babel-runtime/core-js/object/get-prototype-of":317,"babel-runtime/helpers/classCallCheck":323,"babel-runtime/helpers/createClass":324,"babel-runtime/helpers/inherits":327,"babel-runtime/helpers/possibleConstructorReturn":328,"babel-runtime/helpers/toConsumableArray":330,"react":"react"}],173:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

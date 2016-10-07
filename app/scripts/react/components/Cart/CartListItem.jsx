@@ -7,6 +7,9 @@ import HumanizedMoneyWithCurrency from '../common/Money/HumanizedMoneyWithCurren
 import { Map } from 'immutable';
 import { decamelizeKeys } from 'humps';
 import {
+  range,
+} from 'lodash';
+import {
   ORDER_IMG_SIZE,
 } from 'r/constants/OrderConstants';
 
@@ -98,7 +101,7 @@ class CartListItem extends Component {
       gon.max_items_count,
       item.getIn(['good', 'maxOrderableQuantity'], 0)
     );
-    const options = [...Array(Math.max(amount, maxAvail)).keys()] // fancy way to generate the range
+    const options = range(0, Math.max(amount, maxAvail))
       .map((i) => ({
         value: i + 1,
         title: i + 1,

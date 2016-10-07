@@ -1,10 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import ProductGroup from 'rc/ProductGroup';
+import CatalogFilterContainer from 'rc/CatalogFilter';
+import * as schemas from 'r/schemas';
 
 class ChildrenProducts extends Component {
   render() {
     const {
+      catalogFilterProps,
       childrenProducts,
+      showCartButton,
+      showCatalogFilter,
+      showQuantity,
       title,
     } = this.props;
 
@@ -15,10 +21,14 @@ class ChildrenProducts extends Component {
             {title}
           </h1>
         )}
-        {childrenProducts.map(({ products, title, vendorCategoryPath }) => (
+        {childrenProducts.map(({ products, title, vendorCategoryPath }, idx) => (
           <ProductGroup
+            catalogFilterProps={catalogFilterProps}
             key={`product-group-${vendorCategoryPath}`}
             products={{ items: products }}
+            showCartButton={showCartButton}
+            showCatalogFilter={showCatalogFilter && idx === 0}
+            showQuantity={showQuantity}
             title={title}
             vendorCategoryPath={vendorCategoryPath}
           />
@@ -29,8 +39,19 @@ class ChildrenProducts extends Component {
 }
 
 ChildrenProducts.propTypes = {
-  childrenProducts: PropTypes.array.isRequired,
+  catalogFilterProps: PropTypes.shape(...CatalogFilterContainer.propTypes),
+  childrenProducts: schemas.childrenProducts.isRequired,
+  showCartButton: PropTypes.bool,
+  showCatalogFilter: PropTypes.bool,
+  showQuantity: PropTypes.bool,
   title: PropTypes.string,
+};
+
+ChildrenProducts.defaultProps = {
+  childrenProducts: [],
+  showCartButton: false,
+  showCatalogFilter: false,
+  showQuantity: false,
 };
 
 export default ChildrenProducts;
